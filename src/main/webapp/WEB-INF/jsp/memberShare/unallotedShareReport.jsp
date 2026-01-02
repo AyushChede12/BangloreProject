@@ -309,7 +309,13 @@ function calculateShareSerialNo() {
 										</div>
 									</div>
 								</div>
+								<!-- FOOTER -->
+							<div class="box-footer">
+								<button type="button" class="btn btn-primary pull-right"
+									onclick="goToPaymentDetails()">Next</button>
 							</div>
+							</div>
+							
 						</div>
 					</div>
 					<div class="row">
