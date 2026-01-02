@@ -647,7 +647,7 @@ function check()
 										<div class="col-md-12">
 
 											<!-- ================= BASIC DETAILS ================= -->
-											<div class="box box-primary">
+											<div class="box box-primary" id= "clientSection">
 												<div class="box-header with-border">
 													<h3 class="box-title">
 														<b>Client Details</b>
@@ -1045,14 +1045,16 @@ function check()
 															</select>
 														</div>
 													</div>
-
+												<div class="clearfix">
+												<button type="button" class="btn btn-primary pull-right" onclick="showKyc()">
+													Next</button>
 												</div>
 											</div>
-
+										</div>
 
 
 											<!-- ================= AADHAR IMAGES ================= -->
-											<div class="box box-success">
+											<div class="box box-success" id= "kycSection" style= "display: none;">
 												<div class="box-header with-border">
 													<h3 class="box-title">
 														<b>KYC Documents</b>
@@ -1104,11 +1106,17 @@ function check()
 														</div>
 
 													</div>
-												</div>
+													<div class="clearfix">
+												<button type="button" class="btn btn-default" onclick="showClient()">
+													Previous</button>
+												<button type="button" class="btn btn-primary pull-right" onclick="showNominee()">
+													Next</button>
+											</div>
+											</div>
 											</div>
 
 											<!-- ================= NOMINEE DETAILS ================= -->
-											<div class="box box-warning">
+											<div class="box box-warning" id="nomineeDetails" style= "display: none;">
 												<div class="box-header with-border">
 													<h3 class="box-title">
 														<b>Nominee Details</b>
@@ -1202,6 +1210,12 @@ function check()
 															</select>
 														</div>
 													</div>
+													<div class="clearfix">
+												<button type="button" class="btn btn-default" onclick="showKyc()">
+													Previous</button>
+												<button type="button" class="btn btn-primary pull-right" onclick="showFees()">
+													Next</button>
+											</div>
 
 												</div>
 											</div>
@@ -1213,7 +1227,7 @@ function check()
 								<div class="row">
 									<div class="col-md-12">
 
-										<div class="box box-info">
+										<div class="box box-info" id="fessSeting" style= "display: none;">
 											<div class="box-header with-border">
 												<h3 class="box-title">
 													<b>Fees / Setting Details</b>
@@ -1350,15 +1364,17 @@ function check()
 														</label>
 													</div>
 												</div>
+												<div class="clearfix">
+												<button type="button" class="btn btn-default" onclick="showNominee">
+													Previous</button>
+												<button  class="btn btn-primary pull-right" onclick="saveData">
+													Save</button>
+											</div>
 
 											</div>
 										</div>
 
 									</div>
-								</div>
-								<div class="text-center">
-									<button type="submit" class="btn btn-success btn-lg">
-										Save Customer</button>
 								</div>
 								<br> <br>
 							</form>
@@ -1368,7 +1384,7 @@ function check()
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-info">
+							<div class="box box-info" style= "display: none;">
 								<div class="box-header with-border">
 									<h3 class="box-title">TABLE</h3>
 								</div>
@@ -1452,6 +1468,34 @@ function check()
 			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 			crossorigin="anonymous"></script>
 		<%-- <jsp:include page="../footer.jsp" />  --%>
+
+<script>
+	function showKyc() {
+    	document.getElementById("clientSection").style.display = "none";
+    	document.getElementById("kycSection").style.display = "block";
+    	document.getElementById("nomineeDerails").style.display = "block";
+    	window.scrollTo(0, 0);
+	}
+
+	function showClient() {
+    	document.getElementById("kycSection").style.display = "none";
+    	document.getElementById("clientSection").style.display = "block";
+    	window.scrollTo(0, 0);
+	}
+	
+	function showNominee() {
+    	document.getElementById("kycSection").style.display = "none";
+    	document.getElementById("nomineeDetails").style.display = "block";
+    	window.scrollTo(0, 0);
+	}
+	function showFees() {
+    	document.getElementById("kycSection").style.display = "none";
+    	document.getElementById("nomineeDetails").style.display = "block";
+    	window.scrollTo(0, 0);
+	}
+</script>
+
+
 
 		<script>
       var fileTag = document.getElementById("filetag"),
