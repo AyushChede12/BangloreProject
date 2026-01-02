@@ -11,7 +11,8 @@ import com.society.application.model.MaturityPaymentReportModel;
 @Repository
 public interface MaturityPaymentReportRepo extends JpaRepository<MaturityPaymentReportModel, Integer> {
 
-	//public List<MaturityPaymentReportModel> findByapprovadateBetween(String formDate, String toDate);
+	// public List<MaturityPaymentReportModel> findByapprovadateBetween(String
+	// formDate, String toDate);
 
 	public List<MaturityPaymentReportModel> findBypaybranch(String b_ranch);
 

@@ -91,7 +91,7 @@ public class LoanMaster {
 	private String vFeesAmt;
 	private String createdBy;
 	private String CreatedDt;
-	
+
 	public String getCreatedDt() {
 		return CreatedDt;
 	}
@@ -323,7 +323,7 @@ public class LoanMaster {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	
+
 	public String getLoanDate() {
 		return loanDate;
 	}

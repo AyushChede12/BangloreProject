@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.RelativeRelationMaster;
 
 @Repository
-public interface RelativeRelationMasterRepo  extends JpaRepository<RelativeRelationMaster, Integer>{
-
+public interface RelativeRelationMasterRepo extends JpaRepository<RelativeRelationMaster, Integer> {
 
 }

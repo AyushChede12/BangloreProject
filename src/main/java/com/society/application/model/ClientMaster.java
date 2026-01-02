@@ -104,548 +104,727 @@ public class ClientMaster {
 	private String frontEndSignature;
 	private String createdBy;
 	private String createdDt;
-	
+
 	public String getCaste() {
 		return caste;
 	}
+
 	public void setCaste(String caste) {
 		this.caste = caste;
 	}
+
 	public String getPreviousBalance() {
 		return previousBalance;
 	}
+
 	public void setPreviousBalance(String previousBalance) {
 		this.previousBalance = previousBalance;
 	}
+
 	public String getPreviousNoOfShared() {
 		return previousNoOfShared;
 	}
+
 	public void setPreviousNoOfShared(String previousNoOfShared) {
 		this.previousNoOfShared = previousNoOfShared;
 	}
+
 	public String getFrontEndPhoto() {
 		return frontEndPhoto;
 	}
+
 	public void setFrontEndPhoto(String frontEndPhoto) {
 		this.frontEndPhoto = frontEndPhoto;
 	}
+
 	public byte[] getImage() {
 		return image;
 	}
+
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public long getClientNo() {
 		return clientNo;
 	}
+
 	public void setClientNo(long clientNo) {
 		this.clientNo = clientNo;
 	}
+
 	public void setClientId(long clientId) {
 		this.clientId = clientId;
 	}
+
 	public String getVerifyWithAadhar() {
 		return verifyWithAadhar;
 	}
+
 	public void setVerifyWithAadhar(String verifyWithAadhar) {
 		this.verifyWithAadhar = verifyWithAadhar;
 	}
+
 	public String getRegistrationDate() {
 		return registrationDate;
 	}
+
 	public void setRegistrationDate(String registrationDate) {
 		this.registrationDate = registrationDate;
 	}
+
 	public String getMemberNamePrefix() {
 		return memberNamePrefix;
 	}
+
 	public void setMemberNamePrefix(String memberNamePrefix) {
 		this.memberNamePrefix = memberNamePrefix;
 	}
+
 	public String getMemberName() {
 		return memberName;
 	}
+
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
+
 	public String getRelativeName() {
 		return relativeName;
 	}
+
 	public void setRelativeName(String relativeName) {
 		this.relativeName = relativeName;
 	}
+
 	public String getRelativeRelation() {
 		return relativeRelation;
 	}
+
 	public void setRelativeRelation(String relativeRelation) {
 		this.relativeRelation = relativeRelation;
 	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 	public String getDob() {
 		return dob;
 	}
+
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
+
 	public String getAge() {
 		return age;
 	}
+
 	public void setAge(String age) {
 		this.age = age;
 	}
+
 	public String getMaritalStatus() {
 		return maritalStatus;
 	}
+
 	public void setMaritalStatus(String maritalStatus) {
 		this.maritalStatus = maritalStatus;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getDistrict() {
 		return district;
 	}
+
 	public void setDistrict(String district) {
 		this.district = district;
 	}
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	public String getBranchName() {
 		return branchName;
 	}
+
 	public void setBranchName(String branchName) {
 		this.branchName = branchName;
 	}
+
 	public String getPinCode() {
 		return pinCode;
 	}
+
 	public void setPinCode(String pinCode) {
 		this.pinCode = pinCode;
 	}
+
 	public String getAadharNo() {
 		return aadharNo;
 	}
+
 	public void setAadharNo(String aadharNo) {
 		this.aadharNo = aadharNo;
 	}
+
 	public String getPan() {
 		return pan;
 	}
+
 	public void setPan(String pan) {
 		this.pan = pan;
 	}
+
 	public String getVoterNo() {
 		return voterNo;
 	}
+
 	public void setVoterNo(String voterNo) {
 		this.voterNo = voterNo;
 	}
+
 	public String getPhoneno() {
 		return phoneno;
 	}
+
 	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
+
 	public String getEmailid() {
 		return emailid;
 	}
+
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
 	}
+
 	public String getOccupation() {
 		return occupation;
 	}
+
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
 	}
+
 	public String getEducation() {
 		return education;
 	}
+
 	public void setEducation(String education) {
 		this.education = education;
 	}
+
 	public String getClientPurpose() {
 		return clientPurpose;
 	}
+
 	public void setClientPurpose(String clientPurpose) {
 		this.clientPurpose = clientPurpose;
 	}
+
 	public String getPassportNumber() {
 		return passportNumber;
 	}
+
 	public void setPassportNumber(String passportNumber) {
 		this.passportNumber = passportNumber;
 	}
+
 	public String getCasteName() {
 		return casteName;
 	}
+
 	public void setCasteName(String casteName) {
 		this.casteName = casteName;
 	}
+
 	public String getReligionName() {
 		return religionName;
 	}
+
 	public void setReligionName(String religionName) {
 		this.religionName = religionName;
 	}
+
 	public String getCategoryName() {
 		return categoryName;
 	}
+
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
 	public String getRiskCategory() {
 		return riskCategory;
 	}
+
 	public void setRiskCategory(String riskCategory) {
 		this.riskCategory = riskCategory;
 	}
+
 	public String getNationality() {
 		return nationality;
 	}
+
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
+
 	public String getLoginID() {
 		return loginID;
 	}
+
 	public void setLoginID(String loginID) {
 		this.loginID = loginID;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getMemberIncome() {
 		return memberIncome;
 	}
+
 	public void setMemberIncome(String memberIncome) {
 		this.memberIncome = memberIncome;
 	}
+
 	public String getNomineeName() {
 		return nomineeName;
 	}
+
 	public void setNomineeName(String nomineeName) {
 		this.nomineeName = nomineeName;
 	}
+
 	public String getnRelation() {
 		return nRelation;
 	}
+
 	public void setnRelation(String nRelation) {
 		this.nRelation = nRelation;
 	}
+
 	public String getNomineeAddress() {
 		return nomineeAddress;
 	}
+
 	public void setNomineeAddress(String nomineeAddress) {
 		this.nomineeAddress = nomineeAddress;
 	}
+
 	public String getNomineeKycNumber() {
 		return nomineeKycNumber;
 	}
+
 	public void setNomineeKycNumber(String nomineeKycNumber) {
 		this.nomineeKycNumber = nomineeKycNumber;
 	}
+
 	public String getNomineeMobileNo() {
 		return nomineeMobileNo;
 	}
+
 	public void setNomineeMobileNo(String nomineeMobileNo) {
 		this.nomineeMobileNo = nomineeMobileNo;
 	}
+
 	public String getNomineeAge() {
 		return nomineeAge;
 	}
+
 	public void setNomineeAge(String nomineeAge) {
 		this.nomineeAge = nomineeAge;
 	}
+
 	public String getNomineePanNo() {
 		return nomineePanNo;
 	}
+
 	public void setNomineePanNo(String nomineePanNo) {
 		this.nomineePanNo = nomineePanNo;
 	}
+
 	public String getNomineeKycType() {
 		return nomineeKycType;
 	}
+
 	public void setNomineeKycType(String nomineeKycType) {
 		this.nomineeKycType = nomineeKycType;
 	}
+
 	public String getMemberJoiningFess() {
 		return memberJoiningFess;
 	}
+
 	public void setMemberJoiningFess(String memberJoiningFess) {
 		this.memberJoiningFess = memberJoiningFess;
 	}
+
 	public String getShareAllotedfrm() {
 		return shareAllotedfrm;
 	}
+
 	public void setShareAllotedfrm(String shareAllotedfrm) {
 		this.shareAllotedfrm = shareAllotedfrm;
 	}
+
 	public String getNoOfShared() {
 		return noOfShared;
 	}
+
 	public void setNoOfShared(String noOfShared) {
 		this.noOfShared = noOfShared;
 	}
+
 	public String getEnterShareAmount() {
 		return enterShareAmount;
 	}
+
 	public void setEnterShareAmount(String enterShareAmount) {
 		this.enterShareAmount = enterShareAmount;
 	}
+
 	public String getPaymode() {
 		return paymode;
 	}
+
 	public void setPaymode(String paymode) {
 		this.paymode = paymode;
 	}
+
 	public String getRemarks() {
 		return remarks;
 	}
+
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+
 	public String getMemberStatusIsActive() {
 		return memberStatusIsActive;
 	}
+
 	public void setMemberStatusIsActive(String memberStatusIsActive) {
 		this.memberStatusIsActive = memberStatusIsActive;
 	}
+
 	public String getChkmobile() {
 		return chkmobile;
 	}
+
 	public void setChkmobile(String chkmobile) {
 		this.chkmobile = chkmobile;
 	}
+
 	public String getChknetBanking() {
 		return chknetBanking;
 	}
+
 	public void setChknetBanking(String chknetBanking) {
 		this.chknetBanking = chknetBanking;
 	}
+
 	public String getChkisSms() {
 		return chkisSms;
 	}
+
 	public void setChkisSms(String chkisSms) {
 		this.chkisSms = chkisSms;
 	}
+
 	public String getChkMinor() {
 		return chkMinor;
 	}
+
 	public void setChkMinor(String chkMinor) {
 		this.chkMinor = chkMinor;
 	}
+
 	public String getRationNo() {
 		return rationNo;
 	}
+
 	public void setRationNo(String rationNo) {
 		this.rationNo = rationNo;
 	}
+
 	public String getdLNo() {
 		return dLNo;
 	}
+
 	public void setdLNo(String dLNo) {
 		this.dLNo = dLNo;
 	}
+
 	public String getBankName() {
 		return bankName;
 	}
+
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
 	}
+
 	public String getBankBranch() {
 		return bankBranch;
 	}
+
 	public void setBankBranch(String bankBranch) {
 		this.bankBranch = bankBranch;
 	}
+
 	public String getBankCode() {
 		return bankCode;
 	}
+
 	public void setBankCode(String bankCode) {
 		this.bankCode = bankCode;
 	}
+
 	public String getAccountNo() {
 		return accountNo;
 	}
+
 	public void setAccountNo(String accountNo) {
 		this.accountNo = accountNo;
 	}
+
 	public String getiFSC() {
 		return iFSC;
 	}
+
 	public void setiFSC(String iFSC) {
 		this.iFSC = iFSC;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public String getSharebalance() {
 		return sharebalance;
 	}
+
 	public void setSharebalance(String sharebalance) {
 		this.sharebalance = sharebalance;
 	}
+
 	public String getCertificateNo() {
 		return certificateNo;
 	}
+
 	public void setCertificateNo(String certificateNo) {
 		this.certificateNo = certificateNo;
 	}
+
 	public String getTransferDate() {
 		return transferDate;
 	}
+
 	public void setTransferDate(String transferDate) {
 		this.transferDate = transferDate;
 	}
+
 	public String getTransferAmount() {
 		return transferAmount;
 	}
+
 	public void setTransferAmount(String transferAmount) {
 		this.transferAmount = transferAmount;
 	}
+
 	public String getfDate() {
 		return fDate;
 	}
+
 	public void setfDate(String fDate) {
 		this.fDate = fDate;
 	}
+
 	public String gettDate() {
 		return tDate;
 	}
+
 	public void settDate(String tDate) {
 		this.tDate = tDate;
 	}
+
 	public String getTxnid() {
 		return txnid;
 	}
+
 	public void setTxnid(String txnid) {
 		this.txnid = txnid;
 	}
+
 	public String getIssuefrom() {
 		return issuefrom;
 	}
+
 	public void setIssuefrom(String issuefrom) {
 		this.issuefrom = issuefrom;
 	}
+
 	public String getFolioNo() {
 		return folioNo;
 	}
+
 	public void setFolioNo(String folioNo) {
 		this.folioNo = folioNo;
 	}
+
 	public String getSelectByCode() {
 		return selectByCode;
 	}
+
 	public void setSelectByCode(String selectByCode) {
 		this.selectByCode = selectByCode;
 	}
+
 	public String getFlag() {
 		return flag;
 	}
+
 	public void setFlag(String flag) {
 		this.flag = flag;
 	}
+
 	public String getImgName() {
 		return imgName;
 	}
+
 	public void setImgName(String imgName) {
 		this.imgName = imgName;
 	}
+
 	public String getChkNo() {
 		return chkNo;
 	}
+
 	public void setChkNo(String chkNo) {
 		this.chkNo = chkNo;
 	}
+
 	public String getChkDate() {
 		return chkDate;
 	}
+
 	public void setChkDate(String chkDate) {
 		this.chkDate = chkDate;
 	}
+
 	public String getDepositAcc() {
 		return depositAcc;
 	}
+
 	public void setDepositAcc(String depositAcc) {
 		this.depositAcc = depositAcc;
 	}
-	
+
 	public String getIntroMCode() {
 		return introMCode;
 	}
+
 	public void setIntroMCode(String introMCode) {
 		this.introMCode = introMCode;
 	}
+
 	public String getIntroMName() {
 		return introMName;
 	}
+
 	public void setIntroMName(String introMName) {
 		this.introMName = introMName;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 	public String getCreatedDt() {
 		return createdDt;
 	}
+
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
+
 	public byte[] getSignature() {
 		return signature;
 	}
+
 	public void setSignature(byte[] signature) {
 		this.signature = signature;
 	}
+
 	public String getTaluka() {
 		return taluka;
 	}
+
 	public void setTaluka(String taluka) {
 		this.taluka = taluka;
 	}
+
 	public String getVillage() {
 		return village;
 	}
+
 	public void setVillage(String village) {
 		this.village = village;
 	}
+
 	public String getFrontEndSignature() {
 		return frontEndSignature;
 	}
+
 	public void setFrontEndSignature(String frontEndSignature) {
 		this.frontEndSignature = frontEndSignature;
 	}
+
 	public long getClientId() {
 		return clientId;
 	}
+
 	@Override
 	public String toString() {
 		return "ClientMaster [id=" + id + ", clientNo=" + clientNo + ", verifyWithAadhar=" + verifyWithAadhar

@@ -108,5 +108,5 @@ public class IncentiveMaster {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }

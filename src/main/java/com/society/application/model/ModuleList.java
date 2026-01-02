@@ -7,11 +7,11 @@ import javax.persistence.Id;
 
 @Entity
 public class ModuleList {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String name;
 
 	public int getId() {
@@ -29,7 +29,5 @@ public class ModuleList {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
 }

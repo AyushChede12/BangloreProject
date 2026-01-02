@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.PurityMaster;
 
 @Repository
-public interface PurityMasterRepo extends JpaRepository<PurityMaster, Integer>{
+public interface PurityMasterRepo extends JpaRepository<PurityMaster, Integer> {
 
 }

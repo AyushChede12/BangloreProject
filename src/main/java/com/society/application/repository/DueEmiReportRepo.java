@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.DueEmiReport;
 
 @Repository
-public interface DueEmiReportRepo extends JpaRepository<DueEmiReport, Integer>
-{
+public interface DueEmiReportRepo extends JpaRepository<DueEmiReport, Integer> {
 
 	List<DueEmiReport> findBybranch(String b_ranch);
 

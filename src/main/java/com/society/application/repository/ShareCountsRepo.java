@@ -15,8 +15,7 @@ import com.society.application.model.ShareCounts;
 @Repository
 public interface ShareCountsRepo extends JpaRepository<ShareCounts, Integer> {
 
-    List<ShareCounts> findByShare(String shareSerialNo);
-    
+	List<ShareCounts> findByShare(String shareSerialNo);
+
 	List<ShareCounts> findByStatusNotOrStatusIsNull(String status);
 }
- 

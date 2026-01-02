@@ -11,7 +11,7 @@ public class Position {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String name;
 
 	public int getId() {
@@ -29,6 +29,5 @@ public class Position {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
 }

@@ -174,5 +174,5 @@ public class UserMaster {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }

@@ -7,13 +7,13 @@ import javax.persistence.Id;
 
 @Entity
 public class WalletMaster {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String impsBal;
-	
+
 	private String neftBal;
 
 	public int getId() {
@@ -39,7 +39,5 @@ public class WalletMaster {
 	public void setNeftBal(String neftBal) {
 		this.neftBal = neftBal;
 	}
-	
-	
 
 }

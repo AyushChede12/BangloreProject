@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.receiveVoucher;
 
 @Repository
-public interface accountSectionRepo extends JpaRepository<receiveVoucher, Integer>  {
+public interface accountSectionRepo extends JpaRepository<receiveVoucher, Integer> {
 
 	List<receiveVoucher> findByselectBranch(String selectBranch);
 

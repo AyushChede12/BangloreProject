@@ -126,10 +126,10 @@ public class AccountSectionController {
 
 	@Autowired
 	JournalEntryRepo journalEntryRepo;
-	
+
 	@Autowired
 	BankMasterRepo bankMasterRepo;
-	
+
 	@Autowired
 	AddInvestmentRepo addInvestmentRepo;
 
@@ -141,9 +141,10 @@ public class AccountSectionController {
 	}
 
 	@PostMapping("accountLegMaster1")
-	public String getAccountLegMaster(@ModelAttribute("accountlegmodelattribute") AccountLegMaster alm, Model model,HttpSession session) {
+	public String getAccountLegMaster(@ModelAttribute("accountlegmodelattribute") AccountLegMaster alm, Model model,
+			HttpSession session) {
 		if (alm.getLedgername() != null && alm.getSelectgroup() != null) {
-			String createdBy= (session.getAttribute("ID").toString());
+			String createdBy = (session.getAttribute("ID").toString());
 			alm.setCreatedBy(createdBy);
 			accountLegMasterRepo.save(alm);
 			model.addAttribute("msg", "Record Saved");
@@ -171,12 +172,12 @@ public class AccountSectionController {
 
 	@PostMapping("/incentivepayments")
 	@ResponseBody
-	public List<IncentivePayment> getIncentivePaymentSearch(@RequestBody IncentivePayment model){
+	public List<IncentivePayment> getIncentivePaymentSearch(@RequestBody IncentivePayment model) {
 		List<IncentivePayment> list1 = incentivePaymentRepo.findBymonthname(model.getMonthname());
 		List<IncentivePayment> list2 = incentivePaymentRepo.findBycode(model.getCode());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
 
@@ -189,12 +190,12 @@ public class AccountSectionController {
 
 	@PostMapping("/cashbook1654")
 	@ResponseBody
-	public List<CashStatement> getCashBookSearch(@RequestBody CashStatement model1){
+	public List<CashStatement> getCashBookSearch(@RequestBody CashStatement model1) {
 		List<CashStatement> list1 = csrepo.findByselectBranch(model1.getSelectBranch());
 		List<CashStatement> list2 = csrepo.findBytxnDateBetween(model1.getFromDate(), model1.getToDate());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
 
@@ -236,23 +237,23 @@ public class AccountSectionController {
 
 	@GetMapping("/findAllBranchCashTransfer")
 	@ResponseBody
-	public List<BranchMaster> findAllBranchCashTransfer(){
+	public List<BranchMaster> findAllBranchCashTransfer() {
 		List<BranchMaster> list = branchmasterrepo.findAll();
 		return list;
 	}
-	
+
 	@GetMapping("/branchCashTransferUpdate")
 	@ResponseBody
 	public String updateBranchCashTransfer(HttpServletRequest request, HttpSession session, BranchMaster branch) {
 		String userId = session.getAttribute("ID").toString();
-	    String transferDate = request.getParameter("TransferDate");
-	    String fromBranch = request.getParameter("FromBranch");
-	    String toBranch = request.getParameter("ToBranch");
-	    String amount = request.getParameter("Amount");
-	    branch.setCreatedBy(userId);
-	    branchmasterrepo.updateByFromBranchAndToBranch(amount, transferDate, fromBranch, toBranch, userId);
-	    session.setAttribute("userId", userId);
-	    return "Data updated successfully";
+		String transferDate = request.getParameter("TransferDate");
+		String fromBranch = request.getParameter("FromBranch");
+		String toBranch = request.getParameter("ToBranch");
+		String amount = request.getParameter("Amount");
+		branch.setCreatedBy(userId);
+		branchmasterrepo.updateByFromBranchAndToBranch(amount, transferDate, fromBranch, toBranch, userId);
+		session.setAttribute("userId", userId);
+		return "Data updated successfully";
 	}
 
 	/* PAYMENT ENTRY */
@@ -282,54 +283,53 @@ public class AccountSectionController {
 		}
 		return null;
 	}
-	
+
 	@GetMapping("/ledgerMaster")
 	@ResponseBody
-	public List<AccountLegMaster> ledgerMaster(){
+	public List<AccountLegMaster> ledgerMaster() {
 		List<AccountLegMaster> list = accountLegMasterRepo.findAll();
 		return list;
 	}
-	
+
 	@GetMapping("/accountNumber")
 	@ResponseBody
-	public List<BankMaster> accountNumber(){
+	public List<BankMaster> accountNumber() {
 		List<BankMaster> list = bankMasterRepo.findAll();
 		return list;
 	}
 
 	@PostMapping("/paymentEntry")
-	public String savePaymentEntry(HttpServletRequest request, Model model,HttpSession session) {
-	    String status = "exception";
-	    String selectBranch = request.getParameter("selectbranch");
-	    String txndate = request.getParameter("txndate");
-	    String dtransfer = request.getParameter("dtransfer");
-	    String selectLedger = request.getParameter("selectledger");
-	    String amount = request.getParameter("amount");
-	    String narration = request.getParameter("narration");
-	    String reciept = request.getParameter("reciept");
+	public String savePaymentEntry(HttpServletRequest request, Model model, HttpSession session) {
+		String status = "exception";
+		String selectBranch = request.getParameter("selectbranch");
+		String txndate = request.getParameter("txndate");
+		String dtransfer = request.getParameter("dtransfer");
+		String selectLedger = request.getParameter("selectledger");
+		String amount = request.getParameter("amount");
+		String narration = request.getParameter("narration");
+		String reciept = request.getParameter("reciept");
 
-	    if (selectBranch != null && txndate != null && dtransfer != null
-	            && selectLedger != null && amount != null) {
-	        
-	        PaymentEntry2Modal payentry2 = new PaymentEntry2Modal();
-	        payentry2.setSelectbranch(selectBranch);
-	        payentry2.setTxndate(txndate);
-	        payentry2.setDtransfer(dtransfer);
-	        payentry2.setSelectledger(selectLedger);
-	        payentry2.setAmount(amount);
-	        payentry2.setNarration(narration);
-	        payentry2.setReciept(reciept);
-	        String createdBy= (session.getAttribute("ID").toString());
-	        payentry2.setCreatedBy(createdBy);
-	        PaymentEntry2Modal payentry = payentryrepo.save(payentry2);
-	        if (payentry != null) {
-	            status = "Data saved successfully";
-	        }
-	        model.addAttribute("status", status);
-	    } else {
-	        System.out.println("Data not saved");
-	    }
-	    return "accountSection/PaymentEntry";
+		if (selectBranch != null && txndate != null && dtransfer != null && selectLedger != null && amount != null) {
+
+			PaymentEntry2Modal payentry2 = new PaymentEntry2Modal();
+			payentry2.setSelectbranch(selectBranch);
+			payentry2.setTxndate(txndate);
+			payentry2.setDtransfer(dtransfer);
+			payentry2.setSelectledger(selectLedger);
+			payentry2.setAmount(amount);
+			payentry2.setNarration(narration);
+			payentry2.setReciept(reciept);
+			String createdBy = (session.getAttribute("ID").toString());
+			payentry2.setCreatedBy(createdBy);
+			PaymentEntry2Modal payentry = payentryrepo.save(payentry2);
+			if (payentry != null) {
+				status = "Data saved successfully";
+			}
+			model.addAttribute("status", status);
+		} else {
+			System.out.println("Data not saved");
+		}
+		return "accountSection/PaymentEntry";
 	}
 
 	/* CONTRA ENTRY */
@@ -341,18 +341,20 @@ public class AccountSectionController {
 
 	@PostMapping("/getAllRecord")
 	@ResponseBody
-	public List<ContraEntry> getAllContraEntry(@RequestBody ContraEntry contraEntry){
+	public List<ContraEntry> getAllContraEntry(@RequestBody ContraEntry contraEntry) {
 		List<ContraEntry> list = contraEntryRepo.findByselectbranch(contraEntry.getSelectbranch());
-		List<ContraEntry> list1 = contraEntryRepo.findBytxndateBetween(contraEntry.getFromdate(), contraEntry.getTodate());
-		if(!list.isEmpty()) {
+		List<ContraEntry> list1 = contraEntryRepo.findBytxndateBetween(contraEntry.getFromdate(),
+				contraEntry.getTodate());
+		if (!list.isEmpty()) {
 			return list;
-		}else
+		} else
 			return list1;
 	}
 
 	@PostMapping("/contraEntry1")
-	public String getContraEntry(@ModelAttribute("ContramodelAttribute") ContraEntry contraEntry, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String getContraEntry(@ModelAttribute("ContramodelAttribute") ContraEntry contraEntry, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		contraEntry.setCreatedBy(createdBy);
 		contraEntryRepo.save(contraEntry);
 		return "accountSection/ContraEntry";
@@ -367,35 +369,36 @@ public class AccountSectionController {
 
 	@PostMapping("/mandateDeposit1")
 	public String getMandateDeposit(@ModelAttribute("MandateDepositToBank") MandateDepositToBank mandateDepBank,
-			Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+			Model model, HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		mandateDepBank.setCreatedBy(createdBy);
 		mandateDepositRepo.save(mandateDepBank);
 		return "accountSection/MandateDepositToBank";
 	}
-	
+
 	@PostMapping("/getAllRecords85")
 	@ResponseBody
 	public List<MandateDepositToBank> getAllMandateRecord(@RequestBody MandateDepositToBank model) {
-		List<MandateDepositToBank> data1 = mandateDepositRepo.findByfddateBetween(model.getFromdate(), model.getTodate());
+		List<MandateDepositToBank> data1 = mandateDepositRepo.findByfddateBetween(model.getFromdate(),
+				model.getTodate());
 		return data1;
 	}
-	
+
 	/* JOURNAL REPORT */
 
 	@GetMapping("/journalReport")
 	public String getJournalReport() {
 		return "accountSection/JournalReport";
 	}
-	
+
 	@PostMapping("/journalReport145")
 	@ResponseBody
-	public List<JournalReport> getjournalReport(@RequestBody JournalReport model){
+	public List<JournalReport> getjournalReport(@RequestBody JournalReport model) {
 		List<JournalReport> list = journalReportRepo.findByselectbranch(model.getSelectbranch());
 		List<JournalReport> list1 = journalReportRepo.findBydateBetween(model.getFromdate(), model.getTodate());
-		if(!list.isEmpty()) {
+		if (!list.isEmpty()) {
 			return list;
-		}else 
+		} else
 			return list1;
 	}
 
@@ -409,19 +412,19 @@ public class AccountSectionController {
 	@GetMapping("/Balancesheet928")
 	@ResponseBody
 	public List<BalanceSheetDatewise> getgetBalancesheet1(HttpServletRequest request) {
-	    String branch = request.getParameter("Branch");
-	    List<BalanceSheetDatewise> list1 = balanceSheetDatewiseRepo.findByselectbranch(branch);
+		String branch = request.getParameter("Branch");
+		List<BalanceSheetDatewise> list1 = balanceSheetDatewiseRepo.findByselectbranch(branch);
 
-	    String fromdate = request.getParameter("Fromdate");
-	    String todate = request.getParameter("Todate");
+		String fromdate = request.getParameter("Fromdate");
+		String todate = request.getParameter("Todate");
 
-	    List<BalanceSheetDatewise> list2 = balanceSheetDatewiseRepo.findBydateBetween(fromdate, todate);
+		List<BalanceSheetDatewise> list2 = balanceSheetDatewiseRepo.findBydateBetween(fromdate, todate);
 
-	    if (!list1.isEmpty()) {
-	        return list1;
-	    } else {
-	        return list2;
-	    }
+		if (!list1.isEmpty()) {
+			return list1;
+		} else {
+			return list2;
+		}
 	}
 
 	/* BANK STATEMENT */
@@ -446,8 +449,7 @@ public class AccountSectionController {
 
 		if (!list1.isEmpty()) {
 			return list1;
-		}
-		else
+		} else
 			return list2;
 	}
 
@@ -457,15 +459,15 @@ public class AccountSectionController {
 	public String getLedgerReport() {
 		return "accountSection/LedgerReport";
 	}
-	
+
 	@PostMapping("/getAllLedgerReport34")
 	@ResponseBody
-	public List<LedgerReport> getAllLedgerReport(@RequestBody LedgerReport ledReport){
+	public List<LedgerReport> getAllLedgerReport(@RequestBody LedgerReport ledReport) {
 		List<LedgerReport> list1 = ledgerReportRepo.findByselectledger(ledReport.getSelectledger());
 		List<LedgerReport> list2 = ledgerReportRepo.findBydateBetween(ledReport.getFromdate(), ledReport.getTodate());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
 
@@ -484,28 +486,28 @@ public class AccountSectionController {
 
 	@PostMapping("/enterPolicyNumber")
 	@ResponseBody
-	public List<AddInvestment> enterPolicyNumber(@RequestBody AddInvestment model){
+	public List<AddInvestment> enterPolicyNumber(@RequestBody AddInvestment model) {
 		List<AddInvestment> list = addInvestmentRepo.findBypolicyno(model.getPolicyno());
 		return list;
 	}
-	
+
 	/* TRANSFER BOOK */
 
 	@GetMapping("/transferBook")
 	public String getTransferBook() {
 		return "accountSection/TransferBookPage";
 	}
-	
+
 	@PostMapping("/fetchAllData")
 	@ResponseBody
 	public List<TransferBookModel> showListofuser(@RequestBody TransferBookModel tbm) {
-	    List<TransferBookModel> tbMode = transferrepo.findBybranchname(tbm.getSelectbraanch());
-	    List<TransferBookModel> tbModeldate = transferrepo.findBytxndateBetween(tbm.getFromdate(), tbm.getTodate());
-	    if (!tbMode.isEmpty()) {
-	        return tbMode;
-	    } else {
-	        return tbModeldate;
-	    }
+		List<TransferBookModel> tbMode = transferrepo.findBybranchname(tbm.getSelectbraanch());
+		List<TransferBookModel> tbModeldate = transferrepo.findBytxndateBetween(tbm.getFromdate(), tbm.getTodate());
+		if (!tbMode.isEmpty()) {
+			return tbMode;
+		} else {
+			return tbModeldate;
+		}
 	}
 
 	/* RECEIVE ENTRY */
@@ -533,40 +535,40 @@ public class AccountSectionController {
 		}
 		return rvDate;
 	}
-	
-	@PostMapping("/addrecievceVoucherdata")
-	public String addMember(HttpServletRequest request, Model model,HttpSession session) {
-	    String status = "error";
-	    String selectBranch = request.getParameter("selectBranch");
-	    String txnDate = request.getParameter("txnDate");
-	    String directTransfer = request.getParameter("directTransfer");
-	    String selectLedger = request.getParameter("selectLedger");
-	    String amount = request.getParameter("amount");
-	    String narration = request.getParameter("narration");
-	    String receiptNo = request.getParameter("receiptNo");
 
-	    if (selectBranch != null && txnDate != null && directTransfer != null
-	            && selectLedger != null && amount != null) {
-	    	
-	    	receiveVoucher receive = new receiveVoucher();
-	    	receive.setSelectBranch(selectBranch);
-	    	receive.setTxnDate(txnDate);
-	    	receive.setDirectTransfer(directTransfer);
-	    	receive.setSelectLedger(selectLedger);
-	    	receive.setAmount(amount);
-	    	receive.setNarration(narration);
-	    	String createdBy= (session.getAttribute("ID").toString());
-	    	receive.setCreatedBy(createdBy);
-	    	
-	        receiveVoucher obj = accountrepo.save(receive);
-	        if (obj != null) {
-	            status = "Data saved successfully";
-	        }
-	        model.addAttribute("status", status);
-	    	} else {
-	    		System.out.println("Data not saved");
-	    	}
-	    	return "accountSection/PaymentEntry";
+	@PostMapping("/addrecievceVoucherdata")
+	public String addMember(HttpServletRequest request, Model model, HttpSession session) {
+		String status = "error";
+		String selectBranch = request.getParameter("selectBranch");
+		String txnDate = request.getParameter("txnDate");
+		String directTransfer = request.getParameter("directTransfer");
+		String selectLedger = request.getParameter("selectLedger");
+		String amount = request.getParameter("amount");
+		String narration = request.getParameter("narration");
+		String receiptNo = request.getParameter("receiptNo");
+
+		if (selectBranch != null && txnDate != null && directTransfer != null && selectLedger != null
+				&& amount != null) {
+
+			receiveVoucher receive = new receiveVoucher();
+			receive.setSelectBranch(selectBranch);
+			receive.setTxnDate(txnDate);
+			receive.setDirectTransfer(directTransfer);
+			receive.setSelectLedger(selectLedger);
+			receive.setAmount(amount);
+			receive.setNarration(narration);
+			String createdBy = (session.getAttribute("ID").toString());
+			receive.setCreatedBy(createdBy);
+
+			receiveVoucher obj = accountrepo.save(receive);
+			if (obj != null) {
+				status = "Data saved successfully";
+			}
+			model.addAttribute("status", status);
+		} else {
+			System.out.println("Data not saved");
+		}
+		return "accountSection/PaymentEntry";
 	}
 
 	/* CHEQUE CLEARING */
@@ -604,24 +606,24 @@ public class AccountSectionController {
 	@PostMapping("/searchDayBook")
 	@ResponseBody
 	public List<DayBookModel> searchDayBook(@RequestBody DayBookModel model) {
-	    List<DayBookModel> result = new ArrayList<>();
+		List<DayBookModel> result = new ArrayList<>();
 
-	    if (model.getSelectBranch() != null && !model.getSelectBranch().isEmpty()) {
-	        List<DayBookModel> list1 = dayBookRepo.findBySelectBranch(model.getSelectBranch());
-	        result.addAll(list1);
-	    }
-	    
-	    if (model.getSelectLedger() != null && !model.getSelectLedger().isEmpty()) {
-	        List<DayBookModel> list2 = dayBookRepo.findBySelectLedger(model.getSelectLedger());
-	        result.addAll(list2);
-	    }
-	    
-	    if (model.getfDate() != null && model.gettDate() != null) {
-	        List<DayBookModel> list3 = dayBookRepo.findByDateBetween(model.getfDate(), model.gettDate());
-	        result.addAll(list3);
-	    }
+		if (model.getSelectBranch() != null && !model.getSelectBranch().isEmpty()) {
+			List<DayBookModel> list1 = dayBookRepo.findBySelectBranch(model.getSelectBranch());
+			result.addAll(list1);
+		}
 
-	    return result;
+		if (model.getSelectLedger() != null && !model.getSelectLedger().isEmpty()) {
+			List<DayBookModel> list2 = dayBookRepo.findBySelectLedger(model.getSelectLedger());
+			result.addAll(list2);
+		}
+
+		if (model.getfDate() != null && model.gettDate() != null) {
+			List<DayBookModel> list3 = dayBookRepo.findByDateBetween(model.getfDate(), model.gettDate());
+			result.addAll(list3);
+		}
+
+		return result;
 	}
 
 	/* BALANCE SHEET (FY) */
@@ -630,18 +632,18 @@ public class AccountSectionController {
 	public String addFinancialBalanceSheet() {
 		return "accountSection/FinancialBalanceSheet";
 	}
-	
+
 	@PostMapping("/searchFirstButton85")
 	@ResponseBody
-	public List<BranchMaster> searchFirstButton(@RequestBody BranchMaster model){
+	public List<BranchMaster> searchFirstButton(@RequestBody BranchMaster model) {
 		List<BranchMaster> list1 = branchMater2REpo.findByname(model.getName());
 		List<BranchMaster> list2 = branchMater2REpo.findByopeningDateBetween(model.getFdate(), model.getTdate());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
-	
+
 	@GetMapping("/searchSecondButton87")
 	@ResponseBody
 	public List<BalanceSheetFY> searchSecondButton(HttpServletRequest hp) {
@@ -722,28 +724,29 @@ public class AccountSectionController {
 		model.addAttribute("rcptno", rcptno + 1);
 		return "accountSection/JournalEntry";
 	}
-	
+
 	@PostMapping("/journalEntry152")
-	public String getJournalEntry1(@ModelAttribute("JournalEntryModelAttribute") JournalEntry journal, Model model,HttpSession session) {
-    	String createdBy= (session.getAttribute("ID").toString());
-    	journal.setCreatedBy(createdBy);
+	public String getJournalEntry1(@ModelAttribute("JournalEntryModelAttribute") JournalEntry journal, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
+		journal.setCreatedBy(createdBy);
 		journalEntryRepo.save(journal);
 		return "accountSection/JournalEntry";
 	}
 
 	@PostMapping("/getAllRecord123")
 	@ResponseBody
-	public List<JournalEntry> getAllRecord123(@RequestBody JournalEntry model){
+	public List<JournalEntry> getAllRecord123(@RequestBody JournalEntry model) {
 		List<JournalEntry> list = journalEntryRepo.findByselectbranch(model.getSelectbranch());
 		List<JournalEntry> list2 = journalEntryRepo.findBytxndateBetween(model.getFromdate(), model.getTodate());
-		if(!list.isEmpty()) {
+		if (!list.isEmpty()) {
 			return list;
-		}else
+		} else
 			return list2;
 	}
-	
+
 	/* P&L STATEMENT */
-	
+
 	@GetMapping("/pandlstatement")
 	public String getPAndLStatement() {
 		return "accountSection/PandLStatement";

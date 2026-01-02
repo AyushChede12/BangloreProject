@@ -13,8 +13,8 @@ public interface HolidayMasterRepo extends JpaRepository<HolidayMaster, Integer>
 
 	List<HolidayMaster> findByDate(String date);
 
-	//Optional<HolidayMaster> findBydate(String date);
+	// Optional<HolidayMaster> findBydate(String date);
 
-	//List<HolidayMaster> findBydate(String date);
+	// List<HolidayMaster> findBydate(String date);
 
 }

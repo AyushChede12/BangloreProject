@@ -7,41 +7,41 @@ import javax.persistence.Id;
 
 @Entity
 public class ApprovedLoan {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String branch;
-	
+
 	private String fromdate;
-	
+
 	private String todate;
-	
+
 	private String slno;
-	
+
 	private String loanid;
-	
+
 	private String membercode;
-	 
+
 	private String membername;
-	
+
 	private String loandate;
-	 
+
 	private String loanname;
-	
+
 	private String loanamount;
-	
+
 	private String term;
-	
+
 	private String mode;
-	
+
 	private String roi;
-	
+
 	private String emi;
-	
+
 	private String approvaldate;
-	
+
 	private String approveuser;
 
 	public int getId() {

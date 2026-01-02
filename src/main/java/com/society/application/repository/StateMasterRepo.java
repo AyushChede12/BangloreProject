@@ -7,9 +7,9 @@ import com.society.application.model.BranchMaster;
 import com.society.application.model.StateMaster;
 
 @Repository
-public interface StateMasterRepo extends JpaRepository<StateMaster, Integer>{
+public interface StateMasterRepo extends JpaRepository<StateMaster, Integer> {
 
 	StateMaster findBystateName(String state);
-	//StateMaster findByname(String name);
+	// StateMaster findByname(String name);
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.ShareAllocationMaster;
 
 @Repository
-public interface ShareAllocationMasterRepo extends JpaRepository<ShareAllocationMaster, Integer>{
+public interface ShareAllocationMasterRepo extends JpaRepository<ShareAllocationMaster, Integer> {
 
 }

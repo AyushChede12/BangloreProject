@@ -13,19 +13,19 @@
 			</button>
 		</div>
 		<div class="collapse navbar-collapse pull-left" id="myNavbar">
-			<ul class="nav navbar-nav">
+			<!-- <ul class="nav navbar-nav">
 				<li><a class="b-1" href="dashboard">Home</a></li>
 				<li id="idconfig" class="dropdown"><a
 					class="dropdown-toggle b-1" data-toggle="dropdown" href="#"
 					aria-expanded="false">Configuration <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="CompanyDetails">Company Setting</a></li>
-						<!-- <li><a href="FYMater">Add FY Master</a></li> -->
+						<li><a href="FYMater">Add FY Master</a></li>
 						<li><a href="branchMaster">Bank Creation</a></li>
 						<ul class="sub-menu">
 							<li><a href="bankRegister" style="color: white">Bank Register</a></li>
 						</ul>
-						<!-- <li><a href="AddBankAccount">Bank Master</a></li> -->
+						<li><a href="AddBankAccount">Bank Master</a></li>
 						<li><a href="relativeMaster">Relative Master</a></li>
 						<li><a href="casteMaster">Caste Master</a></li>
 						<li><a href="categoryMaster">Category Master</a></li>
@@ -38,9 +38,9 @@
 							</ul></li>
 						<li><a href="">Accounting</a>
 							<ul class="sub-menu">
-								<!-- <li><a href="branchInterestCalculation"
+								<li><a href="branchInterestCalculation"
 									style="color: white">Branch Interest 
-									Calculation</a></li> -->
+									Calculation</a></li>
 								<li><a href="newGLHead" style="color: white">New GL
 										Head</a></li>
 								<li><a href="glHeadList" style="color: white">GL Head 
@@ -59,7 +59,7 @@
 						<li><a href="DirectorDetail">Add Director/Promoter</a></li>
 						<li><a href="UserCreate">User Creation</a></li>
 						<li><a href="UserMenuAccess">User Menu Access</a></li>
-						<!--<li><a href="UserActivityReport">User Activity Report</a></li>-->
+						<li><a href="UserActivityReport">User Activity Report</a></li>
 					</ul></li>
 				<li id="idLegal" class="dropdown"><a
 					class="dropdown-toggle b-1" data-toggle="dropdown" href="#"
@@ -74,15 +74,15 @@
 						<li><a href="savingsStatement">Savings Account Report</a></li>
 						<li><a href="loanSearch">Loan Report</a></li>
 					</ul></li>
-				<!-- <li id="idcollsheet"><a class="b-1" href="AllCollectionSheet.html">Collection Sheet</a></li> -->
-				<!-- <li id="idquickdep"><a class="b-1" href="QuickDeposit.html">Quick Deposit <span
-               class="label label-success">NEW</span></a></li> -->
-			</ul>
+				<li id="idcollsheet"><a class="b-1" href="AllCollectionSheet.html">Collection Sheet</a></li>
+				<li id="idquickdep"><a class="b-1" href="QuickDeposit.html">Quick Deposit <span
+               class="label label-success">NEW</span></a></li>
+			</ul> -->
 		</div>
 		<div class="navbar-custom-menu">
 			<ul class="nav navbar-nav p-1">
 				<!-- Messages: style can be found in dropdown.less-->
-				<li class="dropdown messages-menu"><a href="#"
+				<%-- <li class="dropdown messages-menu"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown"> <i
 						class="fa fa-envelope-o"></i> <span class="label label-success">3</span>
 				</a>
@@ -136,35 +136,26 @@
 								<li></li>
 							</ul>
 						</li>
-					</ul></li>
+					</ul></li> --%>
 				<!-- Notifications: style can be found in dropdown.less -->
 				<!-- User Account: style can be found in dropdown.less -->
 				<li class="dropdown user user-menu"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown"> <img
 						id="imgRightside" class="user-image" alt="User Image"
-						src="dist/img/User.png" /> <span class="hidden-xs">admin </span>
+						src="dist/img/User.png" />
 				</a>
 					<ul class="dropdown-menu">
 						<!-- User image -->
-						<li class="user-header"><img id="imgdrop" class="img-circle"
-							alt="User Image" src="dist/img/User.png" />
-							<p>
-								<%
-								String userName = (String) session.getAttribute("loggedInUserName");
-								String userType = (String) session.getAttribute("loggedInUserType");
-								%>
-								<%=userName%><br>
-								<%=userType%>
-							</p></li>
+						
 						<!-- Menu Body -->
 						<!-- Menu Footer-->
 						<li class="user-footer">
-							<!--  <div class="pull-left">
+							<!-- <div class="pull-left">
                         <a id="lnkChangeUserPhoto" class="btn btn-default btn-flat"
                             href="javascript:__doPostBack(&#39;ctl00$lnkChangeUserPhoto&#39;,&#39;&#39;)">Change
                             Password</a>
                         </div> -->
-							<div class="pull-right">
+							<div class="text-center">
 								<a id="lnklogout" class="btn btn-default btn-flat" href="logout">Logout</a>
 							</div>
 						</li>

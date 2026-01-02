@@ -68,7 +68,7 @@ public class GroupLoanController {
 
 	@Autowired
 	LoanPlanRepo loanPlanRepo;
-	
+
 	@Autowired
 	ClientMasterRepo clientMasterRepo;
 
@@ -79,7 +79,7 @@ public class GroupLoanController {
 
 	@GetMapping("/LoanGroupMaster")
 	public String LoanGroupMaster(Model model) {
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -108,8 +108,9 @@ public class GroupLoanController {
 	}
 
 	@PostMapping("/closeLoanRegularEMIRepaymentGroup")
-	public String closeLoanRegularEMIRepaymentGroup(@ModelAttribute("updateLoan") Loan loan, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String closeLoanRegularEMIRepaymentGroup(@ModelAttribute("updateLoan") Loan loan, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		loan.setCreatedBy(createdBy);
 		Loan loan1 = loanRepo.findByid(loan.getId());
 		loan1.setCloseLoan("close");
@@ -124,9 +125,11 @@ public class GroupLoanController {
 		model.addAttribute("branchList", branchData);
 		return "group_loan/GroupLoanApprovalf780";
 	}
+
 	@PostMapping("/GroupPayment")
-	public String saveGroupPayment(@ModelAttribute("GroupPayment") GroupMaster groupMaster, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String saveGroupPayment(@ModelAttribute("GroupPayment") GroupMaster groupMaster, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		groupMaster.setCreatedBy(createdBy);
 		groupMaster.setCreatedDate(new Date().toString());
 		groupMaster.setUpdatedBy("");
@@ -137,14 +140,14 @@ public class GroupLoanController {
 		model.addAttribute("branchList", branchData);
 		List<Employee> employeeList = employeeRepo.findAll();
 		model.addAttribute("employeeList", employeeList);
-		GroupMaster savedsaveGroupMaster=groupMasterRepo.save(groupMaster);
+		GroupMaster savedsaveGroupMaster = groupMasterRepo.save(groupMaster);
 		if (savedsaveGroupMaster != null) {
 			model.addAttribute("status", "success");
 		}
 		model.addAttribute("status", "Fail");
 		return "group_loan/GroupLoanApprovalf780";
 	}
-	
+
 	@GetMapping("/LoanRepayment5c22")
 	public String LoanRepayment5c22(Model model) {
 		return "group_loan/LoanRepayment5c22";
@@ -209,9 +212,10 @@ public class GroupLoanController {
 	}
 
 	@PostMapping("/saveGroupMaster")
-	public String saveGroupMaster(@ModelAttribute("saveGroupMaster") GroupMaster groupMaster, Model model,HttpSession session) {
-		
-		String createdBy= (session.getAttribute("ID").toString());
+	public String saveGroupMaster(@ModelAttribute("saveGroupMaster") GroupMaster groupMaster, Model model,
+			HttpSession session) {
+
+		String createdBy = (session.getAttribute("ID").toString());
 		groupMaster.setCreatedBy(createdBy);
 		groupMaster.setCreatedDate(new Date().toString());
 		groupMaster.setUpdatedBy("");
@@ -232,9 +236,9 @@ public class GroupLoanController {
 
 	@PostMapping("/getGroupMasterById")
 	@ResponseBody
-	public List<GroupMaster> getGroupMasterById(@RequestBody GroupMaster id,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
-		List<GroupMaster> groupMaster = groupMasterRepo.findByidAndcreatedBy(id.getId(),createdBy);
+	public List<GroupMaster> getGroupMasterById(@RequestBody GroupMaster id, HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
+		List<GroupMaster> groupMaster = groupMasterRepo.findByidAndcreatedBy(id.getId(), createdBy);
 		return groupMaster;
 	}
 
@@ -247,8 +251,9 @@ public class GroupLoanController {
 
 	@PostMapping("/saveGroupMasterApplication")
 	public String saveGroupMasterApplication(
-			@ModelAttribute("saveGroupMasterApplication") GroupMasterApplication groupMasterApplication, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+			@ModelAttribute("saveGroupMasterApplication") GroupMasterApplication groupMasterApplication, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		groupMasterApplication.setCreatedBy(createdBy);
 		groupMasterApplication.setCreatedDate(new Date().toString());
 		groupMasterApplication.setUpdatedBy("");
@@ -267,10 +272,11 @@ public class GroupLoanController {
 
 	@PostMapping("/approveGroupMasterApplication")
 	public String approveGroupMasterApplication(
-			@ModelAttribute("saveGroupMasterApplication") GroupMasterApplication groupMasterApplication, Model model,HttpSession session) {
-		
-		String createdBy= (session.getAttribute("ID").toString());
-		GroupMasterApplication savedgroupMasterApplication =new GroupMasterApplication();
+			@ModelAttribute("saveGroupMasterApplication") GroupMasterApplication groupMasterApplication, Model model,
+			HttpSession session) {
+
+		String createdBy = (session.getAttribute("ID").toString());
+		GroupMasterApplication savedgroupMasterApplication = new GroupMasterApplication();
 		groupMasterApplication.setCreatedBy(createdBy);
 		groupMasterApplication.setCreatedDate(new Date().toString());
 		groupMasterApplication.setUpdatedBy("");
@@ -280,9 +286,9 @@ public class GroupLoanController {
 		List<GroupMaster> allGroupMaster = groupMasterRepo.findAll();
 		model.addAttribute("allGroupMaster", allGroupMaster);
 		// System.err.println(groupMasterApplication);
-	
+
 		if (savedgroupMasterApplication != null) {
-			 groupMasterApplicationRepo.save(groupMasterApplication);
+			groupMasterApplicationRepo.save(groupMasterApplication);
 			model.addAttribute("status", "success");
 		}
 		model.addAttribute("status", "Fail");
@@ -296,12 +302,11 @@ public class GroupLoanController {
 			@RequestParam(name = "emiAmount1", required = false) String emiAmount1,
 			@RequestParam(name = "loanAmount1", required = false) String loanAmount1,
 			@RequestParam(name = "advisorCode", required = false) String advisorCode,
-			@RequestParam(name = "advisorName", required = false) String advisorName,
-			HttpSession session) {
+			@RequestParam(name = "advisorName", required = false) String advisorName, HttpSession session) {
 		try {
 			List<LoanMaster> lm = loanMasterRepo.findByid(id);
 			lm.forEach(s -> {
-				String createdBy=session.getAttribute("ID").toString();
+				String createdBy = session.getAttribute("ID").toString();
 				s.setCreatedBy(createdBy);
 				s.setBranchName(branchName);
 				s.setEmiAmount(emiAmount1);
@@ -420,14 +425,14 @@ public class GroupLoanController {
 		List<GroupMaster> allGroupMasters = groupMasterRepo.findByplaneName(obj.getPlaneName());
 		return allGroupMasters;
 	}
-	
+
 	// Group Loan Search
 	@GetMapping("/getAllLoanName")
 	@ResponseBody
 	public List<LoanMaster> getAllLoanName() {
 		return loanMasterRepo.findAll();
 	}
-	
+
 	// Group Loan Search
 	// Search By Plan Name
 	@PostMapping("/getGroupMasterByPlanName")

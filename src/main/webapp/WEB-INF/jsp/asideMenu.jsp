@@ -5,59 +5,538 @@
 		<!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="txt">
-				<% 
-            	String userCompanyName = (String) session.getAttribute("userCompanyName");
-           		 %>
-				<%=userCompanyName %>
+				<%
+				String userCompanyName = (String) session.getAttribute("userCompanyName");
+				%>
+				<%=userCompanyName%>
 			</div>
 		</div>
 		<ul class="sidebar-menu tree" data-widget="tree">
 			<li class="active"><a href="dashboard"> <img
-					src="dist/img/icon/ico-1.png" style="margin-right: 5px;" /> <span>Dashboard</span>
+					src="dist/img/icon/ico-1.png" style="margin-right: 5px;" /> <span>DASHBOARD</span>
 			</a></li>
-			<% List<String> serviceList= (List<String>)session.getAttribute("user");  %>
-			<li class="treeview">
-				<%if(serviceList!=null && serviceList.contains("Add Member")
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>CUSTOMIZATION</span>
+					<span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							COMPANY MANAGE</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							FINANCIAL YEAR</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							ADD BRANCH</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							MANAGE BANK</a></li>
+					<li><a href="talukaMaster"><i class="fa fa-circle-o"></i>
+							ADD TALUKA</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							ADD RELATIVES</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							CATEGORY/CASTE</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							CODE MODULE</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							EXECUTIVE/FOUNDER</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							USER CREATION</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							USER MENU ACCESS</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>CUSTOMER
+						MODULE</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="newCustomer"><i class="fa fa-circle-o"></i>
+							New Customer</a></li>
+					<li><a href="customerKyc"><i class="fa fa-circle-o"></i>
+							Customer KYC</a></li>
+					<li><a href="memberAllDetails"><i class="fa fa-circle-o"></i>
+							View Summary</a></li>
+					<li><a href="memberDetailRptt"><i class="fa fa-circle-o"></i>
+							Print Report</a></li>
+					<li><a href="searchMember"><i class="fa fa-circle-o"></i>
+							Find Customer</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+						SHARES</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="shareIssue"><i class="fa fa-circle-o"></i>
+							Transfer Shares</a></li>
+					<li><a href="unallotedShareReport"><i
+							class="fa fa-circle-o"></i> UNALLOTED SHARES</a></li>
+					<li><a href="shareCertificate"><i class="fa fa-circle-o"></i>
+							SHARE CERTIFICATE</a></li>
+					<li><a href="DNOGenerate"><i class="fa fa-circle-o"></i>
+							GENERATE DNO</a></li>
+
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>FINANCIAL/CONSULTANT
+				</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="addAdvisor"><i class="fa fa-circle-o"></i>
+							ADD NEW CONSULTANT </a></li>
+					<li><a href="advisorTree"><i class="fa fa-circle-o"></i>
+							FINANCIAL HIERARCHY</a></li>
+					<li><a href="advisorDownLine"><i class="fa fa-circle-o"></i>
+							VIEW DOWNLINE</a></li>
+					<li><a href="collectorPromotion"><i class="fa fa-circle-o"></i>
+							PROMOTION MANAGEMENT</a></li>
+					<li><a href="idCardPrinting"><i class="fa fa-circle-o"></i>
+							IDENTITY CARD</a></li>
+
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+						TEAM </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="DesignationMaster"><i class="fa fa-circle-o"></i>
+							MANAGE DESIGNATIONS </a></li>
+					<li><a href="DepartmentMaster"><i class="fa fa-circle-o"></i>
+							MANAGE DEPARTMENTS</a></li>
+					<li><a href="addEmployee"><i class="fa fa-circle-o"></i>
+							ADD NEW TEAM MEMBER</a></li>
+					<li><a href="EmployeeIDCardPrinting"><i
+							class="fa fa-circle-o"></i> IDENTITY CARD</a></li>
+					<li><a href="SearchEmployee"><i class="fa fa-circle-o"></i>
+							SEARCH TEAM MEMBER</a></li>
+
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+						ACCOUNTS </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							NEW LEDGER </a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							OUTGOING PAYMENT</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							INCOMING RECEIPT</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							BANK/CASH TRANSFER</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							MANUAL JOURNAL</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							INCENTIVE PAYMENT </a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							MIS INTEREST PAYMENT</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							CHEQUE CLEARING PROCESSING</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							MANDATE DEPOSIT TO BANK</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							BANK STATEMENT</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							CASH BOOK </a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							FUNDS TRANSFER REGISTER</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							DAILY TRANSACTION BOOK</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							LEDGER SUMMARY REPORT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							JOURNAL ENTRY REPORT</a></li>
+
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>SAVING
+						OPENING </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="savingsPlanMaster"><i class="fa fa-circle-o"></i>
+							SAVING SCHEME CATALOG </a></li>
+					<li><a href="addSaving"><i class="fa fa-circle-o"></i>
+							CREATE S/C ACCOUNT</a></li>
+					<li><a href="savingsTransactionEntry"><i
+							class="fa fa-circle-o"></i> SAVING ACCOUNT ACTIVITY</a></li>
+					<!-- <li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							SAVING ACCOUNT FUND TRANSFER</a></li> -->
+					<li><a href="sBInterestGenerate"><i class="fa fa-circle-o"></i>
+							SAVING ACCOUNT INTEREST TRANSFER</a></li>
+					<li><a href="sBPassbookPrint"><i class="fa fa-circle-o"></i>
+							SAVING RECORD BOOK </a></li>
+					<li><a href="savingsStatement"><i class="fa fa-circle-o"></i>
+							SAVING STATEMENT</a></li>
+					<li><a href="accountCloser"><i class="fa fa-circle-o"></i>
+							SAVING ACCOUNT CLOSER</a></li>
+					<li><a href="searchSavingsAccount"><i
+							class="fa fa-circle-o"></i> SAVING ACCOUNT ENQUIRY</a></li>
+					<li><a href="sMSChargesDeduction"><i
+							class="fa fa-circle-o"></i> SMS SERVICE FEE</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+						POLICY </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="planMaster"><i class="fa fa-circle-o"></i>
+							CREATE NEW PLAN </a></li>
+					<li><a href="addInvestment"><i class="fa fa-circle-o"></i>
+							ADD NEW POLICY</a></li>
+					<li><a href="rDRenewal"><i class="fa fa-circle-o"></i>
+							POLICY RENEWAL FEE</a></li>
+					<li><a href="dailyRenewalPayment"><i
+							class="fa fa-circle-o"></i> DAILY PREMIUM RENEWAL</a></li>
+					<li><a href="flexirenewal9828"><i class="fa fa-circle-o"></i>
+							FLEXIBLE PREMIUM RENEWAL</a></li>
+					<li><a href="renewalPassbook"><i class="fa fa-circle-o"></i>
+							INSTALLMENT RECORD BOOK </a></li>
+					<li><a href="policyRenewalReceiptf0be"><i
+							class="fa fa-circle-o"></i> INVESTMENT TRANSACTION SLIP</a></li>
+					<li><a href="policyRenewalReceiptb376"><i
+							class="fa fa-circle-o"></i> RECURRING PAYMENT RECEIPT</a></li>
+					<li><a href="certificateIssue"><i class="fa fa-circle-o"></i>
+							ISSUE CERTIFICATE</a></li>
+					<li><a href="investmentSearch"><i class="fa fa-circle-o"></i>
+							SEARCH POLICY</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>LOAN
+						ADMINISTRATION </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="LoanPlan"><i class="fa fa-circle-o"></i> LOAN
+							SCHEME CATALOG </a></li>
+					<li><a href="LoanCalculator"><i class="fa fa-circle-o"></i>
+							EMI CALCULATOR</a></li>
+					<li><a href="LoanApplication"><i class="fa fa-circle-o"></i>
+							NEW LOAN APPLICATION</a></li>
+					<li><a href="loanApplication9c5a"><i
+							class="fa fa-circle-o"></i> LOAN APPROVAL</a></li>
+					<li><a href="loanRepaymentf159"><i class="fa fa-circle-o"></i>
+							LOAN PAYMENT</a></li>
+					<li><a href="irregularEMIPaymentEntryf159"><i
+							class="fa fa-circle-o"></i> REGULAR INSTALLMENT PAYMENT </a></li>
+					<li><a href="irregularEMIPaymentEntryf159"><i
+							class="fa fa-circle-o"></i> IRREGULAR INSTALLMENT PAYMENT</a></li>
+					<li><a href="regularLoanStatementf159"><i
+							class="fa fa-circle-o"></i> REGULAR LOAN STATEMENT</a></li>
+					<li><a href="irregularLoanStatementf159"><i
+							class="fa fa-circle-o"></i> IRREGULAR LOAN STATEMENT</a></li>
+					<li><a href="regularLoanDocumentPrint"><i
+							class="fa fa-circle-o"></i> GENERATE LOAN DOCUMENTS</a></li>
+					<li><a href="closedLoanReportf159"><i
+							class="fa fa-circle-o"></i> EARLY LOAN CLOSER</a></li>
+					<li><a href="loanPreSettlementf159"><i
+							class="fa fa-circle-o"></i> SETTLED LOAN RECORDS</a></li>
+					<li><a href="loanNocf159"><i class="fa fa-circle-o"></i>
+							GENERATE NOC CERTIFICATE</a></li>
+					<li><a href="loanSearch+"><i class="fa fa-circle-o"></i>
+							SEARCH LOAN ACCOUNTS</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GOLD
+						OPERATIONS </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="LoanPlan"><i class="fa fa-circle-o"></i> GOLD
+							DIRECTORY </a></li>
+					<li><a href="goldLoanApplication7475"><i
+							class="fa fa-circle-o"></i> APPLY FOR GOLD</a></li>
+					<li><a href="goldLoanApplication9c5a"><i
+							class="fa fa-circle-o"></i> GOLD LOAN APPROVAL</a></li>
+					<li><a href="goldLoanApplicationf780"><i
+							class="fa fa-circle-o"></i> GOLD LOAN PAYMENT</a></li>
+					<li><a href="loanRepayment9d5e"><i class="fa fa-circle-o"></i>
+							EMI INSTALLMENT PAYMENT</a></li>
+					<li><a href="goldLoanDocumentPrint"><i
+							class="fa fa-circle-o"></i> GOLD LOAN DOCUMENT </a></li>
+					<li><a href="loanPreSettlement9d5e"><i
+							class="fa fa-circle-o"></i> GOLD LOAN STATEMENT</a></li>
+					<li><a href="closedLoanReport9d5e"><i
+							class="fa fa-circle-o"></i> GOLD LOAN CLOSURE</a></li>
+					<li><a href="loanNoc9d5e"><i class="fa fa-circle-o"></i>
+							GENERATE NOC CERTIFICATE</a></li>
+					<li><a href="goldLoanSearch"><i class="fa fa-circle-o"></i>
+							SEARCH GOLD LOAN</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GROUP
+						MANAGEMENT </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="LoanPlan"><i class="fa fa-circle-o"></i>
+							CREATE LENDING GROUP </a></li>
+					<li><a href="LoanGroupMaster"><i class="fa fa-circle-o"></i>
+							GROUP DIRECTORY</a></li>
+					<li><a href="GroupLoanApplication"><i
+							class="fa fa-circle-o"></i> APPLY FOR GROUP LOAN</a></li>
+					<li><a href="GroupLoanApproval9c5a"><i
+							class="fa fa-circle-o"></i> GROUP LOAN APPROVAL</a></li>
+					<li><a href="GroupLoanApprovalf780"><i
+							class="fa fa-circle-o"></i> GROUP LOAN PAYMENT</a></li>
+					<li><a href="LoanRepayment5c22"><i class="fa fa-circle-o"></i>
+							INSTALLMENT RE-PAYMENT </a></li>
+					<li><a href="RegularLoanStatement5c22"><i
+							class="fa fa-circle-o"></i> GENERATE STATEMENT</a></li>
+					<li><a href="ClosedLoanReportf159"><i
+							class="fa fa-circle-o"></i> EARLY LOAN CLOSURE</a></li>
+					<li><a href="LoanPreSettlement5c22"><i
+							class="fa fa-circle-o"></i> COMPLETED LOAN RECORD</a></li>
+					<li><a href="GroupLoanSearch"><i class="fa fa-circle-o"></i>
+							FIND GROUP RECORD</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>APPROVALS
+				</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="addMemberApproval"><i class="fa fa-circle-o"></i>
+							APPROVE CUSTOMER </a></li>
+					<li><a href="shareIssueApproval"><i class="fa fa-circle-o"></i>
+							APPROVE SHARE TRANSACTIONS</a></li>
+					<li><a href="advisorApproval"><i class="fa fa-circle-o"></i>
+							APPROVE CONSULTANT</a></li>
+					<li><a href="investmentApproval"><i class="fa fa-circle-o"></i>
+							APPROVE POLICY</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							APPROVE DD</a></li>
+					<li><a href="recurringApproval"><i class="fa fa-circle-o"></i>
+							APPROVE RD</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							APPROVE FD</a></li>
+					<li><a href="SBTxnApproval"><i class="fa fa-circle-o"></i>
+							APPROVE SAVING TRANSACTIONS</a></li>
+					<li><a href="intraTransferApproval"><i
+							class="fa fa-circle-o"></i> APPROVE SAVING ACCOUNT TRANSFERS</a></li>
+					<li><a href="regularEMIApproval"><i class="fa fa-circle-o"></i>
+							APPROVE REGULAR EMI PAYMENTS</a></li>
+					<li><a href="paymentEntryApproval"><i
+							class="fa fa-circle-o"></i> APPROVE MANUAL PAYMENT ENTRIES</a></li>
+					<li><a href="maturityApplicationApproval"><i
+							class="fa fa-circle-o"></i> APPROVE MATURITY APPLICATIONS</a></li>
+					<li><a href="CSPCashTransferApproval"><i
+							class="fa fa-circle-o"></i> APPROVE INTER-BRANCH CASH TRANSFER</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>Review
+						& Fix </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="getMemberRectification"><i
+							class="fa fa-circle-o"></i> CUSTOMER DATA UPDATE</a></li>
+					<li><a href="ShareRectification"><i class="fa fa-circle-o"></i>
+							SHAREHOLDING ADJUSTMENT</a></li>
+					<li><a href="advisorRectification"><i
+							class="fa fa-circle-o"></i> FINANCIAL ENTRY CORRECTION</a></li>
+					<li><a href="InvestmentRectification"><i
+							class="fa fa-circle-o"></i> POLICY DETAILS UPDATE</a></li>
+					<li><a href="renewalRectification"><i
+							class="fa fa-circle-o"></i> RENEWAL DATA CORRECTION</a></li>
+					<li><a href="DailyRenewalPaymentbbb6"><i
+							class="fa fa-circle-o"></i> DAILY RENEWAL UPDATE</a></li>
+					<li><a href="FlexiRenewalbbb6"><i class="fa fa-circle-o"></i>
+							FLEXIBLE TRANSACTION REMOVAL</a></li>
+					<li><a href="AddSavingbbb6"><i class="fa fa-circle-o"></i>
+							SAVING ACCOUNT CORRECTION</a></li>
+					<li><a href="SavingTransactionDelete"><i
+							class="fa fa-circle-o"></i> SAVING TRANSACTION REMOVAL</a></li>
+					<li><a href="loanRectification"><i class="fa fa-circle-o"></i>
+							LOAN ACCOUNT CORRECTION</a></li>
+					<li><a href="getGoldLoanRectification"><i class="fa fa-circle-o"></i>
+							GOLD LOAN CORRECTION</a></li>
+					<li><a href="GroupLoanRectification"><i class="fa fa-circle-o"></i>
+							JOINT LIABILITY UPDATE</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYOFF
+						SECTION </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="maturityMaster"><i class="fa fa-circle-o"></i>
+							MATURITY SCHEME MASTER</a></li>
+					<li><a href="addMaturityApplication"><i class="fa fa-circle-o"></i>
+							APPLY FOR MATURITY</a></li>
+					<li><a href="addMaturityPayment"><i class="fa fa-circle-o"></i>
+							MATURITY APPLICATION STATUS</a></li>
+					<li><a href="maturityPartPayment"><i class="fa fa-circle-o"></i>
+							FULL MATURITY PAYMENT</a></li>
+					<li><a href="MatApplicationStatus"><i class="fa fa-circle-o"></i>
+							FULL PAYMENT STATUS</a></li>
+					<li><a href="matPaymentStatusPartly"><i class="fa fa-circle-o"></i>
+							PARTIAL MATURITY PAYMENT</a></li>
+					<li><a href="MaturityTrackingView"><i class="fa fa-circle-o"></i>
+							PARTIAL PAYMENT STATUS</a></li>
+					<li><a href="approvedStatus"><i class="fa fa-circle-o"></i>
+							APPROVED STATUS</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>BONUS
+						MANAGEMENT </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="incentiveMaster"><i class="fa fa-circle-o"></i>
+							INCENTIVE SCHEME MASTER</a></li>
+					<li><a href="incentiveGeneration"><i class="fa fa-circle-o"></i>
+							GENERATE INCENTIVE PAYMENTS</a></li>
+					<li><a href="incentiveDetailsPrint"><i class="fa fa-circle-o"></i>
+							INCENTIVE PAYMENT DETAILS</a></li>
+					<li><a href="incentiveListPrint"><i class="fa fa-circle-o"></i>
+							INCENTIVE SUMMARY REPORT</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GENERATE
+						REPORT </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="InvestmentReport"><i class="fa fa-circle-o"></i>
+							POLICY REPORT</a></li>
+					<li><a href="addEmployeeCollection"><i class="fa fa-circle-o"></i>
+							FINANCIAL CONSULTANT REPORT</a></li>
+					<li><a href="Chequeclearancestatus"><i class="fa fa-circle-o"></i>
+							CHEQUE TRANSACTION REPORT</a></li>
+					<li><a href="IncentivePaymentReport"><i class="fa fa-circle-o"></i>
+							INCENTIVE PAYMENT SUMMARY</a></li>
+					<li><a href="RecurringDueReportView"><i class="fa fa-circle-o"></i>
+							RECURRING INSTALLMENT DUE REPORT</a></li>
+					<li><a href="approvedLoan"><i class="fa fa-circle-o"></i>
+							LOAN REPORT</a></li>
+					<li><a href="LoanPaymentReport"><i class="fa fa-circle-o"></i>
+							LOAN PAYMENT REPORT</a></li>
+					<li><a href="DueEmiReport"><i class="fa fa-circle-o"></i>
+							UPCOMING EMI DUE REPORT</a></li>
+					<li><a href="EMIOverDueReportView"><i class="fa fa-circle-o"></i>
+							OVERDUE REPAYMENT ANALYSIS</a></li>
+					<li><a href="regularEmiReport"><i class="fa fa-circle-o"></i>
+							LOAN INSTALLMENT PENDING REPORT</a></li>
+					<li><a href="LoanSheetPrint"><i class="fa fa-circle-o"></i>
+							LOAN CONFIRMATON DOCUMENT</a></li>
+					<li><a href="policystatement"><i class="fa fa-circle-o"></i>
+							GOLD LOAN DOCUMENT</a></li>
+					<li><a href="addProjectionReport"><i class="fa fa-circle-o"></i>
+							JOINT LIABILITY DOCUMENT</a></li>
+					<li><a href="MaturityStatusReportView"><i class="fa fa-circle-o"></i>
+							MATURITY STATUS REPORT</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <img
+					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYROLL
+						MANAGEMENT </span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							ADD DESIGNATION</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							ADD DEPARTMENT</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							ADD TEAM MEMBER</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							TEAM MEMBER LEAVE</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							SALARY DETAILS</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							APPOINTMENT LETTER</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							OFFER LETTER ISSUE</a></li>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+							HOLIDAY MASTER</a></li>
+					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+							LEAVE ADJUSTMENT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							ATTENDANCE</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							SALARY GENERATE</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							SALARY PAYMENT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							SALARY SLIP PRINT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							ATTENDANCE REPORT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							SALARY PAYMENT REPORT</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							TEAM MEMBER SEARCH</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							TEAM MEMBER ID CARD</a></li>
+
+				</ul></li>
+
+			<%
+			List<String> serviceList = (List<String>) session.getAttribute("user");
+			%>
+			<%-- <li class="treeview">
+				<%if(serviceList!=null && serviceList.contains("Company Setting")
            ||
-           serviceList.contains("Add Member KYC")
+           serviceList.contains("Company Setting")
            ||
-           serviceList.contains("Member Summary")
+           serviceList.contains("Bank Creation")
            ||
-           serviceList.contains("Member Report")
+           serviceList.contains("Relative Master")
            ||
-           serviceList.contains("Search Member")
+           serviceList.contains("Category Master")
         		   ){ %> <a href='#'><img src="dist/img/icon/ico-3.png"
-					style="margin-right: 5px;" /><span>Client Section</span><span
+					style="margin-right: 5px;" /><span>Configuration</span><span
 					class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i></span></a> <%} %>
 				<ul class="treeview-menu">
-					<%if(serviceList!=null && serviceList.contains("Add Member")){ %>
-					<li><a href="addMember"><i class="fa fa-circle-o"></i>Add
-							Client</a></li>
+					<%if(serviceList!=null && serviceList.contains("Company Setting")){ %>
+					<li><a href="CompanyDetails"><i class="fa fa-circle-o"></i>Company
+							Setting</a></li>
 					<%} %>
-					<%if(serviceList!=null &&  serviceList.contains("Add Member KYC")){ %>
-					<li><a href="addMemberKyc"><i class="fa fa-circle-o"></i>Add
-							Client KYC</a></li>
+					<%if(serviceList!=null &&  serviceList.contains("Bank Creation")){ %>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>Bank Creation
+							</a></li>
 					<%} %>
-					<%if(serviceList!=null &&  serviceList.contains("Member Summary")){ %>
-					<li><a href="memberAllDetails"><i class="fa fa-circle-o"></i>Client
-							Summary</a></li>
+					<%if(serviceList!=null &&  serviceList.contains("Relative Master")){ %>
+					<li><a href="relativeMaster"><i class="fa fa-circle-o"></i>Relative Master
+							</a></li>
 					<%} %>
-					<%if(serviceList!=null &&  serviceList.contains("Member Report")){ %>
-					<li><a href="memberDetailRptt"><i class="fa fa-circle-o"></i>Client
-							Report</a></li>
+					<%if(serviceList!=null &&  serviceList.contains("Caste Master")){ %>
+					<li><a href="casteMaster"><i class="fa fa-circle-o"></i>Caste Master
+							</a></li>
 					<%} %>
-					<%if(serviceList!=null &&  serviceList.contains("Search Member")){ %>
-					<li><a href="searchMember"><i class="fa fa-circle-o"></i>Search
-							Client</a></li>
+					<%if(serviceList!=null &&  serviceList.contains("Category Master")){ %>
+					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>Category Master
+							</a></li>
 					<%} %>
-					<%if(serviceList!=null &&  serviceList.contains("Client DeDuplication")){ %>
-					<li><a href="clientDepulication"><i class="fa fa-circle-o"></i>Client
-							DeDuplication</a></li>
+					<%if(serviceList!=null &&  serviceList.contains("Taluka Master")){ %>
+					<li><a href="talukaMaster"><i class="fa fa-circle-o"></i>Taluka Master
+							</a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Share Transfer") || serviceList.contains("Share Transfer")
           ||serviceList.contains("Un-allotted Shares")||serviceList.contains("Share Certificate")||
           serviceList.contains("Share Report")||
@@ -87,8 +566,8 @@
 							Member Report </a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Cashier") || serviceList.contains("Denomination Exchange")
           ||serviceList.contains("Payment")||serviceList.contains("Receipt")||serviceList.contains("Transfer")||
           serviceList.contains("Contra")||serviceList.contains("Ledger")||
@@ -100,10 +579,10 @@
 					<%if(serviceList!=null &&  serviceList.contains("Cashier")){ %>
 					<li><a href="cashier"><i class="fa fa-circle-o"></i>Cashier</a></li>
 					<%} %>
-					<%-- <%if(serviceList!=null &&  serviceList.contains("Denomination Exchange")){ %>
+					<%if(serviceList!=null &&  serviceList.contains("Denomination Exchange")){ %>
 					<li><a href="denominationExchange"><i
 							class="fa fa-circle-o"></i>Denomination Exchange</a></li>
-					<%} %> --%>
+					<%} %>
 					<%if(serviceList!=null &&  serviceList.contains("Payment")){ %>
 					<li><a href="payment"><i class="fa fa-circle-o"></i>Payment
 					</a></li>
@@ -128,8 +607,8 @@
 							List </a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Add Collector/Advisor")||
         		 serviceList.contains("Collector/Advisor Tree")
         		 || serviceList.contains("Collector/Advisor Downline") || serviceList.contains("Collector/Advisor Promotion")
@@ -165,8 +644,8 @@
 							Search</a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Add Designation")||
         		 serviceList.contains("Add Department")||
         		 serviceList.contains("Add Employee")||
@@ -197,8 +676,8 @@
 							Employee</a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("New Account")||
 				 serviceList.contains("Plan Master")||
         		 serviceList.contains("New Investment")||
@@ -275,8 +754,8 @@
 							Search</a></li>
 					<%} %>
 				</ul>
-			</li>
-			<li class="treeview">
+			</li> --%>
+			<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Savings Plan Master")||
             		serviceList.contains("Savings Opening")||
             		serviceList.contains("Savings Transaction")||
@@ -305,10 +784,10 @@
 					<li><a href="savingsTransactionEntry"><i
 							class="fa fa-circle-o"></i>Savings Transaction</a></li>
 					<%} %>
-					<%-- <%if(serviceList!=null &&  serviceList.contains("SB Interest Transfer")){ %>
+					<%if(serviceList!=null &&  serviceList.contains("SB Interest Transfer")){ %>
 					<li><a href="sBInterestGenerate"><i class="fa fa-circle-o"></i>SB
 							Interest Transfer</a></li>
-					<%} %> --%>
+					<%} %>
 					<%if(serviceList!=null &&  serviceList.contains("Savings Passbook")){ %>
 					<li><a href="sBPassbookPrint"><i class="fa fa-circle-o"></i>Savings
 							Passbook</a></li>
@@ -1114,7 +1593,7 @@
 							ID Card</a></li>
 					<%} %>
 				</ul>
-			</li>
+			</li> --%>
 		</ul>
 	</section>
 	<!-- /.sidebar -->

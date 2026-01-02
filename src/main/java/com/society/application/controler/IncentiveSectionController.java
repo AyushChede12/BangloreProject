@@ -35,14 +35,15 @@ public class IncentiveSectionController {
 	}
 
 	@PostMapping("/saveIncentiveMaster")
-	public String saveIncentiveMaster(@ModelAttribute("incentiveMaster") IncentiveMaster incentive, HttpSession session) {
+	public String saveIncentiveMaster(@ModelAttribute("incentiveMaster") IncentiveMaster incentive,
+			HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		incentive.setCreatedBy(createdBy);
 		if (incentive.getInvmonth() != null && !incentive.getInvmonth().isEmpty() && incentive.getfDate() != null
 				&& !incentive.getfDate().isEmpty() && incentive.gettDate() != null && !incentive.gettDate().isEmpty()
 				&& incentive.getRemark() != null && !incentive.getRemark().isEmpty()) {
 			incentiveMasterRepo.save(incentive);
-		} 
+		}
 		session.setAttribute("createdBy", createdBy);
 		return "incentiveSection/IncentiveMaster";
 	}
@@ -60,18 +61,18 @@ public class IncentiveSectionController {
 	public String incentiveGeneration(Model model) {
 		return "incentiveSection/IncentiveGeneration";
 	}
-	
-    //Incentive Generate
+
+	// Incentive Generate
 	@PostMapping("/fetchingmonths")
 	@ResponseBody
 	public List<YearMaster> fetchyear() {
 		return yearMasterRepo.findAll();
 	}
 
-	//Incentive Generate
+	// Incentive Generate
 	@PostMapping("/SaveIncentive")
 	public String SaveIncentiveGeneration234(@ModelAttribute("SaveIncentive") IncentiveMaster incentiveMaster,
-			Model model,HttpSession session) {
+			Model model, HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		incentiveMaster.setCreatedBy(createdBy);
 		incentiveMasterRepo.save(incentiveMaster);

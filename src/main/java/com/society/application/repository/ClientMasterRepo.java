@@ -19,10 +19,14 @@ public interface ClientMasterRepo extends JpaRepository<ClientMaster, Integer> {
 
 	@Modifying
 	@Transactional
-	@Query("UPDATE ClientMaster SET memberName=:memberName, registrationDate=:registrationDate, previousBalance=:previousBalance, previousNoOfShared=:previousNoOfShared, branchName=:branchName, transferDate=:transferDate, shareAllotedfrm=:shareAllotedfrm, sharebalance=:sharebalance, transferAmount=:transferAmount, noOfShared=:noOfShared, paymode=:paymode, remarks=:remarks WHERE id=:id AND createdBy=:userId")	
-	int updateThroughID1(@Param("memberName") String memberName, @Param("registrationDate") String registrationDate, @Param("previousBalance") String previousBalance, @Param("previousNoOfShared") String previousNoOfShared,
-			@Param("branchName") String branchName, @Param("transferDate") String transferDate, @Param("shareAllotedfrm") String shareAllotedfrm, @Param("sharebalance") String sharebalance, @Param("transferAmount") String transferAmount,
-			@Param("noOfShared") String noOfShared, @Param("paymode") String paymode, @Param("remarks") String remarks, @Param("id") int id, @Param("userId") String userId);
+	@Query("UPDATE ClientMaster SET memberName=:memberName, registrationDate=:registrationDate, previousBalance=:previousBalance, previousNoOfShared=:previousNoOfShared, branchName=:branchName, transferDate=:transferDate, shareAllotedfrm=:shareAllotedfrm, sharebalance=:sharebalance, transferAmount=:transferAmount, noOfShared=:noOfShared, paymode=:paymode, remarks=:remarks WHERE id=:id AND createdBy=:userId")
+	int updateThroughID1(@Param("memberName") String memberName, @Param("registrationDate") String registrationDate,
+			@Param("previousBalance") String previousBalance, @Param("previousNoOfShared") String previousNoOfShared,
+			@Param("branchName") String branchName, @Param("transferDate") String transferDate,
+			@Param("shareAllotedfrm") String shareAllotedfrm, @Param("sharebalance") String sharebalance,
+			@Param("transferAmount") String transferAmount, @Param("noOfShared") String noOfShared,
+			@Param("paymode") String paymode, @Param("remarks") String remarks, @Param("id") int id,
+			@Param("userId") String userId);
 
 	@Modifying
 	@Transactional
@@ -49,17 +53,17 @@ public interface ClientMasterRepo extends JpaRepository<ClientMaster, Integer> {
 
 	List<ClientMaster> findByRegistrationDateBetween(String getfDate, String gettDate);
 
-	//@Query(value = "SELECT COUNT(*) FROM ClientMaster")
-	//int countOfClient();
-	 
+	// @Query(value = "SELECT COUNT(*) FROM ClientMaster")
+	// int countOfClient();
+
 	List<ClientMaster> findByclientNo(String clientNo);
-	
+
 	// Add this method to find the maximum client number
 	@Query("SELECT MAX(cm.clientNo) FROM ClientMaster cm")
-    Integer findMaxClientNo();
+	Integer findMaxClientNo();
 
-    @Query("SELECT MAX(cm.clientId) FROM ClientMaster cm")
-    Integer findMaxClientId();
+	@Query("SELECT MAX(cm.clientId) FROM ClientMaster cm")
+	Integer findMaxClientId();
 
 	List<ClientMaster> findByclientNo(long clientNo);
 

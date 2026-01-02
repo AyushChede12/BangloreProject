@@ -84,35 +84,35 @@ public class AdvisorCollectorDetails {
 	private String newSenior;
 
 	private String seniorName;
-	
+
 	private String policyDate;
-	
+
 	private String applicationDate;
-	
+
 	private String age;
-	
+
 	private String fDate;
-	
+
 	private String tDate;
-	
+
 	@Lob
 	@Column(name = "photo", length = 1048576)
 	private byte[] photo;
-	
+
 	@Lob
 	@Column(name = "signiture", length = 1048576)
 	private byte[] signiture;
-	
+
 	@Transient
 	private String frontEndPhoto;
-	
+
 	@Transient
 	private String frontEndSignature;
-	
+
 	private String createdBy;
-	
+
 	private String createdDt;
-	
+
 	public byte[] getPhoto() {
 		return photo;
 	}
@@ -434,7 +434,7 @@ public class AdvisorCollectorDetails {
 	public void setSmsSend(String smsSend) {
 		this.smsSend = smsSend;
 	}
-	
+
 	public String getAge() {
 		return age;
 	}

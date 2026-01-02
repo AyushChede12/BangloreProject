@@ -8,8 +8,8 @@ import com.society.application.model.MISDeposit;
 import com.society.application.model.Member;
 
 @Repository
-public interface MISDepositRepo extends JpaRepository<MISDeposit, Integer>{
-	
+public interface MISDepositRepo extends JpaRepository<MISDeposit, Integer> {
+
 	@Query("SELECT COUNT(u) FROM MISDeposit u")
 	long countMis();
 }

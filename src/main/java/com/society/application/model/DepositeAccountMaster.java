@@ -10,9 +10,9 @@ public class DepositeAccountMaster {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String depositeAccNo;
-	
+
 	private String userId;
 
 	public int getId() {
@@ -38,7 +38,5 @@ public class DepositeAccountMaster {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
-	
-	
+
 }

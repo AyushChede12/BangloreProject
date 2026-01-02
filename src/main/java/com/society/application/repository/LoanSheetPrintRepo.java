@@ -16,6 +16,6 @@ public interface LoanSheetPrintRepo extends JpaRepository<LoanSheetPrint, Intege
 
 	List<LoanSheetPrint> findBypayDateBefore(String till_Date);
 
-	//List<LoanSheetPrint> findBypayDate(String till_Date);
+	// List<LoanSheetPrint> findBypayDate(String till_Date);
 
 }

@@ -7,157 +7,157 @@ import javax.persistence.Id;
 
 @Entity
 public class AdvisorTeamCollection {
-	
-  @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
-  private int id;	
-  
-  private String advisorcode;
-  
-  private String fromdate;
-  
-  private String todate;
-  
-  private String teamselfsummary;
-  
-  private String date;
-  
-  private String policyno;
-  
-  private String ino;
-   
-  private String applicationname;
-  
-  private String plancode;
-   
-  private String amount;
-   
-  private String clearedamount;
-  
-  private String unclearedamount;
-  
-  private String paymode;
-  
-  private String chqno;
 
-public int getId() {
-	return id;
-}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 
-public void setId(int id) {
-	this.id = id;
-}
+	private String advisorcode;
 
-public String getAdvisorcode() {
-	return advisorcode;
-}
+	private String fromdate;
 
-public void setAdvisorcode(String advisorcode) {
-	this.advisorcode = advisorcode;
-}
+	private String todate;
 
-public String getFromdate() {
-	return fromdate;
-}
+	private String teamselfsummary;
 
-public void setFromdate(String fromdate) {
-	this.fromdate = fromdate;
-}
+	private String date;
 
-public String getTodate() {
-	return todate;
-}
+	private String policyno;
 
-public void setTodate(String todate) {
-	this.todate = todate;
-}
+	private String ino;
 
-public String getTeamselfsummary() {
-	return teamselfsummary;
-}
+	private String applicationname;
 
-public void setTeamselfsummary(String teamselfsummary) {
-	this.teamselfsummary = teamselfsummary;
-}
+	private String plancode;
 
-public String getDate() {
-	return date;
-}
+	private String amount;
 
-public void setDate(String date) {
-	this.date = date;
-}
+	private String clearedamount;
 
-public String getPolicyno() {
-	return policyno;
-}
+	private String unclearedamount;
 
-public void setPolicyno(String policyno) {
-	this.policyno = policyno;
-}
+	private String paymode;
 
-public String getIno() {
-	return ino;
-}
+	private String chqno;
 
-public void setIno(String ino) {
-	this.ino = ino;
-}
+	public int getId() {
+		return id;
+	}
 
-public String getApplicationname() {
-	return applicationname;
-}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-public void setApplicationname(String applicationname) {
-	this.applicationname = applicationname;
-}
+	public String getAdvisorcode() {
+		return advisorcode;
+	}
 
-public String getPlancode() {
-	return plancode;
-}
+	public void setAdvisorcode(String advisorcode) {
+		this.advisorcode = advisorcode;
+	}
 
-public void setPlancode(String plancode) {
-	this.plancode = plancode;
-}
+	public String getFromdate() {
+		return fromdate;
+	}
 
-public String getAmount() {
-	return amount;
-}
+	public void setFromdate(String fromdate) {
+		this.fromdate = fromdate;
+	}
 
-public void setAmount(String amount) {
-	this.amount = amount;
-}
+	public String getTodate() {
+		return todate;
+	}
 
-public String getClearedamount() {
-	return clearedamount;
-}
+	public void setTodate(String todate) {
+		this.todate = todate;
+	}
 
-public void setClearedamount(String clearedamount) {
-	this.clearedamount = clearedamount;
-}
+	public String getTeamselfsummary() {
+		return teamselfsummary;
+	}
 
-public String getUnclearedamount() {
-	return unclearedamount;
-}
+	public void setTeamselfsummary(String teamselfsummary) {
+		this.teamselfsummary = teamselfsummary;
+	}
 
-public void setUnclearedamount(String unclearedamount) {
-	this.unclearedamount = unclearedamount;
-}
+	public String getDate() {
+		return date;
+	}
 
-public String getPaymode() {
-	return paymode;
-}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-public void setPaymode(String paymode) {
-	this.paymode = paymode;
-}
+	public String getPolicyno() {
+		return policyno;
+	}
 
-public String getChqno() {
-	return chqno;
-}
+	public void setPolicyno(String policyno) {
+		this.policyno = policyno;
+	}
 
-public void setChqno(String chqno) {
-	this.chqno = chqno;
-}
-  
+	public String getIno() {
+		return ino;
+	}
+
+	public void setIno(String ino) {
+		this.ino = ino;
+	}
+
+	public String getApplicationname() {
+		return applicationname;
+	}
+
+	public void setApplicationname(String applicationname) {
+		this.applicationname = applicationname;
+	}
+
+	public String getPlancode() {
+		return plancode;
+	}
+
+	public void setPlancode(String plancode) {
+		this.plancode = plancode;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getClearedamount() {
+		return clearedamount;
+	}
+
+	public void setClearedamount(String clearedamount) {
+		this.clearedamount = clearedamount;
+	}
+
+	public String getUnclearedamount() {
+		return unclearedamount;
+	}
+
+	public void setUnclearedamount(String unclearedamount) {
+		this.unclearedamount = unclearedamount;
+	}
+
+	public String getPaymode() {
+		return paymode;
+	}
+
+	public void setPaymode(String paymode) {
+		this.paymode = paymode;
+	}
+
+	public String getChqno() {
+		return chqno;
+	}
+
+	public void setChqno(String chqno) {
+		this.chqno = chqno;
+	}
+
 }

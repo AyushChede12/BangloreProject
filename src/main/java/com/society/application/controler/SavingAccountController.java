@@ -56,22 +56,22 @@ public class SavingAccountController {
 
 	@Autowired
 	BankMasterRepo bankMasterRepo;
-	
+
 	@Autowired
 	ClientMasterRepo clientMasterRepo;
-	
+
 	@Autowired
 	SavingsDepositWithdrawalRepo savingsDepositWithdrawalRepo;
-	
+
 	@Autowired
 	SavingsDepositWithRepo savingsdepositwithrepo;
-	
+
 	@Autowired
 	SalaryMasterRepo salaryMasterRepo;
 
 	@GetMapping("/addSaving")
 	public String AddSaving(Model model) {
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -146,12 +146,13 @@ public class SavingAccountController {
 	}
 
 	@PostMapping("/saveSavingsAccount")
-	public String saveSavingsAccount(@ModelAttribute("saveSavingsAccount") SavingAccount savingAccount, Model model, HttpSession session) {
+	public String saveSavingsAccount(@ModelAttribute("saveSavingsAccount") SavingAccount savingAccount, Model model,
+			HttpSession session) {
 		SavingAccount savingAccountObj = new SavingAccount();
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		savingAccount.setCreatedBy(createdBy);
 		model.addAttribute("status", "ERROR");
-		if(savingAccountObj!=null) {
+		if (savingAccountObj != null) {
 			model.addAttribute("status", "SUCCESS");
 			savingAccountRepo.save(savingAccount);
 		}
@@ -171,17 +172,19 @@ public class SavingAccountController {
 	}
 
 	@PostMapping("/saveSavingsAccountApplciation")
-	public String saveSavingsAccountApplciation(@ModelAttribute("saveSavingsAccountApplciation") SavingsAccountApplication savingsAccountApplication, Model model, HttpSession session) {
+	public String saveSavingsAccountApplciation(
+			@ModelAttribute("saveSavingsAccountApplciation") SavingsAccountApplication savingsAccountApplication,
+			Model model, HttpSession session) {
 		SavingsAccountApplication savingAccountObj = new SavingsAccountApplication();
-		String createdBy=session.getAttribute("ID").toString();
+		String createdBy = session.getAttribute("ID").toString();
 		savingsAccountApplication.setCreatedBy(createdBy);
 		model.addAttribute("status", "ERROR");
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
 		model.addAttribute("branchList", branchData);
-		if(savingAccountObj!=null) {
+		if (savingAccountObj != null) {
 			model.addAttribute("status", "SUCCESS");
 			savingsAccountApplicationRepo.save(savingsAccountApplication);
 		}
@@ -195,7 +198,7 @@ public class SavingAccountController {
 		// SavingsAccountApplication savingAccountObj =
 		// savingsAccountApplicationRepo.save(savingsAccountApplication);
 		model.addAttribute("status", "ERROR");
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -214,7 +217,7 @@ public class SavingAccountController {
 		// SavingsAccountApplication savingAccountObj =
 		// savingsAccountApplicationRepo.save(savingsAccountApplication);
 		model.addAttribute("status", "ERROR");
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -229,10 +232,10 @@ public class SavingAccountController {
 	@PostMapping("/accountCloser") // think of id for update
 	public String accountCloser(@ModelAttribute("accountCloser") SavingsAccountApplication savingsAccountApplication,
 			Model model, HttpSession session) {
-		//SavingsAccountApplication savingAccountObj =
-		//savingsAccountApplicationRepo.save(savingsAccountApplication);
+		// SavingsAccountApplication savingAccountObj =
+		// savingsAccountApplicationRepo.save(savingsAccountApplication);
 		model.addAttribute("status", "ERROR");
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -244,10 +247,10 @@ public class SavingAccountController {
 		model.addAttribute("bankMaster", bankMasterList);
 		return "savingsAccount/AccountCloser";
 	}
-	
+
 	@GetMapping("/savingalldata")
 	@ResponseBody
-	List<SavingAccount>showalldatasaving(){
+	List<SavingAccount> showalldatasaving() {
 		return savingAccountRepo.findAll();
 	}
 
@@ -290,19 +293,20 @@ public class SavingAccountController {
 		}
 		return schemeName;
 	}
-	
+
 	@PostMapping("/savingsStatementSearch")
 	@ResponseBody
-	public List<SavingsDepositWith> savingsStatementSearch(@RequestBody SavingsDepositWith saving){
+	public List<SavingsDepositWith> savingsStatementSearch(@RequestBody SavingsDepositWith saving) {
 		List<SavingsDepositWith> list = savingsdepositwithrepo.findByaccountNo(saving.getAccountNo());
-		List<SavingsDepositWith> list1 = savingsdepositwithrepo.findBytxnDateBetween(saving.getfDate(), saving.gettDate());
-		if(!list.isEmpty()) { 
-			return list; 
-		}else {
+		List<SavingsDepositWith> list1 = savingsdepositwithrepo.findBytxnDateBetween(saving.getfDate(),
+				saving.gettDate());
+		if (!list.isEmpty()) {
+			return list;
+		} else {
 			return list1;
 		}
 	}
-	
+
 	// 5.Savings Passbook
 	@GetMapping("getAllAccountNoInDropdown")
 	@ResponseBody
@@ -317,7 +321,7 @@ public class SavingAccountController {
 		List<BankMaster> accNo = bankMasterRepo.findByaccountNo(bankMaster.getAccountNo());
 		return accNo;
 	}
-	
+
 	// 9.SMS Charges Deduction
 	// fetch data by date
 	@PostMapping("/fetchDataByDateSMSCharges")
@@ -326,7 +330,7 @@ public class SavingAccountController {
 		List<SalaryMaster> payDate = salaryMasterRepo.findBypayDate(salaryMaster.getPayDate());
 		return payDate;
 	}
-	
+
 	// 10. Service Charges Deduction
 	@PostMapping("/getTableDataServiceChargesDeduction")
 	@ResponseBody
@@ -334,7 +338,7 @@ public class SavingAccountController {
 		List<SalaryMaster> payDate = salaryMasterRepo.findBypayDate(salaryMaster.getPayDate());
 		return payDate;
 	}
-	
+
 	@PostMapping("/searchbyidforsavingacxx")
 	@ResponseBody
 	public SavingsAccountApplication getSavingDeailsById(@RequestBody GenericGetById id) {
@@ -354,7 +358,7 @@ public class SavingAccountController {
 			@RequestParam(name = "paymode", required = false) String paymode,
 			@RequestParam(name = "txtTDate", required = false) String txtTDate,
 			@RequestParam(name = "cspName", required = false) String cspName,
-			@RequestParam(name = "accountNo", required = false) String accountNo,HttpSession session) {
+			@RequestParam(name = "accountNo", required = false) String accountNo, HttpSession session) {
 		try {
 			// Optional<SavingsAccountApplication> add =
 			// savingsAccountApplicationRepo.findById(id);
@@ -372,7 +376,7 @@ public class SavingAccountController {
 						e.printStackTrace();
 					}
 				}
-				String createdBy=session.getAttribute("ID").toString();
+				String createdBy = session.getAttribute("ID").toString();
 				s.setCreatedBy(createdBy);
 				s.setTransactionFor(transactionFor);
 				s.setTransactionType(transactionType);
@@ -388,13 +392,13 @@ public class SavingAccountController {
 			return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/savingfetchbranchacc")
 	@ResponseBody
-	List<SavingsAccountApplication>savingallmethod(){
+	List<SavingsAccountApplication> savingallmethod() {
 		return savingsAccountApplicationRepo.findAll();
 	}
-	
+
 	// 7.Account Closer
 	// getData on Fields
 	@PostMapping("/getDataOnFiledsAccountCloser")
@@ -404,7 +408,7 @@ public class SavingAccountController {
 				.findByaccountNo(savingsDepositWith.getAccountNo());
 		return accNo;
 	}
-	
+
 	// 7.Account closer
 	@GetMapping("/getAllBranchIndropdownAccountCloser")
 	@ResponseBody

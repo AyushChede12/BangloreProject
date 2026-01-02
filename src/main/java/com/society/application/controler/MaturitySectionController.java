@@ -74,7 +74,7 @@ public class MaturitySectionController {
 
 	@Autowired
 	AddInvestmentRepo addInvestmentRepo;
-	
+
 	@Autowired
 	BranchMasterRepo branchMasterRepo;
 
@@ -87,29 +87,33 @@ public class MaturitySectionController {
 
 	/* MATURITY MASTER - 1. Daily Deposit */
 	@PostMapping("/maturityMaster1")
-	public String postMaturityMaster1(@ModelAttribute("dailyDeposite") DailyDeposite dailyDeposite, HttpServletRequest request ,HttpSession session) {
-		String createdBy =session.getAttribute("ID").toString();
+	public String postMaturityMaster1(@ModelAttribute("dailyDeposite") DailyDeposite dailyDeposite,
+			HttpServletRequest request, HttpSession session) {
+		String createdBy = session.getAttribute("ID").toString();
 		dailyDeposite.setCreatedBy(createdBy);
-	    if (dailyDeposite.getDplancode() != null && dailyDeposite.getDinstfrom() != null && dailyDeposite.getDinstto() != null
-	            && dailyDeposite.getDroi() != null && dailyDeposite.getDdeduction() != null) {
-	        dailydepositerepo.save(dailyDeposite);
-	    } else {
-	       
-	    }
-	    session.setAttribute("createdBy", createdBy);
-	    return "maturitySection/MaturityMaster";
+		if (dailyDeposite.getDplancode() != null && dailyDeposite.getDinstfrom() != null
+				&& dailyDeposite.getDinstto() != null && dailyDeposite.getDroi() != null
+				&& dailyDeposite.getDdeduction() != null) {
+			dailydepositerepo.save(dailyDeposite);
+		} else {
+
+		}
+		session.setAttribute("createdBy", createdBy);
+		return "maturitySection/MaturityMaster";
 	}
 
 	/* MATURITY MASTER - 2. Recurring Deposit */
 	@PostMapping("/maturityMaster2")
-	public String getmaturityMaster2(@ModelAttribute("RecurringDeposite") RecurringDeposit recurringdep, HttpServletRequest request,HttpSession session) {
+	public String getmaturityMaster2(@ModelAttribute("RecurringDeposite") RecurringDeposit recurringdep,
+			HttpServletRequest request, HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		recurringdep.setCreatedBy(createdBy);
-		if(recurringdep.getRplancode() != null && recurringdep.getRinstfrom() != null && recurringdep.getRinstto() != null
-				&& recurringdep.getRroi() != null && recurringdep.getRdeduction() != null) {
+		if (recurringdep.getRplancode() != null && recurringdep.getRinstfrom() != null
+				&& recurringdep.getRinstto() != null && recurringdep.getRroi() != null
+				&& recurringdep.getRdeduction() != null) {
 			recurringdepositrepo.save(recurringdep);
-		}else {
-			
+		} else {
+
 		}
 		session.setAttribute("createdBy", createdBy);
 		return "maturitySection/MaturityMaster";
@@ -117,14 +121,15 @@ public class MaturitySectionController {
 
 	/* MATURITY MASTER - 3. Fixed Deposit */
 	@PostMapping("/maturityMaster3")
-	public String getmaturityMaster3(@ModelAttribute("FixedDeposite") FixedDeposit fixeddep, HttpServletRequest request, HttpSession session) {
+	public String getmaturityMaster3(@ModelAttribute("FixedDeposite") FixedDeposit fixeddep, HttpServletRequest request,
+			HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		fixeddep.setCreatedBy(createdBy);
-		if(fixeddep.getFplancode() != null && fixeddep.getFmonthfrom() != null && fixeddep.getFmonthto() != null
+		if (fixeddep.getFplancode() != null && fixeddep.getFmonthfrom() != null && fixeddep.getFmonthto() != null
 				&& fixeddep.getFroi() != null && fixeddep.getFdeduction() != null) {
 			fixeddepositrepo.save(fixeddep);
-		}else {
-			
+		} else {
+
 		}
 		session.setAttribute("createdBy", createdBy);
 		return "maturitySection/MaturityMaster";
@@ -132,19 +137,20 @@ public class MaturitySectionController {
 
 	/* MATURITY MASTER - 4. MIS Deposit */
 	@PostMapping("/maturityMaster4")
-	public String postMaturityMaster4(@ModelAttribute("MISDeposite") MISDeposit misdep, HttpServletRequest request ,HttpSession session) {
+	public String postMaturityMaster4(@ModelAttribute("MISDeposite") MISDeposit misdep, HttpServletRequest request,
+			HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		misdep.setCreatedBy(createdBy);
-	    if (misdep.getMisplancode() != null && misdep.getmISmonthfrom() != null && misdep.getmISmonthto() != null
-	            && misdep.getmISROI() != null && misdep.getmISdeduction() != null) {
-	        misepositrepo.save(misdep);
-	        //System.out.println(misdep);
-	        return "maturitySection/MaturityMaster"; 
-	    } else {
-	    	 System.out.println("error");
-	    }
-	    session.setAttribute("createdBy", createdBy);
-	    return "maturitySection/MaturityMaster";
+		if (misdep.getMisplancode() != null && misdep.getmISmonthfrom() != null && misdep.getmISmonthto() != null
+				&& misdep.getmISROI() != null && misdep.getmISdeduction() != null) {
+			misepositrepo.save(misdep);
+			// System.out.println(misdep);
+			return "maturitySection/MaturityMaster";
+		} else {
+			System.out.println("error");
+		}
+		session.setAttribute("createdBy", createdBy);
+		return "maturitySection/MaturityMaster";
 	}
 
 	/* APPROVED STATUS */
@@ -185,11 +191,11 @@ public class MaturitySectionController {
 
 	@GetMapping("/searchMaturityApplication")
 	@ResponseBody
-	public List<AddInvestment> searchMaturityApplication333( HttpServletRequest hp) {
-			   String polno2 = hp.getParameter("ids");
-			   Integer uidhd=Integer.parseInt(polno2);
-			   List<AddInvestment> drohd=addInvestmentRepo.findByid(uidhd);
-			   return drohd;
+	public List<AddInvestment> searchMaturityApplication333(HttpServletRequest hp) {
+		String polno2 = hp.getParameter("ids");
+		Integer uidhd = Integer.parseInt(polno2);
+		List<AddInvestment> drohd = addInvestmentRepo.findByid(uidhd);
+		return drohd;
 	}
 
 	@PostMapping("/MaturityAplicationUpdate")
@@ -222,11 +228,11 @@ public class MaturitySectionController {
 
 		return data;
 	}
-	
+
 	@GetMapping("/polfordropdown")
 	@ResponseBody
-	public List<AddInvestment> forpoldropdown456(){
-		 return addInvestmentRepo.findAll();
+	public List<AddInvestment> forpoldropdown456() {
+		return addInvestmentRepo.findAll();
 	}
 
 	/* MATURITY PAYMENT */
@@ -238,12 +244,12 @@ public class MaturitySectionController {
 
 	@GetMapping("/searchMaturityPayment")
 	@ResponseBody
-	public List<AddInvestment> searchMaturityPayment( HttpServletRequest hp) {
-				   String PolicyNo = hp.getParameter("PolicyNo1");
-				   int i =Integer.parseInt(PolicyNo);
-				   List<AddInvestment> data1 = addInvestmentRepo.findByid(i);
-				   return data1;
-    }
+	public List<AddInvestment> searchMaturityPayment(HttpServletRequest hp) {
+		String PolicyNo = hp.getParameter("PolicyNo1");
+		int i = Integer.parseInt(PolicyNo);
+		List<AddInvestment> data1 = addInvestmentRepo.findByid(i);
+		return data1;
+	}
 
 	@PostMapping("/MaturityPaymentUpdate")
 	@ResponseBody
@@ -295,11 +301,11 @@ public class MaturitySectionController {
 		} else
 			return list2;
 	}
-	
-	//get branch name 
+
+	// get branch name
 	@GetMapping("/getBranchNameForMaturity")
 	@ResponseBody
-	public List<BranchMaster> getBranchNameForMaturity(){
+	public List<BranchMaster> getBranchNameForMaturity() {
 		return branchMasterRepo.findAll();
 	}
 
@@ -338,10 +344,10 @@ public class MaturitySectionController {
 
 	@GetMapping("/getmaturityPartPayment")
 	@ResponseBody
-	public List<AddInvestment>  getmaturityPartPayment(HttpServletRequest request){
-		String policyno=request.getParameter("PolicyNo1");
-		int i =  Integer.parseInt(policyno);
-		List<AddInvestment> list=addInvestmentRepo.findByid(i);
+	public List<AddInvestment> getmaturityPartPayment(HttpServletRequest request) {
+		String policyno = request.getParameter("PolicyNo1");
+		int i = Integer.parseInt(policyno);
+		List<AddInvestment> list = addInvestmentRepo.findByid(i);
 		return list;
 	}
 
@@ -382,10 +388,10 @@ public class MaturitySectionController {
 
 	@GetMapping("/getmaturityreceiptprint")
 	@ResponseBody
-	public List<AddInvestment> getmaturityreceiptReprint(HttpServletRequest request){
-		String policyno=request.getParameter("PolicyNo1");
-		Integer id=Integer.parseInt(policyno);
-		List<AddInvestment> list=addInvestmentRepo.findByid(id);
+	public List<AddInvestment> getmaturityreceiptReprint(HttpServletRequest request) {
+		String policyno = request.getParameter("PolicyNo1");
+		Integer id = Integer.parseInt(policyno);
+		List<AddInvestment> list = addInvestmentRepo.findByid(id);
 		return list;
 	}
 

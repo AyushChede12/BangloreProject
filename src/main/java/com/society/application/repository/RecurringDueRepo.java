@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.RecurringDueReportModel;
 
 @Repository
-public interface RecurringDueRepo extends JpaRepository<RecurringDueReportModel, Integer>{
+public interface RecurringDueRepo extends JpaRepository<RecurringDueReportModel, Integer> {
 
 	List<RecurringDueReportModel> findBybranchname(String branch);
-	
+
 	List<RecurringDueReportModel> findBytxndateBetween(String fdate, String tdate);
 
 }

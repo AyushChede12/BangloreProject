@@ -103,20 +103,19 @@ public class CollectorAdvisorController {
 			@RequestParam(name = "advisorStatus", required = false) String advisorStatus,
 			@RequestParam(name = "smsSend", required = false) String smsSend,
 			@RequestParam(name = "filetag", required = false) MultipartFile photoFile,
-	        @RequestParam(name = "secondfiletag", required = false) MultipartFile signatureFile,
-			AdvisorCollectorDetails advisor,
-			HttpSession session) {
+			@RequestParam(name = "secondfiletag", required = false) MultipartFile signatureFile,
+			AdvisorCollectorDetails advisor, HttpSession session) {
 		try {
 			// AdvisorCollectorDetails advisor = new AdvisorCollectorDetails();
 			String createdBy = session.getAttribute("ID").toString();
 			advisor.setCreatedBy(createdBy);
 			if (photoFile != null && signatureFile != null) {
-	            byte[] photo = photoFile.getBytes();
-	            byte[] signature = signatureFile.getBytes();
+				byte[] photo = photoFile.getBytes();
+				byte[] signature = signatureFile.getBytes();
 
-	            advisor.setPhoto(photo);
-	            advisor.setSigniture(signature);
-	        }
+				advisor.setPhoto(photo);
+				advisor.setSigniture(signature);
+			}
 			advisor.setJoiningDate(joiningDate);
 			advisor.setSelectMember(selectMember);
 			advisor.setMemberName(memberName);
@@ -146,8 +145,8 @@ public class CollectorAdvisorController {
 			advisor.setSmsSend(smsSend);
 			advisor.setFlag("1");
 			advisorCollectorDetailsRepo.save(advisor);
-	        session.setAttribute("createdBy", createdBy);
-	        return new ResponseEntity<>("Data saved successfully...!!!", HttpStatus.OK);
+			session.setAttribute("createdBy", createdBy);
+			return new ResponseEntity<>("Data saved successfully...!!!", HttpStatus.OK);
 		} catch (Exception e) {
 			System.out.println(e);
 			return new ResponseEntity<>("Data save failed...!!!", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -174,8 +173,7 @@ public class CollectorAdvisorController {
 			@RequestParam(name = "branchName", required = false) String branchName,
 			@RequestParam(name = "selectPosition", required = false) String selectPosition,
 			@RequestParam(name = "newSenior", required = false) String newSenior,
-			@RequestParam(name = "id", required = false) Integer id, 
-			HttpSession session,
+			@RequestParam(name = "id", required = false) Integer id, HttpSession session,
 			AdvisorCollectorDetails advisor) {
 		try {
 			List<AdvisorCollectorDetails> list = advisorCollectorDetailsRepo.findByid(id);

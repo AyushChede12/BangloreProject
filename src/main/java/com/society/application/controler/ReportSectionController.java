@@ -120,7 +120,7 @@ public class ReportSectionController {
 
 	@Autowired
 	ProjectionReportRepo projectionReportRepo;
-	
+
 	@Autowired
 	AddInvestmentRepo addinvestmentrepo;
 
@@ -390,10 +390,10 @@ public class ReportSectionController {
 	public String policystatement() {
 		return "reportSection/PolicyStatement";
 	}
-	
+
 	@GetMapping("/getPolicyNoReportSection")
 	@ResponseBody
-	public List<AddInvestment> getPolicyNoReportSection(){
+	public List<AddInvestment> getPolicyNoReportSection() {
 		List<AddInvestment> list = addinvestmentrepo.findAll();
 		return list;
 	}
@@ -401,8 +401,8 @@ public class ReportSectionController {
 	@PostMapping("/getpolicystatement852")
 	@ResponseBody
 	public List<AddInvestment> getpolicystatement(@RequestBody AddInvestment add) {
-	    List<AddInvestment> list = addInvestmentRepo.findBypolicyno(add.getPolicyno());
-	    return list;
+		List<AddInvestment> list = addInvestmentRepo.findBypolicyno(add.getPolicyno());
+		return list;
 	}
 
 	/* EMI OVER DUE REPORT */
@@ -713,7 +713,7 @@ public class ReportSectionController {
 	public List<AdvisorCollectionReportModel> getTDSDeductionReport1(@ModelAttribute AdvisorCollectionReportModel model,
 			HttpServletRequest request) {
 		String month = request.getParameter("Month");
-		//int mnth = Integer.parseInt(month);
+		// int mnth = Integer.parseInt(month);
 		String advisorcode = request.getParameter("Advisorcode");
 
 		List<AdvisorCollectionReportModel> list1 = tdsDeductionReportRepo.findBymonth(month);

@@ -105,26 +105,29 @@
 }
 
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0783ec+0,0757ae+100 */
-background: rgb(0,0,0);
-background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(32,108,170,1) 68%, rgba(32,108,170,1) 100%);
-background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(32,108,170,1) 68%,rgba(32,108,170,1) 100%);
-background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(32,108,170,1) 68%,rgba(32,108,170,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#206caa',GradientType=0 );
+    /* Muted Dark Green-Grey Gradient */
+    background: #889477;
+    background: -moz-linear-gradient(top, #889477 0%, #4D5945 100%);
+    background: -webkit-linear-gradient(top, #889477 0%, #4D5945 100%);
+    background: linear-gradient(to bottom, #889477 0%, #4D5945 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889477', endColorstr='#4D5945', GradientType=0 );
 }
+
+
+
 .skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a, .skin-blue .sidebar-menu > li.menu-open > a {
     color: #000;
-	background: #E8C30C;
+	background: orange;
 	border-bottom-right-radius: 5rem;
 	border-top-right-radius: 0.9rem;
-	border-left: 8px solid #0D5DAD;
+	border-left: 8px solid orange;
 }
 .skin-blue .sidebar-menu > li > .treeview-menu {
     margin: 0;
-    background:#0D5DAD;
+    background:#889477;
 }
 .skin-blue .sidebar-menu > li > a {
-    border-bottom: 1px solid #27A0FF;
+    border-bottom: 1px solid #889477;
 }
 .skin-blue .sidebar-form {
   border-radius: 3px;
@@ -157,11 +160,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     position: relative;
     float: right;
     padding:18px 15px;
-    background: #0D5DAD;
+    /* background: #0D5DAD; */
     border: 1px solid transparent;
     border-radius: 0;
-    border-top-right-radius: 30px;
-	box-shadow: -1px 0px 3px 0px #494949;
+    /* border-top-right-radius: 30px; */
+	/* box-shadow: -1px 0px 3px 0px #494949; */
 }
 .sidebar-menu li > a > .fa-caret-right, .sidebar-menu li > a > .pull-right-container > .fa-caret-right {
     width: auto;
@@ -194,13 +197,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     margin-top: -7px;
 }
 .skin-blue .main-header .navbar {
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0783ec+0,0757ae+100 */
-background: rgb(0,0,0);
-background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(41,137,216,1) 43%, rgba(125,185,232,1) 100%);
-background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(41,137,216,1) 43%,rgba(125,185,232,1) 100%);
-background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(41,137,216,1) 43%,rgba(125,185,232,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#7db9e8',GradientType=1 );
+    /* Dark Greenish-Grey Gradient matching sidebar */
+    background: #889477;
+    background: -moz-linear-gradient(left, #889477 0%, #4D5945 100%);
+    background: -webkit-linear-gradient(left, #889477 0%, #4D5945 100%);
+    background: linear-gradient(to right, #889477 0%, #4D5945 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889477', endColorstr='#4D5945', GradientType=1 );
 }
+
+
+
+
 .main-header .navbar {
     -webkit-transition: margin-left .3s ease-in-out;
     -o-transition: margin-left .3s ease-in-out;
@@ -231,7 +238,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     font-size: 20px;
 }
 .skin-blue .main-header .navbar .nav > li > a:hover, .skin-blue .main-header .navbar .nav > li > a:active, .skin-blue .main-header .navbar .nav > li > a:focus, .skin-blue .main-header .navbar .nav .open > a, .skin-blue .main-header .navbar .nav .open > a:hover, .skin-blue .main-header .navbar .nav .open > a:focus, .skin-blue .main-header .navbar .nav > .active > a {
-    background:#0782ea;
+    /* background:orange; */
     color: #fff;
     /*border-top-left-radius:15px;
     border-top-right-radius:15px;*/

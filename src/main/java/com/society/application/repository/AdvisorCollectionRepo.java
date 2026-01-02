@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.society.application.model.AdvisorCollectionReportModel;
 
-
 public interface AdvisorCollectionRepo extends JpaRepository<AdvisorCollectionReportModel, Integer> {
 
 	List<AdvisorCollectionReportModel> findByBusinessType(String businessType);

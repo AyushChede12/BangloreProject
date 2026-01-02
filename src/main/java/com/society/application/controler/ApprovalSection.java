@@ -38,34 +38,34 @@ import com.society.application.repository.ShareTransferDtoRepo;
 
 @Controller
 public class ApprovalSection {
-	
+
 	@Autowired
 	BranchMasterRepo branchMasterRepo;
-	
+
 	@Autowired
 	ClientMasterRepo clientMasterRepo;
-	
+
 	@Autowired
 	ShareTransferDtoRepo dtoRepo;
-	
+
 	@Autowired
 	AdvisorCollectorDetailsRepo advisorCollectorDetailsRepo;
-	
+
 	@Autowired
 	CashStatementrepo cashStatementrepo;
-	
+
 	@Autowired
 	private SavingsDepositWithdrawalRepo savingsDepositWithdrawalRepo;
-	
+
 	@Autowired
 	private RegularEmiReportRepo regularEmiReportRepo;
-	
+
 	@Autowired
 	private IrregularEMIReportRepo irregularEMIReportRepo;
-	
+
 	@Autowired
 	AddInvestmentRepo addInvestmentRepo;
-	
+
 	@Autowired
 	RecurringDueReportModelRepo recurringDueReportModelRepo;
 
@@ -80,7 +80,7 @@ public class ApprovalSection {
 		model.addAttribute("branchList", branchData);
 		return "approvalSection/AddMemberApproval";
 	}
-	
+
 	@PostMapping("/memberApproval")
 	@ResponseBody
 	public List<ClientMaster> memberApproval(@RequestBody ClientMaster clientMaster) {
@@ -92,9 +92,9 @@ public class ApprovalSection {
 		} else
 			return list2;
 	}
-	
+
 	/* */
-	
+
 	/* SHARE APPROVAL */
 
 	@GetMapping("/shareIssueApproval")
@@ -103,20 +103,20 @@ public class ApprovalSection {
 		model.addAttribute("branchList", branchData);
 		return "approvalSection/ShareIssueApproval";
 	}
-	
+
 	@PostMapping("/shareApproval")
 	@ResponseBody
-	public List<ShareTransferDto> shareApproval(@RequestBody ShareTransferDto share){
+	public List<ShareTransferDto> shareApproval(@RequestBody ShareTransferDto share) {
 		List<ShareTransferDto> list1 = dtoRepo.findBybranchName(share.getBranchName());
 		List<ShareTransferDto> list2 = dtoRepo.findBydojBetween(share.getfDate(), share.gettDate());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
-	
+
 	/* */
-	
+
 	/* ADVISOR/COLLECTOR APPROVAL */
 
 	@GetMapping("/advisorApproval")
@@ -125,18 +125,19 @@ public class ApprovalSection {
 		model.addAttribute("branchList", branchData);
 		return "approvalSection/AdvisorApproval";
 	}
-	
+
 	@PostMapping("/advisorApproval")
 	@ResponseBody
-	public List<AdvisorCollectorDetails> advisorApproval(@RequestBody AdvisorCollectorDetails advisor){
+	public List<AdvisorCollectorDetails> advisorApproval(@RequestBody AdvisorCollectorDetails advisor) {
 		List<AdvisorCollectorDetails> list1 = advisorCollectorDetailsRepo.findBybranchName(advisor.getBranchName());
-		List<AdvisorCollectorDetails> list2 = advisorCollectorDetailsRepo.findByjoiningDateBetween(advisor.getfDate(), advisor.gettDate());
-		if(!list1.isEmpty()) {
+		List<AdvisorCollectorDetails> list2 = advisorCollectorDetailsRepo.findByjoiningDateBetween(advisor.getfDate(),
+				advisor.gettDate());
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
-	
+
 	/* */
 
 	@GetMapping("/investmentApproval")
@@ -153,14 +154,14 @@ public class ApprovalSection {
 	public String SBTxnApproval(Model model) {
 		return "approvalSection/SBTxnApproval";
 	}
-	
+
 	/* SB TRANSFER APPROVAL */
 
 	@GetMapping("/intraTransferApproval")
 	public String intraTransferApproval(Model model) {
 		return "approvalSection/IntraTransferApproval";
 	}
-	
+
 	// Search by branchName & fdate tDate
 	@PostMapping("getDataByBranchAndDate")
 	@ResponseBody
@@ -174,37 +175,37 @@ public class ApprovalSection {
 		} else
 			return date;
 	}
-	
+
 	/* */
-	
+
 	/* REGULAR EMI APPROVAL */
 
 	@GetMapping("/regularEMIApproval")
 	public String regularEMIApproval(Model model) {
 		return "approvalSection/RegularEMIApproval";
 	}
-	
+
 	@PostMapping("/getDataInTableRegularEmi")
 	@ResponseBody
-	public List<RegularEmiReport> getDataInTableRegularEmi(@RequestBody RegularEmiReport regularEmiReport){
-		List<RegularEmiReport> branch =regularEmiReportRepo.findBybranch(regularEmiReport.getBranch());
-		List<RegularEmiReport> date =regularEmiReportRepo.findBypaydateBetween(regularEmiReport.getFromdate(),regularEmiReport.getTodate());
-		if(!branch.isEmpty()) {
+	public List<RegularEmiReport> getDataInTableRegularEmi(@RequestBody RegularEmiReport regularEmiReport) {
+		List<RegularEmiReport> branch = regularEmiReportRepo.findBybranch(regularEmiReport.getBranch());
+		List<RegularEmiReport> date = regularEmiReportRepo.findBypaydateBetween(regularEmiReport.getFromdate(),
+				regularEmiReport.getTodate());
+		if (!branch.isEmpty()) {
 			return branch;
-		}
-		else
+		} else
 			return date;
 	}
-	
+
 	/* */
-	
+
 	/* IRREGULAR EMI APPROVAL */
 
 	@GetMapping("/irrularEMIApproval")
 	public String irrularEMIApproval(Model model) {
 		return "approvalSection/IrrularEMIApproval";
 	}
-	
+
 	// fetch Data in Table of Irregular Emi
 	@PostMapping("/fetchDataInTableirregularEmi")
 	@ResponseBody
@@ -217,37 +218,38 @@ public class ApprovalSection {
 		} else
 			return date;
 	}
-	
+
 	/* */
-	
+
 	/* PAYMENT ENTRY APPROVAL */
 
 	@GetMapping("/paymentEntryApproval")
 	public String paymentEntryApproval(Model model) {
 		return "approvalSection/PaymentEntryApproval";
 	}
-	
+
 	@PostMapping("/searchInThePaymentApproval")
 	@ResponseBody
 	public List<AddInvestment> searchInTheGroupLoan(@RequestBody AddInvestment addInvestment) {
 		List<AddInvestment> data1 = addInvestmentRepo.findBybranchName(addInvestment.getBranchName());
-		List<AddInvestment> data2 = addInvestmentRepo.findBypolicyDateBetween(addInvestment.getfDate(), addInvestment.gettDate());
+		List<AddInvestment> data2 = addInvestmentRepo.findBypolicyDateBetween(addInvestment.getfDate(),
+				addInvestment.gettDate());
 		if (!data1.isEmpty()) {
 			return data1;
 		} else {
 			return data2;
 		}
 	}
-	
+
 	/* */
-	
+
 	/* MATURITY APPLICATION APPROVAL */
 
 	@GetMapping("/maturityApplicationApproval")
 	public String maturityApplicationApproval(Model model) {
 		return "approvalSection/MaturityApplicationApproval";
 	}
-	
+
 	// update code for maturity application
 	@PostMapping("/updateBySelectPolicyNoMAturity")
 	@ResponseBody
@@ -282,18 +284,18 @@ public class ApprovalSection {
 			return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	/* */
-	
+
 	/* MATURITY APPLICATION DELETE */
 
 	@GetMapping("/maturityApplicationDelete")
 	public String maturityApplicationDelete(Model model) {
 		return "approvalSection/MaturityApplicationDelete";
 	}
-	
+
 	/* */
-	
+
 	/* BRANCH CASH TRANSFER APPROVAL */
 
 	@GetMapping("/CSPCashTransferApproval")
@@ -302,20 +304,20 @@ public class ApprovalSection {
 		model.addAttribute("branchList", branchData);
 		return "approvalSection/CSPCashTransferApproval";
 	}
-	
+
 	@PostMapping("/cspCashTransferApproval")
 	@ResponseBody
-	public List<CashStatement> cspCashTransferApproval(@RequestBody CashStatement cash){
+	public List<CashStatement> cspCashTransferApproval(@RequestBody CashStatement cash) {
 		List<CashStatement> list1 = cashStatementrepo.findBybranchName(cash.getBranchName());
 		List<CashStatement> list2 = cashStatementrepo.findBytxnDateBetween(cash.getFromDate(), cash.getToDate());
-		if(!list1.isEmpty()) {
+		if (!list1.isEmpty()) {
 			return list1;
-		}else
+		} else
 			return list2;
 	}
-	
+
 	/* */
-	
+
 	@PostMapping("/searchByBranchName")
 	@ResponseBody
 	public Response searchByBranchName(@RequestBody AddInvestment ai) {
@@ -334,7 +336,6 @@ public class ApprovalSection {
 
 		return response;
 	}
-
 
 	@PostMapping("/searchByDate")
 	@ResponseBody
@@ -355,93 +356,89 @@ public class ApprovalSection {
 		return response;
 
 	}
-	
-	
-	
-	
-	//Renewal Approval Module.
 
-		@PostMapping("/searchByBranchNameRenewalModule")
-		@ResponseBody
-		public Response searchByBranchNameRenewalModule(@RequestBody RecurringDueReportModel ai) {
+	// Renewal Approval Module.
 
-			Response response = new Response<>();
-			response.setStatus("Not Success");
-			response.setMessage("Data Not Found ..!!");
-			List<RecurringDueReportModel> recurringDueReportModels = recurringDueReportModelRepo.findBybranchname(ai.getBranchname());
+	@PostMapping("/searchByBranchNameRenewalModule")
+	@ResponseBody
+	public Response searchByBranchNameRenewalModule(@RequestBody RecurringDueReportModel ai) {
 
-			if (recurringDueReportModels != null) {
-				response.setStatus("Success");
-				response.setMessage("Data Found !!!");
-				response.setData(recurringDueReportModels);
-				return response;
-			}
+		Response response = new Response<>();
+		response.setStatus("Not Success");
+		response.setMessage("Data Not Found ..!!");
+		List<RecurringDueReportModel> recurringDueReportModels = recurringDueReportModelRepo
+				.findBybranchname(ai.getBranchname());
 
+		if (recurringDueReportModels != null) {
+			response.setStatus("Success");
+			response.setMessage("Data Found !!!");
+			response.setData(recurringDueReportModels);
 			return response;
 		}
 
+		return response;
+	}
 
-		@PostMapping("/searchByDateInRenewalApproval")
-		@ResponseBody
-		public Response searchByDateInRenewalApproval(@RequestBody RecurringDueReportModel ai) {
+	@PostMapping("/searchByDateInRenewalApproval")
+	@ResponseBody
+	public Response searchByDateInRenewalApproval(@RequestBody RecurringDueReportModel ai) {
 
-			Response response = new Response<>();
-			response.setStatus("Not Success");
-			response.setMessage("Data Not Found ..!!");
+		Response response = new Response<>();
+		response.setStatus("Not Success");
+		response.setMessage("Data Not Found ..!!");
 
-			List<RecurringDueReportModel> object = recurringDueReportModelRepo.findBytxndateBetween(ai.getFromdate(),ai.getTodate());
+		List<RecurringDueReportModel> object = recurringDueReportModelRepo.findBytxndateBetween(ai.getFromdate(),
+				ai.getTodate());
 
-			if (object != null) {
-				response.setStatus("Success");
-				response.setMessage("Data Found !!!");
-				response.setData(object);
-				return response;
-			}
-			return response;
-
-		}
-
-		//Saving Transaction Approval.
-
-		@PostMapping("/searchByBranchNameSavingTxn")
-		@ResponseBody
-		public Response searchByBranchNameSavingTxn(@RequestBody SavingsDepositWith ai) {
-
-			Response response = new Response<>();
-			response.setStatus("Not Success");
-			response.setMessage("Data Not Found ..!!");
-			List<SavingsDepositWith> object = savingsDepositWithRepo.findBybranchName(ai.getBranchName());
-
-
-			if (object != null) {
-				response.setStatus("Success");
-				response.setMessage("Data Found !!!");
-				response.setData(object);
-				return response;
-			}
-
+		if (object != null) {
+			response.setStatus("Success");
+			response.setMessage("Data Found !!!");
+			response.setData(object);
 			return response;
 		}
+		return response;
 
+	}
 
-		@PostMapping("/searchByDateInSavingApproval")
-		@ResponseBody
-		public Response searchByDateInSavingApproval(@RequestBody SavingsDepositWith ai) {
+	// Saving Transaction Approval.
 
-			Response response = new Response<>();
-			response.setStatus("Not Success");
-			response.setMessage("Data Not Found ..!!");
+	@PostMapping("/searchByBranchNameSavingTxn")
+	@ResponseBody
+	public Response searchByBranchNameSavingTxn(@RequestBody SavingsDepositWith ai) {
 
-			List<SavingsDepositWith> object = savingsDepositWithRepo.findBytxnDateBetween(ai.getfDate(),ai.gettDate());
+		Response response = new Response<>();
+		response.setStatus("Not Success");
+		response.setMessage("Data Not Found ..!!");
+		List<SavingsDepositWith> object = savingsDepositWithRepo.findBybranchName(ai.getBranchName());
 
-			if (object != null) {
-				response.setStatus("Success");
-				response.setMessage("Data Found !!!");
-				response.setData(object);
-				return response;
-			}
+		if (object != null) {
+			response.setStatus("Success");
+			response.setMessage("Data Found !!!");
+			response.setData(object);
 			return response;
-
 		}
+
+		return response;
+	}
+
+	@PostMapping("/searchByDateInSavingApproval")
+	@ResponseBody
+	public Response searchByDateInSavingApproval(@RequestBody SavingsDepositWith ai) {
+
+		Response response = new Response<>();
+		response.setStatus("Not Success");
+		response.setMessage("Data Not Found ..!!");
+
+		List<SavingsDepositWith> object = savingsDepositWithRepo.findBytxnDateBetween(ai.getfDate(), ai.gettDate());
+
+		if (object != null) {
+			response.setStatus("Success");
+			response.setMessage("Data Found !!!");
+			response.setData(object);
+			return response;
+		}
+		return response;
+
+	}
 
 }

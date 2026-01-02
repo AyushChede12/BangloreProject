@@ -6,8 +6,8 @@ import com.society.application.model.SavingsAccountApplication;
 
 import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
-public interface SavingsAccountApplicationRepo extends JpaRepository<SavingsAccountApplication, Integer>{
-	
-	//Optional<SavingsAccountApplication> findById(Long id);
+public interface SavingsAccountApplicationRepo extends JpaRepository<SavingsAccountApplication, Integer> {
+
+	// Optional<SavingsAccountApplication> findById(Long id);
 
 }

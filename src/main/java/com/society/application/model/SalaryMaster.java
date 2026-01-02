@@ -36,7 +36,8 @@ public class SalaryMaster {
 	private String smsCharges;
 	private String serviceCharges;
 	private String createdBy;
-	private String CreatedDt; 
+	private String CreatedDt;
+
 	public String getCreatedBy() {
 		return createdBy;
 	}

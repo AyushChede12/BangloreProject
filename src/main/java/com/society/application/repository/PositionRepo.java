@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.Position;
 
 @Repository
-public interface PositionRepo extends JpaRepository<Position, Integer>{
+public interface PositionRepo extends JpaRepository<Position, Integer> {
 
 }

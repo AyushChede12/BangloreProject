@@ -80,7 +80,7 @@ public class InvestmentSectionController {
 
 	@Autowired
 	BranchMasterRepo branchMasterRepo;
-	
+
 	@Autowired
 	InvestmentNewAccountRepo newAccountRepo;
 
@@ -119,9 +119,7 @@ public class InvestmentSectionController {
 			@RequestParam("maturityAmount") String maturityAmount, @RequestParam("mISInterest") String mISInterest,
 			@RequestParam("paymode") String paymode, @RequestParam("remarks") String remarks,
 			@RequestParam("advisorCode") String advisorCode, @RequestParam("advisorName") String advisorName,
-			@RequestParam("chkisSms") String chkisSms, 
-			AddInvestment addin,
-			HttpSession session) {
+			@RequestParam("chkisSms") String chkisSms, AddInvestment addin, HttpSession session) {
 		try {
 			addin = new AddInvestment();
 			String createdBy = session.getAttribute("ID").toString();
@@ -176,8 +174,9 @@ public class InvestmentSectionController {
 	/* INVESTMENT SECTION - PLAN MASTER */
 
 	@PostMapping("/submitDailyDeposite")
-	public String submitDailyDeposite(@ModelAttribute("dd") DailyDeposite dailyDeposite, Model model,HttpSession session) {
-		String createdBy =session.getAttribute("ID").toString();
+	public String submitDailyDeposite(@ModelAttribute("dd") DailyDeposite dailyDeposite, Model model,
+			HttpSession session) {
+		String createdBy = session.getAttribute("ID").toString();
 		dailyDeposite.setCreatedBy(createdBy);
 		dailyDepositeRepo.save(dailyDeposite);
 		session.setAttribute("createdBy", createdBy);
@@ -191,7 +190,8 @@ public class InvestmentSectionController {
 	}
 
 	@PostMapping("/submitRecurringDeposit")
-	public String submitRecurringDeposit(@ModelAttribute("rd") RecurringDeposit recurringDeposit, Model model,HttpSession session) {
+	public String submitRecurringDeposit(@ModelAttribute("rd") RecurringDeposit recurringDeposit, Model model,
+			HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		recurringDeposit.setCreatedBy(createdBy);
 		recurringDepositRepo.save(recurringDeposit);
@@ -200,7 +200,8 @@ public class InvestmentSectionController {
 	}
 
 	@PostMapping("/submitFixedDeposit")
-	public String submitFixedDeposit(@ModelAttribute("fd") FixedDeposit fixedDeposit, Model model,HttpSession session) {
+	public String submitFixedDeposit(@ModelAttribute("fd") FixedDeposit fixedDeposit, Model model,
+			HttpSession session) {
 		String createdBy = session.getAttribute("ID").toString();
 		fixedDeposit.setCreatedBy(createdBy);
 		fixedDepositRepo.save(fixedDeposit);
@@ -209,8 +210,8 @@ public class InvestmentSectionController {
 	}
 
 	@PostMapping("/submitMISDeposit")
-	public String submitMISDeposit(@ModelAttribute("mis") MISDeposit mISDeposit, Model model,HttpSession session) {
-		String createdBy =session.getAttribute("ID").toString();
+	public String submitMISDeposit(@ModelAttribute("mis") MISDeposit mISDeposit, Model model, HttpSession session) {
+		String createdBy = session.getAttribute("ID").toString();
 		mISDeposit.setCreatedBy(createdBy);
 		mISDepositRepo.save(mISDeposit);
 		session.setAttribute("createdBy", createdBy);
@@ -269,52 +270,51 @@ public class InvestmentSectionController {
 	@PostMapping("/searchByPolicyNo")
 	@ResponseBody
 	public List<AddInvestment> getByAddInvesmentCode(@RequestBody AddInvestment model) {
-	    List<AddInvestment> list = addInvestmentRepo.findAllByid(model.getId());
-	    list.forEach(s -> {
-	        // Check if the photo and signature are not null
-	        if (s.getPhoto() != null && s.getSignature() != null) {
-	            // Convert the photo and signature to base64 encoded strings
-	            String encodedPhoto = Base64.getEncoder().encodeToString(s.getPhoto());
-	            String encodedSignature = Base64.getEncoder().encodeToString(s.getSignature());
-	            s.setFrontEndPhoto(encodedPhoto);
-	            s.setFrontEndSignature(encodedSignature);
-	        }
-	    });
-	    return list;
+		List<AddInvestment> list = addInvestmentRepo.findAllByid(model.getId());
+		list.forEach(s -> {
+			// Check if the photo and signature are not null
+			if (s.getPhoto() != null && s.getSignature() != null) {
+				// Convert the photo and signature to base64 encoded strings
+				String encodedPhoto = Base64.getEncoder().encodeToString(s.getPhoto());
+				String encodedSignature = Base64.getEncoder().encodeToString(s.getSignature());
+				s.setFrontEndPhoto(encodedPhoto);
+				s.setFrontEndSignature(encodedSignature);
+			}
+		});
+		return list;
 	}
 
 	@PostMapping("/updateBySelectPolicyNo")
 	@ResponseBody
 	public ResponseEntity<String> updateBySelectPolicyNo(
-			//@RequestParam(value = "searchbyPolicyNo") Integer id,
+			// @RequestParam(value = "searchbyPolicyNo") Integer id,
 			@RequestParam(name = "filetag", required = false) MultipartFile file1,
 			@RequestParam(name = "secondfiletag", required = false) MultipartFile file2,
-			@RequestParam(name = "tDate", required = false) String tDate, 
+			@RequestParam(name = "tDate", required = false) String tDate,
 			@RequestParam(name = "branchName", required = false) String branchName,
-			@RequestParam(name = "transactionFor", required = false) String transactionFor, 
+			@RequestParam(name = "transactionFor", required = false) String transactionFor,
 			@RequestParam(name = "remarks", required = false) String remarks,
-			@RequestParam(name = "transactionType", required = false) String transactionType, 
+			@RequestParam(name = "transactionType", required = false) String transactionType,
 			@RequestParam(name = "amount", required = false) String amount,
-			@RequestParam(name = "paymode", required = false) String paymode, 
+			@RequestParam(name = "paymode", required = false) String paymode,
 			@RequestParam(name = "empCode", required = false) String empCode,
-			@RequestParam(name = "searchMemberCode", required = false) String searchMemberCode, 
+			@RequestParam(name = "searchMemberCode", required = false) String searchMemberCode,
 			@RequestParam(name = "memberName", required = false) String memberName,
-			@RequestParam(name = "phoneno", required = false) String phoneno, 
+			@RequestParam(name = "phoneno", required = false) String phoneno,
 			@RequestParam(name = "planCode", required = false) String planCode,
 			@RequestParam(name = "balance", required = false) String balance,
-			@RequestParam(name = "id123", required = false) Integer id,
-			HttpSession session) {
+			@RequestParam(name = "id123", required = false) Integer id, HttpSession session) {
 		try {
 			List<AddInvestment> add = addInvestmentRepo.findByid(id);
 			String createdBy = session.getAttribute("ID").toString();
-			add.forEach(s->{
-				if(!(file1==null) && !(file2==null)) {
+			add.forEach(s -> {
+				if (!(file1 == null) && !(file2 == null)) {
 					try {
 						byte[] photo = file1.getBytes();
 						byte[] signature = file2.getBytes();
 						s.setPhoto(photo);
 						s.setSignature(signature);
-					}catch (IOException e) {
+					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
@@ -331,7 +331,7 @@ public class InvestmentSectionController {
 				session.setAttribute("createdBy", createdBy);
 			});
 			return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
-		}catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println(ex);
 			return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -347,10 +347,10 @@ public class InvestmentSectionController {
 	@GetMapping("/fetchDataByAddInvestment")
 	@ResponseBody
 	public List<AddInvestment> fetchAddInvestment(HttpServletRequest request) {
-	    String ids = request.getParameter("id");
-	    int id = Integer.parseInt(ids);
-	    List<AddInvestment> data = addInvestmentRepo.findByid(id);
-	    return data;
+		String ids = request.getParameter("id");
+		int id = Integer.parseInt(ids);
+		List<AddInvestment> data = addInvestmentRepo.findByid(id);
+		return data;
 	}
 
 	@GetMapping("/clientData")
@@ -388,7 +388,7 @@ public class InvestmentSectionController {
 	@ResponseBody
 	public List<ClientMaster> fetchDataFromSelectMember(@RequestBody ClientMaster client) {
 		List<ClientMaster> list = clientMasterRepo.findByid(client.getId());
-		if(!list.isEmpty()) {
+		if (!list.isEmpty()) {
 			ClientMaster master = list.get(0);
 			String encodedPhoto = Base64.getEncoder().encodeToString(master.getImage());
 			master.setFrontEndPhoto(encodedPhoto);
@@ -556,25 +556,25 @@ public class InvestmentSectionController {
 		List<AddInvestment> branchName = addInvestmentRepo.findBybranchName(branch);
 		return branchName;
 	}
-	
+
 	// Investment Section -> New Account
 	@GetMapping("/newAccount")
 	public String newAccount() {
 		return "investmentSection/NewAccount";
 	}
-	
+
 	@PostMapping("/getDataInFormByBranchCode")
 	@ResponseBody
-	public List<BranchMaster> getDataInFormByBranchCode(@RequestBody BranchMaster branchMaster){
-	List<BranchMaster> list = branchMasterRepo.findBybranchCode(branchMaster.getBranchCode());
-	return list;
+	public List<BranchMaster> getDataInFormByBranchCode(@RequestBody BranchMaster branchMaster) {
+		List<BranchMaster> list = branchMasterRepo.findBybranchCode(branchMaster.getBranchCode());
+		return list;
 	}
-	
-	//Saving Data For New Account
+
+	// Saving Data For New Account
 	@PostMapping("/newAccount")
 	public String getnewAccount(@ModelAttribute("NewAccount") InvestmentNewAccount newAccount, Model model) {
-			newAccountRepo.save(newAccount);
-			return "investmentSection/NewAccount";
+		newAccountRepo.save(newAccount);
+		return "investmentSection/NewAccount";
 	}
 
 }

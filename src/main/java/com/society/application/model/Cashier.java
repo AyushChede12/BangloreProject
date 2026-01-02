@@ -7,14 +7,14 @@ import java.time.LocalDate;
 public class Cashier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	@Column(name = "branchCode")
+	private Long id;
+
 	private String branchCode;
 	private String selectBranch;
 	private String glHeadNo;
 	private LocalDate entryDate;
 	private Long scroll;
-	private double balance;
+	private Double balance;
 	private String payment;
 	private String pendingTransaction;
 	private String selectGlHead;
@@ -26,8 +26,36 @@ public class Cashier {
 	private String specialInstruction;
 	private String cashierNarration;
 	private String voucherNo;
+	private String denominationCash;
+	private String glnoTransactionID;
+
+	private String transactionID;
 	private String module;
 	private String Flag;
+
+	public String getGlnoTransactionID() {
+		return glnoTransactionID;
+	}
+
+	public void setGlnoTransactionID(String glnoTransactionID) {
+		this.glnoTransactionID = glnoTransactionID;
+	}
+
+	public String getTransactionID() {
+		return transactionID;
+	}
+
+	public void setTransactionID(String transactionID) {
+		this.transactionID = transactionID;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getBranchCode() {
 		return branchCode;
@@ -45,6 +73,22 @@ public class Cashier {
 		this.selectBranch = selectBranch;
 	}
 
+	public String getGlHeadNo() {
+		return glHeadNo;
+	}
+
+	public void setGlHeadNo(String glHeadNo) {
+		this.glHeadNo = glHeadNo;
+	}
+
+	public LocalDate getEntryDate() {
+		return entryDate;
+	}
+
+	public void setEntryDate(LocalDate entryDate) {
+		this.entryDate = entryDate;
+	}
+
 	public Long getScroll() {
 		return scroll;
 	}
@@ -53,11 +97,11 @@ public class Cashier {
 		this.scroll = scroll;
 	}
 
-	public double getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 
@@ -149,6 +193,14 @@ public class Cashier {
 		this.voucherNo = voucherNo;
 	}
 
+	public String getDenominationCash() {
+		return denominationCash;
+	}
+
+	public void setDenominationCash(String denominationCash) {
+		this.denominationCash = denominationCash;
+	}
+
 	public String getModule() {
 		return module;
 	}
@@ -164,32 +216,4 @@ public class Cashier {
 	public void setFlag(String flag) {
 		Flag = flag;
 	}
-
-	public Cashier() {
-    }
-
-	public LocalDate getEntryDate() {
-		return entryDate;
-	}
-
-	public String getGlHeadNo() {
-		return glHeadNo;
-	}
-
-	public void setGlHeadNo(String glHeadNo) {
-		this.glHeadNo = glHeadNo;
-	}
-
-	public void setEntryDate(LocalDate entryDate) {
-		this.entryDate = entryDate;
-	}
-
-	public long getId() {
-		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
-	}
-
 }

@@ -51,8 +51,8 @@ public class Employee {
 	private String exp;
 	private String lastSalary;
 	private String cl;
-    private String sl;
-    private String el;
+	private String sl;
+	private String el;
 	private String tDate;
 	private String fDate;
 	private String empCode;
@@ -63,7 +63,7 @@ public class Employee {
 	private String leaveDate;
 	private String LeavePurpose;
 	private String createdBy;
-	private String CreatedDt; 
+	private String CreatedDt;
 
 	public String getCreatedBy() {
 		return createdBy;
@@ -456,30 +456,30 @@ public class Employee {
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
-	
+
 	public String getCl() {
-        return cl;
-    }
+		return cl;
+	}
 
-    public void setCl(String cl) {
-        this.cl = cl;
-    }
+	public void setCl(String cl) {
+		this.cl = cl;
+	}
 
-    public String getSl() {
-        return sl;
-    }
+	public String getSl() {
+		return sl;
+	}
 
-    public void setSl(String sl) {
-        this.sl = sl;
-    }
+	public void setSl(String sl) {
+		this.sl = sl;
+	}
 
-    public String getEl() {
-        return el;
-    }
+	public String getEl() {
+		return el;
+	}
 
-    public void setEl(String el) {
-        this.el = el;
-    }
+	public void setEl(String el) {
+		this.el = el;
+	}
 
 	@Override
 	public String toString() {

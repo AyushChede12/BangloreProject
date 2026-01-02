@@ -15,18 +15,16 @@ import java.nio.file.Path;
 @Controller
 public class PdfController {
 
-    @GetMapping("/downloadPdf/{fileName}")
-    public ResponseEntity<byte[]> downloadPdf(@PathVariable String fileName) throws IOException {
-        ClassPathResource pdfFile = new ClassPathResource("static/NDHform/" + fileName + ".pdf");
+	@GetMapping("/downloadPdf/{fileName}")
+	public ResponseEntity<byte[]> downloadPdf(@PathVariable String fileName) throws IOException {
+		ClassPathResource pdfFile = new ClassPathResource("static/NDHform/" + fileName + ".pdf");
 
-        byte[] pdfBytes = Files.readAllBytes(pdfFile.getFile().toPath());
+		byte[] pdfBytes = Files.readAllBytes(pdfFile.getFile().toPath());
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_PDF);
-        headers.setContentDispositionFormData("attachment", fileName + ".pdf");
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_PDF);
+		headers.setContentDispositionFormData("attachment", fileName + ".pdf");
 
-        return ResponseEntity.ok()
-                .headers(headers)
-                .body(pdfBytes);
-    }
+		return ResponseEntity.ok().headers(headers).body(pdfBytes);
+	}
 }

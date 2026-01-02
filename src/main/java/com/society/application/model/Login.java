@@ -7,13 +7,13 @@ import javax.persistence.Id;
 
 @Entity
 public class Login {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String txtusername;
-	
+
 	private String txtPassword;
 
 	public int getId() {
@@ -39,7 +39,5 @@ public class Login {
 	public void setTxtPassword(String txtPassword) {
 		this.txtPassword = txtPassword;
 	}
-	
-	
 
 }

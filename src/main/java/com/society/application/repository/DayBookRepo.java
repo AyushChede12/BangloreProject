@@ -14,6 +14,4 @@ public interface DayBookRepo extends JpaRepository<DayBookModel, Integer> {
 
 	List<DayBookModel> findByDateBetween(String getfDate, String gettDate);
 
-	
-
 }

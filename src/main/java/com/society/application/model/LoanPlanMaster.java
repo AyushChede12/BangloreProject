@@ -1,6 +1,5 @@
 package com.society.application.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -93,6 +92,7 @@ public class LoanPlanMaster {
 	private String age;
 	private String planTerm;
 	private String createdBy;
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
@@ -109,9 +109,8 @@ public class LoanPlanMaster {
 		CreatedDt = createdDt;
 	}
 
-	private String CreatedDt;    
-	
-	
+	private String CreatedDt;
+
 	public String getPlanTerm() {
 		return planTerm;
 	}
@@ -790,8 +789,5 @@ public class LoanPlanMaster {
 				+ ", payableStringerest=" + payableStringerest + ", payablePrincipal=" + payablePrincipal
 				+ ", payablePrincipalaymentString=" + payablePrincipalaymentString + "]";
 	}
-
-	
-	
 
 }

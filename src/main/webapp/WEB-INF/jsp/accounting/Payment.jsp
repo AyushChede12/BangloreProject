@@ -50,11 +50,11 @@
 										</div>
 										<label>
 											<input type="radio" name="typeCashBank" id="typeCashBank" value="Cash"
-												style="margin-left: 15px;" disabled> Cash
+												style="margin-left: 15px;"> Cash
 										</label>
 										<label>
 											<input type="radio" name="typeCashBank" id="typeCashBank" value="Bank"
-												style="margin-left: 15px;" checked> Bank
+												style="margin-left: 15px;"> Bank
 										</label>
 
 
@@ -83,6 +83,11 @@
 													readonly="readonly" class="form-control"
 													Placeholder="Enter G.L.Head No." />
 											</div>
+											<div>
+												<input name="accountNoBank" type="hidden" id="accountNoBank"
+													readonly="readonly" class="form-control"
+													Placeholder="Enter G.L.Head No." />
+											</div>
 										</div>
 										<div class="form-group row">
 											<label for="bankGLHead" class="col-sm-4 control-label">Balance
@@ -91,6 +96,9 @@
 											<div class="col-sm-8">
 												<input name="debitBalance" type="text" id="debitBalance"
 													class="form-control" Placeholder="Enter Balance" />
+
+												<input name="cashuniqueId" type="text" id="cashuniqueId"
+													class="form-control" Placeholder="cash unique Id" />
 											</div>
 										</div>
 
@@ -110,7 +118,7 @@
 												<strong style="color: Red">*</strong>
 											</label>
 											<div class="col-sm-8">
-												<input name="branchCode" type="text" id="branchCode"
+												<input name="branchCode" type="text" id="branchCode" value="1"
 													class="form-control" Placeholder="Enter Branch Code" />
 											</div>
 										</div>
@@ -120,7 +128,7 @@
 											</label>
 											<div class="col-sm-8">
 												<select name="creditBank" id="creditBank" style="width: 100%;">
-													<option selected="selected" value=""></option>
+													<option selected="selected" value="H.o">H.O</option>
 												</select> <span
 													id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -155,7 +163,8 @@
 												No.<strong style="color: Red">*</strong>
 											</label>
 											<div class="col-sm-8">
-												<input name="accountNo" type="text" id="accountNo" class="form-control"
+												<input onchange="setthroughAccountNo();" name="accountNo" type="text"
+													id="accountNo" class="form-control"
 													Placeholder="Enter Account No." />
 											</div>
 
@@ -212,6 +221,8 @@
 												<input onchange="setTheintrumentDetails()" name="amount" type="text"
 													value="" id="amount" class="form-control"
 													Placeholder="Enter Transaction Amount" />
+
+
 											</div>
 										</div>
 										<h5 style="font-weight: bold;margin-left: 15px;">Transaction</h5>
@@ -247,7 +258,7 @@
 											<div class="col-sm-8">
 												<select name="instrumentType" id="instrumentType"
 													class="form-control select2" style="width: 100%;">
-													<option value="Slip">Slip</option>
+													<option value="Cheque">Cheque</option>
 												</select>
 											</div>
 										</div>
@@ -437,8 +448,35 @@
 
 			// Check the selected value
 			if (selectedValue === "Cash") {
-				// Display "Cash" in the dropdown
-				$selectBank.append('<option value="Cash">Cash</option>');
+				$.ajax({
+
+					type: "POST",
+					url: 'fetchAllNewGlHead',
+					success: function (data) {
+
+						const cashObj = data.find(obj => obj.uniqueId === 'UNIQUE_ID_1703095181710');
+
+						// Display "Cash" in the dropdown
+						$selectBank.append(`<option value = "` + cashObj.glHeadName + `">` + cashObj.glHeadName + `</option>`);
+
+						document.getElementById("glHeadNodebit").value = cashObj.glHeadNo;
+						document.getElementById("debitBalance").value = cashObj.balance;
+
+						document.getElementById("cashuniqueId").value = cashObj.uniqueId;
+
+
+						var instrumentType = $("#instrumentType");
+						instrumentType.empty(); // Clear existing options
+
+						instrumentType.append('<option value="Slip" selected>Slip</option>');
+
+
+
+					},
+					error: function () {
+						alert("Error while fetching bank data");
+					}
+				});
 
 				// Disable the fields for Cash
 				$("input[name='instrumentType'], input[name='instrumentAmount'], input[name='amountInWords'], input[name='instrumentDate'], input[name='instrumentNo'], input[name='inFavourOf'], input[name='bankName'], input[name='bankBranch'], input[name='drawnOnBank'], input[name='drawnOnBranch']").prop('readonly', true);
@@ -498,6 +536,7 @@
 				document.getElementById("bankBranch").value = cbiObject.branch;
 				document.getElementById("glHeadNodebit").value = cbiObject.glHeadNo;
 				document.getElementById("bankName").value = cbiObject.name;
+				document.getElementById("accountNoBank").value = cbiObject.bankAccoununtNo;
 
 
 
@@ -533,9 +572,9 @@
 				//document.getElementById("unclearBalance").value = cbiObject.balance;
 
 
-				if (cbiObject && cbiObject.bankID === null) {
+				if (cbiObject && cbiObject.module === 'Accounting') {
 					// Append the value to the input tag
-					document.getElementById("branchCode").value = cbiObject.branchCode;
+					document.getElementById("branchCode").value = '1';
 					//document.getElementById("glHeadNo").value = cbiObject.glHeadNo;
 					document.getElementById("selectGlHead").value = cbiObject.glHeadName;
 					document.getElementById("accountNo").value = cbiObject.accountValue;
@@ -556,8 +595,24 @@
 					// Append a new option
 					const newOption = document.createElement("option");
 					newOption.value = cbiObject.uniqueId;
-					newOption.text = cbiObject.organization;
+					newOption.text = 'H.O';
 					branchCodeDropdown.appendChild(newOption);
+
+				} else if (cbiObject && cbiObject.module === 'New Scheme') {
+					alert("You selected the new Scheme GL no Plz enter the Account No ")
+					document.getElementById("selectGlHead").value = cbiObject.glHeadName;
+
+					var accountNoField = document.getElementById("accountNo");
+					accountNoField.readOnly = false;
+
+					document.getElementById("accountNo").value = '';
+
+					document.getElementById("searchAccountHolder").value = '';
+					document.getElementById("selectAccountHolder").value = '';
+					document.getElementById("balance").value = '';
+					document.getElementById("inFavourOf").value = '';
+
+
 
 				} else {
 					// If bankID is not null, return from the function or perform other actions
@@ -692,264 +747,414 @@
 	$(document).ready(function () {
 		$('#btnSave').click(function () {
 
-			var voucherNo = $("#voucherNo").val();
-			var entryDate = $("#entryDate").val();
-			// Get the value of the selected radio button
-			var typeCashBank = document.querySelector('input[name="typeCashBank"]:checked').value;
 
-			var debitBank = $("#debitBank").val();
-			var debitBalance = $("#debitBalance").val();
-
-			var details = $("#details").val();
-			var branchCode = $("#branchCode").val();
-			var creditBank = $("#creditBank").val();
-			var glHeadNo = $("#glHeadNo").val();
-			var selectGlHead = $("#selectGlHead").val();
-
-			var accountNo = $("#accountNo").val();
-			var searchAccountHolder = $("#searchAccountHolder").val();
-			var selectAccountHolder = $("#selectAccountHolder").val();
-			var unclearBalance = $("#unclearBalance").val();
-			var amount = $("#amount").val();
+			var selectedValue = document.querySelector('input[name="typeCashBank"]:checked');
 
 
-			var transactionType = document.querySelector('input[name="transactionType"]:checked').value;
-
-
-			var instrumentType = $("#instrumentType").val();
-			var instrumentAmount = $("#instrumentAmount").val();
-			var amountInWords = $("#amountInWords").val();
-			var instrumentDate = $("#instrumentDate").val();
-
-
-			var instrumentNo = $("#instrumentNo").val();
-			var inFavourOf = $("#inFavourOf").val();
-			var bankName = $("#bankName").val();
-			var bankBranch = $("#bankBranch").val();
-			var drawnOnBank = $("#drawnOnBank").val();
-			var drawnOnBranch = $("#drawnOnBranch").val();
-
-
-			var glHeadNodebit = $("#glHeadNodebit").val();
-
-			var instrumentType = $("#instrumentType").val();
-			var instrumentAmount = $("#instrumentAmount").val();
-			var amountInWords = $("#amountInWords").val();
-
-			
-
-			const data = [];
-
-			function generateTransactionId() {
-				const timestamp = new Date().getTime(); // Get current timestamp
-				const randomNum = Math.floor(Math.random() * 1000000); // Generate a random number
-				const transactionId = timestamp + "" + randomNum; // Combine timestamp and random number
-
-				return transactionId;
+			if (selectedValue === null) {
+				// Return or use the selected value
+				return alert("PLz Select the Cash Or Bank.......");
 			}
 
-			// Example usage
-			const uniqueTransactionId = generateTransactionId();
+			if (selectedValue.value === "Bank") {
 
+				var voucherNo = $("#voucherNo").val();
+				var entryDate = $("#entryDate").val();
+				// Get the value of the selected radio button
+				var typeCashBank = document.querySelector('input[name="typeCashBank"]:checked').value;
 
-			const credit = {
-				entryDate: entryDate,
-				voucherNo: voucherNo,
-				type: "Jv" + voucherNo,
-				glHeadNo: glHeadNo,
-				selectGlHead: selectGlHead,
-				accountNo: accountNo,
-				selectAccountHolder: selectAccountHolder,
-				transactionType: transactionType,
-				amount: amount,
-				receiptType: typeCashBank,
-				bankId: creditBank,
-				instrumentType: instrumentType,
-				instrumentNo: instrumentNo,
-				drawnOnBank: drawnOnBank,
-				drawnOnBranch: drawnOnBranch,
-				details: details,
-				uniqueTransactionId: uniqueTransactionId,
+				var debitBank = $("#debitBank").val();
+				var debitBalance = $("#debitBalance").val();
 
+				var details = $("#details").val();
+				var branchCode = $("#branchCode").val();
+				var creditBank = $("#creditBank").val();
+				var glHeadNo = $("#glHeadNo").val();
+				var selectGlHead = $("#selectGlHead").val();
 
-				// instrumentDate:instrumentDate,
-				// instrumentNo:instrumentNo,
-				// inFavourOf:inFavourOf,
-				// bankName:bankName,
-				// bankBranch:bankBranch,
-				// drawnOnBank:drawnOnBank,
-				// drawnOnBranch:drawnOnBranch,
+				var accountNo = $("#accountNo").val();
+				var searchAccountHolder = $("#searchAccountHolder").val();
+				var selectAccountHolder = $("#selectAccountHolder").val();
+				var unclearBalance = $("#unclearBalance").val();
+				var amount = $("#amount").val();
 
 
-			};
+				var transactionType = document.querySelector('input[name="transactionType"]:checked').value;
 
-			data.push(credit);
 
+				var instrumentType = $("#instrumentType").val();
+				var instrumentAmount = $("#instrumentAmount").val();
+				var amountInWords = $("#amountInWords").val();
+				var instrumentDate = $("#instrumentDate").val();
 
-			const debit = {
-				entryDate: entryDate,
-				voucherNo: voucherNo,
-				type: "Jv" + voucherNo,
-				glHeadNo: glHeadNodebit,
-				transactionType: "credit",
-				amount: amount,
-				receiptType: typeCashBank,
-				bankId: debitBank,
-				chequeRegister: "0",
-				selectGlHead: bankName,
 
-				uniqueTransactionId: uniqueTransactionId,
+				var instrumentNo = $("#instrumentNo").val();
+				var inFavourOf = $("#inFavourOf").val();
+				var bankName = $("#bankName").val();
+				var bankBranch = $("#bankBranch").val();
+				var drawnOnBank = $("#drawnOnBank").val();
+				var drawnOnBranch = $("#drawnOnBranch").val();
 
 
+				var glHeadNodebit = $("#glHeadNodebit").val();
 
+				var instrumentType = $("#instrumentType").val();
+				var instrumentAmount = $("#instrumentAmount").val();
+				var amountInWords = $("#amountInWords").val();
+				var accountNoBank = $("#accountNoBank").val();
 
 
-				amountInWords: amountInWords,
-				instrumentAmount: instrumentAmount,
-				instrumentType: instrumentType,
-				instrumentDate: instrumentDate,
-				instrumentNo: instrumentNo,
-				inFavourOf: inFavourOf,
-				bankName: bankName,
-				bankBranch: bankBranch,
-				drawnOnBank: drawnOnBank,
-				drawnOnBranch: drawnOnBranch,
-				details: details
 
+				const data = [];
 
-			};
+				function generateTransactionId() {
+					const timestamp = new Date().getTime(); // Get current timestamp
+					const randomNum = Math.floor(Math.random() * 1000000); // Generate a random number
+					const transactionId = timestamp + "" + randomNum; // Combine timestamp and random number
 
-			data.push(debit);
-
-
-
-			if (debitBank === '' || debitBank === null) {
-
-				return alert("Fill the Debit Bank!!!");
-			}
-
-			if (debitBalance === '' || debitBalance === null) {
-
-				return alert("Fill the Debit Balance!!!");
-			}
-
-			if (details === '' || details === null) {
-
-				return alert("Fill the Details!!!");
-			}
-
-			if (branchCode === '' || branchCode === '') {
-
-				return alert("Fill the Branch Code!!!");
-			}
-
-			if (creditBank === '' || creditBank === null) {
-
-				return alert("Fill the Credit Bank!!!");
-			}
-
-			if (glHeadNo === '' || glHeadNo === null) {
-
-				return alert("Fill the Gl Head no of credit Bank !!!");
-			}
-
-			if (selectGlHead === '' || selectGlHead === null) {
-
-				return alert("Fill the Gl Select of credit Bank !!!");
-			}
-
-			if (accountNo === '' || accountNo === null) {
-
-				return alert("Fill the Account NO of credit Bank !!!");
-			}
-
-			if (searchAccountHolder === '' || searchAccountHolder === null) {
-
-				return alert("Fill the Search Account Holder of credit Bank !!!");
-			}
-
-			if (selectAccountHolder === '' || selectAccountHolder === null) {
-
-				return alert("Fill the Select Account Holder  of credit Bank !!!");
-			}
-
-			if (amount === '' || amount === null) {
-
-				return alert("Fill the Select Amount of credit Bank !!!");
-			}
-
-			if (instrumentType === '' || instrumentType === null) {
-
-				return alert("Instrument Type  !!!");
-			}
-
-			if (instrumentAmount === '' || instrumentAmount === null) {
-
-				return alert("Instrument Amount !!!");
-			}
-
-			if (amountInWords === '' || amountInWords === null) {
-
-				return alert("Amount in words !!!");
-			}
-
-			if (instrumentDate === '' || instrumentDate === null) {
-
-				return alert("Instrument Date  !!!");
-			}
-
-			if (instrumentNo === '' || instrumentNo === null) {
-
-				return alert("Instrument Number  !!!");
-			}
-
-			if (inFavourOf === '' || inFavourOf === null) {
-
-				return alert("In Favour Of  !!!");
-			}
-
-			if (bankName === '' || bankName === null) {
-
-				return alert("In Bank Name  !!!");
-			}
-
-
-			if (bankBranch === '' || bankBranch === null) {
-
-				return alert("In Bank Branch  !!!");
-			}
-
-
-			if (drawnOnBank === '' || drawnOnBank === null) {
-
-				return alert("In Drawn on Bank  !!!");
-			}
-
-			if (drawnOnBranch === '' || drawnOnBranch === null) {
-
-				return alert("In Drawn on Branch  !!!");
-			}
-
-			if (glHeadNodebit === '' || glHeadNodebit === null) {
-
-				return alert("In Gl Head No in Debit   !!!");
-			}
-
-		
-			document.getElementById("btnSave").disabled = true;
-			$.ajax({
-				type: "POST",
-				contentType: "application/json",
-				url: '/saveReceipt',
-				data: JSON.stringify(data),
-				success: function (response) {
-					alert(response);
-					window.location.href = "payment";
-				},
-				error: function (error) {
-					alert("Error while saving data");
+					return transactionId;
 				}
-			});
+
+				// Example usage
+				const uniqueTransactionId = generateTransactionId();
+
+
+				const credit = {
+					entryDate: entryDate,
+					voucherNo: voucherNo,
+					type: "Jv" + voucherNo,
+					glHeadNo: glHeadNo,
+					selectGlHead: selectGlHead,
+					accountNo: accountNo,
+					selectAccountHolder: selectAccountHolder,
+					transactionType: transactionType,
+					amount: amount,
+					receiptType: typeCashBank,
+					bankId: creditBank,
+					instrumentType: instrumentType,
+					instrumentNo: instrumentNo,
+					drawnOnBank: drawnOnBank,
+					drawnOnBranch: drawnOnBranch,
+					details: details,
+					uniqueTransactionId: uniqueTransactionId,
+					moduleType: "JV" + voucherNo,
+					module: "Payment",
+					chequeRegister: "0"
+
+
+
+					// instrumentDate:instrumentDate,
+					// instrumentNo:instrumentNo,
+					// inFavourOf:inFavourOf,
+					// bankName:bankName,
+					// bankBranch:bankBranch,
+					// drawnOnBank:drawnOnBank,
+					// drawnOnBranch:drawnOnBranch,
+
+
+				};
+
+				data.push(credit);
+
+
+				const debit = {
+					entryDate: entryDate,
+					voucherNo: voucherNo,
+					type: "Jv" + voucherNo,
+					glHeadNo: glHeadNodebit,
+					transactionType: "debit",
+					amount: amount,
+					receiptType: typeCashBank,
+					bankId: debitBank,
+					chequeRegister: "0",
+					selectGlHead: bankName,
+
+					uniqueTransactionId: uniqueTransactionId,
+					moduleType: "JV" + voucherNo,
+					module: "Payment1",
+					chequeRegister: "0",
+					accountNo: accountNoBank,
+
+
+
+
+					amountInWords: amountInWords,
+					instrumentAmount: instrumentAmount,
+					instrumentType: instrumentType,
+					instrumentDate: instrumentDate,
+					instrumentNo: instrumentNo,
+					inFavourOf: inFavourOf,
+					bankName: bankName,
+					bankBranch: bankBranch,
+					drawnOnBank: drawnOnBank,
+					drawnOnBranch: drawnOnBranch,
+					details: details
+
+
+				};
+
+				data.push(debit);
+
+
+
+				if (debitBank === '' || debitBank === null) {
+
+					return alert("Fill the Debit Bank!!!");
+				}
+
+				if (debitBalance === '' || debitBalance === null) {
+
+					return alert("Fill the Debit Balance!!!");
+				}
+
+				if (details === '' || details === null) {
+
+					return alert("Fill the Details!!!");
+				}
+
+				if (branchCode === '' || branchCode === '') {
+
+					return alert("Fill the Branch Code!!!");
+				}
+
+				if (creditBank === '' || creditBank === null) {
+
+					return alert("Fill the Credit Bank!!!");
+				}
+
+				if (glHeadNo === '' || glHeadNo === null) {
+
+					return alert("Fill the Gl Head no of credit Bank !!!");
+				}
+
+				if (selectGlHead === '' || selectGlHead === null) {
+
+					return alert("Fill the Gl Select of credit Bank !!!");
+				}
+
+				if (accountNo === '' || accountNo === null) {
+
+					return alert("Fill the Account NO of credit Bank !!!");
+				}
+
+				if (searchAccountHolder === '' || searchAccountHolder === null) {
+
+					return alert("Fill the Search Account Holder of credit Bank !!!");
+				}
+
+				if (selectAccountHolder === '' || selectAccountHolder === null) {
+
+					return alert("Fill the Select Account Holder  of credit Bank !!!");
+				}
+
+				if (amount === '' || amount === null) {
+
+					return alert("Fill the Select Amount of credit Bank !!!");
+				}
+
+				if (instrumentType === '' || instrumentType === null) {
+
+					return alert("Instrument Type  !!!");
+				}
+
+				if (instrumentAmount === '' || instrumentAmount === null) {
+
+					return alert("Instrument Amount !!!");
+				}
+
+				if (amountInWords === '' || amountInWords === null) {
+
+					return alert("Amount in words !!!");
+				}
+
+				if (instrumentDate === '' || instrumentDate === null) {
+
+					return alert("Instrument Date  !!!");
+				}
+
+				if (instrumentNo === '' || instrumentNo === null) {
+
+					return alert("Instrument Number  !!!");
+				}
+
+				if (inFavourOf === '' || inFavourOf === null) {
+
+					return alert("In Favour Of  !!!");
+				}
+
+				if (bankName === '' || bankName === null) {
+
+					return alert("In Bank Name  !!!");
+				}
+
+
+				if (bankBranch === '' || bankBranch === null) {
+
+					return alert("In Bank Branch  !!!");
+				}
+
+
+				if (drawnOnBank === '' || drawnOnBank === null) {
+
+					return alert("In Drawn on Bank  !!!");
+				}
+
+				if (drawnOnBranch === '' || drawnOnBranch === null) {
+
+					return alert("In Drawn on Branch  !!!");
+				}
+
+				if (glHeadNodebit === '' || glHeadNodebit === null) {
+
+					return alert("In Gl Head No in Debit   !!!");
+				}
+
+
+				document.getElementById("btnSave").disabled = true;
+				$.ajax({
+					type: "POST",
+					contentType: "application/json",
+					url: '/saveReceipt',
+					data: JSON.stringify(data),
+					success: function (response) {
+						alert(response);
+						window.location.href = "payment";
+					},
+					error: function (error) {
+						alert("Error while saving data");
+					}
+				});
+
+			} else if (selectedValue.value === "Cash") {
+
+				
+
+				var voucherNo = $("#voucherNo").val();
+				var date = $("#entryDate").val();
+				var cashierOrBank = document.querySelector('input[name="typeCashBank"]:checked').value;
+				var selectBankOrCash = $("#debitBank").val();
+				var glHeadNoCash = $("#glHeadNodebit").val();
+				var balanceCash = $("#debitBalance").val();
+				var cashUniqueId = $("#cashuniqueId").val();
+				var narration = $("#details").val();
+
+				var branchCode = $("#branchCode").val();
+				var glNoUniqueId = $("#creditBank").val();  //glnoId
+				var glNo = $("#glHeadNo").val();
+				var selectHeadGl = $("#selectGlHead").val();
+				var accountNo = $("#accountNo").val();
+				var searchAccountHolder = $("#searchAccountHolder").val();
+				var selectAccountHolder = $("#selectAccountHolder").val();
+				var balance = $("#balance").val();
+				var unclearBalance = $("#unclearBalance").val();
+				var transactionAmount = $("#amount").val();
+				var transactionType = document.querySelector('input[name="transactionType"]:checked').value;
+				var selectInstrumentType = $("#instrumentType").val();
+				var selectBranch = "H.O";
+
+
+
+
+				function generateTransactionId() {
+					const timestamp = new Date().getTime(); // Get current timestamp
+					const randomNum = Math.floor(Math.random() * 1000000); // Generate a random number
+					const transactionId = timestamp + "" + randomNum; // Combine timestamp and random number
+
+					return transactionId;
+				}
+
+				// Example usage
+				const transactionId = generateTransactionId();
+
+
+				const obj = {
+					voucherNo: voucherNo,
+					date: date,
+					cashierOrBank: cashierOrBank,
+					selectBankOrCash: selectBankOrCash,
+					glHeadNoCash: glHeadNoCash,
+					balanceCash: balanceCash,
+					cashUniqueId: cashUniqueId,
+					narration: narration,
+
+					branchCode: branchCode,
+					glNoUniqueId: glNoUniqueId,
+					glNo: glNo,
+					selectHeadGl: selectHeadGl,
+					accountNo: accountNo,
+					searchAccountHolder: searchAccountHolder,
+					selectAccountHolder: selectAccountHolder,
+					balance: balance,
+					unclearBalance: unclearBalance,
+					transactionAmount: transactionAmount,
+					transactionType: transactionType,
+					selectInstrumentType: selectInstrumentType,
+					selectBranch: selectBranch,
+					transactionId: transactionId,
+				};
+
+				if (voucherNo === "" || voucherNo === undefined) {
+					return alert("Voucher No .....");
+				} else if (date === "" || date === undefined) {
+					return alert("Entry Date.....");
+				}else if (cashierOrBank === "" || cashierOrBank === undefined) {
+					return alert("Select Cash or Bank .....");
+				}else if (selectBankOrCash === "" || selectBankOrCash === undefined) {
+					return alert("Select DropDown.....");
+				}else if (glHeadNoCash === "" || glHeadNoCash === undefined) {
+					return alert("Gl Head no Cash .....");
+				}else if (balanceCash === "" || balanceCash === undefined) {
+					return alert("Balance Cash .....");
+				}else if (narration === "" || narration === undefined) {
+					return alert("Narration .....");
+				}else if (branchCode === "" || branchCode === undefined) {
+					return alert("Branch Code .....");
+				}else if (glNo === "" || glNo === undefined) {
+					return alert("Gl No.....");
+				}else if (selectHeadGl === "" || selectHeadGl === undefined) {
+					return alert("Select Head Gl .....");
+				}else if (accountNo === "" || accountNo === undefined) {
+					return alert("Account No.....");
+				}else if (searchAccountHolder === "" || searchAccountHolder === undefined) {
+					return alert("Search Account Holder.....");
+				}else if (selectAccountHolder === "" || selectAccountHolder === undefined) {
+					return alert("select Account Holder .....");
+				}else if (balance === "" || balance === undefined) {
+					return alert("Balance.....");
+				}else if (unclearBalance === "" || unclearBalance === undefined) {
+					return alert("UnClear Balnce ");
+				}else if (transactionAmount === "" || transactionAmount === undefined) {
+					return alert("Transaction Amount ");
+				}else if (selectInstrumentType === "" || selectInstrumentType === undefined) {
+					return alert("Instrument Type .....");
+				}
+
+
+
+
+
+				document.getElementById("btnSave").disabled = true;
+				$.ajax({
+					type: "POST",
+					contentType: "application/json",
+					url: '/savePayment',
+					data: JSON.stringify(obj),
+					success: function (response) {
+						alert(response);
+						window.location.href = "payment";
+					},
+					error: function (error) {
+						alert("Error while saving data");
+					}
+				});
+
+
+
+
+
+
+
+			}
 
 
 		});
@@ -965,6 +1170,51 @@
 			window.location.href = '/payment';
 		});
 	});
+</script>
+
+<script>
+
+	function setthroughAccountNo() {
+
+		let accountNo = document.getElementById("accountNo").value;
+
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: 'FetchAllNewSavingAccount',
+			success: function (data) {
+
+				const cbiObject = data.find(obj => obj.accountNo === parseInt(accountNo));
+
+				if (cbiObject) {
+					document.getElementById("searchAccountHolder").value = cbiObject.clientName;
+					document.getElementById("selectAccountHolder").value = cbiObject.clientName;
+					document.getElementById("balance").value = cbiObject.mainBalance;
+					document.getElementById("unclearBalance").value = '0';
+					document.getElementById("inFavourOf").value = cbiObject.clientName;
+					document.getElementById("branchCode").value = '1';
+
+					const branchCodeDropdown = document.getElementById("creditBank");
+
+					// Clear existing options in the dropdown
+					branchCodeDropdown.innerHTML = '';
+
+					// Append a new option
+					const newOption = document.createElement("option");
+					newOption.value = cbiObject.uniqueId;
+					newOption.text = 'H.O';
+					branchCodeDropdown.appendChild(newOption);
+				}
+
+
+
+			},
+			error: function () {
+				alert("Device control failed");
+			}
+		});
+
+	}
 </script>
 
 </html>

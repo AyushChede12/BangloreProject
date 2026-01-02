@@ -13,27 +13,35 @@ public class CategoryMaster {
 	private String categoryName;
 	private String createdBy;
 	private String createdDt;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getCategoryName() {
 		return categoryName;
 	}
+
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 	public String getCreatedDt() {
 		return createdDt;
 	}
+
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}

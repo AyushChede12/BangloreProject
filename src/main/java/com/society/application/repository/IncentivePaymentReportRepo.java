@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.IncentivePaymentReport;
 
 @Repository
-public interface IncentivePaymentReportRepo extends JpaRepository<IncentivePaymentReport, Integer>
-{
+public interface IncentivePaymentReportRepo extends JpaRepository<IncentivePaymentReport, Integer> {
 
 	List<IncentivePaymentReport> findBybranch(String b_ranch);
 

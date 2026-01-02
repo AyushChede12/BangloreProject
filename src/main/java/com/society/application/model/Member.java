@@ -89,7 +89,7 @@ public class Member {
 	private byte[] member_image;
 	private String introMCode;
 	private String introMName;
-	
+
 	public String getClientNo() {
 		return clientNo;
 	}

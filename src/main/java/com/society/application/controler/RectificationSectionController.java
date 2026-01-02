@@ -100,13 +100,13 @@ public class RectificationSectionController {
 
 	@Autowired
 	BankMasterRepo bankMasterRepo;
-	
+
 	@Autowired
 	GroupMasterRepo groupmasterrepo;
-	
+
 	@Autowired
 	LoanPlanRepo loanPlanRepo;
-	
+
 	@Autowired
 	GroupMasterApplicationRepo groupMasterApplicationRepo;
 
@@ -153,14 +153,14 @@ public class RectificationSectionController {
 	public String getSavingTransactionDelete() {
 		return "rectificationSection/SavingTransactionDelete";
 	}
-	
-    /* LOAN RECTIFICATION */
-	
+
+	/* LOAN RECTIFICATION */
+
 	@GetMapping("/loanRectification")
 	public String getloanRectification() {
 		return "rectificationSection/LoanApplication";
 	}
-	
+
 	@GetMapping("/retrieveDataOfSelectByLoanID")
 	@ResponseBody
 	public List<LoanMaster> getRetrieveDataOfSelectByLoanID() {
@@ -168,17 +168,17 @@ public class RectificationSectionController {
 		List<LoanMaster> list = loanmasterrepo.findByflag(flag);
 		return list;
 	}
-	
+
 	@PostMapping("/retrieveLoanMasterId")
 	@ResponseBody
-	public List<LoanMaster> retrieveLoanMasterId(@RequestBody LoanMaster loan){
+	public List<LoanMaster> retrieveLoanMasterId(@RequestBody LoanMaster loan) {
 		List<LoanMaster> list = loanmasterrepo.findByid(loan.getId());
 		return list;
 	}
-	
+
 	@GetMapping("/getAllClientAfterSoftDelete")
 	@ResponseBody
-	public List<ClientMaster> getAllClientAfterSoftDelete(){
+	public List<ClientMaster> getAllClientAfterSoftDelete() {
 		String flag = "1";
 		List<ClientMaster> list = clientMasterRepo.findByflag(flag);
 		return list;
@@ -222,69 +222,67 @@ public class RectificationSectionController {
 	@PostMapping("/searchById")
 	@ResponseBody
 	public ResponseEntity<AdvisorCollectorDetails> getsearchById(@RequestBody AdvisorCollectorDetails model) {
-	    List<AdvisorCollectorDetails> advisors = advisorcollectordetailsrepo.findByid(model.getId());
-	    if (!advisors.isEmpty()) {
-	        AdvisorCollectorDetails advisor = advisors.get(0);
-	        String encodedPhoto = Base64.getEncoder().encodeToString(advisor.getPhoto());
-	        String encodedSignature = Base64.getEncoder().encodeToString(advisor.getSigniture());
-	        advisor.setFrontEndPhoto(encodedPhoto);
-	        advisor.setFrontEndSignature(encodedSignature);
-	        return new ResponseEntity<>(advisor, HttpStatus.OK);
-	    } else {
-	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	    }
+		List<AdvisorCollectorDetails> advisors = advisorcollectordetailsrepo.findByid(model.getId());
+		if (!advisors.isEmpty()) {
+			AdvisorCollectorDetails advisor = advisors.get(0);
+			String encodedPhoto = Base64.getEncoder().encodeToString(advisor.getPhoto());
+			String encodedSignature = Base64.getEncoder().encodeToString(advisor.getSigniture());
+			advisor.setFrontEndPhoto(encodedPhoto);
+			advisor.setFrontEndSignature(encodedSignature);
+			return new ResponseEntity<>(advisor, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
-	
-	//Update operation for LOanMaster Table
+
+	// Update operation for LOanMaster Table
 	@PostMapping("/updateLoanMaster")
-	public ResponseEntity<String> updateLoanMaster(
-			@RequestParam(name ="loanDate",required = false) String loanDate,
-			@RequestParam(name = "memberName",required = false) String memberName,
-			@RequestParam(name = "relativeName",required = false) String relativeName,
-			@RequestParam(name = "dob",required = false) String dob,
-			@RequestParam(name = "age",required = false) String age,
-			@RequestParam(name = "phoneno",required = false) String phoneno,
-			@RequestParam(name = "status",required = false) String status,
-			@RequestParam(name = "address",required = false) String address,
-			@RequestParam(name = "pinCode",required = false) String pinCode,
-			@RequestParam(name = "branchName",required = false) String branchName,
-			@RequestParam(name = "loanPlanName",required = false) String loanPlanName,
-			@RequestParam(name = "loanType",required = false) String loanType,
-			@RequestParam(name = "planTerm",required = false) String planTerm,
-			@RequestParam(name = "mode",required = false) String mode,
-			@RequestParam(name = "loanROI",required = false) String loanROI,
-			@RequestParam(name = "loanAmount",required = false) String loanAmount,
-			@RequestParam(name = "roitype",required = false) String roitype,
-			@RequestParam(name = "emiAmount",required = false) String emiAmount,
-			@RequestParam(name = "loanPurpose",required = false) String loanPurpose,
-			@RequestParam(name = "searchMemberCode",required = false) String searchMemberCode,
-			@RequestParam(name = "guarantorName",required = false) String guarantorName,
-			@RequestParam(name = "addressGuarantor",required = false) String addressGuarantor,
-			@RequestParam(name = "pincodeGuarantor",required = false) String pincodeGuarantor,
-			@RequestParam(name = "phone",required = false) String phone,
-			@RequestParam(name = "securityType",required = false) String securityType,
-			@RequestParam(name = "coApplicantCode",required = false) String coApplicantCode,
-			@RequestParam(name = "memberRelativesName",required = false) String memberRelativesName,
-			@RequestParam(name = "addressco",required = false) String addressco,
-			@RequestParam(name = "pincodeco",required = false) String pincodeco,
-			@RequestParam(name = "phoneco",required = false) String phoneco,
-			@RequestParam(name = "securityDetails",required = false) String securityDetails,
-			@RequestParam(name = "processingFee",required = false) String processingFee,
-			@RequestParam(name = "legalAmt",required = false) String legalAmt,
-			@RequestParam(name = "advisorCode",required = false) String advisorCode,
-			@RequestParam(name = "gst",required = false) String gst,
-			@RequestParam(name = "insuranceAmt",required = false) String insuranceAmt,
-			@RequestParam(name = "advisorName",required = false) String advisorName,
-			@RequestParam(name = "filetag",required = false) MultipartFile file1,
-			@RequestParam(name = "secondfiletag",required = false) MultipartFile file2,
-			@RequestParam(name = "id123",required = false) Integer id,
-			HttpSession session)  {
+	public ResponseEntity<String> updateLoanMaster(@RequestParam(name = "loanDate", required = false) String loanDate,
+			@RequestParam(name = "memberName", required = false) String memberName,
+			@RequestParam(name = "relativeName", required = false) String relativeName,
+			@RequestParam(name = "dob", required = false) String dob,
+			@RequestParam(name = "age", required = false) String age,
+			@RequestParam(name = "phoneno", required = false) String phoneno,
+			@RequestParam(name = "status", required = false) String status,
+			@RequestParam(name = "address", required = false) String address,
+			@RequestParam(name = "pinCode", required = false) String pinCode,
+			@RequestParam(name = "branchName", required = false) String branchName,
+			@RequestParam(name = "loanPlanName", required = false) String loanPlanName,
+			@RequestParam(name = "loanType", required = false) String loanType,
+			@RequestParam(name = "planTerm", required = false) String planTerm,
+			@RequestParam(name = "mode", required = false) String mode,
+			@RequestParam(name = "loanROI", required = false) String loanROI,
+			@RequestParam(name = "loanAmount", required = false) String loanAmount,
+			@RequestParam(name = "roitype", required = false) String roitype,
+			@RequestParam(name = "emiAmount", required = false) String emiAmount,
+			@RequestParam(name = "loanPurpose", required = false) String loanPurpose,
+			@RequestParam(name = "searchMemberCode", required = false) String searchMemberCode,
+			@RequestParam(name = "guarantorName", required = false) String guarantorName,
+			@RequestParam(name = "addressGuarantor", required = false) String addressGuarantor,
+			@RequestParam(name = "pincodeGuarantor", required = false) String pincodeGuarantor,
+			@RequestParam(name = "phone", required = false) String phone,
+			@RequestParam(name = "securityType", required = false) String securityType,
+			@RequestParam(name = "coApplicantCode", required = false) String coApplicantCode,
+			@RequestParam(name = "memberRelativesName", required = false) String memberRelativesName,
+			@RequestParam(name = "addressco", required = false) String addressco,
+			@RequestParam(name = "pincodeco", required = false) String pincodeco,
+			@RequestParam(name = "phoneco", required = false) String phoneco,
+			@RequestParam(name = "securityDetails", required = false) String securityDetails,
+			@RequestParam(name = "processingFee", required = false) String processingFee,
+			@RequestParam(name = "legalAmt", required = false) String legalAmt,
+			@RequestParam(name = "advisorCode", required = false) String advisorCode,
+			@RequestParam(name = "gst", required = false) String gst,
+			@RequestParam(name = "insuranceAmt", required = false) String insuranceAmt,
+			@RequestParam(name = "advisorName", required = false) String advisorName,
+			@RequestParam(name = "filetag", required = false) MultipartFile file1,
+			@RequestParam(name = "secondfiletag", required = false) MultipartFile file2,
+			@RequestParam(name = "id123", required = false) Integer id, HttpSession session) {
 		try {
-		List<LoanMaster> client = loanmasterrepo.findByid(id);
-		String createdBy = session.getAttribute("ID").toString();
-			 client.forEach(s->{
-				 if(!(file1==null) && !(file2==null)) {
-					 try {
+			List<LoanMaster> client = loanmasterrepo.findByid(id);
+			String createdBy = session.getAttribute("ID").toString();
+			client.forEach(s -> {
+				if (!(file1 == null) && !(file2 == null)) {
+					try {
 						byte[] photo = file1.getBytes();
 						byte[] signatue = file2.getBytes();
 						s.setPhoto(photo);
@@ -293,53 +291,54 @@ public class RectificationSectionController {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					 }
-				    s.setLoanDate(loanDate);
-				    s.setMemberName(memberName);
-				    s.setRelativeName(relativeName);
-				    s.setDob(dob);
-				    s.setAge(age);
-				    s.setPhoneno(phoneno);
-				    s.setStatus(status);
-				    s.setAddress(address);
-				    s.setPinCode(pinCode);
-				    s.setBranchName(branchName);
-				    s.setLoanPlanName(loanPlanName);
-				    s.setLoanType(loanType);
-				    s.setPlanTerm(planTerm);
-				    s.setMode(mode);
-				    s.setLoanROI(loanROI);
-				    s.setLoanAmount(loanAmount);
-				    s.setRoiType(roitype);
-				    s.setEmiAmount(emiAmount);
-				    s.setLoanPurpose(loanPurpose);
-				    s.setSearchMemberCode(searchMemberCode);
-				    s.setGuarantorName(guarantorName);
-				    s.setAddressGuarantor(addressGuarantor);
-				    s.setPincodeGuarantor(pincodeGuarantor);
-				    s.setPhone(phone);
-				    s.setSecurityType(securityType);
-				    s.setCoApplicantCode(coApplicantCode);
-				    s.setMemberRelativesName(memberRelativesName);
-				    s.setAddressco(addressco);
-				    s.setPincodeco(pincodeco);
-				    s.setPhoneco(phoneco);
-				    s.setSecurityDetails(securityDetails);
-				    s.setProcessingFee(processingFee);
-				    s.setLegalAmt(legalAmt);
-				    s.setAdvisorCode(advisorCode);
-				    s.setGst(gst);
-				    s.setInsuranceAmt(insuranceAmt);
-				    s.setAdvisorName(advisorName);
-					s.setFlag("1");
-					s.setCreatedBy(createdBy);
-					loanmasterrepo.save(s);
-					session.setAttribute("createdBy", createdBy);
-				});
-	        return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
-		}catch(Exception ex) {;
+				}
+				s.setLoanDate(loanDate);
+				s.setMemberName(memberName);
+				s.setRelativeName(relativeName);
+				s.setDob(dob);
+				s.setAge(age);
+				s.setPhoneno(phoneno);
+				s.setStatus(status);
+				s.setAddress(address);
+				s.setPinCode(pinCode);
+				s.setBranchName(branchName);
+				s.setLoanPlanName(loanPlanName);
+				s.setLoanType(loanType);
+				s.setPlanTerm(planTerm);
+				s.setMode(mode);
+				s.setLoanROI(loanROI);
+				s.setLoanAmount(loanAmount);
+				s.setRoiType(roitype);
+				s.setEmiAmount(emiAmount);
+				s.setLoanPurpose(loanPurpose);
+				s.setSearchMemberCode(searchMemberCode);
+				s.setGuarantorName(guarantorName);
+				s.setAddressGuarantor(addressGuarantor);
+				s.setPincodeGuarantor(pincodeGuarantor);
+				s.setPhone(phone);
+				s.setSecurityType(securityType);
+				s.setCoApplicantCode(coApplicantCode);
+				s.setMemberRelativesName(memberRelativesName);
+				s.setAddressco(addressco);
+				s.setPincodeco(pincodeco);
+				s.setPhoneco(phoneco);
+				s.setSecurityDetails(securityDetails);
+				s.setProcessingFee(processingFee);
+				s.setLegalAmt(legalAmt);
+				s.setAdvisorCode(advisorCode);
+				s.setGst(gst);
+				s.setInsuranceAmt(insuranceAmt);
+				s.setAdvisorName(advisorName);
+				s.setFlag("1");
+				s.setCreatedBy(createdBy);
+				loanmasterrepo.save(s);
+				session.setAttribute("createdBy", createdBy);
+			});
+			return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
+		} catch (Exception ex) {
+			;
 			System.out.println(ex);
-	        return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -492,11 +491,9 @@ public class RectificationSectionController {
 			@RequestParam(name = "feesIfAny", required = false) String feesIfAny,
 			@RequestParam(name = "position", required = false) String position,
 			@RequestParam(name = "paymentBy", required = false) String paymentBy,
-			@RequestParam(name = "remarks", required = false) String remarks, 
-			@RequestParam(name = "id133") int id,
+			@RequestParam(name = "remarks", required = false) String remarks, @RequestParam(name = "id133") int id,
 			@RequestParam(name = "advisorStatus", required = false) String advisorStatus,
-			@RequestParam(name = "smsSend", required = false) String smsSend,
-			HttpSession session) {
+			@RequestParam(name = "smsSend", required = false) String smsSend, HttpSession session) {
 		try {
 			List<AdvisorCollectorDetails> advisor = advisorcollectordetailsrepo.findByid(id);
 			String createdBy = session.getAttribute("ID").toString();
@@ -631,8 +628,7 @@ public class RectificationSectionController {
 			@RequestParam(name = "advisorCode", required = false) String advisorCode,
 			@RequestParam(name = "advisorName", required = false) String advisorName,
 			@RequestParam(name = "chkisSms", required = false) String chkisSms,
-			@RequestParam(name = "id123", required = false) String id,
-			HttpSession session) {
+			@RequestParam(name = "id123", required = false) String id, HttpSession session) {
 		try {
 			List<AddInvestment> add = addInvestmentRepo.findBypolicyno(id);
 			String createdBy = session.getAttribute("ID").toString();
@@ -704,11 +700,13 @@ public class RectificationSectionController {
 	// dropdown for Payment
 	@PostMapping("/DeleteSavingsTransactionDelete")
 	@ResponseBody
-	public ResponseEntity<String> DeleteSavingsTransactionDelete(@RequestBody SavingsDepositWith model, HttpSession session) {
+	public ResponseEntity<String> DeleteSavingsTransactionDelete(@RequestBody SavingsDepositWith model,
+			HttpSession session) {
 		String flag = "0";
 		String userId = session.getAttribute("ID").toString();
 		model.setCreatedBy(userId);
-		int i = savingsDepositWithdrawalRepo.updateThroughIDInDeleteSavingsTransaction(flag, model.getAccountNo(), userId);
+		int i = savingsDepositWithdrawalRepo.updateThroughIDInDeleteSavingsTransaction(flag, model.getAccountNo(),
+				userId);
 		return ResponseEntity.ok("Soft Deleted Successfully...");
 	}
 
@@ -820,8 +818,7 @@ public class RectificationSectionController {
 			@RequestParam(name = "chkDate", required = false) String chkDate,
 			@RequestParam(name = "depositAcc", required = false) String depositAcc,
 			@RequestParam(name = "remarks", required = false) String remarks,
-			@RequestParam(name = "id123", required = false) Integer id,
-			HttpSession session) {
+			@RequestParam(name = "id123", required = false) Integer id, HttpSession session) {
 		try {
 			List<ClientMaster> client = clientMasterRepo.findByid(id);
 			String createdBy = session.getAttribute("ID").toString();
@@ -955,7 +952,7 @@ public class RectificationSectionController {
 	}
 
 	/* */
-	
+
 	/* SAVING RECTIFICATION */
 
 	@GetMapping("/AddSavingbbb6")
@@ -1013,37 +1010,38 @@ public class RectificationSectionController {
 			@RequestParam(name = "chkdebitcard", required = false) String chkdebitcard,
 			@RequestParam(name = "filetag", required = false) MultipartFile filetag,
 			@RequestParam(name = "secondfiletag", required = false) MultipartFile secondfiletag,
-			@RequestParam(name = "thirdfiletag", required = false) MultipartFile thirdfiletag,
-			HttpSession session, AddSavingAccount saving) {
+			@RequestParam(name = "thirdfiletag", required = false) MultipartFile thirdfiletag, HttpSession session,
+			AddSavingAccount saving) {
 		String userId = session.getAttribute("ID").toString();
 		saving.setCreatedBy(userId);
 		if (!filetag.isEmpty() || !secondfiletag.isEmpty() || !thirdfiletag.isEmpty()) {
 
 			String fileName1 = null;
-	        String fileName2 = null;
-	        String fileName3 = null;
-	        
-	        if (!filetag.isEmpty()) {
-	            fileName1 = fileStorageService.storeFile(filetag);
-	        }
+			String fileName2 = null;
+			String fileName3 = null;
 
-	        if (!secondfiletag.isEmpty()) {
-	            fileName2 = fileStorageService.storeFile(secondfiletag);
-	        }
+			if (!filetag.isEmpty()) {
+				fileName1 = fileStorageService.storeFile(filetag);
+			}
 
-	        if (!thirdfiletag.isEmpty()) {
-	            fileName3 = fileStorageService.storeFile(thirdfiletag);
-	        }
+			if (!secondfiletag.isEmpty()) {
+				fileName2 = fileStorageService.storeFile(secondfiletag);
+			}
 
-	        int i = addSavingAccountRepo.updateTheAddSavingAcoount(accountNo, searchMemberCode, opDate, memberName, dOB,
-	                relativeName, phoneno, nomineeName, nage, nRelation, address, district, cSPName, state, pin,
-	                modeOfOp, jointCode, jointName, jointRelation, sBPlan, openingAmount, advisorCode, advisorName,
-	                opFees, paymode, remarks, chkisactive, chkisSms, chkdebitcard, fileName1, fileName2, fileName3, "1", userId);
-			} else {
-				int i = addSavingAccountRepo.updateTheAddSavingAcoountWithoutFile(accountNo, searchMemberCode, opDate,
-	                memberName, dOB, relativeName, phoneno, nomineeName, nage, nRelation, address, district, cSPName,
-	                state, pin, modeOfOp, jointCode, jointName, jointRelation, sBPlan, openingAmount, advisorCode,
-	                advisorName, opFees, paymode, remarks, chkisactive, chkisSms, chkdebitcard, "1", userId);
+			if (!thirdfiletag.isEmpty()) {
+				fileName3 = fileStorageService.storeFile(thirdfiletag);
+			}
+
+			int i = addSavingAccountRepo.updateTheAddSavingAcoount(accountNo, searchMemberCode, opDate, memberName, dOB,
+					relativeName, phoneno, nomineeName, nage, nRelation, address, district, cSPName, state, pin,
+					modeOfOp, jointCode, jointName, jointRelation, sBPlan, openingAmount, advisorCode, advisorName,
+					opFees, paymode, remarks, chkisactive, chkisSms, chkdebitcard, fileName1, fileName2, fileName3, "1",
+					userId);
+		} else {
+			int i = addSavingAccountRepo.updateTheAddSavingAcoountWithoutFile(accountNo, searchMemberCode, opDate,
+					memberName, dOB, relativeName, phoneno, nomineeName, nage, nRelation, address, district, cSPName,
+					state, pin, modeOfOp, jointCode, jointName, jointRelation, sBPlan, openingAmount, advisorCode,
+					advisorName, opFees, paymode, remarks, chkisactive, chkisSms, chkdebitcard, "1", userId);
 		}
 		return ResponseEntity.ok("Data Updated Successfully..!!");
 	}
@@ -1056,174 +1054,172 @@ public class RectificationSectionController {
 		int i = addSavingAccountRepo.softDeleterectificationofsavingrectification(flag, asm.getAccountNo());
 		return ResponseEntity.ok("Deleted Successfully..!!");
 	}
-	
+
 	/* GOLD LOAN RECTIFICATION */
-	
+
 	@GetMapping("/getGoldLoanRectification")
 	public String getGoldLoanRectification() {
 		return "rectificationSection/GoldLoanRectification";
 	}
-	
-	//Get Dynamic Id in dropdown
+
+	// Get Dynamic Id in dropdown
 	@GetMapping("/getAllLoanID")
 	@ResponseBody
-	public List<LoanMaster> getAllLoanID(){
+	public List<LoanMaster> getAllLoanID() {
 		List<LoanMaster> list = loanmasterrepo.findAll();
 		return list;
 	}
-	
-	//Get Dynamic  Member Name in dropdown
+
+	// Get Dynamic Member Name in dropdown
 	@GetMapping("/getMemberinDropdown")
 	@ResponseBody
-	public List<ClientMaster> getMemberinDropdown(){
+	public List<ClientMaster> getMemberinDropdown() {
 		String flag = "1";
 		List<ClientMaster> list = clientMasterRepo.findByflag(flag);
 		return list;
 	}
-	
-	//Get Dynamic Loan Plan Name in dropdown
+
+	// Get Dynamic Loan Plan Name in dropdown
 	@GetMapping("/getLoanPlanName")
 	@ResponseBody
-	public List<Loan> getLoanPlanName(){
-		List<Loan> list =loanrepo.findAll();
+	public List<Loan> getLoanPlanName() {
+		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Get BranchName in Dropdown
+
+	// Get BranchName in Dropdown
 	@GetMapping("/getBranch")
 	@ResponseBody
-	public List<ClientMaster> getBranch(){
+	public List<ClientMaster> getBranch() {
 		List<ClientMaster> list = clientMasterRepo.findAll();
 		return list;
 	}
-	
-	//Get PlanTerm in Dropdown
+
+	// Get PlanTerm in Dropdown
 	@GetMapping("/getPlanTerm")
 	@ResponseBody
-	public List<Loan> getPlanTerm(){
+	public List<Loan> getPlanTerm() {
 		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Get karat in Dropdown
+
+	// Get karat in Dropdown
 	@GetMapping("/getAllKarat")
 	@ResponseBody
-	public List<Loan> getAllKarat(){
+	public List<Loan> getAllKarat() {
 		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Get ItemName in dropdown
+
+	// Get ItemName in dropdown
 	@GetMapping("/getItemName")
 	@ResponseBody
-	public List<Loan> getItemName(){
+	public List<Loan> getItemName() {
 		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Get LockerLocation in dropdown
+
+	// Get LockerLocation in dropdown
 	@GetMapping("/getLockerLocation")
 	@ResponseBody
-	public List<Loan> getLockerLocation(){
+	public List<Loan> getLockerLocation() {
 		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Get Purity in dropdown
+
+	// Get Purity in dropdown
 	@GetMapping("/getPurity")
 	@ResponseBody
-	public List<Loan> getPurity(){
+	public List<Loan> getPurity() {
 		List<Loan> list = loanrepo.findAll();
 		return list;
 	}
-	
-	//Retrieval Code using MemberName of GoldLoanRectification
+
+	// Retrieval Code using MemberName of GoldLoanRectification
 	@PostMapping("/RetrieveMemberDataInGoldLoan")
 	@ResponseBody
-	public List<ClientMaster> RetrieveMemberDataInGoldLoan(@RequestBody ClientMaster member){
+	public List<ClientMaster> RetrieveMemberDataInGoldLoan(@RequestBody ClientMaster member) {
 		List<ClientMaster> list = clientMasterRepo.findBymemberName(member.getMemberName());
 		return list;
-		
-	}	
-	
-	//Retrieval Code using LoanPlanName of GoldLoanRectification
+
+	}
+
+	// Retrieval Code using LoanPlanName of GoldLoanRectification
 	@PostMapping("/RetrieveUsingLoanPlanName")
 	@ResponseBody
 	public List<Loan> RetrieveUsingLoanPlanName(@RequestBody Loan loan) {
-		List<Loan> list=loanrepo.findByloanPlanName(loan.getLoanPlanName());
+		List<Loan> list = loanrepo.findByloanPlanName(loan.getLoanPlanName());
 		return list;
 	}
-	
-	//update code using LoanID of GoldLoanRectification
+
+	// update code using LoanID of GoldLoanRectification
 	@PostMapping("/updateCodeUsingLoanIds")
 	@ResponseBody
 	public ResponseEntity<String> updateCodeUsingLoanId(
-	 @RequestParam(name = "memberName", required = false) String memberName,
-	 @RequestParam(name = "relativeRelation", required = false) String relativeRelation,
-	 @RequestParam(name = "dob", required = false) String dob,
-	 @RequestParam(name = "age", required = false) String age,
-	 @RequestParam(name = "phoneno", required = false) String phoneno,
-	 @RequestParam(name = "status", required = false) String status,
-	 @RequestParam(name = "address", required = false) String address,
-	 @RequestParam(name = "pinCode", required = false) String pinCode,
-	 @RequestParam(name = "branchName", required = false) String branchName,
-	 @RequestParam(value = "filetag", required = false) MultipartFile file1,
-	 @RequestParam(value = "preview", required = false) MultipartFile file2,
-	 @RequestParam(value = "imgGold", required = false) MultipartFile file3,
-	 @RequestParam(name = "loanDate", required = false) String loanDate,
-	 @RequestParam(name = "loanPlanName", required = false) String loanPlanName,
-	 @RequestParam(name = "loanType", required = false) String loanType,
-	 @RequestParam(name = "planTerm", required = false) String planTerm,
-	 @RequestParam(name = "mode", required = false) String mode,
-	 @RequestParam(name = "loanROI", required = false) String loanROI,
-	 @RequestParam(name = "loanAmount", required = false) String loanAmount,
-	 @RequestParam(name = "roiType", required = false) String roiType,
-	 @RequestParam(name = "emiAmount", required = false) String emiAmount,
-	 @RequestParam(name = "loanPurpose", required = false) String loanPurpose,
-	 @RequestParam(name = "karat", required = false) String karat,
-	 @RequestParam(name = "itemType", required = false) String itemType,
-	 @RequestParam(name = "todayRate", required = false) String todayRate,
-	 @RequestParam(name = "itemName", required = false) String itemName,
-	 @RequestParam(name = "lockerLoc", required = false) String lockerLoc,
-	 @RequestParam(name = "purity", required = false) String purity,
-	 @RequestParam(name = "itemQty", required = false) String itemQty,
-	 @RequestParam(name = "itemWt", required = false) String itemWt,
-	 @RequestParam(name = "grossWt", required = false) String grossWt,
-	 @RequestParam(name = "stonewt", required = false) String stonewt,
-	 @RequestParam(name = "netWt", required = false) String netWt,
-	 @RequestParam(name = "marketValuation", required = false) String marketValuation,
-	 @RequestParam(name = "eligibleLoan", required = false) String eligibleLoan,
-	 @RequestParam(name = "netQty", required = false) String netQty,
-	 @RequestParam(name = "totItemWt", required = false) String totItemWt,
-	 @RequestParam(name = "totalNetWt", required = false) String totalNetWt,
-	 @RequestParam(name = "totalEligibleAmt", required = false) String totalEligibleAmt,
-	 @RequestParam(name = "searchMemberCode", required = false) String searchMemberCode,
-	 @RequestParam(name = "guarantorName", required = false) String guarantorName,
-	 @RequestParam(name = "addressGuarantor", required = false) String addressGuarantor,
-	 @RequestParam(name = "pincodeGuarantor", required = false) String pincodeGuarantor,
-	 @RequestParam(name = "phone", required = false) String phone,
-	 @RequestParam(name = "securityType", required = false) String securityType,
-	 @RequestParam(name = "coApplicantCode", required = false) String coApplicantCode,
-	 @RequestParam(name = "memberRelativesName", required = false) String memberRelativesName,
-	 @RequestParam(name = "addressco", required = false) String addressco,
-	 @RequestParam(name = "pincodeco", required = false) String pincodeco,
-	 @RequestParam(name = "phoneco", required = false) String phoneco,
-	 @RequestParam(name = "securityDetails", required = false) String securityDetails,
-	 @RequestParam(name = "processingFee", required = false) String processingFee,
-	 @RequestParam(name = "legalAmt", required = false) String legalAmt,
-	 @RequestParam(name = "advisorCode", required = false) String advisorCode,
-	 @RequestParam(name = "gst", required = false) String gst,
-	 @RequestParam(name = "insuranceAmt", required = false) String insuranceAmt,
-	 @RequestParam(name = "vFeesAmt", required = false) String vFeesAmt,
-	 @RequestParam(name = "advisorName", required = false) String advisorName,
-	 @RequestParam(name = "id123",required = false) Integer id,
-	 HttpSession session
-	 ){
+			@RequestParam(name = "memberName", required = false) String memberName,
+			@RequestParam(name = "relativeRelation", required = false) String relativeRelation,
+			@RequestParam(name = "dob", required = false) String dob,
+			@RequestParam(name = "age", required = false) String age,
+			@RequestParam(name = "phoneno", required = false) String phoneno,
+			@RequestParam(name = "status", required = false) String status,
+			@RequestParam(name = "address", required = false) String address,
+			@RequestParam(name = "pinCode", required = false) String pinCode,
+			@RequestParam(name = "branchName", required = false) String branchName,
+			@RequestParam(value = "filetag", required = false) MultipartFile file1,
+			@RequestParam(value = "preview", required = false) MultipartFile file2,
+			@RequestParam(value = "imgGold", required = false) MultipartFile file3,
+			@RequestParam(name = "loanDate", required = false) String loanDate,
+			@RequestParam(name = "loanPlanName", required = false) String loanPlanName,
+			@RequestParam(name = "loanType", required = false) String loanType,
+			@RequestParam(name = "planTerm", required = false) String planTerm,
+			@RequestParam(name = "mode", required = false) String mode,
+			@RequestParam(name = "loanROI", required = false) String loanROI,
+			@RequestParam(name = "loanAmount", required = false) String loanAmount,
+			@RequestParam(name = "roiType", required = false) String roiType,
+			@RequestParam(name = "emiAmount", required = false) String emiAmount,
+			@RequestParam(name = "loanPurpose", required = false) String loanPurpose,
+			@RequestParam(name = "karat", required = false) String karat,
+			@RequestParam(name = "itemType", required = false) String itemType,
+			@RequestParam(name = "todayRate", required = false) String todayRate,
+			@RequestParam(name = "itemName", required = false) String itemName,
+			@RequestParam(name = "lockerLoc", required = false) String lockerLoc,
+			@RequestParam(name = "purity", required = false) String purity,
+			@RequestParam(name = "itemQty", required = false) String itemQty,
+			@RequestParam(name = "itemWt", required = false) String itemWt,
+			@RequestParam(name = "grossWt", required = false) String grossWt,
+			@RequestParam(name = "stonewt", required = false) String stonewt,
+			@RequestParam(name = "netWt", required = false) String netWt,
+			@RequestParam(name = "marketValuation", required = false) String marketValuation,
+			@RequestParam(name = "eligibleLoan", required = false) String eligibleLoan,
+			@RequestParam(name = "netQty", required = false) String netQty,
+			@RequestParam(name = "totItemWt", required = false) String totItemWt,
+			@RequestParam(name = "totalNetWt", required = false) String totalNetWt,
+			@RequestParam(name = "totalEligibleAmt", required = false) String totalEligibleAmt,
+			@RequestParam(name = "searchMemberCode", required = false) String searchMemberCode,
+			@RequestParam(name = "guarantorName", required = false) String guarantorName,
+			@RequestParam(name = "addressGuarantor", required = false) String addressGuarantor,
+			@RequestParam(name = "pincodeGuarantor", required = false) String pincodeGuarantor,
+			@RequestParam(name = "phone", required = false) String phone,
+			@RequestParam(name = "securityType", required = false) String securityType,
+			@RequestParam(name = "coApplicantCode", required = false) String coApplicantCode,
+			@RequestParam(name = "memberRelativesName", required = false) String memberRelativesName,
+			@RequestParam(name = "addressco", required = false) String addressco,
+			@RequestParam(name = "pincodeco", required = false) String pincodeco,
+			@RequestParam(name = "phoneco", required = false) String phoneco,
+			@RequestParam(name = "securityDetails", required = false) String securityDetails,
+			@RequestParam(name = "processingFee", required = false) String processingFee,
+			@RequestParam(name = "legalAmt", required = false) String legalAmt,
+			@RequestParam(name = "advisorCode", required = false) String advisorCode,
+			@RequestParam(name = "gst", required = false) String gst,
+			@RequestParam(name = "insuranceAmt", required = false) String insuranceAmt,
+			@RequestParam(name = "vFeesAmt", required = false) String vFeesAmt,
+			@RequestParam(name = "advisorName", required = false) String advisorName,
+			@RequestParam(name = "id123", required = false) Integer id, HttpSession session) {
 		try {
 			List<LoanMaster> loan = loanmasterrepo.findByid(id);
 			String createdBy = session.getAttribute("ID").toString();
-			loan.forEach(s->{
-				if(!(file1==null) && !(file2==null) && !(file3==null)) {
+			loan.forEach(s -> {
+				if (!(file1 == null) && !(file2 == null) && !(file3 == null)) {
 					try {
 						byte[] signature = file2.getBytes();
 						byte[] goldItem = file3.getBytes();
@@ -1231,7 +1227,7 @@ public class RectificationSectionController {
 						s.setPhoto(photo);
 						s.setSignature(signature);
 						s.setGoldItem(goldItem);
-					}catch(Exception e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 					s.setMemberName(memberName);
@@ -1296,166 +1292,166 @@ public class RectificationSectionController {
 				}
 			});
 			return new ResponseEntity<>("DATA UPDATED SUCCESSFULLY", HttpStatus.OK);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 			return new ResponseEntity<>("DATA UPDATED FAILED", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	// Soft Delete Operation of GoldLoanRectification
 	@PostMapping("/softDeleteByLoanId")
 	@ResponseBody
-	public ResponseEntity<String> softDeleteByLoanId(@RequestBody LoanMaster loanMaster, HttpSession session){
+	public ResponseEntity<String> softDeleteByLoanId(@RequestBody LoanMaster loanMaster, HttpSession session) {
 		String flag = "0";
 		String userId = session.getAttribute("ID").toString();
 		loanMaster.setCreatedBy(userId);
-		int i = loanmasterrepo.updateGoldLoanThroughid(flag,loanMaster.getId(),userId);
+		int i = loanmasterrepo.updateGoldLoanThroughid(flag, loanMaster.getId(), userId);
 		session.setAttribute("userId", userId);
 		return ResponseEntity.ok("Data Deleted Successfully..!!");
 	}
-	
+
 	// Retrieval Operation after Soft Delete Operation of GoldLoanRectification
 	@GetMapping("/retrievalCodeAfterSoftDeleteByFlag")
 	@ResponseBody
-	public List<LoanMaster> retrievalCodeAfterSoftDeleteByFlag(){
-		String flag= "1";
+	public List<LoanMaster> retrievalCodeAfterSoftDeleteByFlag() {
+		String flag = "1";
 		List<LoanMaster> list = loanmasterrepo.findByflag(flag);
 		return list;
 	}
-	
+
 	/* */
-	
+
 	/* GROUP LOAN RECTIFICATION MODULE */
 
 	@GetMapping("GroupLoanRectification")
 	public String showGroupLoanRectificationPage() {
 		return "rectificationSection/GroupLoanRectification";
 	}
-		
-	//Retrieving ID On DropDown
+
+	// Retrieving ID On DropDown
 	@GetMapping("/RetrieveDataOFGroupLoandIdSoftDeletedApi")
 	@ResponseBody
-	public List<GroupMaster> DataofGroupMaster(){
-			String flag="1";
-			return groupmasterrepo.findByflag(flag);
+	public List<GroupMaster> DataofGroupMaster() {
+		String flag = "1";
+		return groupmasterrepo.findByflag(flag);
 	}
-			
-	//Retrieving Member Data On feilds
+
+	// Retrieving Member Data On feilds
 	@PostMapping("/retridataonfeildsviaMembername")
 	@ResponseBody
-	public List<ClientMaster>RetreiveMemberdataonFeilds(@RequestBody ClientMaster mem){
-			return clientMasterRepo.findBymemberName(mem.getMemberName());
+	public List<ClientMaster> RetreiveMemberdataonFeilds(@RequestBody ClientMaster mem) {
+		return clientMasterRepo.findBymemberName(mem.getMemberName());
 	}
-		
-	//Updating Group Loan Rectification
+
+	// Updating Group Loan Rectification
 	@PostMapping("/updateGroupLoanRectification")
 	@ResponseBody
 	public ResponseEntity<String> updateGroupLoanRectification(
-				@RequestParam(name ="loanDate", required = false)String loanDate,
-				@RequestParam(name ="memberName", required = false)String memberName,
-				@RequestParam(name ="relativeName", required = false)String relativeName,
-				@RequestParam(name ="dob", required = false)String dob,
-				@RequestParam(name ="age", required = false)String age,
-				@RequestParam(name ="phoneno", required = false)String phoneno,
-				@RequestParam(name ="groupID", required = false)String groupID,
-				@RequestParam(name ="address", required = false)String address,
-				@RequestParam(name ="pinCode", required = false)String pinCode,
-				@RequestParam(name ="branchName", required = false)String branchName,
-				@RequestParam(name ="loanPlanName", required = false)String loanPlanName,
-				@RequestParam(name ="loanType", required = false)String loanType,			
-				@RequestParam(name ="planTerm", required = false)String planTerm,
-				@RequestParam(name ="mode", required = false)String mode,
-				@RequestParam(name ="loanROI", required = false)String loanROI,
-				@RequestParam(name ="loanAmount", required = false)String loanAmount,		
-				@RequestParam(name ="roitype", required = false)String roitype,
-				@RequestParam(name ="emiAmount", required = false)String emiAmount,
-				@RequestParam(name ="loanPurpose", required = false)String loanPurpose,
-				@RequestParam(name ="processingFee", required = false)String processingFee,
-				@RequestParam(name ="legalAmt", required = false)String legalAmt,
-				@RequestParam(name ="advisorCode", required = false)String advisorCode,
-				@RequestParam(name ="gst", required = false)String gst,
-				@RequestParam(name ="insuranceAmt", required = false)String insuranceAmt,
-				@RequestParam(name ="advisorName", required = false)String advisorName,
-				@RequestParam(name = "filetag",required = false) MultipartFile file1,
-				@RequestParam(name = "secondfiletag",required = false) MultipartFile file2,
-				@RequestParam(name = "id123",required = false) Integer id,
-				HttpSession session)  {
-					try{
-						List<GroupMasterApplication> group = groupMasterApplicationRepo.findByid(id);
-						String createdBy = session.getAttribute("ID").toString();
-						group.forEach(s->{
-							if(!(file1==null) && !(file2==null)) {
-								try {
-									byte[] photo = file1.getBytes();
-									byte[] signature = file2.getBytes();
-									s.setPhoto(photo);
-									s.setSignature(signature);
-								}catch(Exception e) {
-									e.printStackTrace();
-								}
-							}
-							s.setLoanDate(loanDate);
-							s.setMemberName(memberName);
-							s.setRelativeName(relativeName);
-							s.setDob(dob);
-							s.setAge(age);
-							s.setPhoneno(phoneno);
-							s.setGroupID(groupID);
-							s.setAddress(address);
-							s.setPinCode(pinCode);
-							s.setBranchName(branchName);
-							s.setLoanPlanName(loanPlanName);
-							s.setLoanType(loanType);
-							s.setPlanTerm(planTerm);
-							s.setMode(mode);
-							s.setLoanROI(loanROI);
-							s.setLoanAmount(loanAmount);
-							s.setRoitype(roitype);
-							s.setEmiAmount(emiAmount);
-							s.setLoanPurpose(loanPurpose);
-							s.setProcessingFee(processingFee);
-							s.setLegalAmt(legalAmt);
-							s.setAdvisorCode(advisorCode);
-							s.setGst(gst);
-							s.setInsuranceAmt(insuranceAmt);
-							s.setAdvisorName(advisorName);
-							s.setFlag("1");
-							s.setCreatedBy(createdBy);
-							groupMasterApplicationRepo.save(s);
-							session.setAttribute("createdBy", createdBy);
-						});
-						return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
-					}catch(Exception ex) {
-						System.out.println(ex);
-				        return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
+			@RequestParam(name = "loanDate", required = false) String loanDate,
+			@RequestParam(name = "memberName", required = false) String memberName,
+			@RequestParam(name = "relativeName", required = false) String relativeName,
+			@RequestParam(name = "dob", required = false) String dob,
+			@RequestParam(name = "age", required = false) String age,
+			@RequestParam(name = "phoneno", required = false) String phoneno,
+			@RequestParam(name = "groupID", required = false) String groupID,
+			@RequestParam(name = "address", required = false) String address,
+			@RequestParam(name = "pinCode", required = false) String pinCode,
+			@RequestParam(name = "branchName", required = false) String branchName,
+			@RequestParam(name = "loanPlanName", required = false) String loanPlanName,
+			@RequestParam(name = "loanType", required = false) String loanType,
+			@RequestParam(name = "planTerm", required = false) String planTerm,
+			@RequestParam(name = "mode", required = false) String mode,
+			@RequestParam(name = "loanROI", required = false) String loanROI,
+			@RequestParam(name = "loanAmount", required = false) String loanAmount,
+			@RequestParam(name = "roitype", required = false) String roitype,
+			@RequestParam(name = "emiAmount", required = false) String emiAmount,
+			@RequestParam(name = "loanPurpose", required = false) String loanPurpose,
+			@RequestParam(name = "processingFee", required = false) String processingFee,
+			@RequestParam(name = "legalAmt", required = false) String legalAmt,
+			@RequestParam(name = "advisorCode", required = false) String advisorCode,
+			@RequestParam(name = "gst", required = false) String gst,
+			@RequestParam(name = "insuranceAmt", required = false) String insuranceAmt,
+			@RequestParam(name = "advisorName", required = false) String advisorName,
+			@RequestParam(name = "filetag", required = false) MultipartFile file1,
+			@RequestParam(name = "secondfiletag", required = false) MultipartFile file2,
+			@RequestParam(name = "id123", required = false) Integer id, HttpSession session) {
+		try {
+			List<GroupMasterApplication> group = groupMasterApplicationRepo.findByid(id);
+			String createdBy = session.getAttribute("ID").toString();
+			group.forEach(s -> {
+				if (!(file1 == null) && !(file2 == null)) {
+					try {
+						byte[] photo = file1.getBytes();
+						byte[] signature = file2.getBytes();
+						s.setPhoto(photo);
+						s.setSignature(signature);
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
+				}
+				s.setLoanDate(loanDate);
+				s.setMemberName(memberName);
+				s.setRelativeName(relativeName);
+				s.setDob(dob);
+				s.setAge(age);
+				s.setPhoneno(phoneno);
+				s.setGroupID(groupID);
+				s.setAddress(address);
+				s.setPinCode(pinCode);
+				s.setBranchName(branchName);
+				s.setLoanPlanName(loanPlanName);
+				s.setLoanType(loanType);
+				s.setPlanTerm(planTerm);
+				s.setMode(mode);
+				s.setLoanROI(loanROI);
+				s.setLoanAmount(loanAmount);
+				s.setRoitype(roitype);
+				s.setEmiAmount(emiAmount);
+				s.setLoanPurpose(loanPurpose);
+				s.setProcessingFee(processingFee);
+				s.setLegalAmt(legalAmt);
+				s.setAdvisorCode(advisorCode);
+				s.setGst(gst);
+				s.setInsuranceAmt(insuranceAmt);
+				s.setAdvisorName(advisorName);
+				s.setFlag("1");
+				s.setCreatedBy(createdBy);
+				groupMasterApplicationRepo.save(s);
+				session.setAttribute("createdBy", createdBy);
+			});
+			return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
+		} catch (Exception ex) {
+			System.out.println(ex);
+			return new ResponseEntity<>("Data Updated Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
-	
+
 	@PostMapping("/deleteGroupMasterApplicationById")
 	@ResponseBody
-	public ResponseEntity<String> deleteGroupMasterApplicationById(@RequestBody GroupMasterApplication model, HttpSession session) {
-			String flag = "0";
-			String userId = session.getAttribute("ID").toString();
-			model.setCreatedBy(userId);
-			int i = groupMasterApplicationRepo.updateGroupMasterApplicationThroughid(flag, model.getId(),userId);
-			session.setAttribute("userId", userId);
-			return ResponseEntity.ok("Deleted Successfully..!!");
+	public ResponseEntity<String> deleteGroupMasterApplicationById(@RequestBody GroupMasterApplication model,
+			HttpSession session) {
+		String flag = "0";
+		String userId = session.getAttribute("ID").toString();
+		model.setCreatedBy(userId);
+		int i = groupMasterApplicationRepo.updateGroupMasterApplicationThroughid(flag, model.getId(), userId);
+		session.setAttribute("userId", userId);
+		return ResponseEntity.ok("Deleted Successfully..!!");
 	}
-	
+
 	@PostMapping("/retrieveGroupLoanMasterId")
 	@ResponseBody
-	public List<GroupMasterApplication> retrieveLoanMasterId(){
+	public List<GroupMasterApplication> retrieveLoanMasterId() {
 		List<GroupMasterApplication> list = groupMasterApplicationRepo.findAll();
 		return list;
 	}
-	
+
 	@PostMapping("/getGroupLoanIdForUpdate")
 	@ResponseBody
-	public List<GroupMasterApplication> getGroupLoanIdForUpdate(@RequestBody GroupMasterApplication group){
+	public List<GroupMasterApplication> getGroupLoanIdForUpdate(@RequestBody GroupMasterApplication group) {
 		List<GroupMasterApplication> list = groupMasterApplicationRepo.findByid(group.getId());
 		return list;
 	}
-	
+
 	@PostMapping("/RetrieveDataOfSoftDeletedApiGroupLoan")
 	@ResponseBody
 	public List<GroupMasterApplication> RetrieveDataOfSoftDeletedApiGroupLoan() {
@@ -1463,7 +1459,7 @@ public class RectificationSectionController {
 		List<GroupMasterApplication> data = groupMasterApplicationRepo.findByflag(flag);
 		return data;
 	}
-	
+
 	/* */
 
 }

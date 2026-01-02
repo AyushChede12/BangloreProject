@@ -11,65 +11,65 @@ public class SavingsDepositWith {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+
 	private int id;
 
 	private String txnDate;
-	
+
 	private String branchName;
-	
+
 	private String accountNo;
-	
+
 	private String memberCode;
-	
+
 	private String accHolderName;
-	
+
 	private String mobileNumber;
-	
+
 	private String jointHolder;
-	
+
 	private String sbPlanName;
 
 	private String avaBalance;
-	
+
 	private String transactionFor;
-	
+
 	private String remarks;
-	
+
 	private String txnType;
-	
+
 	private String amount;
-	
+
 	private String paymentBy;
-	
+
 	private String flag;
-	
+
 	private String imageApplicant;
-	
+
 	private String imageSignature;
-	
+
 	private String imgJointPhoto;
-	
+
 	private String fDate;
-	
+
 	private String tDate;
-	
+
 	private String advisorCode;
-	
+
 	private String schemeName;
-	
+
 	private String openingDate;
-	
+
 	private String closingDate;
-	
+
 	private String paidInterest;
-	
+
 	private String interestDue;
-	
+
 	private String netAmount;
-	
+
 	private String createdBy;
-	
+
 	private String createdDt;
 
 	public String getFlag() {
@@ -311,5 +311,5 @@ public class SavingsDepositWith {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }

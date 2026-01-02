@@ -80,7 +80,7 @@ public class NewGLHeadMaster {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	public String getAcountGroup() {
 		return acountGroup;
 	}
@@ -216,5 +216,5 @@ public class NewGLHeadMaster {
 	public void setUniqueId(String uniqueId) {
 		this.uniqueId = uniqueId;
 	}
-	
+
 }

@@ -36,7 +36,7 @@ public class EntryService {
 
 	@Autowired
 	NewGLHeadMasterRepo glHeadMasterRepo;
-	
+
 	@Autowired
 	ContraRepo contraRepo;
 
@@ -64,11 +64,11 @@ public class EntryService {
 	public Long generateContraNumber() {
 		LocalDate today = LocalDate.now();
 		List<Contra> contra = contraRepo.findByEntryDate(today);
-		long entryNo = (contra.size()/2) + 1;
+		long entryNo = (contra.size() / 2) + 1;
 
 		return entryNo;
 	}
-	
+
 	public Contra saveEntryNo() {
 		LocalDate today = LocalDate.now();
 		Long entryNo = generateContraNumber();
@@ -77,12 +77,12 @@ public class EntryService {
 		entry.setVoucherNo(entryNo);
 		return entry;
 	}
-	
+
 	// Receipt
 	public Long generateEntryNumberForReceipt() {
 		LocalDate today = LocalDate.now();
 		List<Receipt> entries = receiptRepo.findByEntryDate(today);
-		long entryNumber =(entries.size() / 2) + 1;
+		long entryNumber = (entries.size() / 2) + 1;
 		return entryNumber;
 	}
 
@@ -123,7 +123,7 @@ public class EntryService {
 		branchMaster.setCreatedBy(createdBy);
 		branchMaster.setBranchCode(requestBody.get("branchCode"));
 		branchMaster.setName(requestBody.get("name"));
-		branchMaster.setBankID(requestBody.get("name")+"001");
+		branchMaster.setBankID(requestBody.get("name") + "001");
 		branchMaster.setOpening_date(requestBody.get("openingDate"));
 		branchMaster.setAddress(requestBody.get("address"));
 		branchMaster.setPin(requestBody.get("pin"));
@@ -160,8 +160,8 @@ public class EntryService {
 		newGLHeadMaster.setStatus(requestBody.get("status"));
 		newGLHeadMaster.setAccountType(requestBody.get("accountType"));
 		newGLHeadMaster.setBranch(requestBody.get("name"));
-		newGLHeadMaster.setBankID(requestBody.get("name")+"001");
-		newGLHeadMaster.setUniqueId(requestBody.get("name")+"001");
+		newGLHeadMaster.setBankID(requestBody.get("name") + "001");
+		newGLHeadMaster.setUniqueId(requestBody.get("name") + "001");
 		newGLHeadMaster.setGlHeadName(requestBody.get("name"));
 		newGLHeadMaster.setBalance(0.0);
 
@@ -217,4 +217,59 @@ public class EntryService {
 		glHeadMasterRepo.save(newGLObj);
 	}
 
+	private static final String[] units = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+			"Nine" };
+	private static final String[] teens = { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+			"Seventeen", "Eighteen", "Nineteen" };
+	private static final String[] tens = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty",
+			"Ninety" };
+	private static final String[] thousands = { "", "Thousand", "Million", "Billion" };
+
+	public String convertAmountToWords(String amount) {
+		double numericAmount = Double.parseDouble(amount);
+		if (numericAmount == 0) {
+			return "Zero";
+		}
+
+		int index = 0;
+		String words = "";
+
+		while (numericAmount > 0) {
+			int part = (int) (numericAmount % 1000);
+			if (part > 0) {
+				words = convertThreeDigit(part) + thousands[index] + " " + words;
+			}
+			numericAmount /= 1000;
+			index++;
+		}
+
+		return words.trim();
+	}
+
+	private String convertThreeDigit(int num) {
+		String result = "";
+
+		int hundreds = num / 100;
+		int remainder = num % 100;
+
+		if (hundreds > 0) {
+			result += units[hundreds] + " Hundred";
+			if (remainder > 0) {
+				result += " and ";
+			}
+		}
+
+		if (remainder >= 10 && remainder <= 19) {
+			result += teens[remainder - 10];
+		} else {
+			int tensDigit = remainder / 10;
+			int onesDigit = remainder % 10;
+			result += tens[tensDigit];
+			if (onesDigit > 0) {
+				result += "-" + units[onesDigit];
+			}
+		}
+
+		return result;
+	}
 }

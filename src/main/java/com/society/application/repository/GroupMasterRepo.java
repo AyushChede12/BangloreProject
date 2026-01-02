@@ -23,10 +23,10 @@ public interface GroupMasterRepo extends JpaRepository<GroupMaster, Integer> {
 	@Modifying
 	@Transactional
 	@Query("UPDATE GroupMaster SET flag =:flag WHERE id=:id")
-	int updateThroughIDInDeleteGoldtRectification(@Param("flag") String flag,@Param("id") int id);
+	int updateThroughIDInDeleteGoldtRectification(@Param("flag") String flag, @Param("id") int id);
 
 	List<GroupMaster> findByid(Integer id);
-	
+
 	List<GroupMaster> findBybranchName(String branchName);
 
 	List<GroupMaster> findByloanDateBetween(String getfDate, String gettDate);
@@ -40,17 +40,16 @@ public interface GroupMasterRepo extends JpaRepository<GroupMaster, Integer> {
 	List<GroupMaster> findByloanPlanName(String loanPlanName);
 
 	List<GroupMaster> findByadvisorCode(String advisorCode);
-	
+
 	List<GroupMaster> findBycsp(String csp);
 
 	@Query("SELECT l FROM GroupMaster l WHERE l.loanDate BETWEEN :getfDate AND :gettDate")
-	List<GroupMaster> findByloanDateBetweenmmmmm(@Param("getfDate") String getfDate,@Param("gettDate") String gettDate);
+	List<GroupMaster> findByloanDateBetweenmmmmm(@Param("getfDate") String getfDate,
+			@Param("gettDate") String gettDate);
 
 	List<GroupMaster> findByplaneName(String planeName);
 
 	@Query("SELECT gm FROM GroupMaster gm WHERE gm.id = :id AND gm.createdBy = :createdBy")
-	List<GroupMaster> findByidAndcreatedBy(@Param("id") int id,@Param("createdBy") String createdBy);
+	List<GroupMaster> findByidAndcreatedBy(@Param("id") int id, @Param("createdBy") String createdBy);
 
-	
-	
 }

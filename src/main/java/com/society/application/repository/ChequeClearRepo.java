@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.ChequeClear;
 
 @Repository
-public interface ChequeClearRepo extends JpaRepository<ChequeClear, Integer>
-{
+public interface ChequeClearRepo extends JpaRepository<ChequeClear, Integer> {
 
 	public List<ChequeClear> findBytype(String type);
 

@@ -8,11 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.LedgerReport;
 
 @Repository
-public interface LedgerReportRepo extends JpaRepository<LedgerReport, Integer>{
+public interface LedgerReportRepo extends JpaRepository<LedgerReport, Integer> {
 
 	public List<LedgerReport> findByselectledger(String selectledger);
 
 	public List<LedgerReport> findBydateBetween(String fromdate, String todate);
 
-	
 }

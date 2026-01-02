@@ -22,8 +22,8 @@ public interface NewSchemeRepo extends JpaRepository<NewScheme, Long> {
 	NewScheme getDataByGlHeadNoSchemeNmae(String glHeadNoSchemeNmae);
 
 	@Transactional
-    @Modifying
-    @Query("UPDATE NewScheme n SET n.flag = 0 WHERE n.id = :id")
+	@Modifying
+	@Query("UPDATE NewScheme n SET n.flag = 0 WHERE n.id = :id")
 	void softDeleteById(@Param("id") Long iD);
 
 	List<NewScheme> findBystatusAndFlag(String status, int i);

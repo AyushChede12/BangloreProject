@@ -1,3 +1,130 @@
+<style>
+.dashboard-cards {
+	margin-top: 20px;
+}
+
+.dash-card {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 18px 20px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	transition: 0.3s ease;
+	border-left: 6px solid transparent;
+	height: 150px;
+}
+
+.dash-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.dash-card .title {
+	font-size: 15px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.values {
+	display: flex;
+	justify-content: space-between;
+}
+
+.values span {
+	font-size: 13px;
+	color: #555;
+}
+
+.values h3 {
+	margin: 5px 0 0 0;
+	font-size: 22px;
+	font-weight: 700;
+	color: #111;
+}
+
+/* Unique border colors for each card */
+.card1 {
+	border-color: #ff9800;
+}
+
+.card2 {
+	border-color: #4caf50;
+}
+
+.card3 {
+	border-color: #2196f3;
+}
+
+.card4 {
+	border-color: #9c27b0;
+}
+
+.modern-boxes {
+    margin-top: 25px;
+}
+
+.new-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.new-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.new-card .card-header h4 {
+    font-size: 17px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.count-value {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.progress-line {
+    height: 3px;
+    background: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-actions a {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(3px);
+    transition: 0.3s;
+}
+
+.card-actions a:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* Card Colors */
+.c1 { background: linear-gradient(135deg, #00bcd4, #007c91); color: #fff; }
+.c2 { background: linear-gradient(135deg, #4caf50, #2e7d32); color: #fff; }
+.c3 { background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff; }
+.c4 { background: linear-gradient(135deg, #e53935, #b71c1c); color: #fff; }
+
+</style>
 <jsp:include page="../header.jsp" />
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
@@ -61,451 +188,228 @@
                      </div>-->
 						</div>
 					</div>
-					<div id="ContentPlaceHolder1_idBanking" class="row"
-						style="margin-bottom: 50px;">
-						<div class="col-md-3 col-sm-6 col-xs-6"
-							style="padding: 0 5px 0 5px;">
-							<div class="info-box-2 dash1"
-								style="background-image: url(dist/img/back-de.png);">
-								<div class="info-box-2-content">
-									<span class="info-box-2-text">WALLET BALANCE</span>
-									<div class="row">
-										<span class="info-box-2-number">IMPS Bal : <br />
-										<span id="impsBal"></span> &#x20b9;
-										</span> <span class="info-box-2-icon"><img class="hvr-icon"
-											src="dist/img/wallet-balance-1.png" /></span> <span
-											class="info-box-2-number-1">NEFT Bal : <br />
-										<span id="neftBal"></span> &#x20b9;
-										</span>
+					<div class="row dashboard-cards">
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="dash-card card1">
+								<p class="title">WALLET BALANCE</p>
+								<div class="values">
+									<div class="left">
+										<span>IMPS Bal :</span>
+										<h3 id="impsBal">0</h3>
+									</div>
+									<div class="right">
+										<span>NEFT Bal :</span>
+										<h3 id="neftBal">0</h3>
 									</div>
 								</div>
-								<!-- /.info-box-content -->
 							</div>
-							<!-- /.info-box -->
 						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6"
-							style="padding: 0 5px 0 5px;">
-							<div class="info-box-2 dash2"
-								style="background-image: url(dist/img/back-de-2.png);">
-								<div class="info-box-2-content">
-									<span class="info-box-2-text">TOTAL RECEIVED</span>
-									<div class="row">
-										<span class="info-box-2-number">Amount : <br /> 0
-										</span> <span class="info-box-2-icon"><img class="hvr-icon"
-											src="dist/img/wallet-balance-2.png" /></span> <span
-											class="info-box-2-number-1">Tot.Count : <br /> 0
-										</span>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="dash-card card2">
+								<p class="title">TOTAL RECEIVED</p>
+								<div class="values">
+									<div class="left">
+										<span>Amount :</span>
+										<h3>0</h3>
+									</div>
+									<div class="right">
+										<span>Tot.Count :</span>
+										<h3>0</h3>
 									</div>
 								</div>
-								<!-- /.info-box-content -->
 							</div>
-							<!-- /.info-box -->
 						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6"
-							style="padding: 0 5px 0 5px;">
-							<div class="info-box-2 dash3"
-								style="background-image: url(dist/img/back-de-3.png);">
-								<div class="info-box-2-content">
-									<span class="info-box-2-text">TOTAL TRANSFER</span>
-									<div class="row">
-										<span class="info-box-2-number">Amount : <br /> 0
-										</span> <span class="info-box-2-icon"><img class="hvr-icon"
-											src="dist/img/wallet-balance-3.png" /></span> <span
-											class="info-box-2-number-1">Tot.Count : <br /> 0
-										</span>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="dash-card card3">
+								<p class="title">TOTAL TRANSFER</p>
+								<div class="values">
+									<div class="left">
+										<span>Amount :</span>
+										<h3>0</h3>
+									</div>
+									<div class="right">
+										<span>Tot.Count :</span>
+										<h3>0</h3>
 									</div>
 								</div>
-								<!-- /.info-box-content -->
 							</div>
-							<!-- /.info-box -->
 						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6"
-							style="padding: 0 5px 0 5px;">
-							<div class="info-box-2 dash4"
-								style="background-image: url(dist/img/back-de-4.png);">
-								<div class="info-box-2-content">
-									<span class="info-box-2-text">CARD TRANSACTION</span>
-									<div class="row">
-										<span class="info-box-2-number">Balance : <br /> 0.00
-										</span> <span class="info-box-2-icon"><img class="hvr-icon"
-											src="dist/img/wallet-balance-4.png" /></span> <span
-											class="info-box-2-number-1">Tot.Count : <br /> 0
-										</span>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="dash-card card4">
+								<p class="title">CARD TRANSACTION</p>
+								<div class="values">
+									<div class="left">
+										<span>Balance :</span>
+										<h3>0.00</h3>
+									</div>
+									<div class="right">
+										<span>Tot.Count :</span>
+										<h3>0</h3>
 									</div>
 								</div>
-								<!-- /.info-box-content -->
 							</div>
-							<!-- /.info-box -->
 						</div>
-						<!-- /.col -->
+
 					</div>
+					<br> <br>
+
 					<!-- =========================================================== -->
-					<div id="ContentPlaceHolder1_idview1" class="row">
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-aqua hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-5.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Member</span> <span
-										class="info-box-number"> <span id="memberCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkM" class="pull-left"
-										href="searchMember" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addMember" id="ContentPlaceHolder1_m1"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-green hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-4.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Share Issue</span> <span
-										class="info-box-number"> <span id="shareCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkshare" class="pull-left"
-										href="memberShareReport" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="shareIssue" id="ContentPlaceHolder1_m2"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-yellow hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-6.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Advisor/Collector</span> <span
-										class="info-box-number"> <span id="advisorCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkadvisor" class="pull-left"
-										href="idCardPrinting" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addAdvisor" id="ContentPlaceHolder1_m3"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-red hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-7.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">RD Policy</span> <span
-										class="info-box-number"> <span id="rdCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkRD" class="pull-left"
-										href="investmentSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addInvestment" id="ContentPlaceHolder1_m4"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-					</div>
-					<div id="ContentPlaceHolder1_idview2" class="row">
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-aqua hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-8.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Daily Policy</span> <span
-										class="info-box-number"> <span id="dailyDepositeCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkDRD" class="pull-left"
-										href="investmentSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addInvestment" id="ContentPlaceHolder1_m5"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-green hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-9.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">FD Policy</span> <span
-										class="info-box-number"> <span id="fixedDepositeCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkFD" class="pull-left"
-										href="investmentSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addInvestment" id="ContentPlaceHolder1_m6"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-yellow hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-10.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">MIS Policy</span> <span
-										class="info-box-number"> <span id="misCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkMIS" class="pull-left"
-										href="investmentSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addInvestment" id="ContentPlaceHolder1_m7"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-green hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-12.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Savings A/C</span> <span
-										class="info-box-number"> <span id="savingCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkSBac" class="pull-left"
-										href="searchSavingsAccount" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="addSaving" id="ContentPlaceHolder1_m10"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-					</div>
-					<div id="ContentPlaceHolder1_idview3" class="row">
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-red hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-13.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Loan</span> <span
-										class="info-box-number"> <span id="loanCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnknormalLoan" class="pull-left"
-										href="loanSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="LoanApplication" id="ContentPlaceHolder1_m12"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-6">
-							<div class="info-box bg-green hvr-icon-pulse-grow">
-								<span class="info-box-icon"> <img class="hvr-icon"
-									src="dist/img/new_dashboard/icon-14.png">
-								</span>
-								<div class="info-box-content">
-									<span class="info-box-text">Group Loan</span> <span
-										class="info-box-number"> <span id="groupCount"></span></span>
-									<div class="progress">
-										<div class="progress-bar" style="width: 100%"></div>
-									</div>
-									<span class="progress-description"> <a
-										id="ContentPlaceHolder1_lnkGrLoan" class="pull-left"
-										href="loanSearch" style="color: #fff;"><i
-											class="fa fa-eye" aria-hidden="true"></i> View</a> <a
-										href="GroupLoanApplication" id="ContentPlaceHolder1_m14"
-										class="pull-right" style="color: #fff;"><i
-											class="fa fa-plus" aria-hidden="true"></i>Add</a>
-									</span>
-								</div>
-								<!-- /.info-box-content -->
-							</div>
-							<!-- /.info-box -->
-						</div>
-					</div>
-					<div id="ContentPlaceHolder1_idview4" class="row"></div>
-					<!-- =========================================================== -->
-					<div class="row">
-						<div id="ContentPlaceHolder1_idCashBal" class="col-md-6 col-xs-6">
-							<div class="box box-success box-solid collapsed-box">
-								<div class="box-header box-head with-border">
-									<h3 class="box-title">Cash Balance</h3>
-									<div class="box-tools pull-right">
-										<button type="button" class="btn btn-box-tool"
-											data-widget="collapse">
-											<i class="fa fa-plus"></i>
-										</button>
-									</div>
-									<!-- /.box-tools -->
-								</div>
-								<!-- /.box-header -->
-								<div class="box-body" style="display: none;">
-									<div>
-										<table cellspacing="0" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">S/N</th>
-												<th scope="col">BRANCH/CSP</th>
-												<th scope="col">CASH BALANCE</th>
-												<th scope="col">TODAY CASH</th>
-											</tr>
+					<div class="row modern-boxes">
 
-										</table>
-										<table id="ContentPlaceHolder1_gvrCash" cellspacing="0"
-											rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c1">
+								<div class="card-header">
+									<h4>Member</h4>
+								</div>
+								<h2 id="memberCount" class="count-value">0</h2>
 
+								<div class="card-actions">
+									<a href="searchMember"><i class="fa fa-eye"></i> View</a> <a
+										href="addMember"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
 
-										</table>
-									</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c2">
+								<div class="card-header">
+									<h4>Share Issue</h4>
 								</div>
-								<!-- /.box-body -->
+								<h2 id="shareCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="memberShareReport"><i class="fa fa-eye"></i> View</a>
+									<a href="shareIssue"><i class="fa fa-plus"></i> Add</a>
+								</div>
 							</div>
-							<!-- /.box -->
 						</div>
-						<!-- /.col -->
-						<div id="ContentPlaceHolder1_idBankBal" class="col-md-6 col-xs-6">
-							<div class="box box-warning box-solid collapsed-box">
-								<div class="box-header box-head with-border">
-									<h3 class="box-title">Bank Balance</h3>
-									<div class="box-tools pull-right">
-										<button type="button" class="btn btn-box-tool"
-											data-widget="collapse">
-											<i class="fa fa-plus"></i>
-										</button>
-									</div>
-									<!-- /.box-tools -->
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c3">
+								<div class="card-header">
+									<h4>Advisor / Collector</h4>
 								</div>
-								<!-- /.box-header -->
-								<div class="box-body" style="display: none;">
-									<div>
-										<table cellspacing="0" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">S/N</th>
-												<th scope="col">BANK NAME</th>
-												<th scope="col">BANK ACNO</th>
-												<th scope="col">BALANCE</th>
-											</tr>
-										</table>
-										<table cellspacing="0" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;"
-											id="ContentPlaceHolder1_gdvBankdashboard">
-										</table>
-									</div>
+								<h2 id="advisorCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="idCardPrinting"><i class="fa fa-eye"></i> View</a> <a
+										href="addAdvisor"><i class="fa fa-plus"></i> Add</a>
 								</div>
-								<!-- /.box-body -->
 							</div>
-							<!-- /.box -->
 						</div>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c4">
+								<div class="card-header">
+									<h4>RD Policy</h4>
+								</div>
+								<h2 id="rdCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="investmentSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="addInvestment"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
 					</div>
-					<!-- /.row -->
-					<div class="modal modal-success fade" id="modal-success">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									<h4 class="modal-title">Details View</h4>
+
+					<div id="ContentPlaceHolder1_idview2" class="row modern-boxes">
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c1">
+								<div class="card-header">
+									<h4>Daily Policy</h4>
 								</div>
-								<div class="modal-body">
-									<div id="ContentPlaceHolder1_UpdatePanel3">
-										<div style="box-shadow: none; overflow: auto;">
-											<div></div>
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline pull-left"
-										data-dismiss="modal">Close</button>
+								<h2 id="dailyDepositeCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="investmentSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="addInvestment"><i class="fa fa-plus"></i> Add</a>
 								</div>
 							</div>
-							<!-- /.modal-content -->
 						</div>
-						<!-- /.modal-dialog -->
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c2">
+								<div class="card-header">
+									<h4>FD Policy</h4>
+								</div>
+								<h2 id="fixedDepositeCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="investmentSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="addInvestment"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c3">
+								<div class="card-header">
+									<h4>MIS Policy</h4>
+								</div>
+								<h2 id="misCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="investmentSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="addInvestment"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c4">
+								<div class="card-header">
+									<h4>Savings A/C</h4>
+								</div>
+								<h2 id="savingCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="searchSavingsAccount"><i class="fa fa-eye"></i>
+										View</a> <a href="addSaving"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
 					</div>
+
+					<div id="ContentPlaceHolder1_idview3" class="row modern-boxes">
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c1">
+								<div class="card-header">
+									<h4>Loan</h4>
+								</div>
+								<h2 id="loanCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="loanSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="LoanApplication"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="new-card c2">
+								<div class="card-header">
+									<h4>Group Loan</h4>
+								</div>
+								<h2 id="groupCount" class="count-value">0</h2>
+
+								<div class="card-actions">
+									<a href="loanSearch"><i class="fa fa-eye"></i> View</a> <a
+										href="GroupLoanApplication"><i class="fa fa-plus"></i> Add</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					
 				</section>
 			</div>
 			<!-- /.content-wrapper -->

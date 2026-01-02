@@ -44,13 +44,13 @@ public class MasterInsertController {
 
 	@Autowired
 	KYCMasterRepo kycMasterRepo;
-	
+
 	@Autowired
 	ShareAllocationMasterRepo shareAllocationMasterRepo;
-	
+
 	@Autowired
 	PositionRepo positionRepo;
-	
+
 	@GetMapping("insertPositionMaster")
 	public String insertPositionMaster() {
 		List<Position> listPositionMaster = new ArrayList<>();
@@ -67,7 +67,7 @@ public class MasterInsertController {
 		positionRepo.saveAll(listPositionMaster);
 		return "Position Master List Inserted Successfully";
 	}
-	
+
 	private Position createListOfPositionMaster(int id, String relation) {
 		Position positionMaster = new Position();
 		positionMaster.setId(id);
@@ -75,13 +75,13 @@ public class MasterInsertController {
 		return positionMaster;
 	}
 
-	
 	@GetMapping("insertShareAllocationMaster")
 	public String insertShareAllocationMaster() {
 		List<ShareAllocationMaster> listShareAllocationMaster = new ArrayList<>();
 		listShareAllocationMaster.add(createListOfShareAllocationMaster(1, "ANKUSH GAJANANRAO BHELKAR-01/NGP/ 000001"));
 		listShareAllocationMaster.add(createListOfShareAllocationMaster(2, "SUDHIR KRISHNARAO BOREKAR-01/NGP/ 000002"));
-		listShareAllocationMaster.add(createListOfShareAllocationMaster(3, "MANGESH KRUSHNARAO BOREKAR-01/NGP/ 000003"));
+		listShareAllocationMaster
+				.add(createListOfShareAllocationMaster(3, "MANGESH KRUSHNARAO BOREKAR-01/NGP/ 000003"));
 		listShareAllocationMaster.add(createListOfShareAllocationMaster(4, "RAJESH BABULAL BHAGAT-01/NGP/ 000004"));
 		listShareAllocationMaster.add(createListOfShareAllocationMaster(5, "ROSHAN SHANKARRAOJI RAUT-01/NGP/ 000005"));
 		listShareAllocationMaster.add(createListOfShareAllocationMaster(6, "REKHA GAJANAN BHELKAR-01/NGP/ 000006"));
@@ -89,7 +89,7 @@ public class MasterInsertController {
 		shareAllocationMasterRepo.saveAll(listShareAllocationMaster);
 		return "Share Allocation Master List Inserted Successfully";
 	}
-	
+
 	private ShareAllocationMaster createListOfShareAllocationMaster(int id, String relation) {
 		ShareAllocationMaster shareAllocationMaster = new ShareAllocationMaster();
 		shareAllocationMaster.setId(id);
@@ -107,7 +107,7 @@ public class MasterInsertController {
 		kycMasterRepo.saveAll(listkycMaster);
 		return "KYC Master List Inserted Successfully";
 	}
-	
+
 	private KYCMaster createListOfKYCMaster(int id, String relation) {
 		KYCMaster kycMaster = new KYCMaster();
 		kycMaster.setId(id);

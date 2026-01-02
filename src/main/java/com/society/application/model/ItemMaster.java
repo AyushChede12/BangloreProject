@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class ItemMaster {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -15,33 +15,43 @@ public class ItemMaster {
 	private String itemName;
 	private String createdBy;
 	private String createdDt;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getItemType() {
 		return itemType;
 	}
+
 	public void setItemType(String itemType) {
 		this.itemType = itemType;
 	}
+
 	public String getItemName() {
 		return itemName;
 	}
+
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 	public String getCreatedDt() {
 		return createdDt;
 	}
+
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}

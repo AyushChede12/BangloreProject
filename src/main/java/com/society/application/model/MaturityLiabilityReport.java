@@ -9,35 +9,35 @@ import javax.persistence.Id;
 public class MaturityLiabilityReport {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String fromdate;
-	
+
 	private String todate;
-	
+
 	private String slno;
-	
+
 	private String policyno;
-	 
+
 	private String applicantname;
-	
+
 	private String branch;
-	
+
 	private String advisor;
-	
+
 	private String policydate;
-	
+
 	private String matdate;
-	
+
 	private String planname;
-	
+
 	private String plancode;
-	
+
 	private String policyamt;
-	
+
 	private String totalpaid;
-	
+
 	private String calmaturity;
 
 	public int getId() {
@@ -63,7 +63,7 @@ public class MaturityLiabilityReport {
 	public void setTodate(String todate) {
 		this.todate = todate;
 	}
-	
+
 	public String getSlno() {
 		return slno;
 	}
@@ -159,5 +159,5 @@ public class MaturityLiabilityReport {
 	public void setCalmaturity(String calmaturity) {
 		this.calmaturity = calmaturity;
 	}
-	
+
 }

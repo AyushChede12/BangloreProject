@@ -15,7 +15,7 @@ public class RateMaster {
 	private String goldRate;
 	private String silverRate;
 	private String createdBy;
-	private String createdDt; 
+	private String createdDt;
 
 	public int getId() {
 		return id;
@@ -64,5 +64,5 @@ public class RateMaster {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }

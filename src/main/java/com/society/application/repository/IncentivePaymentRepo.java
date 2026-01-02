@@ -12,6 +12,6 @@ public interface IncentivePaymentRepo extends JpaRepository<IncentivePayment, In
 
 	List<IncentivePayment> findBycode(String code);
 
-	//List<IncentivePayment> findBymonthnameAcode(String monthname, String code);
-	
+	// List<IncentivePayment> findBymonthnameAcode(String monthname, String code);
+
 }

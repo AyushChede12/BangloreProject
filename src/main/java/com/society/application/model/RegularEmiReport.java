@@ -7,39 +7,39 @@ import javax.persistence.Id;
 
 @Entity
 public class RegularEmiReport {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String branch;
-	
+
 	private String fromdate;
-	
+
 	private String todate;
-	
+
 	private String sino;
-	
+
 	private String loanid;
-	
+
 	private String membercode;
-	
+
 	private String membername;
-	
+
 	private String paydate;
-	
+
 	private String payamount;
-	
+
 	private String principal;
-	
+
 	private String interest;
-	
+
 	private String paymode;
-	
+
 	private String chequeno;
-	
+
 	private String sbaccount;
-	
+
 	private String collectorcode;
 
 	public int getId() {
@@ -169,5 +169,5 @@ public class RegularEmiReport {
 	public void setCollectorcode(String collectorcode) {
 		this.collectorcode = collectorcode;
 	}
-	
+
 }

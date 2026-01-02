@@ -3,9 +3,9 @@
 <jsp:include page="../header.jsp" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-   String status = (String)request.getAttribute("status");
-   if(status!=null &&  status.equals("saved")){
-   	%>
+String status = (String) request.getAttribute("status");
+if (status != null && status.equals("saved")) {
+%>
 <script>
    alert("Added Successfully");
 </script>
@@ -25,10 +25,12 @@ function check()
     }}
 </script>
 <%
-   } 
-   %>
+}
+%>
 <style>
-	.heading{color:#FF0000;}
+.heading {
+	color: #FF0000;
+}
 </style>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
@@ -55,21 +57,16 @@ function check()
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Add Client</h1>
-				<ol class="breadcrumb">
-					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li class="active">Member</li>
-				</ol>
+				<h1 id="ContentPlaceHolder1_IdHeader"
+					style="font-size: 30px; margin-left: 10px;">Add Client</h1>
+
 			</section>
 			<section class="content">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title" style="font-weight: bold;">Client Details</h3>
-							</div>
-							<form id="fileUploadForm">
+						<div class="clientBox">
+
+							<%-- <form id="fileUploadForm">
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-6">
@@ -77,7 +74,7 @@ function check()
 												<label class="col-sm-4 control-label" style="color: green;">Client
 													NO<strong style="color: Red">*</strong>
 												</label>
-												<div class="col-sm-8">
+												<div class="col-sm-10">
 													<input name="clientNo" value="${count}" type="text"
 														maxlength="6" id="clientNo" class="form-control"
 														readonly="readonly" />
@@ -137,8 +134,8 @@ function check()
 												</div>
 												<div class="col-sm-5">
 													<input name="memberName" type="text" id="memberName"
-														class="form-control" Placeholder="Enter Client Full Name" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator2"
+														class="form-control" Placeholder="Enter Client Full Name" />
+													<span id="ContentPlaceHolder1_RequiredFieldValidator2"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Applicant Name</span>
 												</div>
@@ -210,8 +207,8 @@ function check()
 												</div>
 											</div>
 											<div class="form-group row">
-												<label for="txtAddress" class="col-sm-4 control-label"> Residential Address
-													<strong style="color: Red">*</strong>
+												<label for="txtAddress" class="col-sm-4 control-label">
+													Residential Address <strong style="color: Red">*</strong>
 												</label>
 												<div class="col-sm-8">
 													<textarea name="address" rows="2" cols="20"
@@ -277,7 +274,7 @@ function check()
 														id="ContentPlaceHolder1_RequiredFieldValidator1"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														District</span> -->
-														<select name="district" id="district" class="form-control"
+													<select name="district" id="district" class="form-control"
 														style="width: 100%;" onclick="getTalukaInDropdown();">
 														<option value="">--Select District--</option>
 													</select>
@@ -288,7 +285,7 @@ function check()
 													<strong style="color: Red">*</strong>
 												</label>
 												<div class="col-sm-8">
-														<select name="taluka" id="taluka" class="form-control"
+													<select name="taluka" id="taluka" class="form-control"
 														style="width: 100%;">
 														<option value="">--Select Taluka--</option>
 													</select>
@@ -298,55 +295,13 @@ function check()
 												<label for="txtPin" class="col-sm-4 control-label">Village
 												</label>
 												<div class="col-sm-8">
-													<input name="village" type="text" 
-														id="village" class="form-control"
-														Placeholder="Enter Village" /> <span
+													<input name="village" type="text" id="village"
+														class="form-control" Placeholder="Enter Village" /> <span
 														id="ContentPlaceHolder1_RequiredFieldValidator4"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Village</span>
 												</div>
 											</div>
-											<div class="form-group row">
-												<label for="txtIntroMName" class="col-sm-4 control-label">Photo</label>
-												<div class="col-sm-8">
-													<img id="preview" name="preview" class="profile-user-img"
-														src="data:image/png;base64,${aadharPhoto}"
-														style="width: 110px;" /> <input type="file"
-														name="filetag" id="filetag" />
-														<a class="heading" href="(Photo should be less than 2MB)">(Photo should be less than 2MB)</a>
-													<!--                                     onchange="uploadFile('aadharPhoto','addMember')"  -->
-												</div>
-											</div>
-											<!-- <h3 style="font-weight: bold;">Internet Banking</h3> -->
-											<!-- <div class="form-group row">
-												<label for="txtPin" class="col-sm-4 control-label">Login
-													ID </label>
-												<div class="col-sm-8">
-													<input name="loginID" type="text" maxlength="6"
-														id="loginID" class="form-control"
-														Placeholder="Enter Login ID" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtPin" class="col-sm-4 control-label">Password
-
-												</label>
-												<div class="col-sm-8">
-													<input name="password" type="text" id="password"
-														class="form-control" Placeholder="Enter Password" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtPin" class="col-sm-4 control-label">Member
-													Income
-												</label>
-												<div class="col-sm-8">
-													<input name="memberIncome" type="text" id="memberIncome"
-														class="form-control" Placeholder="Enter Member Income" />
-												</div>
-											</div> -->
-										</div>
-										<div class="col-md-6">
 											<div class="form-group row">
 												<label for="txtPin" class="col-sm-4 control-label">Pin
 													Code <strong style="color: Red">*</strong>
@@ -465,14 +420,13 @@ function check()
 												<div class="col-sm-8">
 													<!-- <input name="clientPurpose" id="clientPurpose" type="text"
 														class="form-control" Placeholder="Enter Client Purpose" /> -->
-														<select name="clientPurpose" id="clientPurpose"
+													<select name="clientPurpose" id="clientPurpose"
 														class="form-control" style="width: 100%;">
 														<option value="">--- Select Client Purpose ---</option>
 														<option value="Membership">Membership</option>
 														<option value="Loan">Loan</option>
 														<option value="Other">Other</option>
-													</select>
-													<span id="message"></span>
+													</select> <span id="message"></span>
 												</div>
 											</div>
 											<!-- <div class="form-group row">
@@ -544,28 +498,52 @@ function check()
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
-												<label for="txtIntroMName" class="col-sm-4 control-label">Signature</label>
-												<div class="col-sm-8">
-													<img id="secondpreview" class="profile-user-img"
-														src="data:image/png;base64,${aadharPhoto}"
-														style="width: 110px;" /> <input type="file"
-														name="secondfiletag" id="secondfiletag" /> <a
-														class="heading" href="#">(Signature should be less
-														than 2MB)</a>
-												</div>
-											</div>
+
+
 										</div>
+										<div class="col-md-6">
+
+											<!-- Aadhar Front -->
+											<div class="col-lg-3 mb-5">
+												<label style="font-size: 12px; font-weight: 700;">Aadhar
+													Card (Front)</label> <input type="file" accept="image/*"
+													name="aadharFront" id="aadharFront"
+													onchange="previewImage(this,'previewFront')"
+													style="display: none;" /> <label for="aadharFront"
+													style="cursor: pointer;"> <img id="previewFront"
+													src="../images/upload/upload.png"
+													style="width: 150px; height: 150px; object-fit: cover; border: 1px solid #ccc;" />
+												</label>
+											</div>
+
+											<!-- Aadhar Back -->
+											<div class="col-lg-3 mb-5">
+												<label style="font-size: 12px; font-weight: 700;">Aadhar
+													Card (Back)</label> <input type="file" accept="image/*"
+													name="aadharBack" id="aadharBack"
+													onchange="previewImage(this,'previewBack')"
+													style="display: none;" /> <label for="aadharBack"
+													style="cursor: pointer;"> <img id="previewBack"
+													src="../images/upload/upload.png"
+													style="width: 150px; height: 150px; object-fit: cover; border: 1px solid #ccc;" />
+												</label>
+											</div>
+
+										</div>
+
 									</div>
 								</div>
 						</div>
 					</div>
 				</div>
+				<br> <br>
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-danger">
+						<div class="nomineeBox">
 							<div class="box-header with-border">
-								<h3 class="box-title">Nominee Details</h3>
+								<h3 class="box-title"
+									style="font-weight: bold; text-decoration: underline;">Nominee
+									Details</h3>
 							</div>
 							<div class="form-horizontal">
 								<div class="box-body">
@@ -615,8 +593,6 @@ function check()
 													Placeholder="Enter Nominee KYC No." />
 											</div>
 										</div>
-									</div>
-									<div class="col-md-6">
 										<div class="form-group row">
 											<label for="txtNomineeMobileNo"
 												class="col-sm-4 control-label">Nominee Mobile No.</label>
@@ -657,243 +633,827 @@ function check()
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<!-- <div class="box box-info"> -->
-						<!-- <div class="box-header with-border">
-								<h3 class="box-title">Fees/Setting Details</h3>
-							</div> -->
-						<!-- <div class="form-horizontal"> -->
-						<!-- <div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="txtMemberJoiningFess"
-												class="col-sm-4 control-label">Client Fees (if any)
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="memberJoiningFess" type="text"
-													id="memberJoiningFess" class="form-control"
-													placeholder="Enter Member Fees" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator6"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Member Fees (if any)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtShareAllotmentFrom"
-												class="col-sm-4 control-label">Share Alloted From <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<select name="shareAllotedfrm" id="shareAllotedfrm"
-													class="form-control" style="width: 100%;">
-													<option value="">Select Share Alloted From</option>
 
-												</select> <span id="ContentPlaceHolder1_RequiredFieldValidator13"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Alloted From</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtNoOfShared" class="col-sm-4 control-label">No.
-												of Share <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="noOfShared" type="text" onchange=""
-													id="noOfShared" class="form-control"
-													placeholder="Enter No. of Share" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator10"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													No of Share</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Share Amount <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<input name="enterShareAmount" type="text"
-													id="enterShareAmount" class="form-control"
-													placeholder="Enter Share Amount" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator14"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Share Amount</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
-												By <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="paymode" id="paymode" class="form-control"
-													style="width: 100%;">
-													<option value="">Select Payment By</option>
-													<option value="Cash">Cash</option>
-													<option value="Online">Online</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Remarks</label>
-											<div class="col-sm-8">
-												<textarea name="remarks" rows="2" cols="20" id="remarks"
-													class="form-control" Placeholder="Enter Remarks if any">
-            </textarea>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Client Status </label>
-											<div class="col-sm-8">
-												<label class="switch"> <input
-													id="ContentPlaceHolder1_chkisactive" type="checkbox"
-													name="memberStatusIsActive" /> <span class="slider round"></span>
-												</label>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Mobile Banking
-											</label>
-											<div class="col-sm-8">
-												<label class="switch"> <input
-													id="ContentPlaceHolder1_chkmobile" type="checkbox"
-													name="chkmobile" /> <span class="slider round"></span>
-												</label>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Net Banking </label>
-											<div class="col-sm-8">
-												<label class="switch"> <input
-													id="ContentPlaceHolder1_chknetBanking" type="checkbox"
-													name="chknetBanking" /> <span class="slider round"></span>
-												</label>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">SMS Send </label>
-											<div class="col-sm-8">
-												<label class="switch"> <input
-													id="ContentPlaceHolder1_chkisSms" type="checkbox"
-													name="chkisSms" /> <span class="slider round"></span>
-												</label>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Is Minor </label>
-											<div class="col-sm-8">
-												<label class="switch"> <input
-													id="ContentPlaceHolder1_chkMinor" type="checkbox"
-													name="chkMinor" /> <span class="slider round"></span>
-												</label>
-											</div>
-										</div>
-									</div>
-								</div> -->
-						<div class="box-footer">
-							<div class="row col-md-12">
-								<input type="submit" name="ctl00$ContentPlaceHolder1$btnPrint"
-									value="Print" id="ContentPlaceHolder1_btnPrint"
-									class="btn btn-info pull-right margin-r-5"
-									onclick="printTable()" /> <input type="button"
-									name="ctl00$ContentPlaceHolder1$btnSave" value="Save"
-									onclick="" id="ContentPlaceHolder1_btnSave"
-									class="btn btn-success pull-right margin-r-5" /> <input
-									type="button" name="ctl00$ContentPlaceHolder1$btnUpdate"
-									value="Update" onclick="" id="ContentPlaceHolder1_btnUpdate"
-									class="btn btn-warning pull-right margin-r-5" />
+								</div>
 							</div>
 						</div>
-						</form>
-						<!-- </div> -->
-						<!-- </div> -->
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
-								<h3 class="box-title">TABLE</h3>
-							</div>
-							<div class="form-horizontal">
-								<div class="box-body">
-									<div class="">
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<caption></caption>
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">Client No.</th>
-												<th scope="col">Member Name</th>
-												<th scope="col">Registration Date</th>
-												<th scope="col">Gender</th>
-												<th scope="col">DOB</th>
-												<th scope="col">Branch Name</th>
-												<th scope="col">Aadhar No.</th>
-												<th scope="col">PAN No.</th>
-												<th scope="col">Voter No.</th>
-												<th scope="col">Mobile No</th>
-												<th scope="col">Email ID</th>
-												<th scope="col">Edit</th>
-											</tr>
-											<tbody id="table">
-											</tbody>
-										</table>
+				</div> --%>
+
+							<form id="fileUploadForm" enctype="multipart/form-data">
+
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12">
+
+											<!-- ================= BASIC DETAILS ================= -->
+											<div class="box box-primary">
+												<div class="box-header with-border">
+													<h3 class="box-title">
+														<b>Client Details</b>
+													</h3>
+												</div>
+
+												<div class="box-body form-horizontal">
+
+													<!-- Client No -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Client No *</label>
+														<div class="col-sm-6">
+															<input type="text" name="clientNo" id="clientNo"
+																value="${count}" class="form-control" readonly>
+														</div>
+													</div>
+
+													<!-- Client ID -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Client ID *</label>
+														<div class="col-sm-6">
+															<input type="text" name="clientId" id="clientId"
+																value="${clientId}" class="form-control" readonly>
+														</div>
+													</div>
+
+													<!-- Branch -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Branch Name
+															*</label>
+														<div class="col-sm-6">
+															<select name="branchName" id="branchName"
+																class="form-control">
+																<option value="">Select Branch</option>
+															</select>
+														</div>
+													</div>
+
+													<!-- Registration Date -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Registration
+															Date *</label>
+														<div class="col-sm-6">
+															<input type="date" name="registrationDate"
+																id="registrationDate" class="form-control">
+														</div>
+													</div>
+
+													<!-- Client Name -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Client Name
+															*</label>
+														<div class="col-sm-2">
+															<select name="memberNamePrefix" class="form-control">
+																<option>Mr.</option>
+																<option>Ms.</option>
+																<option>Mrs.</option>
+																<option>Smt.</option>
+															</select>
+														</div>
+														<div class="col-sm-4">
+															<input type="text" name="memberName" class="form-control"
+																placeholder="Full Name">
+														</div>
+													</div>
+
+													<!-- Relative -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Relative
+															Name</label>
+														<div class="col-sm-6">
+															<input type="text" name="relativeName"
+																class="form-control">
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Relation</label>
+														<div class="col-sm-6">
+															<select name="relativeRelation" id="relativeRelation"
+																class="form-control">
+																<option>Select Relative Relation</option>
+															</select>
+														</div>
+													</div>
+
+
+													<!-- Gender -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Gender</label>
+														<div class="col-sm-6">
+															<select name="gender" class="form-control">
+																<option value="">Select</option>
+																<option>Male</option>
+																<option>Female</option>
+																<option>Other</option>
+															</select>
+														</div>
+													</div>
+
+													<!-- DOB & Age -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">DOB *</label>
+														<div class="col-sm-3">
+															<input type="date" name="dob" id="dob"
+																onchange="calculateAge()" class="form-control">
+														</div>
+														<div class="col-sm-3">
+															<input type="text" name="age" id="ageId"
+																class="form-control" placeholder="Age">
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Marital
+															Status</label>
+														<div class="col-sm-6">
+															<select name="maritalStatus" id="maritalStatus"
+																class="form-control">
+																<option value="">Select Martial Status</option>
+																<option value="Married">Married</option>
+																<option value="Unmarried">Unmarried</option>
+																<option value="Widow">Widow</option>
+																<option value="Divorce">Divorce</option>
+															</select>
+														</div>
+													</div>
+
+													<!-- Address -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Address *</label>
+														<div class="col-sm-6">
+															<textarea name="address" rows="2" class="form-control"></textarea>
+														</div>
+													</div>
+
+													<!-- State -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">State *</label>
+														<div class="col-sm-6">
+															<select name="state" id="state" class="form-control">
+																<option selected="selected" value="">--Select--</option>
+																<option value="ANDRA PRADESH">ANDRA PRADESH</option>
+																<option value="ARUNACHAL PRADESH">ARUNACHAL
+																	PRADESH</option>
+																<option value="ASSAM">ASSAM</option>
+																<option value="BIHAR">BIHAR</option>
+																<option value="CHHATTISGARH">CHHATTISGARH</option>
+																<option value="DELHI">DELHI</option>
+																<option value="GUJARAT">GUJARAT</option>
+																<option value="HARYANA">HARYANA</option>
+																<option value="HIMACHAL PRADESH">HIMACHAL
+																	PRADESH</option>
+																<option value="JAMMU AND KASHMIR">JAMMU AND
+																	KASHMIR</option>
+																<option value="JHARKHAND">JHARKHAND</option>
+																<option value="KARNATAKA">KARNATAKA</option>
+																<option value="KERALA">KERALA</option>
+																<option value="MADYA PRADESH">MADYA PRADESH</option>
+																<option value="MAHARASHTRA">MAHARASHTRA</option>
+																<option value="MANIPUR">MANIPUR</option>
+																<option value="MEGHALAYA">MEGHALAYA</option>
+																<option value="MIZORAM">MIZORAM</option>
+																<option value="NAGALAND">NAGALAND</option>
+																<option value="ODISSA">ODISSA</option>
+																<option value="PUNJAB">PUNJAB</option>
+																<option value="RAJASTHAN">RAJASTHAN</option>
+																<option value="SIKKIM">SIKKIM</option>
+																<option value="TAMIL NADU">TAMIL NADU</option>
+																<option value="TRIPURA">TRIPURA</option>
+																<option value="UTTAR PRADESH">UTTAR PRADESH</option>
+																<option value="UTTARAKHAND">UTTARAKHAND</option>
+																<option value="WEST BENGAL">WEST BENGAL</option>
+															</select>
+														</div>
+													</div>
+
+													<!-- District -->
+													<div class="form-group">
+														<label for="txtDistrict" class="col-sm-3 control-label">District
+															<strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<select name="district" id="district"
+																class="form-control" style="width: 100%;"
+																onclick="getTalukaInDropdown();">
+																<option value="">--Select District--</option>
+															</select>
+														</div>
+													</div>
+
+													<!-- Taluka -->
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Taluka *</label>
+														<div class="col-sm-6">
+															<select name="taluka" id="taluka" class="form-control"></select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Village </label>
+														<div class="col-sm-6">
+															<input name="village" type="text" id="village"
+																class="form-control" Placeholder="Enter Village" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator4">Enter
+																Village</span>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label for="txtPin" class="col-sm-3 control-label">Pin
+															Code <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<input name="pinCode" type="text" maxlength="6"
+																id="pinCode" class="form-control"
+																Placeholder="Enter Pincode" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator4"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																PIN</span>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label for="txtPin" class="col-sm-3 control-label">Aadhar
+															No. <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<input name="aadharNo" type="text" maxlength="12"
+																id="aadharNo" class="form-control"
+																Placeholder="Enter Aadhar No."
+																onkeypress="return isNumberOnlyKey(this, event);"
+																autocomplete="off" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator9"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																Aadhar No</span>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtPin" class="col-sm-3 control-label">PAN
+															No.</label>
+														<div class="col-sm-6">
+															<input name="pan" type="text" maxlength="10" id="pan"
+																class="form-control" Placeholder="Enter PAN No."
+																autocomplete="off" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator15"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																PAN No</span>
+															<div id="ContentPlaceHolder1_Div_PanPart"
+																style="display: none;">&nbsp;</div>
+														</div>
+														<div class="col-sm-2">
+															<input type="submit"
+																name="ctl00$ContentPlaceHolder1$btnPANverify"
+																value="Verify"
+																onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnPANverify&quot;, &quot;&quot;, true, &quot;P&quot;, &quot;&quot;, false, false))"
+																id="ContentPlaceHolder1_btnPANverify"
+																class="btn btn-danger verify pull-right" disabled />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtPin" class="col-sm-3 control-label">Voter
+															No.</label>
+														<div class="col-sm-6">
+															<input name="voterNo" type="text" maxlength="10"
+																id="voterNo" class="form-control"
+																Placeholder="Enter Voter No." autocomplete="off" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator16"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																Voter No</span>
+															<div id="ContentPlaceHolder1_Div_VoterPart"
+																style="display: none;">&nbsp;</div>
+														</div>
+														<div class="col-sm-2">
+															<input type="submit"
+																name="ctl00$ContentPlaceHolder1$btnvoterverify"
+																value="Verify"
+																onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnvoterverify&quot;, &quot;&quot;, true, &quot;K&quot;, &quot;&quot;, false, false))"
+																id="ContentPlaceHolder1_btnvoterverify"
+																class="btn btn-danger verify pull-right" disabled />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtPhoneno" class="col-sm-3 control-label">Mobile
+															No <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<input name="phoneno" type="text" maxlength="10"
+																id="phoneno" class="form-control"
+																Placeholder="Enter Mobile No" autocomplete="off"
+																onkeypress="return isNumberOnlyKey(this, event);" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator8"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																Phone No</span>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtEmailid" class="col-sm-3 control-label">Email
+															ID </label>
+														<div class="col-sm-6">
+															<input name="emailid" type="text" id="emailid"
+																class="form-control" Placeholder="Enter Email ID" /> <span
+																id="ContentPlaceHolder1_Reg1"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Invalid
+																Email ID</span>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtOccupation" class="col-sm-3 control-label">Occupation</label>
+														<div class="col-sm-6">
+															<input name="occupation" type="text" id="occupation"
+																class="form-control" Placeholder="Enter Occupation" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtEducation" class="col-sm-3 control-label">Education</label>
+														<div class="col-sm-6">
+															<input name="education" type="text" id="education"
+																class="form-control" Placeholder="Enter Education" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtIntroMCode" class="col-sm-3 control-label">Client
+															Purpose<strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<!-- <input name="clientPurpose" id="clientPurpose" type="text"
+														class="form-control" Placeholder="Enter Client Purpose" /> -->
+															<select name="clientPurpose" id="clientPurpose"
+																class="form-control" style="width: 100%;">
+																<option value="">--- Select Client Purpose ---</option>
+																<option value="Membership">Membership</option>
+																<option value="Loan">Loan</option>
+																<option value="Other">Other</option>
+															</select> <span id="message"></span>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Religion
+															Name <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<select name="religionName" id="religionName"
+																class="form-control" style="width: 100%;">
+																<option value="">Select Religion Name</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Category
+															Name <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<select name="categoryName" id="categoryName"
+																class="form-control" style="width: 100%;">
+																<option value="">Select Category Name</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Caste Name</label>
+														<div class="col-sm-6">
+															<!-- <select name="caste" id="caste" class="form-control"
+														style="width: 100%;">
+														<option value="">Select Caste Name</option>
+													</select> -->
+															<input name="caste" id="caste" type="text"
+																class="form-control" Placeholder="Enter Caste Name" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Risk
+															Category <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<select name="riskCategory" id="riskCategory"
+																class="form-control" style="width: 100%;">
+																<option value="">Select Risk Category</option>
+																<option value="A">A</option>
+																<option value="Low">Low</option>
+																<option value="Medium">Medium</option>
+																<option value="High">High</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Nationality
+															<strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<select name="nationality" id="nationality"
+																class="form-control" style="width: 100%;">
+																<option value="">Select Nationality Name</option>
+																<option value="Indian">Indian</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+
+
+											<!-- ================= AADHAR IMAGES ================= -->
+											<div class="box box-success">
+												<div class="box-header with-border">
+													<h3 class="box-title">
+														<b>KYC Documents</b>
+													</h3>
+												</div>
+
+												<div class="box-body">
+
+													<div class="row">
+
+														<div class="col-sm-3 text-center">
+															<label>Photo</label> <input type="file" name="aadharCard"
+																id="aadharCard" accept="image/*"
+																onchange="previewImage(this,'previewFront')"
+																style="display: none;"> <label for="aadharFront">
+																<img id="previewFront" src="../images/upload/upload.png"
+																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+															</label>
+														</div>
+
+														<div class="col-sm-3 text-center">
+															<label>Signature</label> <input type="file"
+																name="signature" id="signature" accept="image/*"
+																onchange="previewImage(this,'previewBack')"
+																style="display: none;"> <label for="aadharBack">
+																<img id="previewBack" src="../images/upload/upload.png"
+																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+															</label>
+														</div>
+
+														<div class="col-sm-3 text-center">
+															<label>Aadhar Card</label> <input type="file"
+																name="signature" id="signature" accept="image/*"
+																onchange="previewImage(this,'previewBack')"
+																style="display: none;"> <label for="aadharBack">
+																<img id="previewBack" src="../images/upload/upload.png"
+																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+															</label>
+														</div>
+
+														<div class="col-sm-3 text-center">
+															<label>Pan Card</label> <input type="file"
+																name="signature" id="signature" accept="image/*"
+																onchange="previewImage(this,'previewBack')"
+																style="display: none;"> <label for="aadharBack">
+																<img id="previewBack" src="../images/upload/upload.png"
+																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+															</label>
+														</div>
+
+													</div>
+												</div>
+											</div>
+
+											<!-- ================= NOMINEE DETAILS ================= -->
+											<div class="box box-warning">
+												<div class="box-header with-border">
+													<h3 class="box-title">
+														<b>Nominee Details</b>
+													</h3>
+												</div>
+
+												<div class="box-body form-horizontal">
+
+													<div class="form-group">
+														<label for="txtNomineeName" class="col-sm-3 control-label">Nominee
+															Name <strong style="color: Red">*</strong>
+														</label>
+														<div class="col-sm-6">
+															<input name="nomineeName" type="text" id="nomineeName"
+																class="form-control" Placeholder="Enter Nominee Name" />
+															<span id="ContentPlaceHolder1_RequiredFieldValidator7"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																Nominee Name</span>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="drpNomineeRelation"
+															class="col-sm-3 control-label">Nominee Relation</label>
+														<div class="col-sm-6">
+															<select name="nRelation" id="nRelation"
+																class="form-control" style="width: 100%;">
+																<option>Select Nominee Relation</option>
+																<option value="SISTER">SISTER</option>
+																<option value="BROTHER">BROTHER</option>
+																<option value="FATHER">FATHER</option>
+																<option value="MOTHER">MOTHER</option>
+																<option value="SON">SON</option>
+																<option value="DAUGTHER">DAUGTHER</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtNomineeAddress"
+															class="col-sm-3 control-label">Nominee Address</label>
+														<div class="col-sm-6">
+															<input name="nomineeAddress" type="text"
+																id="nomineeAddress" class="form-control"
+																Placeholder="Enter Nominee Address" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtNomineeKycNumber"
+															class="col-sm-3 control-label">Nominee KYC No.</label>
+														<div class="col-sm-6">
+															<input name="nomineeKycNumber" type="text"
+																id="nomineeKycNumber" class="form-control"
+																Placeholder="Enter Nominee KYC No." />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtNomineeMobileNo"
+															class="col-sm-3 control-label">Nominee Mobile No.</label>
+														<div class="col-sm-6">
+															<input name="nomineeMobileNo" type="text" maxlength="10"
+																id="nomineeMobileNo" class="form-control"
+																Placeholder="Enter Nominee Mobile No." />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="txtNomineeAge" class="col-sm-3 control-label">Nominee
+															Age.</label>
+														<div class="col-sm-6">
+															<input name="nomineeAge" type="text" maxlength="2"
+																id="nomineeAge" class="form-control"
+																Placeholder="Enter Nominee Age" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="TxtNomineePanNo"
+															class="col-sm-3 control-label">Nominee Pan No.</label>
+														<div class="col-sm-6">
+															<input name="nomineePanNo" type="text" maxlength="10"
+																id="nomineePanNo" class="form-control"
+																Placeholder="Enter Nominee Pan No." />
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="drpNomineeKycType"
+															class="col-sm-3 control-label">Nominee KYC Type</label>
+														<div class="col-sm-6">
+															<select name="nomineeKycType" id="nomineeKycType"
+																class="form-control" style="width: 100%;">
+																<option value="">Select Nominee KYC Type</option>
+																<option value="Online">Online</option>
+																<option value="Offline">Offline</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">
+
+										<div class="box box-info">
+											<div class="box-header with-border">
+												<h3 class="box-title">
+													<b>Fees / Setting Details</b>
+												</h3>
+											</div>
+
+											<div class="box-body form-horizontal">
+
+												<!-- Client Fees -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label"> Client Fees
+														(if any) <strong style="color: red">*</strong>
+													</label>
+													<div class="col-sm-6">
+														<input type="text" name="memberJoiningFess"
+															id="memberJoiningFess" class="form-control"
+															placeholder="Enter Client Fees">
+													</div>
+												</div>
+
+												<!-- Share Allotted From -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label"> Share
+														Allotted From <strong style="color: red">*</strong>
+													</label>
+													<div class="col-sm-6">
+														<select name="shareAllotedfrm" id="shareAllotedfrm"
+															class="form-control">
+															<option value="">Select Share Allotted From</option>
+														</select>
+													</div>
+												</div>
+
+												<!-- No of Shares -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label"> No. of
+														Shares <strong style="color: red">*</strong>
+													</label>
+													<div class="col-sm-6">
+														<input type="text" name="noOfShared" id="noOfShared"
+															class="form-control" placeholder="Enter No. of Shares">
+													</div>
+												</div>
+
+												<!-- Share Amount -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label"> Share Amount
+														<strong style="color: red">*</strong>
+													</label>
+													<div class="col-sm-6">
+														<input type="text" name="enterShareAmount"
+															id="enterShareAmount" class="form-control"
+															placeholder="Enter Share Amount">
+													</div>
+												</div>
+
+												<!-- Payment Mode -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label"> Payment By <strong
+														style="color: red">*</strong>
+													</label>
+													<div class="col-sm-6">
+														<select name="paymode" id="paymode" class="form-control">
+															<option value="">Select Payment Mode</option>
+															<option value="Cash">Cash</option>
+															<option value="Online">Online</option>
+														</select>
+													</div>
+												</div>
+
+												<!-- Remarks -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">Remarks</label>
+													<div class="col-sm-6">
+														<textarea name="remarks" id="remarks" rows="2"
+															class="form-control" placeholder="Enter remarks if any"></textarea>
+													</div>
+												</div>
+
+												<hr>
+
+												<!-- Client Status -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">Client Status</label>
+													<div class="col-sm-6">
+														<label class="switch"> <input type="checkbox"
+															name="memberStatusIsActive" id="memberStatusIsActive">
+															<span class="slider round"></span>
+														</label>
+													</div>
+												</div>
+
+												<!-- Mobile Banking -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">Mobile
+														Banking</label>
+													<div class="col-sm-6">
+														<label class="switch"> <input type="checkbox"
+															name="chkmobile" id="chkmobile"> <span
+															class="slider round"></span>
+														</label>
+													</div>
+												</div>
+
+												<!-- Net Banking -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">Net Banking</label>
+													<div class="col-sm-6">
+														<label class="switch"> <input type="checkbox"
+															name="chknetBanking" id="chknetBanking"> <span
+															class="slider round"></span>
+														</label>
+													</div>
+												</div>
+
+												<!-- SMS -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">SMS Send</label>
+													<div class="col-sm-6">
+														<label class="switch"> <input type="checkbox"
+															name="chkisSms" id="chkisSms"> <span
+															class="slider round"></span>
+														</label>
+													</div>
+												</div>
+
+												<!-- Minor -->
+												<div class="form-group">
+													<label class="col-sm-3 control-label">Is Minor</label>
+													<div class="col-sm-6">
+														<label class="switch"> <input type="checkbox"
+															name="chkMinor" id="chkMinor"> <span
+															class="slider round"></span>
+														</label>
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-success btn-lg">
+										Save Customer</button>
+								</div>
+								<br> <br>
+							</form>
+							<!-- </div> -->
+							<!-- </div> -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">TABLE</h3>
+								</div>
+								<div class="form-horizontal">
+									<div class="box-body">
+										<div class="">
+											<table
+												class="table table-bordered table-hover text-nowrap datatable"
+												id="tableBody" style="text-align: center;">
+												<thead class="table-light">
+													<tr
+														style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
+														<th scope="col">Sr No</th>
+														<th scope="col">Bank Name</th>
+														<th scope="col">Account No</th>
+														<th scope="col">IFSC Code</th>
+														<th scope="col">MICR Code</th>
+														<th scope="col">Contact No</th>
+														<th scope="col">Address</th>
+														<th scope="col">Opening Date</th>
+														<th scope="col">Opening Balance</th>
+														<th scope="col">Account Closing Date</th>
+														<th scope="col">Cheque</th>
+														<th scope="col">Edit</th>
+														<th scope="col">Delete</th>
+													</tr>
+												</thead>
+												<tbody id="tableBody">
+													<!-- Data rows dynamically -->
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</section>
 		</div>
-		</section>
-	</div>
-	<!-- /.content-wrapper -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- InputMask -->
-	<script src="plugins/input-mask/jquery.inputmask.js"></script>
-	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-	<!-- date-range-picker -->
-	<script src="bower_components/moment/min/moment.min.js"></script>
-	<script
-		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap datepicker -->
-	<script
-		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<!-- bootstrap color picker -->
-	<script
-		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-	<!-- bootstrap time picker -->
-	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-	<!-- SlimScroll -->
-	<script
-		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<!-- iCheck 1.0.1 -->
-	<script src="plugins/iCheck/icheck.min.js"></script>
-	<!-- FastClick -->
-	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="dist/js/demo.js"></script>
-	<!-- Select2 -->
-	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	<script src="dist/js/AddMember.js"></script>
-	<script src="dist/js/memberSection.js"></script>
-	<script src="dist/js/RelativeRelation.js"></script>
-	<script src="dist/js/GetAllBranch.js"></script>
-	<script src="dist/js/DistrictMaster.js"></script>
-	<%-- <jsp:include page="../footer.jsp" />  --%>
+		<!-- /.content-wrapper -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap 3.3.7 -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- InputMask -->
+		<script src="plugins/input-mask/jquery.inputmask.js"></script>
+		<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+		<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+		<!-- date-range-picker -->
+		<script src="bower_components/moment/min/moment.min.js"></script>
+		<script
+			src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<!-- bootstrap datepicker -->
+		<script
+			src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+		<!-- bootstrap color picker -->
+		<script
+			src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+		<!-- bootstrap time picker -->
+		<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+		<!-- SlimScroll -->
+		<script
+			src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<!-- iCheck 1.0.1 -->
+		<script src="plugins/iCheck/icheck.min.js"></script>
+		<!-- FastClick -->
+		<script src="bower_components/fastclick/lib/fastclick.js"></script>
+		<!-- AdminLTE App -->
+		<script src="dist/js/adminlte.min.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script src="dist/js/demo.js"></script>
+		<!-- Select2 -->
+		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+		<script src="dist/js/AddMember.js"></script>
+		<script src="dist/js/memberSection.js"></script>
+		<script src="dist/js/RelativeRelation.js"></script>
+		<script src="dist/js/GetAllBranch.js"></script>
+		<script src="dist/js/DistrictMaster.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+		<%-- <jsp:include page="../footer.jsp" />  --%>
 
-	<script>
+		<script>
       var fileTag = document.getElementById("filetag"),
           preview = document.getElementById("preview");
           secondfiletag = document.getElementById("secondfiletag"),
@@ -935,7 +1495,7 @@ function check()
         }
    </script>
 
-	<script>
+		<script>
       function printTable() {
           const table = document.querySelector('table');
           const printWindow = window.open('', '', 'height=500,width=800');
@@ -949,7 +1509,7 @@ function check()
         }
    </script>
 
-	<script>
+		<script>
         function uploadFile(str,module) {
         	//alert(str);
         	var fileInput;
@@ -975,7 +1535,7 @@ function check()
         }
     </script>
 
-	<script>
+		<script>
     function shareAllFromList(){
     const shareAllotedfrm = document.getElementById("shareAllotedfrm1");
 	$.ajax({
@@ -1022,7 +1582,7 @@ function check()
     } */
     </script>
 
-	<script>
+		<script>
 		$(document).ready(function() {
 			$('#ContentPlaceHolder1_btnSave').click(function() {
 				
@@ -1142,7 +1702,7 @@ function check()
 		});
 	</script>
 
-	<script>
+		<script>
 		$(document).ready(function() {
 			$('#ContentPlaceHolder1_btnUpdate').click(function() {
 				
@@ -1183,3 +1743,14 @@ function check()
 			});
 		});
 	</script>
+		<script>
+function previewImage(input, previewId) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById(previewId).src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>

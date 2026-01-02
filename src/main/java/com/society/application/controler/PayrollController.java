@@ -52,10 +52,10 @@ public class PayrollController {
 
 	@Autowired
 	AttendenceMasterRepo attendenceMasterRepo;
-	
+
 	@Autowired
 	BranchMasterRepo branchMasterRepo;
-	
+
 	@Autowired
 	HolidayMasterRepo holidayMasterRepo;
 
@@ -66,8 +66,9 @@ public class PayrollController {
 
 	@PostMapping("/saveDesignationMasterData")
 	public String saveDesignationMasterData(
-			@ModelAttribute("saveDesignationMasterData") DesignationMaster designationMaster, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+			@ModelAttribute("saveDesignationMasterData") DesignationMaster designationMaster, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		designationMaster.setCreatedBy(createdBy);
 		designationMasterRepo.save(designationMaster);
 		model.addAttribute("status", "success");
@@ -87,8 +88,9 @@ public class PayrollController {
 
 	@PostMapping("/saveDepartmentMasterData")
 	public String saveDepartmentMasterData(
-			@ModelAttribute("saveDepartmentMasterData") DepartmentMaster departmentMaster, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+			@ModelAttribute("saveDepartmentMasterData") DepartmentMaster departmentMaster, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		departmentMaster.setCreatedBy(createdBy);
 		departmentMasterRepo.save(departmentMaster);
 		model.addAttribute("status", "success");
@@ -129,9 +131,9 @@ public class PayrollController {
 	}
 
 	@PostMapping("/saveSalarySetupMaster")
-	public String saveSalarySetupMaster(@ModelAttribute("saveSalarySetupMaster") SalaryMaster salaryMaster,
-			Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String saveSalarySetupMaster(@ModelAttribute("saveSalarySetupMaster") SalaryMaster salaryMaster, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		salaryMaster.setCreatedBy(createdBy);
 		salaryMasterRepo.save(salaryMaster);
 		List<SalaryMaster> listSalary = salaryMasterRepo.findAll();
@@ -161,58 +163,60 @@ public class PayrollController {
 	}
 
 	@PostMapping("/saveEmployeeLeaveMaster")
-	public String saveEmployeeLeaveMaster(@ModelAttribute("saveEmployeeLeaveMaster") Employee employee, Model model,HttpSession session) {
-	    System.err.println(employee);
-	    Optional<Employee> emp = employeeRepo.findById(Integer.parseInt(employee.getEmpCode()));
+	public String saveEmployeeLeaveMaster(@ModelAttribute("saveEmployeeLeaveMaster") Employee employee, Model model,
+			HttpSession session) {
+		System.err.println(employee);
+		Optional<Employee> emp = employeeRepo.findById(Integer.parseInt(employee.getEmpCode()));
 
-	    //System.out.println(emp.get().getCl());
-	    //System.out.println(employee.getCl());
+		// System.out.println(emp.get().getCl());
+		// System.out.println(employee.getCl());
 
-	    if (emp.get().getCl() != null) {
-	        Integer cl = Integer.parseInt(emp.get().getCl());// db
+		if (emp.get().getCl() != null) {
+			Integer cl = Integer.parseInt(emp.get().getCl());// db
 
-	        String inputString = employee.getCl();
-	        String[] clValues = inputString.split(",");
+			String inputString = employee.getCl();
+			String[] clValues = inputString.split(",");
 
-	        if (clValues.length > 0) {
-	            Integer clUser = Integer.parseInt(clValues[0]);// user
-	            if (cl != 0) {
-	                if (clUser != null && clUser != 0) {
-	                    cl = cl - clUser;
-	                    employee.setCl(String.valueOf(cl));
-	                    emp.get().setRcl(String.valueOf(cl));
-	                }
-	            }
-	        }
-	    }
-	    emp.get().setCl(employee.getCl());
-	    emp.get().setSl(employee.getSl());
-	    emp.get().setEl(employee.getEl());
-	    emp.get().setLeaveDate(employee.getLeaveDate());
-	    emp.get().setLeavePurpose(employee.getLeavePurpose());
-	    String createdBy= (session.getAttribute("ID").toString());
-	    emp.get().setCreatedBy(createdBy);
-	    employeeRepo.save(emp.get());
-	    model.addAttribute("status", "success");
-	    return "payrollManagement/LeaveAdjustment";
+			if (clValues.length > 0) {
+				Integer clUser = Integer.parseInt(clValues[0]);// user
+				if (cl != 0) {
+					if (clUser != null && clUser != 0) {
+						cl = cl - clUser;
+						employee.setCl(String.valueOf(cl));
+						emp.get().setRcl(String.valueOf(cl));
+					}
+				}
+			}
+		}
+		emp.get().setCl(employee.getCl());
+		emp.get().setSl(employee.getSl());
+		emp.get().setEl(employee.getEl());
+		emp.get().setLeaveDate(employee.getLeaveDate());
+		emp.get().setLeavePurpose(employee.getLeavePurpose());
+		String createdBy = (session.getAttribute("ID").toString());
+		emp.get().setCreatedBy(createdBy);
+		employeeRepo.save(emp.get());
+		model.addAttribute("status", "success");
+		return "payrollManagement/LeaveAdjustment";
 	}
-	
+
 	@PostMapping("/saveEmployeeLeaveMaster123")
-	public String saveEmployeeLeaveMaster123(@ModelAttribute("saveEmployeeLeaveMaster123") Employee employee, Model model,HttpSession session) {
-	    Optional<Employee> empOptional = employeeRepo.findById(employee.getId());
-	    if (empOptional.isPresent()) {
-	        Employee emp = empOptional.get();
-	        emp.setCl(employee.getCl());
-	        emp.setSl(employee.getSl());
-	        emp.setEl(employee.getEl());
-	        String createdBy= (session.getAttribute("ID").toString());
-		    emp.setCreatedBy(createdBy);
-	        employeeRepo.save(emp);
-	        model.addAttribute("status", "success");
-	    } else {
-	        model.addAttribute("status", "error");
-	    }
-	    return "payrollManagement/EmployeeLeaveDetails";
+	public String saveEmployeeLeaveMaster123(@ModelAttribute("saveEmployeeLeaveMaster123") Employee employee,
+			Model model, HttpSession session) {
+		Optional<Employee> empOptional = employeeRepo.findById(employee.getId());
+		if (empOptional.isPresent()) {
+			Employee emp = empOptional.get();
+			emp.setCl(employee.getCl());
+			emp.setSl(employee.getSl());
+			emp.setEl(employee.getEl());
+			String createdBy = (session.getAttribute("ID").toString());
+			emp.setCreatedBy(createdBy);
+			employeeRepo.save(emp);
+			model.addAttribute("status", "success");
+		} else {
+			model.addAttribute("status", "error");
+		}
+		return "payrollManagement/EmployeeLeaveDetails";
 	}
 
 	@GetMapping("/HrmAttendance")
@@ -287,8 +291,9 @@ public class PayrollController {
 	}
 
 	@PostMapping("/saveEmployeeMasterData")
-	public String saveEmployeeMasterData(@ModelAttribute("saveEmployeeMasterData") Employee employee, Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String saveEmployeeMasterData(@ModelAttribute("saveEmployeeMasterData") Employee employee, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		employee.setCreatedBy(createdBy);
 		employeeRepo.save(employee);
 		model.addAttribute("status", "success");
@@ -303,9 +308,9 @@ public class PayrollController {
 	}
 
 	@PostMapping("/leavesubmit")
-	public String saveEmployeeLeaveMaster(@ModelAttribute("lavesubmit") AttendenceMaster attendenceMaster,
-			Model model,HttpSession session) {
-		String createdBy= (session.getAttribute("ID").toString());
+	public String saveEmployeeLeaveMaster(@ModelAttribute("lavesubmit") AttendenceMaster attendenceMaster, Model model,
+			HttpSession session) {
+		String createdBy = (session.getAttribute("ID").toString());
 		attendenceMaster.setCreatedBy(createdBy);
 		attendenceMasterRepo.save(attendenceMaster);
 		model.addAttribute("status", "success");
@@ -313,35 +318,36 @@ public class PayrollController {
 	}
 
 	@PostMapping("/updateSalaryPayment")
-	public String updateSalaryPayment(@ModelAttribute("updateSalaryPayment") SalaryMaster salaryMaster, Model model,HttpSession session) {
+	public String updateSalaryPayment(@ModelAttribute("updateSalaryPayment") SalaryMaster salaryMaster, Model model,
+			HttpSession session) {
 		List<SalaryMaster> salaryEmp = salaryMasterRepo.searchByEmpId(salaryMaster.getEmpCode());
 		salaryEmp.get(0).setPayBranch(salaryMaster.getPayBranch());
 		salaryEmp.get(0).setPayDate(salaryMaster.getPayDate());
 		salaryEmp.get(0).setPaymode(salaryMaster.getPaymode());
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		salaryEmp.get(0).setCreatedBy(createdBy);
 		salaryMasterRepo.save(salaryEmp.get(0));
 		model.addAttribute("status", "success");
 		return "payrollManagement/HrmSalaryPayment";
 
 	}
-	
+
 	@PostMapping("/searchEmployeeIDCard")
 	@ResponseBody
 	public Employee searchEmployeeIDCard(@RequestBody GenericGetById id) {
 		Optional<Employee> emp = employeeRepo.findById(Integer.parseInt(id.getId()));
 		return emp.get();
 	}
-	
+
 	@GetMapping("/datafromdate")
 	@ResponseBody
-	public List<AttendenceMaster> sortattendance(HttpServletRequest request){
-		String fDate=request.getParameter("fDate");
-		String tDate=request.getParameter("tDate");
-		List<AttendenceMaster> list =attendenceMasterRepo.findByleaveDateBetween(fDate,tDate);
+	public List<AttendenceMaster> sortattendance(HttpServletRequest request) {
+		String fDate = request.getParameter("fDate");
+		String tDate = request.getParameter("tDate");
+		List<AttendenceMaster> list = attendenceMasterRepo.findByleaveDateBetween(fDate, tDate);
 		return list;
 	}
-	
+
 	// 16.Employee Search
 	@GetMapping("/getAllBranchIndropdown")
 	@ResponseBody
@@ -388,7 +394,7 @@ public class PayrollController {
 		}
 		return department;
 	}
-	
+
 	// get branch of salary payment
 	// 12.Salary Payment
 	@GetMapping("/getAllBranchIndropdownSalryPayment")
@@ -396,15 +402,15 @@ public class PayrollController {
 	public List<BranchMaster> getAllBranchIndropdownSalryPayment() {
 		return branchMasterRepo.findAll();
 	}
-	
+
 	@PostMapping("/getAllHolidays")
 	@ResponseBody
 	public List<HolidayMaster> getAllHolidays(@RequestBody Map<String, String> requestBody) {
-	    String date = requestBody.get("date");
-	    List<HolidayMaster> holidays = holidayMasterRepo.findByDate(date);
-	    return holidays;
+		String date = requestBody.get("date");
+		List<HolidayMaster> holidays = holidayMasterRepo.findByDate(date);
+		return holidays;
 	}
-	
+
 	@PostMapping("/getEmpByCode")
 	@ResponseBody
 	public List<Employee> getEmpByCode(@RequestBody Employee id) {
@@ -415,14 +421,14 @@ public class PayrollController {
 	@PostMapping("/getEmpByleaveDate")
 	@ResponseBody
 	public List<Employee> getEmpByleaveDate(@RequestBody Employee id) {
-		List<Employee> emp = employeeRepo.findByleaveDateBetween(id.getfDate(),id.gettDate());
+		List<Employee> emp = employeeRepo.findByleaveDateBetween(id.getfDate(), id.gettDate());
 		return emp;
 	}
 
 	@PostMapping("/getSalaryMasterByDate")
 	@ResponseBody
 	public List<SalaryMaster> getSalaryMasterByDate(@RequestBody SalaryMaster obj) {
-		List<SalaryMaster> obj2 = salaryMasterRepo.findBypayDateBetween(obj.getfDate(),obj.gettDate());
+		List<SalaryMaster> obj2 = salaryMasterRepo.findBypayDateBetween(obj.getfDate(), obj.gettDate());
 		return obj2;
 	}
 

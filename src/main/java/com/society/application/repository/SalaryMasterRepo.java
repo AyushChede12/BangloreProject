@@ -10,11 +10,11 @@ import com.society.application.model.AddInvestment;
 import com.society.application.model.SalaryMaster;
 
 @Repository
-public interface SalaryMasterRepo extends JpaRepository<SalaryMaster, Integer>{
-	
-	@Query(value="select * from salary_master where emp_code = ?",nativeQuery = true)
+public interface SalaryMasterRepo extends JpaRepository<SalaryMaster, Integer> {
+
+	@Query(value = "select * from salary_master where emp_code = ?", nativeQuery = true)
 	List<SalaryMaster> searchByEmpId(String empId);
-	
+
 	List<SalaryMaster> findBypayDateBetween(String getfDate, String gettDate);
 
 	List<SalaryMaster> findBypayDate(String payDate);

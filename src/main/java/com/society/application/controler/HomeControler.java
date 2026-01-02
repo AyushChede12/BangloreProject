@@ -225,7 +225,7 @@ public class HomeControler {
 
 	@Autowired
 	ShareCountsRepo shareCountsRepo;
-	
+
 	@Autowired
 	ShareTransferMasterRepo shareTransferMasterRepo;
 
@@ -275,23 +275,23 @@ public class HomeControler {
 
 	@GetMapping("/addMember")
 	public String addMember(Model model, HttpSession session) {
-	    String userId = (String) session.getAttribute("loggedInUserName");
-	    String module = "addMember";
-	    String type = "aadharPhoto";
-	    FileUploadDirectory aadharPhoto = fileUploadDirectoryRepo.getIamges(module, type, userId);
-	    if (aadharPhoto != null) {
-	        String encodedLogo = Base64.getEncoder().encodeToString(aadharPhoto.getContent());
-	        model.addAttribute("aadharPhoto", encodedLogo);
-	    }
+		String userId = (String) session.getAttribute("loggedInUserName");
+		String module = "addMember";
+		String type = "aadharPhoto";
+		FileUploadDirectory aadharPhoto = fileUploadDirectoryRepo.getIamges(module, type, userId);
+		if (aadharPhoto != null) {
+			String encodedLogo = Base64.getEncoder().encodeToString(aadharPhoto.getContent());
+			model.addAttribute("aadharPhoto", encodedLogo);
+		}
 
-	    // Calculate next clientNo for display
-	    Integer maxClientNo = clientMasterRepo.findMaxClientNo();
-	    int nextClientNo = maxClientNo != null ? maxClientNo + 1 : 1;
+		// Calculate next clientNo for display
+		Integer maxClientNo = clientMasterRepo.findMaxClientNo();
+		int nextClientNo = maxClientNo != null ? maxClientNo + 1 : 1;
 
-	    model.addAttribute("count", nextClientNo); // Display in the JSP
-	    model.addAttribute("clientId", nextClientNo); // Set the calculated clientId
+		model.addAttribute("count", nextClientNo); // Display in the JSP
+		model.addAttribute("clientId", nextClientNo); // Set the calculated clientId
 
-	    return "member/AddMember";
+		return "member/AddMember";
 	}
 
 	@GetMapping("/addMemberTable")
@@ -1257,7 +1257,7 @@ public class HomeControler {
 	 * //shareTransferDtoRepo.save(share); session.setAttribute("createdBy",
 	 * createdBy); return "memberShare/shareTransfer"; }
 	 */
-	
+
 	/*
 	 * @Transactional
 	 * 
@@ -1280,33 +1280,32 @@ public class HomeControler {
 	 * e.printStackTrace(); } session.setAttribute("createdBy", createdBy); return
 	 * "memberShare/shareTransfer"; }
 	 */
-	
+
 	// Share Serial No.
 	@GetMapping("/shareSerialNo")
 	@ResponseBody
 	public List<ShareCounts> getshareSerialNo() {
 		return shareCountsRepo.findAll();
 	}
-	
+
 	@GetMapping("/fetchAvailableShares")
 	@ResponseBody
 	public List<ShareCounts> fetchAvailableShares() {
-	    String status = "booked";
-	    List<ShareCounts> availableShares = shareCountsRepo.findByStatusNotOrStatusIsNull(status);
-	    return availableShares;
+		String status = "booked";
+		List<ShareCounts> availableShares = shareCountsRepo.findByStatusNotOrStatusIsNull(status);
+		return availableShares;
 	}
-	
+
 	@GetMapping("/getNewMembershipDetailsInTable")
 	@ResponseBody
 	public List<ShareTransferDto> getNewMembershipDetailsInTable() {
 		List<ShareTransferDto> list = shareTransferDtoRepo.findAll();
 		return list;
 	}
-	
+
 	@PostMapping("/addMembership")
 	@ResponseBody
-	public ResponseEntity<String> addMembership(
-			@RequestParam(name = "branchName", required = false) String branchName,
+	public ResponseEntity<String> addMembership(@RequestParam(name = "branchName", required = false) String branchName,
 			@RequestParam(name = "clientNo", required = false) String clientNo,
 			@RequestParam(name = "memberName", required = false) String memberName,
 			@RequestParam(name = "memberNo", required = false) String memberNo,
@@ -1321,61 +1320,60 @@ public class HomeControler {
 			@RequestParam(name = "transferDate", required = false) String transferDate,
 			@RequestParam(name = "paymode", required = false) String paymode,
 			@RequestParam(name = "remarks", required = false) String remarks,
-			@RequestParam(name = "certificateNo", required = false) String certificateNo,
-			HttpSession session) {
-	    try {
-	    	ShareTransferDto dto = new ShareTransferDto();
-	    	String createdBy = session.getAttribute("ID").toString();
-	    	dto.setCreatedBy(createdBy);
-	    	byte[] image = file.getBytes();
-	    	dto.setImage(image);
-	    	dto.setBranchName(branchName);
-	    	dto.setClientNo(clientNo);
-	    	dto.setMemberName(memberName);
-	    	dto.setMemberNo(memberNo);
-	    	dto.setDoj(doj);
-	    	dto.setPreviousBalance(previousBalance);
-	    	dto.setPreviousShareNo(previousShareNo);
-	    	dto.setFaceValue("10");
-	    	dto.setNoOfShare(noOfShare);
-	        dto.setShareSerialNo(shareSerialNo);
-	    	dto.setSharebalance(sharebalance);
-	    	dto.setTransferDate(transferDate);
-	    	dto.setPaymode(paymode);
-	    	dto.setRemarks(remarks);
-	    	dto.setCertificateNo(memberNo);
-	    	dto.setFlag("1");
-	    	shareTransferDtoRepo.save(dto);
-	    	session.setAttribute("createdBy", createdBy);
-	    	return new ResponseEntity<>("Data uploaded successfully", HttpStatus.OK);
-	    }catch(Exception e) {
-	    	System.out.println(e);
+			@RequestParam(name = "certificateNo", required = false) String certificateNo, HttpSession session) {
+		try {
+			ShareTransferDto dto = new ShareTransferDto();
+			String createdBy = session.getAttribute("ID").toString();
+			dto.setCreatedBy(createdBy);
+			byte[] image = file.getBytes();
+			dto.setImage(image);
+			dto.setBranchName(branchName);
+			dto.setClientNo(clientNo);
+			dto.setMemberName(memberName);
+			dto.setMemberNo(memberNo);
+			dto.setDoj(doj);
+			dto.setPreviousBalance(previousBalance);
+			dto.setPreviousShareNo(previousShareNo);
+			dto.setFaceValue("10");
+			dto.setNoOfShare(noOfShare);
+			dto.setShareSerialNo(shareSerialNo);
+			dto.setSharebalance(sharebalance);
+			dto.setTransferDate(transferDate);
+			dto.setPaymode(paymode);
+			dto.setRemarks(remarks);
+			dto.setCertificateNo(memberNo);
+			dto.setFlag("1");
+			shareTransferDtoRepo.save(dto);
+			session.setAttribute("createdBy", createdBy);
+			return new ResponseEntity<>("Data uploaded successfully", HttpStatus.OK);
+		} catch (Exception e) {
+			System.out.println(e);
 			return new ResponseEntity<>("Data uploaded Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+		}
 	}
-	
+
 	@GetMapping("/getLatestShareSerialNo")
 	@ResponseBody
 	public ResponseEntity<String> getLatestShareSerialNo() {
-	    try {
-	        // Fetching the last Share Serial No. from the database in descending order
-	        List<String> shareSerialNos = shareTransferDtoRepo.findLatestShareSerialNos();
+		try {
+			// Fetching the last Share Serial No. from the database in descending order
+			List<String> shareSerialNos = shareTransferDtoRepo.findLatestShareSerialNos();
 
-	        if (shareSerialNos.isEmpty()) {
-	            // Handle the case where no Share Serial No. is found in the database
-	            return new ResponseEntity<>("", HttpStatus.OK);
-	        } else {
-	            // Get the latest Share Serial No.
-	            String latestShareSerialNo = shareSerialNos.get(0).trim();
-	            return new ResponseEntity<>(latestShareSerialNo, HttpStatus.OK);
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return new ResponseEntity<>("Failed to fetch Share Serial No.", HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+			if (shareSerialNos.isEmpty()) {
+				// Handle the case where no Share Serial No. is found in the database
+				return new ResponseEntity<>("", HttpStatus.OK);
+			} else {
+				// Get the latest Share Serial No.
+				String latestShareSerialNo = shareSerialNos.get(0).trim();
+				return new ResponseEntity<>(latestShareSerialNo, HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<>("Failed to fetch Share Serial No.", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
-	
-	//Member Share - Add Member Report 
+
+	// Member Share - Add Member Report
 	@PostMapping("/newMemberShareSearch")
 	@ResponseBody
 	public List<ShareTransferDto> getnewMemberShareSearch(@RequestBody ShareTransferDto shareTransferDto) {
@@ -1384,16 +1382,16 @@ public class HomeControler {
 				shareTransferDto.gettDate());
 		List<ShareTransferDto> list3 = shareTransferDtoRepo.findBymemberName(shareTransferDto.getMemberName());
 		List<ShareTransferDto> list4 = shareTransferDtoRepo.findBymemberNo(shareTransferDto.getMemberNo());
-		
+
 		list4.forEach(s -> {
 			if (list4 != null) {
 				String encodedPhoto = Base64.getEncoder().encodeToString(s.getImage());
 				s.setFrontEndPhoto(encodedPhoto);
 			}
 		});
-		
+
 		List<ShareTransferDto> list5 = shareTransferDtoRepo.findByclientNo(shareTransferDto.getClientNo());
-		//System.out.println("branch name: " + list1);
+		// System.out.println("branch name: " + list1);
 		if (!list1.isEmpty()) {
 			return list1;
 		} else if (!list2.isEmpty()) {
@@ -1405,7 +1403,7 @@ public class HomeControler {
 		} else
 			return list5;
 	}
-	
+
 	@PostMapping("/updateMembership")
 	@ResponseBody
 	public ResponseEntity<String> updateMembership(
@@ -1425,52 +1423,51 @@ public class HomeControler {
 			@RequestParam(name = "transferDate", required = false) String transferDate,
 			@RequestParam(name = "paymode", required = false) String paymode,
 			@RequestParam(name = "remarks", required = false) String remarks,
-			@RequestParam(name = "certificateNo", required = false) String certificateNo,
-			HttpSession session) {
-	    try {
-	    	List<ShareTransferDto> dtos = shareTransferDtoRepo.findBymemberNo(memberNo);
-	    	if(dtos.isEmpty()) {
-	    		 return new ResponseEntity<>("Member No. not found", HttpStatus.NOT_FOUND);
-	    	}
-	    	ShareTransferDto dto = dtos.get(0);
-	    	if(file != null && !file.isEmpty()) {
-	    		try {
-	    			byte[] image = file.getBytes();
-	    			dto.setImage(image);
-	    		}catch(Exception e) {
-	    			e.printStackTrace();
-	    			return new ResponseEntity<>("Error uploading photo", HttpStatus.INTERNAL_SERVER_ERROR);
-	    		}
-	    	}
-	    	String createdBy = session.getAttribute("ID").toString();
-	    	dto.setCreatedBy(createdBy);
-	    	dto.setBranchName(branchName);
-	    	dto.setClientNo(clientNo);
-	    	dto.setMemberName(memberName);
-	    	dto.setMemberNo(memberNo);
-	    	dto.setDoj(doj);
-	    	dto.setPreviousBalance(previousBalance);
-	    	dto.setPreviousShareNo(previousShareNo);
-	    	dto.setPreviousShareSerialNo(previousShareSerialNo);
-	    	dto.setFaceValue("10");
-	    	dto.setNoOfShare(totalNoOfShare);
-	        dto.setShareSerialNo(shareSerialNo);
-	    	dto.setSharebalance(sharebalance);
-	    	dto.setTransferDate(transferDate);
-	    	dto.setPaymode(paymode);
-	    	dto.setRemarks(remarks);
-	    	dto.setCertificateNo(memberNo);
-	    	dto.setFlag("1");
-	    	shareTransferDtoRepo.save(dto);
-	    	session.setAttribute("createdBy", createdBy);
-	    	return new ResponseEntity<>("Data uploaded successfully", HttpStatus.OK);
-	    }catch(Exception e) {
-	    	System.out.println(e);
+			@RequestParam(name = "certificateNo", required = false) String certificateNo, HttpSession session) {
+		try {
+			List<ShareTransferDto> dtos = shareTransferDtoRepo.findBymemberNo(memberNo);
+			if (dtos.isEmpty()) {
+				return new ResponseEntity<>("Member No. not found", HttpStatus.NOT_FOUND);
+			}
+			ShareTransferDto dto = dtos.get(0);
+			if (file != null && !file.isEmpty()) {
+				try {
+					byte[] image = file.getBytes();
+					dto.setImage(image);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return new ResponseEntity<>("Error uploading photo", HttpStatus.INTERNAL_SERVER_ERROR);
+				}
+			}
+			String createdBy = session.getAttribute("ID").toString();
+			dto.setCreatedBy(createdBy);
+			dto.setBranchName(branchName);
+			dto.setClientNo(clientNo);
+			dto.setMemberName(memberName);
+			dto.setMemberNo(memberNo);
+			dto.setDoj(doj);
+			dto.setPreviousBalance(previousBalance);
+			dto.setPreviousShareNo(previousShareNo);
+			dto.setPreviousShareSerialNo(previousShareSerialNo);
+			dto.setFaceValue("10");
+			dto.setNoOfShare(totalNoOfShare);
+			dto.setShareSerialNo(shareSerialNo);
+			dto.setSharebalance(sharebalance);
+			dto.setTransferDate(transferDate);
+			dto.setPaymode(paymode);
+			dto.setRemarks(remarks);
+			dto.setCertificateNo(memberNo);
+			dto.setFlag("1");
+			shareTransferDtoRepo.save(dto);
+			session.setAttribute("createdBy", createdBy);
+			return new ResponseEntity<>("Data uploaded successfully", HttpStatus.OK);
+		} catch (Exception e) {
+			System.out.println(e);
 			return new ResponseEntity<>("Data uploaded Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
+		}
 	}
 
-	//Share Transfer Code
+	// Share Transfer Code
 	@PostMapping("/shareTransferCode")
 	@ResponseBody
 	public ResponseEntity<String> shareTransferCode(
@@ -1489,14 +1486,12 @@ public class HomeControler {
 			@RequestParam(name = "totalShare", required = false) String totalShare,
 			@RequestParam(name = "previousNoOfShare", required = false) String previousNoOfShare,
 			@RequestParam(name = "reamingShareAmount", required = false) String reamingShareAmount,
-			@RequestParam(name = "totalAmount", required = false) String totalAmount,
-			HttpSession session
-			){
+			@RequestParam(name = "totalAmount", required = false) String totalAmount, HttpSession session) {
 		try {
-	    	ShareTransferMaster stm = new ShareTransferMaster();
-	    	String createdBy = session.getAttribute("ID").toString();
+			ShareTransferMaster stm = new ShareTransferMaster();
+			String createdBy = session.getAttribute("ID").toString();
 			stm.setCreatedBy(createdBy);
-			//System.out.println(createdBy);
+			// System.out.println(createdBy);
 			stm.setMemberNoFrom(memberNoFrom);
 			stm.setMemberNameFrom(memberNameFrom);
 			stm.setCertificateNoFrom(certificateNoFrom);
@@ -1516,23 +1511,23 @@ public class HomeControler {
 			stm.setFlag("1");
 			shareTransferMasterRepo.save(stm);
 			session.setAttribute("createdBy", createdBy);
-			
+
 			ShareTransferDto shareTransferDtoFrom = shareTransferDtoRepo.findByMemberNo(memberNoFrom);
-	        ShareTransferDto shareTransferDtoTo = shareTransferDtoRepo.findByMemberNo(memberNoTo);
-	        
-	        if (shareTransferDtoFrom != null && shareTransferDtoTo != null) {
-	        	shareTransferDtoFrom.setShareTransfer(shareTransfer);
-	        	shareTransferDtoFrom.setUpdatedNoOfShare(reamingNoOfShare);
-	        	shareTransferDtoFrom.setUpdatedShareAmount(reamingShareAmount);
-	        	
-	        	shareTransferDtoTo.setUpdatedShareAmount(totalAmount);
-	        	shareTransferDtoTo.setUpdatedNoOfShare(totalShare);
-	        	
-	        	shareTransferDtoRepo.save(shareTransferDtoFrom);
-	        	shareTransferDtoRepo.save(shareTransferDtoTo);
-	        } else {
-	            return new ResponseEntity<>("Member not found", HttpStatus.NOT_FOUND);
-	        }
+			ShareTransferDto shareTransferDtoTo = shareTransferDtoRepo.findByMemberNo(memberNoTo);
+
+			if (shareTransferDtoFrom != null && shareTransferDtoTo != null) {
+				shareTransferDtoFrom.setShareTransfer(shareTransfer);
+				shareTransferDtoFrom.setUpdatedNoOfShare(reamingNoOfShare);
+				shareTransferDtoFrom.setUpdatedShareAmount(reamingShareAmount);
+
+				shareTransferDtoTo.setUpdatedShareAmount(totalAmount);
+				shareTransferDtoTo.setUpdatedNoOfShare(totalShare);
+
+				shareTransferDtoRepo.save(shareTransferDtoFrom);
+				shareTransferDtoRepo.save(shareTransferDtoTo);
+			} else {
+				return new ResponseEntity<>("Member not found", HttpStatus.NOT_FOUND);
+			}
 
 			return new ResponseEntity<>("Data uploaded successfully", HttpStatus.OK);
 		} catch (Exception ex) {
@@ -1540,12 +1535,12 @@ public class HomeControler {
 			return new ResponseEntity<>("Data uploaded Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/shareTransferInTable")
 	@ResponseBody
-	public List<ShareTransferMaster> shareTransferInTable(){
+	public List<ShareTransferMaster> shareTransferInTable() {
 		List<ShareTransferMaster> list = shareTransferMasterRepo.findAll();
 		return list;
 	}
-	
+
 }

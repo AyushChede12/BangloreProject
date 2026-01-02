@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.MartialStatus;
 
 @Repository
-public interface MartialStatusRepo  extends JpaRepository<MartialStatus, Integer>{
+public interface MartialStatusRepo extends JpaRepository<MartialStatus, Integer> {
 
 }

@@ -7,14 +7,14 @@ import javax.persistence.Id;
 
 @Entity
 public class HolidayMaster {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
-    private String date;
-    
-    private String holidayDescription;
+
+	private String date;
+
+	private String holidayDescription;
 
 	public int getId() {
 		return id;
@@ -39,5 +39,5 @@ public class HolidayMaster {
 	public void setHolidayDescription(String holidayDescription) {
 		this.holidayDescription = holidayDescription;
 	}
-    
+
 }

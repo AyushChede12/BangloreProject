@@ -10,13 +10,13 @@ public class UserToServiceMap {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String userId;
-	
+
 	private String service;
-	
+
 	private String createdBy;
-	
+
 	private String createdDt;
 
 	public int getId() {
@@ -58,5 +58,5 @@ public class UserToServiceMap {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }

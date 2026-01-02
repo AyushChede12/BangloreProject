@@ -43,7 +43,7 @@ public interface LoanRepo extends JpaRepository<Loan, Integer> {
 
 	List<Loan> findBybranchname(String branchname);
 
-	//List<Loan> findByloanDateBetween(String getfDate, String gettDate);
+	// List<Loan> findByloanDateBetween(String getfDate, String gettDate);
 
 	List<Loan> findBysearchMemberCode(String searchMemberCode);
 
@@ -59,9 +59,6 @@ public interface LoanRepo extends JpaRepository<Loan, Integer> {
 
 	List<Loan> findByadvisorName(String advisorName);
 
-	//List<Loan> findByid(int id);
-	
-	
-	
+	// List<Loan> findByid(int id);
 
 }

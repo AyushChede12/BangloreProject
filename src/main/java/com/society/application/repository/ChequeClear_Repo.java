@@ -7,8 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.society.application.model.ChequeClear;
 
-
-
 public interface ChequeClear_Repo extends JpaRepository<ChequeClear, Integer> {
 
 	List<ChequeClear> findBytype(String paymentType);
@@ -18,14 +16,5 @@ public interface ChequeClear_Repo extends JpaRepository<ChequeClear, Integer> {
 	List<ChequeClear> findBytxndateBetween(String fromDate, String todate);
 
 	List<ChequeClear> findBycheque(String chequeNO);
-
-
-	
-
-	
-
-	
-
-	
 
 }

@@ -8,12 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.TrialBalance;
 
 @Repository
-public interface TrialBalanceRepo extends JpaRepository<TrialBalance, Integer> 
-{
+public interface TrialBalanceRepo extends JpaRepository<TrialBalance, Integer> {
 
 	List<TrialBalance> findBybranchName(String branch_Name);
 
 	List<TrialBalance> findBydateBetween(String fromDate, String toDate);
 
-	
 }

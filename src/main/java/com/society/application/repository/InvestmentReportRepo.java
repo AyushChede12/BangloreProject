@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.InvestmentReport;
 
 @Repository
-public interface InvestmentReportRepo extends JpaRepository<InvestmentReport, Integer>
-{
+public interface InvestmentReportRepo extends JpaRepository<InvestmentReport, Integer> {
 
 	List<InvestmentReport> findBybranch(String branch);
 
@@ -21,5 +20,4 @@ public interface InvestmentReportRepo extends JpaRepository<InvestmentReport, In
 
 	List<InvestmentReport> findBytxnDateBetween(String fromdate, String todate);
 
-	
 }

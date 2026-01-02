@@ -43,7 +43,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class LoanModuleController {
-	
+
 	@Autowired
 	LoanPlanRepo loanPlanMasterRepo;
 
@@ -181,13 +181,13 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("updateLoan")
-	public String updateLoan(@ModelAttribute("updateLoan") Loan loan, Model model,HttpSession session) {
+	public String updateLoan(@ModelAttribute("updateLoan") Loan loan, Model model, HttpSession session) {
 		loan.setType("Loan");
 		loan.setCreatedBy("");
 		loan.setCreatedDate(new Date().toString());
 		loan.setUpdatedBy("");
 		loan.setUpdatedDate(new Date().toString());
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		loan.setCreatedBy(createdBy);
 		Loan loanSaved = loanRepo.save(loan);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
@@ -209,13 +209,13 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("updateLoanApp")
-	public String updateLoanApp(@ModelAttribute("updateLoan") Loan loan, Model model,HttpSession session) {
+	public String updateLoanApp(@ModelAttribute("updateLoan") Loan loan, Model model, HttpSession session) {
 		loan.setType("Loan");
 		loan.setCreatedBy("");
 		loan.setCreatedDate(new Date().toString());
 		loan.setUpdatedBy("");
 		loan.setUpdatedDate(new Date().toString());
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		loan.setCreatedBy(createdBy);
 		Loan loanSaved = loanRepo.save(loan);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
@@ -237,13 +237,13 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("updateLoanPayment")
-	public String updateLoanPayment(@ModelAttribute("updateLoan") Loan loan, Model model,HttpSession session) {
+	public String updateLoanPayment(@ModelAttribute("updateLoan") Loan loan, Model model, HttpSession session) {
 		loan.setType("Loan");
 		loan.setCreatedBy("");
 		loan.setCreatedDate(new Date().toString());
 		loan.setUpdatedBy("");
 		loan.setUpdatedDate(new Date().toString());
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		loan.setCreatedBy(createdBy);
 		Loan loanSaved = loanRepo.save(loan);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
@@ -265,13 +265,13 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("/saveDataRegularEMIRepayment")
-	public String saveDataRegularEMIRepayment(@ModelAttribute("rd") Loan loan, Model model,HttpSession session) {
-		//System.err.println("id = " + loan.getId());
+	public String saveDataRegularEMIRepayment(@ModelAttribute("rd") Loan loan, Model model, HttpSession session) {
+		// System.err.println("id = " + loan.getId());
 		Optional<Loan> loanData = loanRepo.findById(loan.getId());
 		if (loanData.isPresent()) {
 			loanData.get().setModeRegOrIrr("regular");
-			//loanRepo.save(loanData.get());
-			String createdBy= (session.getAttribute("ID").toString());
+			// loanRepo.save(loanData.get());
+			String createdBy = (session.getAttribute("ID").toString());
 			loan.setCreatedBy(createdBy);
 			loanRepo.save(loan);
 		}
@@ -290,21 +290,21 @@ public class LoanModuleController {
 
 	// closeDataRepayment
 	@PostMapping("/closeDataRepayment")
-	public String closeDataRepayment(@ModelAttribute("rd") Loan loan, Model model,HttpSession session) {
-		//System.err.println("id = " + loan.getId());
+	public String closeDataRepayment(@ModelAttribute("rd") Loan loan, Model model, HttpSession session) {
+		// System.err.println("id = " + loan.getId());
 		Optional<Loan> loanData = loanRepo.findById(loan.getId());
 		if (loanData.isPresent()) {
 			loanData.get().setModeRegOrIrr("close");
-			String createdBy= (session.getAttribute("ID").toString());
+			String createdBy = (session.getAttribute("ID").toString());
 			loan.setCreatedBy(createdBy);
 			loanRepo.save(loanData.get());
-			//loanRepo.save(loan);
+			// loanRepo.save(loan);
 		}
 		List<Loan> loanList = loanRepo.findAll();
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -319,7 +319,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -333,7 +333,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -360,14 +360,14 @@ public class LoanModuleController {
 		// loanPlanMaster.get().setLoanPlanNameView(loanMaster.get().getLoanName());
 		return loanPlanMaster;
 	}
-	
+
 	@GetMapping("/irregularLoanStatementf159")
 	public String irregularLoanStatementf159(Model model) {
 		List<Loan> loanList = loanRepo.findAll();
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -381,7 +381,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -395,7 +395,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -422,7 +422,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -431,12 +431,13 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("/saveLoanApplication")
-	public String saveLoanApplication(@ModelAttribute("rd") LoanPlanMaster loanPlanMaster, Model model,HttpSession session) {
+	public String saveLoanApplication(@ModelAttribute("rd") LoanPlanMaster loanPlanMaster, Model model,
+			HttpSession session) {
 		// System.err.println(loanPlanMaster);
 		// loanPlanMasterRepo.save(loanPlanMaster);
 		if (loanPlanMaster != null) {
 			Optional<LoanPlanMaster> loanPlanMasterAllData = loanPlanMasterRepo.findById(loanPlanMaster.getId());
-			String createdBy= (session.getAttribute("ID").toString());
+			String createdBy = (session.getAttribute("ID").toString());
 			loanPlanMaster.setCreatedBy(createdBy);
 			// loanPlanMasterAllData.get().setClosedFlag("closed");
 			loanPlanMasterRepo.save(loanPlanMaster);
@@ -454,10 +455,11 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("/saveDataIregularEMIRepayment")
-	public String saveDataIregularEMIRepayment(@ModelAttribute("rd") LoanPlanMaster loanPlanMaster, Model model,HttpSession session) {
+	public String saveDataIregularEMIRepayment(@ModelAttribute("rd") LoanPlanMaster loanPlanMaster, Model model,
+			HttpSession session) {
 		if (loanPlanMaster != null) {
 			Optional<LoanPlanMaster> loanPlanMasterAllData = loanPlanMasterRepo.findById(loanPlanMaster.getId());
-			String createdBy= (session.getAttribute("ID").toString());
+			String createdBy = (session.getAttribute("ID").toString());
 			loanPlanMaster.setCreatedBy(createdBy);
 			// loanPlanMasterAllData.get().setClosedFlag("closed");
 			loanPlanMasterRepo.save(loanPlanMasterAllData.get());
@@ -467,13 +469,14 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("/saveirregularEMIPaymentEntryf159")
-	public String saveirregularEMIPaymentEntryf159(@ModelAttribute("user") Loan loan, Model model,HttpSession session) {
-		//System.err.println("id = " + loan.getId());
+	public String saveirregularEMIPaymentEntryf159(@ModelAttribute("user") Loan loan, Model model,
+			HttpSession session) {
+		// System.err.println("id = " + loan.getId());
 		Optional<Loan> loanData = loanRepo.findById(loan.getId());
 		if (loanData.isPresent()) {
 			loanData.get().setModeRegOrIrr("irregular");
-			//loanRepo.save(loanData.get());
-			String createdBy= (session.getAttribute("ID").toString());
+			// loanRepo.save(loanData.get());
+			String createdBy = (session.getAttribute("ID").toString());
 			loan.setCreatedBy(createdBy);
 			loanRepo.save(loan);
 		}
@@ -481,7 +484,7 @@ public class LoanModuleController {
 		model.addAttribute("loanList", loanList);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
 		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		//List<Member> memberList = memberRepo.findAll();
+		// List<Member> memberList = memberRepo.findAll();
 		List<ClientMaster> memberList = clientMasterRepo.findAll();
 		model.addAttribute("memberList", memberList);
 		List<BranchMaster> branchData = branchMasterRepo.findAll();
@@ -491,11 +494,12 @@ public class LoanModuleController {
 	}
 
 	@PostMapping("/closeLoan")
-	public String closeLoan(@ModelAttribute("closeLoan") LoanPlanMaster loanPlanMaster, Model model,HttpSession session) {
+	public String closeLoan(@ModelAttribute("closeLoan") LoanPlanMaster loanPlanMaster, Model model,
+			HttpSession session) {
 		if (loanPlanMaster != null) {
 			Optional<LoanPlanMaster> loanPlanMasterAllData = loanPlanMasterRepo.findById(loanPlanMaster.getId());
 			loanPlanMasterAllData.get().setClosedFlag("closed");
-			String createdBy= (session.getAttribute("ID").toString());
+			String createdBy = (session.getAttribute("ID").toString());
 			loanPlanMaster.setCreatedBy(createdBy);
 			loanPlanMasterRepo.save(loanPlanMasterAllData.get());
 		}
@@ -519,65 +523,65 @@ public class LoanModuleController {
 		}
 		return response;
 	}
-	
+
 	@PostMapping("/searchNormalLoanDocument")
 	@ResponseBody
 	public Loan searchRegularEMIStatementInTable(@RequestBody Loan loan) {
-	    Loan result = loanRepo.findByid(loan.getId());
-	    return result;
+		Loan result = loanRepo.findByid(loan.getId());
+		return result;
 	}
-	
+
 	@PostMapping("/searchLoanDataInTable")
 	@ResponseBody
 	public List<Loan> getSearchLoanDataInTable(@RequestBody Loan loan) {
-	    List<Loan> searchResults = new ArrayList<>();
+		List<Loan> searchResults = new ArrayList<>();
 
-	    if (loan.getBranchname() != null) {
-	        List<Loan> branchname = loanRepo.findBybranchname(loan.getBranchname());
-	        searchResults.addAll(branchname);
-	    }
+		if (loan.getBranchname() != null) {
+			List<Loan> branchname = loanRepo.findBybranchname(loan.getBranchname());
+			searchResults.addAll(branchname);
+		}
 
-	    if (loan.getfDate() != null && loan.gettDate() != null) {
-	        List<Loan> loanDate = loanRepo.findByloanDateBetween(loan.getfDate(), loan.gettDate());
-	        searchResults.addAll(loanDate);
-	    }
+		if (loan.getfDate() != null && loan.gettDate() != null) {
+			List<Loan> loanDate = loanRepo.findByloanDateBetween(loan.getfDate(), loan.gettDate());
+			searchResults.addAll(loanDate);
+		}
 
-	    if (loan.getMemberRelativesName() != null) {
-	        List<Loan> memberRelativesName = loanRepo.findBymemberRelativesName(loan.getMemberRelativesName());
-	        searchResults.addAll(memberRelativesName);
-	    }
+		if (loan.getMemberRelativesName() != null) {
+			List<Loan> memberRelativesName = loanRepo.findBymemberRelativesName(loan.getMemberRelativesName());
+			searchResults.addAll(memberRelativesName);
+		}
 
-	    if (loan.getId() != 0) {
-	        Loan id = loanRepo.findByid(loan.getId());
-	        searchResults.add(id);
-	    }
+		if (loan.getId() != 0) {
+			Loan id = loanRepo.findByid(loan.getId());
+			searchResults.add(id);
+		}
 
-	    if (loan.getSearchMemberCode() != null) {
-	        List<Loan> searchMemberCode = loanRepo.findBysearchMemberCode(loan.getSearchMemberCode());
-	        searchResults.addAll(searchMemberCode);
-	    }
+		if (loan.getSearchMemberCode() != null) {
+			List<Loan> searchMemberCode = loanRepo.findBysearchMemberCode(loan.getSearchMemberCode());
+			searchResults.addAll(searchMemberCode);
+		}
 
-	    if (loan.getLoanPurpose() != null) {
-	        List<Loan> loanPurpose = loanRepo.findByloanPurpose(loan.getLoanPurpose());
-	        searchResults.addAll(loanPurpose);
-	    }
+		if (loan.getLoanPurpose() != null) {
+			List<Loan> loanPurpose = loanRepo.findByloanPurpose(loan.getLoanPurpose());
+			searchResults.addAll(loanPurpose);
+		}
 
-	    if (loan.getAdvisorCode() != null) {
-	        List<Loan> advisorCode = loanRepo.findByadvisorCode(loan.getAdvisorCode());
-	        searchResults.addAll(advisorCode);
-	    }
+		if (loan.getAdvisorCode() != null) {
+			List<Loan> advisorCode = loanRepo.findByadvisorCode(loan.getAdvisorCode());
+			searchResults.addAll(advisorCode);
+		}
 
-	    return searchResults;
-	} 
-	
+		return searchResults;
+	}
+
 	@PostMapping("updateLoanPayment852")
-	public String updateLoanPayment852(@ModelAttribute("updateLoan") Loan loan, Model model,HttpSession session) {
+	public String updateLoanPayment852(@ModelAttribute("updateLoan") Loan loan, Model model, HttpSession session) {
 		loan.setType("Loan");
 		loan.setCreatedBy("");
 		loan.setCreatedDate(new Date().toString());
 		loan.setUpdatedBy("");
 		loan.setUpdatedDate(new Date().toString());
-		String createdBy= (session.getAttribute("ID").toString());
+		String createdBy = (session.getAttribute("ID").toString());
 		loan.setCreatedBy(createdBy);
 		Loan loanSaved = loanRepo.save(loan);
 		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
@@ -597,5 +601,5 @@ public class LoanModuleController {
 			return "Loan_Section/LoanApplicationf780";
 		}
 	}
-	
+
 }

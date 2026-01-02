@@ -13,12 +13,12 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.TalukaModel;
 
 @Repository
-public interface TalukaMasterRepo extends JpaRepository<TalukaModel, Long>{
+public interface TalukaMasterRepo extends JpaRepository<TalukaModel, Long> {
 
 	List<TalukaModel> findAllByDistrictId(int districtId);
 
-    @Modifying
-    @Transactional
-    @Query(value = "DELETE FROM TalukaModel f where f.id = ?1")
+	@Modifying
+	@Transactional
+	@Query(value = "DELETE FROM TalukaModel f where f.id = ?1")
 	int deleteById(Integer id);
 }

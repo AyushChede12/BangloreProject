@@ -14,7 +14,7 @@ import com.society.application.model.AdvisorCollectorDetails;
 import com.society.application.model.BranchMaster;
 
 @Repository
-public interface AdvisorCollectorDetailsRepo extends JpaRepository<AdvisorCollectorDetails, Integer>{
+public interface AdvisorCollectorDetailsRepo extends JpaRepository<AdvisorCollectorDetails, Integer> {
 
 	@Query("SELECT COUNT(u) FROM AdvisorCollectorDetails u")
 	long countAdvisor();
@@ -38,9 +38,14 @@ public interface AdvisorCollectorDetailsRepo extends JpaRepository<AdvisorCollec
 	@Modifying
 	@Transactional
 	@Query("UPDATE AdvisorCollectorDetails SET joiningDate=:joiningDate, selectMember=:selectMember, nomineeName=:nomineeName, relation=:relation, branchName=:branchName, nomineeAge=:nomineeAge, photo=:fileName, signiture=:fileName1, selectPosition=:selectPosition, introducerCode=:introducerCode, feesIfAny=:feesIfAny, paymentBy=:paymentBy, remarks=:remarks, advisorStatus=:advisorStatus, smsSend=:smsSend WHERE id=:id")
-	public int updateThroughID(@Param("joiningDate") String joiningDate, @Param("selectMember") String selectMember, @Param("nomineeName") String nomineeName, @Param("relation") String relation, @Param("branchName") String branchName,
-			@Param("nomineeAge") String nomineeAge, @Param("fileName") String fileName, @Param("fileName1") String fileName1, @Param("selectPosition") String selectPosition, @Param("introducerCode") String introducerCode,
-			@Param("feesIfAny") String feesIfAny, @Param("paymentBy") String paymentBy, @Param("remarks") String remarks, @Param("advisorStatus") String advisorStatus, @Param("smsSend") String smsSend, @Param("id") int id);
+	public int updateThroughID(@Param("joiningDate") String joiningDate, @Param("selectMember") String selectMember,
+			@Param("nomineeName") String nomineeName, @Param("relation") String relation,
+			@Param("branchName") String branchName, @Param("nomineeAge") String nomineeAge,
+			@Param("fileName") String fileName, @Param("fileName1") String fileName1,
+			@Param("selectPosition") String selectPosition, @Param("introducerCode") String introducerCode,
+			@Param("feesIfAny") String feesIfAny, @Param("paymentBy") String paymentBy,
+			@Param("remarks") String remarks, @Param("advisorStatus") String advisorStatus,
+			@Param("smsSend") String smsSend, @Param("id") int id);
 
 	@Modifying
 	@Transactional
@@ -52,7 +57,8 @@ public interface AdvisorCollectorDetailsRepo extends JpaRepository<AdvisorCollec
 	@Modifying
 	@Transactional
 	@Query("UPDATE AdvisorCollectorDetails SET branchName=:branchName, selectPosition=:selectPosition, newSenior=:newSenior WHERE id=:id")
-	int updateThroughid(@Param("branchName") String branchName, @Param("selectPosition") String selectPosition, @Param("newSenior") String newSenior, @Param("id") int id);
+	int updateThroughid(@Param("branchName") String branchName, @Param("selectPosition") String selectPosition,
+			@Param("newSenior") String newSenior, @Param("id") int id);
 
 	List<AdvisorCollectorDetails> findBybranchName(String branchName);
 
@@ -62,7 +68,7 @@ public interface AdvisorCollectorDetailsRepo extends JpaRepository<AdvisorCollec
 
 	List<AdvisorCollectorDetails> findByJoiningDateBetween(String getfDate, String gettDate);
 
-	//List<AdvisorCollectorDetails> findAllByid(int id);
+	// List<AdvisorCollectorDetails> findAllByid(int id);
 
 	List<AdvisorCollectorDetails> findAllById(int id);
 

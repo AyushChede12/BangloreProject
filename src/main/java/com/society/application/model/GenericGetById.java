@@ -1,7 +1,7 @@
 package com.society.application.model;
 
 public class GenericGetById {
-	
+
 	private String id;
 
 	public String getId() {
@@ -11,7 +11,5 @@ public class GenericGetById {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
 
 }

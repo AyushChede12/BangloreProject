@@ -12,16 +12,4 @@ public interface PaymentEntryRepo extends JpaRepository<PaymentEntry2Modal, Inte
 
 	public List<PaymentEntry2Modal> findBytxndateBetween(String getfDate, String todate);
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
 }

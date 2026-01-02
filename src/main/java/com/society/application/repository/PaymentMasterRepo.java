@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.PaymentMaster;
 
 @Repository
-public interface PaymentMasterRepo extends JpaRepository<PaymentMaster, Integer>{
+public interface PaymentMasterRepo extends JpaRepository<PaymentMaster, Integer> {
 
 }

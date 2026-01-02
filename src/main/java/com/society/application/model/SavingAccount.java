@@ -10,43 +10,43 @@ public class SavingAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String schemeName;
-	
+
 	private String annualROI;
-	
+
 	private String minOpeningAmount;
-	
+
 	private String monthlyAvgBal;
-	
+
 	private String lockInbalance;
-	
+
 	private String smsCharges;
-	
+
 	private String smsInterval;
-	
+
 	private String freeIfscCollectionpm;
-	
+
 	private String freeTransferspm;
-	
+
 	private String singleTxnLimit;
-	
+
 	private String dailyMAXLimit;
-	
+
 	private String weeklyMAXLimit;
-	
+
 	private String monthlyMAXLimit;
-	
-	private String serviceCharges; 
-	
-	private String serviceInterval; 
-	
+
+	private String serviceCharges;
+
+	private String serviceInterval;
+
 	private String cardCharge;
-	
+
 	private String cardLimitMonthly;
-	
+
 	private String cardTotalLimitYearly;
-	
+
 	private String createdBy;
 	private String CreatedDt;
 
@@ -229,6 +229,5 @@ public class SavingAccount {
 				+ ", serviceInterval=" + serviceInterval + ", cardCharge=" + cardCharge + ", cardLimitMonthly="
 				+ cardLimitMonthly + ", cardTotalLimitYearly=" + cardTotalLimitYearly + "]";
 	}
-	
-	
+
 }

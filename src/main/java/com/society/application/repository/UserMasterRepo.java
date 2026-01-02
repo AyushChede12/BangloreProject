@@ -9,9 +9,9 @@ import com.society.application.model.UserMaster;
 
 @Repository
 public interface UserMasterRepo extends JpaRepository<UserMaster, Integer> {
-	
-	@Query(value="select * from user_master where user_id=? and password=?",nativeQuery = true)
-	UserMaster fetchMatchedData(String userId,String password);
+
+	@Query(value = "select * from user_master where user_id=? and password=?", nativeQuery = true)
+	UserMaster fetchMatchedData(String userId, String password);
 
 	UserMaster findByid(int id);
 

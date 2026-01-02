@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.Submodule;
 
 @Repository
-public interface SubmoduleRepo  extends JpaRepository<Submodule, Integer>{
+public interface SubmoduleRepo extends JpaRepository<Submodule, Integer> {
 
 }

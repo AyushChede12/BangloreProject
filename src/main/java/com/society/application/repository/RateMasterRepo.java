@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.RateMaster;
 
 @Repository
-public interface RateMasterRepo extends JpaRepository<RateMaster, Integer>{
+public interface RateMasterRepo extends JpaRepository<RateMaster, Integer> {
 
 }

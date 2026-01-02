@@ -13,27 +13,35 @@ public class CasteMaster {
 	private String caste;
 	private String createdBy;
 	private String createdDt;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getCaste() {
 		return caste;
 	}
+
 	public void setCaste(String caste) {
 		this.caste = caste;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 	public String getCreatedDt() {
 		return createdDt;
 	}
+
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}

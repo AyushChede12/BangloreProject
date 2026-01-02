@@ -13,23 +13,14 @@ import com.society.application.model.AdvisorCollectorDetails;
 import com.society.application.model.LoanEMIOutstandingReport;
 import com.society.application.model.MaturityPartPayment;
 
-
 @Repository
 public interface MaturityPayemntRepo extends JpaRepository<MaturityPartPayment, Integer> {
 
 	List<MaturityPartPayment> findBypolicyno(String string);
-	
-	
-	
-	
+
 	@Modifying
 	@Transactional
 	@Query("update MaturityPartPayment p set p.paymentdate=:string,p.paybranch =:string2,p.paymentby =:string3,p.payremarks =:string4 where p.policyno =:string5")
-	int updateThroughPolicyNo(String string, String string2, String string3, String string4,String string5);
-
-
-
-
-	
+	int updateThroughPolicyNo(String string, String string2, String string3, String string4, String string5);
 
 }

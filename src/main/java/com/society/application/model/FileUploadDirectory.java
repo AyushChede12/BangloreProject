@@ -18,8 +18,7 @@ public class FileUploadDirectory {
 	private String userId;
 	private String module;
 	private String type;
-	
-	
+
 	public String getType() {
 		return type;
 	}

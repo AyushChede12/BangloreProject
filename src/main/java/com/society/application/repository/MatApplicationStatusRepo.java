@@ -8,18 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.society.application.model.MatApplicationStatus;
 
-
 @Repository
-public interface MatApplicationStatusRepo extends JpaRepository<MatApplicationStatus, Integer> 
-{
+public interface MatApplicationStatusRepo extends JpaRepository<MatApplicationStatus, Integer> {
 
-public 	List<MatApplicationStatus> findByapplicationbranch(String branch);
+	public List<MatApplicationStatus> findByapplicationbranch(String branch);
 
-public List<MatApplicationStatus> findByapplicationdateBetween(String fromdate, String todate);
+	public List<MatApplicationStatus> findByapplicationdateBetween(String fromdate, String todate);
 
-
-
-	
-	
-	
 }

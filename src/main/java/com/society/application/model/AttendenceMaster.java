@@ -17,14 +17,14 @@ public class AttendenceMaster {
 	private String leaveDate;
 
 	private String leaveType;
-	
+
 	private String fDate;
 
 	private String tDate;
-    
+
 	private String createdBy;
-	private String CreatedDt; 
-	
+	private String CreatedDt;
+
 	public String getCreatedBy() {
 		return createdBy;
 	}

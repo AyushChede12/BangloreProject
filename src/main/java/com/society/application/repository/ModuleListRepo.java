@@ -7,6 +7,6 @@ import com.society.application.model.MISDeposit;
 import com.society.application.model.ModuleList;
 
 @Repository
-public interface ModuleListRepo extends JpaRepository<ModuleList, Integer>{
-	
+public interface ModuleListRepo extends JpaRepository<ModuleList, Integer> {
+
 }

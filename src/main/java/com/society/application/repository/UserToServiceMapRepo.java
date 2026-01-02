@@ -11,6 +11,6 @@ import com.society.application.model.UserToServiceMap;
 
 @Repository
 public interface UserToServiceMapRepo extends JpaRepository<UserToServiceMap, Integer> {
-	@Query(value="select * from user_to_service_map where user_id=?",nativeQuery = true)
+	@Query(value = "select * from user_to_service_map where user_id=?", nativeQuery = true)
 	List<UserToServiceMap> getDataByuserId(String userId);
 }

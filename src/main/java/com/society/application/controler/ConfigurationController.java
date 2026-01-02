@@ -99,7 +99,7 @@ public class ConfigurationController {
 
 	@Autowired
 	EntryService entryService;
-	
+
 	@Autowired
 	ReceiptRepo receiptRepo;
 
@@ -812,20 +812,20 @@ public class ConfigurationController {
 	}
 
 	@GetMapping("/fetchMaxGLHeadNo")
-    public ResponseEntity<Integer> fetchMaxGLHeadNo() {
-        Integer maxGLHeadNo = newGLHeadMasterRepo.findMaxGLHeadNo();
-        if (maxGLHeadNo == null) {
-            maxGLHeadNo = 0;
-        }
-        return ResponseEntity.ok(maxGLHeadNo);
-    }
-	
+	public ResponseEntity<Integer> fetchMaxGLHeadNo() {
+		Integer maxGLHeadNo = newGLHeadMasterRepo.findMaxGLHeadNo();
+		if (maxGLHeadNo == null) {
+			maxGLHeadNo = 0;
+		}
+		return ResponseEntity.ok(maxGLHeadNo);
+	}
+
 	// Method to generate a unique ID
 	private String generateUniqueId() {
-	    // Implement your logic to generate a unique ID (e.g., timestamp, UUID, etc.)
-	    return "UNIQUE_ID_" + System.currentTimeMillis();
+		// Implement your logic to generate a unique ID (e.g., timestamp, UUID, etc.)
+		return "UNIQUE_ID_" + System.currentTimeMillis();
 	}
-	
+
 	// Save New GL Head
 	@PostMapping("/savetheNewGLHead")
 	@ResponseBody
@@ -844,16 +844,16 @@ public class ConfigurationController {
 				// You can set a default value or leave it as null
 				newGLHeadMaster.setAccountValue(null);
 			}
-			
+
 			String selectedBalanceType = newGLHeadMaster.getBalanceType();
-		    newGLHeadMaster.setBalanceType(selectedBalanceType);
+			newGLHeadMaster.setBalanceType(selectedBalanceType);
 
 			newGLHeadMaster.setUniqueId(uniqueId); // Set the uniqueId
 			newGLHeadMasterRepo.save(newGLHeadMaster);
 
 			return ResponseEntity.ok("Data Saved Successfully For GL Head No : " + newGLHeadMaster.getGlHeadNo());
 		} catch (Exception e) {
-			e.printStackTrace(); 
+			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing the request.");
 		}
 	}
@@ -903,19 +903,19 @@ public class ConfigurationController {
 		entryService.branchMasterSave2(requestBody, session);
 		return new ResponseEntity<>("Data Saved successfully", HttpStatus.OK);
 	}
-	
+
 	// Fetching All Data in Table of GL Head List Module
 	@GetMapping("/getAllDataInGLHeadList")
 	@ResponseBody
 	public List<NewGLHeadMaster> getAllDataInGLHeadList() {
 		return newGLHeadMasterRepo.findAll();
 	}
-	
+
 	@GetMapping("/bankRegister")
 	public String bankRegister(Model model) {
 		return "configuration/BankRegister";
 	}
-	
+
 	// Delete Branch Master Data by Id in (Bank Register Module)
 	@PostMapping("/deleteBankRegisterDataById")
 	public ResponseEntity<Map<String, String>> deleteBankRegisterDataById(@RequestBody List<BranchMaster> bankID) {
@@ -932,12 +932,12 @@ public class ConfigurationController {
 		}
 		return ResponseEntity.ok(response);
 	}
-	
+
 	// Fetch All Data of Branch Master in (Bank Register Module)
 	@GetMapping("/getAllDataOfBranchMaster")
 	@ResponseBody
 	public List<BranchMaster> getAllDataOfBranchMaster() {
 		return branchMasterRepo.findAll();
 	}
-	 
+
 }

@@ -67,19 +67,18 @@ public class ClientController {
 
 	@Autowired
 	private ShareAllocationMasterRepo shareAllocationMasterRepo;
-	
+
 	@Autowired
 	StateMasterRepo stateMasterRepo;
-	
+
 	@Autowired
 	DistrictMasterRepo districtMasterRepo;
-	
+
 	@Autowired
 	TalukaMasterRepo talukaMasterRepo;
 
 	@PostMapping("/addClient")
-	public ResponseEntity<String> addClient(
-			@RequestParam(name = "clientId", required = false) long clientId,
+	public ResponseEntity<String> addClient(@RequestParam(name = "clientId", required = false) long clientId,
 			@RequestParam(name = "registrationDate", required = false) String registrationDate,
 			@RequestParam(name = "memberNamePrefix", required = false) String memberberNamePrefix,
 			@RequestParam(name = "memberName", required = false) String memberberName,
@@ -134,27 +133,26 @@ public class ClientController {
 			@RequestParam(name = "secondfiletag", required = false) MultipartFile file1,
 			@RequestParam(name = "taluka", required = false) String taluka,
 			@RequestParam(name = "village", required = false) String village,
-			@RequestParam(name = "caste", required = false) String caste,
-			HttpSession session, Model model) {
+			@RequestParam(name = "caste", required = false) String caste, HttpSession session, Model model) {
 		try {
-			
-			String nextClientNo = calculateNextClientNo();
-		    String nextClientId = calculateNextClientId();
 
-		    model.addAttribute("clientNo", nextClientNo); // Display in the JSP
-		    model.addAttribute("clientId", nextClientId); // Display in the JSP
-	        
+			String nextClientNo = calculateNextClientNo();
+			String nextClientId = calculateNextClientId();
+
+			model.addAttribute("clientNo", nextClientNo); // Display in the JSP
+			model.addAttribute("clientId", nextClientId); // Display in the JSP
+
 			ClientMaster client = new ClientMaster();
 			String createdBy = session.getAttribute("ID").toString();
 			client.setCreatedBy(createdBy);
-			
-			//System.out.println(createdBy);
+
+			// System.out.println(createdBy);
 			byte[] image = file.getBytes();
 			byte[] signature = file1.getBytes();
-			//client.setClientNo(clientNo);
-			//client.setClientId(clientId);
-			//client.setClientNo(String.valueOf(nextClientNo));
-	        //client.setClientId(String.valueOf(nextClientNo));
+			// client.setClientNo(clientNo);
+			// client.setClientId(clientId);
+			// client.setClientNo(String.valueOf(nextClientNo));
+			// client.setClientId(String.valueOf(nextClientNo));
 			client.setRegistrationDate(registrationDate);
 			client.setMemberNamePrefix(memberberNamePrefix);
 			client.setMemberName(memberberName);
@@ -219,7 +217,7 @@ public class ClientController {
 			return new ResponseEntity<>("Data uploaded Failed !!!!", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	private String calculateNextClientNo() {
 		Integer maxClientNo = clientMasterRepo.findMaxClientNo();
 		// Calculate the next clientNo
@@ -261,16 +259,16 @@ public class ClientController {
 		List<ClientMaster> list = clientMasterRepo.findByid(cm.getId());
 		// model.addAttribute("list", list);
 		// return "member/AddMemberEdit";
-		
+
 		list.forEach(s -> {
-            if (s.getImage() != null && s.getSignature() !=null) {
-                String encodedPhoto = Base64.getEncoder().encodeToString(s.getImage());
-                String encodedSignature = Base64.getEncoder().encodeToString(s.getSignature());
-                s.setFrontEndPhoto(encodedPhoto);
-                s.setFrontEndSignature(encodedSignature);
-            }
-        });
-       
+			if (s.getImage() != null && s.getSignature() != null) {
+				String encodedPhoto = Base64.getEncoder().encodeToString(s.getImage());
+				String encodedSignature = Base64.getEncoder().encodeToString(s.getSignature());
+				s.setFrontEndPhoto(encodedPhoto);
+				s.setFrontEndSignature(encodedSignature);
+			}
+		});
+
 		return list;
 	}
 
@@ -332,8 +330,7 @@ public class ClientController {
 			@RequestParam(name = "secondfiletag", required = false) MultipartFile file1,
 			@RequestParam(name = "taluka", required = false) String taluka,
 			@RequestParam(name = "village", required = false) String village,
-			@RequestParam(name = "caste", required = false) String caste,
-			HttpSession session) {
+			@RequestParam(name = "caste", required = false) String caste, HttpSession session) {
 		try {
 			List<ClientMaster> client = clientMasterRepo.findByclientNo(clientNo);
 			String createdBy = session.getAttribute("ID").toString();
@@ -341,12 +338,12 @@ public class ClientController {
 			client.forEach(s -> {
 				if (file != null && file1 != null) {
 					try {
-						//System.out.println("Updating Photo...");
+						// System.out.println("Updating Photo...");
 						byte[] image = file.getBytes();
 						byte[] signature = file1.getBytes();
 						s.setImage(image);
 						s.setSignature(signature);
-						//System.out.println("Photo Updated");
+						// System.out.println("Photo Updated");
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -406,7 +403,7 @@ public class ClientController {
 				s.setCaste(caste);
 				s.setFlag("1");
 				clientMasterRepo.save(s);
-			});	
+			});
 			return new ResponseEntity<>("Data Updated  successfully!!!!", HttpStatus.OK);
 		} catch (Exception ex) {
 			System.out.println(ex);
@@ -440,8 +437,7 @@ public class ClientController {
 			@RequestParam(name = "table2input3", required = false) String shareValues,
 			@RequestParam(name = "table2input11", required = false) String loanID,
 			@RequestParam(name = "table2input12", required = false) String loanHolding,
-			@RequestParam(name = "table2input13", required = false) String loanValues,
-			HttpSession session) {
+			@RequestParam(name = "table2input13", required = false) String loanValues, HttpSession session) {
 		try {
 			MappingClientAndModules mcam = new MappingClientAndModules();
 			String createdBy = session.getAttribute("ID").toString();
@@ -513,7 +509,10 @@ public class ClientController {
 		List<ClientMaster> data2 = clientMasterRepo.findByregistrationDateBetween(clientMaster.getfDate(),
 				clientMaster.gettDate());
 		List<ClientMaster> data3 = clientMasterRepo.findBymemberName(clientMaster.getMemberName());
-		/*List<ClientMaster> data4 = clientMasterRepo.findByintroMCode(clientMaster.getIntroMCode());*/
+		/*
+		 * List<ClientMaster> data4 =
+		 * clientMasterRepo.findByintroMCode(clientMaster.getIntroMCode());
+		 */
 		List<ClientMaster> data5 = clientMasterRepo.findByphoneno(clientMaster.getPhoneno());
 		List<ClientMaster> data6 = clientMasterRepo.findByaadharNo(clientMaster.getAadharNo());
 		List<ClientMaster> data4 = clientMasterRepo.findBypan(clientMaster.getPan());
@@ -533,26 +532,26 @@ public class ClientController {
 		}
 		return data7;
 	}
-	
+
 	@GetMapping("/getStates")
 	@ResponseBody
-	public List<StateMaster> getStates(){
+	public List<StateMaster> getStates() {
 		return stateMasterRepo.findAll();
 	}
-	
+
 	@GetMapping("/getDistrictByStatesId")
 	@ResponseBody
-	public List<DistrictMaster> getDistrictByStatesId(@RequestParam("stateId") int stateId){
+	public List<DistrictMaster> getDistrictByStatesId(@RequestParam("stateId") int stateId) {
 		return districtMasterRepo.findAllByStateId(stateId);
 	}
-	
+
 	// save taluka
 	@PostMapping("/addTaluka")
 	public Response saveTaluka(@RequestBody TalukaModel talukaModel) {
 		Response resp = new Response();
 		resp.setStatus("Not Success..");
 		resp.setMessage("Data Not Saved..!!");
-		
+
 		TalukaModel taluka = talukaMasterRepo.save(talukaModel);
 		if (taluka != null) {
 			resp.setStatus("Success..");
@@ -561,28 +560,28 @@ public class ClientController {
 		}
 		return resp;
 	}
-	
+
 	@GetMapping("/getTalukaByDistrictId")
 	@ResponseBody
-	public List<TalukaModel> getTalukaByDistrictId(@RequestParam("districtId") int districtId){
+	public List<TalukaModel> getTalukaByDistrictId(@RequestParam("districtId") int districtId) {
 		return talukaMasterRepo.findAllByDistrictId(districtId);
 	}
-	
+
 	@GetMapping("/getTalukaDetails")
-    @ResponseBody
-    public List<TalukaModel> getTalukaDetails() {
-        return talukaMasterRepo.findAll();
-    }
+	@ResponseBody
+	public List<TalukaModel> getTalukaDetails() {
+		return talukaMasterRepo.findAll();
+	}
 
 	@GetMapping("/deleterowtaluka")
-    public String deleterowtaluka(@RequestParam Integer id) {
-        try {
-        	int i = talukaMasterRepo.deleteById(id);
-            return "configuration/AddTaluka"; 
-        } catch (Exception e) {
-           System.out.println(e);
-           return e.toString();
-        }
-    }
+	public String deleterowtaluka(@RequestParam Integer id) {
+		try {
+			int i = talukaMasterRepo.deleteById(id);
+			return "configuration/AddTaluka";
+		} catch (Exception e) {
+			System.out.println(e);
+			return e.toString();
+		}
+	}
 
 }

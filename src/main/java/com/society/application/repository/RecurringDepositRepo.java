@@ -8,7 +8,7 @@ import com.society.application.model.Position;
 import com.society.application.model.RecurringDeposit;
 
 @Repository
-public interface RecurringDepositRepo extends JpaRepository<RecurringDeposit, Integer>{
+public interface RecurringDepositRepo extends JpaRepository<RecurringDeposit, Integer> {
 
 	@Query("SELECT COUNT(u) FROM RecurringDeposit u")
 	long countRd();

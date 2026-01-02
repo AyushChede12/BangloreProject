@@ -7,27 +7,27 @@ import javax.persistence.Id;
 
 @Entity
 public class BankMaster {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String bankName;
-	
+
 	private String accountNo;
-	
+
 	private String mobileNo;
-	
+
 	private String address;
-	
+
 	private String openingDate;
-	
+
 	private String openingBalance;
-	
+
 	private String mappedBranch;
-	
+
 	private String createdBy;
-	
+
 	private String createdDt;
 
 	public int getId() {
@@ -109,5 +109,5 @@ public class BankMaster {
 	public void setCreatedDt(String createdDt) {
 		this.createdDt = createdDt;
 	}
-	
+
 }
