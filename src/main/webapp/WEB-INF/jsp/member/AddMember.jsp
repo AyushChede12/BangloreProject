@@ -31,6 +31,238 @@ function check()
 .heading {
 	color: #FF0000;
 }
+/* ================= COMMON LAYOUT ================= */
+.content-wrapper {
+    background: #f4f6f9;
+}
+
+.box {
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+/* ================= BOX HEADERS ================= */
+.box-header {
+    background: #f8fafc;
+    border-bottom: 2px solid #3c8dbc;
+    border-radius: 8px 8px 0 0;
+}
+
+.box-title {
+    font-size: 18px;
+    color: #3c8dbc;
+}
+
+/* ================= FORM ================= */
+.form-horizontal .form-group {
+    margin-bottom: 15px;
+}
+
+.control-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #3c8dbc;
+    box-shadow: 0 0 0 2px rgba(60,141,188,0.15);
+}
+
+/* ================= TEXTAREA ================= */
+textarea.form-control {
+    resize: none;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    border-radius: 20px;
+    padding: 6px 22px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #3c8dbc;
+    border-color: #3c8dbc;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-default {
+    background: #6c757d;
+    color: #fff;
+    border-color: #6c757d;
+}
+
+.btn-default:hover {
+    opacity: 0.9;
+}
+
+.verify {
+    border-radius: 20px;
+}
+
+/* ================= SECTION FOOTER ================= */
+.clearfix {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* ================= KYC IMAGE UPLOAD ================= */
+#kycSection img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px dashed #cfd8dc;
+    padding: 10px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+#kycSection img:hover {
+    border-color: #3c8dbc;
+    background: #eef6fc;
+    transform: scale(1.05);
+}
+
+#kycSection label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ================= SECTION COLORS ================= */
+#clientSection .box-header {
+    border-bottom-color: #3c8dbc;
+}
+
+#kycSection .box-header {
+    border-bottom-color: #00a65a;
+}
+
+#nomineeSection .box-header {
+    border-bottom-color: #f39c12;
+}
+
+#feesSection .box-header {
+    border-bottom-color: #00c0ef;
+}
+
+
+/* Make form vertical : label on top */
+.form-horizontal .form-group {
+    margin-bottom: 12px;
+}
+
+.form-horizontal .control-label {
+    text-align: left !important;
+    margin-bottom: 4px;
+    padding-top: 0;
+    font-weight: 600;
+}
+
+/* Make all inputs full width */
+.form-horizontal .col-sm-8,
+.form-horizontal .col-sm-6,
+.form-horizontal .col-sm-5,
+.form-horizontal .col-sm-4,
+.form-horizontal .col-sm-3,
+.form-horizontal .col-sm-2 {
+    width: 100% !important;
+    float: none;
+}
+
+/* Prefix + name alignment fix */
+.form-group .col-sm-3,
+.form-group .col-sm-5 {
+    display: inline-block;
+    width: 48% !important;
+}
+
+/* Verify button spacing */
+.verify {
+    margin-top: 24px;
+}
+
+.form-control {
+    border-radius: 6px;
+}
+label {
+    color: #333;
+}
+
+
+.wizard-steps {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.wizard-step {
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.wizard-step .step-circle {
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 50%;
+	background: #008385; /* SAME COLOR */
+	color: #fff;
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+.wizard-step.inactive .step-circle {
+	background: #cfcfcf;
+}
+
+.wizard-step .step-title {
+	margin-top: 5px;
+	font-weight: bold;
+	color: #008385;
+}
+
+.wizard-step.inactive .step-title {
+	color: #999;
+}
+
+.wizard-line {
+	position: absolute;
+	top: 17px;
+	left: 50%;
+	width: 100%;
+	height: 3px;
+	background: #cfcfcf;
+	z-index: -1;
+}
+
+.wizard-step.completed .step-circle {
+	background: #00a65a;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .control-label {
+        text-align: left !important;
+        margin-bottom: 5px;
+    }
+}
+
+
 </style>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
@@ -59,6 +291,29 @@ function check()
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader"
 					style="font-size: 30px; margin-left: 10px;">Add Client</h1>
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">1</div>
+						<div class="step-title">Client Details</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">2</div>
+						<div class="step-title">KYC Document</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step3">
+						<div class="step-circle">3</div>
+						<div class="step-title">Nominee Details</div>
+						<div class="wizard-line"></div>
+					</div>
+
+					<div class="wizard-step inactive" id="step4">
+						<div class="step-circle">4</div>
+						<div class="step-title">Fees Details</div>
+					</div>
+				</div>
+
 
 			</section>
 			<section class="content">
@@ -645,10 +900,9 @@ function check()
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col-md-12">
-
 											<!-- ================= BASIC DETAILS ================= -->
-											<div class="box box-primary" id= "clientSection">
-												<div class="box-header with-border">
+											
+												<div id="clientSection">
 													<h3 class="box-title">
 														<b>Client Details</b>
 													</h3>
@@ -656,401 +910,426 @@ function check()
 
 												<div class="box-body form-horizontal">
 
-													<!-- Client No -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Client No *</label>
-														<div class="col-sm-6">
-															<input type="text" name="clientNo" id="clientNo"
-																value="${count}" class="form-control" readonly>
+													<!-- Row 1 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Client No
+																	*</label>
+																<div class="col-sm-8">
+																	<input type="text" name="clientNo" id="clientNo"
+																		value="${count}" class="form-control" readonly>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Client ID
+																	*</label>
+																<div class="col-sm-8">
+																	<input type="text" name="clientId" id="clientId"
+																		value="${clientId}" class="form-control" readonly>
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<!-- Client ID -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Client ID *</label>
-														<div class="col-sm-6">
-															<input type="text" name="clientId" id="clientId"
-																value="${clientId}" class="form-control" readonly>
+													<!-- Row 2 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Branch
+																	Name *</label>
+																<div class="col-sm-8">
+																	<select name="branchName" id="branchName"
+																		class="form-control">
+																		<option value="">Select Branch</option>
+																	</select>
+																</div>
+															</div>
 														</div>
-													</div>
-
-													<!-- Branch -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Branch Name
-															*</label>
-														<div class="col-sm-6">
-															<select name="branchName" id="branchName"
-																class="form-control">
-																<option value="">Select Branch</option>
-															</select>
-														</div>
-													</div>
-
-													<!-- Registration Date -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Registration
-															Date *</label>
-														<div class="col-sm-6">
-															<input type="date" name="registrationDate"
-																id="registrationDate" class="form-control">
-														</div>
-													</div>
-
-													<!-- Client Name -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Client Name
-															*</label>
-														<div class="col-sm-2">
-															<select name="memberNamePrefix" class="form-control">
-																<option>Mr.</option>
-																<option>Ms.</option>
-																<option>Mrs.</option>
-																<option>Smt.</option>
-															</select>
-														</div>
-														<div class="col-sm-4">
-															<input type="text" name="memberName" class="form-control"
-																placeholder="Full Name">
-														</div>
-													</div>
-
-													<!-- Relative -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Relative
-															Name</label>
-														<div class="col-sm-6">
-															<input type="text" name="relativeName"
-																class="form-control">
-														</div>
-													</div>
-
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Relation</label>
-														<div class="col-sm-6">
-															<select name="relativeRelation" id="relativeRelation"
-																class="form-control">
-																<option>Select Relative Relation</option>
-															</select>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Registration
+																	Date *</label>
+																<div class="col-sm-8">
+																	<input type="date" name="registrationDate"
+																		id="registrationDate" class="form-control">
+																</div>
+															</div>
 														</div>
 													</div>
 
 
-													<!-- Gender -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Gender</label>
-														<div class="col-sm-6">
-															<select name="gender" class="form-control">
-																<option value="">Select</option>
-																<option>Male</option>
-																<option>Female</option>
-																<option>Other</option>
-															</select>
+													<!-- Row 3 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Client
+																	Name *</label>
+																<div class="col-sm-3">
+																	<select name="memberNamePrefix" class="form-control">
+																		<option>Mr.</option>
+																		<option>Ms.</option>
+																		<option>Mrs.</option>
+																		<option>Smt.</option>
+																	</select>
+																</div>
+																<div class="col-sm-5">
+																	<input type="text" name="memberName"
+																		class="form-control" placeholder="Full Name">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Relative
+																	Name</label>
+																<div class="col-sm-8">
+																	<input type="text" name="relativeName"
+																		class="form-control">
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<!-- DOB & Age -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">DOB *</label>
-														<div class="col-sm-3">
-															<input type="date" name="dob" id="dob"
-																onchange="calculateAge()" class="form-control">
+													<!-- Row 4 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Relation</label>
+																<div class="col-sm-8">
+																	<select name="relativeRelation" id="relativeRelation"
+																		class="form-control">
+																		<option>Select Relative Relation</option>
+																	</select>
+																</div>
+															</div>
 														</div>
-														<div class="col-sm-3">
-															<input type="text" name="age" id="ageId"
-																class="form-control" placeholder="Age">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Gender</label>
+																<div class="col-sm-8">
+																	<select name="gender" class="form-control">
+																		<option value="">Select</option>
+																		<option>Male</option>
+																		<option>Female</option>
+																		<option>Other</option>
+																	</select>
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Marital
-															Status</label>
-														<div class="col-sm-6">
-															<select name="maritalStatus" id="maritalStatus"
-																class="form-control">
-																<option value="">Select Martial Status</option>
-																<option value="Married">Married</option>
-																<option value="Unmarried">Unmarried</option>
-																<option value="Widow">Widow</option>
-																<option value="Divorce">Divorce</option>
-															</select>
+													<!-- Row 5 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">DOB *</label>
+																<div class="col-sm-4">
+																	<input type="date" name="dob" id="dob"
+																		onchange="calculateAge()" class="form-control">
+																</div>
+																<div class="col-sm-4">
+																	<input type="text" name="age" id="ageId"
+																		class="form-control" placeholder="Age">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Marital
+																	Status</label>
+																<div class="col-sm-8">
+																	<select name="maritalStatus" id="maritalStatus"
+																		class="form-control">
+																		<option value="">Select Martial Status</option>
+																		<option>Married</option>
+																		<option>Unmarried</option>
+																		<option>Widow</option>
+																		<option>Divorce</option>
+																	</select>
+																</div>
+															</div>
 														</div>
 													</div>
 
 													<!-- Address -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Address *</label>
-														<div class="col-sm-6">
-															<textarea name="address" rows="2" class="form-control"></textarea>
+													<div class="row">
+														<div class="col-md-12">
+															<div class="form-group">
+																<label class="col-sm-2 control-label">Address *</label>
+																<div class="col-sm-10">
+																	<textarea name="address" rows="2" class="form-control"></textarea>
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<!-- State -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">State *</label>
-														<div class="col-sm-6">
-															<select name="state" id="state" class="form-control">
-																<option selected="selected" value="">--Select--</option>
-																<option value="ANDRA PRADESH">ANDRA PRADESH</option>
-																<option value="ARUNACHAL PRADESH">ARUNACHAL
-																	PRADESH</option>
-																<option value="ASSAM">ASSAM</option>
-																<option value="BIHAR">BIHAR</option>
-																<option value="CHHATTISGARH">CHHATTISGARH</option>
-																<option value="DELHI">DELHI</option>
-																<option value="GUJARAT">GUJARAT</option>
-																<option value="HARYANA">HARYANA</option>
-																<option value="HIMACHAL PRADESH">HIMACHAL
-																	PRADESH</option>
-																<option value="JAMMU AND KASHMIR">JAMMU AND
-																	KASHMIR</option>
-																<option value="JHARKHAND">JHARKHAND</option>
-																<option value="KARNATAKA">KARNATAKA</option>
-																<option value="KERALA">KERALA</option>
-																<option value="MADYA PRADESH">MADYA PRADESH</option>
-																<option value="MAHARASHTRA">MAHARASHTRA</option>
-																<option value="MANIPUR">MANIPUR</option>
-																<option value="MEGHALAYA">MEGHALAYA</option>
-																<option value="MIZORAM">MIZORAM</option>
-																<option value="NAGALAND">NAGALAND</option>
-																<option value="ODISSA">ODISSA</option>
-																<option value="PUNJAB">PUNJAB</option>
-																<option value="RAJASTHAN">RAJASTHAN</option>
-																<option value="SIKKIM">SIKKIM</option>
-																<option value="TAMIL NADU">TAMIL NADU</option>
-																<option value="TRIPURA">TRIPURA</option>
-																<option value="UTTAR PRADESH">UTTAR PRADESH</option>
-																<option value="UTTARAKHAND">UTTARAKHAND</option>
-																<option value="WEST BENGAL">WEST BENGAL</option>
-															</select>
+													<!-- Row 6 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">State *</label>
+																<div class="col-sm-8">
+																	<select name="state" id="state" class="form-control">
+																		<option value="">--Select--</option>
+																		<option>MAHARASHTRA</option>
+																		<option>GUJARAT</option>
+																		<option>DELHI</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">District *</label>
+																<div class="col-sm-8">
+																	<select name="district" id="district"
+																		class="form-control" onclick="getTalukaInDropdown();">
+																		<option value="">--Select District--</option>
+																	</select>
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<!-- District -->
-													<div class="form-group">
-														<label for="txtDistrict" class="col-sm-3 control-label">District
-															<strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<select name="district" id="district"
-																class="form-control" style="width: 100%;"
-																onclick="getTalukaInDropdown();">
-																<option value="">--Select District--</option>
-															</select>
+													<!-- Row 7 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Taluka *</label>
+																<div class="col-sm-8">
+																	<select name="taluka" id="taluka" class="form-control"></select>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Village</label>
+																<div class="col-sm-8">
+																	<input type="text" name="village" id="village"
+																		class="form-control" placeholder="Enter Village">
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<!-- Taluka -->
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Taluka *</label>
-														<div class="col-sm-6">
-															<select name="taluka" id="taluka" class="form-control"></select>
+													<!-- Row 8 -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Pin Code *</label>
+																<div class="col-sm-8">
+																	<input type="text" name="pinCode" id="pinCode"
+																		maxlength="6" class="form-control"
+																		Placeholder="Enter Pincode" /> <span
+																		id="ContentPlaceHolder1_RequiredFieldValidator4"
+																		style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																		PIN</span>
+																</div>
+															</div>
 														</div>
-													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Village </label>
-														<div class="col-sm-6">
-															<input name="village" type="text" id="village"
-																class="form-control" Placeholder="Enter Village" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator4">Enter
-																Village</span>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Aadhar No
+																	*</label>
+																<div class="col-sm-8">
+																	<input name="aadharNo" type="text" maxlength="12"
+																		id="aadharNo" class="form-control"
+																		placeholder="Enter Aadhar No."
+																		onkeypress="return isNumberOnlyKey(this, event);"
+																		autocomplete="off" /> <span
+																		id="ContentPlaceHolder1_RequiredFieldValidator9"
+																		style="color: red; font-size: x-small; font-weight: bold; display: none;">
+																		Enter Aadhar No </span>
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<div class="form-group">
-														<label for="txtPin" class="col-sm-3 control-label">Pin
-															Code <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<input name="pinCode" type="text" maxlength="6"
-																id="pinCode" class="form-control"
-																Placeholder="Enter Pincode" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator4"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																PIN</span>
+
+													<!-- Row : PAN + Voter -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">PAN No.</label>
+																<div class="col-sm-6">
+																	<input name="pan" type="text" maxlength="10" id="pan"
+																		class="form-control" placeholder="Enter PAN No." />
+																</div>
+																<div class="col-sm-2">
+																	<input type="submit" value="Verify"
+																		class="btn btn-danger pull-right verify" disabled />
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Voter No.</label>
+																<div class="col-sm-6">
+																	<input name="voterNo" type="text" maxlength="10"
+																		id="voterNo" class="form-control"
+																		placeholder="Enter Voter No." />
+																</div>
+																<div class="col-sm-2">
+																	<input type="submit" value="Verify"
+																		class="btn btn-danger pull-right verify" disabled />
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<div class="form-group">
-														<label for="txtPin" class="col-sm-3 control-label">Aadhar
-															No. <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<input name="aadharNo" type="text" maxlength="12"
-																id="aadharNo" class="form-control"
-																Placeholder="Enter Aadhar No."
-																onkeypress="return isNumberOnlyKey(this, event);"
-																autocomplete="off" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator9"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																Aadhar No</span>
+													<!-- Row : Mobile + Email -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Mobile No
+																	*</label>
+																<div class="col-sm-8">
+																	<input name="phoneno" type="text" maxlength="10"
+																		id="phoneno" class="form-control"
+																		placeholder="Enter Mobile No"
+																		onkeypress="return isNumberOnlyKey(this, event);" />
+																</div>
+															</div>
 														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtPin" class="col-sm-3 control-label">PAN
-															No.</label>
-														<div class="col-sm-6">
-															<input name="pan" type="text" maxlength="10" id="pan"
-																class="form-control" Placeholder="Enter PAN No."
-																autocomplete="off" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator15"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																PAN No</span>
-															<div id="ContentPlaceHolder1_Div_PanPart"
-																style="display: none;">&nbsp;</div>
-														</div>
-														<div class="col-sm-2">
-															<input type="submit"
-																name="ctl00$ContentPlaceHolder1$btnPANverify"
-																value="Verify"
-																onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnPANverify&quot;, &quot;&quot;, true, &quot;P&quot;, &quot;&quot;, false, false))"
-																id="ContentPlaceHolder1_btnPANverify"
-																class="btn btn-danger verify pull-right" disabled />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtPin" class="col-sm-3 control-label">Voter
-															No.</label>
-														<div class="col-sm-6">
-															<input name="voterNo" type="text" maxlength="10"
-																id="voterNo" class="form-control"
-																Placeholder="Enter Voter No." autocomplete="off" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator16"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																Voter No</span>
-															<div id="ContentPlaceHolder1_Div_VoterPart"
-																style="display: none;">&nbsp;</div>
-														</div>
-														<div class="col-sm-2">
-															<input type="submit"
-																name="ctl00$ContentPlaceHolder1$btnvoterverify"
-																value="Verify"
-																onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnvoterverify&quot;, &quot;&quot;, true, &quot;K&quot;, &quot;&quot;, false, false))"
-																id="ContentPlaceHolder1_btnvoterverify"
-																class="btn btn-danger verify pull-right" disabled />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtPhoneno" class="col-sm-3 control-label">Mobile
-															No <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<input name="phoneno" type="text" maxlength="10"
-																id="phoneno" class="form-control"
-																Placeholder="Enter Mobile No" autocomplete="off"
-																onkeypress="return isNumberOnlyKey(this, event);" /> <span
-																id="ContentPlaceHolder1_RequiredFieldValidator8"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																Phone No</span>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtEmailid" class="col-sm-3 control-label">Email
-															ID </label>
-														<div class="col-sm-6">
-															<input name="emailid" type="text" id="emailid"
-																class="form-control" Placeholder="Enter Email ID" /> <span
-																id="ContentPlaceHolder1_Reg1"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Invalid
-																Email ID</span>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtOccupation" class="col-sm-3 control-label">Occupation</label>
-														<div class="col-sm-6">
-															<input name="occupation" type="text" id="occupation"
-																class="form-control" Placeholder="Enter Occupation" />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtEducation" class="col-sm-3 control-label">Education</label>
-														<div class="col-sm-6">
-															<input name="education" type="text" id="education"
-																class="form-control" Placeholder="Enter Education" />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtIntroMCode" class="col-sm-3 control-label">Client
-															Purpose<strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<!-- <input name="clientPurpose" id="clientPurpose" type="text"
-														class="form-control" Placeholder="Enter Client Purpose" /> -->
-															<select name="clientPurpose" id="clientPurpose"
-																class="form-control" style="width: 100%;">
-																<option value="">--- Select Client Purpose ---</option>
-																<option value="Membership">Membership</option>
-																<option value="Loan">Loan</option>
-																<option value="Other">Other</option>
-															</select> <span id="message"></span>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Email ID</label>
+																<div class="col-sm-8">
+																	<input name="emailid" type="text" id="emailid"
+																		class="form-control" placeholder="Enter Email ID" />
+																</div>
+															</div>
 														</div>
 													</div>
 
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Religion
-															Name <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<select name="religionName" id="religionName"
-																class="form-control" style="width: 100%;">
-																<option value="">Select Religion Name</option>
-															</select>
+
+													<!-- Row : Occupation + Education -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Occupation</label>
+																<div class="col-sm-8">
+																	<input name="occupation" id="occupation"
+																		class="form-control" placeholder="Enter Occupation" />
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Education</label>
+																<div class="col-sm-8">
+																	<input name="education" id="education"
+																		class="form-control" placeholder="Enter Education" />
+																</div>
+															</div>
 														</div>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Category
-															Name <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<select name="categoryName" id="categoryName"
-																class="form-control" style="width: 100%;">
-																<option value="">Select Category Name</option>
-															</select>
+
+													<!-- Row : Client Purpose + Religion -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Client
+																	Purpose *</label>
+																<div class="col-sm-8">
+																	<select name="clientPurpose" id="clientPurpose"
+																		class="form-control">
+																		<option value="">--- Select Client Purpose
+																			---</option>
+																		<option value="Membership">Membership</option>
+																		<option value="Loan">Loan</option>
+																		<option value="Other">Other</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Religion *</label>
+																<div class="col-sm-8">
+																	<select name="religionName" id="religionName"
+																		class="form-control">
+																		<option value="">Select Religion Name</option>
+																	</select>
+																</div>
+															</div>
 														</div>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Caste Name</label>
-														<div class="col-sm-6">
-															<!-- <select name="caste" id="caste" class="form-control"
-														style="width: 100%;">
-														<option value="">Select Caste Name</option>
-													</select> -->
-															<input name="caste" id="caste" type="text"
-																class="form-control" Placeholder="Enter Caste Name" />
+
+
+
+													<!-- Row : Category + Caste -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Category *</label>
+																<div class="col-sm-8">
+																	<select name="categoryName" id="categoryName"
+																		class="form-control">
+																		<option value="">Select Category Name</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Caste</label>
+																<div class="col-sm-8">
+																	<input name="caste" id="caste" class="form-control"
+																		placeholder="Enter Caste Name" />
+																</div>
+															</div>
 														</div>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Risk
-															Category <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<select name="riskCategory" id="riskCategory"
-																class="form-control" style="width: 100%;">
-																<option value="">Select Risk Category</option>
-																<option value="A">A</option>
-																<option value="Low">Low</option>
-																<option value="Medium">Medium</option>
-																<option value="High">High</option>
-															</select>
+
+													<!-- Row : Risk + Nationality -->
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Risk
+																	Category *</label>
+																<div class="col-sm-8">
+																	<select name="riskCategory" id="riskCategory"
+																		class="form-control">
+																		<option value="">Select Risk Category</option>
+																		<option>A</option>
+																		<option>Low</option>
+																		<option>Medium</option>
+																		<option>High</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">Nationality
+																	*</label>
+																<div class="col-sm-8">
+																	<select name="nationality" id="nationality"
+																		class="form-control">
+																		<option value="">Select Nationality</option>
+																		<option>Indian</option>
+																	</select>
+																</div>
+															</div>
 														</div>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Nationality
-															<strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<select name="nationality" id="nationality"
-																class="form-control" style="width: 100%;">
-																<option value="">Select Nationality Name</option>
-																<option value="Indian">Indian</option>
-															</select>
-														</div>
+													<div class="clearfix">
+														<button type="button" class="btn btn-primary pull-right"
+															onclick="showKyc()">Next</button>
 													</div>
-												<div class="clearfix">
-												<button type="button" class="btn btn-primary pull-right" onclick="showKyc()">
-													Next</button>
 												</div>
-											</div>
-										</div>
 
 
 											<!-- ================= AADHAR IMAGES ================= -->
@@ -1116,7 +1395,7 @@ function check()
 											</div>
 
 											<!-- ================= NOMINEE DETAILS ================= -->
-											<div class="box box-warning" id="nomineeDetails" style= "display: none;">
+											<div class="box box-warning" id="nomineeSection" style= "display: none;">
 												<div class="box-header with-border">
 													<h3 class="box-title">
 														<b>Nominee Details</b>
@@ -1227,7 +1506,7 @@ function check()
 								<div class="row">
 									<div class="col-md-12">
 
-										<div class="box box-info" id="fessSeting" style= "display: none;">
+										<div class="box box-info" id="feesSection" style= "display: none;">
 											<div class="box-header with-border">
 												<h3 class="box-title">
 													<b>Fees / Setting Details</b>
@@ -1365,7 +1644,7 @@ function check()
 													</div>
 												</div>
 												<div class="clearfix">
-												<button type="button" class="btn btn-default" onclick="showNominee">
+												<button type="button" class="btn btn-default" onclick="showNominee()">
 													Previous</button>
 												<button  class="btn btn-primary pull-right" onclick="saveData">
 													Save</button>
@@ -1384,7 +1663,7 @@ function check()
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-info" style= "display: none;">
+							<div class="box box-info" id="tableSection" style= "display: none;">
 								<div class="box-header with-border">
 									<h3 class="box-title">TABLE</h3>
 								</div>
@@ -1470,28 +1749,57 @@ function check()
 		<%-- <jsp:include page="../footer.jsp" />  --%>
 
 <script>
+
+function resetSteps() {
+	document.querySelectorAll('.step').forEach(s => {
+		s.classList.remove('active');
+	});
+}
+	
 	function showKyc() {
     	document.getElementById("clientSection").style.display = "none";
     	document.getElementById("kycSection").style.display = "block";
-    	document.getElementById("nomineeDerails").style.display = "block";
+    	document.getElementById("nomineeSection").style.display = "none";
     	window.scrollTo(0, 0);
+    	
+    	resetSteps();
+    	document.getElementById("step1").classList.add("completed");
+    	document.getElementById("step2").classList.add("active");
 	}
 
 	function showClient() {
     	document.getElementById("kycSection").style.display = "none";
     	document.getElementById("clientSection").style.display = "block";
     	window.scrollTo(0, 0);
+    	
+    	resetSteps();
+    	document.getElementById("step1").classList.add("active");
+    	document.getElementById("step1").classList.add("inactive");
 	}
 	
 	function showNominee() {
     	document.getElementById("kycSection").style.display = "none";
-    	document.getElementById("nomineeDetails").style.display = "block";
+    	document.getElementById("nomineeSection").style.display = "block";
+    	document.getElementById("feesSection").style.display = "none";
+    	document.getElementById("tableSection").style.display = "none";
     	window.scrollTo(0, 0);
+    	
+    	resetSteps();
+    	document.getElementById("step1").classList.add("completed");
+    	document.getElementById("step2").classList.add("completed");
+    	document.getElementById("step3").classList.add("active");
 	}
 	function showFees() {
-    	document.getElementById("kycSection").style.display = "none";
-    	document.getElementById("nomineeDetails").style.display = "block";
+    	document.getElementById("nomineeSection").style.display = "none";
+    	document.getElementById("feesSection").style.display = "block";
+    	document.getElementById("tableSection").style.display = "block";
     	window.scrollTo(0, 0);
+    	
+    	resetSteps();
+    	document.getElementById("step1").classList.add("completed");
+    	document.getElementById("step2").classList.add("completed");
+    	document.getElementById("step3").classList.add("completed");
+    	document.getElementById("step4").classList.add("active");
 	}
 </script>
 
