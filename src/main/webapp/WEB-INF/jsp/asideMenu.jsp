@@ -71,7 +71,7 @@
 			</a>
 				<ul class="treeview-menu">
 					<li><a href="shareIssue"><i class="fa fa-circle-o"></i>
-							Transfer Shares</a></li>
+							TRANSFER SHARE</a></li>
 					<li><a href="unallotedShareReport"><i
 							class="fa fa-circle-o"></i> UNALLOTED SHARES</a></li>
 					<li><a href="shareCertificate"><i class="fa fa-circle-o"></i>

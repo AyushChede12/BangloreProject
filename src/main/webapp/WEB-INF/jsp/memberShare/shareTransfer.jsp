@@ -1,6 +1,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/css/form.css">
 <jsp:include page="../header.jsp" />
 <style>
 .heading {
@@ -89,7 +90,8 @@ function calculateShareSerialNo() {
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">New Membership</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE SHARES</b></h1>
+				 <h5>TRANSFER SHARE</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -99,190 +101,146 @@ function calculateShareSerialNo() {
 			<!-- action="/SocietyManagement/addMembership" -->
 			<!-- <form method="post" action="/addMembership" id="form1" modelAttribute="addMembership" enctype="multipart/form-data"> -->
 			<form id="fileUploadForm">
-				<style>
-.wizard-steps {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 20px;
-}
-
-.wizard-step {
-	width: 100%;
-	text-align: center;
-	position: relative;
-}
-
-.wizard-step .step-circle {
-	width: 35px;
-	height: 35px;
-	line-height: 35px;
-	border-radius: 50%;
-	background: #008385; /* SAME COLOR */
-	color: #fff;
-	margin: 0 auto;
-	font-weight: bold;
-}
-
-.wizard-step.inactive .step-circle {
-	background: #cfcfcf;
-}
-
-.wizard-step .step-title {
-	margin-top: 5px;
-	font-weight: bold;
-	color: #008385;
-}
-
-.wizard-step.inactive .step-title {
-	color: #999;
-}
-
-.wizard-line {
-	position: absolute;
-	top: 17px;
-	left: 50%;
-	width: 100%;
-	height: 3px;
-	background: #cfcfcf;
-	z-index: -1;
-}
-
-.wizard-step.completed .step-circle {
-	background: #00a65a;
-}
-</style>
 
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
-						<div class="step-title">Share Details</div>
+						<div class="step-title">SHARE DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 
 					<div class="wizard-step inactive" id="step2">
 						<div class="step-circle">2</div>
-						<div class="step-title">Payment Details</div>
+						<div class="step-title">PAYMENT DETAILS</div>
 					</div>
 				</div>
 
 				<section class="content">
 					<div id="shareDetailsSection">
 
-						<div class="box box-success">
+						
 							<div class="box-header with-border">
-								<h3 class="box-title">Share Details</h3>
+								<h3 class="box-title">SHARE DETAILS</h3>
 							</div>
 
 							<div class="box-body">
 
 								<!-- ROW 1 -->
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4 ">
 										<div class="form-group">
-											<label>Branch <span style="color: red">*</span></label> <select
+											<label>BRANCH <span style="color: red">*</span></label> <select
 												name="branchName" id="branchName" class="form-control">
-												<option>Select Branch Name</option>
+												<option>SELECT BRANCH NAME</option>
 											</select>
 										</div>
 									</div>
 
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label> Search by Client No <span style="color: red">*</span></label>
+											<label> SEARCH BY CLIENT NO <span style="color: red">*</span></label>
 											<select name="clientNo" id="clientNo"
 												class="form-control select2"
 												onchange="callback(); toggleDisabledFields();">
-												<option value="">Select Member</option>
+												<option value="">SELECT MEMBER</option>
 											</select>
 										</div>
 									</div>
-								</div>
-
-								<!-- ROW 2 -->
-								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label>Member Name <span style="color: red">*</span></label>
-											<input type="text" id="memberName" name="memberName"
-												class="form-control" readonly>
+											<label>MEMBER NAME <span style="color: red">*</span></label>
+											<input style="text-transform: uppercase;" type="text" id="memberName" name="memberName"
+												class="form-control">
 										</div>
 									</div>
+								</div>
+								<br>
+								<!-- ROW 2 -->
+								<div class="row ">
 
-									<div class="col-md-6">
+
+									<div class="col-md-4">
 										<div class="form-group">
-											<label>Member No <span style="color: red">*</span></label> <input
+											<label>MEMBER NO <span style="color: red">*</span></label> <input
 												type="text" id="memberNoInput" name="memberNo"
 												class="form-control" readonly>
 										</div>
 									</div>
-								</div>
-
-								<!-- ROW 3 -->
-								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Membership Date</label> <input type="date" id="doj"
+											<label>MEMBERSHIP DATE</label> <input type="date" id="doj"
 												name="doj" class="form-control">
 										</div>
 									</div>
-
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Previous Balance</label> <input type="text"
+											<label>PREVIOUS BALANCE</label> <input type="text"
 												id="previousBalance" class="form-control" readonly>
 										</div>
 									</div>
+								</div>
+								<br>
+								<!-- ROW 3 -->
+								<div class="row">
+
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Previous No Of Share</label> <input type="text"
+											<label>PREVIOUS NO OF SHARE</label> <input type="text"
 												id="previousShareNo" class="form-control" readonly>
 										</div>
 									</div>
 								</div>
 
-								<hr>
+								<br>
 
-								<!-- SHARE INFO -->
+								<!-- ROW-4 -->
 								<div class="row">
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label>Face Value</label> <input type="text" id="faceValue"
+											<label>FACE VALUE</label> <input type="text" id="faceValue"
 												value="10" class="form-control" readonly>
 										</div>
 									</div>
 
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label>No.Of Share <span style="color: red">*</span></label>
+											<label>NO.OF SHARE <span style="color: red">*</span></label>
 											<input type="text" id="noOfShare" name="noOfShare"
 												class="form-control"
 												onkeyup="calculate(); calculateShareSerialNo();">
 										</div>
 									</div>
 
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label>Share Serial No.<span style="color: red">*</span></label>
+											<label>SHARE SERIAL NO.<span style="color: red">*</span></label>
 											<input type="text" id="shareSerialNo" class="form-control"
 												readonly>
 										</div>
 									</div>
 
-									<div class="col-md-3">
+
+								</div>
+
+								<br>
+								<!-- ROW-5 -->
+								<div class="row">
+									<div class="col-md-4 ">
 										<div class="form-group">
-											<label>Share Balance</label> <input type="text"
+											<label>SHARE BALANCE</label> <input type="text"
 												id="sharebalance" class="form-control" readonly>
 										</div>
 									</div>
 								</div>
 
-								<hr>
 
+
+								<br>
 								<!-- PHOTO -->
 								<div class="row">
 									<div class="col-md-6">
-										<label>Photo</label><br> <img id="preview"
+										<label>PHOTO</label><br> <img id="preview"
 											class="img-thumbnail"
 											style="width: 120px; margin-bottom: 10px;"> <input
 											type="file" id="filetag" name="filetag"> <small
@@ -295,19 +253,19 @@ function calculateShareSerialNo() {
 							<!-- FOOTER -->
 							<div class="box-footer">
 								<button type="button" class="btn btn-primary pull-right"
-									onclick="goToPaymentDetails()">Next</button>
+									onclick="goToPaymentDetails()">NEXT</button>
 							</div>
 
-						</div>
+						
 					</div>
 
 
 
 					<div id="paymentDetailsSection" style="display: none;">
 
-						<div class="box box-info">
+						
 							<div class="box-header with-border">
-								<h3 class="box-title">Payment Details</h3>
+								<h3 class="box-title">PAYMENT DETAILS</h3>
 							</div>
 
 							<div class="box-body">
@@ -316,7 +274,7 @@ function calculateShareSerialNo() {
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Transfer Date <span style="color: red">*</span></label>
+											<label>TRANSFER DATE <span style="color: red">*</span></label>
 											<input type="date" id="transferDate" name="transferDate"
 												class="form-control">
 										</div>
@@ -324,25 +282,25 @@ function calculateShareSerialNo() {
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Payment Mode <span style="color: red">*</span></label>
+											<label>PAYMENT MODE <span style="color: red">*</span></label>
 											<select id="paymode" name="paymode" class="form-control">
-												<option value="Cash">Cash</option>
-												<option value="Cheque">Cheque</option>
-												<option value="Online">Online</option>
+												<option value="Cash">CASH</option>
+												<option value="Cheque">CHEQUE</option>
+												<option value="Online">ONLINE</option>
 												<option value="NEFT">NEFT</option>
-												<option value="Transfer">Transfer</option>
+												<option value="Transfer">TRANSFER</option>
 											</select>
 										</div>
 									</div>
 								</div>
-
+								<br>
 								<!-- ROW 2 -->
 								<div class="row">
 									<div class="col-md-8">
 										<div class="form-group">
-											<label>Remarks</label>
+											<label >REMARKS</label>
 											<textarea id="remarks" name="remarks" rows="2"
-												class="form-control" placeholder="Enter remarks if any"></textarea>
+												style="text-transform: uppercase;" class="form-control" placeholder="Enter  remarks if any"></textarea>
 										</div>
 									</div>
 								</div>
@@ -352,13 +310,13 @@ function calculateShareSerialNo() {
 							<!-- FOOTER -->
 							<div class="box-footer">
 								<button type="button" class="btn btn-default"
-									onclick="backToShareDetails()">Back</button>
+									onclick="backToShareDetails()">PREVIOUS</button>
 
-								<input type="button" id="btnSave" value="Save"
+								<input type="button" id="btnSave" value="SAVE"
 									class="btn btn-success pull-right">
 							</div>
 
-						</div>
+						
 						<div class="box box-success"
 							style="box-shadow: none; overflow: auto !important;">
 							<div class="box-body">
@@ -369,15 +327,15 @@ function calculateShareSerialNo() {
 										border="1" style="width: 100%; border-collapse: collapse;">
 										<caption>Maturity Application</caption>
 										<tr style="color: White; background-color: #008385;">
-											<th scope="col">Serial No.</th>
+											<th scope="col">SERIAL NO.</th>
 											<th scope="col">BRANCH NAME</th>
-											<th scope="col">Member Name</th>
-											<th scope="col">Membership Date</th>
-											<th scope="col">Client No.</th>
-											<th scope="col">Member No.</th>
-											<th scope="col">No. Of Share</th>
-											<th scope="col">Share Serial No.</th>
-											<th scope="col">Cerficate No</th>
+											<th scope="col">MEMBER NAME</th>
+											<th scope="col">MEMNERSHIP DATE</th>
+											<th scope="col">CLIENT NO.</th>
+											<th scope="col">MEMBER NO.</th>
+											<th scope="col">N0.OF SHARE</th>
+											<th scope="col">SHARE SERIAL NO.</th>
+											<th scope="col">CERTIFICATE NO.</th>
 											<!-- <th scope="col">Action</th> -->
 										</tr>
 										<tbody id="shareTableBody">
@@ -387,7 +345,7 @@ function calculateShareSerialNo() {
 							</div>
 						</div>
 					</div>
-					
+
 
 
 
