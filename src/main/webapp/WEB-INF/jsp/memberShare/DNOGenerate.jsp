@@ -25,81 +25,95 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
+							
 								<div class="box-header with-border">
 									<h3 class="box-title">Search Box</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Branch :</label> <select name="branchName"
-												id="branchName" class="form-control" style="width: 100%;">
-												<option selected="selected" value="">Select
-													Criteria</option>
-											</select>
+
+									<!-- ROW 1 -->
+									<div class="row">
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Branch :</label> <select name="branchName"
+													id="branchName" class="form-control" style="width: 100%;">
+													<option selected value="">Select Criteria</option>
+												</select>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>From Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>From Date :</label>
+												<div class="input-group date">
+													<div class="input-group-addon">
+														<i class="fa fa-calendar"></i>
+													</div>
+													<input name="fDate" type="date" id="fDate"
+														class="form-control" data-inputmask="'alias':'dd/mm/yyyy'"
+														data-mask="">
 												</div>
-												<input name="fDate" type="date" id="fDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>To Date :</label>
+												<div class="input-group date">
+													<div class="input-group-addon">
+														<i class="fa fa-calendar"></i>
+													</div>
+													<input name="tDate" type="date" id="tDate"
+														class="form-control" data-inputmask="'alias':'dd/mm/yyyy'"
+														data-mask="">
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Member Name :</label> <input name="memberName"
+													type="text" id="memberName" class="form-control"
+													placeholder="Enter Member Name" autocomplete="off">
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>To Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="tDate" type="date" id="tDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+
+									<!-- ROW 2 -->
+									<div class="row" style="margin-top: 20px;">
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Member No. :</label> <input name="memberNo"
+													type="text" id="memberNo" class="form-control"
+													placeholder="Enter Pan No." autocomplete="off">
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label>Client No. :</label> <input name="clientNo"
+													type="text" id="clientNo" class="form-control"
+													placeholder="Enter PAN No." autocomplete="off">
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Member Name :</label> <input name="memberName"
-												type="text" id="memberName" class="form-control"
-												Placeholder="Enter Member Name" autocomplete="off" />
+
+									<!-- BUTTONS -->
+									<div class="row" style="margin-top: 30px;">
+										<div class="col-md-12 text-center">
+											<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
+												href="javascript:getMemberShareDataInTable();"> <span
+												class="fa fa-search"></span> SEARCH
+											</a> <a id="ContentPlaceHolder1_btnPrint" class="btn btn-warning"
+												href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$btnPrint','');">
+												<span class="fa fa-print"></span> PRINT
+											</a>
 										</div>
 									</div>
-									<div class="clearfix"></div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Member No. :</label> <input name="memberNo"
-												type="text" id="memberNo" class="form-control"
-												Placeholder="Enter Pan No." autocomplete="off" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Client No. :</label> <input name="clientNo"
-												type="text" id="clientNo" class="form-control"
-												Placeholder="Enter PAN No." autocomplete="off" />
-										</div>
-									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="text-center">
-										<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
-											href="javascript:getMemberShareDataInTable();"><span
-											class="fa fa-search"></span> SEARCH</a> <a
-											id="ContentPlaceHolder1_btnPrint" class="btn btn-warning"
-											href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnPrint&#39;,&#39;&#39;)"><span
-											class="fa fa-print"></span> PRINT</a>
-									</div>
+
 								</div>
-							</div>
+
+							
 							<div class="box box-success"
 								style="box-shadow: none; overflow: auto !important;">
 								<div class="box-header with-border">
