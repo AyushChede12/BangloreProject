@@ -1,7 +1,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/form2.css">
 <jsp:include page="../header.jsp" />
 <style>
 .heading {
@@ -105,7 +105,7 @@ function calculateShareSerialNo() {
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE SHARES</b></h1>
-				<h5>UNALLOWTED SHARES</h5>
+				<h5>UNALLOTED SHARES</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -127,21 +127,21 @@ function calculateShareSerialNo() {
 					</div>
 				</div>
 				<section class="content">
-					<div id="shareDetailsSection">
+					<div id="shareDetailsSection" class="form-container">
 						<!-- <div class="row"> -->
 						<!-- <input type="hidden" name="id" id="id"> -->
 						<!-- <div class="col-md-12"> -->
 						
 							
 							<div class="box-header with-border">
-								<h3 class="box-title">SHARE DETAILS</h3>
+								<h3 class="box-title"><b>SHARE DETAILS</b></h3>
 							</div>
 
 
 							<div class="box-body">
 
 								<!-- MEMBER DETAILS -->
-								<h4 style="color: #008385; margin-bottom: 15px;">MEMBER
+								<h4 style="color: #008385; margin-bottom: 15px; text-decoration: underline;">MEMBER
 									DETAILS</h4>
 
 								<div class="row">
@@ -177,7 +177,7 @@ function calculateShareSerialNo() {
 
 
 								<!-- PREVIOUS DETAILS -->
-								<h4 style="color: #008385; margin: 20px 0 15px;">PREVIOUS
+								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">PREVIOUS
 									SHARE DETAILS</h4>
 								<div class="row">
 									<div class="col-md-3">
@@ -203,7 +203,7 @@ function calculateShareSerialNo() {
 								</div>
 
 								<!-- NEW SHARE DETAILS -->
-								<h4 style="color: #008385; margin: 20px 0 15px;">NEW SHARE
+								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">NEW SHARE
 									DETAILS</h4>
 								<div class="row">
 									<div class="col-md-3">
@@ -244,7 +244,7 @@ function calculateShareSerialNo() {
 								</div>
 
 								<!-- PHOTO -->
-								<h4 style="color: #008385; margin: 20px 0 15px;">PHOTO</h4>
+								<h4 style="color: #008385; margin: 20px 0 15px;text-decoration: underline;">PHOTO</h4>
 								<div class="row">
 									<div class="col-md-4">
 										<img id="preview" class="img-thumbnail" style="width: 120px;">
@@ -266,11 +266,11 @@ function calculateShareSerialNo() {
 
 					</div>
 
-					<div id="paymentDetailsSection" style="display: none;">
+					<div id="paymentDetailsSection" class="form-container" style="display: none;">
 
 						
 							<div class="box-header with-border">
-								<h3 class="box-title">PAYMENT DETAILS</h3>
+								<h3 class="box-title"><b>PAYMENT DETAILS</b></h3>
 							</div>
 
 							<div class="box-body">
@@ -305,7 +305,7 @@ function calculateShareSerialNo() {
 										<div class="form-group">
 											<label>REMARKS</label>
 											<textarea id="remarks" name="remarks" rows="2"
-												class="form-control" placeholder="Enter remarks if any"></textarea>
+												class="form-control" placeholder="ENTER REMARKS IF ANY"></textarea>
 										</div>
 									</div>
 								</div>
@@ -317,7 +317,7 @@ function calculateShareSerialNo() {
 								<button type="button" class="btn btn-default"
 									onclick="backToShareDetails()">PREVIOUS</button>
 
-								<input type="button" id="btnSave" value="Save"
+								<input type="button" id="btnSave" value="SAVE"
 									class="btn btn-success pull-right">
 							</div>
 

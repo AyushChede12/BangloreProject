@@ -15,7 +15,8 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Add Member Report</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE SHARES</b></h1>
+					<h5>GENERATE DNO</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -26,25 +27,23 @@
 					<div class="row">
 						<div class="col-xs-12">
 							
-								<div class="box-header with-border">
-									<h3 class="box-title">Search Box</h3>
-								</div>
+								
 								<div class="box-body">
 
 									<!-- ROW 1 -->
 									<div class="row">
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Branch :</label> <select name="branchName"
+												<label>BRANCH :</label> <select name="branchName"
 													id="branchName" class="form-control" style="width: 100%;">
-													<option selected value="">Select Criteria</option>
+													<option selected value="">SELECT CRITERIA</option>
 												</select>
 											</div>
 										</div>
 
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>From Date :</label>
+												<label>FROM DATE :</label>
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
@@ -58,7 +57,7 @@
 
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>To Date :</label>
+												<label>TO DATE :</label>
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
@@ -72,9 +71,9 @@
 
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Member Name :</label> <input name="memberName"
+												<label>MEMBER NAME :</label> <input name="memberName"
 													type="text" id="memberName" class="form-control"
-													placeholder="Enter Member Name" autocomplete="off">
+													placeholder="ENTER MEMBER NAME" autocomplete="off" style="text-transform: uppercase;">
 											</div>
 										</div>
 									</div>
@@ -83,17 +82,17 @@
 									<div class="row" style="margin-top: 20px;">
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Member No. :</label> <input name="memberNo"
+												<label>MEMBER NO. :</label> <input name="memberNo"
 													type="text" id="memberNo" class="form-control"
-													placeholder="Enter Pan No." autocomplete="off">
+													placeholder="ENTER PAN NO." autocomplete="off">
 											</div>
 										</div>
 
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Client No. :</label> <input name="clientNo"
+												<label>CLIENT NO. :</label> <input name="clientNo"
 													type="text" id="clientNo" class="form-control"
-													placeholder="Enter PAN No." autocomplete="off">
+													placeholder="ENTER PAN NO." autocomplete="off" >
 											</div>
 										</div>
 									</div>
@@ -117,7 +116,7 @@
 							<div class="box box-success"
 								style="box-shadow: none; overflow: auto !important;">
 								<div class="box-header with-border">
-									<h3 class="box-title">Search Result</h3>
+									<h3 class="box-title">SEARCH RESULT</h3>
 									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
@@ -125,17 +124,17 @@
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>Search</caption>
+										<caption>SEARCH</caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">S/N</th>
 											<th scope="col">MEMBER NAME</th>
 											<th scope="col">Branch NAME</th>
 											<th scope="col">DOJ</th>
-											<th scope="col">No. Of Share</th>
-											<th scope="col">Share Balance</th>
-											<th scope="col">Paymode</th>
-											<th scope="col">Member No.</th>
-											<th scope="col">Client No.</th>
+											<th scope="col">NO. OF SHARE</th>
+											<th scope="col">SHARE BALANCE</th>
+											<th scope="col">PAYMODE</th>
+											<th scope="col">MEMBER NO.</th>
+											<th scope="col">CLIENT NO.</th>
 										</tr>
 										<tbody id="table1">
 
