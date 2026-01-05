@@ -1,13 +1,16 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/form2.css">
 <jsp:include page="../header.jsp" />
 <style>
 .heading {
 	color: #FF0000;
 }
+
 </style>
+
+
 <%
 String status = (String) request.getAttribute("status");
 if (status != null && status.equals("success")) {
@@ -116,11 +119,11 @@ function calculateShareSerialNo() {
 				</div>
 
 				<section class="content">
-					<div id="shareDetailsSection">
+					<div id="shareDetailsSection" class="form-container">
 
 						
 							<div class="box-header with-border">
-								<h3 class="box-title">SHARE DETAILS</h3>
+								<h3 class="box-title"><b>SHARE DETAILS</b></h3>
 							</div>
 
 							<div class="box-body">
@@ -265,7 +268,7 @@ function calculateShareSerialNo() {
 
 						
 							<div class="box-header with-border">
-								<h3 class="box-title">PAYMENT DETAILS</h3>
+								<h3 class="box-title"><b>PAYMENT DETAILS</b></h3>
 							</div>
 
 							<div class="box-body">
@@ -325,7 +328,7 @@ function calculateShareSerialNo() {
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>Maturity Application</caption>
+										<caption>MATURITY APPLICATION</caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SERIAL NO.</th>
 											<th scope="col">BRANCH NAME</th>

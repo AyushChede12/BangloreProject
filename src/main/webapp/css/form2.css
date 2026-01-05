@@ -51,3 +51,16 @@
 	background: #00a65a;
 }
 
+.form-container {
+    background: #f9fafc;
+    padding: 25px;
+    margin-top: 10px;
+    margin-right:10px;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;          /* ✅ form scrolling */
+    padding: 20px;
+    
+}
