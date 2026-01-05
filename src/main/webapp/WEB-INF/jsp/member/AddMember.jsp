@@ -27,243 +27,6 @@ function check()
 <%
 }
 %>
-<style>
-.heading {
-	color: #FF0000;
-}
-/* ================= COMMON LAYOUT ================= */
-.content-wrapper {
-    background: #f4f6f9;
-}
-
-.box {
-    border-radius: 8px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-}
-
-/* ================= BOX HEADERS ================= */
-.box-header {
-    background: #f8fafc;
-    border-bottom: 2px solid #3c8dbc;
-    border-radius: 8px 8px 0 0;
-}
-
-.box-title {
-    font-size: 18px;
-    color: #3c8dbc;
-}
-
-/* ================= FORM ================= */
-.form-horizontal .form-group {
-    margin-bottom: 15px;
-}
-
-.control-label {
-    font-weight: 600;
-    color: #333;
-}
-
-.form-control {
-    border-radius: 6px;
-    box-shadow: none;
-    border: 1px solid #ccc;
-}
-
-.form-control:focus {
-    border-color: #3c8dbc;
-    box-shadow: 0 0 0 2px rgba(60,141,188,0.15);
-}
-
-/* ================= TEXTAREA ================= */
-textarea.form-control {
-    resize: none;
-}
-
-/* ================= BUTTONS ================= */
-.btn {
-    border-radius: 20px;
-    padding: 6px 22px;
-    font-weight: 600;
-}
-
-.btn-primary {
-    background: #3c8dbc;
-    border-color: #3c8dbc;
-}
-
-.btn-primary:hover {
-    opacity: 0.9;
-}
-
-.btn-default {
-    background: #6c757d;
-    color: #fff;
-    border-color: #6c757d;
-}
-
-.btn-default:hover {
-    opacity: 0.9;
-}
-
-.verify {
-    border-radius: 20px;
-}
-
-/* ================= SECTION FOOTER ================= */
-.clearfix {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-}
-
-/* ================= KYC IMAGE UPLOAD ================= */
-#kycSection img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    border: 2px dashed #cfd8dc;
-    padding: 10px;
-    background: #fafafa;
-    transition: all 0.3s ease;
-}
-
-#kycSection img:hover {
-    border-color: #3c8dbc;
-    background: #eef6fc;
-    transform: scale(1.05);
-}
-
-#kycSection label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: block;
-}
-
-/* ================= SECTION COLORS ================= */
-#clientSection .box-header {
-    border-bottom-color: #3c8dbc;
-}
-
-#kycSection .box-header {
-    border-bottom-color: #00a65a;
-}
-
-#nomineeSection .box-header {
-    border-bottom-color: #f39c12;
-}
-
-#feesSection .box-header {
-    border-bottom-color: #00c0ef;
-}
-
-
-/* Make form vertical : label on top */
-.form-horizontal .form-group {
-    margin-bottom: 12px;
-}
-
-.form-horizontal .control-label {
-    text-align: left !important;
-    margin-bottom: 4px;
-    padding-top: 0;
-    font-weight: 600;
-}
-
-/* Make all inputs full width */
-.form-horizontal .col-sm-8,
-.form-horizontal .col-sm-6,
-.form-horizontal .col-sm-5,
-.form-horizontal .col-sm-4,
-.form-horizontal .col-sm-3,
-.form-horizontal .col-sm-2 {
-    width: 100% !important;
-    float: none;
-}
-
-/* Prefix + name alignment fix */
-.form-group .col-sm-3,
-.form-group .col-sm-5 {
-    display: inline-block;
-    width: 48% !important;
-}
-
-/* Verify button spacing */
-.verify {
-    margin-top: 24px;
-}
-
-.form-control {
-    border-radius: 6px;
-}
-label {
-    color: #333;
-}
-
-
-.wizard-steps {
-	margin-top: 20px;
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 20px;
-}
-
-.wizard-step {
-	width: 100%;
-	text-align: center;
-	position: relative;
-}
-
-.wizard-step .step-circle {
-	width: 35px;
-	height: 35px;
-	line-height: 35px;
-	border-radius: 50%;
-	background: #008385; /* SAME COLOR */
-	color: #fff;
-	margin: 0 auto;
-	font-weight: bold;
-}
-
-.wizard-step.inactive .step-circle {
-	background: #cfcfcf;
-}
-
-.wizard-step .step-title {
-	margin-top: 5px;
-	font-weight: bold;
-	color: #008385;
-}
-
-.wizard-step.inactive .step-title {
-	color: #999;
-}
-
-.wizard-line {
-	position: absolute;
-	top: 17px;
-	left: 50%;
-	width: 100%;
-	height: 3px;
-	background: #cfcfcf;
-	z-index: -1;
-}
-
-.wizard-step.completed .step-circle {
-	background: #00a65a;
-}
-
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .control-label {
-        text-align: left !important;
-        margin-bottom: 5px;
-    }
-}
-
-
-</style>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true"
@@ -294,23 +57,23 @@ label {
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
-						<div class="step-title">Client Details</div>
+						<div class="step-title">CLIENT DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step2">
 						<div class="step-circle">2</div>
-						<div class="step-title">KYC Document</div>
+						<div class="step-title">KYC DOCUMENT</div>
 						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step3">
 						<div class="step-circle">3</div>
-						<div class="step-title">Nominee Details</div>
+						<div class="step-title">NOMINEE DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 
 					<div class="wizard-step inactive" id="step4">
 						<div class="step-circle">4</div>
-						<div class="step-title">Fees Details</div>
+						<div class="step-title">FEES DETAILS</div>
 					</div>
 				</div>
 
@@ -899,22 +662,25 @@ label {
 
 								<div class="container-fluid">
 									<div class="row">
+
+										<!-- ================= BASIC DETAILS ================= -->
 										<div class="col-md-12">
-											<!-- ================= BASIC DETAILS ================= -->
-											
-												<div id="clientSection">
+											<div id="clientSection">
+												<div>
 													<h3 class="box-title">
-														<b>Client Details</b>
+														<b>CLIENT DETAILS</b>
 													</h3>
 												</div>
 
 												<div class="box-body form-horizontal">
 
+
 													<!-- Row 1 -->
-													<div class="row">
-														<div class="col-md-6">
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Client No
+																<label class="col-sm-4 control-label">CLIENT NO
 																	*</label>
 																<div class="col-sm-8">
 																	<input type="text" name="clientNo" id="clientNo"
@@ -923,158 +689,169 @@ label {
 															</div>
 														</div>
 
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Client ID
-																	*</label>
+																<label class="col-sm-4 control-label">CLIENT ID *</label>
 																<div class="col-sm-8">
 																	<input type="text" name="clientId" id="clientId"
 																		value="${clientId}" class="form-control" readonly>
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 2 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Branch
-																	Name *</label>
+																<label class="col-sm-4 control-label">BRANCH NAME *</label>
 																<div class="col-sm-8">
 																	<select name="branchName" id="branchName"
 																		class="form-control">
-																		<option value="">Select Branch</option>
+																		<option value="" style="text-transform: uppercase;">SELECT BRANCH</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Registration
-																	Date *</label>
+																<label class="col-sm-4 control-label">REGISTRATION DATE *</label>
 																<div class="col-sm-8">
 																	<input type="date" name="registrationDate"
-																		id="registrationDate" class="form-control">
+																		id="registrationDate" class="form-control" style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
+
 													</div>
 
 
-													<!-- Row 3 -->
-													<div class="row">
-														<div class="col-md-6">
+
+													<!-- Row 2 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Client
-																	Name *</label>
-																<div class="col-sm-3">
+																<label class="col-sm-4 control-label">PREFIX *</label>
+																<div class="col-sm-8">
 																	<select name="memberNamePrefix" class="form-control">
-																		<option>Mr.</option>
-																		<option>Ms.</option>
-																		<option>Mrs.</option>
-																		<option>Smt.</option>
+																		<option>MR.</option>
+																		<option>MS.</option>
+																		<option>MRS.</option>
+																		<option>SMT.</option>
 																	</select>
 																</div>
-																<div class="col-sm-5">
+															</div>
+														</div>
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">CLIENT NAME *</label>
+																<div class="col-sm-8">
 																	<input type="text" name="memberName"
-																		class="form-control" placeholder="Full Name">
+																		class="form-control" placeholder="Full Name"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Relative
-																	Name</label>
+																<label class="col-sm-4 control-label">RELATIVE NAME</label>
 																<div class="col-sm-8">
 																	<input type="text" name="relativeName"
-																		class="form-control">
+																		class="form-control" style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 4 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Relation</label>
+																<label class="col-sm-4 control-label">RELATION</label>
 																<div class="col-sm-8">
 																	<select name="relativeRelation" id="relativeRelation"
 																		class="form-control">
-																		<option>Select Relative Relation</option>
+																		<option style="text-transform: uppercase;">SELECT RELATION</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+													</div>
+
+
+
+													<!-- Row 3 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Gender</label>
+																<label class="col-sm-4 control-label">GENDER</label>
 																<div class="col-sm-8">
 																	<select name="gender" class="form-control">
-																		<option value="">Select</option>
-																		<option>Male</option>
-																		<option>Female</option>
-																		<option>Other</option>
+																		<option value="">SELECT</option>
+																		<option>MALE</option>
+																		<option>FEMALE</option>
+																		<option>OTHER</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 5 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">DOB *</label>
-																<div class="col-sm-4">
+																<div class="col-sm-8">
 																	<input type="date" name="dob" id="dob"
-																		onchange="calculateAge()" class="form-control">
+																		onchange="calculateAge()" class="form-control" style="text-transform: uppercase;">
 																</div>
-																<div class="col-sm-4">
+
+															</div>
+														</div>
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">AGE</label>
+																<div class="col-sm-8">
 																	<input type="text" name="age" id="ageId"
-																		class="form-control" placeholder="Age">
+																		class="form-control">
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Marital
-																	Status</label>
+																<label class="col-sm-4 control-label">MARITAL STATUS</label>
 																<div class="col-sm-8">
-																	<select name="maritalStatus" id="maritalStatus"
-																		class="form-control">
-																		<option value="">Select Martial Status</option>
-																		<option>Married</option>
-																		<option>Unmarried</option>
-																		<option>Widow</option>
-																		<option>Divorce</option>
+																	<select name="maritalStatus" class="form-control">
+																		<option value="">SELECT</option>
+																		<option>MARRIED</option>
+																		<option>UNMARRIED</option>
+																		<option>WIDOW</option>
+																		<option>DIVORCE</option>
 																	</select>
 																</div>
 															</div>
 														</div>
 													</div>
 
-													<!-- Address -->
-													<div class="row">
-														<div class="col-md-12">
+
+													<!-- Row 4 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-2 control-label">Address *</label>
-																<div class="col-sm-10">
-																	<textarea name="address" rows="2" class="form-control"></textarea>
+																<label class="col-sm-4 control-label">ADDRESS *</label>
+																<div class="col-sm-8">
+																	<textarea name="address" rows="2" class="form-control" style="text-transform: uppercase;"></textarea>
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 6 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">State *</label>
+																<label class="col-sm-4 control-label">STATE *</label>
 																<div class="col-sm-8">
 																	<select name="state" id="state" class="form-control">
-																		<option value="">--Select--</option>
+																		<option value="">--SELECT--</option>
 																		<option>MAHARASHTRA</option>
 																		<option>GUJARAT</option>
 																		<option>DELHI</option>
@@ -1082,64 +859,73 @@ label {
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">District *</label>
+																<label class="col-sm-4 control-label">DISTRICT *</label>
 																<div class="col-sm-8">
 																	<select name="district" id="district"
 																		class="form-control" onclick="getTalukaInDropdown();">
-																		<option value="">--Select District--</option>
+																		<option value="" style="text-transform: uppercase;">--SELECT DISTRICT--</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 7 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Taluka *</label>
+																<label class="col-sm-4 control-label">TALUKA *</label>
 																<div class="col-sm-8">
 																	<select name="taluka" id="taluka" class="form-control"></select>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+
+													</div>
+
+
+													<!-- Row 5 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Village</label>
+																<label class="col-sm-4 control-label">VILLAGE</label>
 																<div class="col-sm-8">
 																	<input type="text" name="village" id="village"
-																		class="form-control" placeholder="Enter Village">
+																		class="form-control" placeholder="ENTER VILLAGE" style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row 8 -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Pin Code *</label>
+																<label class="col-sm-4 control-label">PIN CODE *</label>
 																<div class="col-sm-8">
 																	<input type="text" name="pinCode" id="pinCode"
 																		maxlength="6" class="form-control"
-																		Placeholder="Enter Pincode" /> <span
+																		Placeholder="ENTER PINCODE" /> <span
 																		id="ContentPlaceHolder1_RequiredFieldValidator4"
-																		style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+																		style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 																		PIN</span>
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+													</div>
+
+
+
+													<!-- Row 6 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Aadhar No
+																<label class="col-sm-4 control-label">AADHAR NO
 																	*</label>
 																<div class="col-sm-8">
 																	<input name="aadharNo" type="text" maxlength="12"
 																		id="aadharNo" class="form-control"
-																		placeholder="Enter Aadhar No."
+																		placeholder="ENTER AADHAR NO."
 																		onkeypress="return isNumberOnlyKey(this, event);"
 																		autocomplete="off" /> <span
 																		id="ContentPlaceHolder1_RequiredFieldValidator9"
@@ -1148,17 +934,13 @@ label {
 																</div>
 															</div>
 														</div>
-													</div>
 
-
-													<!-- Row : PAN + Voter -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">PAN No.</label>
 																<div class="col-sm-6">
 																	<input name="pan" type="text" maxlength="10" id="pan"
-																		class="form-control" placeholder="Enter PAN No." />
+																		class="form-control" placeholder="ENTER PAN No." style="text-transform: uppercase;" />
 																</div>
 																<div class="col-sm-2">
 																	<input type="submit" value="Verify"
@@ -1167,13 +949,13 @@ label {
 															</div>
 														</div>
 
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Voter No.</label>
+																<label class="col-sm-4 control-label">VOTOR NO.</label>
 																<div class="col-sm-6">
 																	<input name="voterNo" type="text" maxlength="10"
 																		id="voterNo" class="form-control"
-																		placeholder="Enter Voter No." />
+																		placeholder="ENTER VOTOR NO." style="text-transform: uppercase;" />
 																</div>
 																<div class="col-sm-2">
 																	<input type="submit" value="Verify"
@@ -1181,574 +963,651 @@ label {
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row : Mobile + Email -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Mobile No
+																<label class="col-sm-4 control-label">MOBILE NO
 																	*</label>
 																<div class="col-sm-8">
 																	<input name="phoneno" type="text" maxlength="10"
 																		id="phoneno" class="form-control"
-																		placeholder="Enter Mobile No"
+																		placeholder="ENTER MOBILE NO"
 																		onkeypress="return isNumberOnlyKey(this, event);" />
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+													</div>
+
+
+													<!-- Row 7 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Email ID</label>
+																<label class="col-sm-4 control-label">EMAIL ID</label>
 																<div class="col-sm-8">
 																	<input name="emailid" type="text" id="emailid"
-																		class="form-control" placeholder="Enter Email ID" />
+																		class="form-control" placeholder="ENTER EMAIL ID" style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
-													</div>
 
-
-													<!-- Row : Occupation + Education -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Occupation</label>
+																<label class="col-sm-4 control-label">OCCUPATION</label>
 																<div class="col-sm-8">
 																	<input name="occupation" id="occupation"
-																		class="form-control" placeholder="Enter Occupation" />
+																		class="form-control" placeholder="ENTER OCCUPATION" style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Education</label>
+																<label class="col-sm-4 control-label">EDUCATION</label>
 																<div class="col-sm-8">
 																	<input name="education" id="education"
-																		class="form-control" placeholder="Enter Education" />
+																		class="form-control" placeholder="ENTER EDUCATION" style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row : Client Purpose + Religion -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Client
-																	Purpose *</label>
+																<label class="col-sm-4 control-label">CLIENT PURPOSE *</label>
 																<div class="col-sm-8">
 																	<select name="clientPurpose" id="clientPurpose"
 																		class="form-control">
-																		<option value="">--- Select Client Purpose
-																			---</option>
-																		<option value="Membership">Membership</option>
-																		<option value="Loan">Loan</option>
-																		<option value="Other">Other</option>
+																		<option value="">--- SELECT CLIENT PURPOSE ---</option>
+																		<option value="Membership">MEMBERSHIP</option>
+																		<option value="Loan">LOAN</option>
+																		<option value="Other">OTHER</option>
 																	</select>
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+													</div>
+
+
+													<!-- Row 8 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Religion *</label>
+																<label class="col-sm-4 control-label">RELIGION *</label>
 																<div class="col-sm-8">
 																	<select name="religionName" id="religionName"
 																		class="form-control">
-																		<option value="">Select Religion Name</option>
+																		<option value="">SELECT RELIGION NAME</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-													</div>
 
-
-
-													<!-- Row : Category + Caste -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Category *</label>
+																<label class="col-sm-4 control-label">CATEGORY *</label>
 																<div class="col-sm-8">
 																	<select name="categoryName" id="categoryName"
 																		class="form-control">
-																		<option value="">Select Category Name</option>
+																		<option value="">SELECT CATEGORY NAME</option>
 																	</select>
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Caste</label>
+																<label class="col-sm-4 control-label">CASTE</label>
 																<div class="col-sm-8">
 																	<input name="caste" id="caste" class="form-control"
-																		placeholder="Enter Caste Name" />
+																		placeholder="ENTER CASTE NAME"  style="text-transform: uppercase;"/>
 																</div>
 															</div>
 														</div>
-													</div>
 
-													<!-- Row : Risk + Nationality -->
-													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Risk
-																	Category *</label>
+																<label class="col-sm-4 control-label">RISK CATEGORY *</label>
 																<div class="col-sm-8">
 																	<select name="riskCategory" id="riskCategory"
 																		class="form-control">
-																		<option value="">Select Risk Category</option>
+																		<option value="">SELECT RISK CATEGORY</option>
 																		<option>A</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
+																		<option>LOW</option>
+																		<option>MEDIUM</option>
+																		<option>HIGH</option>
 																	</select>
 																</div>
 															</div>
 														</div>
 
-														<div class="col-md-6">
+													</div>
+
+
+													<!-- Row 9  -->
+													<div class="row four-field-row">
+														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">Nationality
-																	*</label>
+																<label class="col-sm-4 control-label">NATIONALITY *</label>
 																<div class="col-sm-8">
 																	<select name="nationality" id="nationality"
 																		class="form-control">
-																		<option value="">Select Nationality</option>
-																		<option>Indian</option>
+																		<option value="">SELECT NATIONALITY</option>
+																		<option>INDIAN</option>
 																	</select>
 																</div>
 															</div>
 														</div>
 													</div>
-													<div class="clearfix">
-														<button type="button" class="btn btn-primary pull-right"
-															onclick="showKyc()">Next</button>
-													</div>
 												</div>
 
-
-											<!-- ================= AADHAR IMAGES ================= -->
-											<div class="box box-success" id= "kycSection" style= "display: none;">
-												<div class="box-header with-border">
-													<h3 class="box-title">
-														<b>KYC Documents</b>
-													</h3>
-												</div>
-
-												<div class="box-body">
-
-													<div class="row">
-
-														<div class="col-sm-3 text-center">
-															<label>Photo</label> <input type="file" name="aadharCard"
-																id="aadharCard" accept="image/*"
-																onchange="previewImage(this,'previewFront')"
-																style="display: none;"> <label for="aadharFront">
-																<img id="previewFront" src="../images/upload/upload.png"
-																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-															</label>
-														</div>
-
-														<div class="col-sm-3 text-center">
-															<label>Signature</label> <input type="file"
-																name="signature" id="signature" accept="image/*"
-																onchange="previewImage(this,'previewBack')"
-																style="display: none;"> <label for="aadharBack">
-																<img id="previewBack" src="../images/upload/upload.png"
-																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-															</label>
-														</div>
-
-														<div class="col-sm-3 text-center">
-															<label>Aadhar Card</label> <input type="file"
-																name="signature" id="signature" accept="image/*"
-																onchange="previewImage(this,'previewBack')"
-																style="display: none;"> <label for="aadharBack">
-																<img id="previewBack" src="../images/upload/upload.png"
-																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-															</label>
-														</div>
-
-														<div class="col-sm-3 text-center">
-															<label>Pan Card</label> <input type="file"
-																name="signature" id="signature" accept="image/*"
-																onchange="previewImage(this,'previewBack')"
-																style="display: none;"> <label for="aadharBack">
-																<img id="previewBack" src="../images/upload/upload.png"
-																style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-															</label>
-														</div>
-
-													</div>
-													<div class="clearfix">
-												<button type="button" class="btn btn-default" onclick="showClient()">
-													Previous</button>
-												<button type="button" class="btn btn-primary pull-right" onclick="showNominee()">
-													Next</button>
-											</div>
-											</div>
-											</div>
-
-											<!-- ================= NOMINEE DETAILS ================= -->
-											<div class="box box-warning" id="nomineeSection" style= "display: none;">
-												<div class="box-header with-border">
-													<h3 class="box-title">
-														<b>Nominee Details</b>
-													</h3>
-												</div>
-
-												<div class="box-body form-horizontal">
-
-													<div class="form-group">
-														<label for="txtNomineeName" class="col-sm-3 control-label">Nominee
-															Name <strong style="color: Red">*</strong>
-														</label>
-														<div class="col-sm-6">
-															<input name="nomineeName" type="text" id="nomineeName"
-																class="form-control" Placeholder="Enter Nominee Name" />
-															<span id="ContentPlaceHolder1_RequiredFieldValidator7"
-																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-																Nominee Name</span>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="drpNomineeRelation"
-															class="col-sm-3 control-label">Nominee Relation</label>
-														<div class="col-sm-6">
-															<select name="nRelation" id="nRelation"
-																class="form-control" style="width: 100%;">
-																<option>Select Nominee Relation</option>
-																<option value="SISTER">SISTER</option>
-																<option value="BROTHER">BROTHER</option>
-																<option value="FATHER">FATHER</option>
-																<option value="MOTHER">MOTHER</option>
-																<option value="SON">SON</option>
-																<option value="DAUGTHER">DAUGTHER</option>
-															</select>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtNomineeAddress"
-															class="col-sm-3 control-label">Nominee Address</label>
-														<div class="col-sm-6">
-															<input name="nomineeAddress" type="text"
-																id="nomineeAddress" class="form-control"
-																Placeholder="Enter Nominee Address" />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtNomineeKycNumber"
-															class="col-sm-3 control-label">Nominee KYC No.</label>
-														<div class="col-sm-6">
-															<input name="nomineeKycNumber" type="text"
-																id="nomineeKycNumber" class="form-control"
-																Placeholder="Enter Nominee KYC No." />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtNomineeMobileNo"
-															class="col-sm-3 control-label">Nominee Mobile No.</label>
-														<div class="col-sm-6">
-															<input name="nomineeMobileNo" type="text" maxlength="10"
-																id="nomineeMobileNo" class="form-control"
-																Placeholder="Enter Nominee Mobile No." />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="txtNomineeAge" class="col-sm-3 control-label">Nominee
-															Age.</label>
-														<div class="col-sm-6">
-															<input name="nomineeAge" type="text" maxlength="2"
-																id="nomineeAge" class="form-control"
-																Placeholder="Enter Nominee Age" />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="TxtNomineePanNo"
-															class="col-sm-3 control-label">Nominee Pan No.</label>
-														<div class="col-sm-6">
-															<input name="nomineePanNo" type="text" maxlength="10"
-																id="nomineePanNo" class="form-control"
-																Placeholder="Enter Nominee Pan No." />
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="drpNomineeKycType"
-															class="col-sm-3 control-label">Nominee KYC Type</label>
-														<div class="col-sm-6">
-															<select name="nomineeKycType" id="nomineeKycType"
-																class="form-control" style="width: 100%;">
-																<option value="">Select Nominee KYC Type</option>
-																<option value="Online">Online</option>
-																<option value="Offline">Offline</option>
-															</select>
-														</div>
-													</div>
-													<div class="clearfix">
-												<button type="button" class="btn btn-default" onclick="showKyc()">
-													Previous</button>
-												<button type="button" class="btn btn-primary pull-right" onclick="showFees()">
-													Next</button>
-											</div>
-
+												<!-- Button -->
+												<div class="clearfix">
+													<button type="button" class="btn btn-primary pull-right"
+														onclick="showKyc()">NEXT</button>
 												</div>
 											</div>
-
 										</div>
-									</div>
-								</div>
 
-								<div class="row">
-									<div class="col-md-12">
 
-										<div class="box box-info" id="feesSection" style= "display: none;">
-											<div class="box-header with-border">
+										<!-- ================= AADHAR IMAGES ================= -->
+										<div id="kycSection" style="display: none;">
+											<div>
 												<h3 class="box-title">
-													<b>Fees / Setting Details</b>
+													<b>KYC DOCUMENTS</b>
+												</h3>
+											</div>
+
+											<div class="box-body">
+												<div class="row">
+													<div class="col-sm-3 text-center">
+														<label>PHOTO</label> <input type="file" name="aadharCard"
+															id="aadharCard" accept="image/*"
+															onchange="previewImage(this,'previewFront')"
+															style="display: none;"> <label for="aadharFront">
+															<img id="previewFront" src="../images/upload/upload.png"
+															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+														</label>
+													</div>
+
+													<div class="col-sm-3 text-center">
+														<label>SIGNATURE</label> <input type="file"
+															name="signature" id="signature" accept="image/*"
+															onchange="previewImage(this,'previewBack')"
+															style="display: none;"> <label for="aadharBack">
+															<img id="previewBack" src="../images/upload/upload.png"
+															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+														</label>
+													</div>
+
+													<div class="col-sm-3 text-center">
+														<label>AADHAR CARD</label> <input type="file"
+															name="signature" id="signature" accept="image/*"
+															onchange="previewImage(this,'previewBack')"
+															style="display: none;"> <label for="aadharBack">
+															<img id="previewBack" src="../images/upload/upload.png"
+															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+														</label>
+													</div>
+
+													<div class="col-sm-3 text-center">
+														<label>PAN CARD</label> <input type="file"
+															name="signature" id="signature" accept="image/*"
+															onchange="previewImage(this,'previewBack')"
+															style="display: none;"> <label for="aadharBack">
+															<img id="previewBack" src="../images/upload/upload.png"
+															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+														</label>
+													</div>
+
+												</div>
+
+												<!-- Button -->
+												<div class="clearfix">
+													<button type="button" class="btn btn-default"
+														onclick="showClient()">PREVIOUS</button>
+													<button type="button" class="btn btn-primary pull-right"
+														onclick="showNominee()">NEXT</button>
+												</div>
+											</div>
+										</div>
+
+
+
+										<!-- ================= NOMINEE DETAILS ================= -->
+										<div id="nomineeSection" style="display: none;">
+											<div>
+												<h3 class="box-title">
+													<b>NOMINEE DETAILS</b>
 												</h3>
 											</div>
 
 											<div class="box-body form-horizontal">
 
-												<!-- Client Fees -->
+												<!-- Row 1 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="txtNomineeName"
+																class="col-sm-4 control-label">NOMINEE NAME <strong
+																style="color: Red">*</strong>
+															</label>
+															<div class="col-sm-8">
+																<input name="nomineeName" type="text" id="nomineeName"
+																	class="form-control" Placeholder="ENTER NOMINEE NAME" style="text-transform: uppercase;"/>
+																<span id="ContentPlaceHolder1_RequiredFieldValidator7"
+																	style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER NOMINEE NAME</span>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="drpNomineeRelation"
+																class="col-sm-4 control-label">NOMINEE RALATION</label>
+															<div class="col-sm-8">
+																<select name="nRelation" id="nRelation"
+																	class="form-control" style="width: 100%;">
+																	<option>SELECT NOMINEE RELATION</option>
+																	<option value="SISTER">SISTER</option>
+																	<option value="BROTHER">BROTHER</option>
+																	<option value="FATHER">FATHER</option>
+																	<option value="MOTHER">MOTHER</option>
+																	<option value="SON">SON</option>
+																	<option value="DAUGTHER">DAUGTHER</option>
+																</select>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="txtNomineeAddress"
+																class="col-sm-4 control-label">NOMINEE ADDRESS</label>
+															<div class="col-sm-8">
+																<input name="nomineeAddress" type="text"
+																	id="nomineeAddress" class="form-control"
+																	Placeholder="ENTER NOMINEE ADDRESS" style="text-transform: uppercase;"/>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="txtNomineeKycNumber"
+																class="col-sm-4 control-label">NOMINEE KYC NO.</label>
+															<div class="col-sm-8">
+																<input name="nomineeKycNumber" type="text"
+																	id="nomineeKycNumber" class="form-control"
+																	Placeholder="ENTER NOMINEE KYC NO." style="text-transform: uppercase;"/>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+												<!-- Row 2 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="txtNomineeMobileNo"
+																class="col-sm-4 control-label">NOMINEE MOBILE NO.</label>
+															<div class="col-sm-8">
+																<input name="nomineeMobileNo" type="text" maxlength="10"
+																	id="nomineeMobileNo" class="form-control"
+																	Placeholder="ENTER NOMINEE MOBILE NO" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="txtNomineeAge" class="col-sm-4 control-label">NOMINEE AGE.</label>
+															<div class="col-sm-8">
+																<input name="nomineeAge" type="text" maxlength="2"
+																	id="nomineeAge" class="form-control"
+																	Placeholder="ENTER NOMINEE AGE" />
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="TxtNomineePanNo"
+																class="col-sm-4 control-label">NOMINEE PAN NO.</label>
+															<div class="col-sm-8">
+																<input name="nomineePanNo" type="text" maxlength="10"
+																	id="nomineePanNo" class="form-control"
+																	Placeholder="ENTER NOMINEE PAN NO." style="text-transform: uppercase;"/>
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<div class="form-group">
+															<label for="drpNomineeKycType"
+																class="col-sm-4 control-label">NOMINEE KYC TYPE</label>
+															<div class="col-sm-8">
+																<select name="nomineeKycType" id="nomineeKycType"
+																	class="form-control" style="width: 100%;">
+																	<option value="">SELECT NOMINEE KYC TYPE</option>
+																	<option value="Online">ONLINE</option>
+																	<option value="Offline">OFFLINE</option>
+																</select>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+
+												<!-- Button -->
+												<div class="clearfix">
+													<button type="button" class="btn btn-default"
+														onclick="showKyc()">PREVIOUS</button>
+													<button type="button" class="btn btn-primary pull-right"
+														onclick="showFees()">NEXT</button>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+						</div>
+
+
+
+
+						<div class="row">
+							<div class="col-md-12">
+
+								<div id="feesSection" style="display: none;">
+									<div>
+										<h3 class="box-title">
+											<b>FEES / SETTING DETAILS</b>
+										</h3>
+									</div>
+
+									<div class="box-body form-horizontal">
+
+
+										<!-- Row 1 -->
+										<div class="row four-field-row">
+											<!-- Client Fees -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label"> Client Fees
-														(if any) <strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> CLIENT FEES (IF ANY)<strong style="color: red">*</strong>
 													</label>
-													<div class="col-sm-6">
+													<div class="col-sm-8">
 														<input type="text" name="memberJoiningFess"
 															id="memberJoiningFess" class="form-control"
-															placeholder="Enter Client Fees">
+															placeholder="ENTER CLIENT FEES" style="text-transform: uppercase;">
 													</div>
 												</div>
+											</div>
 
-												<!-- Share Allotted From -->
+
+											<!-- Share Allotted From -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label"> Share
-														Allotted From <strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> SHARE ALLOTTED FROM<strong style="color: red">*</strong>
 													</label>
-													<div class="col-sm-6">
+													<div class="col-sm-8">
 														<select name="shareAllotedfrm" id="shareAllotedfrm"
 															class="form-control">
-															<option value="">Select Share Allotted From</option>
+															<option value="">SELECT SHARE ALLOTTED FROM</option>
 														</select>
 													</div>
 												</div>
+											</div>
 
-												<!-- No of Shares -->
+
+											<!-- No of Shares -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label"> No. of
-														Shares <strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> NO. OF SHARES<strong style="color: red">*</strong>
 													</label>
-													<div class="col-sm-6">
+													<div class="col-sm-8">
 														<input type="text" name="noOfShared" id="noOfShared"
-															class="form-control" placeholder="Enter No. of Shares">
+															class="form-control" placeholder="ENTER NO. OF SHARES" style="text-transform: uppercase;">
 													</div>
 												</div>
+											</div>
 
-												<!-- Share Amount -->
+											<!-- Share Amount -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label"> Share Amount
-														<strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label">SHARE AMOUNT<strong style="color: red">*</strong>
 													</label>
-													<div class="col-sm-6">
+													<div class="col-sm-8">
 														<input type="text" name="enterShareAmount"
 															id="enterShareAmount" class="form-control"
-															placeholder="Enter Share Amount">
+															placeholder="ENTER SHARE AMOUNT" style="text-transform: uppercase;">
 													</div>
 												</div>
+											</div>
 
-												<!-- Payment Mode -->
+										</div>
+
+										<!-- Row 2 -->
+										<div class="row four-field-row">
+											<!-- Payment Mode -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label"> Payment By <strong
+													<label class="col-sm-4 control-label"> PAYMENT BY<strong
 														style="color: red">*</strong>
 													</label>
-													<div class="col-sm-6">
+													<div class="col-sm-8">
 														<select name="paymode" id="paymode" class="form-control">
-															<option value="">Select Payment Mode</option>
-															<option value="Cash">Cash</option>
-															<option value="Online">Online</option>
+															<option value="">SELECT PAYMENT MODE</option>
+															<option value="Cash">CASH</option>
+															<option value="Online">ONLINE</option>
 														</select>
 													</div>
 												</div>
+											</div>
 
-												<!-- Remarks -->
+
+											<!-- Remarks -->
+											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-3 control-label">Remarks</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">REMARK</label>
+													<div class="col-sm-8">
 														<textarea name="remarks" id="remarks" rows="2"
-															class="form-control" placeholder="Enter remarks if any"></textarea>
+															class="form-control" placeholder="ENTER REMARKS IF ANY" style="text-transform: uppercase;"></textarea>
 													</div>
 												</div>
+											</div>
 
-												<hr>
+										</div>
 
+
+<hr>
+
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
 												<!-- Client Status -->
 												<div class="form-group">
-													<label class="col-sm-3 control-label">Client Status</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">CLIENT STATUS</label>
+													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="memberStatusIsActive" id="memberStatusIsActive">
 															<span class="slider round"></span>
 														</label>
 													</div>
 												</div>
+											</div>
 
+											<div class="col-md-3">
 												<!-- Mobile Banking -->
 												<div class="form-group">
-													<label class="col-sm-3 control-label">Mobile
-														Banking</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">MOBILE BANKING</label>
+													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="chkmobile" id="chkmobile"> <span
 															class="slider round"></span>
 														</label>
 													</div>
 												</div>
+											</div>
 
+											<div class="col-md-3">
 												<!-- Net Banking -->
 												<div class="form-group">
-													<label class="col-sm-3 control-label">Net Banking</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">NET BANKING</label>
+													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="chknetBanking" id="chknetBanking"> <span
 															class="slider round"></span>
 														</label>
 													</div>
 												</div>
+											</div>
 
+											<div class="col-md-3">
 												<!-- SMS -->
 												<div class="form-group">
-													<label class="col-sm-3 control-label">SMS Send</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">SMS SEND</label>
+													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="chkisSms" id="chkisSms"> <span
 															class="slider round"></span>
 														</label>
 													</div>
 												</div>
+											</div>
+										</div>
 
+
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
 												<!-- Minor -->
 												<div class="form-group">
-													<label class="col-sm-3 control-label">Is Minor</label>
-													<div class="col-sm-6">
+													<label class="col-sm-4 control-label">IS MINOR</label>
+													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="chkMinor" id="chkMinor"> <span
 															class="slider round"></span>
 														</label>
 													</div>
 												</div>
-												<div class="clearfix">
-												<button type="button" class="btn btn-default" onclick="showNominee()">
-													Previous</button>
-												<button  class="btn btn-primary pull-right" onclick="saveData">
-													Save</button>
 											</div>
 
-											</div>
+										</div>
+
+										<div class="clearfix">
+											<button type="button" class="btn btn-default"
+												onclick="showNominee()">PREVIOUS</button>
+											<button class="btn btn-primary pull-right" onclick="saveData">SAVE</button>
 										</div>
 
 									</div>
 								</div>
-								<br> <br>
-							</form>
-							<!-- </div> -->
-							<!-- </div> -->
+
+							</div>
 						</div>
+						<br> <br>
+						</form>
+						<!-- </div> -->
+						<!-- </div> -->
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-info" id="tableSection" style= "display: none;">
-								<div class="box-header with-border">
-									<h3 class="box-title">TABLE</h3>
-								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="">
-											<table
-												class="table table-bordered table-hover text-nowrap datatable"
-												id="tableBody" style="text-align: center;">
-												<thead class="table-light">
-													<tr
-														style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
-														<th scope="col">Sr No</th>
-														<th scope="col">Bank Name</th>
-														<th scope="col">Account No</th>
-														<th scope="col">IFSC Code</th>
-														<th scope="col">MICR Code</th>
-														<th scope="col">Contact No</th>
-														<th scope="col">Address</th>
-														<th scope="col">Opening Date</th>
-														<th scope="col">Opening Balance</th>
-														<th scope="col">Account Closing Date</th>
-														<th scope="col">Cheque</th>
-														<th scope="col">Edit</th>
-														<th scope="col">Delete</th>
-													</tr>
-												</thead>
-												<tbody id="tableBody">
-													<!-- Data rows dynamically -->
-												</tbody>
-											</table>
-										</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="box box-info" id="tableSection" style="display: none;">
+							<div class="box-header with-border">
+								<h3 class="box-title">TABLE</h3>
+							</div>
+							<div class="form-horizontal">
+								<div class="box-body">
+									<div class="">
+										<table
+											class="table table-bordered table-hover text-nowrap datatable"
+											id="tableBody" style="text-align: center;">
+											<thead class="table-light">
+												<tr
+													style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
+													<th scope="col">SR NO</th>
+													<th scope="col">BANK NAME</th>
+													<th scope="col">ACCOUNT NO</th>
+													<th scope="col">IFSC CODE</th>
+													<th scope="col">MICR CODE</th>
+													<th scope="col">CONTACT NO</th>
+													<th scope="col">ADDRESS</th>
+													<th scope="col">OPENING DATE</th>
+													<th scope="col">OPENING BALANCE</th>
+													<th scope="col">ACCOUNT CLOSING DATE</th>
+													<th scope="col">CHEQUE</th>
+													<th scope="col">EDIT</th>
+													<th scope="col">DELETE</th>
+												</tr>
+											</thead>
+											<tbody id="tableBody">
+												<!-- Data rows dynamically -->
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
 		</div>
-		<!-- /.content-wrapper -->
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap 3.3.7 -->
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- InputMask -->
-		<script src="plugins/input-mask/jquery.inputmask.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-		<!-- date-range-picker -->
-		<script src="bower_components/moment/min/moment.min.js"></script>
-		<script
-			src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<!-- bootstrap datepicker -->
-		<script
-			src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<!-- bootstrap color picker -->
-		<script
-			src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-		<!-- bootstrap time picker -->
-		<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-		<!-- SlimScroll -->
-		<script
-			src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-		<!-- iCheck 1.0.1 -->
-		<script src="plugins/iCheck/icheck.min.js"></script>
-		<!-- FastClick -->
-		<script src="bower_components/fastclick/lib/fastclick.js"></script>
-		<!-- AdminLTE App -->
-		<script src="dist/js/adminlte.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
-		<script src="dist/js/demo.js"></script>
-		<!-- Select2 -->
-		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script src="dist/js/AddMember.js"></script>
-		<script src="dist/js/memberSection.js"></script>
-		<script src="dist/js/RelativeRelation.js"></script>
-		<script src="dist/js/GetAllBranch.js"></script>
-		<script src="dist/js/DistrictMaster.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-			crossorigin="anonymous"></script>
-		<%-- <jsp:include page="../footer.jsp" />  --%>
+		</section>
+	</div>
+	<!-- /.content-wrapper -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- InputMask -->
+	<script src="plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<!-- date-range-picker -->
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script
+		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap datepicker -->
+	<script
+		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<!-- bootstrap color picker -->
+	<script
+		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<!-- bootstrap time picker -->
+	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- SlimScroll -->
+	<script
+		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="plugins/iCheck/icheck.min.js"></script>
+	<!-- FastClick -->
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="dist/js/demo.js"></script>
+	<!-- Select2 -->
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="dist/js/AddMember.js"></script>
+	<script src="dist/js/memberSection.js"></script>
+	<script src="dist/js/RelativeRelation.js"></script>
+	<script src="dist/js/GetAllBranch.js"></script>
+	<script src="dist/js/DistrictMaster.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<%-- <jsp:include page="../footer.jsp" />  --%>
 
-<script>
+	<script>
 
 function resetSteps() {
 	document.querySelectorAll('.step').forEach(s => {
@@ -1805,7 +1664,7 @@ function resetSteps() {
 
 
 
-		<script>
+	<script>
       var fileTag = document.getElementById("filetag"),
           preview = document.getElementById("preview");
           secondfiletag = document.getElementById("secondfiletag"),
@@ -1847,7 +1706,7 @@ function resetSteps() {
         }
    </script>
 
-		<script>
+	<script>
       function printTable() {
           const table = document.querySelector('table');
           const printWindow = window.open('', '', 'height=500,width=800');
@@ -1861,7 +1720,7 @@ function resetSteps() {
         }
    </script>
 
-		<script>
+	<script>
         function uploadFile(str,module) {
         	//alert(str);
         	var fileInput;
@@ -1887,7 +1746,7 @@ function resetSteps() {
         }
     </script>
 
-		<script>
+	<script>
     function shareAllFromList(){
     const shareAllotedfrm = document.getElementById("shareAllotedfrm1");
 	$.ajax({
@@ -1934,7 +1793,7 @@ function resetSteps() {
     } */
     </script>
 
-		<script>
+	<script>
 		$(document).ready(function() {
 			$('#ContentPlaceHolder1_btnSave').click(function() {
 				
@@ -2054,7 +1913,7 @@ function resetSteps() {
 		});
 	</script>
 
-		<script>
+	<script>
 		$(document).ready(function() {
 			$('#ContentPlaceHolder1_btnUpdate').click(function() {
 				
@@ -2095,7 +1954,7 @@ function resetSteps() {
 			});
 		});
 	</script>
-		<script>
+	<script>
 function previewImage(input, previewId) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();

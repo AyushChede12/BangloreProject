@@ -1,5 +1,6 @@
 <jsp:include page="../header.jsp" />
-<body class="skin-blue sidebar-mini" onload="getthevalueindropdownofshareCertificate(); getthevalueindropdownofShareTransfer(); shareTransferInTable();"
+<body class="skin-blue sidebar-mini"
+	onload="getthevalueindropdownofshareCertificate(); getthevalueindropdownofShareTransfer(); shareTransferInTable();"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
@@ -21,227 +22,129 @@
 					<li class="active">Share Transfer</li>
 				</ol>
 			</section>
-				<form id="fileUploadForm">
+			<form id="fileUploadForm">
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
+							
 								<div class="box-header with-border">
 									<h3 class="box-title">Share Transfer Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Member No.(From)<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-													<select name="memberNoFrom" id="memberNo"
-														onchange="ShareTransferMemberNoFrom();" class="form-control select2"
-														style="width: 100%;">
-													<option value="">Select Member No.</option>
-													</select>
-													<span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
+
+									<!-- FROM MEMBER -->
+									<h4 style="color: #008385; margin-bottom: 20px;">From
+										Member</h4>
+
+									<div class="row">
+										<div class="col-md-3">
+											<label>Member No (From) *</label> <select id="memberNo"
+												name="memberNoFrom" class="form-control select2"
+												onchange="ShareTransferMemberNoFrom();">
+												<option value="">Select Member No.</option>
+											</select>
 										</div>
-										<div class="form-group row">
-											<label for="txtPreviousShareAmount"
-												class="col-sm-4 control-label">Member Name(From) <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<input name="memberNameFrom" type="text" id="memberNameFrom"
-													class="form-control" Placeholder="Enter Member Name (From)"
-													readonly="readonly" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Member Name(From)</span>
-											</div>
+
+										<div class="col-md-3">
+											<label>Member Name (From)</label> <input id="memberNameFrom"
+												class="form-control" readonly>
 										</div>
-										<div class="form-group row">
-											<label for="txtSharebalance" class="col-sm-4 control-label">Certificate
-												No.(From) <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="certificateNoFrom" type="text"
-													id="certificateNoFrom" class="form-control"
-													Placeholder="Enter Certificate No.(From)" readonly="readonly"/>
-											</div>
+
+										<div class="col-md-3">
+											<label>Certificate No (From)</label> <input
+												id="certificateNoFrom" class="form-control" readonly>
 										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												No. Of Share<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="noOfShare" type="text" id="noOfShare"
-													class="form-control" Placeholder="Enter Share No."
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Share Amount<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="shareAmount" type="text" id="shareAmount"
-													class="form-control" Placeholder="Enter Share Amount"
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Reaming No. Of Share<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="reamingNoOfShare" type="text" id="reamingNoOfShare"
-													class="form-control" Placeholder="Enter Share No." 
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Reaming Share Amount<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="reamingShareAmount" type="text" id="reamingShareAmount"
-													class="form-control" Placeholder="Enter Share Amount"
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
+
+										<div class="col-md-3">
+											<label>No Of Share</label> <input id="noOfShare"
+												class="form-control" readonly>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Member No.(To)<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="memberNoTo" id="memberNos"
-														onchange="ShareTransferMemberNoTo();" class="form-control select2"
-														style="width: 100%;">
-													<option value="">Select Member No.</option>
-													</select> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(To)</span>
-											</div>
+
+									<div class="row" style="margin-top: 20px;">
+										<div class="col-md-3">
+											<label>Share Amount</label> <input id="shareAmount"
+												class="form-control" readonly>
 										</div>
-										<div class="form-group row">
-											<label for="txtPreviousShareAmount"
-												class="col-sm-4 control-label">Member Name(To) <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<input name="memberNameTo" type="text" id="memberNameTo"
-													class="form-control" Placeholder="Enter Member Name (To)"
-													readonly="readonly" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Member Name(To)</span>
-											</div>
+
+										<div class="col-md-3">
+											<label>Remaining No Of Share</label> <input
+												id="reamingNoOfShare" class="form-control" readonly>
 										</div>
-										<div class="form-group row">
-											<label for="txtSharebalance" class="col-sm-4 control-label">Certificate
-												No.(To) <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="certificateNoTo" type="text"
-													id="certificateNoTo" class="form-control"
-													Placeholder="Enter Certificate No.(To) "  readonly="readonly"/>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Previous No. Of Share<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="previousNoOfShare" type="text" id="previousNoOfShare"
-													class="form-control" Placeholder="Enter Previous No.Of Share"
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Share Transfer<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="shareTransfer" type="text" id="shareTransfer" onkeyup="calculate(); calculate2(); calculate3();"
-													class="form-control" Placeholder="Enter No. Of Share To Transfer"
-													required /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Total Share<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="totalShare" type="text" id="totalShare"
-													class="form-control" Placeholder="Enter Total Share"
-													required /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(From)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Amount Transfer<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="transferAmount" type="text" id="transferAmount" 
-													class="form-control" Placeholder="Enter Amount Transfer"
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(To)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Total Amount<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="totalAmount" type="text" id="totalAmount" 
-													class="form-control" Placeholder="Enter Total Amount"
-													readonly="readonly" /> <span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member No(To)</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDate" class="col-sm-4 control-label">
-												Transfer Date <strong style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="transferDate" type="date" id="transferDate"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-										</div>
-										<div class="box-footer">
-											<div class="row col-md-12">
-												<input type="button" name="btnTransfer" value="Transfer"
-													onclick="javascript: " id="btnTransfer"
-													class="btn btn-success pull-right margin-r-5" />
-											</div>
+
+										<div class="col-md-3">
+											<label>Remaining Share Amount</label> <input
+												id="reamingShareAmount" class="form-control" readonly>
 										</div>
 									</div>
+
+									<!-- TO MEMBER -->
+									<h4 style="color: #008385; margin: 30px 0 20px;">To Member</h4>
+
+									<div class="row">
+										<div class="col-md-3">
+											<label>Member No (To) *</label> <select id="memberNos"
+												name="memberNoTo" class="form-control select2"
+												onchange="ShareTransferMemberNoTo();">
+												<option value="">Select Member No.</option>
+											</select>
+										</div>
+
+										<div class="col-md-3">
+											<label>Member Name (To)</label> <input id="memberNameTo"
+												class="form-control" readonly>
+										</div>
+
+										<div class="col-md-3">
+											<label>Certificate No (To)</label> <input
+												id="certificateNoTo" class="form-control" readonly>
+										</div>
+
+										<div class="col-md-3">
+											<label>Previous No Of Share</label> <input
+												id="previousNoOfShare" class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="row" style="margin-top: 20px;">
+										<div class="col-md-3">
+											<label>Share Transfer *</label> <input id="shareTransfer"
+												class="form-control"
+												onkeyup="calculate(); calculate2(); calculate3();">
+										</div>
+
+										<div class="col-md-3">
+											<label>Total Share</label> <input id="totalShare"
+												class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Amount Transfer</label> <input id="transferAmount"
+												class="form-control" readonly>
+										</div>
+
+										<div class="col-md-3">
+											<label>Total Amount</label> <input id="totalAmount"
+												class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="row" style="margin-top: 20px;">
+										<div class="col-md-3">
+											<label>Transfer Date *</label> <input type="date"
+												id="transferDate" class="form-control">
+										</div>
+									</div>
+
 								</div>
-							</div>
+								<div class="box-footer">
+									<button type="button" id="btnTransfer"
+										class="btn btn-success pull-right">Transfer</button>
+								</div>
+
+
 							
+
 							<div class="box box-success"
 								style="box-shadow: none; overflow: auto !important;">
 								<div class="box-body">
@@ -266,7 +169,8 @@
 											<th scope="col">Member Name (To)</th>
 											<th scope="col">Certificate No. (To)</th>
 											<th scope="col">Previous No. Of Share (To)</th>
-											<th scope="col">Total No. Of Share After Share Transfer (To)</th>
+											<th scope="col">Total No. Of Share After Share Transfer
+												(To)</th>
 											<th scope="col">Total Share Amount Transfer (To)</th>
 											<th scope="col">Total Share Amount (To)</th>
 											<th scope="col">Transfer Date</th>
@@ -282,63 +186,74 @@
 				</section>
 			</form>
 		</div>
-		
-	<script type="text/javascript">
-	function calculate(){
-		var ShareTransfer = document.getElementById('shareTransfer').value;
-		var TransferAmount = document.getElementById('transferAmount');
-		var result = (10 * ShareTransfer);
-		transferAmount.value = result;
-	}
-	
-	function calculate2() {
-		let transferAmountInput = document.getElementById('shareTransfer').value*10;
-		var previousNoOfShare = document.getElementById('previousNoOfShare').value*10;
-		var result1 = transferAmountInput + previousNoOfShare ;
-		totalAmount.value = result1; 
-	}
-	
-	function calculate3() {
-		 var reamingNoOfShareInput = document.getElementById('reamingNoOfShare').value*10;
-		 reamingShareAmount.value = reamingNoOfShareInput;
-	}
-	</script>
 
-	<script type="text/javascript">
-        document.getElementById("shareTransfer").addEventListener("input", function () {
-            
-            var noOfShare = parseFloat(document.getElementById("noOfShare").value) || 0;
-            var shareTransfer = parseFloat(document.getElementById("shareTransfer").value) || 0;
+		<script type="text/javascript">
+			function calculate() {
+				var ShareTransfer = document.getElementById('shareTransfer').value;
+				var TransferAmount = document.getElementById('transferAmount');
+				var result = (10 * ShareTransfer);
+				transferAmount.value = result;
+			}
 
-            var remainingNoOfShare = noOfShare - shareTransfer;
+			function calculate2() {
+				let transferAmountInput = document
+						.getElementById('shareTransfer').value * 10;
+				var previousNoOfShare = document
+						.getElementById('previousNoOfShare').value * 10;
+				var result1 = transferAmountInput + previousNoOfShare;
+				totalAmount.value = result1;
+			}
 
-            document.getElementById("reamingNoOfShare").value = remainingNoOfShare;
-        });
-	</script>
-	
-	<script type="text/javascript">
-	var previousNoOfShareInput = document.getElementById("previousNoOfShare");
-	var shareTransferInput = document.getElementById("shareTransfer");
-	var totalShareInput = document.getElementById("totalShare");
+			function calculate3() {
+				var reamingNoOfShareInput = document
+						.getElementById('reamingNoOfShare').value * 10;
+				reamingShareAmount.value = reamingNoOfShareInput;
+			}
+		</script>
 
-	function updateTotalShare() {
-	    var previousNoOfShareValue = previousNoOfShareInput.value;
-	    var shareTransferValue = shareTransferInput.value;
+		<script type="text/javascript">
+			document
+					.getElementById("shareTransfer")
+					.addEventListener(
+							"input",
+							function() {
 
-	    // Ensure that the values are valid numbers; if not, default them to 0
-	    var previousNoOfShare = parseFloat(previousNoOfShareValue) || 0;
-	    var shareTransfer = parseFloat(shareTransferValue) || 0;
+								var noOfShare = parseFloat(document
+										.getElementById("noOfShare").value) || 0;
+								var shareTransfer = parseFloat(document
+										.getElementById("shareTransfer").value) || 0;
 
-	    var totalShare = previousNoOfShare + shareTransfer;
-	    totalShareInput.value = totalShare;
-	}
+								var remainingNoOfShare = noOfShare
+										- shareTransfer;
 
-	// Add event listeners to the input fields to trigger the update function
-	previousNoOfShareInput.addEventListener("input", updateTotalShare);
-	shareTransferInput.addEventListener("input", updateTotalShare);
-	window.addEventListener("load", updateTotalShare);
-	</script>
-	
+								document.getElementById("reamingNoOfShare").value = remainingNoOfShare;
+							});
+		</script>
+
+		<script type="text/javascript">
+			var previousNoOfShareInput = document
+					.getElementById("previousNoOfShare");
+			var shareTransferInput = document.getElementById("shareTransfer");
+			var totalShareInput = document.getElementById("totalShare");
+
+			function updateTotalShare() {
+				var previousNoOfShareValue = previousNoOfShareInput.value;
+				var shareTransferValue = shareTransferInput.value;
+
+				// Ensure that the values are valid numbers; if not, default them to 0
+				var previousNoOfShare = parseFloat(previousNoOfShareValue) || 0;
+				var shareTransfer = parseFloat(shareTransferValue) || 0;
+
+				var totalShare = previousNoOfShare + shareTransfer;
+				totalShareInput.value = totalShare;
+			}
+
+			// Add event listeners to the input fields to trigger the update function
+			previousNoOfShareInput.addEventListener("input", updateTotalShare);
+			shareTransferInput.addEventListener("input", updateTotalShare);
+			window.addEventListener("load", updateTotalShare);
+		</script>
+
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -373,52 +288,52 @@
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 		<script>
-		$(document).ready(function() {
-			$('#btnTransfer').click(function() {
-				
-				if ($("#memberNameTo").val() == "") {
-		             alert("Select Whom You Want To Transfer Share");
-		             return;
-		         }
-				if ($("#shareTransfer").val() == "") {
-		             alert("Write How Many Share You Want To Transfer");
-		             return;
-		         }
-				if ($("#transferAmount").val() == "") {
-		             alert("Enter Amount You Want To Transfer");
-		             return;
-		         }
-				if ($("#transferDate").val() == "") {
-		             alert("Write Transfer Date.");
-		             return;
-		         }
-				if ($("#memberNameTo").val() == "") {
-		             alert("Select Whom You Want To Transfer Share");
-		             return;
-		         }
-				
-				var form = $('#fileUploadForm')[0];
-				var data = new FormData(form);
-				$.ajax({
-					url: 'shareTransferCode',
-					type: 'POST',
-					enctype: 'multipart/form-data',
-					data: data,
-					processData: false,
-					contentType: false,
-					cache: false,
-					success: function(response) {
-						alert(response)
-						window.location.href = "shareCertificate";
-						//console.log(response);
-					},
-					error: function(xhr, status, error) {
-						console.log(xhr.responseText);
+			$(document).ready(function() {
+				$('#btnTransfer').click(function() {
+
+					if ($("#memberNameTo").val() == "") {
+						alert("Select Whom You Want To Transfer Share");
+						return;
 					}
+					if ($("#shareTransfer").val() == "") {
+						alert("Write How Many Share You Want To Transfer");
+						return;
+					}
+					if ($("#transferAmount").val() == "") {
+						alert("Enter Amount You Want To Transfer");
+						return;
+					}
+					if ($("#transferDate").val() == "") {
+						alert("Write Transfer Date.");
+						return;
+					}
+					if ($("#memberNameTo").val() == "") {
+						alert("Select Whom You Want To Transfer Share");
+						return;
+					}
+
+					var form = $('#fileUploadForm')[0];
+					var data = new FormData(form);
+					$.ajax({
+						url : 'shareTransferCode',
+						type : 'POST',
+						enctype : 'multipart/form-data',
+						data : data,
+						processData : false,
+						contentType : false,
+						cache : false,
+						success : function(response) {
+							alert(response)
+							window.location.href = "shareCertificate";
+							//console.log(response);
+						},
+						error : function(xhr, status, error) {
+							console.log(xhr.responseText);
+						}
+					});
 				});
 			});
-		});
-	</script>
+		</script>
 </body>
 <!-- Dk/Admin/ShareCertificate.aspx EDB D 09:26:57 GMT -->
 </html>
