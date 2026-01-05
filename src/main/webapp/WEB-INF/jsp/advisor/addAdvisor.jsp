@@ -1,21 +1,21 @@
 <jsp:include page="../header.jsp" />
 <%
-   String status = (String)request.getAttribute("status");
-   if(status!=null &&  status.equals("success")){
-   	%>
+String status = (String) request.getAttribute("status");
+if (status != null && status.equals("success")) {
+%>
 <script>
-   alert("Saved Successfully");
+	alert("Saved Successfully");
 </script>
 <%
-   } 
-   %>
+}
+%>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true"
 	onload=" appendSelectMember(); RelativeRelationDropdown(); selectPosition(); branchNameList();">
 	<!-- <form method="post" action="saveAdvisor" id="form1"
 		modelAttribute="user"> -->
-	
+
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 
@@ -36,404 +36,285 @@
 					<li class="active">Advisor/Collector</li>
 				</ol>
 			</section>
+			<style>
+.box-body {
+	padding: 30px 35px;
+}
+
+.four-col-row {
+	margin-bottom: 30px;
+}
+
+.four-col-row label {
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+
+@media ( max-width : 991px) {
+	.col-md-3 {
+		margin-bottom: 20px;
+	}
+}
+</style>
+
 			<section class="content">
-				<input name="memberId" type="hidden" id="memberId"
-					class="form-control"
-					data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" />
+
+				<input type="hidden" id="memberId" name="memberId" />
+
+				<!-- ================= Advisor / Collector Details ================= -->
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-md-12">
+
 						<div class="box box-info">
 							<div class="box-header with-border">
-								<h3 class="box-title">Advisor/Collector Details</h3>
+								<h3 class="box-title">Advisor / Collector Details</h3>
 							</div>
+
 							<form id="fileUploadForm">
 								<div class="box-body">
+
+									<!-- ROW 1 -->
+									<div class="row four-col-row">
+										<div class="col-md-3">
+											<label>Joining Date *</label> <input type="date"
+												id="joiningDate" name="joiningDate" class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Select Member *</label> <select id="selectMember"
+												name="selectMember" class="form-control select2"
+												onchange="fetchBySelectedMember()"></select>
+										</div>
+
+										<div class="col-md-3">
+											<label>Member Name *</label> <input id="memberName"
+												name="memberName" readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Mobile No *</label> <input id="mobileNo"
+												name="mobileNo" readonly class="form-control">
+										</div>
+									</div>
+
+									<!-- ROW 2 -->
+									<div class="row four-col-row">
+										<div class="col-md-3">
+											<label>DOB *</label> <input id="dob" name="dob" readonly
+												class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Age</label> <input id="age" name="age" readonly
+												class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Relative Name</label> <input id="relativeName"
+												name="relativeName" readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Relation</label> <input id="relativeRelation"
+												name="relativeRelation" readonly class="form-control">
+										</div>
+									</div>
+
+									<!-- ROW 3 -->
+									<div class="row four-col-row">
+										<div class="col-md-3">
+											<label>Branch *</label> <select id="branchName"
+												name="branchName" class="form-control"></select>
+										</div>
+
+										<div class="col-md-3">
+											<label>District *</label> <input id="district"
+												name="district" readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>State *</label> <input id="state" name="state"
+												readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Pincode *</label> <input id="pinCode" name="pinCode"
+												readonly class="form-control">
+										</div>
+									</div>
+
+									<!-- ROW 4 -->
+									<div class="row four-col-row">
+										<div class="col-md-3">
+											<label>Occupation</label> <input id="occupation"
+												name="occupation" readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Education</label> <input id="education"
+												name="education" readonly class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Nominee Name</label> <input id="nomineeName"
+												name="nomineeName" class="form-control">
+										</div>
+
+										<div class="col-md-3">
+											<label>Nominee Age</label> <input id="nomineeAge"
+												name="nomineeAge" class="form-control">
+										</div>
+									</div>
+
+									<!-- ROW 5 -->
+									<div class="row four-col-row">
+										<div class="col-md-6">
+											<label>Address *</label>
+											<textarea id="address" name="address" readonly
+												class="form-control"></textarea>
+										</div>
+
+										<div class="col-md-3">
+											<label>Nominee Relation</label> <select id="relation"
+												name="relation" class="form-control"></select>
+										</div>
+									</div>
+
+								</div>
+								<!-- ================= PHOTO & SIGNATURE ================= -->
+								<div class="row four-col-row" style="margin-top: 35px;">
+
 									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Joining Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="joiningDate" type="date" id="joiningDate"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-												<span id="joiningDate"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Registration Date</span>
+										<div class="box box-success">
+											<div class="box-header with-border text-center">
+												<h3 class="box-title">Photo</h3>
 											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Select Member <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<select name="selectMember" id="selectMember"
-													class="form-control select2" style="width: 100%;"
-													onchange="fetchBySelectedMember()">
-													<option selected="selected" value="">Select Member</option>
-												</select> <span id="selectMember"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member Code</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtRelativeName" class="col-sm-4 control-label">Member
-												Name <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="memberName" type="text" readonly="readonly"
-													id="memberName" class="form-control"
-													Placeholder="Enter Member Name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDOB" class="col-sm-4 control-label">DOB
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-5">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="dob" type="text" readonly="readonly" id="dob"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<input name="age" type="text" maxlength="2"
-													readonly="readonly" id="age" class="form-control"
-													Placeholder="Enter Age"
-													onkeypress="return isNumberOnlyKey(this, event);"
-													autocomplete="off" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator12"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Age</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Relative Name</label>
-											<div class="col-sm-8">
-												<input name="relativeName" type="text" readonly="readonly"
-													id="relativeName" class="form-control"
-													Placeholder="Enter Relative Name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpRelativeRelation"
-												class="col-sm-4 control-label">Relative Relation</label>
-											<div class="col-sm-8">
-												<input name="relativeRelation" type="text"
-													readonly="readonly" id="relativeRelation"
-													placeholder="Enter Relative Relation" class="form-control" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPhoneno" class="col-sm-4 control-label">Mobile
-												No <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="mobileNo" type="text" maxlength="10"
-													readonly="readonly" id="mobileNo" class="form-control"
-													Placeholder="Enter Mobile No" autocomplete="off"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="mobileNo"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Phone No</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
-												Name</label>
-											<div class="col-sm-8">
-												<input name="nomineeName" type="text" id="nomineeName"
-													class="form-control" placeholder="Enter Nominee Name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpNomineeRelation"
-												class="col-sm-4 control-label">Relation</label>
-											<div class="col-sm-8">
-												<select name="relation" id="relation" class="form-control"
-													style="width: 100%;">
-													<option value="">Select Relation</option>
-												</select>
+											<div class="box-body text-center">
+												<img id="preview" class="profile-user-img"
+													style="height: 100px; width: 130px; margin-bottom: 10px;">
+												<input type="file" id="filetag" name="filetag">
 											</div>
 										</div>
 									</div>
+
 									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Branch Name <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<select name="branchName" id="branchName"
-													class="form-control" style="width: 100%;">
-													<option value="">Select Branch Name</option>
-												</select>
+										<div class="box box-success">
+											<div class="box-header with-border text-center">
+												<h3 class="box-title">Signature</h3>
 											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
-												Age</label>
-											<div class="col-sm-8">
-												<input name="nomineeAge" type="text" maxlength="2"
-													placeholder="Enter Nominee Age" id="nomineeAge"
-													class="form-control" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtAddress" class="col-sm-4 control-label">Address
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<textarea name="address" rows="2" cols="20"
-													readonly="readonly" id="address" class="form-control"
-													Placeholder="Enter Addess">
-												</textarea>
-												<span id="address"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Address</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDistrict" class="col-sm-4 control-label">District
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="district" type="text" readonly="readonly"
-													id="district" class="form-control"
-													Placeholder="Enter District" /> <span id="district"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													District</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpState" class="col-sm-4 control-label">State
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="state" type="text" readonly="readonly"
-													id="state" class="form-control" placeholder="Enter State" />
-												<span id="state"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													State</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPin" class="col-sm-4 control-label">Pin
-												Code <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="pinCode" type="text" maxlength="6"
-													readonly="readonly" id="pinCode" class="form-control"
-													Placeholder="Enter Pincode" /> <span id="pinCode"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													PIN</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtOccupation" class="col-sm-4 control-label">Occupation</label>
-											<div class="col-sm-8">
-												<input name="occupation" type="text" readonly="readonly"
-													id="occupation" class="form-control"
-													Placeholder="Enter Occupation" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtEducation" class="col-sm-4 control-label">Education</label>
-											<div class="col-sm-8">
-												<input name="education" type="text" readonly="readonly"
-													id="education" class="form-control"
-													Placeholder="Enter Education" />
+											<div class="box-body text-center">
+												<img id="secondpreview" class="profile-user-img"
+													style="height: 100px; width: 130px; margin-bottom: 10px;">
+												<input type="file" id="secondfiletag" name="secondfiletag">
 											</div>
 										</div>
 									</div>
+
 								</div>
 						</div>
 					</div>
-					<div class="col-md-2">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Photo</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img name="preview" id="preview" class="profile-user-img"
-												style="height: 70px; width: 115px;" /> <input type="file"
-												name="filetag" id="filetag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Signature</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img name="secondpreview" id="secondpreview"
-												class="profile-user-img" style="height: 70px; width: 115px;" />
-											<input type="file" name="secondfiletag" id="secondfiletag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+					
+				<!-- ================= Introducer Details ================= -->
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-md-12">
 						<div class="box box-success">
 							<div class="box-header with-border">
 								<h3 class="box-title">Introducer Details</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Select Position
-											<strong style="color: Red">*</strong>
-										</label>
-										<div class="col-sm-8">
-											<select name="selectPosition" id="selectPosition"
-												class="form-control select2" style="width: 100%;">
-												<option value="">Select Position</option>
-											</select>
-										</div>
+
+								<div class="row four-col-row">
+									<div class="col-md-3">
+										<label>Select Position *</label> <select id="selectPosition"
+											name="selectPosition" class="form-control select2"></select>
 									</div>
-									<div class="form-group row">
-										<label for="txtRelativeName" class="col-sm-4 control-label">Introducer
-											Code <strong style="color: Red">*</strong>
-										</label>
-										<div class="col-sm-8">
-											<input name="introducerCode" type="text" id="introducerCode"
-												class="form-control" Placeholder="Enter Introducer Code" />
-											<span id="introducerCode"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Introducer Code</span>
-										</div>
+
+									<div class="col-md-3">
+										<label>Introducer Code *</label> <input id="introducerCode"
+											name="introducerCode" class="form-control">
+									</div>
+
+									<div class="col-md-3">
+										<label>Introducer Name</label> <input id="introducerName"
+											readonly class="form-control">
+									</div>
+
+									<div class="col-md-3">
+										<label>Position *</label> <input id="position" readonly
+											class="form-control">
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Introducer Name</label>
-										<div class="col-sm-8">
-											<input name="introducerName" type="text" readonly="readonly"
-												id="introducerName" class="form-control"
-												Placeholder="Enter Introducer Name" /> <span
-												id="introducerName"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Introducer Name</span>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Position <strong
-											style="color: Red">*</strong></label>
-										<div class="col-sm-8">
-											<input name="position" type="text" readonly="readonly"
-												placeholder="Enter Position" id="position"
-												class="form-control" /> <span id="position"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Introducer Position</span>
-										</div>
-									</div>
-								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<!-- ================= Payment Details ================= -->
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-md-12">
 						<div class="box box-info">
 							<div class="box-header with-border">
 								<h3 class="box-title">Payment Details</h3>
 							</div>
+
 							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Fees (if any) <strong
-											style="color: Red">*</strong></label>
-										<div class="col-sm-8">
-											<input name="feesIfAny" type="text" id="feesIfAny"
-												placeholder="Enter Fees" class="form-control" /> <span
-												id="feesIfAny"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Advisor Fees (if any)</span>
-										</div>
+								<div class="row four-col-row">
+
+									<div class="col-md-3">
+										<label>Fees *</label> <input id="feesIfAny" name="feesIfAny"
+											class="form-control">
 									</div>
-									<div class="form-group row">
-										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
-											By <strong style="color: Red">*</strong>
+
+									<div class="col-md-3">
+										<label>Payment By *</label> <select id="paymode"
+											name="paymode" class="form-control">
+											<option value="">Select</option>
+											<option>Cash</option>
+											<option>Online</option>
+											<option>Cheque</option>
+											<option>NEFT</option>
+										</select>
+									</div>
+
+									<div class="col-md-3">
+										<label>Advisor Status *</label><br> <label class="switch">
+											<input type="checkbox" id="advisorStatus" checked> <span
+											class="slider round"></span>
 										</label>
-										<div class="col-sm-8">
-											<select name="paymode" id="paymode" class="form-control"
-												style="width: 100%;">
-												<option selected="selected" value="">Select Payment</option>
-												<option value="Cash">Cash</option>
-												<option value="Online">Online</option>
-												<option value="Cheque">Cheque</option>
-												<option value="NEFT">NEFT</option>
-											</select>
-										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Remarks</label>
-										<div class="col-sm-8">
-											<textarea name="remarks" rows="2" cols="20" id="remarks"
-												class="form-control" Placeholder="Enter Remarks if any">
-												</textarea>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">Advisor Status <strong
-											style="color: Red">*</strong>
+
+									<div class="col-md-3">
+										<label>SMS Send *</label><br> <label class="switch">
+											<input type="checkbox" id="smsSend" checked> <span
+											class="slider round"></span>
 										</label>
-										<div class="col-sm-8">
-											<label class="switch"> <input id="advisorStatus"
-												type="checkbox" name="advisorStatus" checked="checked" /> <span
-												class="slider round"></span>
-											</label>
-										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label">SMS Send <strong
-											style="color: Red">*</strong></label>
-										<div class="col-sm-8">
-											<label class="switch"> <input id="smsSend"
-												type="checkbox" name="smsSend" checked="checked" /> <span
-												class="slider round"></span>
-											</label>
-										</div>
+
+								</div>
+
+								<div class="row four-col-row">
+									<div class="col-md-6">
+										<label>Remarks</label>
+										<textarea id="remarks" name="remarks" class="form-control"></textarea>
 									</div>
 								</div>
+
 							</div>
-							<div class="box-footer">
-								<div class="row col-md-12">
-									<input type="submit" name="ctl00$ContentPlaceHolder1$btnNew"
-										value="New" id="ContentPlaceHolder1_btnNew"
-										onclick="loadNewPage()"
-										class="btn btn-info pull-right margin-r-5" /> <input
-										type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
-										value="Save" id="ContentPlaceHolder1_btnSave"
-										class="btn btn-success pull-right margin-r-5" />
-								</div>
+
+							<div class="box-footer text-right">
+								<button class="btn btn-info margin-r-5" onclick="loadNewPage()">New</button>
+								<button class="btn btn-success">Save</button>
 							</div>
-							</form>
+
 						</div>
 					</div>
 				</div>
+
+				</form>
 			</section>
+
 		</div>
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
@@ -475,106 +356,105 @@
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script>
+		var fileTag = document.getElementById("filetag"), preview = document
+				.getElementById("preview"), secondfiletag = document
+				.getElementById("secondfiletag"), secondpreview = document
+				.getElementById("secondpreview");
 
-      var fileTag = document.getElementById("filetag"),
-          preview = document.getElementById("preview"),
-          secondfiletag = document.getElementById("secondfiletag"),
-          secondpreview = document.getElementById("secondpreview");
-          
-      fileTag.addEventListener("change", function() {
-        changeImage(this);
-      });
-      
-      secondfiletag.addEventListener("change", function() {
-          changeImage2(this);
-        });
-      
-      function changeImage(input) {
-        var reader;
+		fileTag.addEventListener("change", function() {
+			changeImage(this);
+		});
 
-        if (input.files && input.files[0]) {
-          reader = new FileReader();
+		secondfiletag.addEventListener("change", function() {
+			changeImage2(this);
+		});
 
-          reader.onload = function(e) {
-            preview.setAttribute('src', e.target.result);
-          }
+		function changeImage(input) {
+			var reader;
 
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      
-      function changeImage2(input) {
-          var reader;
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
 
-          if (input.files && input.files[0]) {
-            reader = new FileReader();
+				reader.onload = function(e) {
+					preview.setAttribute('src', e.target.result);
+				}
 
-            reader.onload = function(e) {
-            	secondpreview.setAttribute('src', e.target.result);
-            }
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-      
-</script>
+		function changeImage2(input) {
+			var reader;
 
-<script>
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
+
+				reader.onload = function(e) {
+					secondpreview.setAttribute('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	</script>
+
+	<script>
 		$(document).ready(function() {
 			$('#ContentPlaceHolder1_btnSave').click(function() {
-				
+
 				var form = $('#fileUploadForm')[0];
 				var data = new FormData(form);
 				$.ajax({
-					url: 'saveOperationForAddAdvisor',
-					type: 'POST',
-					enctype: 'multipart/form-data',
-					data: data,
-					processData: false,
-					contentType: false,
-					cache: false,
-					success: function(response) {
+					url : 'saveOperationForAddAdvisor',
+					type : 'POST',
+					enctype : 'multipart/form-data',
+					data : data,
+					processData : false,
+					contentType : false,
+					cache : false,
+					success : function(response) {
 						alert(response)
 						window.location.href = "addAdvisor";
 						//console.log(response);
 					},
-					error: function(xhr, status, error) {
+					error : function(xhr, status, error) {
 						console.log(xhr.responseText);
 					}
 				});
 			});
 		});
-</script>
+	</script>
 
-<script>
-    function loadNewPage() {
-      // Perform page redirect
-      window.location.href = "addAdvisor";
-    }
-</script>
-
-<script type="text/javascript">
-function branchNameList() {
-	$.ajax({
-		type: "get",
-		contentType: "application/json",
-		url: 'getAllBranch',
-		asynch: false,
-		success: function (data) {
-
-			var appenddata1 = "";
-			//var jsonData1 = JSON.parse(data1.d);
-			for (var i = 0; i < data.length; i++) {
-				appenddata1 += "<option value ='" + data[i].name + "'>" + data[i].name +"</option>";
-			}
-			$("#branchName").append(appenddata1);
-		},
-		error: function () {
-			alert("Device control failed");
+	<script>
+		function loadNewPage() {
+			// Perform page redirect
+			window.location.href = "addAdvisor";
 		}
-	});
-}
-</script>
+	</script>
+
+	<script type="text/javascript">
+		function branchNameList() {
+			$.ajax({
+				type : "get",
+				contentType : "application/json",
+				url : 'getAllBranch',
+				asynch : false,
+				success : function(data) {
+
+					var appenddata1 = "";
+					//var jsonData1 = JSON.parse(data1.d);
+					for (var i = 0; i < data.length; i++) {
+						appenddata1 += "<option value ='" + data[i].name + "'>"
+								+ data[i].name + "</option>";
+					}
+					$("#branchName").append(appenddata1);
+				},
+				error : function() {
+					alert("Device control failed");
+				}
+			});
+		}
+	</script>
 
 	<!-- </form> -->
 </body>

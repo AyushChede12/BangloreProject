@@ -277,7 +277,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.box {
+/* .box {
     position: relative;
     border-radius:10px;
     background:0;
@@ -285,7 +285,7 @@
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
-}
+} */
 .blink_me {
   animation: blinker 1s linear infinite;
 }
