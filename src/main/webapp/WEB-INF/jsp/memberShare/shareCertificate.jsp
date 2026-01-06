@@ -1,4 +1,5 @@
 <jsp:include page="../header.jsp" />
+
 <body class="skin-blue sidebar-mini"
 	onload="getthevalueindropdownofshareCertificate(); getthevalueindropdownofShareTransfer(); shareTransferInTable();"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
@@ -15,7 +16,9 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE SHARES</b></h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE SHARES</b>
+				</h1>
 				<h5>SHARE CERTIFICATE</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -25,123 +28,127 @@
 			</section>
 			<form id="fileUploadForm">
 				<section class="content">
-					<div class="row">
-						<div class="col-md-12">
-							
-								<div class="box-body">
+					<div class="row ">
+						<div class="col-md-12 ">
 
-									<!-- FROM MEMBER -->
-									<h4 style="color: #008385; margin-bottom: 20px; text-decoration: underline;">FROM
-										MEMBER</h4>
+							<div class="box-body  form-container ">
 
-									<div class="row">
-										<div class="col-md-3">
-											<label>MEMBER NO (FROM) *</label> <select id="memberNo"
-												name="memberNoFrom" class="form-control select2"
-												onchange="ShareTransferMemberNoFrom();">
-												<option value="">SELECT MEMBER NO.</option>
-											</select>
-										</div>
+								<!-- FROM MEMBER -->
+								<h4
+									style="color: #008385; margin-bottom: 20px; text-decoration: underline;">FROM
+									MEMBER</h4>
 
-										<div class="col-md-3">
-											<label>MEMBER NAME (FROM)</label> <input id="memberNameFrom"
-												class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>CERTIFICATE NO (FROM)</label> <input
-												id="certificateNoFrom" class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>NO OF SHARE</label> <input id="noOfShare"
-												class="form-control" readonly>
-										</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label>MEMBER NO (FROM) *</label> <select id="memberNo"
+											name="memberNoFrom" class="form-control select2"
+											onchange="ShareTransferMemberNoFrom();">
+											<option value="">SELECT MEMBER NO.</option>
+										</select>
 									</div>
 
-									<div class="row" style="margin-top: 20px;">
-										<div class="col-md-3">
-											<label>SHARE AMOUNT</label> <input id="shareAmount"
-												class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>REMAINING NO OF SHARE</label> <input
-												id="reamingNoOfShare" class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>REMAINING SHARE AMOUNT</label> <input
-												id="reamingShareAmount" class="form-control" readonly>
-										</div>
+									<div class="col-md-3">
+										<label>MEMBER NAME (FROM)</label> <input id="memberNameFrom"
+											class="form-control" readonly>
 									</div>
 
-									<!-- TO MEMBER -->
-									<h4 style="color: #008385; margin: 30px 0 20px;  text-decoration: underline;">TO MEMBER</h4>
-
-									<div class="row">
-										<div class="col-md-3">
-											<label>MEMBER NO (TO) *</label> <select id="memberNos"
-												name="memberNoTo" class="form-control select2"
-												onchange="ShareTransferMemberNoTo();">
-												<option value="">SELECT MEMBER NO.</option>
-											</select>
-										</div>
-
-										<div class="col-md-3">
-											<label>MEMBER NAME (TO)</label> <input id="memberNameTo"
-												class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>CERTIFICATE NO (TO)</label> <input
-												id="certificateNoTo" class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>PREVIOUS NO OF SHARE</label> <input
-												id="previousNoOfShare" class="form-control" readonly>
-										</div>
+									<div class="col-md-3">
+										<label>CERTIFICATE NO (FROM)</label> <input
+											id="certificateNoFrom" class="form-control" readonly>
 									</div>
 
-									<div class="row" style="margin-top: 20px;">
-										<div class="col-md-3">
-											<label>SHARE TRANSFER *</label> <input id="shareTransfer"
-												class="form-control"
-												onkeyup="calculate(); calculate2(); calculate3();">
-										</div>
+									<div class="col-md-3">
+										<label>NO OF SHARE</label> <input id="noOfShare"
+											class="form-control" readonly>
+									</div>
+								</div>
 
-										<div class="col-md-3">
-											<label>TOTAL SHARE</label> <input id="totalShare"
-												class="form-control">
-										</div>
-
-										<div class="col-md-3">
-											<label>AMOUNT TRANSFER</label> <input id="transferAmount"
-												class="form-control" readonly>
-										</div>
-
-										<div class="col-md-3">
-											<label>TOTAL AMOUNT</label> <input id="totalAmount"
-												class="form-control" readonly>
-										</div>
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-md-3">
+										<label>SHARE AMOUNT</label> <input id="shareAmount"
+											class="form-control" readonly>
 									</div>
 
-									<div class="row" style="margin-top: 20px;">
-										<div class="col-md-3">
-											<label>TRANSFER DATE *</label> <input type="date"
-												id="transferDate" class="form-control">
-										</div>
+									<div class="col-md-3">
+										<label>REMAINING NO OF SHARE</label> <input
+											id="reamingNoOfShare" class="form-control" readonly>
 									</div>
 
+									<div class="col-md-3">
+										<label>REMAINING SHARE AMOUNT</label> <input
+											id="reamingShareAmount" class="form-control" readonly>
+									</div>
+								</div>
+
+								<!-- TO MEMBER -->
+								<h4
+									style="color: #008385; margin: 30px 0 20px; text-decoration: underline;">TO
+									MEMBER</h4>
+
+								<div class="row">
+									<div class="col-md-3">
+										<label>MEMBER NO (TO) *</label> <select id="memberNos"
+											name="memberNoTo" class="form-control select2"
+											onchange="ShareTransferMemberNoTo();">
+											<option value="">SELECT MEMBER NO.</option>
+										</select>
+									</div>
+
+									<div class="col-md-3">
+										<label>MEMBER NAME (TO)</label> <input id="memberNameTo"
+											class="form-control" readonly>
+									</div>
+
+									<div class="col-md-3">
+										<label>CERTIFICATE NO (TO)</label> <input id="certificateNoTo"
+											class="form-control" readonly>
+									</div>
+
+									<div class="col-md-3">
+										<label>PREVIOUS NO OF SHARE</label> <input
+											id="previousNoOfShare" class="form-control" readonly>
+									</div>
+								</div>
+
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-md-3">
+										<label>SHARE TRANSFER *</label> <input id="shareTransfer"
+											class="form-control"
+											onkeyup="calculate(); calculate2(); calculate3();">
+									</div>
+
+									<div class="col-md-3">
+										<label>TOTAL SHARE</label> <input id="totalShare"
+											class="form-control">
+									</div>
+
+									<div class="col-md-3">
+										<label>AMOUNT TRANSFER</label> <input id="transferAmount"
+											class="form-control" readonly>
+									</div>
+
+									<div class="col-md-3">
+										<label>TOTAL AMOUNT</label> <input id="totalAmount"
+											class="form-control" readonly>
+									</div>
+								</div>
+
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-md-3">
+										<label>TRANSFER DATE *</label> <input type="date"
+											id="transferDate" class="form-control">
+									</div>
 								</div>
 								<div class="box-footer">
 									<button type="button" id="btnTransfer"
 										class="btn btn-success pull-right">TRANSFER</button>
 								</div>
 
+							</div>
 
-							
+
+
+
 
 							<div class="box box-success"
 								style="box-shadow: none; overflow: auto !important;">
@@ -152,7 +159,7 @@
 										border="1" id="ContentPlaceHolder1_gdvData"
 										style="width: 100%; border-collapse: collapse;"
 										id="shareCertificate">
-										<caption>SHARE TRANSFER DATA LIST</caption>
+										<caption style="text-decoration: underline;"><h4>SHARE TRANSFER DATA LIST</h4></caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SR NO.</th>
 											<th scope="col">MEMBER NO. (FROM)</th>
