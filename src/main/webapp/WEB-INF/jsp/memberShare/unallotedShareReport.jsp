@@ -1,6 +1,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/css/form2.css">
 <jsp:include page="../header.jsp" />
 <style>
 .heading {
@@ -87,10 +88,9 @@ function calculateShareSerialNo() {
 }
 </script>
 
-<body class="skin-blue sidebar-mini" 
+<body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
-	cz-shortcut-listen="true"
-	onload="dropDownOfMemberNo();">
+	cz-shortcut-listen="true" onload="dropDownOfMemberNo();">
 	<!-- 	<form method="post" action="updateShareTransfer" id="form1"> -->
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
@@ -104,7 +104,8 @@ function calculateShareSerialNo() {
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Alloted Extra Share</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE SHARES</b></h1>
+				<h5>UNALLOTED SHARES</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -113,267 +114,214 @@ function calculateShareSerialNo() {
 			</section>
 			<!-- action="/addMembership" -->
 			<form id="fileUploadForm">
-				<section class="content">
-					<div class="row">
-						<!-- <input type="hidden" name="id" id="id"> -->
-						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Share Details</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="txtBranch" class="col-sm-4 control-label">Branch
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="branchName" id="branchName"
-												class="form-control" style="width: 100%;" required>
-												<option>Select Branch Name</option>
-											</select>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="memberData" class="col-sm-4 control-label">
-												Client No.<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<!-- <select name="clientNo" id="clientNo"
-													class="form-control select2" style="width: 100%;"
-													onchange="callback(); toggleDisabledFields();" required>
-													<option value="">Select Member</option>
-												</select> --> 
-												<input name="clientNo" type="text" readonly="readonly"
-													id="clientNo" class="form-control"
-													Placeholder="Enter Client No." required />
-												<span id="memberData"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member Code</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPreviousShareAmount"
-												class="col-sm-4 control-label">Member Name <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<input name="memberName" type="text" readonly="readonly"
-													id="memberName" class="form-control"
-													Placeholder="Enter Member Name" required /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Member Name</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtBranch" class="col-sm-4 control-label">Member
-												No. <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="memberNo" id="memberNo" onchange="callbackAllotedExtraShare();" 
-													class="form-control select2" style="width: 100%;"
-													onchange="" required>
-													<option value="">Select Member No.</option>
-												</select>
-												<!-- <input name="memberNo" type="text" readonly="readonly"
-													id="memberNoInput" class="form-control" required /> -->
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDateofJoin" class="col-sm-4 control-label">Add
-												Allotted Date </label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="doj" type="date" id="doj" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPreviousShareAmount"
-												class="col-sm-4 control-label">Previous Balance</label>
-											<div class="col-sm-8">
-												<input name="previousBalance" type="text"
-													id="previousBalance" class="form-control"
-													Placeholder="Enter Previous Share Balance"
-													readonly="readonly" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPreviousShareNo"
-												class="col-sm-4 control-label">Previous No Of Share</label>
-											<div class="col-sm-8">
-												<input id="previousShareNo" name="previousShareNo"
-													type="text" id="previousShareNo" class="form-control"
-													Placeholder="Enter Previous No Of Share"
-													readonly="readonly" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="ddlAllotedFrom" class="col-sm-4 control-label">Previous Share
-												Serial No. 
-											</label>
-											<div class="col-sm-8"> 
-												<input name="previousShareSerialNo" type="text" id="previousShareSerialNo" 
-												placeholder="Enter Share Serial No." class="form-control" readonly="readonly" />
-												<span id="shareAllotedfrm2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Share Allotted</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtFaceValue" class="col-sm-4 control-label">Face
-												Value</label>
-											<div class="col-sm-8">
-												<input name="faceValue" type="text" value="10"
-												id="faceValue" class="form-control" oninput="calculate()" 
-												Placeholder="Enter Face Value" readonly="readonly" />
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="txtNoOfShare" class="col-sm-4 control-label">No.
-												of Share <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="noOfShare" type="text" onkeyup="calculate(); calculateShareSerialNo(); calculateTotalBalance();"
-												placeholder="Enter No. Of Share" id="noOfShare"
-												class="form-control" required /> <span
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													No. of Share</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="ddlAllotedFrom" class="col-sm-4 control-label">Share
-												Serial No. <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<!-- <select name="shareSerialNo" id="shareSerialNo"
-													class="form-control select2" style="width: 100%;" required>
-													<option value="">Select Share Allotted From</option>
-												</select> --> 
-												<input name="shareSerialNo" type="text" id="shareSerialNo" 
-												placeholder="Enter Share Serial No." class="form-control" readonly="readonly" />
-												<span id="shareAllotedfrm2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Share Allotted</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtSharebalance" class="col-sm-4 control-label">Share
-												Balance</label>
-											<div class="col-sm-8">
-												<input name="sharebalance" type="text" 
-												id="sharebalance" class="form-control"
-												Placeholder="Enter Total No. Of Share" readonly="readonly" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtSharebalance" class="col-sm-4 control-label">Total
-												No. Of Share</label>
-											<div class="col-sm-8">
-												<input name="totalNoOfShare" type="text" 
-												id="totalNoOfShare" class="form-control"
-												Placeholder="Enter Share balance" readonly="readonly" />
-											</div>
-										</div>
-										<!-- <div class="form-group row">
-										<label for="txtTransferAmount" class="col-sm-4 control-label">Transfer
-											Amount <strong style="color: Red">*</strong>
-										</label>
-										<div class="col-sm-8">
-											<input name="transferAmount" type="text" id="transferAmount"
-												class="form-control" Placeholder="Enter Transfer Amount"
-												required /> <span
-												id="ContentPlaceHolder1_RequiredFieldValidator1"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Transfer Amount</span>
-										</div>
-									</div> -->
-										<div class="form-group row">
-											<label for="txtIntroMName" class="col-sm-4 control-label">Photo</label>
-											<div class="col-sm-8">
-												<img id="preview" name="preview" class="profile-user-img"
-													src="data:image/png;base64,${aadharPhoto}"
-													style="width: 110px;" /> <input type="file" name="filetag"
-													id="filetag" /> <a class="heading"
-													href="(Photo should be less than 2MB)">(Photo should be
-													less than 2MB)</a>
-												<!--                                     onchange="uploadFile('aadharPhoto','addMember')"  -->
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">1</div>
+						<div class="step-title">SHARE DETAILS</div>
+						<div class="wizard-line"></div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
-									<h3 class="box-title">Payment Details</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="txtTransferDate" class="col-sm-4 control-label">Transfer
-												Date <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<input name="transferDate" type="date" id="transferDate"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" required />
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
-												By <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="paymode" id="paymode" class="form-control"
-													style="width: 100%;">
-													<option value="Cash">Cash</option>
-													<option value="Cheque">Cheque</option>
-													<option value="Online">Online</option>
-													<option value="NEFT">NEFT</option>
-													<option value="Transfer ">Transfer</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Remarks</label>
-											<div class="col-sm-8">
-												<textarea name="remarks" rows="2" cols="20" id="remarks"
-													class="form-control" Placeholder="Enter Remarks if any">
-                                    </textarea>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6"></div>
-								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<!--  <button type="button" name="enableDisabledFields"
-											value="New" id="enableDisabledFields"
-											onclick="toggleDisabledFields()"
-											class="btn btn-info pull-right margin-r-5" >New</button>
-											-->
-										<!-- onclick="saveOPerationinShareTransfer();" -->
-										<input type="submit" name="btnUpdate" value="Update"
-											onclick="javascript: " id="btnUpdate"
-											class="btn btn-success pull-right margin-r-5" />
-									</div>
-								</div>
+
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">2</div>
+						<div class="step-title">PAYMENT DETAILS</div>
+					</div>
+				</div>
+				<section class="content">
+					<div id="shareDetailsSection" class="form-container">
+						<!-- <div class="row"> -->
+						<!-- <input type="hidden" name="id" id="id"> -->
+						<!-- <div class="col-md-12"> -->
+						
+							
+							<div class="box-header with-border">
+								<h3 class="box-title"><b>SHARE DETAILS</b></h3>
 							</div>
-						</div>
+
+
+							<div class="box-body">
+
+								<!-- MEMBER DETAILS -->
+								<h4 style="color: #008385; margin-bottom: 15px; text-decoration: underline;">MEMBER
+									DETAILS</h4>
+
+								<div class="row">
+									<div class="col-md-3">
+										<label>BRANCH *</label> <select id="branchName"
+											class="form-control"></select>
+									</div>
+
+									<div class="col-md-3">
+										<label>CLIENT NO *</label> <input id="clientNo"
+											class="form-control" readonly>
+									</div>
+
+									<div class="col-md-3">
+										<label>MEMBER NAME *</label> <input id="memberName"
+											class="form-control" Style="text-transform: uppercase;">
+									</div>
+
+									<div class="col-md-3">
+										<label>MEMBER NO *</label> <select id="memberNo"
+											class="form-control select2"
+											onchange="callbackAllotedExtraShare();"></select>
+									</div>
+								</div>
+
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-md-3">
+										<label>ADD ALLOTED DATE</label> <input type="date" id="doj"
+											class="form-control">
+									</div>
+								</div>
+
+
+
+								<!-- PREVIOUS DETAILS -->
+								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">PREVIOUS
+									SHARE DETAILS</h4>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>PREVIOUS BALANCE</label> <input id="previousBalance"
+												class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>PREVIOUS NO OF SHARES</label> <input
+												id="previousShareNo" class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>PREVIOUS SHARE SERIAL NO.</label> <input
+												id="previousShareSerialNo" class="form-control" readonly>
+										</div>
+									</div>
+								</div>
+
+								<!-- NEW SHARE DETAILS -->
+								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">NEW SHARE
+									DETAILS</h4>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>FACE VALUE</label> <input id="faceValue" value="10"
+												class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>NO OF SHARE *</label> <input id="noOfShare"
+												class="form-control"
+												onkeyup="calculate(); calculateShareSerialNo(); calculateTotalBalance();">
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>SHARE SERIAL NO *</label> <input id="shareSerialNo"
+												class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>SHARE BALANCE</label> <input id="sharebalance"
+												class="form-control" readonly>
+										</div>
+									</div>
+
+									<div class="col-md-3 ">
+										<div class="form-group">
+											<label>TOTAL NO OF SHARE</label> <input id="totalNoOfShare"
+												class="form-control" readonly>
+										</div>
+									</div>
+								</div>
+
+								<!-- PHOTO -->
+								<h4 style="color: #008385; margin: 20px 0 15px;text-decoration: underline;">PHOTO</h4>
+								<div class="row">
+									<div class="col-md-4">
+										<img id="preview" class="img-thumbnail" style="width: 120px;">
+										<input type="file" name="filetag" id="filetag"> <small
+											class="text-danger">Photo should be less than 2MB</small>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- FOOTER -->
+							<div class="box-footer">
+								<button type="button" class="btn btn-primary pull-right"
+									onclick="goToPaymentDetails()">NEXT</button>
+							</div>
+						
+
+
+
+					</div>
+
+					<div id="paymentDetailsSection" class="form-container" style="display: none;">
+
+						
+							<div class="box-header with-border">
+								<h3 class="box-title"><b>PAYMENT DETAILS</b></h3>
+							</div>
+
+							<div class="box-body">
+
+								<!-- ROW 1 -->
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>TRANSFER DATE <span style="color: red">*</span></label>
+											<input type="date" id="transferDate" name="transferDate"
+												class="form-control">
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>PAYMENT MODE <span style="color: red">*</span></label>
+											<select id="paymode" name="paymode" class="form-control">
+												<option value="Cash">CASH</option>
+												<option value="Cheque">CHEQUE</option>
+												<option value="Online">ONLINE</option>
+												<option value="NEFT">NEFT</option>
+												<option value="Transfer">TRANSFER</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<br>
+								<!-- ROW 2 -->
+								<div class="row">
+									<div class="col-md-8">
+										<div class="form-group">
+											<label>REMARKS</label>
+											<textarea id="remarks" name="remarks" rows="2"
+												class="form-control" placeholder="ENTER REMARKS IF ANY"></textarea>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- FOOTER -->
+							<div class="box-footer">
+								<button type="button" class="btn btn-default"
+									onclick="backToShareDetails()">PREVIOUS</button>
+
+								<input type="button" id="btnSave" value="SAVE"
+									class="btn btn-success pull-right">
+							</div>
+
+						
 					</div>
 				</section>
 			</form>
@@ -450,6 +398,38 @@ function calculateShareSerialNo() {
 			});
 		});
 	</script>
+	<script>
+function goToPaymentDetails() {
+
+    /* // BASIC VALIDATION (optional)
+    if ($("#branchName").val() == "") {
+        alert("Please select Branch");
+        return;
+    }
+    if ($("#clientNo").val() == "") {
+        alert("Please select Client No");
+        return;
+    }
+    if ($("#noOfShare").val() == "") {
+        alert("Please enter No Of Share");
+        return;
+    } */
+
+    $("#shareDetailsSection").hide();
+    $("#paymentDetailsSection").show();
+    
+    $("#step1").removeClass("active").addClass("completed");
+    $("#step2").removeClass("inactive").addClass("active");
+}
+
+function backToShareDetails() {
+    $("#paymentDetailsSection").hide();
+    $("#shareDetailsSection").show();
+    
+    $("#step2").removeClass("active").addClass("inactive");
+    $("#step1").removeClass("completed").addClass("active");
+}
+</script>
 </body>
 <!-- Dk/Admin/ShareIssue.aspx?ismodify=false EDB D 09:26:56 GMT -->
 </html>

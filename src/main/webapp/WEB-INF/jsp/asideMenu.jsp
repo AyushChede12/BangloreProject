@@ -71,7 +71,7 @@
 			</a>
 				<ul class="treeview-menu">
 					<li><a href="shareIssue"><i class="fa fa-circle-o"></i>
-							Transfer Shares</a></li>
+							TRANSFER SHARE</a></li>
 					<li><a href="unallotedShareReport"><i
 							class="fa fa-circle-o"></i> UNALLOTED SHARES</a></li>
 					<li><a href="shareCertificate"><i class="fa fa-circle-o"></i>
@@ -366,10 +366,10 @@
 							class="fa fa-circle-o"></i> SAVING TRANSACTION REMOVAL</a></li>
 					<li><a href="loanRectification"><i class="fa fa-circle-o"></i>
 							LOAN ACCOUNT CORRECTION</a></li>
-					<li><a href="getGoldLoanRectification"><i class="fa fa-circle-o"></i>
-							GOLD LOAN CORRECTION</a></li>
-					<li><a href="GroupLoanRectification"><i class="fa fa-circle-o"></i>
-							JOINT LIABILITY UPDATE</a></li>
+					<li><a href="getGoldLoanRectification"><i
+							class="fa fa-circle-o"></i> GOLD LOAN CORRECTION</a></li>
+					<li><a href="GroupLoanRectification"><i
+							class="fa fa-circle-o"></i> JOINT LIABILITY UPDATE</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <img
 					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYOFF
@@ -380,18 +380,18 @@
 				<ul class="treeview-menu">
 					<li><a href="maturityMaster"><i class="fa fa-circle-o"></i>
 							MATURITY SCHEME MASTER</a></li>
-					<li><a href="addMaturityApplication"><i class="fa fa-circle-o"></i>
-							APPLY FOR MATURITY</a></li>
+					<li><a href="addMaturityApplication"><i
+							class="fa fa-circle-o"></i> APPLY FOR MATURITY</a></li>
 					<li><a href="addMaturityPayment"><i class="fa fa-circle-o"></i>
 							MATURITY APPLICATION STATUS</a></li>
-					<li><a href="maturityPartPayment"><i class="fa fa-circle-o"></i>
-							FULL MATURITY PAYMENT</a></li>
-					<li><a href="MatApplicationStatus"><i class="fa fa-circle-o"></i>
-							FULL PAYMENT STATUS</a></li>
-					<li><a href="matPaymentStatusPartly"><i class="fa fa-circle-o"></i>
-							PARTIAL MATURITY PAYMENT</a></li>
-					<li><a href="MaturityTrackingView"><i class="fa fa-circle-o"></i>
-							PARTIAL PAYMENT STATUS</a></li>
+					<li><a href="maturityPartPayment"><i
+							class="fa fa-circle-o"></i> FULL MATURITY PAYMENT</a></li>
+					<li><a href="MatApplicationStatus"><i
+							class="fa fa-circle-o"></i> FULL PAYMENT STATUS</a></li>
+					<li><a href="matPaymentStatusPartly"><i
+							class="fa fa-circle-o"></i> PARTIAL MATURITY PAYMENT</a></li>
+					<li><a href="MaturityTrackingView"><i
+							class="fa fa-circle-o"></i> PARTIAL PAYMENT STATUS</a></li>
 					<li><a href="approvedStatus"><i class="fa fa-circle-o"></i>
 							APPROVED STATUS</a></li>
 				</ul></li>
@@ -404,10 +404,10 @@
 				<ul class="treeview-menu">
 					<li><a href="incentiveMaster"><i class="fa fa-circle-o"></i>
 							INCENTIVE SCHEME MASTER</a></li>
-					<li><a href="incentiveGeneration"><i class="fa fa-circle-o"></i>
-							GENERATE INCENTIVE PAYMENTS</a></li>
-					<li><a href="incentiveDetailsPrint"><i class="fa fa-circle-o"></i>
-							INCENTIVE PAYMENT DETAILS</a></li>
+					<li><a href="incentiveGeneration"><i
+							class="fa fa-circle-o"></i> GENERATE INCENTIVE PAYMENTS</a></li>
+					<li><a href="incentiveDetailsPrint"><i
+							class="fa fa-circle-o"></i> INCENTIVE PAYMENT DETAILS</a></li>
 					<li><a href="incentiveListPrint"><i class="fa fa-circle-o"></i>
 							INCENTIVE SUMMARY REPORT</a></li>
 				</ul></li>
@@ -420,32 +420,32 @@
 				<ul class="treeview-menu">
 					<li><a href="InvestmentReport"><i class="fa fa-circle-o"></i>
 							POLICY REPORT</a></li>
-					<li><a href="addEmployeeCollection"><i class="fa fa-circle-o"></i>
-							FINANCIAL CONSULTANT REPORT</a></li>
-					<li><a href="Chequeclearancestatus"><i class="fa fa-circle-o"></i>
-							CHEQUE TRANSACTION REPORT</a></li>
-					<li><a href="IncentivePaymentReport"><i class="fa fa-circle-o"></i>
-							INCENTIVE PAYMENT SUMMARY</a></li>
-					<li><a href="RecurringDueReportView"><i class="fa fa-circle-o"></i>
-							RECURRING INSTALLMENT DUE REPORT</a></li>
+					<li><a href="addEmployeeCollection"><i
+							class="fa fa-circle-o"></i> FINANCIAL CONSULTANT REPORT</a></li>
+					<li><a href="Chequeclearancestatus"><i
+							class="fa fa-circle-o"></i> CHEQUE TRANSACTION REPORT</a></li>
+					<li><a href="IncentivePaymentReport"><i
+							class="fa fa-circle-o"></i> INCENTIVE PAYMENT SUMMARY</a></li>
+					<li><a href="RecurringDueReportView"><i
+							class="fa fa-circle-o"></i> RECURRING INSTALLMENT DUE REPORT</a></li>
 					<li><a href="approvedLoan"><i class="fa fa-circle-o"></i>
 							LOAN REPORT</a></li>
 					<li><a href="LoanPaymentReport"><i class="fa fa-circle-o"></i>
 							LOAN PAYMENT REPORT</a></li>
 					<li><a href="DueEmiReport"><i class="fa fa-circle-o"></i>
 							UPCOMING EMI DUE REPORT</a></li>
-					<li><a href="EMIOverDueReportView"><i class="fa fa-circle-o"></i>
-							OVERDUE REPAYMENT ANALYSIS</a></li>
+					<li><a href="EMIOverDueReportView"><i
+							class="fa fa-circle-o"></i> OVERDUE REPAYMENT ANALYSIS</a></li>
 					<li><a href="regularEmiReport"><i class="fa fa-circle-o"></i>
 							LOAN INSTALLMENT PENDING REPORT</a></li>
 					<li><a href="LoanSheetPrint"><i class="fa fa-circle-o"></i>
 							LOAN CONFIRMATON DOCUMENT</a></li>
 					<li><a href="policystatement"><i class="fa fa-circle-o"></i>
 							GOLD LOAN DOCUMENT</a></li>
-					<li><a href="addProjectionReport"><i class="fa fa-circle-o"></i>
-							JOINT LIABILITY DOCUMENT</a></li>
-					<li><a href="MaturityStatusReportView"><i class="fa fa-circle-o"></i>
-							MATURITY STATUS REPORT</a></li>
+					<li><a href="addProjectionReport"><i
+							class="fa fa-circle-o"></i> JOINT LIABILITY DOCUMENT</a></li>
+					<li><a href="MaturityStatusReportView"><i
+							class="fa fa-circle-o"></i> MATURITY STATUS REPORT</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <img
 					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYROLL
@@ -1597,4 +1597,5 @@
 		</ul>
 	</section>
 	<!-- /.sidebar -->
+	
 </aside>

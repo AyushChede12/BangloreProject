@@ -100,13 +100,13 @@
 						<div class="col-md-12">
 							<div class="box box-warning">
 								<div class="box-header with-border">
-									<h3 class="box-title">Search Details</h3>
+									<h3 class="box-title">SEARCH DETAILS</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-6">
 											<div class="form-group row">
-												<label class="col-sm-4 control-label">Select by Code<strong
+												<label class="col-sm-4 control-label">SELECT BY CODE<strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
 													<select
@@ -114,8 +114,7 @@
 														onchange="SearchTHePolicyNumber();"
 														id="ContentPlaceHolder1_ddlSearchMemberCode"
 														class="form-control select2" style="width: 100%;">
-														<option selected="selected" value="">Select
-															Criteria</option>
+														<option selected="selected" value="">SELECT CRITERIA</option>
 													</select>
 												</div>
 											</div>
@@ -129,27 +128,27 @@
 						<div class="col-md-10">
 							<div class="box box-success">
 								<div class="box-header with-border">
-									<h3 class="box-title">Client Details</h3>
+									<h3 class="box-title">CLIENT DETAILS</h3>
 								</div>
 								<div id="ContentPlaceHolder1_pnlCdetails" class="aspNetDisabled">
 									<div class="box-body">
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Client Code :</label> <input name="id" type="text"
+												<label>CLIENT CODE :</label> <input name="id" type="text"
 													disabled="disabled" id="id" class="form-control"
 													autocomplete="off" />
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Client Name :</label> <input name="memberName"
+												<label>CLIENT NAME :</label> <input name="memberName"
 													type="text" maxlength="4" disabled="disabled"
 													id="memberName" class="form-control" autocomplete="off" />
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="form-group">
-												<label>Registration Date :</label>
+												<label>REGISTRATION DATE :</label>
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
