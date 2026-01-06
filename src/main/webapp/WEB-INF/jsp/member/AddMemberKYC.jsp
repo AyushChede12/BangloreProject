@@ -88,15 +88,15 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
-									<h3 class="box-title">Search Details</h3>
+							<div>
+								<div >
+									<h3 class="box-title">SEARCH DETAILS</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-6">
 											<div class="form-group row">
-												<label class="col-sm-4 control-label">Select by Code<strong
+												<label class="col-sm-4 control-label">SELECT BY CODE<strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
 													<%//List<Member> allMember = (List<Member>)request.getAttribute("allMember"); 
@@ -107,8 +107,7 @@
 														onchange="callback(this.value)"
 														id="ContentPlaceHolder1_ddlSearchMemberCode"
 														class="form-control select2" style="width: 100%;">
-														<option selected="selected" value="">Select
-															Criteria</option>
+														<option selected="selected" value="">SELECT CRITERIA</option>
 														<%for(/* Member member: allMember */
 																ClientMaster member: allMember){ %>
 														<option value="<%=member.getId()%>"><%=member.getMemberName() %>
@@ -123,7 +122,7 @@
 										<input type="hidden" id="id" name="id">
 										<div class="col-md-4">
 											<div class="form-group row">
-												<label class="col-sm-4 control-label">KYC Verify By</label>
+												<label class="col-sm-4 control-label">KYC VERIFY BY</label>
 												<div class="col-sm-8">
 													<span id="ContentPlaceHolder1_lblVerifyby"
 														style="color: Red; font-weight: bold;"></span>
@@ -135,42 +134,42 @@
 							</div>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Client Details</h3>
+							<div >
+								<div >
+									<h3 class="box-title">CLIENT DETAILS</h3>
 								</div>
 								<div class="box-body">
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Client Name :</label> <input name="memberName"
+											<label>CLIENT NAME :</label> <input name="memberName"
 												type="text" value="" readonly="readonly"
 												id="ContentPlaceHolder1_txtMemberName" class="form-control"
-												Placeholder="Enter Member Name" autocomplete="off" />
+												Placeholder="ENTER MEMBER NAME" autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Client Code :</label> <input name="id" type="text"
+											<label>CLIENT CODE :</label> <input name="id" type="text"
 												value="" readonly="readonly" id="idMemberCode"
-												class="form-control" Placeholder="Enter Member Code"
+												class="form-control" Placeholder="ENTER MEMBER CODE"
 												autocomplete="off" /> <span id="idMemberCode"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Member Code</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER MEMBER CODE</span>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Mobile No. :</label> <input name="phoneno" type="text"
+											<label>MOBILE NO. :</label> <input name="phoneno" type="text"
 												value="" readonly="readonly"
 												id="ContentPlaceHolder1_txtMobile" class="form-control"
-												Placeholder="Enter Mobile No." autocomplete="off" />
+												Placeholder="ENTER MOBILE NO." autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Registration Date :</label>
+											<label>REGISTRATION DATE :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
@@ -186,101 +185,101 @@
 									<div class="clearfix"></div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Aadhar No. :</label> <input name="aadharNo"
+											<label>AADHAR NO. :</label> <input name="aadharNo"
 												type="text" value="" readonly="readonly"
 												id="ContentPlaceHolder1_txtAadharNo" class="form-control"
-												Placeholder="Enter Aadhar No." autocomplete="off" />
+												Placeholder="ENTER AADHAR NO." autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>PAN No. :</label> <input name="pan" type="text"
+											<label>PAN NO. :</label> <input name="pan" type="text"
 												value="" readonly="readonly" id="ContentPlaceHolder1_txtPAN"
-												class="form-control" Placeholder="Enter PAN No."
+												class="form-control" Placeholder="ENTER PAN NO."
 												autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Voter No. :</label> <input name="voterNo" type="text"
+											<label>VOTOR NO. :</label> <input name="voterNo" type="text"
 												readonly="readonly" id="ContentPlaceHolder1_txtVoterNo"
-												class="form-control" Placeholder="Enter Voter No."
+												class="form-control" Placeholder="ENTER VOTOR NO."
 												autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Ration Card No. :</label> <input name="rationNo"
+											<label>RATION CARD NO. :</label> 
+											<input name="rationNo"
 												type="text" id="ContentPlaceHolder1_txtRationNo"
-												class="form-control" Placeholder="Enter Ration Card No."
-												autocomplete="off" />
+												class="form-control" Placeholder="ENTER RATION CARD NO."
+												autocomplete="off" style="text-transform: uppercase;" />
 										</div>
 									</div>
 									<div class="clearfix"></div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>DL No. :</label> <input name="dLNo" type="text"
+											<label>DL NO. :</label> <input name="dLNo" type="text"
 												id="ContentPlaceHolder1_txtDLNo" class="form-control"
-												Placeholder="Enter DL No." autocomplete="off" />
+												Placeholder="ENTER DL NO." autocomplete="off" style="text-transform: uppercase;" />
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<a id="ContentPlaceHolder1_lnkAverify"
-												class="btn btn-success margin-20">Online
-												Aadhar Verify</a> <a id="ContentPlaceHolder1_lnkVoterVerify"
-												class="btn btn-warning margin-20">Online
-												Voter Verify</a> <a id="ContentPlaceHolder1_lnkPANVerify"
-												class="btn btn-info margin-20">Online PAN
-												Verify</a>
+												class="btn btn-success margin-20">ONLINE AADHAR VERIFY</a> 
+												
+											<a id="ContentPlaceHolder1_lnkVoterVerify"
+												class="btn btn-warning margin-20">ONLINE VOTER VERIFY</a> <a id="ContentPlaceHolder1_lnkPANVerify"
+												class="btn btn-info margin-20">ONLINE PAN VERIFY</a>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
 											<a id="ContentPlaceHolder1_lnkVerifyComplete"
-												class="btn btn-danger margin-20">Click
-												here to Verify Complete</a>
+												class="btn btn-danger margin-20">CLICK HERE TO VERIFY COMPLETE</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box box-success">
 								<div class="box-header with-border">
-									<h3 class="box-title">Bank Details</h3>
+									<h3 class="box-title">BANK DETAILS</h3>
 								</div>
 								<div class="box-body">
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Bank Name :</label> <input name="bankName" type="text"
+											<label>BANK NAME :</label> <input name="bankName" type="text"
 												id="ContentPlaceHolder1_txtBankName" class="form-control"
-												Placeholder="Enter Bank Name" autocomplete="off" />
+												Placeholder="ENTER BANK NAME" autocomplete="off" style="text-transform: uppercase;"/>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Bank Branch :</label> <input name="bankBranch"
+											<label>BANK BRANCH :</label> <input name="bankBranch"
 												type="text" id="ContentPlaceHolder1_txtBankBranch"
-												class="form-control" Placeholder="Enter Bank Branch"
-												autocomplete="off" />
+												class="form-control" Placeholder="ENTER BANK BRANCH"
+												autocomplete="off" style="text-transform: uppercase;"/>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Account No. :</label> <input name="accountNo"
+											<label>ACCOUNT NO. :</label> <input name="accountNo"
 												type="text" id="ContentPlaceHolder1_txtAccountNo"
-												class="form-control" Placeholder="Enter Account No. "
-												autocomplete="off" />
+												class="form-control" Placeholder="ENTER ACCOUNT NO. "
+												autocomplete="off" style="text-transform: uppercase;"/>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>IFSC Code :</label> <input name="iFSC" type="text"
+											<label>IFSC CODE :</label> <input name="iFSC" type="text"
 												id="ContentPlaceHolder1_txtIFSC" class="form-control"
-												Placeholder="Enter IFSC Code" autocomplete="off" />
+												Placeholder="ENTER IFSC CODE" autocomplete="off" style="text-transform: uppercase;"/>
 										</div>
 									</div>
 									<div class="clearfix margin-bottom-10"></div>

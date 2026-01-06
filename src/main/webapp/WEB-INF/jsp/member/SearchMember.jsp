@@ -175,6 +175,7 @@
 									</div>
 								</div>
 								<div class="clearfix margin-bottom-10"></div>
+								<br>
 								<div class="text-center">
 									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
 										href="javascript:searchThroughSearchBox123();"><span
