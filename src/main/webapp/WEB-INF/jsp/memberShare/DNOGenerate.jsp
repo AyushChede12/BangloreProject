@@ -1,4 +1,5 @@
 <jsp:include page="../header.jsp" />
+
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true" onload="GetBranchNameInTheDropDown();">
@@ -25,7 +26,7 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12 form-container">
 							
 								
 								<div class="box-body">
@@ -33,16 +34,16 @@
 									<!-- ROW 1 -->
 									<div class="row">
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>BRANCH :</label> <select name="branchName"
 													id="branchName" class="form-control" style="width: 100%;">
 													<option selected value="">SELECT CRITERIA</option>
 												</select>
-											</div>
+											
 										</div>
 
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>FROM DATE :</label>
 												<div class="input-group date">
 													<div class="input-group-addon">
@@ -52,11 +53,11 @@
 														class="form-control" data-inputmask="'alias':'dd/mm/yyyy'"
 														data-mask="">
 												</div>
-											</div>
+											
 										</div>
 
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>TO DATE :</label>
 												<div class="input-group date">
 													<div class="input-group-addon">
@@ -66,34 +67,34 @@
 														class="form-control" data-inputmask="'alias':'dd/mm/yyyy'"
 														data-mask="">
 												</div>
-											</div>
+											
 										</div>
 
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>MEMBER NAME :</label> <input name="memberName"
 													type="text" id="memberName" class="form-control"
 													placeholder="ENTER MEMBER NAME" autocomplete="off" style="text-transform: uppercase;">
-											</div>
+											
 										</div>
 									</div>
 
 									<!-- ROW 2 -->
 									<div class="row" style="margin-top: 20px;">
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>MEMBER NO. :</label> <input name="memberNo"
 													type="text" id="memberNo" class="form-control"
 													placeholder="ENTER PAN NO." autocomplete="off">
-											</div>
+											
 										</div>
 
 										<div class="col-md-3">
-											<div class="form-group">
+											
 												<label>CLIENT NO. :</label> <input name="clientNo"
 													type="text" id="clientNo" class="form-control"
 													placeholder="ENTER PAN NO." autocomplete="off" >
-											</div>
+											
 										</div>
 									</div>
 
@@ -103,10 +104,7 @@
 											<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
 												href="javascript:getMemberShareDataInTable();"> <span
 												class="fa fa-search"></span> SEARCH
-											</a> <a id="ContentPlaceHolder1_btnPrint" class="btn btn-warning"
-												href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$btnPrint','');">
-												<span class="fa fa-print"></span> PRINT
-											</a>
+											</a> 
 										</div>
 									</div>
 
@@ -117,7 +115,7 @@
 								style="box-shadow: none; overflow: auto !important;">
 								<div class="box-header with-border">
 									<h3 class="box-title">SEARCH RESULT</h3>
-									<div class="box-tools pull-right"></div>
+									
 								</div>
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>

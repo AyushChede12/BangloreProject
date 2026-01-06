@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="dist/css/lightbox.min.css" />
 <link rel="stylesheet" href="dist/css/qr.css" />
 <link rel="stylesheet" href="dist/css/form1.css" />
+<link rel="stylesheet" href="/css/form2.css">
 <!-- Google Font -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
