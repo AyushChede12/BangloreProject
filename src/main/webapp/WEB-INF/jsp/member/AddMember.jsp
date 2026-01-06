@@ -53,11 +53,11 @@ function check()
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader"
-					style="font-size: 30px; margin-left: 10px;">Add Client</h1>
+					style="font-size: 30px; margin-left: 10px;">NEW CUSTOMER</h1>
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
-						<div class="step-title">CLIENT DETAILS</div>
+						<div class="step-title">CUSTOMER DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step2">
@@ -658,7 +658,7 @@ function check()
 					</div>
 				</div> --%>
 
-							<form id="fileUploadForm" enctype="multipart/form-data">
+							<form>
 
 								<div class="container-fluid">
 									<div class="row">
@@ -668,7 +668,7 @@ function check()
 											<div id="clientSection">
 												<div>
 													<h3 class="box-title">
-														<b>CLIENT DETAILS</b>
+														<b>CUSTOMER DETAILS</b>
 													</h3>
 												</div>
 
@@ -680,54 +680,31 @@ function check()
 
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT NO
-																	*</label>
+																<label class="col-sm-4 control-label">AUTHENTICATE
+																	FOR</label>
 																<div class="col-sm-8">
-																	<input type="text" name="clientNo" id="clientNo"
-																		value="${count}" class="form-control" readonly>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT ID *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="clientId" id="clientId"
-																		value="${clientId}" class="form-control" readonly>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">BRANCH NAME *</label>
-																<div class="col-sm-8">
-																	<select name="branchName" id="branchName"
+																	<select name="authenticateFor" id="authenticateFor"
 																		class="form-control">
-																		<option value="" style="text-transform: uppercase;">SELECT BRANCH</option>
+																		<option style="text-transform: uppercase;">SELECT</option>
+																		<option value="AADHAR">AADHAR</option>
+																		<option value="WITHOUT AADHAR">WITHOUT AADHAR</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">REGISTRATION DATE *</label>
+																<label class="col-sm-4 control-label">REGISTRATION
+																	DATE *</label>
 																<div class="col-sm-8">
 																	<input type="date" name="registrationDate"
-																		id="registrationDate" class="form-control" style="text-transform: uppercase;">
+																		id="registrationDate" class="form-control"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-
-													</div>
-
-
-
-													<!-- Row 2 -->
-													<div class="row four-field-row">
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">PREFIX *</label>
@@ -744,7 +721,8 @@ function check()
 
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT NAME *</label>
+																<label class="col-sm-4 control-label">FIRST
+																	NAME *</label>
 																<div class="col-sm-8">
 																	<input type="text" name="memberName"
 																		class="form-control" placeholder="Full Name"
@@ -752,61 +730,43 @@ function check()
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">RELATIVE NAME</label>
+																<label class="col-sm-4 control-label">MIDDLE
+																	NAME *</label>
 																<div class="col-sm-8">
-																	<input type="text" name="relativeName"
-																		class="form-control" style="text-transform: uppercase;">
+																	<input type="text" name="memberName"
+																		class="form-control" placeholder="Full Name"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">RELATION</label>
+																<label class="col-sm-4 control-label">LAST
+																	NAME *</label>
 																<div class="col-sm-8">
-																	<select name="relativeRelation" id="relativeRelation"
-																		class="form-control">
-																		<option style="text-transform: uppercase;">SELECT RELATION</option>
-																	</select>
+																	<input type="text" name="lastName"
+																		class="form-control" placeholder="LAST NAME"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-
-													</div>
-
-
-
-													<!-- Row 3 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">GENDER</label>
-																<div class="col-sm-8">
-																	<select name="gender" class="form-control">
-																		<option value="">SELECT</option>
-																		<option>MALE</option>
-																		<option>FEMALE</option>
-																		<option>OTHER</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">DOB *</label>
 																<div class="col-sm-8">
 																	<input type="date" name="dob" id="dob"
-																		onchange="calculateAge()" class="form-control" style="text-transform: uppercase;">
+																		onchange="calculateAge()" class="form-control"
+																		style="text-transform: uppercase;">
 																</div>
 
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">AGE</label>
@@ -819,33 +779,82 @@ function check()
 
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">MARITAL STATUS</label>
+																<label class="col-sm-4 control-label">BRANCH
+																	NAME *</label>
 																<div class="col-sm-8">
-																	<select name="maritalStatus" class="form-control">
-																		<option value="">SELECT</option>
-																		<option>MARRIED</option>
-																		<option>UNMARRIED</option>
-																		<option>WIDOW</option>
-																		<option>DIVORCE</option>
+																	<select name="branchName" id="branchName"
+																		class="form-control">
+																		<option value="" style="text-transform: uppercase;">SELECT
+																			BRANCH</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-													</div>
-
-
-													<!-- Row 4 -->
-													<div class="row four-field-row">
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">ADDRESS *</label>
+																<label class="col-sm-4 control-label">RELATIVE
+																	NAME</label>
 																<div class="col-sm-8">
-																	<textarea name="address" rows="2" class="form-control" style="text-transform: uppercase;"></textarea>
+																	<input type="text" name="relativeName"
+																		class="form-control"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-
+														
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">RELATION</label>
+																<div class="col-sm-8">
+																	<select name="relativeRelation" id="relativeRelation"
+																		class="form-control">
+																		<option style="text-transform: uppercase;">SELECT
+																			RELATION</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">GENDER</label>
+																<div class="col-sm-8">
+																	<select name="gender" class="form-control">
+																		<option value="">SELECT</option>
+																		<option value="MALE">MALE</option>
+																		<option value="FEMALE">FEMALE</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">MARITAL
+																	STATUS</label>
+																<div class="col-sm-8">
+																	<select name="maritalStatus" class="form-control">
+																		<option value="">SELECT</option>
+																		<option value="MARRIED">MARRIED</option>
+																		<option value="UNMARRIED">UNMARRIED</option>
+																		<option value="SINGLE">SINGLE</option>
+																		<option value="DIVORCE">DIVORCE</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														
+														<div class="col-md-3">
+															<div class="form-group" style="margin-bottom: 30px;">
+																<label class="col-sm-4 control-label">ADDRESS *</label>
+																<div class="col-sm-8">
+																	<input type="text" name="address" class="form-control"
+																		style="text-transform: uppercase;">
+																</div>
+															</div>
+														</div>
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">STATE *</label>
@@ -859,19 +868,20 @@ function check()
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">DISTRICT *</label>
 																<div class="col-sm-8">
 																	<select name="district" id="district"
 																		class="form-control" onclick="getTalukaInDropdown();">
-																		<option value="" style="text-transform: uppercase;">--SELECT DISTRICT--</option>
+																		<option value="" style="text-transform: uppercase;">--SELECT
+																			DISTRICT--</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">TALUKA *</label>
@@ -880,23 +890,18 @@ function check()
 																</div>
 															</div>
 														</div>
-
-													</div>
-
-
-													<!-- Row 5 -->
-													<div class="row four-field-row">
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">VILLAGE</label>
 																<div class="col-sm-8">
 																	<input type="text" name="village" id="village"
-																		class="form-control" placeholder="ENTER VILLAGE" style="text-transform: uppercase;">
+																		class="form-control" placeholder="ENTER VILLAGE"
+																		style="text-transform: uppercase;">
 																</div>
 															</div>
 														</div>
-
+														
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">PIN CODE *</label>
@@ -910,6 +915,8 @@ function check()
 																</div>
 															</div>
 														</div>
+														
+														
 
 													</div>
 
@@ -940,7 +947,8 @@ function check()
 																<label class="col-sm-4 control-label">PAN No.</label>
 																<div class="col-sm-6">
 																	<input name="pan" type="text" maxlength="10" id="pan"
-																		class="form-control" placeholder="ENTER PAN No." style="text-transform: uppercase;" />
+																		class="form-control" placeholder="ENTER PAN No."
+																		style="text-transform: uppercase;" />
 																</div>
 																<div class="col-sm-2">
 																	<input type="submit" value="Verify"
@@ -955,7 +963,8 @@ function check()
 																<div class="col-sm-6">
 																	<input name="voterNo" type="text" maxlength="10"
 																		id="voterNo" class="form-control"
-																		placeholder="ENTER VOTOR NO." style="text-transform: uppercase;" />
+																		placeholder="ENTER VOTOR NO."
+																		style="text-transform: uppercase;" />
 																</div>
 																<div class="col-sm-2">
 																	<input type="submit" value="Verify"
@@ -988,7 +997,8 @@ function check()
 																<label class="col-sm-4 control-label">EMAIL ID</label>
 																<div class="col-sm-8">
 																	<input name="emailid" type="text" id="emailid"
-																		class="form-control" placeholder="ENTER EMAIL ID" style="text-transform: uppercase;" />
+																		class="form-control" placeholder="ENTER EMAIL ID"
+																		style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
@@ -998,7 +1008,8 @@ function check()
 																<label class="col-sm-4 control-label">OCCUPATION</label>
 																<div class="col-sm-8">
 																	<input name="occupation" id="occupation"
-																		class="form-control" placeholder="ENTER OCCUPATION" style="text-transform: uppercase;" />
+																		class="form-control" placeholder="ENTER OCCUPATION"
+																		style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
@@ -1008,18 +1019,21 @@ function check()
 																<label class="col-sm-4 control-label">EDUCATION</label>
 																<div class="col-sm-8">
 																	<input name="education" id="education"
-																		class="form-control" placeholder="ENTER EDUCATION" style="text-transform: uppercase;" />
+																		class="form-control" placeholder="ENTER EDUCATION"
+																		style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
 
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT PURPOSE *</label>
+																<label class="col-sm-4 control-label">CLIENT
+																	PURPOSE *</label>
 																<div class="col-sm-8">
 																	<select name="clientPurpose" id="clientPurpose"
 																		class="form-control">
-																		<option value="">--- SELECT CLIENT PURPOSE ---</option>
+																		<option value="">--- SELECT CLIENT PURPOSE
+																			---</option>
 																		<option value="Membership">MEMBERSHIP</option>
 																		<option value="Loan">LOAN</option>
 																		<option value="Other">OTHER</option>
@@ -1063,14 +1077,16 @@ function check()
 																<label class="col-sm-4 control-label">CASTE</label>
 																<div class="col-sm-8">
 																	<input name="caste" id="caste" class="form-control"
-																		placeholder="ENTER CASTE NAME"  style="text-transform: uppercase;"/>
+																		placeholder="ENTER CASTE NAME"
+																		style="text-transform: uppercase;" />
 																</div>
 															</div>
 														</div>
 
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">RISK CATEGORY *</label>
+																<label class="col-sm-4 control-label">RISK
+																	CATEGORY *</label>
 																<div class="col-sm-8">
 																	<select name="riskCategory" id="riskCategory"
 																		class="form-control">
@@ -1091,7 +1107,8 @@ function check()
 													<div class="row four-field-row">
 														<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">NATIONALITY *</label>
+																<label class="col-sm-4 control-label">NATIONALITY
+																	*</label>
 																<div class="col-sm-8">
 																	<select name="nationality" id="nationality"
 																		class="form-control">
@@ -1198,9 +1215,11 @@ function check()
 															</label>
 															<div class="col-sm-8">
 																<input name="nomineeName" type="text" id="nomineeName"
-																	class="form-control" Placeholder="ENTER NOMINEE NAME" style="text-transform: uppercase;"/>
-																<span id="ContentPlaceHolder1_RequiredFieldValidator7"
-																	style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER NOMINEE NAME</span>
+																	class="form-control" Placeholder="ENTER NOMINEE NAME"
+																	style="text-transform: uppercase;" /> <span
+																	id="ContentPlaceHolder1_RequiredFieldValidator7"
+																	style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+																	NOMINEE NAME</span>
 															</div>
 														</div>
 													</div>
@@ -1231,7 +1250,8 @@ function check()
 															<div class="col-sm-8">
 																<input name="nomineeAddress" type="text"
 																	id="nomineeAddress" class="form-control"
-																	Placeholder="ENTER NOMINEE ADDRESS" style="text-transform: uppercase;"/>
+																	Placeholder="ENTER NOMINEE ADDRESS"
+																	style="text-transform: uppercase;" />
 															</div>
 														</div>
 													</div>
@@ -1243,7 +1263,8 @@ function check()
 															<div class="col-sm-8">
 																<input name="nomineeKycNumber" type="text"
 																	id="nomineeKycNumber" class="form-control"
-																	Placeholder="ENTER NOMINEE KYC NO." style="text-transform: uppercase;"/>
+																	Placeholder="ENTER NOMINEE KYC NO."
+																	style="text-transform: uppercase;" />
 															</div>
 														</div>
 													</div>
@@ -1256,7 +1277,8 @@ function check()
 													<div class="col-md-3">
 														<div class="form-group">
 															<label for="txtNomineeMobileNo"
-																class="col-sm-4 control-label">NOMINEE MOBILE NO.</label>
+																class="col-sm-4 control-label">NOMINEE MOBILE
+																NO.</label>
 															<div class="col-sm-8">
 																<input name="nomineeMobileNo" type="text" maxlength="10"
 																	id="nomineeMobileNo" class="form-control"
@@ -1267,7 +1289,8 @@ function check()
 
 													<div class="col-md-3">
 														<div class="form-group">
-															<label for="txtNomineeAge" class="col-sm-4 control-label">NOMINEE AGE.</label>
+															<label for="txtNomineeAge" class="col-sm-4 control-label">NOMINEE
+																AGE.</label>
 															<div class="col-sm-8">
 																<input name="nomineeAge" type="text" maxlength="2"
 																	id="nomineeAge" class="form-control"
@@ -1283,7 +1306,8 @@ function check()
 															<div class="col-sm-8">
 																<input name="nomineePanNo" type="text" maxlength="10"
 																	id="nomineePanNo" class="form-control"
-																	Placeholder="ENTER NOMINEE PAN NO." style="text-transform: uppercase;"/>
+																	Placeholder="ENTER NOMINEE PAN NO."
+																	style="text-transform: uppercase;" />
 															</div>
 														</div>
 													</div>
@@ -1342,12 +1366,14 @@ function check()
 											<!-- Client Fees -->
 											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-4 control-label"> CLIENT FEES (IF ANY)<strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> CLIENT FEES
+														(IF ANY)<strong style="color: red">*</strong>
 													</label>
 													<div class="col-sm-8">
 														<input type="text" name="memberJoiningFess"
 															id="memberJoiningFess" class="form-control"
-															placeholder="ENTER CLIENT FEES" style="text-transform: uppercase;">
+															placeholder="ENTER CLIENT FEES"
+															style="text-transform: uppercase;">
 													</div>
 												</div>
 											</div>
@@ -1356,7 +1382,8 @@ function check()
 											<!-- Share Allotted From -->
 											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-4 control-label"> SHARE ALLOTTED FROM<strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> SHARE
+														ALLOTTED FROM<strong style="color: red">*</strong>
 													</label>
 													<div class="col-sm-8">
 														<select name="shareAllotedfrm" id="shareAllotedfrm"
@@ -1371,11 +1398,13 @@ function check()
 											<!-- No of Shares -->
 											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-4 control-label"> NO. OF SHARES<strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label"> NO. OF
+														SHARES<strong style="color: red">*</strong>
 													</label>
 													<div class="col-sm-8">
 														<input type="text" name="noOfShared" id="noOfShared"
-															class="form-control" placeholder="ENTER NO. OF SHARES" style="text-transform: uppercase;">
+															class="form-control" placeholder="ENTER NO. OF SHARES"
+															style="text-transform: uppercase;">
 													</div>
 												</div>
 											</div>
@@ -1383,12 +1412,14 @@ function check()
 											<!-- Share Amount -->
 											<div class="col-md-3">
 												<div class="form-group">
-													<label class="col-sm-4 control-label">SHARE AMOUNT<strong style="color: red">*</strong>
+													<label class="col-sm-4 control-label">SHARE AMOUNT<strong
+														style="color: red">*</strong>
 													</label>
 													<div class="col-sm-8">
 														<input type="text" name="enterShareAmount"
 															id="enterShareAmount" class="form-control"
-															placeholder="ENTER SHARE AMOUNT" style="text-transform: uppercase;">
+															placeholder="ENTER SHARE AMOUNT"
+															style="text-transform: uppercase;">
 													</div>
 												</div>
 											</div>
@@ -1420,7 +1451,8 @@ function check()
 													<label class="col-sm-4 control-label">REMARK</label>
 													<div class="col-sm-8">
 														<textarea name="remarks" id="remarks" rows="2"
-															class="form-control" placeholder="ENTER REMARKS IF ANY" style="text-transform: uppercase;"></textarea>
+															class="form-control" placeholder="ENTER REMARKS IF ANY"
+															style="text-transform: uppercase;"></textarea>
 													</div>
 												</div>
 											</div>
@@ -1428,7 +1460,7 @@ function check()
 										</div>
 
 
-<hr>
+										<hr>
 
 										<div class="row four-field-row">
 
@@ -1448,7 +1480,8 @@ function check()
 											<div class="col-md-3">
 												<!-- Mobile Banking -->
 												<div class="form-group">
-													<label class="col-sm-4 control-label">MOBILE BANKING</label>
+													<label class="col-sm-4 control-label">MOBILE
+														BANKING</label>
 													<div class="col-sm-8">
 														<label class="switch"> <input type="checkbox"
 															name="chkmobile" id="chkmobile"> <span
@@ -1506,7 +1539,8 @@ function check()
 										<div class="clearfix">
 											<button type="button" class="btn btn-default"
 												onclick="showNominee()">PREVIOUS</button>
-											<button class="btn btn-primary pull-right" onclick="saveData">SAVE</button>
+											<button type="button" class="btn btn-primary pull-right"
+												id="saveBtn">SAVE</button>
 										</div>
 
 									</div>
@@ -1563,8 +1597,12 @@ function check()
 		</div>
 		</section>
 	</div>
+
+	<script src="dist/js/adminlte.min.js"></script>
+	<script src="dist/js/AddMember.js"></script>
+
 	<!-- /.content-wrapper -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<%-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- InputMask -->
@@ -1591,7 +1629,7 @@ function check()
 	<!-- FastClick -->
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
 	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
+	
 	<!-- AdminLTE for demo purposes -->
 	<script src="dist/js/demo.js"></script>
 	<!-- Select2 -->
@@ -1605,10 +1643,11 @@ function check()
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	<%-- <jsp:include page="../footer.jsp" />  --%>
+	<jsp:include page="../footer.jsp" /> 
 
 	<script>
-
+ --%>
+	<script>
 function resetSteps() {
 	document.querySelectorAll('.step').forEach(s => {
 		s.classList.remove('active');
@@ -1663,7 +1702,7 @@ function resetSteps() {
 </script>
 
 
-
+	<!-- 
 	<script>
       var fileTag = document.getElementById("filetag"),
           preview = document.getElementById("preview");
@@ -1964,4 +2003,4 @@ function previewImage(input, previewId) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-</script>
+</script> -->
