@@ -105,11 +105,11 @@ public class ConfigurationController {
 
 	@GetMapping("/CompanyDetails")
 	public String getAllLoanId(Model model, HttpSession session) {
-		String ID = session.getAttribute("ID").toString();
-		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
-		comMaster.setCreatedBy(ID);
-		model.addAttribute("Logo", comMaster.getLogo());
-		model.addAttribute("Signature", comMaster.getSignature());
+//		String ID = session.getAttribute("ID").toString();
+//		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
+//		comMaster.setCreatedBy(ID);
+//		model.addAttribute("Logo", comMaster.getLogo());
+//		model.addAttribute("Signature", comMaster.getSignature());
 		// session.setAttribute("ID", ID);
 		return "configuration/CompanyDetails";
 	}

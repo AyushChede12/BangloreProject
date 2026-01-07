@@ -22,27 +22,27 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="CompanyDetails"><i class="fa fa-circle-o"></i>
 							COMPANY MANAGE</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="FYMater"><i class="fa fa-circle-o"></i>
 							FINANCIAL YEAR</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
 							ADD BRANCH</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="AddBankAccount"><i class="fa fa-circle-o"></i>
 							MANAGE BANK</a></li>
 					<li><a href="talukaMaster"><i class="fa fa-circle-o"></i>
 							ADD TALUKA</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="relativeMaster"><i class="fa fa-circle-o"></i>
 							ADD RELATIVES</a></li>
 					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
 							CATEGORY/CASTE</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="casteMaster"><i class="fa fa-circle-o"></i>
 							CODE MODULE</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="DirectorDetail"><i class="fa fa-circle-o"></i>
 							EXECUTIVE/FOUNDER</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="UserCreate"><i class="fa fa-circle-o"></i>
 							USER CREATION</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="UserMenuAccess"><i class="fa fa-circle-o"></i>
 							USER MENU ACCESS</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <img
