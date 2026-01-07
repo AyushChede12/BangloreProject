@@ -552,16 +552,16 @@ public class HomeControler {
 
 	@GetMapping("/memberAllDetails")
 	public String memberAllDetails(Model model, HttpSession session) {
-		String userId = (String) session.getAttribute("loggedInUserName");
-		String module = "addMember";
-		String type = "aadharPhoto";
-		FileUploadDirectory aadharPhoto = fileUploadDirectoryRepo.getIamges(module, type, userId);
-		if (aadharPhoto != null) {
-			String encodedLogo = Base64.getEncoder().encodeToString(aadharPhoto.getContent());
-			model.addAttribute("aadharPhoto", encodedLogo);
-		}
-		List<ClientMaster> allMember = clientMasterRepo.findAll();
-		model.addAttribute("allMember", allMember);
+//		String userId = (String) session.getAttribute("loggedInUserName");
+//		String module = "addMember";
+//		String type = "aadharPhoto";
+//		FileUploadDirectory aadharPhoto = fileUploadDirectoryRepo.getIamges(module, type, userId);
+//		if (aadharPhoto != null) {
+//			String encodedLogo = Base64.getEncoder().encodeToString(aadharPhoto.getContent());
+//			model.addAttribute("aadharPhoto", encodedLogo);
+//		}
+//		List<ClientMaster> allMember = clientMasterRepo.findAll();
+//		model.addAttribute("allMember", allMember);
 		return "member/MemberAllDetails";
 	}
 

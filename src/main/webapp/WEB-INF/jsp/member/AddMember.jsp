@@ -53,11 +53,11 @@ function check()
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader"
-					style="font-size: 30px; margin-left: 10px;">NEW CUSTOMER</h1>
+					style="font-size: 30px; margin-left: 10px;">Add Client</h1>
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
-						<div class="step-title">CUSTOMER DETAILS</div>
+						<div class="step-title">CLIENT DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step2">
@@ -668,7 +668,7 @@ function check()
 											<div id="clientSection">
 												<div>
 													<h3 class="box-title">
-														<b>CUSTOMER DETAILS</b>
+														<b>CLIENT DETAILS</b>
 													</h3>
 												</div>
 
@@ -677,102 +677,16 @@ function check()
 
 													<!-- Row 1 -->
 													<div class="row four-field-row">
-
-														<div class="col-md-3">
+													
+													<div class="col-md-3">
 															<div class="form-group">
-																<label class="col-sm-4 control-label">AUTHENTICATE
-																	FOR</label>
+																<label class="col-sm-4 control-label">AUTHENTICATE FOR</label>
 																<div class="col-sm-8">
-																	<select name="authenticateFor" id="authenticateFor"
+																	<select name="relativeRelation" id="relativeRelation"
 																		class="form-control">
 																		<option style="text-transform: uppercase;">SELECT</option>
-																		<option value="AADHAR">AADHAR</option>
-																		<option value="WITHOUT AADHAR">WITHOUT AADHAR</option>
+																		<option></option>
 																	</select>
-																</div>
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">REGISTRATION
-																	DATE *</label>
-																<div class="col-sm-8">
-																	<input type="date" name="registrationDate"
-																		id="registrationDate" class="form-control"
-																		style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">PREFIX *</label>
-																<div class="col-sm-8">
-																	<select name="memberNamePrefix" class="form-control">
-																		<option>MR.</option>
-																		<option>MS.</option>
-																		<option>MRS.</option>
-																		<option>SMT.</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">FIRST
-																	NAME *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="memberName"
-																		class="form-control" placeholder="Full Name"
-																		style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">MIDDLE
-																	NAME *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="memberName"
-																		class="form-control" placeholder="Full Name"
-																		style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">LAST
-																	NAME *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="lastName"
-																		class="form-control" placeholder="LAST NAME"
-																		style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">DOB *</label>
-																<div class="col-sm-8">
-																	<input type="date" name="dob" id="dob"
-																		onchange="calculateAge()" class="form-control"
-																		style="text-transform: uppercase;">
-																</div>
-
-															</div>
-														</div>
-														
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">AGE</label>
-																<div class="col-sm-8">
-																	<input type="text" name="age" id="ageId"
-																		class="form-control">
 																</div>
 															</div>
 														</div>
@@ -790,7 +704,52 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">REGISTRATION
+																	DATE *</label>
+																<div class="col-sm-8">
+																	<input type="date" name="registrationDate"
+																		id="registrationDate" class="form-control"
+																		style="text-transform: uppercase;">
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+
+
+													<!-- Row 2 -->
+													<div class="row four-field-row">
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">PREFIX *</label>
+																<div class="col-sm-8">
+																	<select name="memberNamePrefix" class="form-control">
+																		<option>MR.</option>
+																		<option>MS.</option>
+																		<option>MRS.</option>
+																		<option>SMT.</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">CLIENT
+																	NAME *</label>
+																<div class="col-sm-8">
+																	<input type="text" name="memberName"
+																		class="form-control" placeholder="Full Name"
+																		style="text-transform: uppercase;">
+																</div>
+															</div>
+														</div>
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">RELATIVE
@@ -802,7 +761,7 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">RELATION</label>
@@ -815,20 +774,50 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
+													</div>
+
+
+
+													<!-- Row 3 -->
+													<div class="row four-field-row">
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">GENDER</label>
 																<div class="col-sm-8">
 																	<select name="gender" class="form-control">
 																		<option value="">SELECT</option>
-																		<option value="MALE">MALE</option>
-																		<option value="FEMALE">FEMALE</option>
+																		<option>MALE</option>
+																		<option>FEMALE</option>
+																		<option>OTHER</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-														
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">DOB *</label>
+																<div class="col-sm-8">
+																	<input type="date" name="dob" id="dob"
+																		onchange="calculateAge()" class="form-control"
+																		style="text-transform: uppercase;">
+																</div>
+
+															</div>
+														</div>
+
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="col-sm-4 control-label">AGE</label>
+																<div class="col-sm-8">
+																	<input type="text" name="age" id="ageId"
+																		class="form-control">
+																</div>
+															</div>
+														</div>
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">MARITAL
@@ -836,25 +825,30 @@ function check()
 																<div class="col-sm-8">
 																	<select name="maritalStatus" class="form-control">
 																		<option value="">SELECT</option>
-																		<option value="MARRIED">MARRIED</option>
-																		<option value="UNMARRIED">UNMARRIED</option>
-																		<option value="SINGLE">SINGLE</option>
-																		<option value="DIVORCE">DIVORCE</option>
+																		<option>MARRIED</option>
+																		<option>UNMARRIED</option>
+																		<option>WIDOW</option>
+																		<option>DIVORCE</option>
 																	</select>
 																</div>
 															</div>
 														</div>
-														
+													</div>
+
+
+													<!-- Row 4 -->
+													<div class="row four-field-row">
+
 														<div class="col-md-3">
-															<div class="form-group" style="margin-bottom: 30px;">
+															<div class="form-group">
 																<label class="col-sm-4 control-label">ADDRESS *</label>
 																<div class="col-sm-8">
-																	<input type="text" name="address" class="form-control"
-																		style="text-transform: uppercase;">
+																	<textarea name="address" rows="2" class="form-control"
+																		style="text-transform: uppercase;"></textarea>
 																</div>
 															</div>
 														</div>
-														
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">STATE *</label>
@@ -868,7 +862,7 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">DISTRICT *</label>
@@ -881,7 +875,7 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">TALUKA *</label>
@@ -890,7 +884,13 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
+													</div>
+
+
+													<!-- Row 5 -->
+													<div class="row four-field-row">
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">VILLAGE</label>
@@ -901,7 +901,7 @@ function check()
 																</div>
 															</div>
 														</div>
-														
+
 														<div class="col-md-3">
 															<div class="form-group">
 																<label class="col-sm-4 control-label">PIN CODE *</label>
@@ -915,8 +915,6 @@ function check()
 																</div>
 															</div>
 														</div>
-														
-														
 
 													</div>
 
