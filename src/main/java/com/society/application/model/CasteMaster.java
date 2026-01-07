@@ -8,17 +8,17 @@ import javax.persistence.Id;
 @Entity
 public class CasteMaster {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String caste;
 	private String createdBy;
 	private String createdDt;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
