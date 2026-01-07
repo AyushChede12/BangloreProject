@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.society.application.dto.LoanWithLoanMasterDTO;
-import com.society.application.dto.Response;
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.BranchMaster;
 import com.society.application.model.ClientMaster;
 import com.society.application.model.GenericGetById;
@@ -509,8 +509,8 @@ public class LoanModuleController {
 
 	@PostMapping("/fetchRegularEMIRepayment")
 	@ResponseBody
-	public Response fetchRegularEMIRepayment(@RequestBody Loan loan) {
-		Response response = new Response<>();
+	public ApiResponse fetchRegularEMIRepayment(@RequestBody Loan loan) {
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Saved..!!");
 

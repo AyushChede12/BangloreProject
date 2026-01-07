@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.society.application.dto.LoanWithLoanMasterDTO;
-import com.society.application.dto.Response;
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.BranchMaster;
 import com.society.application.model.ClientMaster;
 import com.society.application.model.Employee;
@@ -378,8 +378,8 @@ public class GroupLoanController {
 
 	@PostMapping("/fetchEmiRepayment")
 	@ResponseBody
-	public Response fetchEmiRepayment(@RequestBody Loan loan) {
-		Response response = new Response<>();
+	public ApiResponse fetchEmiRepayment(@RequestBody Loan loan) {
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Saved..!!");
 		Optional<LoanWithLoanMasterDTO> optionalLoan = loanRepo.findLoanWithLoanMasterById(loan.getId());

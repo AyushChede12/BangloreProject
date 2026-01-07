@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;
 
@@ -102,6 +103,9 @@ public class ConfigurationController {
 
 	@Autowired
 	ReceiptRepo receiptRepo;
+	
+	@Autowired
+	ConfigurationService configurationService;
 
 	@GetMapping("/CompanyDetails")
 	public String getAllLoanId(Model model, HttpSession session) {
@@ -114,118 +118,145 @@ public class ConfigurationController {
 		return "configuration/CompanyDetails";
 	}
 
-	@GetMapping("/getConmapnyDetails")
-	@ResponseBody
-	public CompanyMaster getConmapnyDetails(@ModelAttribute("user") UserMaster login, Model model,
-			HttpSession session) {
-		// System.out.println(user.getCompanyName());
-		// session.setAttribute("usercompanyname", login.getCompanyName());
-		// String group=""+session. getAttribute("group");
+//	@GetMapping("/getConmapnyDetails")
+//	@ResponseBody
+//	public CompanyMaster getConmapnyDetails(@ModelAttribute("user") UserMaster login, Model model,
+//			HttpSession session) {
+//		// System.out.println(user.getCompanyName());
+//		// session.setAttribute("usercompanyname", login.getCompanyName());
+//		// String group=""+session. getAttribute("group");
+//
+//		String ID = session.getAttribute("ID").toString();
+//		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
+//
+//		String encodedLogo = Base64.getEncoder().encodeToString(comMaster.getLogo());
+//		String encodedLogo2 = Base64.getEncoder().encodeToString(comMaster.getSignature());
+//
+//		comMaster.setFrontEndPhoto(encodedLogo);
+//		comMaster.setFrontEndSignature(encodedLogo2);
+//
+//		if (comMaster != null) {
+//
+//			return comMaster;
+//		} else {
+//			CompanyMaster comMas = new CompanyMaster();
+//
+//			comMas.setAddress("");
+//			comMas.setAuthorizedcapital("");
+//			comMas.setCin("");
+//			comMas.setCompanyName("");
+//			comMas.setDoj("");
+//			comMas.setEmail("");
+//			comMas.setGst("");
+//			comMas.setLandLine("");
+//			comMas.setMobile("");
+//			comMas.setPaidup("");
+//			comMas.setPan("");
+//			comMas.setPinCode("");
+//			comMas.setShareValue("");
+//			comMas.setShortName("");
+//			comMas.setState("");
+//			comMas.setTan("");
+//			comMas.setTax("");
+//			comMas.setTaxSr("");
+//			comMas.settDSWithoutPAN("");
+//			comMas.settDSWithPAN("");
+//			// comMas.setLogo("");
+//			// comMas.setSignature("");
+//			return null;
+//		}
+//	}
 
-		String ID = session.getAttribute("ID").toString();
-		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
-
-		String encodedLogo = Base64.getEncoder().encodeToString(comMaster.getLogo());
-		String encodedLogo2 = Base64.getEncoder().encodeToString(comMaster.getSignature());
-
-		comMaster.setFrontEndPhoto(encodedLogo);
-		comMaster.setFrontEndSignature(encodedLogo2);
-
-		if (comMaster != null) {
-
-			return comMaster;
-		} else {
-			CompanyMaster comMas = new CompanyMaster();
-
-			comMas.setAddress("");
-			comMas.setAuthorizedcapital("");
-			comMas.setCin("");
-			comMas.setCompanyName("");
-			comMas.setDoj("");
-			comMas.setEmail("");
-			comMas.setGst("");
-			comMas.setLandLine("");
-			comMas.setMobile("");
-			comMas.setPaidup("");
-			comMas.setPan("");
-			comMas.setPinCode("");
-			comMas.setShareValue("");
-			comMas.setShortName("");
-			comMas.setState("");
-			comMas.setTan("");
-			comMas.setTax("");
-			comMas.setTaxSr("");
-			comMas.settDSWithoutPAN("");
-			comMas.settDSWithPAN("");
-			// comMas.setLogo("");
-			// comMas.setSignature("");
-			return null;
-		}
+	//Ayush
+	@GetMapping("/getConmapnyDetails") // Ayush (without DTO)
+	public ResponseEntity<ApiResponse<List<CompanyMaster>>> fetchAllCompanyDetails() {
+		List<CompanyMaster> list = configurationService.fetchAllCompanyDetails();
+		ApiResponse<List<CompanyMaster>> response = new ApiResponse<>(HttpStatus.FOUND,
+				"Company Administration fetched successfully", list);
+		return ResponseEntity.ok(response);
 	}
 
+//	@PostMapping("/updateCompanyDetails")
+//	@ResponseBody
+//	public ResponseEntity<String> updateCompanyDetails(
+//			@RequestParam(value = "filetag", required = false) MultipartFile file1,
+//			@RequestParam(value = "secondfiletag", required = false) MultipartFile file23,
+//			@RequestParam("companyName") String companyName, @RequestParam("shortName") String shortName,
+//			@RequestParam("doj") String doj, @RequestParam("cin") String cin, @RequestParam("pan") String pan,
+//			@RequestParam("tan") String tan, @RequestParam("gst") String gst,
+//			@RequestParam("shareValue") String shareValue, @RequestParam("address") String address,
+//			@RequestParam("state") String state, @RequestParam("pinCode") String pinCode,
+//			@RequestParam("email") String email, @RequestParam("authorizedcapital") String authorizedcapital,
+//			@RequestParam("paidup") String paidup, @RequestParam("landLine") String landLine,
+//			@RequestParam("mobile") String mobile, @RequestParam("tDSWithPAN") String tDSWithPAN,
+//			@RequestParam("tDSWithoutPAN") String tDSWithoutPAN, @RequestParam("tax") String tax,
+//			@RequestParam("taxSr") String taxSr, HttpSession session) {
+//		String ID = session.getAttribute("ID").toString();
+//		int id = Integer.parseInt(ID);
+//
+//		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
+//		UserMaster um = userMasterRepo.findByid(id);
+//
+//		// System.out.println(!(file1==null));
+//		// System.out.println(!(file23==null));
+//
+//		if (!(file1 == null) && !(file23 == null)) {
+//			try {
+//				byte[] image1 = file1.getBytes();
+//				comMaster.setLogo(image1);
+//
+//				byte[] image2 = file23.getBytes();
+//				comMaster.setSignature(image2);
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		comMaster.setCompanyName(companyName);
+//		comMaster.setShortName(shortName);
+//		comMaster.setDoj(doj);
+//		comMaster.setCin(cin);
+//		comMaster.setPan(pan);
+//		comMaster.setTan(tan);
+//		comMaster.setGst(gst);
+//		comMaster.setShareValue(shareValue);
+//		comMaster.setAddress(address);
+//		comMaster.setState(state);
+//		comMaster.setPinCode(pinCode);
+//		comMaster.setEmail(email);
+//		comMaster.setAuthorizedcapital(authorizedcapital);
+//		comMaster.setPaidup(paidup);
+//		comMaster.setLandLine(landLine);
+//		comMaster.setMobile(mobile);
+//		comMaster.settDSWithPAN(tDSWithPAN);
+//		comMaster.settDSWithoutPAN(tDSWithoutPAN);
+//		comMaster.setTax(tax);
+//		comMaster.setTaxSr(taxSr);
+//		comMaster.setCreatedBy(ID);
+//		um.setCompanyName(companyName);
+//		um.setShortName(shortName);
+//		um.setCreatedBy(ID);
+//		userMasterRepo.save(um);
+//		companyMasterRepo.save(comMaster);
+//
+//		return new ResponseEntity<>("DATA UPDATED SUCCESSFULLY...!!!", HttpStatus.OK);
+//	}
+
+	//Ayush
 	@PostMapping("/updateCompanyDetails")
-	@ResponseBody
-	public ResponseEntity<String> updateCompanyDetails(
-			@RequestParam(value = "filetag", required = false) MultipartFile file1,
-			@RequestParam(value = "secondfiletag", required = false) MultipartFile file23,
-			@RequestParam("companyName") String companyName, @RequestParam("shortName") String shortName,
-			@RequestParam("doj") String doj, @RequestParam("cin") String cin, @RequestParam("pan") String pan,
-			@RequestParam("tan") String tan, @RequestParam("gst") String gst,
-			@RequestParam("shareValue") String shareValue, @RequestParam("address") String address,
-			@RequestParam("state") String state, @RequestParam("pinCode") String pinCode,
-			@RequestParam("email") String email, @RequestParam("authorizedcapital") String authorizedcapital,
-			@RequestParam("paidup") String paidup, @RequestParam("landLine") String landLine,
-			@RequestParam("mobile") String mobile, @RequestParam("tDSWithPAN") String tDSWithPAN,
-			@RequestParam("tDSWithoutPAN") String tDSWithoutPAN, @RequestParam("tax") String tax,
-			@RequestParam("taxSr") String taxSr, HttpSession session) {
-		String ID = session.getAttribute("ID").toString();
-		int id = Integer.parseInt(ID);
+	public ResponseEntity<ApiResponse<String>> updateCompanyDetails(
+			@RequestBody CompanyMaster companyMaster) {
 
-		CompanyMaster comMaster = companyMasterRepo.findByiDcompany(ID);
-		UserMaster um = userMasterRepo.findByid(id);
+		int result = configurationService.updateCompanyMaster(companyMaster);
 
-		// System.out.println(!(file1==null));
-		// System.out.println(!(file23==null));
-
-		if (!(file1 == null) && !(file23 == null)) {
-			try {
-				byte[] image1 = file1.getBytes();
-				comMaster.setLogo(image1);
-
-				byte[] image2 = file23.getBytes();
-				comMaster.setSignature(image2);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		if (result > 0) {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.OK,
+					"Company Details data updated successfully.", "success");
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.BAD_REQUEST,
+					"Failed to update company details data.", "failure");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
 		}
-		comMaster.setCompanyName(companyName);
-		comMaster.setShortName(shortName);
-		comMaster.setDoj(doj);
-		comMaster.setCin(cin);
-		comMaster.setPan(pan);
-		comMaster.setTan(tan);
-		comMaster.setGst(gst);
-		comMaster.setShareValue(shareValue);
-		comMaster.setAddress(address);
-		comMaster.setState(state);
-		comMaster.setPinCode(pinCode);
-		comMaster.setEmail(email);
-		comMaster.setAuthorizedcapital(authorizedcapital);
-		comMaster.setPaidup(paidup);
-		comMaster.setLandLine(landLine);
-		comMaster.setMobile(mobile);
-		comMaster.settDSWithPAN(tDSWithPAN);
-		comMaster.settDSWithoutPAN(tDSWithoutPAN);
-		comMaster.setTax(tax);
-		comMaster.setTaxSr(taxSr);
-		comMaster.setCreatedBy(ID);
-		um.setCompanyName(companyName);
-		um.setShortName(shortName);
-		um.setCreatedBy(ID);
-		userMasterRepo.save(um);
-		companyMasterRepo.save(comMaster);
-
-		return new ResponseEntity<>("DATA UPDATED SUCCESSFULLY...!!!", HttpStatus.OK);
 	}
 
 	@GetMapping("/FYMater")
@@ -238,11 +269,7 @@ public class ConfigurationController {
 		return "configuration/AddTaluka";
 	}
 
-	@GetMapping("/getAllFYDetails")
-	@ResponseBody
-	public List<FYMaster> getAllFYDetails(Model model) {
-		return fYMasterRepo.findAll();
-	}
+	
 
 	@GetMapping("/getRelativeDetails")
 	@ResponseBody
@@ -256,16 +283,36 @@ public class ConfigurationController {
 		return casteMasterRepo.findAll();
 	}
 
-	@PostMapping("/updateFYDetails")
-	public String updateFYDetails(@ModelAttribute("updateFYDetails") FYMaster fyMaster, Model model,
-			HttpSession session) {
-		String createdBy = session.getAttribute("ID").toString();
-		fyMaster.setCreatedBy(createdBy);
-		fYMasterRepo.save(fyMaster);
-		session.setAttribute("createdBy", createdBy);
-		return "configuration/AddFinancialMaster";
+//	@PostMapping("/updateFYDetails")
+//	public String updateFYDetails(@ModelAttribute("updateFYDetails") FYMaster fyMaster, Model model,
+//			HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		fyMaster.setCreatedBy(createdBy);
+//		fYMasterRepo.save(fyMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/AddFinancialMaster";
+//	}
+	
+	@PostMapping("/saveAndUpdateAllFinancialYear") // Ayush (without DTO)
+	public ResponseEntity<ApiResponse<FYMaster>> saveFinancialYear(@RequestBody FYMaster financialYear) {
+		boolean isCreate = (financialYear.getId() == null); // Check BEFORE saving
+		FYMaster savedEntity = configurationService.saveFinancialYear(financialYear);
+		ApiResponse<FYMaster> response;
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Financial Year created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Financial Year updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
 	}
 
+	@GetMapping("/getAllFYDetails")
+	@ResponseBody
+	public List<FYMaster> getAllFYDetails(Model model) {
+		return configurationService.fetchFYDetails();
+	}
+	
 	@PostMapping("/SaveRelation")
 	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,
 			Model model, HttpSession session) {
