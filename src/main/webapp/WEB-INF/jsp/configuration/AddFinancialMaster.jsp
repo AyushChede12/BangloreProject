@@ -14,14 +14,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Add FY Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>CUSTOMIZATION</b>
+					</h1>
+					<h5 style="margin-left: 18px">ADD FINANCIAL YEAR</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -31,61 +36,60 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Entry Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>FY Name : <strong style="color: Red">*</strong></label>
-											<input name="fyName" type="text" id="fyName"
-												class="form-control" /> <span id="fyNameMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												FY Name</span>
-										</div>
+									<div class="col-md-4">
+
+										<label>FY Name : <strong style="color: Red">*</strong></label>
+										<input name="fyName" type="text" id="fyName"
+											class="form-control" /> <span id="fyNameMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											FY Name</span>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>From Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="fDate" type="date" value="01/08/2022"
-													id="fDate" class="form-control" data-inputmask=""
-													data-mask="" />
+									<div class="col-md-4">
+
+										<label>From Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
+											<input name="fDate" type="date" value="01/08/2022" id="fDate"
+												class="form-control" data-inputmask="" data-mask="" />
 										</div>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>To Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="tDate" type="date" value="01/08/2022"
-													id="tDate" class="form-control" data-inputmask=""
-													data-mask="" />
+									<div class="col-md-4">
+
+										<label>To Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
+											<input name="tDate" type="date" value="01/08/2022" id="tDate"
+												class="form-control" data-inputmask="" data-mask="" />
 										</div>
+
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label></label>
-											<button type="button" id="ContentPlaceHolder1_btnSearch"
-												onclick="valdiateFyMaster()"
-												class="btn btn-success  margin-20">
-												<span class="fa fa-save"></span> Add
-											</button>
-										</div>
-									</div>
-									<div class="text-center"></div>
+
 								</div>
+								<div class="col-md-11" style="text-align: center;">
+
+									<label></label>
+									<button type="button" id="ContentPlaceHolder1_btnSearch"
+										onclick="valdiateFyMaster()"
+										class="btn btn-success  margin-20">
+										<span class="fa fa-save"></span> Add
+									</button>
+
+								</div>
+								<div class="text-center"></div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
+							<div class="form-container"
+								style=" overflow: auto !important;">
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>
 									<div>
@@ -145,7 +149,7 @@
 		<script src="dist/js/demo.js"></script>
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		
+
 	</form>
 </body>
 </html>
