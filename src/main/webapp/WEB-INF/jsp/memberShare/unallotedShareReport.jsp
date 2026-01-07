@@ -1,7 +1,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="/css/form2.css">
+
 <jsp:include page="../header.jsp" />
 <style>
 .heading {
@@ -133,15 +133,17 @@ function calculateShareSerialNo() {
 						<!-- <div class="col-md-12"> -->
 						
 							
-							<div class="box-header with-border">
-								<h3 class="box-title"><b>SHARE DETAILS</b></h3>
+							<div class="box-header " >
+								<h2 class="box-title"  ><b>SHARE DETAILS</b></h2>
+								
 							</div>
+							
 
 
 							<div class="box-body">
 
 								<!-- MEMBER DETAILS -->
-								<h4 style="color: #008385; margin-bottom: 15px; text-decoration: underline;">MEMBER
+								<h4 style="color: #008385; margin: 30px 0 15px; text-decoration: underline;">MEMBER
 									DETAILS</h4>
 
 								<div class="row">
@@ -177,78 +179,79 @@ function calculateShareSerialNo() {
 
 
 								<!-- PREVIOUS DETAILS -->
-								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">PREVIOUS
+								<h4 style="color: #008385; margin: 50px 0 15px; text-decoration: underline;">PREVIOUS
 									SHARE DETAILS</h4>
 								<div class="row">
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>PREVIOUS BALANCE</label> <input id="previousBalance"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>PREVIOUS NO OF SHARES</label> <input
 												id="previousShareNo" class="form-control" readonly>
-										</div>
+										
 									</div>
 
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>PREVIOUS SHARE SERIAL NO.</label> <input
 												id="previousShareSerialNo" class="form-control" readonly>
-										</div>
+									
 									</div>
 								</div>
 
 								<!-- NEW SHARE DETAILS -->
-								<h4 style="color: #008385; margin: 20px 0 15px; text-decoration: underline;">NEW SHARE
+								<h4 style="color: #008385; margin: 50px 0 15px; text-decoration: underline;">NEW SHARE
 									DETAILS</h4>
 								<div class="row">
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>FACE VALUE</label> <input id="faceValue" value="10"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>NO OF SHARE *</label> <input id="noOfShare"
 												class="form-control"
 												onkeyup="calculate(); calculateShareSerialNo(); calculateTotalBalance();">
-										</div>
+										
 									</div>
 
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>SHARE SERIAL NO *</label> <input id="shareSerialNo"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 
 									<div class="col-md-3">
-										<div class="form-group">
+										
 											<label>SHARE BALANCE</label> <input id="sharebalance"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 
-									<div class="col-md-3 ">
-										<div class="form-group">
+									<div class="col-md-3 "style="margin-top: 20px;">
+										
 											<label>TOTAL NO OF SHARE</label> <input id="totalNoOfShare"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 								</div>
 
 								<!-- PHOTO -->
-								<h4 style="color: #008385; margin: 20px 0 15px;text-decoration: underline;">PHOTO</h4>
-								<div class="row">
-									<div class="col-md-4">
-										<img id="preview" class="img-thumbnail" style="width: 120px;">
-										<input type="file" name="filetag" id="filetag"> <small
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-md-6">
+										<label>PHOTO</label><br> <img id="preview"
+											class="img-thumbnail"
+											style="width: 120px; margin-bottom: 10px;"> <input
+											type="file" id="filetag" name="filetag"> <small
 											class="text-danger">Photo should be less than 2MB</small>
 									</div>
 								</div>
@@ -257,7 +260,7 @@ function calculateShareSerialNo() {
 
 							<!-- FOOTER -->
 							<div class="box-footer">
-								<button type="button" class="btn btn-primary pull-right"
+								<button type="button" class="btn btn-success pull-right"
 									onclick="goToPaymentDetails()">NEXT</button>
 							</div>
 						
@@ -269,24 +272,24 @@ function calculateShareSerialNo() {
 					<div id="paymentDetailsSection" class="form-container" style="display: none;">
 
 						
-							<div class="box-header with-border">
+							<div class="box-header ">
 								<h3 class="box-title"><b>PAYMENT DETAILS</b></h3>
 							</div>
 
-							<div class="box-body">
+							<div class="box-body" style="margin-top: 20px;">
 
 								<!-- ROW 1 -->
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>TRANSFER DATE <span style="color: red">*</span></label>
 											<input type="date" id="transferDate" name="transferDate"
 												class="form-control">
-										</div>
+										
 									</div>
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>PAYMENT MODE <span style="color: red">*</span></label>
 											<select id="paymode" name="paymode" class="form-control">
 												<option value="Cash">CASH</option>
@@ -295,18 +298,18 @@ function calculateShareSerialNo() {
 												<option value="NEFT">NEFT</option>
 												<option value="Transfer">TRANSFER</option>
 											</select>
-										</div>
+										
 									</div>
 								</div>
 								<br>
 								<!-- ROW 2 -->
 								<div class="row">
 									<div class="col-md-8">
-										<div class="form-group">
+										
 											<label>REMARKS</label>
 											<textarea id="remarks" name="remarks" rows="2"
 												class="form-control" placeholder="ENTER REMARKS IF ANY"></textarea>
-										</div>
+										
 									</div>
 								</div>
 
@@ -314,7 +317,7 @@ function calculateShareSerialNo() {
 
 							<!-- FOOTER -->
 							<div class="box-footer">
-								<button type="button" class="btn btn-default"
+								<button type="button" class="btn btn-success"
 									onclick="backToShareDetails()">PREVIOUS</button>
 
 								<input type="button" id="btnSave" value="SAVE"
@@ -329,6 +332,9 @@ function calculateShareSerialNo() {
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
 	</div>
+	<script src="dist/js/memberShare.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -355,16 +361,15 @@ function calculateShareSerialNo() {
 	<script src="plugins/iCheck/icheck.min.js"></script>
 	<!-- FastClick -->
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
+	
 	<!-- AdminLTE for demo purposes -->
 	<script src="dist/js/demo.js"></script>
-	<script src="dist/js/memberShare.js"></script>
+	
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#btnUpdate').click(function() {
+			$('#btnSave').click(function() {
 				
 				if ($("#memberNo").val() == "") {
 		             alert("Select the Particular Member No. to Update !!!!!!!!");

@@ -1,17 +1,17 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.society.application.model.Member"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="/css/form2.css">
+
 <jsp:include page="../header.jsp" />
-<style>
+<!-- <style>
 .heading {
 	color: #FF0000;
 }
 
-</style>
+</style> -->
 
 
-<%
+<%-- <%
 String status = (String) request.getAttribute("status");
 if (status != null && status.equals("success")) {
 %>
@@ -20,8 +20,8 @@ if (status != null && status.equals("success")) {
 </script>
 <%
 }
-%>
-<script>
+%> --%>
+<!-- <script>
 function calculate(){
    	var FaceValue = document.getElementById('faceValue').value;
    	var NoOfShare = document.getElementById('noOfShare').value;
@@ -29,7 +29,7 @@ function calculate(){
    	var result = (10 * NoOfShare);
    	sharebalance.value = result;
    }
-</script>
+</script> -->
 <!-- <script>
 function calculateShareSerialNo() {
     var noOfShareInput = document.getElementById("noOfShare");
@@ -47,7 +47,7 @@ function calculateShareSerialNo() {
     }
 }
 </script> -->
-<script>
+<!-- <script>
 function calculateShareSerialNo() {
     // Fetching the latest Share Serial No. from the API
     //fetch('/SocietyManagement/getLatestShareSerialNo')
@@ -74,7 +74,7 @@ function calculateShareSerialNo() {
         })
         .catch(error => console.error('Error fetching Share Serial No.', error));
 }
-</script>
+</script> -->
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true"
@@ -122,39 +122,41 @@ function calculateShareSerialNo() {
 					<div id="shareDetailsSection" class="form-container">
 
 						
-							<div class="box-header with-border">
+							<div class="box-header ">
 								<h3 class="box-title"><b>SHARE DETAILS</b></h3>
 							</div>
+							
+							
 
 							<div class="box-body">
 
 								<!-- ROW 1 -->
-								<div class="row">
+								<div class="row" style="margin-top: 20px">
 									<div class="col-md-4 ">
-										<div class="form-group">
+										
 											<label>BRANCH <span style="color: red">*</span></label> <select
 												name="branchName" id="branchName" class="form-control">
 												<option>SELECT BRANCH NAME</option>
 											</select>
-										</div>
+										
 									</div>
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label> SEARCH BY CLIENT NO <span style="color: red">*</span></label>
 											<select name="clientNo" id="clientNo"
 												class="form-control select2"
 												onchange="callback(); toggleDisabledFields();">
 												<option value="">SELECT MEMBER</option>
 											</select>
-										</div>
+										
 									</div>
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>MEMBER NAME <span style="color: red">*</span></label>
 											<input style="text-transform: uppercase;" type="text" id="memberName" name="memberName"
 												class="form-control">
-										</div>
+										
 									</div>
 								</div>
 								<br>
@@ -163,23 +165,23 @@ function calculateShareSerialNo() {
 
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>MEMBER NO <span style="color: red">*</span></label> <input
 												type="text" id="memberNoInput" name="memberNo"
 												class="form-control" readonly>
-										</div>
+										
 									</div>
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>MEMBERSHIP DATE</label> <input type="date" id="doj"
 												name="doj" class="form-control">
-										</div>
+										
 									</div>
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>PREVIOUS BALANCE</label> <input type="text"
 												id="previousBalance" class="form-control" readonly>
-										</div>
+										
 									</div>
 								</div>
 								<br>
@@ -188,10 +190,10 @@ function calculateShareSerialNo() {
 
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>PREVIOUS NO OF SHARE</label> <input type="text"
 												id="previousShareNo" class="form-control" readonly>
-										</div>
+										
 									</div>
 								</div>
 
@@ -200,27 +202,27 @@ function calculateShareSerialNo() {
 								<!-- ROW-4 -->
 								<div class="row">
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>FACE VALUE</label> <input type="text" id="faceValue"
 												value="10" class="form-control" readonly>
-										</div>
+										
 									</div>
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>NO.OF SHARE <span style="color: red">*</span></label>
 											<input type="text" id="noOfShare" name="noOfShare"
 												class="form-control"
 												onkeyup="calculate(); calculateShareSerialNo();">
-										</div>
+										
 									</div>
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>SHARE SERIAL NO.<span style="color: red">*</span></label>
 											<input type="text" id="shareSerialNo" class="form-control"
 												readonly>
-										</div>
+									
 									</div>
 
 
@@ -230,10 +232,10 @@ function calculateShareSerialNo() {
 								<!-- ROW-5 -->
 								<div class="row">
 									<div class="col-md-4 ">
-										<div class="form-group">
+										
 											<label>SHARE BALANCE</label> <input type="text"
 												id="sharebalance" class="form-control" readonly>
-										</div>
+										
 									</div>
 								</div>
 
@@ -255,7 +257,7 @@ function calculateShareSerialNo() {
 
 							<!-- FOOTER -->
 							<div class="box-footer">
-								<button type="button" class="btn btn-primary pull-right"
+								<button type="button" class="btn btn-success pull-right"
 									onclick="goToPaymentDetails()">NEXT</button>
 							</div>
 
@@ -264,27 +266,27 @@ function calculateShareSerialNo() {
 
 
 
-					<div id="paymentDetailsSection" style="display: none;">
+					<div id="paymentDetailsSection" class="form-container" style="display: none;">
 
 						
-							<div class="box-header with-border">
+							<div class="box-header ">
 								<h3 class="box-title"><b>PAYMENT DETAILS</b></h3>
 							</div>
 
 							<div class="box-body">
 
 								<!-- ROW 1 -->
-								<div class="row">
+								<div class="row" style="margin-top: 20px">
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>TRANSFER DATE <span style="color: red">*</span></label>
 											<input type="date" id="transferDate" name="transferDate"
 												class="form-control">
-										</div>
+										
 									</div>
 
 									<div class="col-md-4">
-										<div class="form-group">
+										
 											<label>PAYMENT MODE <span style="color: red">*</span></label>
 											<select id="paymode" name="paymode" class="form-control">
 												<option value="Cash">CASH</option>
@@ -293,18 +295,18 @@ function calculateShareSerialNo() {
 												<option value="NEFT">NEFT</option>
 												<option value="Transfer">TRANSFER</option>
 											</select>
-										</div>
+										
 									</div>
 								</div>
 								<br>
 								<!-- ROW 2 -->
 								<div class="row">
 									<div class="col-md-8">
-										<div class="form-group">
+										
 											<label >REMARKS</label>
 											<textarea id="remarks" name="remarks" rows="2"
 												style="text-transform: uppercase;" class="form-control" placeholder="Enter  remarks if any"></textarea>
-										</div>
+										
 									</div>
 								</div>
 
@@ -312,7 +314,7 @@ function calculateShareSerialNo() {
 
 							<!-- FOOTER -->
 							<div class="box-footer">
-								<button type="button" class="btn btn-default"
+								<button type="button" class="btn btn-success"
 									onclick="backToShareDetails()">PREVIOUS</button>
 
 								<input type="button" id="btnSave" value="SAVE"
@@ -328,7 +330,8 @@ function calculateShareSerialNo() {
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>MATURITY APPLICATION</caption>
+										<caption style="text-decoration: underline;">MATURITY APPLICATION</caption>
+										
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SERIAL NO.</th>
 											<th scope="col">BRANCH NAME</th>
@@ -358,40 +361,43 @@ function calculateShareSerialNo() {
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
 	</div>
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
+	<script src="dist/js/memberShare.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	
+	<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	Bootstrap 3.3.7
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- InputMask -->
+	InputMask
 	<script src="plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-	<!-- date-range-picker -->
+	date-range-picker
 	<script src="bower_components/moment/min/moment.min.js"></script>
 	<script
 		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap datepicker -->
+	bootstrap datepicker
 	<script
 		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<!-- bootstrap color picker -->
+	bootstrap color picker
 	<script
 		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-	<!-- bootstrap time picker -->
+	bootstrap time picker
 	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-	<!-- SlimScroll -->
+	SlimScroll
 	<script
 		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<!-- iCheck 1.0.1 -->
+	iCheck 1.0.1
 	<script src="plugins/iCheck/icheck.min.js"></script>
-	<!-- FastClick -->
+	FastClick
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="dist/js/demo.js"></script>
-	<script src="dist/js/memberShare.js"></script>
+	
+	AdminLTE for demo purposes
+	<script src="dist/js/demo.js"></script> -->
+	
 	<!-- Select2 -->
-	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	<script>
+	<!-- <script src="bower_components/select2/dist/js/select2.full.min.js"></script> -->
+	<!-- <script>
         // Call the function to fetch the maximum member number when the page loads
         $(document).ready(function() {
             fetchMaxMemberNo();
@@ -404,7 +410,7 @@ function calculateShareSerialNo() {
                 memberNoInput.value = data + 1; // Increment the fetched value
             });
         }
-    </script>
+    </script> -->
 
 	<!-- <script>
 	// Function to validate the form
