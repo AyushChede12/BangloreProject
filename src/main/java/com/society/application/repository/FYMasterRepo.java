@@ -1,10 +1,12 @@
 package com.society.application.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.society.application.model.AddInvestment;
 import com.society.application.model.FYMaster;
 
-public interface FYMasterRepo extends JpaRepository<FYMaster, Integer> {
+@Repository
+public interface FYMasterRepo extends JpaRepository<FYMaster, Long> {
 
 }

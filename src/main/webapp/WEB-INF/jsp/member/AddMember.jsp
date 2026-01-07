@@ -53,11 +53,11 @@ function check()
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader"
-					style="font-size: 30px; margin-left: 10px;">Add Client</h1>
+					style="font-size: 30px; margin-left: 10px;">ADD CUSTOMER</h1>
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
-						<div class="step-title">CLIENT DETAILS</div>
+						<div class="step-title">CUSTOMER DETAILS</div>
 						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step2">
@@ -664,10 +664,12 @@ function check()
 
 								<div class="row">
 									<div class="col-md-12">
+									
 										<div id="clientSection" class="form-container">
 											<h3 class="box-title">
-												<b>CLIENT DETAILS</b>
+												<b>CUSTOMER DETAILS</b>
 											</h3>
+
 
 											<div class="box-body form-horizontal">
 
@@ -676,7 +678,8 @@ function check()
 
 													<div class="col-md-3">
 
-														<label class="col-sm-4 control-label">CLIENT NO *</label>
+														<label class="col-sm-4 control-label">CUSTOMER NO
+															*</label>
 														<div class="col-sm-8">
 															<input type="text" name="clientNo" id="clientNo"
 																value="${count}" class="form-control" readonly>
@@ -685,7 +688,8 @@ function check()
 
 													<div class="col-md-3">
 
-														<label class="col-sm-4 control-label">CLIENT ID *</label>
+														<label class="col-sm-4 control-label">CUSTOMER ID
+															*</label>
 														<div class="col-sm-8">
 															<input type="text" name="clientId" id="clientId"
 																value="${clientId}" class="form-control" readonly>
@@ -735,11 +739,11 @@ function check()
 													</div>
 
 													<div class="col-md-3">
-														<label class="col-sm-4 control-label">CLIENT NAME
-															*</label>
+														<label class="col-sm-4 control-label">CUSTOMER
+															NAME *</label>
 														<div class="col-sm-8">
 															<input type="text" name="memberName" class="form-control"
-																placeholder="Full Name"
+																placeholder="CUSTOMER Full Name"
 																style="text-transform: uppercase;">
 														</div>
 													</div>
@@ -976,12 +980,13 @@ function check()
 													</div>
 
 													<div class="col-md-3">
-														<label class="col-sm-4 control-label">CLIENT
+														<label class="col-sm-4 control-label">CUSTOMER
 															PURPOSE *</label>
 														<div class="col-sm-8">
 															<select name="clientPurpose" id="clientPurpose"
 																class="form-control">
-																<option value="">--- SELECT CLIENT PURPOSE ---</option>
+																<option value="">--- SELECT CUSTOMER PURPOSE
+																	---</option>
 																<option value="Membership">MEMBERSHIP</option>
 																<option value="Loan">LOAN</option>
 																<option value="Other">OTHER</option>
@@ -1263,6 +1268,7 @@ function check()
 
 								</div>
 						</div>
+				
 
 
 
@@ -1450,20 +1456,20 @@ function check()
 						<!-- </div> -->
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-info" class="form-container" id="tableSection"
-							style="display: none;">
+						<div class="form-container" id="tableSection" style="display: none;">
 							<div class="box-header">
 								<h3 class="box-title">TABLE</h3>
 							</div>
 							<div class="box-body form-horizontal">
+								<div class="clearfix margin-bottom-10"></div>
 								<table
 									class="table table-bordered table-hover text-nowrap datatable"
 									id="tableBody" style="text-align: center;">
 									<thead class="table-light">
-										<tr
-											style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
+										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SR NO</th>
 											<th scope="col">BANK NAME</th>
 											<th scope="col">ACCOUNT NO</th>
@@ -1480,7 +1486,7 @@ function check()
 										</tr>
 									</thead>
 									<tbody id="tableBody">
-										<!-- Data rows dynamically -->
+
 									</tbody>
 								</table>
 							</div>

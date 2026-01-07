@@ -9,19 +9,19 @@ import javax.persistence.Id;
 public class FYMaster {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String fyName;
 	private String tDate;
 	private String fDate;
 	private String createdBy;
 	private String createdDt;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

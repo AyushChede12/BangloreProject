@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.society.application.dto.Response;
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.AddInvestment;
 import com.society.application.model.AdvisorCollectorDetails;
 import com.society.application.model.BranchMaster;
@@ -320,9 +320,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByBranchName")
 	@ResponseBody
-	public Response searchByBranchName(@RequestBody AddInvestment ai) {
+	public ApiResponse searchByBranchName(@RequestBody AddInvestment ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 		List<AddInvestment> addinvest = addInvestmentRepo.findBybranchName(ai.getBranchName());
@@ -339,9 +339,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByDate")
 	@ResponseBody
-	public Response searchByDate(@RequestBody AddInvestment ai) {
+	public ApiResponse searchByDate(@RequestBody AddInvestment ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 
@@ -361,9 +361,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByBranchNameRenewalModule")
 	@ResponseBody
-	public Response searchByBranchNameRenewalModule(@RequestBody RecurringDueReportModel ai) {
+	public ApiResponse searchByBranchNameRenewalModule(@RequestBody RecurringDueReportModel ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 		List<RecurringDueReportModel> recurringDueReportModels = recurringDueReportModelRepo
@@ -381,9 +381,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByDateInRenewalApproval")
 	@ResponseBody
-	public Response searchByDateInRenewalApproval(@RequestBody RecurringDueReportModel ai) {
+	public ApiResponse searchByDateInRenewalApproval(@RequestBody RecurringDueReportModel ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 
@@ -404,9 +404,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByBranchNameSavingTxn")
 	@ResponseBody
-	public Response searchByBranchNameSavingTxn(@RequestBody SavingsDepositWith ai) {
+	public ApiResponse searchByBranchNameSavingTxn(@RequestBody SavingsDepositWith ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 		List<SavingsDepositWith> object = savingsDepositWithRepo.findBybranchName(ai.getBranchName());
@@ -423,9 +423,9 @@ public class ApprovalSection {
 
 	@PostMapping("/searchByDateInSavingApproval")
 	@ResponseBody
-	public Response searchByDateInSavingApproval(@RequestBody SavingsDepositWith ai) {
+	public ApiResponse searchByDateInSavingApproval(@RequestBody SavingsDepositWith ai) {
 
-		Response response = new Response<>();
+		ApiResponse response = new ApiResponse<>();
 		response.setStatus("Not Success");
 		response.setMessage("Data Not Found ..!!");
 

@@ -5,57 +5,58 @@
 	onload="reportDataFetchinDropDown();"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
-	
+
 	<script type="text/javascript">
-         //<![CDATA[
-         var theForm = document.forms['form1'];
-         if (!theForm) {
-             theForm = document.form1;
-         }
-         function __doPostBack(eventTarget, eventArgument) {
-             if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                 theForm.__EVENTTARGET.value = eventTarget;
-                 theForm.__EVENTARGUMENT.value = eventArgument;
-                 theForm.submit();
-             }
-         }
-         function callback(){
-        	var branchName = document.getElementById("branchName");
-        	var fDate =document.getElementById("fDate");
-        	var tDate = document.getElementById("tDate");
-           	var input = {
-                       "branchName": branchName.value,
-                       "fDate":fDate.value,
-                       "tDate":tDate.value
-               }
-           	$.ajax({
-                   type:"post",
-                   contentType: "application/json",
-                   data: JSON.stringify(input),
-                   url: 'getMemberReport',
-                   asynch: false,
-                   success: function(data) {
-                   	for (var i = 0; i < data.length; i++) {
-                   	document.getElementById("slNo").innerHTML = data[i].id;
-                    document.getElementById("mumberCode").innerHTML = data[i].id;
-                    document.getElementById("memberName").innerHTML = data[i].memberName;
-                    document.getElementById("cspCode").innerHTML = data[i].branchName;
-                    document.getElementById("doj").innerHTML = data[i].dob;
-                    document.getElementById("relative").innerHTML = data[i].relativeName;
-                    document.getElementById("address").innerHTML = data[i].address;
-                    document.getElementById("mobile").innerHTML = data[i].phoneno;
-                    document.getElementById("aadharNo").innerHTML = data[i].aadharNo;
-                    document.getElementById("pan").innerHTML = data[i].pan;
-                   	}
-                   } ,
-           	    error: function(){
-           	    	alert("Device control failed");
-           	    }
-               });
-          }
-         
-         //]]>
-      </script>
+		//<![CDATA[
+		var theForm = document.forms['form1'];
+		if (!theForm) {
+			theForm = document.form1;
+		}
+		function __doPostBack(eventTarget, eventArgument) {
+			if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+				theForm.__EVENTTARGET.value = eventTarget;
+				theForm.__EVENTARGUMENT.value = eventArgument;
+				theForm.submit();
+			}
+		}
+		function callback() {
+			var branchName = document.getElementById("branchName");
+			var fDate = document.getElementById("fDate");
+			var tDate = document.getElementById("tDate");
+			var input = {
+				"branchName" : branchName.value,
+				"fDate" : fDate.value,
+				"tDate" : tDate.value
+			}
+			$
+					.ajax({
+						type : "post",
+						contentType : "application/json",
+						data : JSON.stringify(input),
+						url : 'getMemberReport',
+						asynch : false,
+						success : function(data) {
+							for (var i = 0; i < data.length; i++) {
+								document.getElementById("slNo").innerHTML = data[i].id;
+								document.getElementById("mumberCode").innerHTML = data[i].id;
+								document.getElementById("memberName").innerHTML = data[i].memberName;
+								document.getElementById("cspCode").innerHTML = data[i].branchName;
+								document.getElementById("doj").innerHTML = data[i].dob;
+								document.getElementById("relative").innerHTML = data[i].relativeName;
+								document.getElementById("address").innerHTML = data[i].address;
+								document.getElementById("mobile").innerHTML = data[i].phoneno;
+								document.getElementById("aadharNo").innerHTML = data[i].aadharNo;
+								document.getElementById("pan").innerHTML = data[i].pan;
+							}
+						},
+						error : function() {
+							alert("Device control failed");
+						}
+					});
+		}
+
+		//]]>
+	</script>
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
@@ -66,81 +67,86 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1',
+					'form1', [], [], [], 90, 'ctl00');
+			//]]>
+		</script>
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Client Report</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">CUSTOMER REPORT</h1>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
-					<li class="active">Member Report</li>
+					<li class="active">CUSTOMER REPORT</li>
 				</ol>
 			</section>
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Search Box</h3>
+					<div class="col-md-12">
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">SEARCH BOX</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Branch :</label> <select name="branchName"
+							<div class="box-body form-horizontal">
+
+								<!-- Row 1 -->
+								<div class="row four-field-row">
+
+									<div class="col-md-4">
+
+										<label class="col-sm-4 control-label">BRANCH : </label>
+										<div class="col-sm-8">
+											<select name="branchName"
 											id="branchName" class="form-control" style="width: 100%;">
-											<option selected="selected" value="">Select Criteria</option>
+											<option selected="selected" value="">SELECT CRITERIA</option>
 										</select>
+										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
+
+									<div class="col-md-4">
+
+										<label class="col-sm-4 control-label">FROM DATE :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
 											</div>
 											<input name="fDate" type="date" id="fDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+												data-mask="" style="text-transform: uppercase;" />
+										</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
+
+									<div class="col-md-4">
+
+										<label class="col-sm-4 control-label">TO DATE :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
 											</div>
 											<input name="tDate" type="date" id="tDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+												data-mask="" style="text-transform: uppercase;"/>
+										</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label></label>
-										<button id="ContentPlaceHolder1_btnSearch"
-											class="btn btn-success margin-20"
-											onclick="getMemberRepottSearch();">
-											<span class="fa fa-search"></span> SEARCH
-										</button>
-									</div>
-								</div>
-								<div class="clearfix margin-bottom-10"></div>
+							</div>
+							<div class="text-center">
+								<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
+									href="javascript:searchThroughSearchBox123();"><span
+									class="fa fa-search"></span> SEARCH</a>
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
-								<h3 class="box-title">Search Result</h3>
+						
+						<div style="box-shadow: none; overflow: auto !important;">
+							<div class="box-header">
+								<h3 class="box-title">SEARCH RESULT</h3>
 								<div class="box-tools pull-right"></div>
 							</div>
 							<div class="box-body">
@@ -207,7 +213,7 @@
 	<script src="dist/js/memberSection.js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	
+
 </body>
 <!-- Dk/Admin/MemberDetailRpt.aspx EDB D 09:26:56 GMT -->
 </html>
