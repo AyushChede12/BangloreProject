@@ -6,12 +6,16 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.society.application.model.CasteMaster;
 import com.society.application.model.CompanyMaster;
 import com.society.application.model.FYMaster;
+import com.society.application.model.RelativeRelationMaster;
 import com.society.application.model.CompanyMaster;
 import com.society.application.model.UserMaster;
+import com.society.application.repository.CasteMasterRepo;
 import com.society.application.repository.CompanyMasterRepo;
 import com.society.application.repository.FYMasterRepo;
+import com.society.application.repository.RelativeRelationMasterRepo;
 import com.society.application.repository.UserMasterRepo;
 
 @Service
@@ -25,6 +29,12 @@ public class ConfigurationService {
 	
 	@Autowired
 	FYMasterRepo fyMasterRepo;
+	
+	@Autowired
+	RelativeRelationMasterRepo relativeRepo;
+	
+	@Autowired
+	CasteMasterRepo casteRepo;
 
 	// Ayush
 	public int updateCompanyMaster(CompanyMaster companyMaster) {
@@ -93,6 +103,34 @@ public class ConfigurationService {
 	public List<FYMaster> fetchFYDetails() {
 		// TODO Auto-generated method stub
 		return fyMasterRepo.findAll();
+	}
+
+	public RelativeRelationMaster saveRelativeModule(RelativeRelationMaster relativeModule) {
+		// TODO Auto-generated method stub
+		if (relativeModule.getId() != null) {
+			RelativeRelationMaster existing = relativeRepo.findById(relativeModule.getId())
+					.orElseThrow(() -> new RuntimeException("Relative not found with ID: " + relativeModule.getId()));
+
+			existing.setName(relativeModule.getName());
+
+			return relativeRepo.save(existing);
+		} else {
+			return relativeRepo.save(relativeModule);
+		}
+	}
+
+	public CasteMaster saveCasteModule(CasteMaster casteMaster) {
+		// TODO Auto-generated method stub
+		if (casteMaster.getId() != null) {
+			CasteMaster existing = casteRepo.findById(casteMaster.getId())
+					.orElseThrow(() -> new RuntimeException("Caste not found with ID: " + casteMaster.getId()));
+
+			existing.setCaste(casteMaster.getCaste());
+
+			return casteRepo.save(existing);
+		} else {
+			return casteRepo.save(casteMaster);
+		}
 	}
 
 }

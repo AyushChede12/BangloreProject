@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.microfinance.model.CategoryModule;
 import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;
@@ -313,24 +314,53 @@ public class ConfigurationController {
 		return configurationService.fetchFYDetails();
 	}
 	
-	@PostMapping("/SaveRelation")
-	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,
-			Model model, HttpSession session) {
-		String createdBy = session.getAttribute("ID").toString();
-		relationMaster.setCreatedBy(createdBy);
-		relationMasterRepo.save(relationMaster);
-		session.setAttribute("createdBy", createdBy);
-		return "configuration/RelativeMaster";
+//	@PostMapping("/SaveRelation")
+//	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,
+//			Model model, HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		relationMaster.setCreatedBy(createdBy);
+//		relationMasterRepo.save(relationMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/RelativeMaster";
+//	}
+	
+	@PostMapping("/SaveRelation") // Ayush (without DTO)
+	public ResponseEntity<ApiResponse<RelativeRelationMaster>> saveRelative(@RequestBody RelativeRelationMaster relativeModule) {
+		boolean isCreate = (relativeModule.getId() == null); // Check BEFORE saving
+		RelativeRelationMaster savedEntity = configurationService.saveRelativeModule(relativeModule);
+		ApiResponse<RelativeRelationMaster> response;
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Relative created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Relative updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
 	}
 
-	@PostMapping("/SaveCaste")
-	public String saveCasteMaster(@ModelAttribute("CasteModel") CasteMaster casteMaster, Model model,
-			HttpSession session) {
-		String createdBy = session.getAttribute("ID").toString();
-		casteMaster.setCreatedBy(createdBy);
-		casteMasterRepo.save(casteMaster);
-		session.setAttribute("createdBy", createdBy);
-		return "configuration/CasteMaster";
+//	@PostMapping("/SaveCaste")
+//	public String saveCasteMaster(@ModelAttribute("CasteModel") CasteMaster casteMaster, Model model,
+//			HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		casteMaster.setCreatedBy(createdBy);
+//		casteMasterRepo.save(casteMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/CasteMaster";
+//	}
+	
+	@PostMapping("/saveCasteModule")
+	@ResponseBody
+	public ResponseEntity<ApiResponse<CasteMaster>> saveCategory(@RequestBody CasteMaster casteMaster) {
+		boolean isCreate = (casteMaster.getId() == null); // Check BEFORE saving
+		CasteMaster savedEntity = configurationService.saveCasteModule(casteMaster);
+		ApiResponse<CasteMaster> response;
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Caste created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Caste updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
 	}
 
 	@PostMapping("/SaveCategory")
