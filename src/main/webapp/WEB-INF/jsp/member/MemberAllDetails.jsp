@@ -87,7 +87,7 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Client Summary</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">CUSTOMER SUMMARY</h1>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 								Home</a></li>
@@ -98,14 +98,14 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">SEARCH DETAILS</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-6">
-											<div class="form-group row">
+											<div class="row">
 												<label class="col-sm-4 control-label">SELECT BY CODE<strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -113,8 +113,9 @@
 														name="ctl00$ContentPlaceHolder1$ddlSearchMemberCode"
 														onchange="SearchTHePolicyNumber();"
 														id="ContentPlaceHolder1_ddlSearchMemberCode"
-														class="form-control select2" style="width: 100%;">
-														<option selected="selected" value="">SELECT CRITERIA</option>
+														class="form-control select2">
+														<option selected="selected" value="">SELECT
+															CRITERIA</option>
 													</select>
 												</div>
 											</div>
@@ -125,30 +126,36 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">CLIENT DETAILS</h3>
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">CUSTOMER DETAILS</h3>
 								</div>
-								<div id="ContentPlaceHolder1_pnlCdetails" class="aspNetDisabled">
-									<div class="box-body">
+
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+
 										<div class="col-md-3">
-											<div class="form-group">
-												<label>CLIENT CODE :</label> <input name="id" type="text"
-													disabled="disabled" id="id" class="form-control"
+											<label class="col-sm-4 control-label">CUSTOMER CODE :</label>
+											<div class="col-sm-8">
+												<input name="id" type="text" disabled="disabled" id="id"
+													class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">CUSTOMER NAME :</label>
+											<div class="col-sm-8">
+												<input name="memberName" type="text" maxlength="4"
+													disabled="disabled" id="memberName" class="form-control"
 													autocomplete="off" />
 											</div>
 										</div>
+
 										<div class="col-md-3">
-											<div class="form-group">
-												<label>CLIENT NAME :</label> <input name="memberName"
-													type="text" maxlength="4" disabled="disabled"
-													id="memberName" class="form-control" autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>REGISTRATION DATE :</label>
+											<label class="col-sm-4 control-label">REGISTRATION
+												DATE :</label>
+											<div class="col-sm-8">
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
@@ -161,120 +168,123 @@
 												</div>
 											</div>
 										</div>
+
 										<div class="col-md-3">
-											<div class="form-group">
-												<label>Relative Name :</label> <input name="relativeName"
-													type="text" disabled="disabled" id="relativeName"
-													class="form-control" autocomplete="off" />
-											</div>
-										</div>
-										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Address :</label> <input name="address" type="text"
-													disabled="disabled" id="address" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Pincode :</label> <input name="pinCode" type="text"
-													disabled="disabled" id="pinCode" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>State :</label> <input name="state" type="text"
-													disabled="disabled" id="state" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Mobile :</label> <input name="phoneno" type="text"
-													disabled="disabled" id="phoneno" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Aadhar No. :</label> <input name="aadharNo"
-													type="text" disabled="disabled" id="aadharNo"
-													class="form-control" autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>PAN :</label> <input name="pan" type="text"
-													disabled="disabled" id="pan" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Nominee Name :</label> <input name="nomineeName"
-													type="text" disabled="disabled" id="nomineeName"
-													class="form-control" autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Email ID :</label> <input name="emailid" type="text"
-													disabled="disabled" id="emailid" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>DOB :</label> <input name="dob" type="text"
-													disabled="disabled" id="dob" class="form-control"
-													autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Age :</label> <input name="age" type="text"
-													disabled="disabled" id="age" class="form-control"
-													autocomplete="off"
-													onkeypress="return isNumberKey(this, event);" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Branch Code :</label> <input name="bankCode"
-													type="text" disabled="disabled" id="bankCode"
-													class="form-control" autocomplete="off" />
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<label>Gender :</label> <input name="gender" type="text"
-													disabled="disabled" id="gender" class="form-control"
-													autocomplete="off" />
+											<label class="col-sm-4 control-label">Relative Name :</label>
+											<div class="col-sm-8">
+												<input name="relativeName" type="text" disabled="disabled"
+													id="relativeName" class="form-control" autocomplete="off" />
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Photo</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<!-- <img id="ContentPlaceHolder1_imglogo"
-													class="profile-user-img" src="" style="width: 110px;" /> -->
-												<img id="ContentPlaceHolder1_imglogo" name="preview"
-													class="profile-user-img"
-													src="data:image/png;base64,${aadharPhoto}"
-													style="width: 110px;" />
+
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Address :</label>
+											<div class="col-sm-8">
+												<input name="address" type="text" disabled="disabled"
+													id="address" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Pincode :</label>
+											<div class="col-sm-8">
+												<input name="pinCode" type="text" disabled="disabled"
+													id="pinCode" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">State :</label>
+											<div class="col-sm-8">
+												<input name="state" type="text" disabled="disabled"
+													id="state" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Mobile :</label>
+											<div class="col-sm-8">
+												<input name="phoneno" type="text" disabled="disabled"
+													id="phoneno" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+									</div>
+
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Aadhar No. :</label>
+											<div class="col-sm-8">
+												<input name="aadharNo" type="text" disabled="disabled"
+													id="aadharNo" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">PAN :</label>
+											<div class="col-sm-8">
+												<input name="pan" type="text" disabled="disabled" id="pan"
+													class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Nominee Name :</label>
+											<div class="col-sm-8">
+												<input name="nomineeName" type="text" disabled="disabled"
+													id="nomineeName" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+
+											<label class="col-sm-4 control-label">Email ID :</label>
+											<div class="col-sm-8">
+												<input name="emailid" type="text" disabled="disabled"
+													id="emailid" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+									</div>
+
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">DOB :</label>
+											<div class="col-sm-8">
+												<input name="dob" type="text" disabled="disabled" id="dob"
+													class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Age :</label>
+											<div class="col-sm-8">
+												<input name="age" type="text" disabled="disabled" id="age"
+													class="form-control" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Branch Code :</label>
+											<div class="col-sm-8">
+												<input name="bankCode" type="text" disabled="disabled"
+													id="bankCode" class="form-control" autocomplete="off" />
+											</div>
+										</div>
+
+										<div class="col-md-3">
+
+											<label class="col-sm-4 control-label">Gender :</label>
+											<div class="col-sm-8">
+												<input name="gender" type="text" disabled="disabled"
+													id="gender" class="form-control" autocomplete="off" />
 											</div>
 										</div>
 									</div>
@@ -282,6 +292,32 @@
 							</div>
 						</div>
 					</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="col-md-4">
+							<div id="kycSection" class="form-container">
+						<div>
+							<h3 class="box-title">
+								<b>CUSTOMER PHOTO</b>
+							</h3>
+						</div>
+
+						<div class="box-body form-horizontal">
+							<div class="row"  style="margin-top: 20px;">
+								<div class="col-sm-2 text-center">
+									<label>PHOTO</label> <input type="file" name="aadharCard"
+										id="aadharCard" accept="image/*"
+										onchange="previewImage(this,'previewFront')"
+										style="display: none;"> <label for="aadharFront">
+										<img id="previewFront" src="../images/upload/upload.png"
+										style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+						</div>
+					</div>
+
 					<!-- <div class="row">
 						<div class="col-md-12">
 							<div class="box box-success"
