@@ -660,530 +660,14 @@ function check()
 
 							<form id="fileUploadForm" enctype="multipart/form-data">
 
-								<div class="container-fluid">
-									<div class="row">
 
-										<!-- ================= BASIC DETAILS ================= -->
-										<div class="col-md-12">
-											<div id="clientSection">
-												<div>
-													<h3 class="box-title">
-														<b>CLIENT DETAILS</b>
-													</h3>
-												</div>
 
-												<div class="box-body form-horizontal">
-
-
-													<!-- Row 1 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT NO
-																	*</label>
-																<div class="col-sm-8">
-																	<input type="text" name="clientNo" id="clientNo"
-																		value="${count}" class="form-control" readonly>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT ID *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="clientId" id="clientId"
-																		value="${clientId}" class="form-control" readonly>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">BRANCH NAME *</label>
-																<div class="col-sm-8">
-																	<select name="branchName" id="branchName"
-																		class="form-control">
-																		<option value="" style="text-transform: uppercase;">SELECT BRANCH</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">REGISTRATION DATE *</label>
-																<div class="col-sm-8">
-																	<input type="date" name="registrationDate"
-																		id="registrationDate" class="form-control" style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-
-													<!-- Row 2 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">PREFIX *</label>
-																<div class="col-sm-8">
-																	<select name="memberNamePrefix" class="form-control">
-																		<option>MR.</option>
-																		<option>MS.</option>
-																		<option>MRS.</option>
-																		<option>SMT.</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT NAME *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="memberName"
-																		class="form-control" placeholder="Full Name"
-																		style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">RELATIVE NAME</label>
-																<div class="col-sm-8">
-																	<input type="text" name="relativeName"
-																		class="form-control" style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">RELATION</label>
-																<div class="col-sm-8">
-																	<select name="relativeRelation" id="relativeRelation"
-																		class="form-control">
-																		<option style="text-transform: uppercase;">SELECT RELATION</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-
-													<!-- Row 3 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">GENDER</label>
-																<div class="col-sm-8">
-																	<select name="gender" class="form-control">
-																		<option value="">SELECT</option>
-																		<option>MALE</option>
-																		<option>FEMALE</option>
-																		<option>OTHER</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">DOB *</label>
-																<div class="col-sm-8">
-																	<input type="date" name="dob" id="dob"
-																		onchange="calculateAge()" class="form-control" style="text-transform: uppercase;">
-																</div>
-
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">AGE</label>
-																<div class="col-sm-8">
-																	<input type="text" name="age" id="ageId"
-																		class="form-control">
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">MARITAL STATUS</label>
-																<div class="col-sm-8">
-																	<select name="maritalStatus" class="form-control">
-																		<option value="">SELECT</option>
-																		<option>MARRIED</option>
-																		<option>UNMARRIED</option>
-																		<option>WIDOW</option>
-																		<option>DIVORCE</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-													</div>
-
-
-													<!-- Row 4 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">ADDRESS *</label>
-																<div class="col-sm-8">
-																	<textarea name="address" rows="2" class="form-control" style="text-transform: uppercase;"></textarea>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">STATE *</label>
-																<div class="col-sm-8">
-																	<select name="state" id="state" class="form-control">
-																		<option value="">--SELECT--</option>
-																		<option>MAHARASHTRA</option>
-																		<option>GUJARAT</option>
-																		<option>DELHI</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">DISTRICT *</label>
-																<div class="col-sm-8">
-																	<select name="district" id="district"
-																		class="form-control" onclick="getTalukaInDropdown();">
-																		<option value="" style="text-transform: uppercase;">--SELECT DISTRICT--</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">TALUKA *</label>
-																<div class="col-sm-8">
-																	<select name="taluka" id="taluka" class="form-control"></select>
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-													<!-- Row 5 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">VILLAGE</label>
-																<div class="col-sm-8">
-																	<input type="text" name="village" id="village"
-																		class="form-control" placeholder="ENTER VILLAGE" style="text-transform: uppercase;">
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">PIN CODE *</label>
-																<div class="col-sm-8">
-																	<input type="text" name="pinCode" id="pinCode"
-																		maxlength="6" class="form-control"
-																		Placeholder="ENTER PINCODE" /> <span
-																		id="ContentPlaceHolder1_RequiredFieldValidator4"
-																		style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-																		PIN</span>
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-
-													<!-- Row 6 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">AADHAR NO
-																	*</label>
-																<div class="col-sm-8">
-																	<input name="aadharNo" type="text" maxlength="12"
-																		id="aadharNo" class="form-control"
-																		placeholder="ENTER AADHAR NO."
-																		onkeypress="return isNumberOnlyKey(this, event);"
-																		autocomplete="off" /> <span
-																		id="ContentPlaceHolder1_RequiredFieldValidator9"
-																		style="color: red; font-size: x-small; font-weight: bold; display: none;">
-																		Enter Aadhar No </span>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">PAN No.</label>
-																<div class="col-sm-6">
-																	<input name="pan" type="text" maxlength="10" id="pan"
-																		class="form-control" placeholder="ENTER PAN No." style="text-transform: uppercase;" />
-																</div>
-																<div class="col-sm-2">
-																	<input type="submit" value="Verify"
-																		class="btn btn-danger pull-right verify" disabled />
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">VOTOR NO.</label>
-																<div class="col-sm-6">
-																	<input name="voterNo" type="text" maxlength="10"
-																		id="voterNo" class="form-control"
-																		placeholder="ENTER VOTOR NO." style="text-transform: uppercase;" />
-																</div>
-																<div class="col-sm-2">
-																	<input type="submit" value="Verify"
-																		class="btn btn-danger pull-right verify" disabled />
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">MOBILE NO
-																	*</label>
-																<div class="col-sm-8">
-																	<input name="phoneno" type="text" maxlength="10"
-																		id="phoneno" class="form-control"
-																		placeholder="ENTER MOBILE NO"
-																		onkeypress="return isNumberOnlyKey(this, event);" />
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-													<!-- Row 7 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">EMAIL ID</label>
-																<div class="col-sm-8">
-																	<input name="emailid" type="text" id="emailid"
-																		class="form-control" placeholder="ENTER EMAIL ID" style="text-transform: uppercase;" />
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">OCCUPATION</label>
-																<div class="col-sm-8">
-																	<input name="occupation" id="occupation"
-																		class="form-control" placeholder="ENTER OCCUPATION" style="text-transform: uppercase;" />
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">EDUCATION</label>
-																<div class="col-sm-8">
-																	<input name="education" id="education"
-																		class="form-control" placeholder="ENTER EDUCATION" style="text-transform: uppercase;" />
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CLIENT PURPOSE *</label>
-																<div class="col-sm-8">
-																	<select name="clientPurpose" id="clientPurpose"
-																		class="form-control">
-																		<option value="">--- SELECT CLIENT PURPOSE ---</option>
-																		<option value="Membership">MEMBERSHIP</option>
-																		<option value="Loan">LOAN</option>
-																		<option value="Other">OTHER</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-													<!-- Row 8 -->
-													<div class="row four-field-row">
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">RELIGION *</label>
-																<div class="col-sm-8">
-																	<select name="religionName" id="religionName"
-																		class="form-control">
-																		<option value="">SELECT RELIGION NAME</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CATEGORY *</label>
-																<div class="col-sm-8">
-																	<select name="categoryName" id="categoryName"
-																		class="form-control">
-																		<option value="">SELECT CATEGORY NAME</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">CASTE</label>
-																<div class="col-sm-8">
-																	<input name="caste" id="caste" class="form-control"
-																		placeholder="ENTER CASTE NAME"  style="text-transform: uppercase;"/>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">RISK CATEGORY *</label>
-																<div class="col-sm-8">
-																	<select name="riskCategory" id="riskCategory"
-																		class="form-control">
-																		<option value="">SELECT RISK CATEGORY</option>
-																		<option>A</option>
-																		<option>LOW</option>
-																		<option>MEDIUM</option>
-																		<option>HIGH</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-
-													</div>
-
-
-													<!-- Row 9  -->
-													<div class="row four-field-row">
-														<div class="col-md-3">
-															<div class="form-group">
-																<label class="col-sm-4 control-label">NATIONALITY *</label>
-																<div class="col-sm-8">
-																	<select name="nationality" id="nationality"
-																		class="form-control">
-																		<option value="">SELECT NATIONALITY</option>
-																		<option>INDIAN</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<!-- Button -->
-												<div class="clearfix">
-													<button type="button" class="btn btn-primary pull-right"
-														onclick="showKyc()">NEXT</button>
-												</div>
-											</div>
-										</div>
-
-
-										<!-- ================= AADHAR IMAGES ================= -->
-										<div id="kycSection" style="display: none;">
-											<div>
-												<h3 class="box-title">
-													<b>KYC DOCUMENTS</b>
-												</h3>
-											</div>
-
-											<div class="box-body">
-												<div class="row">
-													<div class="col-sm-3 text-center">
-														<label>PHOTO</label> <input type="file" name="aadharCard"
-															id="aadharCard" accept="image/*"
-															onchange="previewImage(this,'previewFront')"
-															style="display: none;"> <label for="aadharFront">
-															<img id="previewFront" src="../images/upload/upload.png"
-															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-														</label>
-													</div>
-
-													<div class="col-sm-3 text-center">
-														<label>SIGNATURE</label> <input type="file"
-															name="signature" id="signature" accept="image/*"
-															onchange="previewImage(this,'previewBack')"
-															style="display: none;"> <label for="aadharBack">
-															<img id="previewBack" src="../images/upload/upload.png"
-															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-														</label>
-													</div>
-
-													<div class="col-sm-3 text-center">
-														<label>AADHAR CARD</label> <input type="file"
-															name="signature" id="signature" accept="image/*"
-															onchange="previewImage(this,'previewBack')"
-															style="display: none;"> <label for="aadharBack">
-															<img id="previewBack" src="../images/upload/upload.png"
-															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-														</label>
-													</div>
-
-													<div class="col-sm-3 text-center">
-														<label>PAN CARD</label> <input type="file"
-															name="signature" id="signature" accept="image/*"
-															onchange="previewImage(this,'previewBack')"
-															style="display: none;"> <label for="aadharBack">
-															<img id="previewBack" src="../images/upload/upload.png"
-															style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
-														</label>
-													</div>
-
-												</div>
-
-												<!-- Button -->
-												<div class="clearfix">
-													<button type="button" class="btn btn-default"
-														onclick="showClient()">PREVIOUS</button>
-													<button type="button" class="btn btn-primary pull-right"
-														onclick="showNominee()">NEXT</button>
-												</div>
-											</div>
-										</div>
-
-
-
-										<!-- ================= NOMINEE DETAILS ================= -->
-										<div id="nomineeSection" style="display: none;">
-											<div>
-												<h3 class="box-title">
-													<b>NOMINEE DETAILS</b>
-												</h3>
-											</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div id="clientSection" class="form-container">
+											<h3 class="box-title">
+												<b>CLIENT DETAILS</b>
+											</h3>
 
 											<div class="box-body form-horizontal">
 
@@ -1191,133 +675,592 @@ function check()
 												<div class="row four-field-row">
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="txtNomineeName"
-																class="col-sm-4 control-label">NOMINEE NAME <strong
-																style="color: Red">*</strong>
-															</label>
-															<div class="col-sm-8">
-																<input name="nomineeName" type="text" id="nomineeName"
-																	class="form-control" Placeholder="ENTER NOMINEE NAME" style="text-transform: uppercase;"/>
-																<span id="ContentPlaceHolder1_RequiredFieldValidator7"
-																	style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER NOMINEE NAME</span>
-															</div>
+
+														<label class="col-sm-4 control-label">CLIENT NO *</label>
+														<div class="col-sm-8">
+															<input type="text" name="clientNo" id="clientNo"
+																value="${count}" class="form-control" readonly>
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="drpNomineeRelation"
-																class="col-sm-4 control-label">NOMINEE RALATION</label>
-															<div class="col-sm-8">
-																<select name="nRelation" id="nRelation"
-																	class="form-control" style="width: 100%;">
-																	<option>SELECT NOMINEE RELATION</option>
-																	<option value="SISTER">SISTER</option>
-																	<option value="BROTHER">BROTHER</option>
-																	<option value="FATHER">FATHER</option>
-																	<option value="MOTHER">MOTHER</option>
-																	<option value="SON">SON</option>
-																	<option value="DAUGTHER">DAUGTHER</option>
-																</select>
-															</div>
+
+														<label class="col-sm-4 control-label">CLIENT ID *</label>
+														<div class="col-sm-8">
+															<input type="text" name="clientId" id="clientId"
+																value="${clientId}" class="form-control" readonly>
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="txtNomineeAddress"
-																class="col-sm-4 control-label">NOMINEE ADDRESS</label>
-															<div class="col-sm-8">
-																<input name="nomineeAddress" type="text"
-																	id="nomineeAddress" class="form-control"
-																	Placeholder="ENTER NOMINEE ADDRESS" style="text-transform: uppercase;"/>
-															</div>
+
+														<label class="col-sm-4 control-label">BRANCH NAME
+															*</label>
+														<div class="col-sm-8">
+															<select name="branchName" id="branchName"
+																class="form-control">
+																<option value="" style="text-transform: uppercase;">SELECT
+																	BRANCH</option>
+															</select>
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="txtNomineeKycNumber"
-																class="col-sm-4 control-label">NOMINEE KYC NO.</label>
-															<div class="col-sm-8">
-																<input name="nomineeKycNumber" type="text"
-																	id="nomineeKycNumber" class="form-control"
-																	Placeholder="ENTER NOMINEE KYC NO." style="text-transform: uppercase;"/>
-															</div>
+														<label class="col-sm-4 control-label">REGISTRATION
+															DATE *</label>
+														<div class="col-sm-8">
+															<input type="date" name="registrationDate"
+																id="registrationDate" class="form-control"
+																style="text-transform: uppercase;">
 														</div>
 													</div>
 
 												</div>
+
+
 
 												<!-- Row 2 -->
 												<div class="row four-field-row">
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="txtNomineeMobileNo"
-																class="col-sm-4 control-label">NOMINEE MOBILE NO.</label>
-															<div class="col-sm-8">
-																<input name="nomineeMobileNo" type="text" maxlength="10"
-																	id="nomineeMobileNo" class="form-control"
-																	Placeholder="ENTER NOMINEE MOBILE NO" />
-															</div>
+														<label class="col-sm-4 control-label">PREFIX *</label>
+														<div class="col-sm-8">
+															<select name="memberNamePrefix" class="form-control">
+																<option>MR.</option>
+																<option>MS.</option>
+																<option>MRS.</option>
+																<option>SMT.</option>
+															</select>
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="txtNomineeAge" class="col-sm-4 control-label">NOMINEE AGE.</label>
-															<div class="col-sm-8">
-																<input name="nomineeAge" type="text" maxlength="2"
-																	id="nomineeAge" class="form-control"
-																	Placeholder="ENTER NOMINEE AGE" />
-															</div>
+														<label class="col-sm-4 control-label">CLIENT NAME
+															*</label>
+														<div class="col-sm-8">
+															<input type="text" name="memberName" class="form-control"
+																placeholder="Full Name"
+																style="text-transform: uppercase;">
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="TxtNomineePanNo"
-																class="col-sm-4 control-label">NOMINEE PAN NO.</label>
-															<div class="col-sm-8">
-																<input name="nomineePanNo" type="text" maxlength="10"
-																	id="nomineePanNo" class="form-control"
-																	Placeholder="ENTER NOMINEE PAN NO." style="text-transform: uppercase;"/>
-															</div>
+														<label class="col-sm-4 control-label">RELATIVE
+															NAME</label>
+														<div class="col-sm-8">
+															<input type="text" name="relativeName"
+																class="form-control" style="text-transform: uppercase;">
 														</div>
 													</div>
 
 													<div class="col-md-3">
-														<div class="form-group">
-															<label for="drpNomineeKycType"
-																class="col-sm-4 control-label">NOMINEE KYC TYPE</label>
-															<div class="col-sm-8">
-																<select name="nomineeKycType" id="nomineeKycType"
-																	class="form-control" style="width: 100%;">
-																	<option value="">SELECT NOMINEE KYC TYPE</option>
-																	<option value="Online">ONLINE</option>
-																	<option value="Offline">OFFLINE</option>
-																</select>
-															</div>
+														<label class="col-sm-4 control-label">RELATION</label>
+														<div class="col-sm-8">
+															<select name="relativeRelation" id="relativeRelation"
+																class="form-control">
+																<option style="text-transform: uppercase;">SELECT
+																	RELATION</option>
+															</select>
 														</div>
 													</div>
 
 												</div>
 
 
-												<!-- Button -->
-												<div class="clearfix">
-													<button type="button" class="btn btn-default"
-														onclick="showKyc()">PREVIOUS</button>
-													<button type="button" class="btn btn-primary pull-right"
-														onclick="showFees()">NEXT</button>
+
+												<!-- Row 3 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">GENDER</label>
+														<div class="col-sm-8">
+															<select name="gender" class="form-control">
+																<option value="">SELECT</option>
+																<option>MALE</option>
+																<option>FEMALE</option>
+																<option>OTHER</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">DOB *</label>
+														<div class="col-sm-8">
+															<input type="date" name="dob" id="dob"
+																onchange="calculateAge()" class="form-control"
+																style="text-transform: uppercase;">
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">AGE</label>
+														<div class="col-sm-8">
+															<input type="text" name="age" id="ageId"
+																class="form-control">
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">MARITAL
+															STATUS</label>
+														<div class="col-sm-8">
+															<select name="maritalStatus" class="form-control">
+																<option value="">SELECT</option>
+																<option>MARRIED</option>
+																<option>UNMARRIED</option>
+																<option>WIDOW</option>
+																<option>DIVORCE</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+
+												<!-- Row 4 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">ADDRESS *</label>
+														<div class="col-sm-8">
+															<textarea name="address" rows="2" class="form-control"
+																style="text-transform: uppercase;"></textarea>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">STATE *</label>
+														<div class="col-sm-8">
+															<select name="state" id="state" class="form-control">
+																<option value="">--SELECT--</option>
+																<option>MAHARASHTRA</option>
+																<option>GUJARAT</option>
+																<option>DELHI</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">DISTRICT *</label>
+														<div class="col-sm-8">
+															<select name="district" id="district"
+																class="form-control" onclick="getTalukaInDropdown();">
+																<option value="" style="text-transform: uppercase;">--SELECT
+																	DISTRICT--</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">TALUKA *</label>
+														<div class="col-sm-8">
+															<select name="taluka" id="taluka" class="form-control"></select>
+														</div>
+													</div>
+
+												</div>
+
+
+												<!-- Row 5 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">VILLAGE</label>
+														<div class="col-sm-8">
+															<input type="text" name="village" id="village"
+																class="form-control" placeholder="ENTER VILLAGE"
+																style="text-transform: uppercase;">
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">PIN CODE *</label>
+														<div class="col-sm-8">
+															<input type="text" name="pinCode" id="pinCode"
+																maxlength="6" class="form-control"
+																Placeholder="ENTER PINCODE" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator4"
+																style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+																PIN</span>
+														</div>
+													</div>
+
+												</div>
+
+
+
+												<!-- Row 6 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">AADHAR NO *</label>
+														<div class="col-sm-8">
+															<input name="aadharNo" type="text" maxlength="12"
+																id="aadharNo" class="form-control"
+																placeholder="ENTER AADHAR NO."
+																onkeypress="return isNumberOnlyKey(this, event);"
+																autocomplete="off" /> <span
+																id="ContentPlaceHolder1_RequiredFieldValidator9"
+																style="color: red; font-size: x-small; font-weight: bold; display: none;">
+																Enter Aadhar No </span>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">PAN No.</label>
+														<div class="col-sm-6">
+															<input name="pan" type="text" maxlength="10" id="pan"
+																class="form-control" placeholder="ENTER PAN No."
+																style="text-transform: uppercase;" />
+														</div>
+														<div class="col-sm-2">
+															<input type="submit" value="Verify"
+																class="btn btn-danger pull-right verify" disabled />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">VOTOR NO.</label>
+														<div class="col-sm-6">
+															<input name="voterNo" type="text" maxlength="10"
+																id="voterNo" class="form-control"
+																placeholder="ENTER VOTOR NO."
+																style="text-transform: uppercase;" />
+														</div>
+														<div class="col-sm-2">
+															<input type="submit" value="Verify"
+																class="btn btn-danger pull-right verify" disabled />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">MOBILE NO *</label>
+														<div class="col-sm-8">
+															<input name="phoneno" type="text" maxlength="10"
+																id="phoneno" class="form-control"
+																placeholder="ENTER MOBILE NO"
+																onkeypress="return isNumberOnlyKey(this, event);" />
+														</div>
+													</div>
+
+												</div>
+
+
+												<!-- Row 7 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">EMAIL ID</label>
+														<div class="col-sm-8">
+															<input name="emailid" type="text" id="emailid"
+																class="form-control" placeholder="ENTER EMAIL ID"
+																style="text-transform: uppercase;" />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">OCCUPATION</label>
+														<div class="col-sm-8">
+															<input name="occupation" id="occupation"
+																class="form-control" placeholder="ENTER OCCUPATION"
+																style="text-transform: uppercase;" />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">EDUCATION</label>
+														<div class="col-sm-8">
+															<input name="education" id="education"
+																class="form-control" placeholder="ENTER EDUCATION"
+																style="text-transform: uppercase;" />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">CLIENT
+															PURPOSE *</label>
+														<div class="col-sm-8">
+															<select name="clientPurpose" id="clientPurpose"
+																class="form-control">
+																<option value="">--- SELECT CLIENT PURPOSE ---</option>
+																<option value="Membership">MEMBERSHIP</option>
+																<option value="Loan">LOAN</option>
+																<option value="Other">OTHER</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+
+
+												<!-- Row 8 -->
+												<div class="row four-field-row">
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">RELIGION *</label>
+														<div class="col-sm-8">
+															<select name="religionName" id="religionName"
+																class="form-control">
+																<option value="">SELECT RELIGION NAME</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">CATEGORY *</label>
+														<div class="col-sm-8">
+															<select name="categoryName" id="categoryName"
+																class="form-control">
+																<option value="">SELECT CATEGORY NAME</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">CASTE</label>
+														<div class="col-sm-8">
+															<input name="caste" id="caste" class="form-control"
+																placeholder="ENTER CASTE NAME"
+																style="text-transform: uppercase;" />
+														</div>
+													</div>
+
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">RISK
+															CATEGORY *</label>
+														<div class="col-sm-8">
+															<select name="riskCategory" id="riskCategory"
+																class="form-control">
+																<option value="">SELECT RISK CATEGORY</option>
+																<option>A</option>
+																<option>LOW</option>
+																<option>MEDIUM</option>
+																<option>HIGH</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+
+
+												<!-- Row 9  -->
+												<div class="row four-field-row">
+													<div class="col-md-3">
+														<label class="col-sm-4 control-label">NATIONALITY
+															*</label>
+														<div class="col-sm-8">
+															<select name="nationality" id="nationality"
+																class="form-control">
+																<option value="">SELECT NATIONALITY</option>
+																<option>INDIAN</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Button -->
+											<div class="clearfix">
+												<button type="button" class="btn btn-primary pull-right"
+													onclick="showKyc()">NEXT</button>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- ================= AADHAR IMAGES ================= -->
+									<div id="kycSection" class="form-container"
+										style="display: none;">
+										<div>
+											<h3 class="box-title">
+												<b>KYC DOCUMENTS</b>
+											</h3>
+										</div>
+
+										<div class="box-body">
+											<div class="row">
+												<div class="col-sm-3 text-center">
+													<label>PHOTO</label> <input type="file" name="aadharCard"
+														id="aadharCard" accept="image/*"
+														onchange="previewImage(this,'previewFront')"
+														style="display: none;"> <label for="aadharFront">
+														<img id="previewFront" src="../images/upload/upload.png"
+														style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+													</label>
+												</div>
+
+												<div class="col-sm-3 text-center">
+													<label>SIGNATURE</label> <input type="file"
+														name="signature" id="signature" accept="image/*"
+														onchange="previewImage(this,'previewBack')"
+														style="display: none;"> <label for="aadharBack">
+														<img id="previewBack" src="../images/upload/upload.png"
+														style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+													</label>
+												</div>
+
+												<div class="col-sm-3 text-center">
+													<label>AADHAR CARD</label> <input type="file"
+														name="signature" id="signature" accept="image/*"
+														onchange="previewImage(this,'previewBack')"
+														style="display: none;"> <label for="aadharBack">
+														<img id="previewBack" src="../images/upload/upload.png"
+														style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+													</label>
+												</div>
+
+												<div class="col-sm-3 text-center">
+													<label>PAN CARD</label> <input type="file" name="signature"
+														id="signature" accept="image/*"
+														onchange="previewImage(this,'previewBack')"
+														style="display: none;"> <label for="aadharBack">
+														<img id="previewBack" src="../images/upload/upload.png"
+														style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+													</label>
 												</div>
 
 											</div>
-										</div>
 
+											<!-- Button -->
+											<div class="clearfix">
+												<button type="button" class="btn btn-default"
+													onclick="showClient()">PREVIOUS</button>
+												<button type="button" class="btn btn-primary pull-right"
+													onclick="showNominee()">NEXT</button>
+											</div>
+										</div>
 									</div>
+
+
+
+									<!-- ================= NOMINEE DETAILS ================= -->
+									<div id="nomineeSection" class="form-container"
+										style="display: none;">
+										<h3 class="box-title">
+											<b>NOMINEE DETAILS</b>
+										</h3>
+
+
+										<div class="box-body form-horizontal">
+
+											<!-- Row 1 -->
+											<div class="row four-field-row">
+
+												<div class="col-md-3">
+													<label for="txtNomineeName" class="col-sm-4 control-label">NOMINEE
+														NAME <strong style="color: Red">*</strong>
+													</label>
+													<div class="col-sm-8">
+														<input name="nomineeName" type="text" id="nomineeName"
+															class="form-control" Placeholder="ENTER NOMINEE NAME"
+															style="text-transform: uppercase;" /> <span
+															id="ContentPlaceHolder1_RequiredFieldValidator7"
+															style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+															NOMINEE NAME</span>
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="drpNomineeRelation"
+														class="col-sm-4 control-label">NOMINEE RALATION</label>
+													<div class="col-sm-8">
+														<select name="nRelation" id="nRelation"
+															class="form-control" style="width: 100%;">
+															<option>SELECT NOMINEE RELATION</option>
+															<option value="SISTER">SISTER</option>
+															<option value="BROTHER">BROTHER</option>
+															<option value="FATHER">FATHER</option>
+															<option value="MOTHER">MOTHER</option>
+															<option value="SON">SON</option>
+															<option value="DAUGTHER">DAUGTHER</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="txtNomineeAddress"
+														class="col-sm-4 control-label">NOMINEE ADDRESS</label>
+													<div class="col-sm-8">
+														<input name="nomineeAddress" type="text"
+															id="nomineeAddress" class="form-control"
+															Placeholder="ENTER NOMINEE ADDRESS"
+															style="text-transform: uppercase;" />
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="txtNomineeKycNumber"
+														class="col-sm-4 control-label">NOMINEE KYC NO.</label>
+													<div class="col-sm-8">
+														<input name="nomineeKycNumber" type="text"
+															id="nomineeKycNumber" class="form-control"
+															Placeholder="ENTER NOMINEE KYC NO."
+															style="text-transform: uppercase;" />
+													</div>
+												</div>
+
+											</div>
+
+											<!-- Row 2 -->
+											<div class="row four-field-row">
+
+												<div class="col-md-3">
+													<label for="txtNomineeMobileNo"
+														class="col-sm-4 control-label">NOMINEE MOBILE NO.</label>
+													<div class="col-sm-8">
+														<input name="nomineeMobileNo" type="text" maxlength="10"
+															id="nomineeMobileNo" class="form-control"
+															Placeholder="ENTER NOMINEE MOBILE NO" />
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="txtNomineeAge" class="col-sm-4 control-label">NOMINEE
+														AGE.</label>
+													<div class="col-sm-8">
+														<input name="nomineeAge" type="text" maxlength="2"
+															id="nomineeAge" class="form-control"
+															Placeholder="ENTER NOMINEE AGE" />
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="TxtNomineePanNo" class="col-sm-4 control-label">NOMINEE
+														PAN NO.</label>
+													<div class="col-sm-8">
+														<input name="nomineePanNo" type="text" maxlength="10"
+															id="nomineePanNo" class="form-control"
+															Placeholder="ENTER NOMINEE PAN NO."
+															style="text-transform: uppercase;" />
+													</div>
+												</div>
+
+												<div class="col-md-3">
+													<label for="drpNomineeKycType"
+														class="col-sm-4 control-label">NOMINEE KYC TYPE</label>
+													<div class="col-sm-8">
+														<select name="nomineeKycType" id="nomineeKycType"
+															class="form-control" style="width: 100%;">
+															<option value="">SELECT NOMINEE KYC TYPE</option>
+															<option value="Online">ONLINE</option>
+															<option value="Offline">OFFLINE</option>
+														</select>
+													</div>
+												</div>
+
+											</div>
+
+
+											<!-- Button -->
+											<div class="clearfix">
+												<button type="button" class="btn btn-default"
+													onclick="showKyc()">PREVIOUS</button>
+												<button type="button" class="btn btn-primary pull-right"
+													onclick="showFees()">NEXT</button>
+											</div>
+
+										</div>
+									</div>
+
 								</div>
 						</div>
 
@@ -1327,7 +1270,8 @@ function check()
 						<div class="row">
 							<div class="col-md-12">
 
-								<div id="feesSection" style="display: none;">
+								<div id="feesSection" class="form-container"
+									style="display: none;">
 									<div>
 										<h3 class="box-title">
 											<b>FEES / SETTING DETAILS</b>
@@ -1341,55 +1285,54 @@ function check()
 										<div class="row four-field-row">
 											<!-- Client Fees -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label"> CLIENT FEES (IF ANY)<strong style="color: red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input type="text" name="memberJoiningFess"
-															id="memberJoiningFess" class="form-control"
-															placeholder="ENTER CLIENT FEES" style="text-transform: uppercase;">
-													</div>
+												<label class="col-sm-4 control-label"> CLIENT FEES
+													(IF ANY)<strong style="color: red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<input type="text" name="memberJoiningFess"
+														id="memberJoiningFess" class="form-control"
+														placeholder="ENTER CLIENT FEES"
+														style="text-transform: uppercase;">
 												</div>
 											</div>
 
 
 											<!-- Share Allotted From -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label"> SHARE ALLOTTED FROM<strong style="color: red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<select name="shareAllotedfrm" id="shareAllotedfrm"
-															class="form-control">
-															<option value="">SELECT SHARE ALLOTTED FROM</option>
-														</select>
-													</div>
+												<label class="col-sm-4 control-label"> SHARE
+													ALLOTTED FROM<strong style="color: red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<select name="shareAllotedfrm" id="shareAllotedfrm"
+														class="form-control">
+														<option value="">SELECT SHARE ALLOTTED FROM</option>
+													</select>
 												</div>
 											</div>
 
 
 											<!-- No of Shares -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label"> NO. OF SHARES<strong style="color: red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input type="text" name="noOfShared" id="noOfShared"
-															class="form-control" placeholder="ENTER NO. OF SHARES" style="text-transform: uppercase;">
-													</div>
+												<label class="col-sm-4 control-label"> NO. OF SHARES<strong
+													style="color: red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<input type="text" name="noOfShared" id="noOfShared"
+														class="form-control" placeholder="ENTER NO. OF SHARES"
+														style="text-transform: uppercase;">
 												</div>
 											</div>
 
 											<!-- Share Amount -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label">SHARE AMOUNT<strong style="color: red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input type="text" name="enterShareAmount"
-															id="enterShareAmount" class="form-control"
-															placeholder="ENTER SHARE AMOUNT" style="text-transform: uppercase;">
-													</div>
+												<label class="col-sm-4 control-label">SHARE AMOUNT<strong
+													style="color: red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<input type="text" name="enterShareAmount"
+														id="enterShareAmount" class="form-control"
+														placeholder="ENTER SHARE AMOUNT"
+														style="text-transform: uppercase;">
 												</div>
 											</div>
 
@@ -1399,88 +1342,77 @@ function check()
 										<div class="row four-field-row">
 											<!-- Payment Mode -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label"> PAYMENT BY<strong
-														style="color: red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<select name="paymode" id="paymode" class="form-control">
-															<option value="">SELECT PAYMENT MODE</option>
-															<option value="Cash">CASH</option>
-															<option value="Online">ONLINE</option>
-														</select>
-													</div>
+												<label class="col-sm-4 control-label"> PAYMENT BY<strong
+													style="color: red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<select name="paymode" id="paymode" class="form-control">
+														<option value="">SELECT PAYMENT MODE</option>
+														<option value="Cash">CASH</option>
+														<option value="Online">ONLINE</option>
+													</select>
 												</div>
 											</div>
 
 
 											<!-- Remarks -->
 											<div class="col-md-3">
-												<div class="form-group">
-													<label class="col-sm-4 control-label">REMARK</label>
-													<div class="col-sm-8">
-														<textarea name="remarks" id="remarks" rows="2"
-															class="form-control" placeholder="ENTER REMARKS IF ANY" style="text-transform: uppercase;"></textarea>
-													</div>
+												<label class="col-sm-4 control-label">REMARK</label>
+												<div class="col-sm-8">
+													<textarea name="remarks" id="remarks" rows="2"
+														class="form-control" placeholder="ENTER REMARKS IF ANY"
+														style="text-transform: uppercase;"></textarea>
 												</div>
 											</div>
 
 										</div>
 
 
-<hr>
+										<hr>
 
 										<div class="row four-field-row">
 
 											<div class="col-md-3">
 												<!-- Client Status -->
-												<div class="form-group">
-													<label class="col-sm-4 control-label">CLIENT STATUS</label>
-													<div class="col-sm-8">
-														<label class="switch"> <input type="checkbox"
-															name="memberStatusIsActive" id="memberStatusIsActive">
-															<span class="slider round"></span>
-														</label>
-													</div>
+												<label class="col-sm-4 control-label">CLIENT STATUS</label>
+												<div class="col-sm-8">
+													<label class="switch"> <input type="checkbox"
+														name="memberStatusIsActive" id="memberStatusIsActive">
+														<span class="slider round"></span>
+													</label>
 												</div>
 											</div>
 
 											<div class="col-md-3">
 												<!-- Mobile Banking -->
-												<div class="form-group">
-													<label class="col-sm-4 control-label">MOBILE BANKING</label>
-													<div class="col-sm-8">
-														<label class="switch"> <input type="checkbox"
-															name="chkmobile" id="chkmobile"> <span
-															class="slider round"></span>
-														</label>
-													</div>
+												<label class="col-sm-4 control-label">MOBILE BANKING</label>
+												<div class="col-sm-8">
+													<label class="switch"> <input type="checkbox"
+														name="chkmobile" id="chkmobile"> <span
+														class="slider round"></span>
+													</label>
 												</div>
 											</div>
 
 											<div class="col-md-3">
 												<!-- Net Banking -->
-												<div class="form-group">
-													<label class="col-sm-4 control-label">NET BANKING</label>
-													<div class="col-sm-8">
-														<label class="switch"> <input type="checkbox"
-															name="chknetBanking" id="chknetBanking"> <span
-															class="slider round"></span>
-														</label>
-													</div>
+												<label class="col-sm-4 control-label">NET BANKING</label>
+												<div class="col-sm-8">
+													<label class="switch"> <input type="checkbox"
+														name="chknetBanking" id="chknetBanking"> <span
+														class="slider round"></span>
+													</label>
 												</div>
 											</div>
 
 											<div class="col-md-3">
 												<!-- SMS -->
-												<div class="form-group">
-													<label class="col-sm-4 control-label">SMS SEND</label>
-													<div class="col-sm-8">
-														<label class="switch"> <input type="checkbox"
-															name="chkisSms" id="chkisSms"> <span
-															class="slider round"></span>
-														</label>
-													</div>
+												<label class="col-sm-4 control-label">SMS SEND</label>
+												<div class="col-sm-8">
+													<label class="switch"> <input type="checkbox"
+														name="chkisSms" id="chkisSms"> <span
+														class="slider round"></span>
+													</label>
 												</div>
 											</div>
 										</div>
@@ -1490,14 +1422,12 @@ function check()
 
 											<div class="col-md-3">
 												<!-- Minor -->
-												<div class="form-group">
-													<label class="col-sm-4 control-label">IS MINOR</label>
-													<div class="col-sm-8">
-														<label class="switch"> <input type="checkbox"
-															name="chkMinor" id="chkMinor"> <span
-															class="slider round"></span>
-														</label>
-													</div>
+												<label class="col-sm-4 control-label">IS MINOR</label>
+												<div class="col-sm-8">
+													<label class="switch"> <input type="checkbox"
+														name="chkMinor" id="chkMinor"> <span
+														class="slider round"></span>
+													</label>
 												</div>
 											</div>
 
@@ -1522,40 +1452,37 @@ function check()
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-info" id="tableSection" style="display: none;">
-							<div class="box-header with-border">
+						<div class="box box-info" class="form-container" id="tableSection"
+							style="display: none;">
+							<div class="box-header">
 								<h3 class="box-title">TABLE</h3>
 							</div>
-							<div class="form-horizontal">
-								<div class="box-body">
-									<div class="">
-										<table
-											class="table table-bordered table-hover text-nowrap datatable"
-											id="tableBody" style="text-align: center;">
-											<thead class="table-light">
-												<tr
-													style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
-													<th scope="col">SR NO</th>
-													<th scope="col">BANK NAME</th>
-													<th scope="col">ACCOUNT NO</th>
-													<th scope="col">IFSC CODE</th>
-													<th scope="col">MICR CODE</th>
-													<th scope="col">CONTACT NO</th>
-													<th scope="col">ADDRESS</th>
-													<th scope="col">OPENING DATE</th>
-													<th scope="col">OPENING BALANCE</th>
-													<th scope="col">ACCOUNT CLOSING DATE</th>
-													<th scope="col">CHEQUE</th>
-													<th scope="col">EDIT</th>
-													<th scope="col">DELETE</th>
-												</tr>
-											</thead>
-											<tbody id="tableBody">
-												<!-- Data rows dynamically -->
-											</tbody>
-										</table>
-									</div>
-								</div>
+							<div class="box-body form-horizontal">
+								<table
+									class="table table-bordered table-hover text-nowrap datatable"
+									id="tableBody" style="text-align: center;">
+									<thead class="table-light">
+										<tr
+											style="font-family: 'Poppins', sans-serif; white-space: nowrap;">
+											<th scope="col">SR NO</th>
+											<th scope="col">BANK NAME</th>
+											<th scope="col">ACCOUNT NO</th>
+											<th scope="col">IFSC CODE</th>
+											<th scope="col">MICR CODE</th>
+											<th scope="col">CONTACT NO</th>
+											<th scope="col">ADDRESS</th>
+											<th scope="col">OPENING DATE</th>
+											<th scope="col">OPENING BALANCE</th>
+											<th scope="col">ACCOUNT CLOSING DATE</th>
+											<th scope="col">CHEQUE</th>
+											<th scope="col">EDIT</th>
+											<th scope="col">DELETE</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+										<!-- Data rows dynamically -->
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
