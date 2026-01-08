@@ -97,7 +97,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">ADD CUSTOMER KYC</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>CUSTOMER MODULE</b>
+					</h1>
+					<h5 style="margin-left: 18px;">ADD CUSTOMER KYC</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -109,9 +112,7 @@
 						<div class="col-md-12">
 							<div class="form-container">
 								<div class="box-header">
-									<h3 class="box-title">
-										SEARCH DETAILS
-									</h3>
+									<h3 class="box-title">SEARCH DETAILS</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
@@ -279,13 +280,14 @@
 									<div class="col-md-6">
 
 										<a id="ContentPlaceHolder1_lnkAverify"
-											class="btn btn-success margin-20">ONLINE AADHAR VERIFY</a> 
-										<a id="ContentPlaceHolder1_lnkVoterVerify"
-											class="btn btn-warning margin-20">ONLINE VOTER VERIFY</a> 
-										<a id="ContentPlaceHolder1_lnkPANVerify"
-											class="btn btn-info margin-20">ONLINE PAN VERIFY</a>
-										<a id="ContentPlaceHolder1_lnkVerifyComplete"
-											class="btn btn-danger margin-20">CLICK HERE TO VERIFY COMPLETE</a>
+											class="btn btn-success margin-20">ONLINE AADHAR VERIFY</a> <a
+											id="ContentPlaceHolder1_lnkVoterVerify"
+											class="btn btn-warning margin-20">ONLINE VOTER VERIFY</a> <a
+											id="ContentPlaceHolder1_lnkPANVerify"
+											class="btn btn-info margin-20">ONLINE PAN VERIFY</a> <a
+											id="ContentPlaceHolder1_lnkVerifyComplete"
+											class="btn btn-danger margin-20">CLICK HERE TO VERIFY
+											COMPLETE</a>
 
 									</div>
 								</div>
