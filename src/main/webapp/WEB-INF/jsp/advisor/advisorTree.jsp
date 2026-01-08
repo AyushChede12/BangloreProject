@@ -16,7 +16,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Advisor Tree</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>FINANCIAL/CONSULTANT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">FINANCIAL HIERARCHY</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 							Home</a></li>
@@ -26,38 +29,41 @@
 			</section>
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+						<div class="form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<div class="box-body">
-								<div class="clearfix"></div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<!-- <div class="clearfix"></div> -->
+								<div class="col-md-12" style="margin-top: 15px;">
+									<div class="col-md-4">
+
 										<label>Advishor Code :</label> <input
 											name="advisorSearchbyCode" type="text"
 											onkeyup="FetchDetail();" id="advisorSearchbyCode"
 											class="form-control" Placeholder="Enter Advisor Code"
 											autocomplete="off" />
+
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+									<div class="col-md-4">
+
 										<label>Advisor Name :</label> <input name="advisorName"
 											type="text" readonly="readonly" id="advisorName"
 											class="form-control" autocomplete="off" />
+
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+									<div class="col-md-4">
+
 										<label>Position :</label> <input name="position" type="text"
 											readonly="readonly" id="position" class="form-control"
 											autocomplete="off" />
+
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
+								<div class="col-md-12" style="text-align: center; margin-top: 15px;">
+									<div class="col-md-12">
+
 										<label></label>
 										<!--                                     <a id="ContentPlaceHolder1_btnSearch"  -->
 										<!--                                     	class="btn btn-success margin-20"  -->
@@ -65,15 +71,15 @@
 										<!--                                     		<span class="fa fa-search"></span> SEARCH</a> -->
 										<button id="ContentPlaceHolder1_btnSearch"
 											class="btn btn-success margin-20" onclick="ShowDetails();">SEARCH</button>
+
 									</div>
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
 							</div>
+
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
+						<div class="form-container" style="overflow: auto !important;">
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+
 								<!--  <a href="#ContentPlaceHolder1_tvChain_SkipLink"><img alt="Skip Navigation Links." src="../WebResource36b9.gif?d=n6roid9SKBH96J-M01DIwXu8AFTlJ0NKCwSCBAM-p8e2lSHer2vgGuJjw3jVuvLHAQmmzlIaZuZsC-ewAFbHN546Bjo9RqSioCmd2B2TAq01&amp;t=637290976998988531" width="0" height="0" style="border-width:0px;" /></a><div id="ContentPlaceHolder1_tvChain" style="font-size:Medium;"> -->
 							</div>
 							<a id="ContentPlaceHolder1_tvChain_SkipLink"></a>
@@ -96,11 +102,10 @@
 						</div>
 					</div>
 				</div>
+			</section>
 		</div>
-		</section>
-	</div>
-	<!-- /.content-wrapper -->
-	<div class="control-sidebar-bg"></div>
+		<!-- /.content-wrapper -->
+		<div class="control-sidebar-bg"></div>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

@@ -29,9 +29,9 @@
 						<li class="active">Code Setting</li>
 					</ol>
 				</section>
-				<section class="content">
+				<section class="content ">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12 form-container">
 							<div class="box">
 								<div class="box-body table-responsive">
 									<table class="table table-hover">

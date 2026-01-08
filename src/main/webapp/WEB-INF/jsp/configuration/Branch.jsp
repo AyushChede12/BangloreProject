@@ -71,13 +71,13 @@
 										</div>
 
 										<div class="col-md-4">
-											<label>Bank Name <strong style="color: Red">*</strong></label>
+											<label>Branch Name <strong style="color: Red">*</strong></label>
 
 											<input name="name" type="text" id="name" class="form-control"
 												placeholder="Enter Bank Name" autocomplete="off" /> <span
 												id="branchNameMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Bank Name</span>
+												Branch Name</span>
 										</div>
 
 										<div class="col-md-4">

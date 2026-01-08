@@ -15,14 +15,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">User Menu Access</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>CUSTOMIZATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">USER MENU ACCESS</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -31,19 +36,19 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-md-6">
-							<div class="box box-danger">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Select User ID</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>User ID <strong style="color: Red">*</strong></label>
-											<select name="userId" id="userId"
-												class="form-control select2" style="width: 100%;">
-											</select>
-										</div>
+									<div class="col-md-12">
+
+										<label>User ID <strong style="color: Red">*</strong></label> <select
+											name="userId" id="userId" class="form-control select2"
+											style="width: 100%;">
+										</select>
+
 									</div>
 								</div>
 								<div class="box-footer">
@@ -54,36 +59,38 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="box box-danger" style="margin-top: 0; padding: 10px;">
-								<div class="box-header with-border">
+						<div class="col-md-12" style="margin-top: 15px;">
+							<div class="form-container" style="margin-top: 0; padding: 10px;">
+								<div class="box-header ">
 									<h3 class="box-title">Select Menu List</h3>
 								</div>
 								<div class="box-body">
-									<div class="form-group">
-										<div class="row">
-											<div id="ContentPlaceHolder1_pnlMenu"
-												style="overflow-y: scroll; margin: auto">
-												<table id="ContentPlaceHolder1_gdvUser_myServiceList"
-													cellpadding="0"
-													style="overflow-y: auto; overflow-x: hidden;"
-													cellspacing="0" style="border-width:0;">
-												</table>
-											</div>
+
+									<div class="row">
+										<div id="ContentPlaceHolder1_pnlMenu"
+											style="overflow-y: scroll; margin: auto">
+											<table id="ContentPlaceHolder1_gdvUser_myServiceList"
+												cellpadding="0"
+												style="overflow-y: auto; overflow-x: hidden;"
+												cellspacing="0" style="border-width:0;">
+											</table>
 										</div>
-										<a id="ContentPlaceHolder1_treeMenu_SkipLink"></a>
+									</div>
+									<a id="ContentPlaceHolder1_treeMenu_SkipLink"></a>
+
+								</div>
+								<div class="box-footer">
+									<div class="row col-md-12">
+										<button type="button" name="ctl00$ContentPlaceHolder1$btnSave"
+											value="Save Menu" id="ContentPlaceHolder1_btnSave"
+											class="btn btn-info pull-right margin-r-5"
+											onclick="submitUserServiceMap()">Save Menu</button>
 									</div>
 								</div>
 							</div>
+
 						</div>
-						<div class="box-footer">
-							<div class="row col-md-12">
-								<button type="button" name="ctl00$ContentPlaceHolder1$btnSave"
-									value="Save Menu" id="ContentPlaceHolder1_btnSave"
-									class="btn btn-info pull-right margin-r-5"
-									onclick="submitUserServiceMap()">Save Menu</button>
-							</div>
-						</div>
+
 					</div>
 			</div>
 		</div>
@@ -92,7 +99,7 @@
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
 		</div>
-		
+
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -125,7 +132,7 @@
 		<script src="dist/js/demo.js"></script>
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		
+
 	</form>
 </body>
 <!-- Dk/Admin/UserMenuAccess.aspx EDB D 09:26:52 GMT -->

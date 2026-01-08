@@ -36,7 +36,7 @@
 							ADD RELATIVES</a></li>
 					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
 							CATEGORY/CASTE</a></li>
-					<li><a href="casteMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="CodeSetting"><i class="fa fa-circle-o"></i>
 							CODE MODULE</a></li>
 					<li><a href="DirectorDetail"><i class="fa fa-circle-o"></i>
 							EXECUTIVE/FOUNDER</a></li>
