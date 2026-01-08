@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.BranchMaster;
 
 @Repository
-public interface BranchMasterRepo extends JpaRepository<BranchMaster, Integer> {
+public interface BranchMasterRepo extends JpaRepository<BranchMaster, Long> {
 
 	BranchMaster findByname(String name);
 

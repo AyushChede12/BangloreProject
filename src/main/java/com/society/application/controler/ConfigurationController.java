@@ -34,7 +34,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.microfinance.model.CategoryModule;
+import com.microfinance.dto.BankModuleDto;
+import com.microfinance.model.BankModule;
+import com.microfinance.model.BranchModule;
 import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;
@@ -104,7 +106,7 @@ public class ConfigurationController {
 
 	@Autowired
 	ReceiptRepo receiptRepo;
-	
+
 	@Autowired
 	ConfigurationService configurationService;
 
@@ -168,7 +170,7 @@ public class ConfigurationController {
 //		}
 //	}
 
-	//Ayush
+	// Ayush
 	@GetMapping("/getConmapnyDetails") // Ayush (without DTO)
 	public ResponseEntity<ApiResponse<List<CompanyMaster>>> fetchAllCompanyDetails() {
 		List<CompanyMaster> list = configurationService.fetchAllCompanyDetails();
@@ -242,10 +244,9 @@ public class ConfigurationController {
 //		return new ResponseEntity<>("DATA UPDATED SUCCESSFULLY...!!!", HttpStatus.OK);
 //	}
 
-	//Ayush
+	// Ayush
 	@PostMapping("/updateCompanyDetails")
-	public ResponseEntity<ApiResponse<String>> updateCompanyDetails(
-			@RequestBody CompanyMaster companyMaster) {
+	public ResponseEntity<ApiResponse<String>> updateCompanyDetails(@RequestBody CompanyMaster companyMaster) {
 
 		int result = configurationService.updateCompanyMaster(companyMaster);
 
@@ -270,8 +271,6 @@ public class ConfigurationController {
 		return "configuration/AddTaluka";
 	}
 
-	
-
 	@GetMapping("/getRelativeDetails")
 	@ResponseBody
 	public List<RelativeRelationMaster> gettAllRelations(Model model) {
@@ -293,7 +292,7 @@ public class ConfigurationController {
 //		session.setAttribute("createdBy", createdBy);
 //		return "configuration/AddFinancialMaster";
 //	}
-	
+
 	@PostMapping("/saveAndUpdateAllFinancialYear") // Ayush (without DTO)
 	public ResponseEntity<ApiResponse<FYMaster>> saveFinancialYear(@RequestBody FYMaster financialYear) {
 		boolean isCreate = (financialYear.getId() == null); // Check BEFORE saving
@@ -313,7 +312,7 @@ public class ConfigurationController {
 	public List<FYMaster> getAllFYDetails(Model model) {
 		return configurationService.fetchFYDetails();
 	}
-	
+
 //	@PostMapping("/SaveRelation")
 //	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,
 //			Model model, HttpSession session) {
@@ -323,9 +322,10 @@ public class ConfigurationController {
 //		session.setAttribute("createdBy", createdBy);
 //		return "configuration/RelativeMaster";
 //	}
-	
+
 	@PostMapping("/SaveRelation") // Ayush (without DTO)
-	public ResponseEntity<ApiResponse<RelativeRelationMaster>> saveRelative(@RequestBody RelativeRelationMaster relativeModule) {
+	public ResponseEntity<ApiResponse<RelativeRelationMaster>> saveRelative(
+			@RequestBody RelativeRelationMaster relativeModule) {
 		boolean isCreate = (relativeModule.getId() == null); // Check BEFORE saving
 		RelativeRelationMaster savedEntity = configurationService.saveRelativeModule(relativeModule);
 		ApiResponse<RelativeRelationMaster> response;
@@ -347,7 +347,7 @@ public class ConfigurationController {
 //		session.setAttribute("createdBy", createdBy);
 //		return "configuration/CasteMaster";
 //	}
-	
+
 	@PostMapping("/saveCasteModule")
 	@ResponseBody
 	public ResponseEntity<ApiResponse<CasteMaster>> saveCategory(@RequestBody CasteMaster casteMaster) {
@@ -363,14 +363,29 @@ public class ConfigurationController {
 		}
 	}
 
-	@PostMapping("/SaveCategory")
-	public String saveCategoryMaster(@ModelAttribute("CategoryModel") CategoryMaster categoryMaster, Model model,
-			HttpSession session) {
-		String createdBy = session.getAttribute("ID").toString();
-		categoryMaster.setCreatedBy(createdBy);
-		categoryMasterRepo.save(categoryMaster);
-		session.setAttribute("createdBy", createdBy);
-		return "configuration/CategoryMaster";
+//	@PostMapping("/SaveCategory")
+//	public String saveCategoryMaster(@ModelAttribute("CategoryModel") CategoryMaster categoryMaster, Model model,
+//			HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		categoryMaster.setCreatedBy(createdBy);
+//		categoryMasterRepo.save(categoryMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/CategoryMaster";
+//	}
+
+	@PostMapping("/saveCategoryModule")
+	@ResponseBody
+	public ResponseEntity<ApiResponse<CategoryMaster>> saveCategory(@RequestBody CategoryMaster categoryModule) {
+		boolean isCreate = (categoryModule.getId() == null); // Check BEFORE saving
+		CategoryMaster savedEntity = configurationService.saveCategoryModule(categoryModule);
+		ApiResponse<CategoryMaster> response;
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Category created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Category updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
 	}
 
 	// In Configuration BranchMaster SubModule
@@ -379,11 +394,25 @@ public class ConfigurationController {
 		return "configuration/Branch";
 	}
 
-	@GetMapping("getDataByidBranchMaster")
-	public String getDataByidBranchMaster(@RequestParam String id, Model model) {
-		List<BranchMaster> list = branchMasterRepo.findByid(Integer.parseInt(id));
-		model.addAttribute("list", list);
-		return "configuration/BranchFieldsShown";
+//	@GetMapping("getDataByidBranchMaster")
+//	public String getDataByidBranchMaster(@RequestParam String id, Model model) {
+//		List<BranchMaster> list = branchMasterRepo.findByid(Integer.parseInt(id));
+//		model.addAttribute("list", list);
+//		return "configuration/BranchFieldsShown";
+//	}
+
+	@GetMapping("/getDataByidBranchMaster") // Ayush
+	public ResponseEntity<ApiResponse<BranchMaster>> findBranchModuleById(@RequestParam("id") Long id) {
+		Optional<BranchMaster> branch = configurationService.findBranchDataById(id);
+		if (branch.isPresent()) {
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.FOUND,
+					"BranchModule fetched successfully", branch.get());
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"BranchModule not found for ID: " + id, null);
+			return ResponseEntity.status(404).body(response);
+		}
 	}
 
 	@GetMapping("/getAllBranchMaster")
@@ -392,25 +421,42 @@ public class ConfigurationController {
 		return branchMasterRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
 	}
 
-	/*
-	 * @PostMapping("/saveAllBranchMaster")
-	 * 
-	 * @ResponseBody public String saveBranchMaster(@RequestBody BranchMaster
-	 * branchMaster,HttpSession session) { String createdBy =
-	 * session.getAttribute("ID").toString(); branchMaster.setCreatedBy(createdBy);
-	 * branchMasterRepo.save(branchMaster); session.setAttribute("createdBy",
-	 * createdBy); return "configuration/Branch"; }
-	 */
+//	@PostMapping("/saveAllBranchMaster")
+//	@ResponseBody
+//	public String saveBranchMaster(@RequestBody BranchMaster branchMaster, HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		branchMaster.setCreatedBy(createdBy);
+//		branchMasterRepo.save(branchMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/Branch";
+//	}
 
-	@PostMapping("/updateBranchMasterById")
-	@ResponseBody
-	public String updateBranchMasterById(@RequestBody BranchMaster branchMaster) {
-		BranchMaster branchObj = branchMasterRepo.getById(branchMaster.getId());
-		if (branchObj != null) {
-			branchMasterRepo.save(branchMaster);
+	@PostMapping("/saveAndUpdateAllBranchModule") // Ayush (without DTO)
+	public ResponseEntity<ApiResponse<BranchMaster>> saveBranch(@RequestBody BranchMaster branchModule) {
+		boolean isCreate = (branchModule.getId() == null); // Check BEFORE saving
+
+		BranchMaster savedEntity = configurationService.saveBranchModule(branchModule);
+
+		ApiResponse<BranchMaster> response;
+
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Branch created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Branch updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
 		}
-		return "configuration/BranchFieldsShown";
 	}
+
+//	@PostMapping("/updateBranchMasterById")
+//	@ResponseBody
+//	public String updateBranchMasterById(@RequestBody BranchMaster branchMaster) {
+//		BranchMaster branchObj = branchMasterRepo.getById(branchMaster.getId());
+//		if (branchObj != null) {
+//			branchMasterRepo.save(branchMaster);
+//		}
+//		return "configuration/BranchFieldsShown";
+//	}
 
 	@GetMapping("/AddBankAccount")
 	public String AddBankAccount(Model model) {
@@ -423,14 +469,31 @@ public class ConfigurationController {
 		return bankMasterRepo.findAll();
 	}
 
-	@PostMapping("/saveBankAccount")
-	public String saveBankAccount(@ModelAttribute("saveBankAccount") BankMaster bankMaster, Model model,
-			HttpSession session) {
-		String createdBy = session.getAttribute("ID").toString();
-		bankMaster.setCreatedBy(createdBy);
-		bankMasterRepo.save(bankMaster);
-		session.setAttribute("createdBy", createdBy);
-		return "configuration/AddBankAccount";
+//	@PostMapping("/saveBankAccount")
+//	public String saveBankAccount(@ModelAttribute("saveBankAccount") BankMaster bankMaster, Model model,
+//			HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		bankMaster.setCreatedBy(createdBy);
+//		bankMasterRepo.save(bankMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/AddBankAccount";
+//	}
+
+	@PostMapping("/saveAndUpdateAllBankModule") // Ayush (without DTO)
+	public ResponseEntity<ApiResponse<BankMaster>> saveBank(@RequestBody BankMaster bankMaster) {
+		boolean isCreate = (bankMaster.getId() == null); // Check BEFORE saving
+
+		BankMaster savedEntity = configurationService.saveBankModule(bankMaster);
+
+		ApiResponse<BankMaster> response;
+
+		if (isCreate) {
+			response = new ApiResponse<>(HttpStatus.CREATED, "Bank created successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.CREATED);
+		} else {
+			response = new ApiResponse<>(HttpStatus.OK, "Bank updated successfully", savedEntity);
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		}
 	}
 
 	@GetMapping("/CodeSetting")
@@ -972,14 +1035,14 @@ public class ConfigurationController {
 		return response;
 	}
 
-	@PostMapping("/saveAllBranchMaster")
-	@ResponseBody
-	public ResponseEntity<String> saveAllBranchMaster(@RequestBody Map<String, String> requestBody, HttpSession session,
-			BranchMaster branchMaster, NewGLHeadMaster newGLHeadMaster) {
-		entryService.branchMasterSave(requestBody, session);
-		entryService.branchMasterSave2(requestBody, session);
-		return new ResponseEntity<>("Data Saved successfully", HttpStatus.OK);
-	}
+//	@PostMapping("/saveAllBranchMaster")
+//	@ResponseBody
+//	public ResponseEntity<String> saveAllBranchMaster(@RequestBody Map<String, String> requestBody, HttpSession session,
+//			BranchMaster branchMaster, NewGLHeadMaster newGLHeadMaster) {
+//		entryService.branchMasterSave(requestBody, session);
+//		entryService.branchMasterSave2(requestBody, session);
+//		return new ResponseEntity<>("Data Saved successfully", HttpStatus.OK);
+//	}
 
 	// Fetching All Data in Table of GL Head List Module
 	@GetMapping("/getAllDataInGLHeadList")
@@ -994,21 +1057,21 @@ public class ConfigurationController {
 	}
 
 	// Delete Branch Master Data by Id in (Bank Register Module)
-	@PostMapping("/deleteBankRegisterDataById")
-	public ResponseEntity<Map<String, String>> deleteBankRegisterDataById(@RequestBody List<BranchMaster> bankID) {
-		Map<String, String> response = new HashMap<>();
-		for (BranchMaster branchMaster : bankID) {
-			List<Receipt> obj = receiptRepo.findBybankId(branchMaster.getBankID());
-			if (obj.isEmpty()) {
-				branchMasterRepo.deleteBybankID(branchMaster.getBankID());
-				newGLHeadMasterRepo.deleteByuniqueId(branchMaster.getBankID());
-				response.put("message", "Data Deleted Successfully..!!");
-			} else {
-				response.put("message", "Transaction is there can not delete Data !!!!!");
-			}
-		}
-		return ResponseEntity.ok(response);
-	}
+//	@PostMapping("/deleteBankRegisterDataById")
+//	public ResponseEntity<Map<String, String>> deleteBankRegisterDataById(@RequestBody List<BranchMaster> bankID) {
+//		Map<String, String> response = new HashMap<>();
+//		for (BranchMaster branchMaster : bankID) {
+//			List<Receipt> obj = receiptRepo.findBybankId(branchMaster.getBankID());
+//			if (obj.isEmpty()) {
+//				branchMasterRepo.deleteBybankID(branchMaster.getBankID());
+//				newGLHeadMasterRepo.deleteByuniqueId(branchMaster.getBankID());
+//				response.put("message", "Data Deleted Successfully..!!");
+//			} else {
+//				response.put("message", "Transaction is there can not delete Data !!!!!");
+//			}
+//		}
+//		return ResponseEntity.ok(response);
+//	}
 
 	// Fetch All Data of Branch Master in (Bank Register Module)
 	@GetMapping("/getAllDataOfBranchMaster")
