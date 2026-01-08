@@ -17,7 +17,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader"><b>Advisor Promotion</b></h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>FINANCIAL/CONSULTANT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">PROMOTION MANAGEMENT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -25,8 +28,8 @@
 				</ol>
 			</section>
 			<section class="content">
-				<div class="box box-success">
-					<div class="box-header with-border">
+				<div class="form-container">
+					<div class="box-header ">
 						<h3 class="box-title">Advisor Promotion</h3>
 					</div>
 
@@ -34,7 +37,7 @@
 						<div class="box-body">
 
 							<!-- ROW 1 -->
-							<div class="row three-col-row">
+							<div class="row three-col-row" style="margin-top: 15px;">
 								<div class="col-md-4">
 									<label>Select Code *</label> <select id="id" name="id"
 										onchange="fetchBySelectedCode()" class="form-control select2"></select>
@@ -52,7 +55,7 @@
 							</div>
 
 							<!-- ROW 2 -->
-							<div class="row three-col-row">
+							<div class="row three-col-row" style="margin-top: 15px;">
 								<div class="col-md-4">
 									<label>Senior Code *</label> <input id="seniorCode"
 										name="seniorCode" readonly class="form-control">
@@ -70,7 +73,7 @@
 							</div>
 
 							<!-- ROW 3 -->
-							<div class="row three-col-row">
+							<div class="row three-col-row" style="margin-top: 15px;">
 								<div class="col-md-4">
 									<label>Sr. Position *</label> <input id="srPosition"
 										name="srPosition" readonly class="form-control">
@@ -88,7 +91,7 @@
 							</div>
 
 							<!-- ROW 4 -->
-							<div class="row three-col-row">
+							<div class="row three-col-row" style="margin-top: 15px;">
 								<div class="col-md-4">
 									<label>Select Branch *</label> <select id="branchName"
 										name="branchName" class="form-control"></select>
@@ -106,7 +109,7 @@
 							</div>
 
 							<!-- ROW 5 -->
-							<div class="row three-col-row">
+							<div class="row three-col-row" style="margin-top: 15px;">
 								<div class="col-md-4">
 									<label>Senior Name *</label> <input id="seniorName"
 										name="seniorName" readonly class="form-control">

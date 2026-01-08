@@ -45,7 +45,7 @@
 								<div id="ContentPlaceHolder1_pnlCdetails" class="aspNetDisabled">
 									<div class="box-body">
 										<!-- row-1  -->
-										<div style="margin-top: 10px;">
+										<div class="col-md-12" style="margin-top: 15px;">
 											<div class="col-md-3">
 
 												<label>Company Name :</label> <input name="companyName"
@@ -79,11 +79,11 @@
 													class="form-control" autocomplete="off" />
 
 											</div>
-											<div class="clearfix"></div>
+
 										</div>
 
 										<!-- row 2 -->
-										<div style="margin-top: 15px;">
+										<div class="col-md-12" style="margin-top: 15px;">
 
 											<div class="col-md-3">
 
@@ -117,9 +117,9 @@
 											</div>
 										</div>
 
-										<div class="clearfix"></div>
+
 										<!-- row 3 -->
-										<div style="margin-top: 15px;">
+										<div class="col-md-12" style="margin-top: 15px;">
 											<div class="col-md-3">
 
 												<label>Address :</label> <input name="address" type="text"
@@ -183,9 +183,9 @@
 											</div>
 										</div>
 
-										<div class="clearfix"></div>
+
 										<!-- row 4 -->
-										<div style="margin-top: 15px;">
+										<div class="col-md-12" style="margin-top: 15px;">
 											<div class="col-md-3">
 
 												<label>Authorized Capital :</label> <input
@@ -219,9 +219,9 @@
 											</div>
 										</div>
 
-										<div class="clearfix"></div>
+
 										<!-- row 5 -->
-										<div style="margin-top: 15px;">
+										<div class="col-md-12" style="margin-top: 15px;">
 											<div class="col-md-3">
 
 												<label>TDS (With PAN) :</label> <input name="tDSWithPAN"
@@ -256,18 +256,8 @@
 
 											</div>
 										</div>
-
-										<div class="clearfix margin-bottom-10"></div>
-										<!-- row 6 -->
-										<div style="margin-top: 15px;">
-											<div class=" col-md-12" style="text-align: center;">
-												<button type="submit"
-													class="btn btn-info pull-right margin-r-5" id="updateBtn"
-													disabled>Update</button>
-											</div>
-										</div>
-										<!-- row 7  -->
-										<div style="margin-top: 15px;">
+										<!-- row 6  -->
+										<div class="col-md-12" style="margin-top: 15px;">
 
 											<div class=" col-md-3"
 												style="display: flex; margin: 15px 0 30px;">
@@ -312,6 +302,17 @@
 													<!-- <div class="clearfix"></div> -->
 												</div>
 
+											</div>
+										</div>
+
+
+
+										<!-- row 7 -->
+										<div class="col-md-12" style="margin-top: 15px;">
+											<div class=" col-md-12" style="text-align: center;">
+												<button type="submit"
+													class="btn btn-info pull-right margin-r-5" id="updateBtn"
+													disabled>Update</button>
 											</div>
 										</div>
 

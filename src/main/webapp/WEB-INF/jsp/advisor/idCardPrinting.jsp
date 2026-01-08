@@ -3,7 +3,7 @@
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<!--  <form method="post" action="" id="form1"> -->
-	
+
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 
@@ -15,16 +15,20 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1',
+					'form1', [], [], [], 90, 'ctl00');
+			//]]>
+		</script>
 
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Advisor ID Card</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>FINANCIAL/CONSULTANT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">IDENTITY CARD</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 							Home</a></li>
@@ -35,19 +39,19 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+						<div class="form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
-							<div class="box-body">
-								<div class="clearfix"></div>
+							<div class="box-body" style="margin-top: 15px;">
+								
 								<div class="col-md-3">
-									<div class="form-group">
+									
 										<label>Advisor Code :</label> <input
 											name="advisorSearchbyCode" type="text"
 											id="advisorSearchbyCode" class="form-control"
 											Placeholder="Enter Advisor Code" autocomplete="off" />
-									</div>
+									
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
@@ -59,17 +63,17 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											onclick="ShowDetailsIdCardAdvisor();">SEARCH</button>
 									</div>
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+								
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="form-container"
+							style=" overflow: auto !important;">
+							<div class="box-header ">
 								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 							</div>
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+								
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" id="ContentPlaceHolder1_gdvData"

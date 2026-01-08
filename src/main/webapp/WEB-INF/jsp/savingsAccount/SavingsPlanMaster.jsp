@@ -70,24 +70,27 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Saving Plan Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>SAVING OPENING</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SAVING SCHEME CATALOG</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
-						<li class="active">Saving Plan Master</li>
+						<li class="active">Saving scheme catalog</li>
 					</ol>
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+							<div class="form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Saving Plan Details</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-6">
-											<div class="form-group row">
+											
 												<label for="txtSchemeName" class="col-sm-4 control-label">Scheme
 													Name<strong style="color: Red">*</strong>
 												</label>
@@ -98,8 +101,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Scheme Name</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtAnnualInterestRate"
 													class="col-sm-4 control-label">Annual R.O.I (%)<strong
 													style="color: Red">*</strong></label>
@@ -111,8 +114,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Annual Interest Rate</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtMinOpeningAmount"
 													class="col-sm-4 control-label">Min. Opening Amount<strong
 													style="color: Red">*</strong></label>
@@ -124,8 +127,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Min. Opening Amount</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtMinMonthlyAvgBalance"
 													class="col-sm-4 control-label">Monthly Avg. Bal.<strong
 													style="color: Red">*</strong></label>
@@ -137,8 +140,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Min. Monthly Avg. Balance</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtLockInBalance" class="col-sm-4 control-label">Lock
 													In balance<strong style="color: Red">*</strong>
 												</label>
@@ -150,8 +153,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Lock In balance</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtSmsChargesQarterly"
 													class="col-sm-4 control-label">SMS Charges <strong
 													style="color: Red">*</strong></label>
@@ -163,8 +166,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Sms Charges</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="ddlInterestCreditTime"
 													class="col-sm-4 control-label">SMS Interval<strong
 													style="color: Red">*</strong></label>
@@ -177,8 +180,8 @@
 														<option value="Yearly">Yearly</option>
 													</select>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Free IFSC
 													Collection(p.m)<strong style="color: Red">*</strong>
 												</label>
@@ -191,8 +194,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
 														IFSC Collection(p.m)</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Free
 													Transfers(p.m)<strong style="color: Red">*</strong>
 												</label>
@@ -205,10 +208,10 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
 														Transfers(p.m)</span>
 												</div>
-											</div>
+											
 										</div>
 										<div class="col-md-6">
-											<div class="form-group row">
+											
 												<label class="col-sm-4 control-label">Single Txn.
 													Limit<strong style="color: Red">*</strong>
 												</label>
@@ -221,8 +224,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Single
 														Transaction Limit</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Daily MAX
 													Limit<strong style="color: Red">*</strong>
 												</label>
@@ -234,8 +237,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Daily
 														MAX Limit</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Weekly MAX
 													Limit<strong style="color: Red">*</strong>
 												</label>
@@ -248,8 +251,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Weekly
 														MAX Limit</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Monthly MAX
 													Limit<strong style="color: Red">*</strong>
 												</label>
@@ -262,8 +265,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Monthly
 														MAX Limit</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Service
 													Charges <strong style="color: Red">*</strong>
 												</label>
@@ -276,8 +279,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Service Charges</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label class="col-sm-4 control-label">Service
 													Interval<strong style="color: Red">*</strong>
 												</label>
@@ -290,8 +293,8 @@
 														<option value="Yearly">Yearly</option>
 													</select>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtCardCharge" class="col-sm-4 control-label">Card
 													Charge<strong style="color: Red">*</strong>
 												</label>
@@ -303,8 +306,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Card Charge</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtCardLimitMonthly"
 													class="col-sm-4 control-label">Card Limit Monthly<strong
 													style="color: Red">*</strong></label>
@@ -317,8 +320,8 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Card Limit Monthly</span>
 												</div>
-											</div>
-											<div class="form-group row">
+											
+											
 												<label for="txtCardTotalLimitYearly"
 													class="col-sm-4 control-label">Card Total Limit
 													Yearly<strong style="color: Red">*</strong>
@@ -332,7 +335,7 @@
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Card Total Limit Yearly</span>
 												</div>
-											</div>
+											
 										</div>
 									</div>
 									<div class="box-footer">
@@ -424,267 +427,434 @@
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 		<script>
-            $(function () {
-                //Initialize Select2 Elements
-                $('.select2').select2();
-                //Datemask dd/mm/yyyy
-                $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-                //Datemask2 mm/dd/yyyy
-                $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-                //Date range picker
-                $('#reservation').daterangepicker()
-                //Date range picker with time picker
-                $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' } })
-                $('#daterange-btn').daterangepicker(
-                 {
-                     ranges: {
-                         'Today': [moment(), moment()],
-                         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                         'This Month': [moment().startOf('month'), moment().endOf('month')],
-                         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                     },
-                     startDate: moment().subtract(29, 'days'),
-                     endDate: moment()
-                 },
-                 function (start, end) {
-                     $('#daterange-btn span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'))
-                 }
-               )
-                //Date picker
-                $('#datepicker').datepicker({
-                    autoclose: true
-                })
-                //Money Euro
-                $('[data-mask]').inputmask()
+			$(function() {
+				//Initialize Select2 Elements
+				$('.select2').select2();
+				//Datemask dd/mm/yyyy
+				$('#datemask').inputmask('dd/mm/yyyy', {
+					'placeholder' : 'dd/mm/yyyy'
+				})
+				//Datemask2 mm/dd/yyyy
+				$('#datemask2').inputmask('mm/dd/yyyy', {
+					'placeholder' : 'mm/dd/yyyy'
+				})
+				//Date range picker
+				$('#reservation').daterangepicker()
+				//Date range picker with time picker
+				$('#reservationtime').daterangepicker({
+					timePicker : true,
+					timePickerIncrement : 30,
+					locale : {
+						format : 'MM/DD/YYYY hh:mm A'
+					}
+				})
+				$('#daterange-btn')
+						.daterangepicker(
+								{
+									ranges : {
+										'Today' : [ moment(), moment() ],
+										'Yesterday' : [
+												moment().subtract(1, 'days'),
+												moment().subtract(1, 'days') ],
+										'Last 7 Days' : [
+												moment().subtract(6, 'days'),
+												moment() ],
+										'Last 30 Days' : [
+												moment().subtract(29, 'days'),
+												moment() ],
+										'This Month' : [
+												moment().startOf('month'),
+												moment().endOf('month') ],
+										'Last Month' : [
+												moment().subtract(1, 'month')
+														.startOf('month'),
+												moment().subtract(1, 'month')
+														.endOf('month') ]
+									},
+									startDate : moment().subtract(29, 'days'),
+									endDate : moment()
+								},
+								function(start, end) {
+									$('#daterange-btn span').html(
+											start.format('DD/MM/YYYY') + ' - '
+													+ end.format('DD/MM/YYYY'))
+								})
+				//Date picker
+				$('#datepicker').datepicker({
+					autoclose : true
+				})
+				//Money Euro
+				$('[data-mask]').inputmask()
 
-                //iCheck for checkbox and radio inputs
-                $('span[type="checkbox"].minimal').iCheck({
-                    checkboxClass: 'icheckbox_minimal-blue',
-                    radioClass: 'iradio_minimal-blue'
-                })
-            })
-        </script>
+				//iCheck for checkbox and radio inputs
+				$('span[type="checkbox"].minimal').iCheck({
+					checkboxClass : 'icheckbox_minimal-blue',
+					radioClass : 'iradio_minimal-blue'
+				})
+			})
+		</script>
 		<script type="text/javascript">
-//<![CDATA[
-var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorSchemeName"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator1"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator2"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator3"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator4"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator5"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator6"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator7"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"));
-//]]>
-</script>
+			//<![CDATA[
+			var Page_Validators = new Array(
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorSchemeName"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator1"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator2"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator3"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator4"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator5"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator6"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator7"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"),
+					document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"));
+			//]]>
+		</script>
 		<script type="text/javascript">
-//<![CDATA[
-var ContentPlaceHolder1_RequiredFieldValidatorSchemeName = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorSchemeName"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorSchemeName");
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.controltovalidate = "ContentPlaceHolder1_txtSchemeName";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.errormessage = "Enter Scheme Name";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatorSchemeName.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate");
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.controltovalidate = "ContentPlaceHolder1_txtAnnualInterestRate";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.errormessage = "Enter Annual Interest Rate";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount");
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.controltovalidate = "ContentPlaceHolder1_txtMinOpeningAmount";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.errormessage = "Enter Min. Opening Amount";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance");
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.controltovalidate = "ContentPlaceHolder1_txtMinMonthlyAvgBalance";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.errormessage = "Enter Min. Monthly Avg. Balance";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatorLockInBalance = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorLockInBalance");
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.controltovalidate = "ContentPlaceHolder1_txtLockInBalance";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.errormessage = "Enter Lock In balance";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly");
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.controltovalidate = "ContentPlaceHolder1_txtSmsChargesQarterly";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.errormessage = "Enter Sms Charges";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator1 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator1"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator1");
-ContentPlaceHolder1_RequiredFieldValidator1.controltovalidate = "ContentPlaceHolder1_txtFreeIFSCCollection";
-ContentPlaceHolder1_RequiredFieldValidator1.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator1.errormessage = "Free IFSC Collection(p.m)";
-ContentPlaceHolder1_RequiredFieldValidator1.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator1.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator1.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator2 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator2"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator2");
-ContentPlaceHolder1_RequiredFieldValidator2.controltovalidate = "ContentPlaceHolder1_txtFreeTransfer";
-ContentPlaceHolder1_RequiredFieldValidator2.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator2.errormessage = "Free Transfers(p.m)";
-ContentPlaceHolder1_RequiredFieldValidator2.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator2.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator2.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator3 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator3"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator3");
-ContentPlaceHolder1_RequiredFieldValidator3.controltovalidate = "ContentPlaceHolder1_txtSingleTxnLimit";
-ContentPlaceHolder1_RequiredFieldValidator3.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator3.errormessage = "Single Transaction Limit";
-ContentPlaceHolder1_RequiredFieldValidator3.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator3.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator3.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator4 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator4"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator4");
-ContentPlaceHolder1_RequiredFieldValidator4.controltovalidate = "ContentPlaceHolder1_txtDailyMaxlimit";
-ContentPlaceHolder1_RequiredFieldValidator4.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator4.errormessage = "Daily MAX Limit";
-ContentPlaceHolder1_RequiredFieldValidator4.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator4.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator4.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator5 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator5"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator5");
-ContentPlaceHolder1_RequiredFieldValidator5.controltovalidate = "ContentPlaceHolder1_txtWeeklyMaxLimit";
-ContentPlaceHolder1_RequiredFieldValidator5.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator5.errormessage = "Weekly MAX Limit";
-ContentPlaceHolder1_RequiredFieldValidator5.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator5.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator5.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator5.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator6 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator6"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator6");
-ContentPlaceHolder1_RequiredFieldValidator6.controltovalidate = "ContentPlaceHolder1_txtMonthlyMaxLimit";
-ContentPlaceHolder1_RequiredFieldValidator6.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator6.errormessage = "Monthly MAX Limit";
-ContentPlaceHolder1_RequiredFieldValidator6.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator6.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator6.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator6.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidator7 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator7"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidator7");
-ContentPlaceHolder1_RequiredFieldValidator7.controltovalidate = "ContentPlaceHolder1_txtServiceChrg";
-ContentPlaceHolder1_RequiredFieldValidator7.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidator7.errormessage = "Enter Service Charges";
-ContentPlaceHolder1_RequiredFieldValidator7.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidator7.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidator7.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidator7.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge");
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.controltovalidate = "ContentPlaceHolder1_txtCardCharge";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.errormessage = "Enter Card Charge";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly");
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.controltovalidate = "ContentPlaceHolder1_txtCardLimitMonthly";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.errormessage = "Enter Card Limit Monthly";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.initialvalue = "";
-var ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"] : document.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly");
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.controltovalidate = "ContentPlaceHolder1_txtCardTotalLimitYearly";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.focusOnError = "t";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.errormessage = "Enter Card Total Limit Yearly";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.display = "Dynamic";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.validationGroup = "A";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.initialvalue = "";
-//]]>
-</script>
+			//<![CDATA[
+			var ContentPlaceHolder1_RequiredFieldValidatorSchemeName = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorSchemeName"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorSchemeName");
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.controltovalidate = "ContentPlaceHolder1_txtSchemeName";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.errormessage = "Enter Scheme Name";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatorSchemeName.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate");
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.controltovalidate = "ContentPlaceHolder1_txtAnnualInterestRate";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.errormessage = "Enter Annual Interest Rate";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount");
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.controltovalidate = "ContentPlaceHolder1_txtMinOpeningAmount";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.errormessage = "Enter Min. Opening Amount";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance");
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.controltovalidate = "ContentPlaceHolder1_txtMinMonthlyAvgBalance";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.errormessage = "Enter Min. Monthly Avg. Balance";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatorLockInBalance = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatorLockInBalance");
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.controltovalidate = "ContentPlaceHolder1_txtLockInBalance";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.errormessage = "Enter Lock In balance";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatorLockInBalance.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly");
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.controltovalidate = "ContentPlaceHolder1_txtSmsChargesQarterly";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.errormessage = "Enter Sms Charges";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator1 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator1"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator1");
+			ContentPlaceHolder1_RequiredFieldValidator1.controltovalidate = "ContentPlaceHolder1_txtFreeIFSCCollection";
+			ContentPlaceHolder1_RequiredFieldValidator1.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator1.errormessage = "Free IFSC Collection(p.m)";
+			ContentPlaceHolder1_RequiredFieldValidator1.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator1.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator1.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator2 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator2"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator2");
+			ContentPlaceHolder1_RequiredFieldValidator2.controltovalidate = "ContentPlaceHolder1_txtFreeTransfer";
+			ContentPlaceHolder1_RequiredFieldValidator2.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator2.errormessage = "Free Transfers(p.m)";
+			ContentPlaceHolder1_RequiredFieldValidator2.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator2.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator2.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator3 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator3"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator3");
+			ContentPlaceHolder1_RequiredFieldValidator3.controltovalidate = "ContentPlaceHolder1_txtSingleTxnLimit";
+			ContentPlaceHolder1_RequiredFieldValidator3.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator3.errormessage = "Single Transaction Limit";
+			ContentPlaceHolder1_RequiredFieldValidator3.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator3.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator3.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator4 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator4"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator4");
+			ContentPlaceHolder1_RequiredFieldValidator4.controltovalidate = "ContentPlaceHolder1_txtDailyMaxlimit";
+			ContentPlaceHolder1_RequiredFieldValidator4.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator4.errormessage = "Daily MAX Limit";
+			ContentPlaceHolder1_RequiredFieldValidator4.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator4.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator4.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator5 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator5"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator5");
+			ContentPlaceHolder1_RequiredFieldValidator5.controltovalidate = "ContentPlaceHolder1_txtWeeklyMaxLimit";
+			ContentPlaceHolder1_RequiredFieldValidator5.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator5.errormessage = "Weekly MAX Limit";
+			ContentPlaceHolder1_RequiredFieldValidator5.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator5.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator5.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator5.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator6 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator6"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator6");
+			ContentPlaceHolder1_RequiredFieldValidator6.controltovalidate = "ContentPlaceHolder1_txtMonthlyMaxLimit";
+			ContentPlaceHolder1_RequiredFieldValidator6.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator6.errormessage = "Monthly MAX Limit";
+			ContentPlaceHolder1_RequiredFieldValidator6.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator6.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator6.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator6.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidator7 = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidator7"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidator7");
+			ContentPlaceHolder1_RequiredFieldValidator7.controltovalidate = "ContentPlaceHolder1_txtServiceChrg";
+			ContentPlaceHolder1_RequiredFieldValidator7.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidator7.errormessage = "Enter Service Charges";
+			ContentPlaceHolder1_RequiredFieldValidator7.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidator7.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidator7.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidator7.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge");
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.controltovalidate = "ContentPlaceHolder1_txtCardCharge";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.errormessage = "Enter Card Charge";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly");
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.controltovalidate = "ContentPlaceHolder1_txtCardLimitMonthly";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.errormessage = "Enter Card Limit Monthly";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly.initialvalue = "";
+			var ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly = document.all ? document.all["ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"]
+					: document
+							.getElementById("ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly");
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.controltovalidate = "ContentPlaceHolder1_txtCardTotalLimitYearly";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.focusOnError = "t";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.errormessage = "Enter Card Total Limit Yearly";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.display = "Dynamic";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.validationGroup = "A";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+			ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly.initialvalue = "";
+			//]]>
+		</script>
 		<script type="text/javascript">
-//<![CDATA[
+			//<![CDATA[
 
-var Page_ValidationActive = false;
-if (typeof(ValidatorOnLoad) == "function") {
-    ValidatorOnLoad();
-}
+			var Page_ValidationActive = false;
+			if (typeof (ValidatorOnLoad) == "function") {
+				ValidatorOnLoad();
+			}
 
-function ValidatorOnSubmit() {
-    if (Page_ValidationActive) {
-        return ValidatorCommonOnSubmit();
-    }
-    else {
-        return true;
-    }
-}
-        
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorSchemeName').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorSchemeName'));
-}
+			function ValidatorOnSubmit() {
+				if (Page_ValidationActive) {
+					return ValidatorCommonOnSubmit();
+				} else {
+					return true;
+				}
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatorSchemeName').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatorSchemeName'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorLockInBalance').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatorLockInBalance'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatorLockInBalance').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatorLockInBalance'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator1').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator1'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator2').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator2'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator1').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator1'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator3').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator3'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator2').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator2'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator4').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator4'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator3').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator3'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator5').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator5'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator4').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator4'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator6').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator6'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator5').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator5'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidator7').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidator7'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator6').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator6'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidator7').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidator7'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly'));
-}
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge'));
+			}
 
-document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly'));
-}
-//]]>
-</script>
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly'));
+			}
+
+			document
+					.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly').dispose = function() {
+				Array
+						.remove(
+								Page_Validators,
+								document
+										.getElementById('ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly'));
+			}
+			//]]>
+		</script>
 	</form>
 </body>
 </html>
