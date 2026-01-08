@@ -16,7 +16,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Company Setting</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>CUSTOMIZATION</b>
+				</h1>
+				<h5 style="margin-left: 18px;">COMPANY MANAGE</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 							Home</a></li>
@@ -26,36 +29,39 @@
 			</section>
 			<section class="content">
 				<div class="row">
-					<div class="col-md-10">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+						<div class="form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Company Details</h3>
 								<div class="box-tools pull-right">
 									<button type="button" name="BtnEdit" id="BtnEdit"
 										onclick="enableDisabledField()">
-										<img src="dist/img/pen_paper_2-32.png" />
+										<img src="dist/img/pen_paper_2-32.png"
+											style="height: 20px; width: 20px;" />
 									</button>
 								</div>
 							</div>
 							<form id="myForm" name="myForm" enctype="multipart/form-data">
 								<div id="ContentPlaceHolder1_pnlCdetails" class="aspNetDisabled">
 									<div class="box-body">
-										<div class="col-md-3">
-											<div class="form-group">
+										<!-- row-1  -->
+										<div style="margin-top: 10px;">
+											<div class="col-md-3">
+
 												<label>Company Name :</label> <input name="companyName"
 													type="text" value="EQFI NIDHI LIMITED" disabled="disabled"
 													id="companyName" class="form-control" autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Short Name :</label> <input name="shortName"
 													type="text" value="EQFI" maxlength="4" disabled="disabled"
 													id="shortName" class="form-control" autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Registration Date :</label>
 												<div class="input-group date">
 
@@ -64,57 +70,66 @@
 														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 														data-mask="" />
 												</div>
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>CIN No. :</label> <input name="cin" type="text"
 													value="U65990MH2022PLN385483" disabled="disabled" id="cin"
 													class="form-control" autocomplete="off" />
+
 											</div>
+											<div class="clearfix"></div>
 										</div>
-										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
+
+										<!-- row 2 -->
+										<div style="margin-top: 15px;">
+
+											<div class="col-md-3">
+
 												<label>PAN :</label> <input name="pan" type="text"
 													value="AAHCE1130D" disabled="disabled" id="pan"
 													class="form-control" autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>TAN :</label> <input name="tan" type="text"
 													value="NGPE01436B" disabled="disabled" id="tan"
 													class="form-control" autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>GSTIN :</label> <input name="gst" type="text"
 													disabled="disabled" id="gst" class="form-control"
 													autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Nominal Share Value :</label> <input
 													name="shareValue" type="text" value="10"
 													disabled="disabled" id="shareValue" class="form-control"
 													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
 										</div>
+
 										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
+										<!-- row 3 -->
+										<div style="margin-top: 15px;">
+											<div class="col-md-3">
+
 												<label>Address :</label> <input name="address" type="text"
 													value="PLOT NO 36 DATE LAYOUT JAYTALA ROAD NAGPUR"
 													disabled="disabled" id="address" class="form-control"
 													autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>State :</label> <select name="state"
 													disabled="disabled" id="state" class="form-control select2"
 													style="width: 100%;">
@@ -149,148 +164,175 @@
 													<option value="UTTARAKHAND">UTTARAKHAND</option>
 													<option value="WEST BENGAL">WEST BENGAL</option>
 												</select>
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Pin Code :</label> <input name="pinCode" type="text"
 													value="440036" disabled="disabled" id="pinCode"
 													class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Email ID :</label> <input name="email" type="text"
 													value="EQFIOFFICIAL@GMAIL.COM" disabled="disabled"
 													id="email" class="form-control" autocomplete="off" />
+
 											</div>
 										</div>
+
 										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
+										<!-- row 4 -->
+										<div style="margin-top: 15px;">
+											<div class="col-md-3">
+
 												<label>Authorized Capital :</label> <input
 													name="authorizedcapital" type="text" value="2100000"
 													disabled="disabled" id="authorizedcapital"
 													class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>PaidUp Capital :</label> <input name="paidup"
 													type="text" value="2100000" disabled="disabled" id="paidup"
 													class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>NOF :</label> <input name="landLine" type="text"
 													value="0" disabled="disabled" id="landLine"
 													class="form-control" autocomplete="off" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>Mobile No :</label> <input name="mobile" type="text"
 													value="8975689756" disabled="disabled" id="mobile"
 													class="form-control" autocomplete="off" />
+
 											</div>
 										</div>
+
 										<div class="clearfix"></div>
-										<div class="col-md-3">
-											<div class="form-group">
+										<!-- row 5 -->
+										<div style="margin-top: 15px;">
+											<div class="col-md-3">
+
 												<label>TDS (With PAN) :</label> <input name="tDSWithPAN"
 													type="text" value="0" disabled="disabled" id="TDSWithPAN"
 													class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>TDS (Without PAN) :</label> <input
 													name="tDSWithoutPAN" type="text" value="0"
 													disabled="disabled" id="TDSWithoutPAN" class="form-control"
 													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>TAX Deduction:</label> <input name="tax" type="text"
 													value="0" disabled="disabled" id="tax" class="form-control"
 													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
+											<div class="col-md-3">
+
 												<label>TAX Deduction(Seniour) :</label> <input name="taxSr"
 													type="text" value="0" disabled="disabled" id="taxSr"
 													class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
+
 											</div>
 										</div>
+
 										<div class="clearfix margin-bottom-10"></div>
-										<br>
-										<div class="row col-md-12">
-											<button type="submit"
-												class="btn btn-info pull-right margin-r-5" id="updateBtn"
-												disabled>Update</button>
+										<!-- row 6 -->
+										<div style="margin-top: 15px;">
+											<div class=" col-md-12" style="text-align: center;">
+												<button type="submit"
+													class="btn btn-info pull-right margin-r-5" id="updateBtn"
+													disabled>Update</button>
+											</div>
 										</div>
+										<!-- row 7  -->
+										<div style="margin-top: 15px;">
+
+											<div class=" col-md-3"
+												style="display: flex; margin: 15px 0 30px;">
+												<div class="box-body">
+													<div>
+														<h4>
+															<b>Logo</b>
+														</h4>
+														<p class="help-block">Maximum 10MB</p>
+													</div>
+													<div class="col-md-3">
+
+														<div class="text-center">
+															<img id="preview" class="profile-user-img"
+																src="upload_Files/${Logo}" alt="Image"
+																style="height: 110px; width: 110px;"> <input
+																type="file" name="filetag" id="filetag" />
+														</div>
+
+													</div>
+													<!-- <div class="clearfix"></div> -->
+												</div>
+
+
+												<div class="box-body">
+													<div>
+														<h4>
+															<b>Signature</b>
+														</h4>
+														<p class="help-block">Maximum 10MB</p>
+													</div>
+													<div class="col-md-3">
+
+														<div class="text-center">
+															<img id="secondpreview" class="profile-user-img"
+																src="upload_Files/${Signature}" alt="Image"
+																style="height: 110px; width: 110px;"> <input
+																type="file" name="secondfiletag" id="secondfiletag" />
+														</div>
+
+													</div>
+													<!-- <div class="clearfix"></div> -->
+												</div>
+
+											</div>
+										</div>
+
+
 									</div>
+
 								</div>
+							</form>
 						</div>
+
 					</div>
-					<div class="col-md-2">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Logo</h3>
-								<p class="help-block">Maximum 10MB</p>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img id="preview" class="profile-user-img"
-												src="upload_Files/${Logo}" alt="Image"
-												style="height: 110px; width: 110px;"> <input
-												type="file" name="filetag" id="filetag" />
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Signature</h3>
-								<p class="help-block">Maximum 10MB</p>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img id="secondpreview" class="profile-user-img"
-												src="upload_Files/${Signature}" alt="Image"
-												style="height: 110px; width: 110px;"> <input
-												type="file" name="secondfiletag" id="secondfiletag" />
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
+
 				</div>
 			</section>
 		</div>
-		</form>
+
+
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
 	</div>
-	
+
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -323,75 +365,75 @@
 	<script src="dist/js/demo.js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	
-<script>
-	$(document).ready(function() {
-	$("#myForm").submit(function(e) {
-   	e.preventDefault(); // prevent default form submit action
-   
-   	var formData = new FormData($(this)[0]); // create new FormData object from form data
-   //console.log(formData);
-   
-   $.ajax({
-       url: "updateCompanyDetails",
-       type: "POST",
-       data: formData,
-       processData: false,
-       contentType: false,
-       success: function(data) {
-    	   window.location.href = "CompanyDetails";
-    	   alert("Data Updated Successfully")
-       },
-       error: function(error) {
-           console.log(error);
-       }
-   });
-});
-});
-</script>
 
-<script>
+	<script>
+		$(document).ready(function() {
+			$("#myForm").submit(function(e) {
+				e.preventDefault(); // prevent default form submit action
 
-      var fileTag = document.getElementById("filetag"),
-          preview = document.getElementById("preview"),
-          secondfiletag = document.getElementById("secondfiletag"),
-          secondpreview = document.getElementById("secondpreview");
-          
-      fileTag.addEventListener("change", function() {
-        changeImage(this);
-      });
-      
-      secondfiletag.addEventListener("change", function() {
-          changeImage2(this);
-      });
-      
-      function changeImage(input) {
-      	var reader;
+				var formData = new FormData($(this)[0]); // create new FormData object from form data
+				//console.log(formData);
 
-        if (input.files && input.files[0]) {
-          reader = new FileReader();
+				$.ajax({
+					url : "updateCompanyDetails",
+					type : "POST",
+					data : formData,
+					processData : false,
+					contentType : false,
+					success : function(data) {
+						window.location.href = "CompanyDetails";
+						alert("Data Updated Successfully")
+					},
+					error : function(error) {
+						console.log(error);
+					}
+				});
+			});
+		});
+	</script>
 
-          reader.onload = function(e) {
-            preview.setAttribute('src', e.target.result);
-          }
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      
-      function changeImage2(input) {
-          var reader;
+	<script>
+		var fileTag = document.getElementById("filetag"), preview = document
+				.getElementById("preview"), secondfiletag = document
+				.getElementById("secondfiletag"), secondpreview = document
+				.getElementById("secondpreview");
 
-          if (input.files && input.files[0]) {
-            reader = new FileReader();
+		fileTag.addEventListener("change", function() {
+			changeImage(this);
+		});
 
-            reader.onload = function(e) {
-            	secondpreview.setAttribute('src', e.target.result);
-            }
+		secondfiletag.addEventListener("change", function() {
+			changeImage2(this);
+		});
 
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-</script>
+		function changeImage(input) {
+			var reader;
+
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
+
+				reader.onload = function(e) {
+					preview.setAttribute('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+		function changeImage2(input) {
+			var reader;
+
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
+
+				reader.onload = function(e) {
+					secondpreview.setAttribute('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	</script>
+
 
 </body>
 </html>

@@ -2111,7 +2111,7 @@ perspective(
 .box-header>.fa, .box-header>.glyphicon, .box-header>.ion, .box-header .box-title
 	{
 	display: inline-block;
-	font-size: 18px;
+	font-size: 20px;
 	margin: 0;
 	line-height: 1;
 }
