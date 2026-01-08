@@ -5,8 +5,8 @@
 	onload="addemployeeBranch();RelativeRelationDropdownforaddemployee();">
 	<form method="post" action="saveEmployee" name="validationform"
 		modelAttribute="emp" id="form1">
-		
-<script type="text/javascript">
+
+		<script type="text/javascript">
    function calculateAge() {
 	   const dob = new Date(document.getElementById("dob").value); // get DOB from the date input field
 	   const age = Math.floor((Date.now() - dob) / (365.25 * 24 * 60 * 60 * 1000)); // calculate age
@@ -14,7 +14,7 @@
 	 }
 </script>
 
-<script>
+		<script>
 function validationFeilds() {
 	  const DOJ= document.getElementById("doj"); 
 	  const branch= document.getElementById("cspName"); 
@@ -134,48 +134,60 @@ function validationFeilds() {
 			<!-- Aside Menu Start-->
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
-			
-			<form method="post" action="saveEmployee" modelAttribute="emp"
-				name="FormaddEmployee">
-				<!-- Content Wrapper. Contains page content -->
-				<div class="content-wrapper" style="min-height: 1105.75px;">
 
-					<section class="content-header">
-						<h1 id="ContentPlaceHolder1_IdHeader">Add Employee</h1>
-						<ol class="breadcrumb">
-							<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-							<li><a href="#">Dashboard</a></li>
-							<li class="active">Employee</li>
-						</ol>
-					</section>
-					<section class="content">
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper" style="min-height: 1105.75px;">
+
+				<section class="content-header">
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>MANAGE TEAM</b>
+					</h1>
+					<h5 style="margin-left: 18px;">ADD NEW TEAM MEMBER</h5>
+					<ol class="breadcrumb">
+						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
+						<li><a href="#">Dashboard</a></li>
+						<li class="active">Employee</li>
+					</ol>
+				</section>
+
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">1</div>
+						<div class="step-title">EMPLOYEE DETAILS</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">2</div>
+						<div class="step-title">DESIGNATION DETAILS</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step3">
+						<div class="step-circle">3</div>
+						<div class="step-title">PAYMENT DETAILS</div>
+						<div class="wizard-line"></div>
+					</div>
+				</div>
+
+				<section class="content">
+					<form method="post" action="saveEmployee" modelAttribute="emp"
+						name="FormaddEmployee">
+
 						<div class="row">
-							<div class="col-md-10">
-								<div class="box box-info">
-									<div class="box-header with-border">
+							<div class="col-md-12">
+								<div id="employeeDetails" class="form-container">
+									<div class="box-header">
 										<h3 class="box-title">Employee Details</h3>
 									</div>
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Joining Date <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<div class="input-group date">
-														<div class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-														</div>
-														<input name="doj" type="date" id="doj"
-															class="form-control"
-															data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-															data-mask="" />
-														<!--                                         <input name="DOJ" type="text" value="" id="DOJ" class="form-control" data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" /> -->
-														<span id="DOJspan"
-															style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
-													</div>
-												</div>
-											</div>
-											<div class="form-group row">
+
+
+									<div class="box-body form-horizontal">
+
+										<!-- Row 1 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
+
 												<label class="col-sm-4 control-label">Branch Name <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -186,7 +198,9 @@ function validationFeilds() {
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtRelativeName" class="col-sm-4 control-label">Employee
 													Name <strong style="color: Red">*</strong>
 												</label>
@@ -197,11 +211,13 @@ function validationFeilds() {
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtDOB" class="col-sm-4 control-label">DOB
 													<strong style="color: Red">*</strong>
 												</label>
-												<div class="col-sm-5">
+												<div class="col-sm-8">
 													<div class="input-group date">
 														<div class="input-group-addon">
 															<i class="fa fa-calendar"></i>
@@ -213,21 +229,35 @@ function validationFeilds() {
 															style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 													</div>
 												</div>
-												<div class="col-sm-3">
+											</div>
+
+											<div class="col-md-3">
+												<label class="col-sm-4 control-label">age</label>
+												<div class="col-sm-8">
 													<input name="age" type="text" value="0" maxlength="2"
 														id="ageId" class="form-control" Placeholder="Enter Age"
 														autocomplete="off" /> <span id="agespan"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+										</div>
+
+
+										<!-- Row 2 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
+
 												<label class="col-sm-4 control-label">Relative Name</label>
 												<div class="col-sm-8">
 													<input name="relativeName" type="text" id="relativeName"
 														class="form-control" Placeholder="Enter Relative Name" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="drpRelativeRelation"
 													class="col-sm-4 control-label">Relative Relation</label>
 												<div class="col-sm-8">
@@ -237,7 +267,9 @@ function validationFeilds() {
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtPhoneno" class="col-sm-4 control-label">Mobile
 													No <strong style="color: Red">*</strong>
 												</label>
@@ -251,7 +283,8 @@ function validationFeilds() {
 														Phone No</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
 													Name</label>
 												<div class="col-sm-8">
@@ -259,9 +292,15 @@ function validationFeilds() {
 														class="form-control" />
 												</div>
 											</div>
+
 										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
+
+
+										<!-- Row 3 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
+
 												<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
 													Age</label>
 												<div class="col-sm-8">
@@ -269,7 +308,9 @@ function validationFeilds() {
 														class="form-control" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="drpNomineeRelation"
 													class="col-sm-4 control-label">Relation</label>
 												<div class="col-sm-8">
@@ -279,20 +320,23 @@ function validationFeilds() {
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtAddress" class="col-sm-4 control-label">Address
 													<strong style="color: Red">*</strong>
 												</label>
 												<div class="col-sm-8">
 													<textarea name="address" rows="2" cols="20" id="address"
 														class="form-control" Placeholder="Enter Addess">
-</textarea>
+													</textarea>
 													<span id="addressspan"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 														Address</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="txtDistrict" class="col-sm-4 control-label">PAN
 													<strong style="color: Red">*</strong>
 												</label>
@@ -304,7 +348,15 @@ function validationFeilds() {
 														PAN</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+										</div>
+
+
+										<!-- Row 4 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
+
 												<label for="drpState" class="col-sm-4 control-label">Bank
 													A/C</label>
 												<div class="col-sm-8">
@@ -312,7 +364,9 @@ function validationFeilds() {
 														class="form-control" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtPin" class="col-sm-4 control-label">IFSC
 													Code</label>
 												<div class="col-sm-8">
@@ -320,7 +374,9 @@ function validationFeilds() {
 														class="form-control" Placeholder="Enter IFSC Code" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
+
 												<label for="txtOccupation" class="col-sm-4 control-label">Exp.
 													Details</label>
 												<div class="col-sm-8">
@@ -328,27 +384,40 @@ function validationFeilds() {
 														class="form-control" Placeholder="Enter Exp. Details" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="txtEducation" class="col-sm-4 control-label">Qualification</label>
 												<div class="col-sm-8">
 													<input name="education" type="text" id="education"
 														class="form-control" Placeholder="Enter Qualification" />
 												</div>
 											</div>
+
 										</div>
 									</div>
+
+									<!-- Button -->
+									<div class="clearfix">
+										<button type="button" class="btn btn-primary pull-right"
+											onclick="showDesignation()">NEXT</button>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-10">
-								<div class="box box-success">
-									<div class="box-header with-border">
+
+
+
+								<div id="designationDetails" class="form-container"
+									style="display: none;">
+
+									<div class="box-header">
 										<h3 class="box-title">Designation Details</h3>
 									</div>
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
+
+									<div class="box-body form-horizontal">
+
+										<!-- Row 1 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Designation <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -375,7 +444,8 @@ function validationFeilds() {
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Department <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -399,9 +469,8 @@ function validationFeilds() {
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Salary <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -413,7 +482,8 @@ function validationFeilds() {
 														Net Salary</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">SB Account No.</label>
 												<div class="col-sm-8">
 													<input name="bankAccount" type="text" id="bankAccount"
@@ -422,18 +492,30 @@ function validationFeilds() {
 											</div>
 										</div>
 									</div>
+									<!-- Button -->
+									<div class="clearfix">
+										<button type="button" class="btn btn-default"
+											onclick="showEmployee()">PREVIOUS</button>
+										<button type="button" class="btn btn-primary pull-right"
+											onclick="showPayment()">NEXT</button>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-10">
-								<div class="box box-info">
-									<div class="box-header with-border">
+
+
+
+								<div id="paymentDetails" class="form-container"
+									style="display: none;">
+
+									<div class="box-header">
 										<h3 class="box-title">Payment Details</h3>
 									</div>
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
+
+									<div class="box-body form-horizontal">
+
+										<!-- Row 1 -->
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Fees (if any)
 													<strong style="color: Red">*</strong>
 												</label>
@@ -446,7 +528,8 @@ function validationFeilds() {
 														Advisor Fees (if any)</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 													By <strong style="color: Red">*</strong>
 												</label>
@@ -464,19 +547,21 @@ function validationFeilds() {
 														Advisor Fees (if any)</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Remarks</label>
 												<div class="col-sm-8">
 													<textarea name="remarks" rows="2" cols="20" id="remarks"
 														class="form-control" Placeholder="Enter Remarks if any">
-</textarea>
+													</textarea>
 													<span id="remarksspan"
 														style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
+										<!-- Row 1 -->
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Emp. Status <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -486,61 +571,99 @@ function validationFeilds() {
 													</label>
 												</div>
 											</div>
+
+
 										</div>
-									</div>
-									<div class="box-footer">
-										<div class="row col-md-12">
-											<input type="submit" name="ctl00$ContentPlaceHolder1$btnNew"
-												value="New" id="ContentPlaceHolder1_btnNew"
-												class="btn btn-info pull-right margin-r-5" />
-											<button type="submit"
-												name="ctl00$ContentPlaceHolder1$btnSave" value="Save"
-												onclick="return validationFeilds();"
-												id="ContentPlaceHolder1_btnSave"
-												class="btn btn-success pull-right margin-r-5">Save</button>
+										<!-- Button -->
+										<div class="clearfix">
+											<button type="button" class="btn btn-default"
+												onclick="showDesignation()">PREVIOUS</button>
+											<button type="button" class="btn btn-primary pull-right"
+												onclick="SaveData()">SAVE</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</section>
-				</div>
-				
-				<!-- /.content-wrapper -->
-				<%-- <jsp:include page="../footer.jsp" /> --%>
+					</form>
+				</section>
+			</div>
+		</div>
+	</form>
+	<script>
+	function resetSteps() {
+		document.querySelectorAll('.step').forEach(s => {
+			s.classList.remove('active');
+		});
+	}
+		
+		function showDesignation() {
+	    	document.getElementById("employeeDetails").style.display = "none";
+	    	document.getElementById("designationDetails").style.display = "block";
+	    	document.getElementById("paymentDetails").style.display = "none";
+	    	window.scrollTo(0, 0);
+	    	
+	    	resetSteps();
+	    	document.getElementById("step1").classList.add("completed");
+	    	document.getElementById("step2").classList.add("active");
+		}
 
-				<script src="bower_components/jquery/dist/jquery.min.js"></script>
-				<!-- Bootstrap 3.3.7 -->
-				<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-				<!-- InputMask -->
-				<script src="plugins/input-mask/jquery.inputmask.js"></script>
-				<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-				<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-				<!-- date-range-picker -->
-				<script src="bower_components/moment/min/moment.min.js"></script>
-				<script
-					src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-				<!-- bootstrap datepicker -->
-				<script
-					src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-				<!-- bootstrap color picker -->
-				<script
-					src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-				<!-- bootstrap time picker -->
-				<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-				<!-- SlimScroll -->
-				<script
-					src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-				<!-- iCheck 1.0.1 -->
-				<script src="plugins/iCheck/icheck.min.js"></script>
-				<!-- FastClick -->
-				<script src="bower_components/fastclick/lib/fastclick.js"></script>
-				<!-- AdminLTE App -->
-				<script src="dist/js/adminlte.min.js"></script>
-				<!-- AdminLTE for demo purposes -->
-				<script src="dist/js/demo.js"></script>
-				<script src="dist/js/EmpolyeeSection.js"></script>
-				<!-- Select2 -->
-				<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-				
-			</form>
+		function showEmployee() {
+	    	document.getElementById("designationDetails").style.display = "none";
+	    	document.getElementById("employeeDetails").style.display = "block";
+	    	window.scrollTo(0, 0);
+	    	
+	    	resetSteps();
+	    	document.getElementById("step1").classList.add("active");
+	    	document.getElementById("step1").classList.add("inactive");
+		}
+		
+		function showPayment() {
+	    	document.getElementById("designationDetails").style.display = "none";
+	    	document.getElementById("paymentDetails").style.display = "block";
+	    	window.scrollTo(0, 0);
+	    	
+	    	resetSteps();
+	    	document.getElementById("step1").classList.add("completed");
+	    	document.getElementById("step2").classList.add("completed");
+	    	document.getElementById("step3").classList.add("active");
+		}
+	</script>
+
+
+	<!-- /.content-wrapper -->
+	<%-- <jsp:include page="../footer.jsp" /> --%>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- InputMask -->
+	<script src="plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<!-- date-range-picker -->
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script
+		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap datepicker -->
+	<script
+		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<!-- bootstrap color picker -->
+	<script
+		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<!-- bootstrap time picker -->
+	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- SlimScroll -->
+	<script
+		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="plugins/iCheck/icheck.min.js"></script>
+	<!-- FastClick -->
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="dist/js/demo.js"></script>
+	<script src="dist/js/EmpolyeeSection.js"></script>
+	<!-- Select2 -->
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
