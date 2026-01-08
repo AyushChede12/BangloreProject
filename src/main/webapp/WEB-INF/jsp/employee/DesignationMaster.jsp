@@ -19,6 +19,7 @@
 <!-- Ionicons -->
 <link rel="stylesheet"
 	href="bower_components/Ionicons/css/ionicons.min.css" />
+<link rel="stylesheet" href="dist/css/form1.css" />
 <!-- jvectormap -->
 <link rel="stylesheet"
 	href="bower_components/jvectormap/jquery-jvectormap.css" />
@@ -95,17 +96,24 @@
 				</ol>
 			</section>
 			<section class="content">
-				<div class="row">
-					<div class="col-md-5">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Add Designation Master</h3>
-							</div>
-							<form method="post" action="DesignationMasterSave" id="form1"
-								modelAttribute="designation">
-								<div class="box-body">
-									<div class="col-md-12">
-										<div class="form-group row">
+
+				<form method="post" action="DesignationMasterSave" id="form1"
+					modelAttribute="designation">
+					<div class="row">
+						<div class="col-md-12">
+
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">Add Designation Master</h3>
+								</div>
+
+
+								<div class="box-body form-horizontal">
+									<!-- Row 1 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-12">
+
 											<label for="txtDesignationName"
 												class="col-sm-4 control-label">Designation Name <strong
 												style="color: Red">*</strong></label>
@@ -117,44 +125,48 @@
 													Designation Name</span>
 											</div>
 										</div>
+
 									</div>
 								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<input type="button" name="ctl00$ContentPlaceHolder1$btnClear"
-											value="Clear" id="ContentPlaceHolder1_btnClear"
-											class="btn btn-info pull-right" onclick="clearInput()" /> <input
-											type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
+
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
 											value="Save" id="ContentPlaceHolder1_btnSave"
-											class="btn btn-success pull-right margin-r-5" />
+											class="btn btn-success margin-l-10" />
+
 									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="col-md-7">
-						<div class="box box-success">
-							<div class="box-body">
-								<div>
-									<table cellspacing="0" cellpadding="3" rules="all"
-										class="display nowrap table table-hover table-striped table-bordered"
-										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>Designation List</caption>
-										<tr style="color: White; background-color: #008385;">
-											<th scope="col">S/N</th>
-											<th scope="col">ID</th>
-											<th scope="col">Desgination</th>
-											<th scope="col">Action</th>
-										</tr>
-										<tbody id="tableBody">
-										</tbody>
-									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+				</form>
+
+				<div class="col-md-12">
+					<div class="form-container">
+
+						<div class="box-header">
+							<h3 class="box-title">Designation List</h3>
+						</div>
+						<div class="box-body form-horizontal">
+							<div class="clearfix margin-bottom-10"></div>
+							<table cellspacing="0" cellpadding="3" rules="all"
+								class="display nowrap table table-hover table-striped table-bordered"
+								border="1" style="width: 100%; border-collapse: collapse;">
+								<tr style="color: White; background-color: #008385;">
+									<th scope="col">S/N</th>
+									<th scope="col">ID</th>
+									<th scope="col">Desgination</th>
+									<th scope="col">Action</th>
+								</tr>
+								<tbody id="tableBody">
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
-			</section>
+		</div>
+		</section>
 </body>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

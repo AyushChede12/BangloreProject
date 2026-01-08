@@ -86,7 +86,7 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Search Client</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">SEARCH CUSTOMER</h1>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 							Home</a></li>
@@ -96,23 +96,28 @@
 			</section>
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Search Box</h3>
-							</div>
-							<div class="box-body">
+					<div class="col-md-12">
+						<div class="form-container" >
+						<div class="box-header">
+						<h3 class="box-title">SEARCH BOX</h3>
+						</div>
+						<div class="box-body form-horizontal">
+
+							<div class="row four-field-row">
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>Branch :</label> <select name="branchName"
-											id="branchName" class="form-control" style="width: 100%;">
-											<option selected="selected" value="">Select Criteria</option>
+									<label class="col-sm-4 control-label">BRANCH :</label>
+									<div class="col-sm-8">
+										<select name="branchName" id="branchName" class="form-control"
+											style="width: 100%;">
+											<option selected="selected" value="">SELECT CRITERIA</option>
 										</select>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>From Date :</label>
+									<label class="col-sm-4 control-label">FROM DATE :</label>
+									<div class="col-sm-8">
 										<div class="input-group date">
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
@@ -120,13 +125,14 @@
 											<input name="fDate" type="date" id="fDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+												data-mask="" style="text-transform: uppercase;" />
 										</div>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>To Date :</label>
+									<label class="col-sm-4 control-label">TO DATE :</label>
+									<div class="col-sm-8">
 										<div class="input-group date">
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
@@ -134,64 +140,72 @@
 											<input name="tDate" type="date" id="tDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+												data-mask="" style="text-transform: uppercase;" />
 										</div>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>Member Name :</label> <input name="memberName"
-											type="text" id="memberName" class="form-control"
-											Placeholder="Enter Member Name" autocomplete="off" />
+									<label class="col-sm-4 control-label">CUSTOMER NAME :</label>
+									<div class="col-sm-8">
+										<input name="memberName" type="text" id="memberName"
+											class="form-control" Placeholder="ENTER CUSTOMER NAME"
+											autocomplete="off" style="text-transform: uppercase;"/>
 									</div>
 								</div>
-								<div class="clearfix"></div>
+							</div>
+
+
+							<div class="row four-field-row">
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>PAN No. :</label> <input name="pan" type="text"
-											id="pan" class="form-control" Placeholder="Enter Pan No."
-											autocomplete="off" />
+									<label class="col-sm-4 control-label">PAN NO. :</label>
+									<div class="col-sm-8">
+										<input name="pan" type="text" id="pan" class="form-control"
+											Placeholder="ENTER PAN NO." autocomplete="off" style="text-transform: uppercase;"/>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>Mobile No. :</label> <input name="mobile" type="text"
-											id="mobile" class="form-control"
-											Placeholder="Enter Mobile No." autocomplete="off" />
+									<label class="col-sm-4 control-label">MOBILE NO. :</label>
+									<div class="col-sm-8">
+										<input name="mobile" type="text" id="mobile"
+											class="form-control" Placeholder="ENTER MOBILE NO."
+											autocomplete="off" style="text-transform: uppercase;"/>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>Aadhar No. :</label> <input name="aadharno" type="text"
-											id="aadharno" class="form-control"
-											Placeholder="Enter Aadhar No." autocomplete="off" />
+									<label class="col-sm-4 control-label">AADHAR NO. :</label>
+									<div class="col-sm-8">
+										<input name="aadharno" type="text" id="aadharno"
+											class="form-control" Placeholder="ENTER AADHAR NO."
+											autocomplete="off" style="text-transform: uppercase;"/>
 									</div>
 								</div>
+
 								<div class="col-md-3">
-									<div class="form-group">
-										<label>Client No. :</label> <input name="clientNo" type="text"
-											id="clientNo" class="form-control"
-											Placeholder="Enter PAN No." autocomplete="off" />
+									<label class="col-sm-4 control-label">CUSTOMER NO. :</label>
+									<div class="col-sm-8">
+										<input name="clientNo" type="text" id="clientNo"
+											class="form-control" Placeholder="ENTER CUSTOMER NO."
+											autocomplete="off" style="text-transform: uppercase;"/>
 									</div>
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
-								<br>
-								<div class="text-center">
-									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
-										href="javascript:searchThroughSearchBox123();"><span
-										class="fa fa-search"></span> SEARCH</a> <a
-										id="ContentPlaceHolder1_btnPrint" class="btn btn-warning"
-										href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnPrint&#39;,&#39;&#39;)"><span
-										class="fa fa-print"></span> PRINT</a>
-								</div>
+							</div>
+
+							<div class="text-center">
+								<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
+									href="javascript:searchThroughSearchBox123();"><span
+									class="fa fa-search"></span> SEARCH</a>
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
-								<h3 class="box-title">Search Result</h3>
-								<div class="box-tools pull-right"></div>
-							</div>
+						
+						
+						<div style="box-shadow: none; overflow: auto !important;">
+								<div class="box-header">
+								<h3 class="box-title">SEARCH RESULT</h3>
+								</div>
 							<div class="box-body">
 								<div class="clearfix margin-bottom-10"></div>
 								<table cellspacing="0" cellpadding="3" rules="all"
@@ -214,6 +228,7 @@
 									</tbody>
 								</table>
 							</div>
+						</div>
 						</div>
 					</div>
 				</div>

@@ -16,6 +16,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="bower_components/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="dist/css/form1.css" />
 <!-- Ionicons -->
 <link rel="stylesheet"
 	href="bower_components/Ionicons/css/ionicons.min.css" />
@@ -64,7 +65,7 @@
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 
-<script type="text/javascript">
+	<script type="text/javascript">
 //<![CDATA[
 var theForm = document.forms['form1'];
 if (!theForm) {
@@ -80,7 +81,7 @@ function __doPostBack(eventTarget, eventArgument) {
 //]]>
 </script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 //<![CDATA[
 function WebForm_OnSubmit() {
 if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
@@ -118,67 +119,66 @@ function clearInput(){
 				</ol>
 			</section>
 			<section class="content">
-				<div class="row">
-					<!-- <form method="post" action="DepartmentMaster123"
-						modelAttribute="departmentMaster" id="form1"> -->
-					<form method="post" action="DepartmentMaster" modelAttribute="departmentMaster" id="form1">
-						<div class="col-md-5">
-							<div class="box box-success">
-								<div class="box-header with-border">
+
+				<form method="post" action="DepartmentMaster"
+					modelAttribute="departmentMaster" id="form1">
+					<div class="row">
+						<div class="col-md-12">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Add Department Master</h3>
 								</div>
-								<div class="box-body">
+								<div class="box-body form-horizontal">
+
 									<div class="col-md-12">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Department Name
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<!-- <input name="department" type="text" id="department"
-													class="form-control" /> --> 
-													<input name="department" type="text" id="department" class="form-control" />
-           <span
-													id="ContentPlaceHolder1_RequiredtxtDepartmentName"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Department Name</span>
-											</div>
+
+										<label class="col-sm-4 control-label">Department Name
+											<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="department" type="text" id="department"
+												class="form-control" /> <span
+												id="ContentPlaceHolder1_RequiredtxtDepartmentName"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Department Name</span>
 										</div>
 									</div>
 								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<input type="button" name="ctl00$ContentPlaceHolder1$btnClear"
-											value="Clear" id="ContentPlaceHolder1_btnClear"
-											class="btn btn-info pull-right" onclick="clearInput()" /> <input
-											type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
+
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
 											value="Save" id="ContentPlaceHolder1_btnSave"
-											class="btn btn-success pull-right margin-r-5" />
-										<!--                                 <button type="submit" name="ctl00$ContentPlaceHolder1$btnsave" value="Save" id="ContentPlaceHolder1_btnsave" class="btn btn-info pull-right">Save</button>   -->
+											class="btn btn-success margin-l-10" />
+
 									</div>
 								</div>
 							</div>
 						</div>
-					</form>
-					<div class="col-md-7">
-						<div class="box box-success">
-							<div class="box-body">
-								<div>
-									<table cellspacing="0" cellpadding="3" rules="all"
-										class="display nowrap table table-hover table-striped table-bordered"
-										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>Department List</caption>
-										<tr style="color: White; background-color: #008385;">
-											<th scope="col">S/N</th>
-											<th scope="col">Department Code</th>
-											<th scope="col">Department Name</th>
+					</div>
+				</form>
 
-										</tr>
-										<tbody id="fatchdepartmenttable">
 
-										</tbody> 
-									</table>
-								</div>
-							</div>
+				<div class="col-md-12">
+					<div class="form-container">
+
+						<div class="box-header">
+							<h3 class="box-title">Designation List</h3>
+						</div>
+						<div class="box-body form-horizontal">
+							<div class="clearfix margin-bottom-10"></div>
+							<table cellspacing="0" cellpadding="3" rules="all"
+								class="display nowrap table table-hover table-striped table-bordered"
+								border="1" style="width: 100%; border-collapse: collapse;">
+								<tr style="color: White; background-color: #008385;">
+									<th scope="col">S/N</th>
+									<th scope="col">Department Code</th>
+									<th scope="col">Department Name</th>
+								</tr>
+								<tbody id="tableBody">
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
