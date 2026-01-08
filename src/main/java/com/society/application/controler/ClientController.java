@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.util.ByteArrayBuilder;
-import com.society.application.dto.Response;
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.CasteMaster;
 import com.society.application.model.CategoryMaster;
 import com.society.application.model.ClientMaster;
@@ -547,8 +547,8 @@ public class ClientController {
 
 	// save taluka
 	@PostMapping("/addTaluka")
-	public Response saveTaluka(@RequestBody TalukaModel talukaModel) {
-		Response resp = new Response();
+	public ApiResponse saveTaluka(@RequestBody TalukaModel talukaModel) {
+		ApiResponse resp = new ApiResponse();
 		resp.setStatus("Not Success..");
 		resp.setMessage("Data Not Saved..!!");
 

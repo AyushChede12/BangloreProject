@@ -6,17 +6,24 @@
 	background: #f4f6f9;
 }
 
-.box {
-	border-radius: 8px;
-	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-	margin-bottom: 25px;
-}
-
 /* ================= BOX HEADERS ================= */
 .box-header {
 	background: #f8fafc;
 	border-bottom: 2px solid #3c8dbc;
 	border-radius: 8px 8px 0 0;
+}
+.form-container {
+    background: #f9fafc;
+    padding: 25px;
+    margin-top: 10px;
+    margin-right:10px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    width: 100%;
+    
+    overflow-y: auto;          /* ✅ form scrolling */
+    padding: 20px;
+    
 }
 
 .box-title {
@@ -241,16 +248,10 @@ label {
 
 
 
+
 /* Client section */
 
 /* ===== CLIENT SECTION CARD ===== */
-#clientSection {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 15px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-}
 
 /* Section Title */
 #clientSection .box-title {
@@ -343,13 +344,6 @@ label strong {
 
 /*  KYC Section */
 /* ===== KYC SECTION CARD ===== */
-#kycSection {
-    background: #ffffff;
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    margin-bottom: 25px;
-}
 
 /* KYC Title */
 #kycSection .box-title {
@@ -430,13 +424,6 @@ label strong {
 
 /* nominee section  */
 /* ===== NOMINEE SECTION CARD ===== */
-#nomineeSection {
-    background: #ffffff;
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    margin-bottom: 25px;
-}
 
 /* Nominee Title */
 #nomineeSection .box-title {
@@ -518,14 +505,6 @@ label strong {
 
 /* fees section */
 /* ===== FEES SECTION CARD ===== */
-#feesSection {
-    background: #ffffff;
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    margin-bottom: 25px;
-}
-
 /* Title */
 #feesSection .box-title {
     font-size: 18px;
@@ -656,9 +635,15 @@ label strong {
 }
 
 
+/* Add MemberKYC */
 
 
-/* table section */
+/* ===== CLIENT DETAILS CARD ===== */
 
+.profile-user-img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: #fff;
+}
 
 

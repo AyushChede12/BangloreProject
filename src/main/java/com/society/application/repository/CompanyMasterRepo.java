@@ -15,6 +15,6 @@ public interface CompanyMasterRepo extends JpaRepository<CompanyMaster, Integer>
 
 	List<CompanyMaster> findByshortName(String companyName);
 
-	CompanyMaster findByiDcompany(String iD);
+	CompanyMaster findByiDcompany(int iD);
 
 }

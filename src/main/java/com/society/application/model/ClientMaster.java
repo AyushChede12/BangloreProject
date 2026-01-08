@@ -11,8 +11,8 @@ import javax.persistence.Transient;
 @Entity
 public class ClientMaster {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private long clientNo;
 	private long clientId;
 	private String verifyWithAadhar;
