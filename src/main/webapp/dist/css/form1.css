@@ -647,4 +647,116 @@ label strong {
     background: #fff;
 }
 
+/* Table container */
+
+/* Main table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+}
+
+/* Table header */
+.table thead {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.table thead th {
+    color: #ffffff;
+    padding: 12px 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    white-space: nowrap;
+}
+
+/* Table body cells */
+.table tbody td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+/* Alternate row color */
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+    background-color: #e9f3ff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Center align text */
+.table th,
+.table td {
+    text-align: center;
+}
+
+/* Buttons inside table */
+.table button,
+.table .btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* Edit button */
+.btn-edit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+}
+
+/* Delete button */
+.btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        text-align: left;
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #495057;
+    }
+}
+
 
