@@ -89,254 +89,210 @@
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
-										<div class="col-md-6">
-											
-												<label for="txtSchemeName" class="col-sm-4 control-label">Scheme
-													Name<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="schemeName" type="text" id="schemeName"
-														class="form-control" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorSchemeName"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Scheme Name</span>
-												</div>
-											
-											
-												<label for="txtAnnualInterestRate"
-													class="col-sm-4 control-label">Annual R.O.I (%)<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="annualROI" type="text" id="annualROI"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Annual Interest Rate</span>
-												</div>
-											
-											
-												<label for="txtMinOpeningAmount"
-													class="col-sm-4 control-label">Min. Opening Amount<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="minOpeningAmount" type="text"
-														id="minOpeningAmount" class="form-control"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Min. Opening Amount</span>
-												</div>
-											
-											
-												<label for="txtMinMonthlyAvgBalance"
-													class="col-sm-4 control-label">Monthly Avg. Bal.<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="monthlyAvgBal" type="text" id="monthlyAvgBal"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Min. Monthly Avg. Balance</span>
-												</div>
-											
-											
-												<label for="txtLockInBalance" class="col-sm-4 control-label">Lock
-													In balance<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="lockInbalance" type="text" id="lockInbalance"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Lock In balance</span>
-												</div>
-											
-											
-												<label for="txtSmsChargesQarterly"
-													class="col-sm-4 control-label">SMS Charges <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="smsCharges" type="text" id="smsCharges"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Sms Charges</span>
-												</div>
-											
-											
-												<label for="ddlInterestCreditTime"
-													class="col-sm-4 control-label">SMS Interval<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<select name="smsInterval" id="smsInterval"
-														class="form-control" style="width: 100%;">
-														<option value="Monthly">Monthly</option>
-														<option value="Quarterly">Quarterly</option>
-														<option value="Half Yearly">Half Yearly</option>
-														<option value="Yearly">Yearly</option>
-													</select>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Free IFSC
-													Collection(p.m)<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="freeIfscCollectionpm" type="text"
-														id="freeIfscCollectionpm" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator1"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
-														IFSC Collection(p.m)</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Free
-													Transfers(p.m)<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="freeTransferspm" type="text"
-														id="freeTransferspm" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator2"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
-														Transfers(p.m)</span>
-												</div>
-											
+										<!-- row 1 -->
+										
+											<div class="col-md-3" style="margin-top: 15px;">
+												<label for="txtSchemeName">Scheme Name<strong
+													style="color: Red">*</strong>
+												</label> <input name="schemeName" type="text" id="schemeName"
+													class="form-control" /> <span
+													id="ContentPlaceHolder1_RequiredFieldValidatorSchemeName"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Scheme Name</span>
+											</div>
+
+											<div class="col-md-3"style="margin-top: 15px;">
+												<label for="txtAnnualInterestRate">Annual R.O.I (%)<strong
+													style="color: Red">*</strong>
+												</label> <input name="annualROI" type="text" id="annualROI"
+													class="form-control" onpaste="return false"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Annual Interest Rate</span>
+											</div>
+
+											<div class="col-md-3"style="margin-top: 15px;">
+												<label for="txtMinOpeningAmount">Min. Opening Amount<strong
+													style="color: Red">*</strong>
+												</label> <input name="minOpeningAmount" type="text"
+													id="minOpeningAmount" class="form-control"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Min. Opening Amount</span>
+											</div>
+
+											<div class="col-md-3"style="margin-top: 15px;">
+												<label for="txtMinMonthlyAvgBalance">Monthly Avg.
+													Bal.<strong style="color: Red">*</strong>
+												</label> <input name="monthlyAvgBal" type="text" id="monthlyAvgBal"
+													class="form-control" onpaste="return false"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Min. Monthly Avg. Balance</span>
+											</div>
+										
+										<!-- row 2 -->
+										
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="txtLockInBalance">Lock In balance<strong
+												style="color: Red">*</strong>
+											</label> <input name="lockInbalance" type="text" id="lockInbalance"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorLockInBalance"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Lock In balance</span>
 										</div>
-										<div class="col-md-6">
-											
-												<label class="col-sm-4 control-label">Single Txn.
-													Limit<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="singleTxnLimit" type="text"
-														id="singleTxnLimit" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator3"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Single
-														Transaction Limit</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Daily MAX
-													Limit<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="dailyMAXLimit" type="text" id="dailyMAXLimit"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator4"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Daily
-														MAX Limit</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Weekly MAX
-													Limit<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="weeklyMAXLimit" type="text"
-														id="weeklyMAXLimit" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator5"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Weekly
-														MAX Limit</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Monthly MAX
-													Limit<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="monthlyMAXLimit" type="text"
-														id="monthlyMAXLimit" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator6"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Monthly
-														MAX Limit</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Service
-													Charges <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="serviceCharges" type="text"
-														id="serviceCharges" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator7"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Service Charges</span>
-												</div>
-											
-											
-												<label class="col-sm-4 control-label">Service
-													Interval<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<select name="serviceInterval" id="serviceInterval"
-														class="form-control" style="width: 100%;">
-														<option value="Monthly">Monthly</option>
-														<option value="Quarterly">Quarterly</option>
-														<option value="Half Yearly">Half Yearly</option>
-														<option value="Yearly">Yearly</option>
-													</select>
-												</div>
-											
-											
-												<label for="txtCardCharge" class="col-sm-4 control-label">Card
-													Charge<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="cardCharge" type="text" id="cardCharge"
-														class="form-control" onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Card Charge</span>
-												</div>
-											
-											
-												<label for="txtCardLimitMonthly"
-													class="col-sm-4 control-label">Card Limit Monthly<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="cardLimitMonthly" type="text"
-														id="cardLimitMonthly" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Card Limit Monthly</span>
-												</div>
-											
-											
-												<label for="txtCardTotalLimitYearly"
-													class="col-sm-4 control-label">Card Total Limit
-													Yearly<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="cardTotalLimitYearly" type="text"
-														id="cardTotalLimitYearly" class="form-control"
-														onpaste="return false"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Card Total Limit Yearly</span>
-												</div>
-											
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="txtSmsChargesQarterly">SMS Charges <strong
+												style="color: Red">*</strong>
+											</label> <input name="smsCharges" type="text" id="smsCharges"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatortxtSmsChargesQarterly"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Sms Charges</span>
 										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="ddlInterestCreditTime">SMS Interval<strong
+												style="color: Red">*</strong>
+											</label> <select name="smsInterval" id="smsInterval"
+												class="form-control" style="width: 100%;">
+												<option value="Monthly">Monthly</option>
+												<option value="Quarterly">Quarterly</option>
+												<option value="Half Yearly">Half Yearly</option>
+												<option value="Yearly">Yearly</option>
+											</select>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Free IFSC Collection(p.m)<strong
+												style="color: Red">*</strong>
+											</label> <input name="freeIfscCollectionpm" type="text"
+												id="freeIfscCollectionpm" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator1"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
+												IFSC Collection(p.m)</span>
+										</div>
+										<!--row 3  -->
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Free Transfers(p.m)<strong style="color: Red">*</strong>
+											</label> <input name="freeTransferspm" type="text"
+												id="freeTransferspm" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator2"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Free
+												Transfers(p.m)</span>
+										</div>
+
+
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Single Txn. Limit<strong style="color: Red">*</strong>
+											</label> <input name="singleTxnLimit" type="text" id="singleTxnLimit"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator3"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Single
+												Transaction Limit</span>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Daily MAX Limit<strong style="color: Red">*</strong>
+											</label> <input name="dailyMAXLimit" type="text" id="dailyMAXLimit"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator4"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Daily
+												MAX Limit</span>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Weekly MAX Limit<strong style="color: Red">*</strong>
+											</label> <input name="weeklyMAXLimit" type="text" id="weeklyMAXLimit"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator5"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Weekly
+												MAX Limit</span>
+										</div>
+										<!-- row 4 -->
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Monthly MAX Limit<strong style="color: Red">*</strong>
+											</label> <input name="monthlyMAXLimit" type="text"
+												id="monthlyMAXLimit" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator6"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Monthly
+												MAX Limit</span>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Service Charges <strong style="color: Red">*</strong>
+											</label> <input name="serviceCharges" type="text" id="serviceCharges"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator7"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Service Charges</span>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label>Service Interval<strong style="color: Red">*</strong>
+											</label> <select name="serviceInterval" id="serviceInterval"
+												class="form-control" style="width: 100%;">
+												<option value="Monthly">Monthly</option>
+												<option value="Quarterly">Quarterly</option>
+												<option value="Half Yearly">Half Yearly</option>
+												<option value="Yearly">Yearly</option>
+											</select>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="txtCardCharge">Card Charge<strong
+												style="color: Red">*</strong>
+											</label> <input name="cardCharge" type="text" id="cardCharge"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatortxtCardCharge"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Card Charge</span>
+										</div>
+										<!-- row 5 -->
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="txtCardLimitMonthly">Card Limit Monthly<strong
+												style="color: Red">*</strong>
+											</label> <input name="cardLimitMonthly" type="text"
+												id="cardLimitMonthly" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatortxtCardLimitMonthly"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Card Limit Monthly</span>
+										</div>
+
+										<div class="col-md-3"style="margin-top: 15px;">
+											<label for="txtCardTotalLimitYearly">Card Total Limit
+												Yearly<strong style="color: Red">*</strong>
+											</label> <input name="cardTotalLimitYearly" type="text"
+												id="cardTotalLimitYearly" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatortxtCardTotalLimitYearly"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Card Total Limit Yearly</span>
+										</div>
+
+
 									</div>
 									<div class="box-footer">
 										<div class="row col-md-12">
@@ -351,8 +307,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
+							<div class="form-container" style="overflow: auto !important;">
 								<div class="box-header with-border">
 									<h3 class="box-title">Scheme List</h3>
 								</div>
