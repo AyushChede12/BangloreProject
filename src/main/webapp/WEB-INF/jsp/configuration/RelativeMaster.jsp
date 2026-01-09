@@ -14,14 +14,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Add Relative Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>CUSTOMIZATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">ADD RELATIVES</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -31,19 +36,19 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Add New Relative</h3>
+							<div class="form-container">
+								<div class="box-header ">
+									<h3 class="box-title">ADD NEW RELATIVE</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>New Relation : <strong style="color: Red">*</strong></label>
-											<input name="name" type="text" id="name" class="form-control" />
-											<span id="fyNameMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												FY Name</span>
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>NEW RELATION : <strong style="color: Red">*</strong></label>
+										<input name="name" type="text" id="name" class="form-control" />
+										<span id="fyNameMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+											FY NAME</span>
+
 									</div>
 									<!--                            <div class="col-md-3"> -->
 									<!--                               <div class="form-group"> -->
@@ -67,21 +72,20 @@
 									<!--                                  </div> -->
 									<!--                               </div> -->
 									<!--                            </div> -->
-									<div class="col-md-2">
-										<div class="form-group">
-											<label></label>
-											<button type="button" id="ContentPlaceHolder1_btnSearch"
-												onclick="valdiateRelativeMaster()"
-												class="btn btn-success  margin-20">
-												<span class="fa fa-save"></span> Add
-											</button>
-										</div>
+									<div class="col-md-2" style="margin-top: 15px;">
+
+										<label></label>
+										<button type="button" id="ContentPlaceHolder1_btnSearch"
+											onclick="valdiateRelativeMaster()"
+											class="btn btn-success  margin-20">
+											<span class="fa fa-save"></span> ADD
+										</button>
+
 									</div>
 									<div class="text-center"></div>
 								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
+							<div class="form-container" style=overflow:auto !important;">
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>
 									<div>
@@ -90,9 +94,9 @@
 											border="1" style="width: 100%; border-collapse: collapse;">
 
 											<tr style="color: White; background-color: #008385;">
-												<th scope="col">SlNo</th>
-												<th scope="col">Relations</th>
-												<th scope="col">Delete</th>
+												<th scope="col">SLNO</th>
+												<th scope="col">RELATIONS</th>
+												<th scope="col">DELETE</th>
 											</tr>
 											<tbody id="ContentPlaceHolder1_gdvData_fymaster">
 
@@ -108,7 +112,7 @@
 			<!-- /.content-wrapper -->
 			<div class="control-sidebar-bg"></div>
 		</div>
-		
+
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -141,7 +145,7 @@
 		<script src="dist/js/demo.js"></script>
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		
+
 	</form>
 </body>
 </html>

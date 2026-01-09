@@ -1,765 +1,637 @@
-<%@ page import="java.util.List" %>
-	<%@ page import="com.society.application.model.Member" %>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-			<jsp:include page="../header.jsp" />
+<%@ page import="java.util.List"%>
+<%@ page import="com.society.application.model.Member"%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="../header.jsp" />
 
 
 
-			</head>
-
-			<style>
-				.hidden {
-					display: none;
-				}
-			</style>
-
-			<style>
-				@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
-				* {
-					padding: 0;
-					margin: 0;
-					box-sizing: border-box;
-					font-family: 'Poppins', sans-serif;
-				}
-
-				.Cont {
-					width: 100%;
-					height: 100vh;
-					border: 1px solid red;
-					background-image: url("./img.jpg");
-					background-size: cover;
-					background-repeat: no-repeat;
-				}
-
-				.mainTable {
-					width: 100%;
-					height: 100vh;
-					transition: 0.5s;
-					overflow-y: scroll;
-					-ms-overflow-style: none;
-					scrollbar-width: none;
-					/* border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
-        15px 15px 15px rgba(0, 0, 0, 0.1); */
-					background: rgba(255, 255, 255, 0.5);
-					-webkit-backdrop-filter: blur(10px);
-					backdrop-filter: blur(10px);
-					border: 1px solid rgba(255, 255, 255, 0.25);
-				}
-
-				.mainTable::-webkit-scrollbar {
-					display: none;
-				}
-
-				.tableCont {
-					width: 100%;
-					min-width: 1000px;
-					table-layout: fixed;
-					cursor: pointer;
-				}
-
-				.tableCont thead th {
-					width: 100%;
-					position: sticky;
-					top: 0;
-					font-size: 0.95rem;
-					background-color: #e1e1e1;
-				}
-
-				.labelinputs {
-					width: 200px;
-					height: 30px;
-					/* background-color: aqua; */
-					display: flex;
-					justify-content: space-between;
-				}
-
-				.tableinput {
-					width: 110px;
-					padding: 2px;
-				}
-
-				.subbox {
-					width: 255px;
-					height: 50px;
-					font-weight: 600;
-				}
-			</style>
-			<style>
-				.radio-buttons {
-					display: inline-block;
-					margin-right: 180px;
-				}
-
-				.radio-buttons label {
-					margin-right: 20px;
-				}
-			</style>
-
-			<body class="skin-blue sidebar-mini"
-				style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
-				cz-shortcut-listen="true">
-				<div
-					style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
-					<!-- Header Start-->
-					<jsp:include page="../menu.jsp" />
-					<!-- Header End -->
-					<!-- Left side column. contains the logo and sidebar -->
-					<!-- Aside Menu Start-->
-					<jsp:include page="../asideMenu.jsp" />
-					<!-- Aside Menu end -->
-					<!-- Content Wrapper. Contains page content -->
-					<div class="content-wrapper" style="min-height: 1105.75px;">
-						<section class="content-header">
-							<h1 id="ContentPlaceHolder1_IdHeader">Cashier</h1>
-							<ol class="breadcrumb">
-								<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-								<li><a href="#">Dashboard</a></li>
-								<li class="active">Accounting</li>
-							</ol>
-						</section>
-
-						<!-- <form method="post" action="" id="cashierForm" modelAttribute="" enctype="multipart/form-data"> -->
+</head>
 
 
-						<section class="content" id="section1">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="box box-success">
-										<div class="box-header with-border">
-											<h3 class="box-title">Transaction</h3>
+<body class="skin-blue sidebar-mini"
+	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
+	cz-shortcut-listen="true">
+	<div
+		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		<!-- Header Start-->
+		<jsp:include page="../menu.jsp" />
+		<!-- Header End -->
+		<!-- Left side column. contains the logo and sidebar -->
+		<!-- Aside Menu Start-->
+		<jsp:include page="../asideMenu.jsp" />
+		<!-- Aside Menu end -->
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper" style="min-height: 1105.75px;">
+			<section class="content-header">
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE ACCOUNT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">NEW LEDGER</h5>
+				<ol class="breadcrumb">
+					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li class="active">Accounting</li>
+				</ol>
+			</section>
+
+			<section class="content" id="section1">
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">New Ledger Entry</h3>
+							</div>
+
+							<div class="box-body form-horizontal">
+
+								<!-- Row 1 -->
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Select Pending
+											Transaction </label>
+										<div class="col-sm-8">
+											<select name="pendingTransaction" id="pendingTransaction"
+												class="form-control select2" style="width: 100%;">
+											</select>
 										</div>
-										<div class="box-body">
-											<div class="col-md-6">
-												<label>
-													<input type="radio" name="payment123" id="credit" value="credit"
-														style="margin-left: 15px;"
-														onchange="onchangeTheRadioButton();">Credit
-												</label>
-												<label>
-													<input type="radio" name="payment123" id="debit" value="debit"
-														style="margin-left: 15px;"
-														onchange="onchangeTheRadioButton();">Debit
-												</label>
+									</div>
 
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Select Pending
-														Transaction </label>
-													<div class="col-sm-8">
-														<select name="pendingTransaction" id="pendingTransaction"
-															class="form-control select2" style="width: 100%;">
+									<div class="col-md-3">
 
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="bankGLHead" class="col-sm-4 control-label">Branch
-														No. <strong style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input name="branchCode" type="text" id="branchCode" value="1"
-															class="form-control" Placeholder="Enter Branch No"
-															readonly="readonly" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Select Branch<strong
-															style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<select name="selectBranch" id="selectBranch"
-															class="form-control select2" style="width: 100%;">
+										<label for="bankGLHead" class="col-sm-4 control-label">Branch
+											No. <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="branchCode" type="text" id="branchCode"
+												value="1" class="form-control" Placeholder="Enter Branch No"
+												readonly="readonly" />
+										</div>
+									</div>
 
-															<option selected="selected" value="H.O">H.O</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="bankGLHead" class="col-sm-4 control-label">G.L.Head
-														No. <strong style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input name="glHeadNo" type="text" id="glHeadNo"
-															onchange="getTheValueInFields2();	" class="form-control"
-															Placeholder="Enter G.L.Head No" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="bankGLHead" class="col-sm-4 control-label">Select
-														G.L.Head </label>
-													<div class="col-sm-8">
-														<input name="selectGlHead" type="text" id="selectGlHead"
-															class="form-control" Placeholder="Select G.L.Head"
-															readonly="readonly" />
-													</div>
-													<div class="col-sm-8">
-														<input name="glnoTransactionID" type="text"
-															id="glnoTransactionID" class="form-control"
-															readonly="readonly" style="display: none;" />
+									<div class="col-md-3">
 
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="bankGLHead" class="col-sm-4 control-label">Account
-														No <strong style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input name="accountNo" type="text" id="accountNo"
-															onchange="setthroughAccountNo();" class="form-control"
-															Placeholder="Enter Account No" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="accountHolder" class="col-sm-4 control-label">Select
-														Account Holder <strong style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input name="selectAccountHolder" type="text"
-															id="selectAccountHolder" class="form-control"
-															Placeholder="Select Account Holder" readonly="readonly" />
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group row">
-													<label for="accountHolder" class="col-sm-4 control-label">Balance
-													</label>
-													<div class="col-sm-8">
-														<input name="balance" type="text" id="balance"
-															class="form-control" Placeholder="Enter Balance"
-															readonly="readonly" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="accountHolder" class="col-sm-4 control-label">PAN-Aadhar
-													</label>
-													<div class="col-sm-8">
-														<input name="panAadhar" type="text" id="panAadhar"
-															class="form-control" Placeholder="Enter PAN-Aadhar" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="txtJointMemberName"
-														class="col-sm-4 control-label">Amount(Rs.)<strong
-															style="color: Red">*</strong>
-													</label>
-													<div class="col-sm-8">
-														<input name="amount" type="text" id="amount"
-															onchange="setTheValueOfINDemonination();"
-															class="form-control" Placeholder="Enter Amount(Rs.)" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="txtJointMemberName"
-														class="col-sm-4 control-label">Penalty Amount(Rs.) </label>
-													<div class="col-sm-8">
-														<input name="penaultyAmount" type="text" id="penaultyAmount"
-															class="form-control"
-															Placeholder="Enter Penaulty Amount(Rs.)" value"0" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="txtJointMemberName"
-														class="col-sm-4 control-label">Scroll </label>
-													<div class="col-sm-8">
-														<input name="scroll" type="text" id="scroll"
-															value="${ScrollNumber}" class="form-control"
-															Placeholder="Enter Scroll" readonly="readonly" />
-													</div>
-													<label for="txtJointMemberName" class="col-sm-4 control-label">Date
-													</label>
-													<div class="col-sm-8">
-														<input name="entryDate" type="text" id="entryDate"
-															value="${EntryDate}" class="form-control"
-															readonly="readonly" />
-													</div>
+										<label class="col-sm-4 control-label">Select Branch<strong
+											style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<select name="selectBranch" id="selectBranch"
+												class="form-control select2" style="width: 100%;">
 
+												<option selected="selected" value="H.O">H.O</option>
+											</select>
+										</div>
+									</div>
 
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Special
-														Instruction</label>
-													<div class="col-sm-8">
-														<textarea name="specialInstruction" id="specialInstruction"
-															class="form-control"
-															Placeholder="Enter Special Instruction">
+									<div class="col-md-3">
+										<label for="bankGLHead" class="col-sm-4 control-label">G.L.Head
+											No. <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="glHeadNo" type="text" id="glHeadNo"
+												onchange="getTheValueInFields2();	" class="form-control"
+												Placeholder="Enter G.L.Head No" />
+										</div>
+									</div>
+
+								</div>
+								
+								
+								<!-- Row 2 -->
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label for="bankGLHead" class="col-sm-4 control-label">Select
+											G.L.Head </label>
+										<div class="col-sm-8">
+											<input name="selectGlHead" type="text" id="selectGlHead"
+												class="form-control" Placeholder="Select G.L.Head"
+												readonly="readonly" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+
+										<label for="bankGLHead" class="col-sm-4 control-label">Account
+											No <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="accountNo" type="text" id="accountNo"
+												onchange="setthroughAccountNo();" class="form-control"
+												Placeholder="Enter Account No" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+
+										<label for="accountHolder" class="col-sm-4 control-label">Select
+											Account Holder <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="selectAccountHolder" type="text"
+												id="selectAccountHolder" class="form-control"
+												Placeholder="Select Account Holder" readonly="readonly" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label for="accountHolder" class="col-sm-4 control-label">Balance
+										</label>
+										<div class="col-sm-8">
+											<input name="balance" type="text" id="balance"
+												class="form-control" Placeholder="Enter Balance"
+												readonly="readonly" />
+										</div>
+									</div>
+
+								</div>
+								
+								
+								<!-- Row 3 -->
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label for="accountHolder" class="col-sm-4 control-label">PAN-Aadhar
+										</label>
+										<div class="col-sm-8">
+											<input name="panAadhar" type="text" id="panAadhar"
+												class="form-control" Placeholder="Enter PAN-Aadhar" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label for="txtJointMemberName" class="col-sm-4 control-label">Amount(Rs.)<strong
+											style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="amount" type="text" id="amount"
+												onchange="setTheValueOfINDemonination();"
+												class="form-control" Placeholder="Enter Amount(Rs.)" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+
+										<label for="txtJointMemberName" class="col-sm-4 control-label">Penalty
+											Amount(Rs.) </label>
+										<div class="col-sm-8">
+											<input name="penaultyAmount" type="text" id="penaultyAmount"
+												class="form-control"
+												Placeholder="Enter Penaulty Amount(Rs.)" value"0" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label for="txtJointMemberName" class="col-sm-4 control-label">Scroll
+										</label>
+										<div class="col-sm-8">
+											<input name="scroll" type="text" id="scroll"
+												value="${ScrollNumber}" class="form-control"
+												Placeholder="Enter Scroll" readonly="readonly" />
+										</div>
+									</div>
+								</div>
+								
+								
+								<!-- Row 3 -->
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label for="txtJointMemberName" class="col-sm-4 control-label">Date
+										</label>
+										<div class="col-sm-8">
+											<input name="entryDate" type="text" id="entryDate"
+												value="${EntryDate}" class="form-control"
+												readonly="readonly" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Special
+											Instruction</label>
+										<div class="col-sm-8">
+											<textarea name="specialInstruction" id="specialInstruction"
+												class="form-control" Placeholder="Enter Special Instruction">
                                         </textarea>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Cashier's
-														Narration</label>
-													<div class="col-sm-8">
-														<textarea name="cashierNarration" id="cashierNarration"
-															class="form-control"
-															Placeholder="Enter Cashier's Narration">
-                                        </textarea>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="txtJointMemberName"
-														class="col-sm-4 control-label">Voucher No. </label>
-													<div class="col-sm-8">
-														<input name="voucherNo" type="text" id="voucherNo"
-															class="form-control" Placeholder="Enter Voucher No" />
-													</div>
-												</div>
-												<div class="row col-md-12">
-													<input type="submit" name="nextButton" value="Next" id="nextButton"
-														class="btn btn-success pull-right margin-r-5" />
-													<input type="button" name="btnReset" value="Reset" id="resetBtn"
-														class="btn btn-success pull-right margin-r-5"
-														onclick="window.location.href='/cashier'" />
+										</div>
+									</div>
 
-													<input onclick="saveDataCashier();" type="button" name="btnSave"
-														value="Save" id="btnSave"
-														class="btn btn-success pull-right margin-r-5" />
-												</div>
-											</div>
+									<div class="col-md-3">
+
+										<label class="col-sm-4 control-label">Cashier's
+											Narration</label>
+										<div class="col-sm-8">
+											<textarea name="cashierNarration" id="cashierNarration"
+												class="form-control" Placeholder="Enter Cashier's Narration">
+                                        </textarea>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label for="txtJointMemberName" class="col-sm-4 control-label">Voucher
+											No. </label>
+										<div class="col-sm-8">
+											<input name="voucherNo" type="text" id="voucherNo"
+												class="form-control" Placeholder="Enter Voucher No" />
 										</div>
 									</div>
 								</div>
 
-						</section>
+									<div class="row col-md-12">
+										 <input
+											onclick="saveDataCashier();" type="button" name="btnSave"
+											value="Save" id="btnSave"
+											class="btn btn-success pull-right margin-r-5" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
-						<section>
+<!-- 			<section class="content" id="section2" class="hidden">
 
+				<h3 id="inOROutCash">Plz Select the Credit or Debit</h3>
 
+				<div class="p-2 Cont">
+					<div class="mainTable p-0">
+						<table class="table tableCont table-bordered">
+							<thead>
+								<tr>
+									<th scope="col" style="width: 100px;" class="text-center">Available
+									</th>
+									<th scope="col" style="width: 200px;" class="text-center">No.
+										of Denomination</th>
+									<th scope="col" style="width: 70px;" class="text-center">Amount
+										(Rs.)</th>
+									<th scope="col" style="width: 200px;" class="text-center">No.
+										of Denomination</th>
+									<th scope="col" style="width: 70px;" class="text-center">Amount
+										(Rs.)</th>
+									<th scope="col" style="width: 70px;" class="text-center">Balance
+									</th>
+								</tr>
+							</thead>
 
-						</section>
+							<body>
+							<tr>
+								<th scope="row" class="text-center">0</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<label>2000.00 *</label> <input type="number"
+											class="tableinput ml-1" id="denomination_2000"
+											oninput="calculateTotal()">
+									</div>
+								</td>
 
-						<section class="content" id="section2" class="hidden">
-
-							<h3 id="inOROutCash">Plz Select the Credit or Debit</h3>
-
-							<div class="p-2 Cont">
-								<div class="mainTable p-0">
-									<table class="table tableCont table-bordered">
-										<thead>
-											<tr>
-												<th scope="col" style="width: 100px;" class="text-center">Available
-												</th>
-												<th scope="col" style="width: 200px;" class="text-center">No.
-													of Denomination</th>
-												<th scope="col" style="width: 70px;" class="text-center">Amount
-													(Rs.)</th>
-												<th scope="col" style="width: 200px;" class="text-center">No.
-													of Denomination</th>
-												<th scope="col" style="width: 70px;" class="text-center">Amount
-													(Rs.)</th>
-												<th scope="col" style="width: 70px;" class="text-center">Balance
-												</th>
-											</tr>
-										</thead>
-
-										<body>
-											<tr>
-												<th scope="row" class="text-center">0</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<label>2000.00 *</label> <input type="number"
-															class="tableinput ml-1" id="denomination_2000"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-
-												<td style="font-weight: 600;" class="text-center">0</td>
-												<!--<td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td style="font-weight: 600;" class="text-center">0</td>
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<label>2000.00 *</label> <input type="text"
 															class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">0</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">0</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<label>1000.00 *</label> <input type="number"
-															class="tableinput ml-1" id="denomination_1000"
-															oninput="calculateTotal()">
-													</div>
-												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">0</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<label>1000.00 *</label> <input type="number"
+											class="tableinput ml-1" id="denomination_1000"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<label>1000.00 *</label> <input type="text"
 															class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">0</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">1568</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<label>500.00 *</label> <input type="number"
-															class="tableinput ml-1" id="denomination_500"
-															oninput="calculateTotal()">
-													</div>
-												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">1568</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<label>500.00 *</label> <input type="number"
+											class="tableinput ml-1" id="denomination_500"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<label>500.00 *</label> <input type="text"
 															class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">1568</td> -->
-											</tr>
-											<tr>
+												<td style="font-weight: 600;" class="text-center">1568</td>
+							</tr>
+							<tr>
 
-												<th scope="row" class="text-center">95</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>200.00 *</span> <input type="number"
-															class="tableinput ml-1" id="denomination_200"
-															oninput="calculateTotal()">
-													</div>
+								<th scope="row" class="text-center">95</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>200.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_200"
+											oninput="calculateTotal()">
+									</div>
 
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>200.00 *</span> <input type="text"
 															class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">95</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">188</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>100.00 *</span> <input type="number"
-															class="tableinput ml-1" id="denomination_100"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">95</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">188</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>100.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_100"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>100.00 *</span> <input type="text"
 															class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">188</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">54</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>50.00 *</span> <input type="number"
-															class="tableinput ml-1" id="denomination_50"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">188</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">54</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>50.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_50"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>50.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">54</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">124</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>20.00 *</span> <input type="number"
-															class="tableinput ml-1" id="denomination_20"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">54</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">124</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>20.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_20"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>20.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">124</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">38</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>10.00 *</span> <input type="number"
-															class="tableinput ml-1" id="denomination_10"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">124</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">38</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>10.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_10"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>10.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">38</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">1</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>5.00 *</span> <input type="number" class="tableinput ml-1"
-															id="denomination_5" oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">38</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">1</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>5.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_5"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>5.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">1</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">1</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>2.00 *</span> <input type="number" class="tableinput ml-1"
-															id="denomination_2" oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">1</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>2.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_2"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>2.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">1</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">1</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>1.00 *</span>
-														<input type="number" class="tableinput ml-1" id="denomination_1"
-															oninput="calculateTotal()">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">1</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>1.00 *</span> <input type="number"
+											class="tableinput ml-1" id="denomination_1"
+											oninput="calculateTotal()">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>1.00 *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">1</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">0</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<div class="labelinputs">
-														<span>Coins *</span> <input type="text" class="tableinput ml-1">
-													</div>
-												</td>
-												<td style="font-weight: 600;" class="text-center">0</td>
+												<td style="font-weight: 600;" class="text-center">1</td>
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">0</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;">
+									<div class="labelinputs">
+										<span>Coins *</span> <input type="text"
+											class="tableinput ml-1">
+									</div>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
 
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<div class="labelinputs">
 														<span>Coins *</span> <input type="text" class="tableinput ml-1">
 													</div>
 												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<td style="font-weight: 600;" class="text-center">0</td> -->
-											</tr>
-											<tr>
-												<th scope="row" class="text-center">Total</th>
-												<td class="d-flex justify-content-center" style="font-weight: 600;">
-													<span id="totalAmount">0</span>
-												</td>
 												<td style="font-weight: 600;" class="text-center">0</td>
-												<!-- <td class="d-flex justify-content-center" style="font-weight: 600;">
+							</tr>
+							<tr>
+								<th scope="row" class="text-center">Total</th>
+								<td class="d-flex justify-content-center"
+									style="font-weight: 600;"><span id="totalAmount">0</span>
+								</td>
+								<td style="font-weight: 600;" class="text-center">0</td>
+								<td class="d-flex justify-content-center" style="font-weight: 600;">
 													<span>0</span>
 												</td>
-												<td style="font-weight: 600;" class="text-center">0</td> -->
-											</tr>
+												<td style="font-weight: 600;" class="text-center">0</td>
+							</tr>
 
-									</table>
-									<div class="container">
-										<div class="row mb-3">
-											<div
-												class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
-												<div class="subbox pl-2 mt-2 mt-sm-0"
-													style="background-color: rgb(239, 239, 239);">
-													<span class="text-primary">Transaction Amount</span><br>
-													<span id="transactionAmount">0</span>
-												</div>
-											</div>
-											<div
-												class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
-												<div class="subbox pl-2  mt-2 mt-sm-0"
-													style="background-color: rgb(239, 239, 239);">
-													<span class="text-primary">Difference</span><br>
-													<span id="differenceAmount">0</span>
-												</div>
-											</div>
-											<div
-												class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
-											</div>
-											<div
-												class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
-												<div class="subbox" style="text-align: right;">
-													<!-- <button class="btn mt-2 btn-primary">Trip</button> -->
-													<button id="previousButton"
-														class="btn mt-2 btn-primary">Back</button>
-													<!-- <button >Previous</button> -->
-												</div>
-											</div>
-										</div>
+						</table>
+						<div class="container">
+							<div class="row mb-3">
+								<div
+									class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
+									<div class="subbox pl-2 mt-2 mt-sm-0"
+										style="background-color: rgb(239, 239, 239);">
+										<span class="text-primary">Transaction Amount</span><br>
+										<span id="transactionAmount">0</span>
+									</div>
+								</div>
+								<div
+									class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
+									<div class="subbox pl-2  mt-2 mt-sm-0"
+										style="background-color: rgb(239, 239, 239);">
+										<span class="text-primary">Difference</span><br> <span
+											id="differenceAmount">0</span>
+									</div>
+								</div>
+								<div
+									class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
+								</div>
+								<div
+									class="col-12 col-lg-6 col-xl-3 col-md-6 d-flex justify-content-center flex-column">
+									<div class="subbox" style="text-align: right;">
+										<button class="btn mt-2 btn-primary">Trip</button>
+										<button id="previousButton" class="btn mt-2 btn-primary">Back</button>
+										<button >Previous</button>
 									</div>
 								</div>
 							</div>
-
-
-						</section>
-
-
-
-
-
-
-						<section>
-
-							<div class="col-md-12">
-								<div class="box box-success" style="box-shadow: none; overflow: auto !important;">
-									<div class="box-header with-border">
-										<div class="box-tools pull-right"></div>
-									</div>
-									<div class="radio-buttons">
-										<!--
-									<label><input type="radio" name="cashier"
-										value="lastTransction">Last Transaction</label> <label><input
-										type="radio" name="cashier" value="allTransaction">All
-										Transaction</label> <label><input type="radio" name="cashier"
-										value="debitTransaction">Debit Transaction</label> <label><input
-										type="radio" name="cashier" value="creditTransaction">Credit
-										Transaction</label>
--->
-
-										<label>
-
-											<input type="radio" id="all" name="paymentType" value="all" checked> All
-											<input type="radio" id="credit" name="paymentType" value="credit">
-											Credit
-											<input type="radio" id="debit" name="paymentType" value="debit"> Debit
-										</label>
-									</div>
-									<div class="box-body">
-										<div class="clearfix margin-bottom-10"></div>
-
-
-										<!-- MODAL TABLE  -->
-
-
-										<!-- Modal -->
-										<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-											aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-											<div class="modal-dialog modal-dialog-centered" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h5 class="modal-title" id="exampleModalCenterTitle">
-															Denomination.. ..</h5>
-														<h5 class="modal-title" id="cashierType"></h5>
-														<!-- Dynamically display "OUT" -->
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-													</div>
-													<div class="modal-body">
-														<table class="table table-hover">
-															<thead>
-																<tr>
-																	<th scope="col">#</th>
-																	<th scope="col">NO of Denomination</th>
-																	<th scope="col">Value</th>
-																	<th scope="col">Amount</th>
-																</tr>
-															</thead>
-															<tbody id="denominationTableBody">
-																<!-- Table body will be populated dynamically using JavaScript -->
-															</tbody>
-														</table>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary"
-															data-dismiss="modal">Close</button>
-													</div>
-												</div>
-											</div>
-										</div>
-
-
-
-
-
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;" id="dataTable">
-											<thead>
-												<tr style="color: White; background-color: #008385;">
-													<th>Sr No</th>
-													<th>Scroll No</th>
-													<th>Entry Date</th>
-													<th>Amount</th>
-													<th>Payment Type</th>
-													<th>Account Info</th>
-													<th>Details</th>
-													<th>User</th>
-													<th>Denonimation</th>
-													<th>Delete</th>
-
-												</tr>
-											</thead>
-											<tbody>
-											</tbody>
-										</table>
-
-									</div>
-								</div>
-							</div>
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
-							</div>
+						</div>
 					</div>
-					</section>
-					<!-- </form> -->
-				</div>
-				<!-- /.content-wrapper -->
-				<div class="control-sidebar-bg"></div>
 				</div>
 
 
-				</section>
+			</section> -->
 
 
 
-				<!-- <script type="text/javascript">
+
+
+
+			<section>
+			<div class="row">
+				<div class="col-md-12">
+				
+					<div class="form-container"
+						style="box-shadow: none; overflow: auto !important;">
+						
+						<div class="box-header ">
+						<h3 class="box-title">Ledger Table</h3>
+						</div>
+						
+						<div class="box-body form-horizontal">
+							<table cellspacing="0" cellpadding="3" rules="all"
+								class="display nowrap table table-hover table-striped table-bordered"
+								border="1" style="width: 100%; border-collapse: collapse;"
+								id="dataTable">
+								<thead>
+									<tr style="color: White; background-color: #008385;">
+										<th>Sr No</th>
+										<th>Scroll No</th>
+										<th>Entry Date</th>
+										<th>Amount</th>
+										<th>Payment Type</th>
+										<th>Account Info</th>
+										<th>Details</th>
+										<th>User</th>
+										<th>Denonimation</th>
+										<th>Delete</th>
+
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+
+						</div>
+				</div>
+				<div class="box-body">
+					<div class="clearfix margin-bottom-10"></div>
+				</div>
+		</div>
+		</div>
+		</section>
+		<!-- </form> -->
+	</div>
+	<!-- /.content-wrapper -->
+	<div class="control-sidebar-bg"></div>
+	</div>
+
+
+	</section>
+
+
+
+	<!-- <script type="text/javascript">
     // Call the function to fetch the maximum member number when the page loads
     $(document).ready(function() {
         fetchMaxbranchNo();
@@ -773,39 +645,43 @@
         });
     }
 	</script> -->
-				<script src="bower_components/jquery/dist/jquery.min.js"></script>
-				<!-- Bootstrap 3.3.7 -->
-				<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-				<!-- InputMask -->
-				<script src="plugins/input-mask/jquery.inputmask.js"></script>
-				<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-				<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-				<!-- date-range-picker -->
-				<script src="bower_components/moment/min/moment.min.js"></script>
-				<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-				<!-- bootstrap datepicker -->
-				<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-				<!-- bootstrap color picker -->
-				<script src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-				<!-- bootstrap time picker -->
-				<!-- <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script> -->
-				<!-- SlimScroll -->
-				<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-				<!-- iCheck 1.0.1 -->
-				<!-- <script src="plugins/iCheck/icheck.min.js"></script> -->
-				<!-- FastClick -->
-				<script src="bower_components/fastclick/lib/fastclick.js"></script>
-				<!-- AdminLTE App -->
-				<script src="dist/js/adminlte.min.js"></script>
-				<!-- AdminLTE for demo purposes -->
-				<script src="dist/js/demo.js"></script>
-				<!-- <script src="dist/js/GetAllBranch.js"></script> -->
-				<!-- <script src="dist/js/cashier.js"></script> -->
-				<!-- <script src="dist/js/accountingJs.js"></script>  -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- InputMask -->
+	<script src="plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<!-- date-range-picker -->
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script
+		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap datepicker -->
+	<script
+		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<!-- bootstrap color picker -->
+	<script
+		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<!-- bootstrap time picker -->
+	<!-- <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script> -->
+	<!-- SlimScroll -->
+	<script
+		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<!-- <script src="plugins/iCheck/icheck.min.js"></script> -->
+	<!-- FastClick -->
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="dist/js/demo.js"></script>
+	<!-- <script src="dist/js/GetAllBranch.js"></script> -->
+	<!-- <script src="dist/js/cashier.js"></script> -->
+	<!-- <script src="dist/js/accountingJs.js"></script>  -->
 
-				<!-- Optional JavaScript -->
-				<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-				<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 					crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
@@ -817,13 +693,13 @@
 				<script> -->
 
 
-				<script src="dist/js/NewAccountInvestment.js"></script>
+	<script src="dist/js/NewAccountInvestment.js"></script>
 
 
-				<!-- Select2 -->
-				<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+	<!-- Select2 -->
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 
-				<script>
+	<script>
 
 
 					const section1 = document.getElementById('section1');
@@ -873,7 +749,7 @@
 
 				</script>
 
-				<script>
+	<script>
 
 
 					$(document).ready(function () {
@@ -930,7 +806,7 @@
 				</script>
 
 
-				<script>
+	<script>
 
 
 					$(document).ready(function () {
@@ -969,7 +845,7 @@
 
 
 
-				<script>
+	<script>
 
 					function saveDataCashier() {
 
@@ -1408,7 +1284,7 @@
 
 				</script>
 
-				<script>
+	<script>
 					$(document).ready(function () {
 
 						getInTheTable();
@@ -1457,7 +1333,7 @@
 								function populateTable(data) {
 									const tableBody = dataTable.querySelector("tbody");
 									tableBody.innerHTML = "";
-									var fullName = '<%= session.getAttribute("fullName") %>';
+									var fullName = '<%=session.getAttribute("fullName")%>';
 
 									data.forEach((item, index) => {
 										const row = tableBody.insertRow();
@@ -1563,7 +1439,7 @@
 
 				</script>
 
-				<script>
+	<script>
 					function getTheValueInFields2() {
 
 						const glHeadNo = document.getElementById("glHeadNo").value;
@@ -1663,7 +1539,7 @@
 
 				</script>
 
-				<script>
+	<script>
 					function setthroughAccountNo() {
 
 						const accountNo = document.getElementById("accountNo").value;
@@ -1702,7 +1578,7 @@
 					}
 				</script>
 
-				<script>
+	<script>
 					function setTheValueOfINDemonination() {
 						const amount = document.getElementById("amount");
 
@@ -1716,7 +1592,7 @@
 				</script>
 
 
-				<script>
+	<script>
 					function calculateTotal() {
 						var total = 0;
 						var denomination2000 = parseInt(document.getElementById("denomination_2000").value) || 0;
@@ -1750,7 +1626,7 @@
 
 				</script>
 
-				<script>
+	<script>
 					function onchangeTheRadioButton() {
 						const credit = document.getElementById("credit");
 						const debit = document.getElementById("debit");
@@ -1764,7 +1640,7 @@
 					}
 				</script>
 
-				<script>
+	<script>
 
 					$(document).ready(function () {
 						// Add an event listener to the radio buttons
@@ -1811,7 +1687,7 @@
 					}); 
 				</script>
 
-				<script>
+	<script>
 					function dropDownForPendingTransaction() {
 						$.ajax({
 							type: "GET",
@@ -1880,7 +1756,7 @@
 						});
 					}
 				</script>
-			</body>
-			<!-- Dk/Admin/ShareIssue.aspx?ismodify=false EDB D 09:26:56 GMT -->
+</body>
+<!-- Dk/Admin/ShareIssue.aspx?ismodify=false EDB D 09:26:56 GMT -->
 
-			</html>
+</html>

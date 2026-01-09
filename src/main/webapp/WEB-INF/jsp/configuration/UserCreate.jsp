@@ -23,7 +23,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">User Create</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>CUSTOMIZATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">USER CREATION</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -32,37 +35,37 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-md-6">
-							<div class="box box-danger">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header ">
 									<h3 class="box-title">User Information</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>User ID <strong style="color: Red">*</strong></label>
 											<input name="userId" type="text" id="userId"
 												class="form-control" Placeholder="Enter User ID" /> <span
 												id="userIdMsg" style="color: Red; display: none;">*</span>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Password <strong style="color: Red">*</strong></label>
 											<input name="password" type="text" id="password"
 												class="form-control" Placeholder="Enter Password" /> <span
 												id="passwordMsg" style="color: Red; display: none;">*</span>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Full Name</label> <input name="fullName" type="text"
 												id="fullName" class="form-control"
 												Placeholder="Enter Full Name" />
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3"style="margin-top: 15px;">
+										
 											<label>Email ID <strong style="color: Red">*</strong></label>
 											<input name="email" type="text" id="email"
 												class="form-control" Placeholder="Enter Email ID" /> <span
@@ -71,24 +74,24 @@
 												Valid Mail ID</span> <span id="ContentPlaceHolder1_Reg1"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Invalid
 												Mail Id</span>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3"style="margin-top: 15px;">
+										
 											<label>Mobile No</label> <input name="mobile" type="text"
 												id="mobile" class="form-control"
 												Placeholder="Enter Mobile No" />
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Log In Branch</label> <select name="branchName"
 												id="branchName" class="form-control" style="width: 100%;">
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Back Date</label> <select name="backDate"
 												id="backDate" class="form-control" style="width: 100%;">
 												<option value="NO">NO</option>
@@ -124,28 +127,28 @@
 												<option value="29">29</option>
 												<option value="30">30</option>
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Re-Print</label> <select name="reprint" id="reprint"
 												class="form-control" style="width: 100%;">
 												<option value="YES">YES</option>
 												<option value="NO">NO</option>
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label>Delete Access</label> <select name="delAcc"
 												id="delAcc" class="form-control" style="width: 100%;">
 												<option value="YES">YES</option>
 												<option value="NO">NO</option>
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+									<div class="col-md-3" style="margin-top: 15px;">
+										
 											<label class="col-sm-4 control-label" style="width: 100%;">User
 												Status <strong style="color: Red">*</strong>
 											</label>
@@ -155,51 +158,52 @@
 													class="slider round"></span>
 												</label>
 											</div>
-										</div>
+										
 									</div>
 								</div>
 								<div class="box-footer">
-									<div class="row col-md-12">
+									<div class="row col-md-6">
 										<button type="button" name="save" value="Save" id="save"
 											class="btn btn-success pull-right margin-r-5"
 											onclick="validaeUser()">Save</button>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="box box-danger">
-								<div class="box-header with-border">
-									<h3 class="box-title">Branch Access</h3>
-								</div>
-								<div class="box-body">
-									<div>
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" id=""
-											style="width: 100%; border-collapse: collapse;">
-											<caption>Branch Access List</caption>
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">B.CODE</th>
-												<th scope="col">B.NAME</th>
-												<th scope="col"><input
-													id="ContentPlaceHolder1_gdvBranch_chkSelectAllPlan"
-													type="checkbox"
-													name="ctl00$ContentPlaceHolder1$gdvBranch$ctl01$chkSelectAllPlan"
-													onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$gdvBranch$ctl01$chkSelectAllPlan\&#39;,\&#39;\&#39;)&#39;, 0)" />
-												</th>
-											</tr>
-											<tbody id="ContentPlaceHolder1_gdvBranchAddBank">
-											</tbody>
-										</table>
-										<span id="mappedBranchMsg"
-											style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
+							<div class="col-md-12">
+								<div class="form-container">
+									<div class="box-header ">
+										<h3 class="box-title">Branch Access</h3>
+									</div>
+									<div class="box-body">
+										<div>
+											<table cellspacing="0" cellpadding="3" rules="all"
+												class="display nowrap table table-hover table-striped table-bordered"
+												border="1" id=""
+												style="width: 100%; border-collapse: collapse;">
+												<caption>Branch Access List</caption>
+												<tr style="color: White; background-color: #008385;">
+													<th scope="col">B.CODE</th>
+													<th scope="col">B.NAME</th>
+													<th scope="col"><input
+														id="ContentPlaceHolder1_gdvBranch_chkSelectAllPlan"
+														type="checkbox"
+														name="ctl00$ContentPlaceHolder1$gdvBranch$ctl01$chkSelectAllPlan"
+														onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$gdvBranch$ctl01$chkSelectAllPlan\&#39;,\&#39;\&#39;)&#39;, 0)" />
+													</th>
+												</tr>
+												<tbody id="ContentPlaceHolder1_gdvBranchAddBank">
+												</tbody>
+											</table>
+											<span id="mappedBranchMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-md-6">
 							<div class="box box-danger"
 								style="box-shadow: none; height: 250px; overflow: auto !important;">
@@ -413,8 +417,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
+					</div> -->
+					<!-- <div class="row">
 						<div class="col-md-12">
 							<div class="box box-success"
 								style="box-shadow: none; overflow: auto !important;">
@@ -439,7 +443,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</section>
 			</div>
 			<!-- /.content-wrapper -->

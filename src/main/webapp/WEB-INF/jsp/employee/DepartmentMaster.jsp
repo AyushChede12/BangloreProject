@@ -111,7 +111,10 @@ function clearInput(){
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Add Department</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE TEAM</b>
+				</h1>
+				<h5 style="margin-left: 18px;">MANAGE DEPARTMENTS</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -122,12 +125,13 @@ function clearInput(){
 
 				<form method="post" action="DepartmentMaster"
 					modelAttribute="departmentMaster" id="form1">
+
 					<div class="row">
 						<div class="col-md-12">
 
 							<div class="form-container">
 								<div class="box-header">
-									<h3 class="box-title">Add Department Master</h3>
+									<h3 class="box-title">Add Department</h3>
 								</div>
 								<div class="box-body form-horizontal">
 
