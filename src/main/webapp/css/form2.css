@@ -64,3 +64,24 @@
     padding: 20px;
     
 }
+.documents img {
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	border: 2px dashed #cfd8dc;
+	padding: 10px;
+	background: #fafafa;
+	transition: all 0.3s ease;
+}
+
+.documents img:hover {
+	border-color: #3c8dbc;
+	background: #eef6fc;
+	transform: scale(1.05);
+}
+
+.documents label {
+	font-weight: 600;
+	margin-bottom: 8px;
+	display: block;
+}

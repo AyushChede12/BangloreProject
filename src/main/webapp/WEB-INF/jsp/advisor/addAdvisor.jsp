@@ -29,13 +29,33 @@ if (status != null && status.equals("success")) {
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Add Advisor/Collector</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>FINANCIAL/CONSULTANT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">ADD CONSULTANT</h5>
+
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
-					<li class="active">Advisor/Collector</li>
+					<li class="active">Consultant</li>
 				</ol>
 			</section>
+			<div class="wizard-steps">
+				<div class="wizard-step active" id="step1">
+					<div class="step-circle">1</div>
+					<div class="step-title"> CONSULTANT DETAILS</div>
+					<div class="wizard-line"></div>
+				</div>
+				<div class="wizard-step inactive" id="step2">
+					<div class="step-circle">2</div>
+					<div class="step-title">INTRODUCER DETAILS</div>
+				</div>
+
+				<div class="wizard-step inactive" id="step3">
+					<div class="step-circle">3</div>
+					<div class="step-title">PAYMENT DETAILS</div>
+				</div>
+			</div>
 			<style>
 .box-body {
 	padding: 30px 35px;
@@ -57,24 +77,24 @@ if (status != null && status.equals("success")) {
 }
 </style>
 
-			<section class="content">
+			<section class="content ">
 
 				<input type="hidden" id="memberId" name="memberId" />
 
 				<!-- ================= Advisor / Collector Details ================= -->
-				<div class="row">
+				<div class="row " id="advisorDetailsSection">
 					<div class="col-md-12">
 
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Advisor / Collector Details</h3>
 							</div>
 
 							<form id="fileUploadForm">
-								<div class="box-body">
+								<div class="box-body ">
 
 									<!-- ROW 1 -->
-									<div class="row four-col-row">
+									<div>
 										<div class="col-md-3">
 											<label>Joining Date *</label> <input type="date"
 												id="joiningDate" name="joiningDate" class="form-control">
@@ -98,133 +118,146 @@ if (status != null && status.equals("success")) {
 									</div>
 
 									<!-- ROW 2 -->
-									<div class="row four-col-row">
-										<div class="col-md-3">
+									<div>
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>DOB *</label> <input id="dob" name="dob" readonly
 												class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Age</label> <input id="age" name="age" readonly
 												class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Relative Name</label> <input id="relativeName"
 												name="relativeName" readonly class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Relation</label> <input id="relativeRelation"
 												name="relativeRelation" readonly class="form-control">
 										</div>
 									</div>
 
 									<!-- ROW 3 -->
-									<div class="row four-col-row">
-										<div class="col-md-3">
+									<div>
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Branch *</label> <select id="branchName"
 												name="branchName" class="form-control"></select>
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>District *</label> <input id="district"
 												name="district" readonly class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>State *</label> <input id="state" name="state"
 												readonly class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Pincode *</label> <input id="pinCode" name="pinCode"
 												readonly class="form-control">
 										</div>
 									</div>
 
 									<!-- ROW 4 -->
-									<div class="row four-col-row">
-										<div class="col-md-3">
+									<div>
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Occupation</label> <input id="occupation"
 												name="occupation" readonly class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Education</label> <input id="education"
 												name="education" readonly class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Nominee Name</label> <input id="nomineeName"
 												name="nomineeName" class="form-control">
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Nominee Age</label> <input id="nomineeAge"
 												name="nomineeAge" class="form-control">
 										</div>
 									</div>
 
 									<!-- ROW 5 -->
-									<div class="row four-col-row">
-										<div class="col-md-6">
+									<div>
+										<div class="col-md-6" style="margin-top: 15px;">
 											<label>Address *</label>
 											<textarea id="address" name="address" readonly
 												class="form-control"></textarea>
 										</div>
 
-										<div class="col-md-3">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Nominee Relation</label> <select id="relation"
 												name="relation" class="form-control"></select>
 										</div>
 									</div>
 
 								</div>
-								<!-- ================= PHOTO & SIGNATURE ================= -->
-								<div class="row four-col-row" style="margin-top: 35px;">
 
-									<div class="col-md-6">
-										<div class="box box-success">
-											<div class="box-header with-border text-center">
-												<h3 class="box-title">Photo</h3>
-											</div>
-											<div class="box-body text-center">
-												<img id="preview" class="profile-user-img"
-													style="height: 100px; width: 130px; margin-bottom: 10px;">
-												<input type="file" id="filetag" name="filetag">
-											</div>
-										</div>
+							</form>
+							<!-- ================= PHOTO & SIGNATURE ================= -->
+							<div class="documents" style="margin-top: 15px;">
+
+
+								<div class="col-md-6 text-center">
+									<div class="box-header with-border text-center">
+										<h3 class="box-title">Photo</h3>
 									</div>
-
-									<div class="col-md-6">
-										<div class="box box-success">
-											<div class="box-header with-border text-center">
-												<h3 class="box-title">Signature</h3>
-											</div>
-											<div class="box-body text-center">
-												<img id="secondpreview" class="profile-user-img"
-													style="height: 100px; width: 130px; margin-bottom: 10px;">
-												<input type="file" id="secondfiletag" name="secondfiletag">
-											</div>
-										</div>
-									</div>
-
+									<input type="file" name="aadharCard" id="aadharCard"
+										accept="image/*" onchange="previewImage(this,'previewFront')"
+										style="display: none;"> <label for="aadharFront">
+										<img id="previewFront" src="../images/upload/upload.png"
+										style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+									</label>
 								</div>
-						</div>
-					</div>
 
-					
+
+								<div class="col-sm-3 text-center">
+									<div class="box-header with-border text-center">
+										<h3 class="box-title">Signature</h3>
+									</div>
+									<input type="file" name="signature" id="signature"
+										accept="image/*" onchange="previewImage(this,'previewBack')"
+										style="display: none;"> <label for="aadharBack">
+										<img id="previewBack" src="../images/upload/upload.png"
+										style="width: 150px; height: 150px; border: 1px solid #ccc; cursor: pointer;">
+									</label>
+								</div>
+
+							</div>
+							<div class="box-footer">
+								<button type="button" class="btn btn-success pull-right"
+									onclick="goToInducerDetails()">NEXT</button>
+							</div>
+
+
+						</div>
+
+
+
+
+					</div>
+				</div>
+
+
 				<!-- ================= Introducer Details ================= -->
-				<div class="row">
+				<div class="row" id="inducerDetailsSection" style="display: none;">
 					<div class="col-md-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+						<div class="box form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Introducer Details</h3>
 							</div>
 							<div class="box-body">
 
-								<div class="row four-col-row">
+								<div class="row ">
 									<div class="col-md-3">
 										<label>Select Position *</label> <select id="selectPosition"
 											name="selectPosition" class="form-control select2"></select>
@@ -247,20 +280,29 @@ if (status != null && status.equals("success")) {
 								</div>
 
 							</div>
+							<!-- FOOTER -->
+							<div class="box-footer">
+								<button type="button" class="btn btn-success"
+									onclick="backToAdvisorDetails()">PREVIOUS</button>
+
+								<button type="button" class="btn btn-success pull-right"
+									onclick="goToPaymentDetails()">NEXT</button>
+							</div>
 						</div>
+
 					</div>
 				</div>
 
 				<!-- ================= Payment Details ================= -->
-				<div class="row">
+				<div class="row" id="paymentDetailsSection" style="display: none;">
 					<div class="col-md-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Payment Details</h3>
 							</div>
 
 							<div class="box-body">
-								<div class="row four-col-row">
+								<div class="row ">
 
 									<div class="col-md-3">
 										<label>Fees *</label> <input id="feesIfAny" name="feesIfAny"
@@ -303,16 +345,25 @@ if (status != null && status.equals("success")) {
 
 							</div>
 
-							<div class="box-footer text-right">
-								<button class="btn btn-info margin-r-5" onclick="loadNewPage()">New</button>
+
+
+
+
+							<div class="box-footer text-right ">
+								<button type="button" class="btn btn-success pull-left"
+									onclick="backToInducerDetails()">PREVIOUS</button>
+								<button class="btn btn-info margin-r-5" onclick="loadNewPage()">New
+								</button>
 								<button class="btn btn-success">Save</button>
 							</div>
+
+
 
 						</div>
 					</div>
 				</div>
 
-				</form>
+
 			</section>
 
 		</div>
@@ -453,6 +504,67 @@ if (status != null && status.equals("success")) {
 					alert("Device control failed");
 				}
 			});
+		}
+	</script>
+	<script>
+		function goToPaymentDetails() {
+
+			/* // BASIC VALIDATION (optional)
+			if ($("#branchName").val() == "") {
+			    alert("Please select Branch");
+			    return;
+			}
+			if ($("#clientNo").val() == "") {
+			    alert("Please select Client No");
+			    return;
+			}
+			if ($("#noOfShare").val() == "") {
+			    alert("Please enter No Of Share");
+			    return;
+			} */
+
+			$("#inducerDetailsSection").hide();
+			$("#paymentDetailsSection").show();
+
+			$("#step2").removeClass("active").addClass("completed");
+			$("#step3").removeClass("inactive").addClass("active");
+		}
+		function backToInducerDetails() {
+			$("#paymentDetailsSection").hide();
+			$("#inducerDetailsSection").show();
+
+			$("#step3").removeClass("active").addClass("inactive");
+			$("#step2").removeClass("completed").addClass("active");
+		}
+
+		function goToInducerDetails() {
+
+			/* // BASIC VALIDATION (optional)
+			if ($("#branchName").val() == "") {
+			    alert("Please select Branch");
+			    return;
+			}
+			if ($("#clientNo").val() == "") {
+			    alert("Please select Client No");
+			    return;
+			}
+			if ($("#noOfShare").val() == "") {
+			    alert("Please enter No Of Share");
+			    return;
+			} */
+
+			$("#advisorDetailsSection").hide();
+			$("#inducerDetailsSection").show();
+
+			$("#step1").removeClass("active").addClass("completed");
+			$("#step2").removeClass("inactive").addClass("active");
+		}
+		function backToAdvisorDetails() {
+			$("#inducerDetailsSection").hide();
+			$("#advisorDetailsSection").show();
+
+			$("#step2").removeClass("active").addClass("inactive");
+			$("#step1").removeClass("completed").addClass("active");
 		}
 	</script>
 
