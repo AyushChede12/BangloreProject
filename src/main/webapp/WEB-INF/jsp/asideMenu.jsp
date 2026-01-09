@@ -125,35 +125,35 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="cashier"><i class="fa fa-circle-o"></i>
 							NEW LEDGER </a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							OUTGOING PAYMENT</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="receipt"><i class="fa fa-circle-o"></i>
 							INCOMING RECEIPT</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="transfer"><i class="fa fa-circle-o"></i>
 							BANK/CASH TRANSFER</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="denominationExchange"><i class="fa fa-circle-o"></i>
 							MANUAL JOURNAL</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							INCENTIVE PAYMENT </a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							MIS INTEREST PAYMENT</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="contra"><i class="fa fa-circle-o"></i>
 							CHEQUE CLEARING PROCESSING</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="transactionList"><i class="fa fa-circle-o"></i>
 							MANDATE DEPOSIT TO BANK</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="transfer"><i class="fa fa-circle-o"></i>
 							BANK STATEMENT</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="cashier"><i class="fa fa-circle-o"></i>
 							CASH BOOK </a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="transactionList"><i class="fa fa-circle-o"></i>
 							FUNDS TRANSFER REGISTER</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="contra"><i class="fa fa-circle-o"></i>
 							DAILY TRANSACTION BOOK</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="denominationExchange"><i class="fa fa-circle-o"></i>
 							LEDGER SUMMARY REPORT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							JOURNAL ENTRY REPORT</a></li>
 
 				</ul></li>

@@ -88,7 +88,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Add Designation</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE TEAM</b>
+				</h1>
+				<h5 style="margin-left: 18px;">MANAGE DESIGNATION</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -104,7 +107,7 @@
 
 							<div class="form-container">
 								<div class="box-header">
-									<h3 class="box-title">Add Designation Master</h3>
+									<h3 class="box-title">Add Designation</h3>
 								</div>
 
 

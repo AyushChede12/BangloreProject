@@ -52,8 +52,10 @@ function check()
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader"
-					style="font-size: 30px; margin-left: 10px;">ADD CUSTOMER</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>CUSTOMER MODULE</b>
+				</h1>
+				<h5 style="margin-left: 18px;">ADD NEW CUSTOMER</h5>
 				<div class="wizard-steps">
 					<div class="wizard-step active" id="step1">
 						<div class="step-circle">1</div>
@@ -664,7 +666,7 @@ function check()
 
 								<div class="row">
 									<div class="col-md-12">
-									
+
 										<div id="clientSection" class="form-container">
 											<h3 class="box-title">
 												<b>CUSTOMER DETAILS</b>
@@ -1268,7 +1270,7 @@ function check()
 
 								</div>
 						</div>
-				
+
 
 
 
@@ -1459,7 +1461,8 @@ function check()
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="form-container" id="tableSection" style="display: none;">
+						<div class="form-container" id="tableSection"
+							style="display: none;">
 							<div class="box-header">
 								<h3 class="box-title">TABLE</h3>
 							</div>
