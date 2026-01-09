@@ -34,9 +34,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.microfinance.dto.BankModuleDto;
-import com.microfinance.model.BankModule;
-import com.microfinance.model.BranchModule;
 import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;
@@ -172,6 +169,7 @@ public class ConfigurationController {
 
 	// Ayush
 	@GetMapping("/getConmapnyDetails") // Ayush (without DTO)
+	@ResponseBody
 	public ResponseEntity<ApiResponse<List<CompanyMaster>>> fetchAllCompanyDetails() {
 		List<CompanyMaster> list = configurationService.fetchAllCompanyDetails();
 		ApiResponse<List<CompanyMaster>> response = new ApiResponse<>(HttpStatus.FOUND,
@@ -552,33 +550,33 @@ public class ConfigurationController {
 		}
 	}
 
-	@GetMapping("/deleterow")
-	public String getdeleterow(@RequestParam String id) {
-		int ID = Integer.parseInt(id);
-		directorMasterRepo.deleteById(ID);
-		return "configuration/DirectorDetail";
-	}
-
-	@GetMapping("/deleterowcategory")
-	public String getdeleterowCategory(@RequestParam String id) {
-		int ID = Integer.parseInt(id);
-		categoryMasterRepo.deleteById(ID);
-		return "configuration/CategoryMaster";
-	}
-
-	@GetMapping("/deleterowcaste")
-	public String getdeleterowCaste(@RequestParam String id) {
-		int ID = Integer.parseInt(id);
-		casteMasterRepo.deleteById(ID);
-		return "configuration/CasteMaster";
-	}
-
-	@GetMapping("/deleterowrelative")
-	public String getdeleterowrelative(@RequestParam String id) {
-		int ID = Integer.parseInt(id);
-		relationMasterRepo.deleteById(ID);
-		return "configuration/CasteMaster";
-	}
+//	@GetMapping("/deleterow")
+//	public String getdeleterow(@RequestParam String id) {
+//		int ID = Integer.parseInt(id);
+//		directorMasterRepo.deleteById(ID);
+//		return "configuration/DirectorDetail";
+//	}
+//
+//	@GetMapping("/deleterowcategory")
+//	public String getdeleterowCategory(@RequestParam String id) {
+//		int ID = Integer.parseInt(id);
+//		categoryMasterRepo.deleteById(ID);
+//		return "configuration/CategoryMaster";
+//	}
+//
+//	@GetMapping("/deleterowcaste")
+//	public String getdeleterowCaste(@RequestParam String id) {
+//		int ID = Integer.parseInt(id);
+//		casteMasterRepo.deleteById(ID);
+//		return "configuration/CasteMaster";
+//	}
+//
+//	@GetMapping("/deleterowrelative")
+//	public String getdeleterowrelative(@RequestParam String id) {
+//		int ID = Integer.parseInt(id);
+//		relationMasterRepo.deleteById(ID);
+//		return "configuration/CasteMaster";
+//	}
 
 	@GetMapping("/getAllDirectorMaster")
 	@ResponseBody

@@ -41,7 +41,7 @@
 									</button>
 								</div>
 							</div>
-							<form id="myForm" name="myForm" enctype="multipart/form-data">
+							<form id="formid">
 								<div id="ContentPlaceHolder1_pnlCdetails" class="aspNetDisabled">
 									<div class="box-body">
 										<!-- row-1  -->
@@ -49,33 +49,32 @@
 											<div class="col-md-3">
 
 												<label>Company Name :</label> <input name="companyName"
-													type="text" value="EQFI NIDHI LIMITED" disabled="disabled"
-													id="companyName" class="form-control" autocomplete="off" />
+													type="text" placeholder="ENTER COMPANY NAME"
+													readonly="readonly" id="companyName" class="form-control"
+													autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>Short Name :</label> <input name="shortName"
-													type="text" value="EQFI" maxlength="4" disabled="disabled"
-													id="shortName" class="form-control" autocomplete="off" />
+													type="text" placeholder="ENTER SHORT NAME" maxlength="4"
+													readonly="readonly" id="shortName" class="form-control"
+													autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
-												<label>Registration Date :</label>
-												<div class="input-group date">
-
-													<input name="doj" type="date" disabled="disabled" id="doj"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
+												<label>Registration Date :</label> <input name="doj"
+													type="date" readonly="readonly" id="doj"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>CIN No. :</label> <input name="cin" type="text"
-													value="U65990MH2022PLN385483" disabled="disabled" id="cin"
+													placeholder="ENTER CIN NO" readonly="readonly" id="cin"
 													class="form-control" autocomplete="off" />
 
 											</div>
@@ -88,30 +87,30 @@
 											<div class="col-md-3">
 
 												<label>PAN :</label> <input name="pan" type="text"
-													value="AAHCE1130D" disabled="disabled" id="pan"
+													placeholder="ENTER PAN" readonly="readonly" id="pan"
 													class="form-control" autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>TAN :</label> <input name="tan" type="text"
-													value="NGPE01436B" disabled="disabled" id="tan"
+													placeholder="ENTER TAN" readonly="readonly" id="tan"
 													class="form-control" autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>GSTIN :</label> <input name="gst" type="text"
-													disabled="disabled" id="gst" class="form-control"
-													autocomplete="off" />
+													readonly="readonly" id="gst" class="form-control"
+													autocomplete="off" placeholder="ENTER GSTIN" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>Nominal Share Value :</label> <input
 													name="shareValue" type="text" value="10"
-													disabled="disabled" id="shareValue" class="form-control"
-													autocomplete="off"
+													readonly="readonly" id="shareValue" class="form-control"
+													autocomplete="off" placeholder="ENTER NOMINAL SHARE VALUE"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
@@ -123,62 +122,30 @@
 											<div class="col-md-3">
 
 												<label>Address :</label> <input name="address" type="text"
-													value="PLOT NO 36 DATE LAYOUT JAYTALA ROAD NAGPUR"
-													disabled="disabled" id="address" class="form-control"
-													autocomplete="off" />
+													placeholder="ENTER ADDRESS" readonly="readonly"
+													id="address" class="form-control" autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
-												<label>State :</label> <select name="state"
-													disabled="disabled" id="state" class="form-control select2"
-													style="width: 100%;">
-													<option value="ANDRA PRADESH">ANDRA PRADESH</option>
-													<option value="ARUNACHAL PRADESH">ARUNACHAL
-														PRADESH</option>
-													<option value="ASSAM">ASSAM</option>
-													<option value="BIHAR">BIHAR</option>
-													<option value="CHHATTISGARH">CHHATTISGARH</option>
-													<option value="DELHI">DELHI</option>
-													<option value="GUJARAT">GUJARAT</option>
-													<option value="HARYANA">HARYANA</option>
-													<option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
-													<option value="JAMMU AND KASHMIR">JAMMU AND
-														KASHMIR</option>
-													<option value="JHARKHAND">JHARKHAND</option>
-													<option value="KARNATAKA">KARNATAKA</option>
-													<option value="KERALA">KERALA</option>
-													<option value="MADYA PRADESH">MADYA PRADESH</option>
-													<option selected="selected" value="MAHARASHTRA">MAHARASHTRA</option>
-													<option value="MANIPUR">MANIPUR</option>
-													<option value="MEGHALAYA">MEGHALAYA</option>
-													<option value="MIZORAM">MIZORAM</option>
-													<option value="NAGALAND">NAGALAND</option>
-													<option value="ODISSA">ODISSA</option>
-													<option value="PUNJAB">PUNJAB</option>
-													<option value="RAJASTHAN">RAJASTHAN</option>
-													<option value="SIKKIM">SIKKIM</option>
-													<option value="TAMIL NADU">TAMIL NADU</option>
-													<option value="TRIPURA">TRIPURA</option>
-													<option value="UTTAR PRADESH">UTTAR PRADESH</option>
-													<option value="UTTARAKHAND">UTTARAKHAND</option>
-													<option value="WEST BENGAL">WEST BENGAL</option>
-												</select>
+												<label>State :</label> <input name="state" type="text"
+													placeholder="ENTER STATE" readonly="readonly" id="state"
+													class="form-control" autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>Pin Code :</label> <input name="pinCode" type="text"
-													value="440036" disabled="disabled" id="pinCode"
-													class="form-control" autocomplete="off"
+													placeholder="ENTER PIN CODE" readonly="readonly"
+													id="pinCode" class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>Email ID :</label> <input name="email" type="text"
-													value="EQFIOFFICIAL@GMAIL.COM" disabled="disabled"
-													id="email" class="form-control" autocomplete="off" />
+													placeholder="ENTER EMAIL ID" readonly="readonly" id="email"
+													class="form-control" autocomplete="off" />
 
 											</div>
 										</div>
@@ -189,32 +156,34 @@
 											<div class="col-md-3">
 
 												<label>Authorized Capital :</label> <input
-													name="authorizedcapital" type="text" value="2100000"
-													disabled="disabled" id="authorizedcapital"
-													class="form-control" autocomplete="off"
+													name="authorizedcapital" type="text"
+													placeholder="ENTER AUTHORIZED CAPITAL" readonly="readonly"
+													id="authorizedcapital" class="form-control"
+													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>PaidUp Capital :</label> <input name="paidup"
-													type="text" value="2100000" disabled="disabled" id="paidup"
-													class="form-control" autocomplete="off"
+													type="text" placeholder="ENTER PAIDUP CAPITAL"
+													readonly="readonly" id="paidup" class="form-control"
+													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>NOF :</label> <input name="landLine" type="text"
-													value="0" disabled="disabled" id="landLine"
+													placeholder="ENTER NOF" readonly="readonly" id="landLine"
 													class="form-control" autocomplete="off" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>Mobile No :</label> <input name="mobile" type="text"
-													value="8975689756" disabled="disabled" id="mobile"
-													class="form-control" autocomplete="off" />
+													placeholder="ENTER MOBILE NO" readonly="readonly"
+													id="mobile" class="form-control" autocomplete="off" />
 
 											</div>
 										</div>
@@ -225,33 +194,35 @@
 											<div class="col-md-3">
 
 												<label>TDS (With PAN) :</label> <input name="tDSWithPAN"
-													type="text" value="0" disabled="disabled" id="TDSWithPAN"
-													class="form-control" autocomplete="off"
+													type="text" placeholder="ENTER TDS(WITH PAN)"
+													readonly="readonly" id="TDSWithPAN" class="form-control"
+													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>TDS (Without PAN) :</label> <input
-													name="tDSWithoutPAN" type="text" value="0"
-													disabled="disabled" id="TDSWithoutPAN" class="form-control"
-													autocomplete="off"
+													name="tDSWithoutPAN" type="text"
+													placeholder="ENTER TDS(WITHOUT PAN)" readonly="readonly"
+													id="TDSWithoutPAN" class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
 												<label>TAX Deduction:</label> <input name="tax" type="text"
-													value="0" disabled="disabled" id="tax" class="form-control"
-													autocomplete="off"
+													placeholder="ENTER TAX DEDUCTION" readonly="readonly"
+													id="tax" class="form-control" autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
 											<div class="col-md-3">
 
-												<label>TAX Deduction(Seniour) :</label> <input name="taxSr"
-													type="text" value="0" disabled="disabled" id="taxSr"
-													class="form-control" autocomplete="off"
+												<label>TAX Deduction(Senior) :</label> <input name="taxSr"
+													type="text" placeholder="ENTER TAX DEDUCTION(SENIOR)"
+													readonly="readonly" id="taxSr" class="form-control"
+													autocomplete="off"
 													onkeypress="return isNumberKey(this, event);" />
 
 											</div>
@@ -334,42 +305,44 @@
 		<div class="control-sidebar-bg"></div>
 	</div>
 
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
+	<script src="dist/js/adminlte.min.js"></script>
+
+	<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	Bootstrap 3.3.7
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- InputMask -->
+	InputMask
 	<script src="plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-	<!-- date-range-picker -->
+	date-range-picker
 	<script src="bower_components/moment/min/moment.min.js"></script>
 	<script
 		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap datepicker -->
+	bootstrap datepicker
 	<script
 		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<!-- bootstrap color picker -->
+	bootstrap color picker
 	<script
 		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-	<!-- bootstrap time picker -->
+	bootstrap time picker
 	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-	<!-- SlimScroll -->
+	SlimScroll
 	<script
 		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<!-- iCheck 1.0.1 -->
+	iCheck 1.0.1
 	<script src="plugins/iCheck/icheck.min.js"></script>
-	<!-- FastClick -->
+	FastClick
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
+	AdminLTE App
 	<script src="dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
+	AdminLTE for demo purposes
 	<script src="dist/js/demo.js"></script>
-	<!-- Select2 -->
-	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+	Select2
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script> -->
 
 	<script>
 		$(document).ready(function() {
-			$("#myForm").submit(function(e) {
+			/* $("#myForm").submit(function(e) {
 				e.preventDefault(); // prevent default form submit action
 
 				var formData = new FormData($(this)[0]); // create new FormData object from form data
@@ -382,6 +355,7 @@
 					processData : false,
 					contentType : false,
 					success : function(data) {
+						alert("success");
 						window.location.href = "CompanyDetails";
 						alert("Data Updated Successfully")
 					},
@@ -389,7 +363,236 @@
 						console.log(error);
 					}
 				});
+			}); */
+			
+			$("#updateBtn").click(function(event) {
+				event.preventDefault();
+
+				// Convert text to uppercase
+				$("#formid").find("input[type=text], textarea").each(function() {
+					if ($(this).val()) {
+						$(this).val($(this).val().toUpperCase());
+					}
+				});
+
+				// Clear all error messages
+				$('#chkcompanyname, #chkshortname, #chksignupdate, #chkcinno, #chkpan, #chktan, #chkgstin, #chkdeclaredvalue, #chkaddress, #chkstate, #chkcity, #chkpincode, #chkemailid, #chkauthorizedsharecapital, #chkpaidupcapital, #chknof, #chkhelplineNo, #chktdswithpan, #chktdswithoutpan, #chktaxdeduction, #chkbranchManagerContactNo').text('');
+
+				// Get field values
+				var companyName = $('#companyName').val().trim();
+				var shortName = $('#shortName').val().trim();
+				var signUpDate = $('#signUpDate').val().trim();
+				var cinNo = $('#cinNo').val().trim();
+				var pan = $('#pan').val().trim();
+				var tan = $('#tan').val().trim();
+				var gstin = $('#gstin').val().trim();
+				var declaredValue = $('#declaredValue').val().trim();
+				var address = $('#address').val().trim();
+				var state = $('#state').val().trim();
+				var city = $('#city').val().trim();
+				var pinCode = $('#pinCode').val().trim();
+				var emailId = $('#emailId').val().trim();
+				var authorizedShareCapital = $('#authorizedShareCapital').val().trim();
+				var paidUpCapital = $('#paidUpCapital').val().trim();
+				var nof = $('#nof').val().trim();
+				var helplineNo = $('#helplineNo').val().trim();
+				var tdsWithPan = $('#tdsWithPan').val().trim();
+				var tdsWithoutPan = $('#tdsWithoutPan').val().trim();
+				var taxDeduction = $('#taxDeduction').val().trim();
+				var branchManagerContactNo = $('#branchManagerContactNo').val().trim();
+
+				// Regex patterns
+				var contactPattern = /^[6-9][0-9]{9}$/;
+				var panPattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+				var pinPattern = /^[1-9][0-9]{5}$/;
+				var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+				const cinPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/; // Alpha + numeric + special char
+				const tanPattern = /^[A-Z]{4}[0-9]{5}[A-Z]{1}$/;
+
+				let isValid = true;
+
+				if (companyName === '') {
+					$('#chkcompanyname').text('* This field is required');
+					$('#companyName').focus();
+					isValid = false;
+				}
+				if (shortName === '') {
+					$('#chkshortname').text('* This field is required');
+					$('#shortName').focus();
+					isValid = false;
+				}
+				if (signUpDate === '') {
+					$('#chksignupdate').text('* This field is required');
+					$('#signUpDate').focus();
+					isValid = false;
+				}
+				if (cinNo === '') {
+					$('#chkcinno').text('* This field is required');
+					$('#cinNo').focus();
+					isValid = false;
+				} else if (!cinPattern.test(cinNo)) {
+					$('#chkcinno').text('CIN No must contain alphabets, numbers, and at least one special character.');
+					$('#cinNo').focus();
+					isValid = false;
+				}
+				if (pan === '') {
+					$('#chkpan').text('* This field is required');
+					$('#pan').focus();
+					isValid = false;
+				} else if (!panPattern.test(pan)) {
+					alert("Please enter a valid PAN card number (e.g., ABCDE1234F).");
+					$('#pan').focus();
+					return false;
+				}
+				if (tan === '') {
+					$('#chktan').text('* This field is required');
+					if (isValid) $('#tan').focus();
+					isValid = false;
+				} else if (!tanPattern.test(tan)) {
+					$('#chktan').text('TAN No must contain only alphabets and numbers (no special characters).');
+					$('#tan').focus();
+					isValid = false;
+				}
+				if (gstin === '') {
+					$('#chkgstin').text('* This field is required');
+					$('#gstin').focus();
+					isValid = false;
+				}
+				if (declaredValue === '') {
+					$('#chkdeclaredvalue').text('* This field is required');
+					$('#declaredValue').focus();
+					isValid = false;
+				}
+				if (address === '') {
+					$('#chkaddress').text('* This field is required');
+					$('#address').focus();
+					isValid = false;
+				}
+				if (state === '') {
+					$('#chkstate').text('* This field is required');
+					$('#state').focus();
+					isValid = false;
+				}
+				if (city === '') {
+					$('#chkcity').text('* This field is required');
+					$('#city').focus();
+					isValid = false;
+				}
+				if (pinCode === '') {
+					$('#chkpincode').text('* This field is required');
+					$('#pinCode').focus();
+					isValid = false;
+				} else if (!pinPattern.test(pinCode)) {
+					alert("Please enter a valid 6-digit PIN code (first digit cannot be 0).");
+					$('#pinCode').focus();
+					return false;
+				}
+				if (emailId === '') {
+					$('#chkemailid').text('* This field is required');
+					$('#emailId').focus();
+					isValid = false;
+				} else if (!emailPattern.test(emailId)) {
+					alert('Please enter a valid email address (e.g., example@domain.com)');
+					$('#emailId').focus();
+					isValid = false;
+				}
+				if (authorizedShareCapital === '') {
+					$('#chkauthorizedsharecapital').text('* This field is required');
+					$('#authorizedShareCapital').focus();
+					isValid = false;
+				}
+				if (paidUpCapital === '') {
+					$('#chkpaidupcapital').text('* This field is required');
+					$('#paidUpCapital').focus();
+					isValid = false;
+				}
+				if (nof === '') {
+					$('#chknof').text('* This field is required');
+					$('#nof').focus();
+					isValid = false;
+				}
+				if (helplineNo === '') {
+					$('#chkhelplineno').text('* This field is required');
+					$('#helplineNo').focus();
+					isValid = false;
+				} else if (!contactPattern.test(helplineNo)) {
+					alert("Please enter a valid 10-digit HelpLine number.");
+					$('#helplineNo').focus();
+					return false;
+				}
+				if (tdsWithPan === '') {
+					$('#chktdswithpan').text('* This field is required');
+					$('#tdsWithPan').focus();
+					isValid = false;
+				}
+				if (tdsWithoutPan === '') {
+					$('#chktdswithoutpan').text('* This field is required');
+					$('#tdsWithoutPan').focus();
+					isValid = false;
+				}
+				if (taxDeduction === '') {
+					$('#chktaxdeduction').text('* This field is required');
+					$('#taxDeduction').focus();
+					isValid = false;
+				}
+				if (branchManagerContactNo === '') {
+					$('#chkbranchManagerContactNo').text('* This field is required');
+					$('#branchManagerContactNo').focus();
+					isValid = false;
+				} else if (!contactPattern.test(branchManagerContactNo)) {
+					alert("Please enter a valid 10-digit Branch Manager Contact Number.");
+					$('#branchManagerContactNo').focus();
+					return false;
+				}
+
+				if (!isValid) {
+					return false;
+				}
+
+				var declaredValue = $("#declaredValue").val();
+				var paidUpCapital = $("#paidUpCapital").val();
+				var noOfShares = paidUpCapital / declaredValue;
+
+				let formData = {
+					id: $("#id").val(),
+					companyName: $("#companyName").val(),
+					shortName: $("#shortName").val(),
+					signUpDate: $("#signUpDate").val(),
+					cinNo: $("#cinNo").val(),
+					pan: $("#pan").val(),
+					tan: $("#tan").val(),
+					gstin: $("#gstin").val(),
+					declaredValue: $("#declaredValue").val(),
+					address: $("#address").val(),
+					state: $("#state").val(),
+					city: $("#city").val(),
+					pinCode: $("#pinCode").val(),
+					emailId: $("#emailId").val(),
+					authorizedShareCapital: $("#authorizedShareCapital").val(),
+					paidUpCapital: $("#paidUpCapital").val(),
+					nof: $("#nof").val(),
+					helplineNo: $("#helplineNo").val(),
+					tdsWithPan: $("#tdsWithPan").val(),
+					tdsWithoutPan: $("#tdsWithoutPan").val(),
+					taxDeduction: $("#taxDeduction").val(),
+					branchManagerContactNo: $("#branchManagerContactNo").val()
+				};
+
+				$.ajax({
+					url: "api/preference/update",
+					type: "POST",
+					contentType: "application/json",
+					data: JSON.stringify(formData),
+					success: function() {
+						alert("Company details updated successfully!");
+					},
+					error: function() {
+						alert("Error updating company details");
+					}
+				});
+
 			});
+			
 		});
 	</script>
 
@@ -432,6 +635,82 @@
 
 				reader.readAsDataURL(input.files[0]);
 			}
+		}
+
+		function getConmapnyDetails() {
+			$
+					.ajax({
+						type : "GET",
+						contentType : "application/json",
+						url : 'getConmapnyDetails',
+						asynch : false,
+						success : function(response) {
+
+							if (response.status == 'FOUND') {
+								let company = response.data[0];
+								document.getElementById("companyName").value = company.companyName;
+								document.getElementById("shortName").value = company.shortName;
+								document.getElementById("doj").value = company.doj;
+								document.getElementById("cin").value = company.cin;
+								document.getElementById("pan").value = company.pan;
+								document.getElementById("tan").value = company.tan;
+								document.getElementById("gst").value = company.gst;
+								document.getElementById("shareValue").value = company.shareValue;
+								document.getElementById("address").value = company.address;
+								document.getElementById("state").value = company.state;
+								document.getElementById("pinCode").value = company.pinCode;
+								document.getElementById("email").value = company.email;
+								document.getElementById("authorizedcapital").value = company.authorizedcapital;
+								document.getElementById("paidup").value = company.paidup;
+								document.getElementById("landLine").value = company.landLine;
+								document.getElementById("mobile").value = company.mobile;
+								document.getElementById("TDSWithPAN").value = company.tDSWithPAN;
+								document.getElementById("TDSWithoutPAN").value = company.tDSWithoutPAN;
+								document.getElementById("tax").value = company.tax;
+								document.getElementById("taxSr").value = company.taxSr;
+
+								var imgElement = document
+										.getElementById("preview");
+								imgElement.src = "data:image/png;base64,"
+										+ company.frontEndPhoto;
+								//imgElement.src ="data:image/png;base64,"+data[i].image;
+
+								var imgElement = document
+										.getElementById("secondpreview");
+								imgElement.src = "data:image/png;base64,"
+										+ company.frontEndSignature;
+								//imgElement.src ="data:image/png;base64,"+data[i].image;
+							}
+
+						},
+						error : function() {
+							alert("Device control failed");
+						}
+					});
+		}
+
+		function enableDisabledField() {
+			document.getElementById("companyName").readOnly = false;
+			document.getElementById("shortName").readOnly = false;
+			document.getElementById("doj").readOnly = false;
+			document.getElementById("cin").readOnly = false;
+			document.getElementById("pan").readOnly = false;
+			document.getElementById("tan").readOnly = false;
+			document.getElementById("gst").readOnly = false;
+			document.getElementById("shareValue").readOnly = false;
+			document.getElementById("address").readOnly = false;
+			document.getElementById("state").readOnly = false;
+			document.getElementById("pinCode").readOnly = false;
+			document.getElementById("email").readOnly = false;
+			document.getElementById("authorizedcapital").readOnly = false;
+			document.getElementById("paidup").readOnly = false;
+			document.getElementById("landLine").readOnly = false;
+			document.getElementById("mobile").readOnly = false;
+			document.getElementById("TDSWithPAN").readOnly = false;
+			document.getElementById("TDSWithoutPAN").readOnly = false;
+			document.getElementById("tax").readOnly = false;
+			document.getElementById("taxSr").readOnly = false;
+			document.getElementById("updateBtn").disabled = false;
 		}
 	</script>
 
