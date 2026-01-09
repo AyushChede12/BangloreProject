@@ -14,7 +14,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Payment</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE ACCOUNT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">OUTGOING PAYMENT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -22,15 +25,17 @@
 				</ol>
 			</section>
 
-			<form id="form1">
+			<%-- <form id="form1">
 				<section class="content">
+				
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Instrument Details</h3>
 								</div>
-								<div class="box-body">
+								
+								<div class="box-body form-horizontal">
 									<div class="col-md-6">
 										<div class="form-group row">
 											<label for="bankGLHead" class="col-sm-4 control-label">Voucher
@@ -397,7 +402,222 @@
 						</div>
 					</div>
 				</section>
-			</form>
+			</form> --%>
+			
+			
+			<section class="content">
+			
+				<div class="row">
+					<div class="col-md-12">
+					<!-- Box 1 -->
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Search Box</h3>
+							</div>
+							
+							<div class="box-body form-horizontal">
+								<div class="row four-field-row">
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">Branch Name<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<select name="selectBranchName" id="selectBranchName"
+												class="form-control select2" style="width: 100%;">
+												
+													<option>Select Branch Name</option>
+													<option >Mahal</option>
+													<option >Nandanvan</option>
+													<option >Sitabildi</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-4">
+
+										<label for="bankGLHead" class="col-sm-4 control-label">Start Date<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="sDate" type="date" id="fDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" style="text-transform: uppercase;" />
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-md-4">
+
+										<label for="bankGLHead" class="col-sm-4 control-label">End Date<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="eDate" type="date" id="fDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" style="text-transform: uppercase;" />
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="clearfix margin-bottom-10"></div>
+								<div class="text-center">
+									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success">
+									<span class="fa fa-search"></span> SEARCH</a>
+								</div>
+							</div>
+						</div>
+						
+					
+					<!-- Box 2 -->
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Entry Details</h3>
+							</div>
+							
+							<div class="box-body form-horizontal">
+							
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Branch Name<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<select name="selectBranchName" id="selectBranchName"
+												class="form-control select2" style="width: 100%;">
+												
+													<option>Select Branch Name</option>
+													<option >Mahal</option>
+													<option >Nandanvan</option>
+													<option >Sitabildi</option>
+											</select>
+										</div>
+									</div>
+
+									
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Voucher ID<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<input name="voucherId" type="text" id="VoucherId"
+											 class="form-control" Placeholder="Enter VoucherId"/>
+										</div>
+									</div>
+									
+									<div class="col-md-3">
+										<label for="bankGLHead" class="col-sm-4 control-label">Date To Entry<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="eDate" type="date" id="fDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" style="text-transform: uppercase;" />
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Credit Ledger(Source)<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<select name="selectCreditLedger" id="selectCreditLedger"
+												class="form-control select2" style="width: 100%;">
+												
+													<option>Select Credit Ledger</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Debit Ledger(Destination)<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<select name="selectDebitLedger" id="selectDebitLedger"
+												class="form-control select2" style="width: 100%;">
+												
+													<option>Select Debit Ledger</option>
+											</select>
+										</div>
+									</div>
+									
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Transfer Mode<strong style="color: Red"> *</strong></label>
+										<div class="col-sm-8">
+											<select name="SelectTransferMode" id="SelectTransferMode"
+												class="form-control select2" style="width: 100%;">
+												
+													<option>Select Transfer Mode</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Transaction Amount<strong style="color: Red"> *</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="transactionAmount" type="text" id="transactionAmount"
+												 class="form-control" Placeholder="Enter Amount"/>
+										</div>
+									</div>
+									
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Remarks
+										</label>
+										<div class="col-sm-8">
+											<input name="Remarks" type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="clearfix margin-bottom-10"></div>
+								<div class="text-center">
+									<a class="btn btn-success"> Show</a>
+									<a class="btn btn-primary"> Save</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Search Result</h3>
+							</div>
+							<div class="box-body">
+								<table class="table" id="tableBody" style="text-align: center;">
+									<thead class="table-light">
+										<tr style="color: White;">
+											<th scope="col">ID</th>
+											<th scope="col">BANK NAME</th>
+											<th scope="col">ACCOUNT NO</th>
+											<th scope="col">IFSC CODE</th>
+											<th scope="col">MICR CODE</th>
+											<th scope="col">CONTACT NO</th>
+											<th scope="col">ADDRESS</th>
+											<th scope="col">OPENING DATE</th>
+											<th scope="col">OPENING BALANCE</th>
+											<th scope="col">ACCOUNT CLOSING DATE</th>
+											<th scope="col">CHEQUE</th>
+											<th scope="col">EDIT</th>
+											<th scope="col">DELETE</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+
+									</tbody>
+								</table>
+							</div>
+
+					</div>
+				</div>
+			</section>
+			
 		</div>
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
