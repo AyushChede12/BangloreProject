@@ -41,7 +41,7 @@
 									<div class="col-md-12" style="margin-top: 15px;">
 										<div class="col-md-4">
 
-											<label>Advishor Code :</label> <input
+											<label>Advisor Code :</label> <input
 												name="advisorSearchbyCode" type="text"
 												onkeyup="FetchDetail();" id="advisorSearchbyCode"
 												class="form-control" Placeholder="Enter Advisor Code"
