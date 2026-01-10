@@ -252,8 +252,8 @@ public class HomeControler {
 	@GetMapping("/addAdvisor")
 	public String addAdvisor(Model model) {
 		// List<Member> allMember = memberRepo.findAll();
-		List<ClientMaster> allMember = clientMasterRepo.findAll();
-		model.addAttribute("allMember", allMember);
+//		List<ClientMaster> allMember = clientMasterRepo.findAll();
+//		model.addAttribute("allMember", allMember);
 		return "advisor/addAdvisor";
 	}
 

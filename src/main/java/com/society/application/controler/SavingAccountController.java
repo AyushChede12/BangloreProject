@@ -72,10 +72,10 @@ public class SavingAccountController {
 	@GetMapping("/addSaving")
 	public String AddSaving(Model model) {
 		// List<Member> memberList = memberRepo.findAll();
-		List<ClientMaster> memberList = clientMasterRepo.findAll();
-		model.addAttribute("memberList", memberList);
-		List<BranchMaster> branchData = branchMasterRepo.findAll();
-		model.addAttribute("branchList", branchData);
+//		List<ClientMaster> memberList = clientMasterRepo.findAll();
+//		model.addAttribute("memberList", memberList);
+//		List<BranchMaster> branchData = branchMasterRepo.findAll();
+//		model.addAttribute("branchList", branchData);
 		return "savingsAccount/AddSaving";
 	}
 
