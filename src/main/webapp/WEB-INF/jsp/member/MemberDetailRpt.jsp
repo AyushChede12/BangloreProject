@@ -120,7 +120,7 @@
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 												data-mask="" style="text-transform: uppercase;" />
-										</div>
+											</div>
 										</div>
 									</div>
 

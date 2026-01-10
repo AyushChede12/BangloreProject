@@ -3,23 +3,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<style>
-#links a:link {
-	color: red;
-	text-decoration: none
-}
-
-#links a:visited {
-	color: goldenrod;
-	text-decoration: none
-}
-
-#links a:hover {
-	color: maroon;
-	text-decoration: none;
-	font-variant: small-caps
-}
-</style>
 <body onload="" class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
@@ -37,16 +20,868 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Plan Master</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE POLICY</b>
+				</h1>
+				<h5 style="margin-left: 18px;">CREATE NEW PLAN</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
 					<li class="active">Plan Detail</li>
 				</ol>
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">DD</div>
+					</div>
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">RD</div>
+					</div>
+					<div class="wizard-step inactive" id="step3">
+						<div class="step-circle">FD</div>
+					</div>
+
+					<div class="wizard-step inactive" id="step4">
+						<div class="step-circle">MISD</div>
+					</div>
+				</div>
 			</section>
+
+
 			<section class="content">
+
 				<div class="row">
 					<div class="col-md-12">
+
+						<form action="submitDailyDeposite" method="post"
+							modelAttribute="dd" name="dailyDeposist">
+
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">Daily Deposit</h3>
+								</div>
+
+								<div class="box-body form-horizontal">
+
+									<!-- Row 1 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="planName" class="col-sm-4 control-label">Plan
+												Name <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddplanName" type="text" id="ddplanName"
+													class="form-control" PlaceHolder="Enter Plan Name"
+													autocomplete="off" /> <span id="planName"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Plan Name</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="minimumAmount" class="col-sm-4 control-label">Minimum
+												Amount <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="minimumAmount" type="text" id="minimumAmount"
+													class="form-control" PlaceHolder="Enter Minimum Amount"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="minimumAmountSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Minimum Amount</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="interestRate" class="col-sm-4 control-label">Interest
+												Rate (%) <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddinterestRate" type="text" id="ddinterestRate"
+													class="form-control" PlaceHolder="Enter Interest Rate"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="interestRateSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Interest Rate</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 2 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="termType" class="col-sm-4 control-label">Term
+												Mode <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<select name="ddtermType" id="ddtermType"
+													class="form-control" style="width: 100%;">
+													<option value="Daily">Daily</option>
+												</select> <span id="termType1"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+													Term Type</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtddTerm" class="col-sm-4 control-label">Term
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddterm" type="text" id="ddterm"
+													class="form-control" PlaceHolder="Enter Term"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ddtermSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Term</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Comm. New(%) <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddcomN" type="text" id="ddcomN"
+													class="form-control" PlaceHolder="Enter Commission New(%)"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddcomNSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission New</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Comm. Renew(%)
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddcomR" type="text" id="ddcomR"
+													class="form-control"
+													PlaceHolder="Enter Commission Renew(%)" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddcomRSapn"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission Renew</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="compoundIntrval" class="col-sm-4 control-label">Compound
+												Interval <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<select name="ddcompoundIntrval" id="ddcompoundIntrval"
+													class="form-control" style="width: 100%;">
+													<option value="Daily">Daily</option>
+													<option value="Monthly">Monthly</option>
+													<option value="Quaterly">Quaterly</option>
+													<option value="Half-Yearly">Half-Yearly</option>
+													<option value="Yearly">Yearly</option>
+												</select> <span id="ddcompoundIntrvalSapn"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission Renew</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtDdTotalDeposit" class="col-sm-4 control-label">Total
+												Deposit <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddtotalDeposit" type="text" readonly="readonly"
+													id="ddtotalDeposit" class="form-control"
+													PlaceHolder="Enter Total Deposit" /> <span
+													id="ddtotalDepositSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Total Deposit</span>
+											</div>
+										</div>
+									</div>
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="txtDdMaturityAmount"
+												class="col-sm-4 control-label">Maturity Amount <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="ddmaturityAmount" type="text"
+													readonly="readonly" id="ddmaturityAmount"
+													class="form-control" PlaceHolder="Enter Maturity Amount" />
+												<span
+													id="ContentPlaceHolder1_RequiredFieldValidatorDdMaturityAmount"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Maturity Amount</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="ddlDdAnyAmountPlan"
+												class="col-sm-4 control-label">Is Flexi? <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<select name="ddanyAmountPlanIsFlexi"
+													id="ddanyAmountPlanIsFlexi" class="form-control"
+													style="width: 100%;">
+													<option value="NO">NO</option>
+													<option value="YES">YES</option>
+												</select> <span id="ddanyAmountPlanIsFlexiSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+													Any Amount Plan</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Grace Period <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddgrace" type="text" id="ddgrace"
+													class="form-control" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddgraceSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Grace Period</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Late Fine(%) <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddlatefine" type="text" id="ddlatefine"
+													class="form-control" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddlatefineSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Late Fine(%)</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="chkDdActiveInactive"
+												class="col-sm-4 control-label">Plan Status <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="ddactiveInactive"
+													type="checkbox" name="ddactiveInactive" checked="checked" />
+													<span class="slider round"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="clearfix margin-bottom-10"></div>
+									<div class="text-center">
+										<a class="btn btn-success"> Save</a>
+									</div>
+
+								</div>
+							</div>
+						</form>
+
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Daily Plan</h3>
+							</div>
+							<div class="box-body form-horizontal">
+								<table class="table" id="tableBody" style="text-align: center;">
+									<thead class="table-light">
+										<tr style="color: White;">
+											<th scope="col">Plan Name</th>
+											<th scope="col">Plan Code</th>
+											<th scope="col">Term</th>
+											<th scope="col">ROI</th>
+											<th scope="col">Mode</th>
+											<th scope="col">Comm(N)</th>
+											<th scope="col">Comm(R)</th>
+											<th scope="col">IsFlexi</th>
+											<th scope="col">MinAmount</th>
+											<th scope="col">GraceDays</th>
+											<th scope="col">LateFine</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="content">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<form action="submitDailyDeposite" method="post"
+							modelAttribute="dd" name="dailyDeposist">
+
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">Recurring Deposit</h3>
+								</div>
+
+								<div class="box-body form-horizontal">
+
+									<!-- Row 1 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="planName" class="col-sm-4 control-label">Plan
+												Name <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddplanName" type="text" id="ddplanName"
+													class="form-control" PlaceHolder="Enter Plan Name"
+													autocomplete="off" /> <span id="planName"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Plan Name</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="minimumAmount" class="col-sm-4 control-label">Minimum
+												Amount <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="minimumAmount" type="text" id="minimumAmount"
+													class="form-control" PlaceHolder="Enter Minimum Amount"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="minimumAmountSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Minimum Amount</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="interestRate" class="col-sm-4 control-label">Interest
+												Rate (%) <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddinterestRate" type="text" id="ddinterestRate"
+													class="form-control" PlaceHolder="Enter Interest Rate"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="interestRateSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Interest Rate</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 2 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Term Mode <strong
+													style="color: Red">*</strong></label>
+												<div class="col-sm-8">
+													<select name="rDTermType" id="rDTermType"
+														class="form-control" style="width: 100%;">
+														<option value="Monthly">Monthly</option>
+													</select> <span id="rDTermTypeSpan"
+														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+														Term Type</span>
+												</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtddTerm" class="col-sm-4 control-label">Term
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddterm" type="text" id="ddterm"
+													class="form-control" PlaceHolder="Enter Term"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ddtermSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Term</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Comm. New(%) <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddcomN" type="text" id="ddcomN"
+													class="form-control" PlaceHolder="Enter Commission New(%)"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddcomNSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission New</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Comm. Renew(%)
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddcomR" type="text" id="ddcomR"
+													class="form-control"
+													PlaceHolder="Enter Commission Renew(%)" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddcomRSapn"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission Renew</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="compoundIntrval" class="col-sm-4 control-label">Compound
+												Interval <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<select name="ddcompoundIntrval" id="ddcompoundIntrval"
+													class="form-control" style="width: 100%;">
+													<option value="Daily">Daily</option>
+													<option value="Monthly">Monthly</option>
+													<option value="Quaterly">Quaterly</option>
+													<option value="Half-Yearly">Half-Yearly</option>
+													<option value="Yearly">Yearly</option>
+												</select> <span id="ddcompoundIntrvalSapn"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission Renew</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtDdTotalDeposit" class="col-sm-4 control-label">Total
+												Deposit <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddtotalDeposit" type="text" readonly="readonly"
+													id="ddtotalDeposit" class="form-control"
+													PlaceHolder="Enter Total Deposit" /> <span
+													id="ddtotalDepositSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Total Deposit</span>
+											</div>
+										</div>
+									</div>
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="txtDdMaturityAmount"
+												class="col-sm-4 control-label">Maturity Amount <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="ddmaturityAmount" type="text"
+													readonly="readonly" id="ddmaturityAmount"
+													class="form-control" PlaceHolder="Enter Maturity Amount" />
+												<span
+													id="ContentPlaceHolder1_RequiredFieldValidatorDdMaturityAmount"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Maturity Amount</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="ddlDdAnyAmountPlan"
+												class="col-sm-4 control-label">Is Flexi? <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<select name="ddanyAmountPlanIsFlexi"
+													id="ddanyAmountPlanIsFlexi" class="form-control"
+													style="width: 100%;">
+													<option value="NO">NO</option>
+													<option value="YES">YES</option>
+												</select> <span id="ddanyAmountPlanIsFlexiSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+													Any Amount Plan</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Grace Period <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddgrace" type="text" id="ddgrace"
+													class="form-control" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddgraceSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Grace Period</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Late Fine(%) <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddlatefine" type="text" id="ddlatefine"
+													class="form-control" autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddlatefineSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Late Fine(%)</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="chkDdActiveInactive"
+												class="col-sm-4 control-label">Plan Status <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="ddactiveInactive"
+													type="checkbox" name="ddactiveInactive" checked="checked" />
+													<span class="slider round"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="clearfix margin-bottom-10"></div>
+									<div class="text-center">
+										<a class="btn btn-success"> Save</a>
+									</div>
+
+								</div>
+							</div>
+						</form>
+
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Recurring Deposit</h3>
+							</div>
+							<div class="box-body form-horizontal">
+								<table class="table" id="tableBody" style="text-align: center;">
+									<thead class="table-light">
+										<tr style="color: White;">
+											<th scope="col">Plan Name</th>
+											<th scope="col">Plan Code</th>
+											<th scope="col">Term</th>
+											<th scope="col">ROI</th>
+											<th scope="col">Mode</th>
+											<th scope="col">Comm(N)</th>
+											<th scope="col">Comm(R)</th>
+											<th scope="col">IsFlexi</th>
+											<th scope="col">MinAmount</th>
+											<th scope="col">GraceDays</th>
+											<th scope="col">LateFine</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			
+			
+			<section class="content">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<form action="submitDailyDeposite" method="post"
+							modelAttribute="dd" name="dailyDeposist">
+
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">Recurring Deposit</h3>
+								</div>
+
+								<div class="box-body form-horizontal">
+
+									<!-- Row 1 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label for="planName" class="col-sm-4 control-label">Plan
+												Name <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddplanName" type="text" id="ddplanName"
+													class="form-control" PlaceHolder="Enter Plan Name"
+													autocomplete="off" /> <span id="planName"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Plan Name</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="minimumAmount" class="col-sm-4 control-label">Minimum
+												Amount <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="minimumAmount" type="text" id="minimumAmount"
+													class="form-control" PlaceHolder="Enter Minimum Amount"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="minimumAmountSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Minimum Amount</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="interestRate" class="col-sm-4 control-label">Interest
+												Rate (%) <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddinterestRate" type="text" id="ddinterestRate"
+													class="form-control" PlaceHolder="Enter Interest Rate"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="interestRateSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Interest Rate</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 2 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+											<label class="col-sm-4 control-label">Term Mode <strong
+													style="color: Red">*</strong></label>
+												<div class="col-sm-8">
+													<select name="rDTermType" id="rDTermType"
+														class="form-control" style="width: 100%;">
+														<option value="Monthly">Monthly</option>
+													</select> <span id="rDTermTypeSpan"
+														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+														Term Type</span>
+												</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtddTerm" class="col-sm-4 control-label">Term
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddterm" type="text" id="ddterm"
+													class="form-control" PlaceHolder="Enter Term"
+													autocomplete="off"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="ddtermSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Term</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Interest Type
+													<strong style="color: Red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<select name="fDInterestType" id="fDInterestType"
+														class="form-control" style="width: 100%;">
+														<option selected="selected" value="Simple">Simple</option>
+														<option value="Compound">Compound</option>
+													</select>
+												</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+
+											<label for="compoundIntrval" class="col-sm-4 control-label">Compound
+												Interval <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<select name="ddcompoundIntrval" id="ddcompoundIntrval"
+													class="form-control" style="width: 100%;">
+													<option value="Daily">Daily</option>
+													<option value="Monthly">Monthly</option>
+													<option value="Quaterly">Quaterly</option>
+													<option value="Half-Yearly">Half-Yearly</option>
+													<option value="Yearly">Yearly</option>
+												</select> <span id="ddcompoundIntrvalSapn"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission Renew</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="txtDdTotalDeposit" class="col-sm-4 control-label">Total
+												Deposit <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddtotalDeposit" type="text" readonly="readonly"
+													id="ddtotalDeposit" class="form-control"
+													PlaceHolder="Enter Total Deposit" /> <span
+													id="ddtotalDepositSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Total Deposit</span>
+											</div>
+										</div>
+										
+										<div class="col-md-4">
+											<label for="txtDdMaturityAmount"
+												class="col-sm-4 control-label">Maturity Amount <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="ddmaturityAmount" type="text"
+													readonly="readonly" id="ddmaturityAmount"
+													class="form-control" PlaceHolder="Enter Maturity Amount" />
+												<span
+													id="ContentPlaceHolder1_RequiredFieldValidatorDdMaturityAmount"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Maturity Amount</span>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- Row 3 -->
+									<div class="row four-field-row">
+
+										<div class="col-md-4">
+
+											<label class="col-sm-4 control-label">Comm. New(%) <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="ddcomN" type="text" id="ddcomN"
+													class="form-control" PlaceHolder="Enter Commission New(%)"
+													autocomplete="off"
+													onkeypress="return isNumberKey(this, event);" /> <span
+													id="ddcomNSpan"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Commission New</span>
+											</div>
+										</div>
+
+										<div class="col-md-4">
+
+											<label for="chkDdActiveInactive"
+												class="col-sm-4 control-label">Plan Status <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="ddactiveInactive"
+													type="checkbox" name="ddactiveInactive" checked="checked" />
+													<span class="slider round"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="clearfix margin-bottom-10"></div>
+									<div class="text-center">
+										<a class="btn btn-success"> Save</a>
+									</div>
+
+								</div>
+							</div>
+						</form>
+
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Recurring Deposit</h3>
+							</div>
+							<div class="box-body form-horizontal">
+								<table class="table" id="tableBody" style="text-align: center;">
+									<thead class="table-light">
+										<tr style="color: White;">
+											<th scope="col">Plan Name</th>
+											<th scope="col">Plan Code</th>
+											<th scope="col">Term</th>
+											<th scope="col">ROI</th>
+											<th scope="col">Mode</th>
+											<th scope="col">Comm(N)</th>
+											<th scope="col">Comm(R)</th>
+											<th scope="col">IsFlexi</th>
+											<th scope="col">MinAmount</th>
+											<th scope="col">GraceDays</th>
+											<th scope="col">LateFine</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			
+
+			<%-- <section class="content">
+
+				<div class="row">
+					<div class="col-md-12">
+
 						<div class="box box-success box-solid">
 							<div class="box-header box-head with-border">
 								<h3 class="box-title">Daily Deposit</h3>
@@ -60,8 +895,10 @@
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body">
+
 								<form action="submitDailyDeposite" method="post"
 									modelAttribute="dd" name="dailyDeposist">
+
 									<input type="hidden" value="Daily Deposit" name="dailyDeposit">
 									<div class="col-md-6">
 										<div class="form-group row">
@@ -135,7 +972,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Comm. New(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="ddcomN" type="text" id="ddcomN"
 													class="form-control" PlaceHolder="Enter Commission New(%)"
@@ -227,7 +1065,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Grace Period <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="ddgrace" type="text" id="ddgrace"
 													class="form-control" autocomplete="off"
@@ -239,7 +1078,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Late Fine(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="ddlatefine" type="text" id="ddlatefine"
 													class="form-control" autocomplete="off"
@@ -361,9 +1201,10 @@
 						<!-- /.box-body -->
 					</div>
 					<!-- /.box -->
-				</div>
+				</div> --%>
+				
 				<!-- /.col -->
-				<div class="row">
+				<%-- <div class="row">
 					<div class="col-md-12">
 						<div class="box box-danger box-solid">
 							<div class="box-header box-head with-border">
@@ -452,7 +1293,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Comm. New(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="rDComN" type="text" id="rDComN"
 													class="form-control" PlaceHolder="Enter Commission New(%)"
@@ -526,7 +1368,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Grace Period <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="rDGrace" type="text" id="rDGrace"
 													class="form-control" autocomplete="off"
@@ -538,7 +1381,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Late Fine(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="rDLatefine" type="text" id="rDLatefine"
 													class="form-control" autocomplete="off"
@@ -659,7 +1503,9 @@
 						<!-- /.box-body -->
 					</div>
 					<!-- /.box -->
-				</div>
+				</div> --%>
+				
+				
 				<div class="row">
 					<div class="col-md-12">
 						<div class="box box-warning box-solid">
@@ -800,7 +1646,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Comm. New(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="fDComN" type="text" id="fDComN"
 													class="form-control" PlaceHolder="Enter Commission New(%)"
@@ -1008,7 +1855,8 @@
 											</div>
 											<div class="form-group row">
 												<label class="col-sm-4 control-label">MIS Interval <strong
-													style="color: Red">*</strong></label>
+													style="color: Red">*</strong>
+												</label>
 												<div class="col-sm-8">
 													<select name="mISIterval" id="mISIterval"
 														class="form-control" style="width: 100%;">
@@ -1023,7 +1871,8 @@
 										<div id="ContentPlaceHolder1_UpdatePanel6">
 											<div class="form-group row">
 												<label class="col-sm-4 control-label">MIS Interest <strong
-													style="color: Red">*</strong></label>
+													style="color: Red">*</strong>
+												</label>
 												<div class="col-sm-8">
 													<input name="mISInterest" type="text" readonly="readonly"
 														id="mISInterest" class="form-control"
@@ -1049,7 +1898,8 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 control-label">Comm. New(%) <strong
-												style="color: Red">*</strong></label>
+												style="color: Red">*</strong>
+											</label>
 											<div class="col-sm-8">
 												<input name="mISComN" type="text" id="mISComN"
 													class="form-control" PlaceHolder="Enter Commission New(%)"
@@ -1202,7 +2052,7 @@
 	<script src="dist/js/investmentSection .js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	
+
 	<script type="text/javascript">
          //<![CDATA[
          var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdPlaneName"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdMinimumAmount"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdInterestRate"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdTermType"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdTerm"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator21"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator22"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdTotalDeposit"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdMaturityAmount"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidatorDdAnyAmountPlan"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator23"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator24"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator1"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator2"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator3"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator4"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator5"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator25"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator26"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator6"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator7"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator27"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator28"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator8"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator9"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator10"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator12"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator13"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator14"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator29"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator11"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator15"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator16"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator17"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator20"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator18"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator19"), document.getElementById("ContentPlaceHolder1_RequiredFieldValidator30"));
