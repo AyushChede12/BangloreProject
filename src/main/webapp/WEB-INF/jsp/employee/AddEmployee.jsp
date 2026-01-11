@@ -160,12 +160,10 @@ function validationFeilds() {
 					<div class="wizard-step inactive" id="step2">
 						<div class="step-circle">2</div>
 						<div class="step-title">DESIGNATION DETAILS</div>
-						<div class="wizard-line"></div>
 					</div>
 					<div class="wizard-step inactive" id="step3">
 						<div class="step-circle">3</div>
 						<div class="step-title">PAYMENT DETAILS</div>
-						<div class="wizard-line"></div>
 					</div>
 				</div>
 
@@ -399,7 +397,7 @@ function validationFeilds() {
 									<!-- Button -->
 									<div class="clearfix">
 										<button type="button" class="btn btn-primary pull-right"
-											onclick="showDesignation()">NEXT</button>
+											onclick="goDesignation()">NEXT</button>
 									</div>
 								</div>
 
@@ -495,9 +493,9 @@ function validationFeilds() {
 									<!-- Button -->
 									<div class="clearfix">
 										<button type="button" class="btn btn-default"
-											onclick="showEmployee()">PREVIOUS</button>
+											onclick="backEmployee()">PREVIOUS</button>
 										<button type="button" class="btn btn-primary pull-right"
-											onclick="showPayment()">NEXT</button>
+											onclick="goPayment()">NEXT</button>
 									</div>
 								</div>
 
@@ -577,7 +575,7 @@ function validationFeilds() {
 										<!-- Button -->
 										<div class="clearfix">
 											<button type="button" class="btn btn-default"
-												onclick="showDesignation()">PREVIOUS</button>
+												onclick="backDesignation()">PREVIOUS</button>
 											<button type="button" class="btn btn-primary pull-right"
 												onclick="SaveData()">SAVE</button>
 										</div>
@@ -590,7 +588,44 @@ function validationFeilds() {
 			</div>
 		</div>
 	</form>
+	
 	<script>
+	function goDesignation() {
+
+		$("#employeeDetails").hide();
+		$("#designationDetails").show();
+
+		$("#step1").removeClass("active").addClass("completed");
+		$("#step2").removeClass("inactive").addClass("active");
+	}
+	
+	function backEmployee() {
+		$("#designationDetails").hide();
+		$("#employeeDetails").show();
+
+		$("#step2").removeClass("active").addClass("inactive");
+		$("#step1").removeClass("completed").addClass("active");
+	}
+	
+	function goPayment() {
+
+		$("#designationDetails").hide();
+		$("#paymentDetails").show();
+
+		$("#step2").removeClass("active").addClass("completed");
+		$("#step3").removeClass("inactive").addClass("active");
+	}
+	
+	function backDesignation() {
+		$("#paymentDetails").hide();
+		$("#designationDetails").show();
+
+		$("#step3").removeClass("active").addClass("inactive");
+		$("#step2").removeClass("completed").addClass("active");
+	}
+	
+	</script>
+	<!-- <script>
 	function resetSteps() {
 		document.querySelectorAll('.step').forEach(s => {
 			s.classList.remove('active');
@@ -628,7 +663,7 @@ function validationFeilds() {
 	    	document.getElementById("step2").classList.add("completed");
 	    	document.getElementById("step3").classList.add("active");
 		}
-	</script>
+	</script> -->
 
 
 	<!-- /.content-wrapper -->
