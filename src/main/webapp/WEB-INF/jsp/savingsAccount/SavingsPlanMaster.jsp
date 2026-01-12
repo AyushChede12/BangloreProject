@@ -90,53 +90,53 @@
 								<div class="form-horizontal">
 									<div class="box-body">
 										<!-- row 1 -->
-										
-											<div class="col-md-3" style="margin-top: 15px;">
-												<label for="txtSchemeName">Scheme Name<strong
-													style="color: Red">*</strong>
-												</label> <input name="schemeName" type="text" id="schemeName"
-													class="form-control" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorSchemeName"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Scheme Name</span>
-											</div>
 
-											<div class="col-md-3"style="margin-top: 15px;">
-												<label for="txtAnnualInterestRate">Annual R.O.I (%)<strong
-													style="color: Red">*</strong>
-												</label> <input name="annualROI" type="text" id="annualROI"
-													class="form-control" onpaste="return false"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Annual Interest Rate</span>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtSchemeName">Scheme Name<strong
+												style="color: Red">*</strong>
+											</label> <input name="schemeName" type="text" id="schemeName"
+												class="form-control" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorSchemeName"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Scheme Name</span>
+										</div>
 
-											<div class="col-md-3"style="margin-top: 15px;">
-												<label for="txtMinOpeningAmount">Min. Opening Amount<strong
-													style="color: Red">*</strong>
-												</label> <input name="minOpeningAmount" type="text"
-													id="minOpeningAmount" class="form-control"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Min. Opening Amount</span>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtAnnualInterestRate">Annual R.O.I (%)<strong
+												style="color: Red">*</strong>
+											</label> <input name="annualROI" type="text" id="annualROI"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorAnnualInterestRate"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Annual Interest Rate</span>
+										</div>
 
-											<div class="col-md-3"style="margin-top: 15px;">
-												<label for="txtMinMonthlyAvgBalance">Monthly Avg.
-													Bal.<strong style="color: Red">*</strong>
-												</label> <input name="monthlyAvgBal" type="text" id="monthlyAvgBal"
-													class="form-control" onpaste="return false"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Min. Monthly Avg. Balance</span>
-											</div>
-										
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtMinOpeningAmount">Min. Opening Amount<strong
+												style="color: Red">*</strong>
+											</label> <input name="minOpeningAmount" type="text"
+												id="minOpeningAmount" class="form-control"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorMinOpeningAmount"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Min. Opening Amount</span>
+										</div>
+
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtMinMonthlyAvgBalance">Monthly Avg.
+												Bal.<strong style="color: Red">*</strong>
+											</label> <input name="monthlyAvgBal" type="text" id="monthlyAvgBal"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorMinMonthlyAvgBalance"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Min. Monthly Avg. Balance</span>
+										</div>
+
 										<!-- row 2 -->
-										
-										<div class="col-md-3"style="margin-top: 15px;">
+
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="txtLockInBalance">Lock In balance<strong
 												style="color: Red">*</strong>
 											</label> <input name="lockInbalance" type="text" id="lockInbalance"
@@ -147,7 +147,7 @@
 												Lock In balance</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="txtSmsChargesQarterly">SMS Charges <strong
 												style="color: Red">*</strong>
 											</label> <input name="smsCharges" type="text" id="smsCharges"
@@ -158,7 +158,7 @@
 												Sms Charges</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="ddlInterestCreditTime">SMS Interval<strong
 												style="color: Red">*</strong>
 											</label> <select name="smsInterval" id="smsInterval"
@@ -170,7 +170,7 @@
 											</select>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Free IFSC Collection(p.m)<strong
 												style="color: Red">*</strong>
 											</label> <input name="freeIfscCollectionpm" type="text"
@@ -182,7 +182,7 @@
 												IFSC Collection(p.m)</span>
 										</div>
 										<!--row 3  -->
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Free Transfers(p.m)<strong style="color: Red">*</strong>
 											</label> <input name="freeTransferspm" type="text"
 												id="freeTransferspm" class="form-control"
@@ -195,7 +195,7 @@
 
 
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Single Txn. Limit<strong style="color: Red">*</strong>
 											</label> <input name="singleTxnLimit" type="text" id="singleTxnLimit"
 												class="form-control" onpaste="return false"
@@ -205,7 +205,7 @@
 												Transaction Limit</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Daily MAX Limit<strong style="color: Red">*</strong>
 											</label> <input name="dailyMAXLimit" type="text" id="dailyMAXLimit"
 												class="form-control" onpaste="return false"
@@ -215,7 +215,7 @@
 												MAX Limit</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Weekly MAX Limit<strong style="color: Red">*</strong>
 											</label> <input name="weeklyMAXLimit" type="text" id="weeklyMAXLimit"
 												class="form-control" onpaste="return false"
@@ -225,7 +225,7 @@
 												MAX Limit</span>
 										</div>
 										<!-- row 4 -->
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Monthly MAX Limit<strong style="color: Red">*</strong>
 											</label> <input name="monthlyMAXLimit" type="text"
 												id="monthlyMAXLimit" class="form-control"
@@ -236,7 +236,7 @@
 												MAX Limit</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Service Charges <strong style="color: Red">*</strong>
 											</label> <input name="serviceCharges" type="text" id="serviceCharges"
 												class="form-control" onpaste="return false"
@@ -246,7 +246,7 @@
 												Service Charges</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label>Service Interval<strong style="color: Red">*</strong>
 											</label> <select name="serviceInterval" id="serviceInterval"
 												class="form-control" style="width: 100%;">
@@ -257,7 +257,7 @@
 											</select>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="txtCardCharge">Card Charge<strong
 												style="color: Red">*</strong>
 											</label> <input name="cardCharge" type="text" id="cardCharge"
@@ -268,7 +268,7 @@
 												Card Charge</span>
 										</div>
 										<!-- row 5 -->
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="txtCardLimitMonthly">Card Limit Monthly<strong
 												style="color: Red">*</strong>
 											</label> <input name="cardLimitMonthly" type="text"
@@ -280,7 +280,7 @@
 												Card Limit Monthly</span>
 										</div>
 
-										<div class="col-md-3"style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
 											<label for="txtCardTotalLimitYearly">Card Total Limit
 												Yearly<strong style="color: Red">*</strong>
 											</label> <input name="cardTotalLimitYearly" type="text"
@@ -308,36 +308,39 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-container" style="overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header ">
 									<h3 class="box-title">Scheme List</h3>
 								</div>
-								<table cellspacing="0" cellpadding="3" rules="all"
-									class="display nowrap table table-hover table-striped table-bordered"
-									border="1" style="width: 100%; border-collapse: collapse;">
-									<tr style="color: White; background-color: #008385;">
-										<th scope="col">S/N</th>
-										<th scope="col">Scheme Name</th>
-										<th scope="col">Annual ROI</th>
-										<th scope="col">Min Opening Amount</th>
-										<th scope="col">Monthly Avg Bal</th>
-										<th scope="col">Lock In Balance</th>
-										<th scope="col">SMS Charges</th>
-										<th scope="col">SMS Interval</th>
-										<th scope="col">Free IFSC</th>
-										<th scope="col">Free Transfers</th>
-										<th scope="col">Single Txn Limit</th>
-										<th scope="col">Daily MAX Limit</th>
-										<th scope="col">Weekly MAX Limit</th>
-										<th scope="col">Monthly MAX Limit</th>
-										<th scope="col">Service Charges</th>
-										<th scope="col">Service Interval</th>
-										<th scope="col">Card Charge</th>
-										<th scope="col">Card Limit Monthly</th>
-										<th scope="col">Card Total Limit Yearly</th>
-									</tr>
-									<tbody id="savingAccounttable">
-									</tbody>
-								</table>
+								<div class="box-body">
+									<table cellspacing="0" cellpadding="3" rules="all"
+										class="display nowrap table table-hover table-striped table-bordered"
+										border="1" style="width: 100%; border-collapse: collapse;">
+										<tr style="color: White; background-color: #008385;">
+											<th scope="col">S/N</th>
+											<th scope="col">Scheme Name</th>
+											<th scope="col">Annual ROI</th>
+											<th scope="col">Min Opening Amount</th>
+											<th scope="col">Monthly Avg Bal</th>
+											<th scope="col">Lock In Balance</th>
+											<th scope="col">SMS Charges</th>
+											<th scope="col">SMS Interval</th>
+											<th scope="col">Free IFSC</th>
+											<th scope="col">Free Transfers</th>
+											<th scope="col">Single Txn Limit</th>
+											<th scope="col">Daily MAX Limit</th>
+											<th scope="col">Weekly MAX Limit</th>
+											<th scope="col">Monthly MAX Limit</th>
+											<th scope="col">Service Charges</th>
+											<th scope="col">Service Interval</th>
+											<th scope="col">Card Charge</th>
+											<th scope="col">Card Limit Monthly</th>
+											<th scope="col">Card Total Limit Yearly</th>
+										</tr>
+										<tbody id="savingAccounttable">
+										</tbody>
+									</table>
+								</div>
+
 								<!-- <div id="table-container"></div>
  -->
 							</div>

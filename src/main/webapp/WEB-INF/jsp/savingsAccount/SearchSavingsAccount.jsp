@@ -24,7 +24,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Search Savings</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>SAVING OPENING</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SAVING A/C ENQUIRY</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -34,96 +37,95 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="box box-success form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Box</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Branch :</label> <select name="branchName"
-												id="branchName" class="form-control select2"
-												style="width: 100%;">
-												<option value="All">All Branch</option>
+									<div class="col-md-3" style="margin-top: 15px;">
 
-											</select>
-										</div>
+										<label>Branch :</label> <select name="branchName"
+											id="branchName" class="form-control select2"
+											style="width: 100%;">
+											<option value="All">All Branch</option>
+
+										</select>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>From Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="fDate" type="date" id="fDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>From Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>To Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="tDate" type="date" id="tDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Applicant Name :</label> <input name="accHolderName"
-												type="text" id="accHolderName" class="form-control"
-												Placeholder="Enter Applicant Name" autocomplete="off" />
-										</div>
-									</div>
-									<div class="clearfix"></div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Account No. :</label> <input name="accountNo"
-												type="text" id="accountNo" class="form-control"
-												Placeholder="Enter Account No." autocomplete="off" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Member Code :</label> <input name="memberCode"
-												type="text" id="memberCode" class="form-control"
-												Placeholder="Enter Member Code" autocomplete="off" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Advisor/Collector Code :</label> <input
-												name="advisorCode" type="text" id="advisorCode"
+											<input name="fDate" type="date" id="fDate"
 												class="form-control"
-												Placeholder="Enter Advisor/Collector Code"
-												autocomplete="off" />
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Scheme Name :</label> <select name="schemeName"
-												id="schemeName" class="form-control select2"
-												style="width: 100%;">
-												<option value="">select</option>
-												<option value="100">100-Basic SB Account</option>
-												<option value="101">101-Standard SB Account</option>
-												<option value="102">102-Advantage SB Account</option>
-												<option value="103">103-Elite SB Account</option>
-												<option value="104">104-Royal SB Account</option>
-											</select>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>To Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="tDate" type="date" id="tDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="text-center">
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Applicant Name :</label> <input name="accHolderName"
+											type="text" id="accHolderName" class="form-control"
+											Placeholder="Enter Applicant Name" autocomplete="off" />
+
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Account No. :</label> <input name="accountNo"
+											type="text" id="accountNo" class="form-control"
+											Placeholder="Enter Account No." autocomplete="off" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Member Code :</label> <input name="memberCode"
+											type="text" id="memberCode" class="form-control"
+											Placeholder="Enter Member Code" autocomplete="off" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Advisor/Collector Code :</label> <input
+											name="advisorCode" type="text" id="advisorCode"
+											class="form-control"
+											Placeholder="Enter Advisor/Collector Code" autocomplete="off" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Scheme Name :</label> <select name="schemeName"
+											id="schemeName" class="form-control select2"
+											style="width: 100%;">
+											<option value="">select</option>
+											<option value="100">100-Basic SB Account</option>
+											<option value="101">101-Standard SB Account</option>
+											<option value="102">102-Advantage SB Account</option>
+											<option value="103">103-Elite SB Account</option>
+											<option value="104">104-Royal SB Account</option>
+										</select>
+
+									</div>
+
+									<div class="col-md-12 text-center" style="margin-top: 15px;">
 										<a id="ContentPlaceHolder1_btnSearch"
 											class="btn btn-success margin-20"
 											onclick="showTableDataOfSearchSaving();"><span
@@ -133,17 +135,17 @@
 											href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnPrint&#39;,&#39;&#39;)"><span
 											class="fa fa-print"></span> PRINT</a>
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
+
 								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+							<div class="box box-success form-container"
+								style="overflow: auto !important;">
+								<div class="box-header ">
 									<h3 class="box-title">Search Result</h3>
 									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
+									<!-- <div class="clearfix margin-bottom-10"></div> -->
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
