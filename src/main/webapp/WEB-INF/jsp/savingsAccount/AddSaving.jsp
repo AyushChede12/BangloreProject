@@ -27,344 +27,331 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Add SB Account</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>SAVING OPENING</b>
+					</h1>
+					<h5 style="margin-left: 18px;">CREATE SAVING ACCOUNT</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
 						<li class="active">Add Saving</li>
 					</ol>
 				</section>
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">1</div>
+						<div class="step-title">SAVING DETAILS</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">2</div>
+						<div class="step-title">PAYMENT DETAILS</div>
+					</div>
+
+					
+				</div>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Saving Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Opening Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="opDate" type="date" id="opDate"
-														class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
+
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label>Opening Date <strong style="color: Red">*</strong></label>
+
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
 												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Select by
-												Member <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<select name="searchMemberCode" id="searchMemberCode"
-													onchange="displayMemberDetailsSaving()"
-													class="form-control select2" style="width: 100%;">
-													<%
-													if (memberList != null && !memberList.isEmpty()) {
-														for (ClientMaster member : memberList) {
-													%>
-													<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
-													<%
-													}
-													}
-													%>
-												</select><span
-													id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member Code</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtRelativeName" class="col-sm-5 control-label">Member
-												Name <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="memberName" type="text" id="memberName"
-													class="form-control" Placeholder="Enter Member Name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDOB" class="col-sm-5 control-label">DOB
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-4">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="dOB" type="date" id="dob" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-											<div class="col-sm-3">
-												<input name="age" type="text" value="0" maxlength="2"
-													id="age" class="form-control" Placeholder="Enter Age"
-													onkeypress="return isNumberOnlyKey(this, event);"
-													autocomplete="off" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator12"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Age</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Relative
-												Details</label>
-											<div class="col-sm-7">
-												<input name="relativeName" type="text" id="relativeName"
+												<input name="opDate" type="date" id="opDate"
 													class="form-control"
-													Placeholder="Enter Relative Name &amp; Relation" />
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtPhoneno" class="col-sm-5 control-label">Mobile
-												No <strong style="color: Red">*</strong>
+
+										<div class="col-md-3">
+											<label>Select by Member <strong style="color: Red">*</strong>
+											</label> <select name="searchMemberCode" id="searchMemberCode"
+												onchange="displayMemberDetailsSaving()"
+												class="form-control select2" style="width: 100%;">
+												<%
+												if (memberList != null && !memberList.isEmpty()) {
+													for (ClientMaster member : memberList) {
+												%>
+												<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
+												<%
+												}
+												}
+												%>
+											</select><span
+												id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+												Member Code</span>
+
+										</div>
+										<div class="col-md-3">
+											<label for="txtRelativeName">Member Name <strong
+												style="color: Red">*</strong>
+											</label> <input name="memberName" type="text" id="memberName"
+												class="form-control" Placeholder="Enter Member Name" />
+										</div>
+
+										<div class="col-md-3">
+											<label for="txtDOB">DOB <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
-												<input name="phoneno" type="text" maxlength="10"
-													id="phoneno" class="form-control"
-													Placeholder="Enter Mobile No" autocomplete="off"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator8"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Phone No</span>
+
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="dOB" type="date" id="dob" class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
 											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-5 control-label">Nominee
-												Name</label>
-											<div class="col-sm-7">
-												<input name="nomineeName" type="text" id="nomineeName"
-													class="form-control" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-5 control-label">Nominee
-												Age</label>
-											<div class="col-sm-7">
-												<input name="nomName" type="text" maxlength="2"
-													id="nomineeAge" class="form-control" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="drpNomineeRelation"
-												class="col-sm-5 control-label">Nominee Relation</label>
-											<div class="col-sm-7">
-												<select name="nRelation" id="nRelation" class="form-control"
-													style="width: 100%;">
-													<option value="Brother">Brother</option>
-													<option value="Daughter">Daughter</option>
-													<option value="Father">Father</option>
-													<option value="Friend">Friend</option>
-													<option value="Husband">Husband</option>
-													<option value="Mother">Mother</option>
-													<option value="Sister">Sister</option>
-													<option value="Son">Son</option>
-													<option value="Wife">Wife</option>
-													<option value="Daughter in Law">Daughter in Law</option>
-													<option value="Brother in Law">Brother in Law</option>
-													<option value="Grand Daughter">Grand Daughter</option>
-													<option value="Grand Son">Grand Son</option>
-													<option value="Other">Other</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtAddress" class="col-sm-5 control-label">Address
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<textarea name="address" rows="2" cols="20" id="address"
-													class="form-control" Placeholder="Enter Addess">
-</textarea>
-												<span id="ContentPlaceHolder1_RequiredFieldValidator3"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Address</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDistrict" class="col-sm-5 control-label">District
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="district" type="text" id="district"
-													class="form-control" Placeholder="Enter District" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator4"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													District</span>
-											</div>
+
+
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="ddlBranch" class="col-sm-5 control-label">Branch
-												Name <strong style="color: Red">*</strong>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label>Enter age : <strong style="color: Red">*</strong>
+											</label> <input name="age" type="text" value="0" maxlength="2"
+												id="age" class="form-control" Placeholder="Enter Age"
+												onkeypress="return isNumberOnlyKey(this, event);"
+												autocomplete="off" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator12"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Age</span>
+
+										</div>
+
+
+										<div class="col-md-3">
+											<label>Relative Details</label> <input name="relativeName"
+												type="text" id="relativeName" class="form-control"
+												Placeholder="Enter Relative Name &amp; Relation" />
+										</div>
+
+										<div class="col-md-3">
+											<label for="txtPhoneno">Mobile No <strong
+												style="color: Red">*</strong>
+											</label> <input name="phoneno" type="text" maxlength="10"
+												id="phoneno" class="form-control"
+												Placeholder="Enter Mobile No" autocomplete="off"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator8"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Phone No</span>
+
+										</div>
+										<div class="col-md-3">
+											<label for="txtNomineeName">Nominee Name</label> <input
+												name="nomineeName" type="text" id="nomineeName"
+												class="form-control" />
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label for="txtNomineeName">Nominee Age</label> <input
+												name="nomName" type="text" maxlength="2" id="nomineeAge"
+												class="form-control" />
+
+										</div>
+										<div class="col-md-3">
+											<label for="drpNomineeRelation">Nominee Relation</label> <select
+												name="nRelation" id="nRelation" class="form-control"
+												style="width: 100%;">
+												<option value="Brother">Brother</option>
+												<option value="Daughter">Daughter</option>
+												<option value="Father">Father</option>
+												<option value="Friend">Friend</option>
+												<option value="Husband">Husband</option>
+												<option value="Mother">Mother</option>
+												<option value="Sister">Sister</option>
+												<option value="Son">Son</option>
+												<option value="Wife">Wife</option>
+												<option value="Daughter in Law">Daughter in Law</option>
+												<option value="Brother in Law">Brother in Law</option>
+												<option value="Grand Daughter">Grand Daughter</option>
+												<option value="Grand Son">Grand Son</option>
+												<option value="Other">Other</option>
+											</select>
+										</div>
+
+										<div class="col-md-3">
+											<label for="txtAddress">Address <strong
+												style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
-												<select name="cspName" id="cspName" class="form-control"
-													style="width: 100%;">
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
-												</select>
-											</div>
+
+											<textarea name="address" rows="2" cols="20" id="address"
+												class="form-control" Placeholder="Enter Addess">
+</textarea>
+											<span id="ContentPlaceHolder1_RequiredFieldValidator3"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Address</span>
+
 										</div>
-										<div class="form-group row">
-											<label for="drpState" class="col-sm-5 control-label">State
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="state" type="text" id="state"
-													class="form-control" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator11"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													State</span>
-											</div>
+										<div class="col-md-3">
+											<label for="txtDistrict">District <strong
+												style="color: Red">*</strong>
+											</label> <input name="district" type="text" id="district"
+												class="form-control" Placeholder="Enter District" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator4"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												District</span>
 										</div>
-										<div class="form-group row">
-											<label for="txtPin" class="col-sm-5 control-label">Pin
-												Code <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="pin" type="text" maxlength="6" id="pin"
-													class="form-control" Placeholder="Enter Pincode" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator5"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													PIN</span>
-											</div>
+
+
+									</div>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label for="ddlBranch">Branch Name <strong
+												style="color: Red">*</strong>
+											</label> <select name="cspName" id="cspName" class="form-control"
+												style="width: 100%;">
+												<%
+												if (branchList != null && !branchList.isEmpty()) {
+													for (BranchMaster branch : branchList) {
+												%>
+												<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
+												<%
+												}
+												}
+												%>
+											</select>
+
 										</div>
-										<div class="form-group row">
-											<label for="ddlBranch" class="col-sm-5 control-label">Mode
-												Of Operation <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<select name="modeOfOp" id="modeOfOp" class="form-control"
-													style="width: 100%;">
-													<option value="Single">Single</option>
-													<option value="Joint">Joint</option>
-													<option value="Survivor">Survivor</option>
-												</select>
-											</div>
+										<div class="col-md-3">
+											<label for="drpState">State <strong
+												style="color: Red">*</strong>
+											</label> <input name="state" type="text" id="state"
+												class="form-control" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator11"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+												State</span>
+
 										</div>
-										<div class="form-group row">
-											<label for="txtJointMemberName"
-												class="col-sm-5 control-label">Joint/Survivor Code</label>
-											<div class="col-sm-7">
-												<input name="jointCode" type="text" id="jointCode"
-													class="form-control" />
-											</div>
+										<div class="col-md-3">
+											<label for="txtPin">Pin Code <strong
+												style="color: Red">*</strong>
+											</label> <input name="pin" type="text" maxlength="6" id="pin"
+												class="form-control" Placeholder="Enter Pincode" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator5"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												PIN</span>
+
 										</div>
-										<div class="form-group row">
-											<label for="txtJointMemberName"
-												class="col-sm-5 control-label">Joint/Survivor Name</label>
-											<div class="col-sm-7">
-												<input name="jointName" type="text" id="jointName"
-													class="form-control" />
-											</div>
+										<div class="col-md-3">
+											<label for="ddlBranch">Mode Of Operation <strong
+												style="color: Red">*</strong>
+											</label> <select name="modeOfOp" id="modeOfOp" class="form-control"
+												style="width: 100%;">
+												<option value="Single">Single</option>
+												<option value="Joint">Joint</option>
+												<option value="Survivor">Survivor</option>
+											</select>
+
 										</div>
-										<div class="form-group row">
-											<label for="drpJointMembersRelativeRelation"
-												class="col-sm-5 control-label">Relation</label>
-											<div class="col-sm-7">
-												<select name="jointRelation" id="jointRelation"
-													class="form-control" style="width: 100%;">
-													<option value="--Select--">--Select--</option>
-													<option value="Brother">Brother</option>
-													<option value="Daughter">Daughter</option>
-													<option value="Father">Father</option>
-													<option value="Friend">Friend</option>
-													<option value="Husband">Husband</option>
-													<option value="Mother">Mother</option>
-													<option value="Sister">Sister</option>
-													<option value="Son">Son</option>
-													<option value="Wife">Wife</option>
-													<option value="Daughter in Law">Daughter in Law</option>
-													<option value="Brother in Law">Brother in Law</option>
-													<option value="Grand Daughter">Grand Daughter</option>
-													<option value="Grand Son">Grand Son</option>
-													<option value="Other">Other</option>
-												</select>
-											</div>
+									</div>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label for="txtJointMemberName">Joint/Survivor Code</label> <input
+												name="jointCode" type="text" id="jointCode"
+												class="form-control" />
+
 										</div>
-										<div class="form-group row">
-											<label for="txtSchemeName" class="col-sm-5 control-label">Select
-												Plan <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<select name="sBPlan" id="sBPlan" class="form-control"
-													style="width: 100%;">
-													<option selected="selected" value="100">Basic SB
-														Account</option>
-													<option value="101">Standard SB Account</option>
-													<option value="102">Advantage SB Account</option>
-													<option value="103">Elite SB Account</option>
-													<option value="104">Royal SB Account</option>
-												</select>
-											</div>
+										<div class="col-md-3">
+											<label for="txtJointMemberName">Joint/Survivor Name</label> <input
+												name="jointName" type="text" id="jointName"
+												class="form-control" />
+
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Opening Amount
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="openingAmount" type="text" value="500"
-													id="openingAmount" class="form-control"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorOpeningAmount"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Opening Amount</span>
-											</div>
+										<div class="col-md-3">
+											<label for="drpJointMembersRelativeRelation">Relation</label>
+
+											<select name="jointRelation" id="jointRelation"
+												class="form-control" style="width: 100%;">
+												<option value="--Select--">--Select--</option>
+												<option value="Brother">Brother</option>
+												<option value="Daughter">Daughter</option>
+												<option value="Father">Father</option>
+												<option value="Friend">Friend</option>
+												<option value="Husband">Husband</option>
+												<option value="Mother">Mother</option>
+												<option value="Sister">Sister</option>
+												<option value="Son">Son</option>
+												<option value="Wife">Wife</option>
+												<option value="Daughter in Law">Daughter in Law</option>
+												<option value="Brother in Law">Brother in Law</option>
+												<option value="Grand Daughter">Grand Daughter</option>
+												<option value="Grand Son">Grand Son</option>
+												<option value="Other">Other</option>
+											</select>
+
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Advisor/Collector<strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<input name="advisorCode" type="text" id="advisorCode"
-													class="form-control"
-													placeholder="Enter Advisor/Collector Code" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator1"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Advisor/Collector Code</span>
-											</div>
+										<div class="col-md-3">
+											<label for="txtSchemeName">Select Plan <strong
+												style="color: Red">*</strong>
+											</label> <select name="sBPlan" id="sBPlan" class="form-control"
+												style="width: 100%;">
+												<option selected="selected" value="100">Basic SB
+													Account</option>
+												<option value="101">Standard SB Account</option>
+												<option value="102">Advantage SB Account</option>
+												<option value="103">Elite SB Account</option>
+												<option value="104">Royal SB Account</option>
+											</select>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Name <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<input name="advisorName" type="text" id="advisorName"
-													class="form-control"
-													placeholder="Enter Advisor/Collector Name" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Advisor/Collector Name</span>
-											</div>
+									</div>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-3">
+											<label>Opening Amount <strong style="color: Red">*</strong>
+											</label> <input name="openingAmount" type="text" value="500"
+												id="openingAmount" class="form-control"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidatorOpeningAmount"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Opening Amount</span>
+
 										</div>
-										<div class="form-group row">
-											<label for="txtOpeningFees" class="col-sm-5 control-label">Opening
-												Fees (if any)</label>
-											<div class="col-sm-7">
-												<input name="opFees" type="text" value="0" id="opFees"
-													class="form-control"
-													onkeypress="return isNumberOnlyKey(this, event);" />
-											</div>
+										<div class="col-md-3">
+											<label>Advisor/Collector<strong style="color: Red">*</strong></label>
+
+											<input name="advisorCode" type="text" id="advisorCode"
+												class="form-control"
+												placeholder="Enter Advisor/Collector Code" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator1"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Advisor/Collector Code</span>
+
 										</div>
+										<div class="col-md-3">
+											<label>Name <strong style="color: Red">*</strong></label> <input
+												name="advisorName" type="text" id="advisorName"
+												class="form-control"
+												placeholder="Enter Advisor/Collector Name" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator2"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Advisor/Collector Name</span>
+
+										</div>
+										<div class="col-md-3">
+											<label for="txtOpeningFees">Opening Fees (if any)</label> <input
+												name="opFees" type="text" value="0" id="opFees"
+												class="form-control"
+												onkeypress="return isNumberOnlyKey(this, event);" />
+
+										</div>
+
 									</div>
 								</div>
 							</div>
-							<div class="box box-info">
+							<div class="box form-container">
 								<div class="box-header with-border">
 									<h3 class="box-title">Payment Details</h3>
 								</div>
