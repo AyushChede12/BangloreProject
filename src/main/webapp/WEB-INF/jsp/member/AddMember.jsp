@@ -56,31 +56,28 @@ function check()
 					<b>CUSTOMER MODULE</b>
 				</h1>
 				<h5 style="margin-left: 18px;">ADD NEW CUSTOMER</h5>
-				<div class="wizard-steps">
-					<div class="wizard-step active" id="step1">
-						<div class="step-circle">1</div>
-						<div class="step-title">CUSTOMER DETAILS</div>
-						<div class="wizard-line"></div>
-					</div>
-					<div class="wizard-step inactive" id="step2">
-						<div class="step-circle">2</div>
-						<div class="step-title">KYC DOCUMENT</div>
-						<div class="wizard-line"></div>
-					</div>
-					<div class="wizard-step inactive" id="step3">
-						<div class="step-circle">3</div>
-						<div class="step-title">NOMINEE DETAILS</div>
-						<div class="wizard-line"></div>
-					</div>
+			</section>
+			<div class="wizard-steps">
+				<div class="wizard-step active" id="step1">
+					<div class="step-circle">1</div>
+					<div class="step-title">CUSTOMER DETAILS</div>
+					<div class="wizard-line"></div>
+				</div>
+				<div class="wizard-step inactive" id="step2">
+					<div class="step-circle">2</div>
+					<div class="step-title">KYC DOCUMENT</div>
+				</div>
+				<div class="wizard-step inactive" id="step3">
+					<div class="step-circle">3</div>
+					<div class="step-title">NOMINEE DETAILS</div>
 
-					<div class="wizard-step inactive" id="step4">
-						<div class="step-circle">4</div>
-						<div class="step-title">FEES DETAILS</div>
-					</div>
 				</div>
 
-
-			</section>
+				<div class="wizard-step inactive" id="step4">
+					<div class="step-circle">4</div>
+					<div class="step-title">FEES DETAILS</div>
+				</div>
+			</div>
 			<section class="content">
 
 				<%-- <form id="fileUploadForm">
@@ -1052,7 +1049,7 @@ function check()
 								<!-- Button -->
 								<div class="clearfix">
 									<button type="button" class="btn btn-primary pull-right"
-										onclick="showKyc()">NEXT</button>
+										onclick="goKyc()">NEXT</button>
 								</div>
 							</div>
 
@@ -1113,9 +1110,9 @@ function check()
 									<!-- Button -->
 									<div class="clearfix">
 										<button type="button" class="btn btn-default"
-											onclick="showClient()">PREVIOUS</button>
+											onclick="backClient()">PREVIOUS</button>
 										<button type="button" class="btn btn-primary pull-right"
-											onclick="showNominee()">NEXT</button>
+											onclick="goNominee()">NEXT</button>
 									</div>
 								</div>
 							</div>
@@ -1242,9 +1239,9 @@ function check()
 									<!-- Button -->
 									<div class="clearfix">
 										<button type="button" class="btn btn-default"
-											onclick="showKyc()">PREVIOUS</button>
+											onclick="backKyc()">PREVIOUS</button>
 										<button type="button" class="btn btn-primary pull-right"
-											onclick="showFees()">NEXT</button>
+											onclick="goFees()">NEXT</button>
 									</div>
 
 								</div>
@@ -1416,7 +1413,7 @@ function check()
 
 									<div class="clearfix">
 										<button type="button" class="btn btn-default"
-											onclick="showNominee()">PREVIOUS</button>
+											onclick="backNominee()">PREVIOUS</button>
 										<button class="btn btn-primary pull-right" onclick="saveData">SAVE</button>
 									</div>
 
@@ -1504,7 +1501,59 @@ function check()
 		crossorigin="anonymous"></script>
 	<%-- <jsp:include page="../footer.jsp" />  --%>
 
-	<script>
+
+<script>
+function goKyc() {
+
+	$("#clientSection").hide();
+	$("#kycSection").show();
+
+	$("#step1").removeClass("active").addClass("completed");
+	$("#step2").removeClass("inactive").addClass("active");
+}
+
+function backClient() {
+	$("#kycSection").hide();
+	$("#clientSection").show();
+
+	$("#step2").removeClass("active").addClass("inactive");
+	$("#step1").removeClass("completed").addClass("active");
+}
+
+function goNominee() {
+	$("#kycSection").hide();
+	$("#nomineeSection").show();
+
+	$("#step2").removeClass("active").addClass("completed");
+	$("#step3").removeClass("inactive").addClass("active");
+}
+
+
+
+function backKyc() {
+	$("#nomineeSection").hide();
+	$("#kycSection").show();
+
+	$("#step3").removeClass("active").addClass("inactive");
+	$("#step2").removeClass("completed").addClass("active");
+}
+
+function goFees() {
+	$("#nomineeSection").hide();
+	$("#feesSection").show();
+
+	$("#step3").removeClass("active").addClass("completed");
+	$("#step4").removeClass("inactive").addClass("active");
+}
+function backNominee() {
+	$("#feesSection").hide();
+	$("#nomineeSection").show();
+
+	$("#step4").removeClass("active").addClass("inactive");
+	$("#step3").removeClass("completed").addClass("active");
+}
+</script>
+<!-- 	<script>
 
 function resetSteps() {
 	document.querySelectorAll('.step').forEach(s => {
@@ -1558,7 +1607,7 @@ function resetSteps() {
     	document.getElementById("step4").classList.add("active");
 	}
 </script>
-
+ -->
 
 
 	<script>
