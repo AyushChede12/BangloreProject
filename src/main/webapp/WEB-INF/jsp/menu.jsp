@@ -1,119 +1,31 @@
 <style>
-/* ===== Profile Dropdown Wrapper ===== */
-.profile-dropdown {
-	position: relative;
-}
-
-/* Toggle link */
-.profile-toggle {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 10px;
-	color: #fff;
-}
-
-/* Small avatar */
-.profile-avatar {
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	border: 2px solid #fff;
-}
-
-/* User name */
-.profile-name {
-	font-weight: 600;
-}
-
-/* Dropdown menu */
-.profile-menu {
-	position: absolute;
-	right: 0;
-	top: 100%;
-	width: 230px;
-	background: #fff;
-	border-radius: 8px;
-	padding: 0;
-	margin-top: 8px;
-	list-style: none;
-	display: none;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-	z-index: 1000;
-}
-
-/* Bootstrap open state support */
-.profile-dropdown.open .profile-menu {
-	display: block;
-	animation: profileFade 0.25s ease;
-}
-
-/* Header */
-.profile-header {
-	background: linear-gradient(135deg, #008385, #00b3b3);
-	padding: 20px;
-	text-align: center;
-	color: #fff;
-	border-radius: 8px 8px 0 0;
-}
-
-/* Large avatar */
-.profile-avatar-lg {
-	width: 72px;
-	height: 72px;
-	border-radius: 50%;
-	border: 3px solid #fff;
-	margin-bottom: 8px;
-}
-
-/* Welcome text */
-.profile-welcome {
-	margin: 0;
-	font-weight: 600;
-}
-
-.profile-status {
-	display: block;
-	font-size: 12px;
-	opacity: 0.9;
-}
-
-/* Footer */
 .profile-footer {
-	padding: 15px;
-	background: #f7f7f7;
-	border-radius: 0 0 8px 8px;
+    list-style: none;
 }
 
-/* Logout button */
 .btn-profile-logout {
-	display: block;
-	width: 100%;
-	text-align: center;
-	padding: 8px;
-	background: #dc3545;
-	color: #fff;
-	border-radius: 20px;
-	font-weight: 600;
-	text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 15px;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
 }
 
+/* Icon */
+.btn-profile-logout i {
+    font-size: 16px;
+}
+
+/* Hover effect */
 .btn-profile-logout:hover {
-	background: #c82333;
-	color: #fff;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-radius: 4px;
 }
 
-/* Animation */
-@
-keyframes profileFade {from { opacity:0;
-	transform: translateY(10px);
-}
-
-to {
-	opacity: 1;
-	transform: translateY(0);
-}
-}
 </style>
 <header class="main-header  ">
 	<!-- Header Navbar: style can be found in header.less -->
@@ -256,28 +168,11 @@ to {
 					</ul></li> --%>
 				<!-- Notifications: style can be found in dropdown.less -->
 				<!-- User Account: style can be found in dropdown.less -->
-				<li class="profile-dropdown"><a href="#" class="profile-toggle"
-					data-toggle="dropdown"> <img id="navProfileImg"
-						class="profile-avatar hidden-xs" src="dist/img/User.png"
-						alt="Profile">
-				</a>
+				<li class="profile-footer"><a id="btnLogout" href="logout"
+					class="btn-profile-logout"> <i class="fa fa-sign-out"></i>
+						Logout
+				</a></li>
 
-					<ul class="profile-menu">
-
-						<!-- Profile Header -->
-						<li class="profile-header"><img src="dist/img/User.png"
-							class="profile-avatar-lg" alt="Profile">
-							<p class="profile-welcome">
-								Welcome User <small class="profile-status">Logged in</small>
-							</p></li>
-
-						<!-- Profile Footer -->
-						<li class="profile-footer"><a id="btnLogout" href="logout"
-							class="btn-profile-logout"> <i class="fa fa-sign-out"></i>
-								Logout
-						</a></li>
-
-					</ul></li>
 
 
 				<!-- Control Sidebar Toggle Button -->
