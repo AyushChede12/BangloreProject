@@ -320,11 +320,11 @@
 							APPROVE CONSULTANT</a></li>
 					<li><a href="investmentApproval"><i class="fa fa-circle-o"></i>
 							APPROVE POLICY</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="Approvedd"><i class="fa fa-circle-o"></i>
 							APPROVE DD</a></li>
 					<li><a href="recurringApproval"><i class="fa fa-circle-o"></i>
 							APPROVE RD</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="Approvefd"><i class="fa fa-circle-o"></i>
 							APPROVE FD</a></li>
 					<li><a href="SBTxnApproval"><i class="fa fa-circle-o"></i>
 							APPROVE SAVING TRANSACTIONS</a></li>

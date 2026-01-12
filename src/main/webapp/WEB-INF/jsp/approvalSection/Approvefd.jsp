@@ -4,7 +4,7 @@
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<form method="post"
-		action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/InvestmentApproval.aspx"
+		action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/RecurringApproval.aspx"
 		id="form1">
 		<div
 			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
@@ -26,9 +26,9 @@
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
 					<h1 id="ContentPlaceHolder1_IdHeader">
-					<b>APPROVALS</b>
-				</h1>
-				<h5 style="margin-left: 18px;">APPROVE POLICY</h5>
+						<b>APPROVALS</b>
+					</h1>
+					<h5 style="margin-left: 18px;">APPROVE FD</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -103,7 +103,7 @@
 							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
 								<div class="box-header">
-									<h3 class="box-title">Search Box</h3>
+									<h3 class="box-title">Search Box Table</h3>
 								</div>
 								<div class="box-body">
 									<table cellspacing="0" cellpadding="3" rules="all"
@@ -112,7 +112,7 @@
 										<caption></caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">Id</th>
-											<th scope="col">Adress</th>
+											<th scope="col">Policy NO</th>
 											<th scope="col">Branch Name</th>
 										</tr>
 										<tbody id="tableBody">
@@ -122,11 +122,10 @@
 							</div>
 						</div>
 					</div>
+				</section>
 			</div>
-			</section>
-		</div>
-		<!-- /.content-wrapper -->
-		<div class="control-sidebar-bg"></div>
+			<!-- /.content-wrapper -->
+			<div class="control-sidebar-bg"></div>
 		</div>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->
@@ -230,5 +229,5 @@
 		</script>
 	</form>
 </body>
-<!-- Dk/Admin/InvestmentApproval.aspx EDB D 09:27:13 GMT -->
+<!-- Dk/Admin/RecurringApproval.aspx EDB D 09:27:14 GMT -->
 </html>

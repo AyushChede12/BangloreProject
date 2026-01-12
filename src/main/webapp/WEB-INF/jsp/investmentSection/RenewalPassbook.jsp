@@ -17,7 +17,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Policy Passbook</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE POLICY</b>
+				</h1>
+				<h5 style="margin-left: 18px;">POLICY RECORD BOOK</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -25,54 +28,62 @@
 				</ol>
 			</section>
 			<section class="content">
+
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-warning">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Search Details for Print</h3>
 							</div>
-							<div class="form-horizontal">
-								<div class="box-body">
-									<div class="col-md-4">
-										<div class="form-group">
-											<label>Select by Policy No.<strong
-												style="color: Red">*</strong></label> <select
-												name="searchbyPolicyNo" id="searchbyPolicyNo"
+
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+
+									<div class="col-md-5">
+										<label class="col-sm-4 control-label">Select by Policy
+											No.<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<select name="searchbyPolicyNo" id="searchbyPolicyNo"
 												class="form-control select2" style="width: 100%;">
 												<option value=""></option>
 											</select>
 										</div>
 									</div>
+								</div>
+
+								<div class="row four-field-row">
+
 									<div class="col-md-8">
-										<div class="form-group">
-											<label></label> <input type="submit"
-												onclick="this.disabled = true"
-												name="ctl00$ContentPlaceHolder1$btnHeadline" value="Heading"
-												id="ContentPlaceHolder1_btnHeadline"
-												class="btn btn-danger pull-right margin-r-5 margin-20" /> <input
-												type="submit" onclick="this.disabled = true"
-												name="ctl00$ContentPlaceHolder1$btnBook" value="Transaction"
-												id="ContentPlaceHolder1_btnBook"
-												class="btn btn-info pull-right margin-r-5 margin-20" /> <input
-												type="submit" onclick="this.disabled = true"
-												name="ctl00$ContentPlaceHolder1$btnFrontPage"
-												value="Front Page" id="ContentPlaceHolder1_btnFrontPage"
-												class="btn btn-warning pull-right margin-r-5 margin-20" />
-											<input type="submit" name="Save" value="Search"
-												onclick="getDataByPolNofordailyRD();" id="Save"
-												class="btn btn-success pull-right margin-r-5 margin-20" />
-										</div>
+										<label></label> <input type="submit"
+											onclick="this.disabled = true"
+											name="ctl00$ContentPlaceHolder1$btnHeadline" value="Heading"
+											id="ContentPlaceHolder1_btnHeadline"
+											class="btn btn-danger pull-right margin-r-5 margin-20" /> <input
+											type="submit" onclick="this.disabled = true"
+											name="ctl00$ContentPlaceHolder1$btnBook" value="Transaction"
+											id="ContentPlaceHolder1_btnBook"
+											class="btn btn-info pull-right margin-r-5 margin-20" /> <input
+											type="submit" onclick="this.disabled = true"
+											name="ctl00$ContentPlaceHolder1$btnFrontPage"
+											value="Front Page" id="ContentPlaceHolder1_btnFrontPage"
+											class="btn btn-warning pull-right margin-r-5 margin-20" /> <input
+											type="submit" name="Save" value="Search"
+											onclick="getDataByPolNofordailyRD();" id="Save"
+											class="btn btn-success pull-right margin-r-5 margin-20" />
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="box box-success"
+						
+						<div class="form-container"
 							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
-								<div class="box-tools pull-right"></div>
+							<div class="box-header">
+								<h3 class="box-title">Search Details Table</h3>
 							</div>
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" id="ContentPlaceHolder1_gdvData"
@@ -96,11 +107,10 @@
 						</div>
 					</div>
 				</div>
+			</section>
 		</div>
-		</section>
-	</div>
-	<!-- /.content-wrapper -->
-	<div class="control-sidebar-bg"></div>
+		<!-- /.content-wrapper -->
+		<div class="control-sidebar-bg"></div>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
