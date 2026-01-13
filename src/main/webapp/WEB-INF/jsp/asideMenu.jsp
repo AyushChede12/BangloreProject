@@ -232,7 +232,7 @@
 							LOAN PAYMENT</a></li>
 					<li><a href="irregularEMIPaymentEntryf159"><i
 							class="fa fa-circle-o"></i> REGULAR INSTALLMENT PAYMENT </a></li>
-					<li><a href="irregularEMIPaymentEntryf159"><i
+					<li><a href="#"><i
 							class="fa fa-circle-o"></i> IRREGULAR INSTALLMENT PAYMENT</a></li>
 					<li><a href="regularLoanStatementf159"><i
 							class="fa fa-circle-o"></i> REGULAR LOAN STATEMENT</a></li>
