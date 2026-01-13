@@ -33,68 +33,77 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Search Box</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Branch :</label> <select name="branch" id="branch"
+						
+							<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Search Box</h3>
+							</div>
+
+							<div class="box-body form-horizontal">
+								<div class="row four-field-row">
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">Branch :</label>
+										<div class="col-sm-8">
+											<select name="branchName" id="branchName"
 												class="form-control" style="width: 100%;">
-												<option value="All">All Branch</option>
+												<option value="" selected="selected">All Branch</option>
 
 											</select>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>From Date :</label>
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">From Date :</label>
+										<div class="col-sm-8">
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input name="fromdate" type="date" id="fromdate"
+												<input name="fDate" type="date" id="fDate"
 													class="form-control"
 													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 													data-mask="" />
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>To Date :</label>
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">To Date :</label>
+										<div class="col-sm-8">
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input name="todate" type="date" id="todate"
+												<input name="tDate" type="date" id="tDate"
 													class="form-control"
 													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 													data-mask="" />
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label></label> <a id="ContentPlaceHolder1_btnSearch"
-												class="btn btn-success margin-20"
-												onclick="getTableDataOfRegularEMI();"><span
-												class="fa fa-search"></span> SEARCH</a>
-										</div>
-									</div>
-									<div class="clearfix margin-bottom-10"></div>
 								</div>
 
+
+								<div class="form-group text-center">
+									<label></label> <a id="btnSearch"
+										class="btn btn-success margin-20"
+										href="javascript:getMemberApproval()"> <span
+										class="fa fa-search"></span> SEARCH
+									</a>
+								</div>
 							</div>
-							<div class="box box-success"
+						</div>
+						
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
+								<div class="box-header">
+								<h3 class="box-title">Search Box Table</h3>
+							</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<caption>Search</caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SR NO</th>
 											<th scope="col">LOAN ID</th>

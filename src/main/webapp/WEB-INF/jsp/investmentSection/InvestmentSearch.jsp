@@ -18,7 +18,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Investment Search</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE POLICY</b>
+				</h1>
+				<h5 style="margin-left: 18px;">SEARCH POLICY</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -28,116 +31,129 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Search Box</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Branch :</label> <select name="branchName"
-											id="branchName" class="form-control select2"
-											style="width: 100%;">
-											<option value="">Select</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="fDate" type="date" value="" id="fDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="tDate" type="date" value="" id="tDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Applicant Name :</label> <input name="applicantName"
-											type="text" id="applicantName" class="form-control"
-											Placeholder="Enter Applicant Name" autocomplete="off" />
-									</div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Policy No. :</label> <input name="policyno" type="text"
-											id="policyno" class="form-control"
-											Placeholder="Enter Policy No." autocomplete="off" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Member Code :</label> <input name="searchMemberCode"
-											type="text" id="searchMemberCode" class="form-control"
-											Placeholder="Enter Member Code" autocomplete="off" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Plan Name :</label> <select name="planName"
-											id="planName" class="form-control select2"
-											style="width: 100%;">
-											<option value=""></option>
-											<option value="DRD">DRD</option>
-											<option value="FD">FD</option>
-											<option value="MIS">MIS</option>
-											<option value="RD">RD</option>
 
-										</select>
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Branch :</label>
+										<div class="col-sm-8">
+											<select name="branchName" id="branchName"
+												class="form-control select2" style="width: 100%;">
+												<option value="">Select</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-3">
+
+										<label class="col-sm-4 control-label">From Date :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="fDate" type="date" value="" id="fDate"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
+											</div>
+										</div>
+									</div>
+
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">To Date :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="tDate" type="date" value="" id="tDate"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Applicant Name :</label>
+										<div class="col-sm-8">
+											<input name="applicantName" type="text" id="applicantName"
+												class="form-control" Placeholder="Enter Applicant Name"
+												autocomplete="off" />
+										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Advisor Code :</label> <input name="advisorCode"
-											type="text" id="advisorCode" class="form-control"
-											Placeholder="Enter Advisor Code" autocomplete="off" />
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Policy No. :</label>
+										<div class="col-sm-8">
+											<input name="policyno" type="text" id="policyno"
+												class="form-control" Placeholder="Enter Policy No."
+												autocomplete="off" />
+										</div>
+									</div>
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Member Code :</label>
+										<div class="col-sm-8">
+											<input name="searchMemberCode" type="text"
+												id="searchMemberCode" class="form-control"
+												Placeholder="Enter Member Code" autocomplete="off" />
+										</div>
+									</div>
+									<div class="col-md-3">
+
+										<label class="col-sm-4 control-label">Plan Name :</label>
+										<div class="col-sm-8">
+											<select name="planName" id="planName"
+												class="form-control select2" style="width: 100%;">
+												<option value=""></option>
+												<option value="DRD">DRD</option>
+												<option value="FD">FD</option>
+												<option value="MIS">MIS</option>
+												<option value="RD">RD</option>
+
+											</select>
+										</div>
+									</div>
+									<div class="col-md-3">
+
+										<label class="col-sm-4 control-label">Advisor Code :</label>
+										<div class="col-sm-8">
+											<input name="advisorCode" type="text" id="advisorCode"
+												class="form-control" Placeholder="Enter Advisor Code"
+												autocomplete="off" />
+										</div>
 									</div>
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+
 								<div class="text-center">
-									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
-										onclick="getTableData();"
-										href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnSearch&#39;,&#39;&#39;)"><span
-										class="fa fa-search"></span> SEARCH</a> <a
-										id="ContentPlaceHolder1_btnPrint" class="btn btn-warning"
-										href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnPrint&#39;,&#39;&#39;)"><span
-										class="fa fa-print"></span> PRINT</a>
+									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success">
+										<span class="fa fa-search"></span> SEARCH
+									</a>
 								</div>
 							</div>
 						</div>
-						<div class="box box-success"
+						
+						<div class="form-container"
 							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
-								<h3 class="box-title">Search Result</h3>
-								<div class="box-tools pull-right"></div>
+							<div class="box-header">
+								<h3 class="box-title">
+									Investment Search
+								</h3>
 							</div>
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+							<div class="box-body form-horizontal">
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" id="ContentPlaceHolder1_gdvDaily"
 									style="width: 100%; border-collapse: collapse;">
-									<caption>Investment Search</caption>
 									<tr style="color: White; background-color: #008385;">
 										<th scope="col">ID</th>
 										<th scope="col">CSP Name</th>
@@ -201,7 +217,7 @@
 	<script src="dist/js/GetAllBranch.js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	
+
 	<!-- </form> -->
 </body>
 

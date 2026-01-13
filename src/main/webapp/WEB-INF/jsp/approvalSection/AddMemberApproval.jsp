@@ -2,7 +2,8 @@
 <%@page import="java.util.List"%>
 <jsp:include page="../header.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<body class="skin-blue sidebar-mini" onload="GetBranchNameInTheDropDown();"
+<body class="skin-blue sidebar-mini"
+	onload="GetBranchNameInTheDropDown();"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<!-- <form method="post"
@@ -18,81 +19,93 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<!-- Content Wrapper. Contains page content -->
-		<% List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList"); %>
+		<%
+		List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
+		%>
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Member Approval</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>APPROVALS</b>
+				</h1>
+				<h5 style="margin-left: 18px;">APPROVE CUSTOMER</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
 					<li class="active">Approval</li>
 				</ol>
 			</section>
+
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Search Box</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Branch :</label> <select
-											name="branchName"
-											id="branchName" class="form-control"
-											style="width: 100%;">
-											<option value="" selected="selected">All Branch</option>
-											
-										</select>
+
+							<div class="box-body form-horizontal">
+								<div class="row four-field-row">
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">Branch :</label>
+										<div class="col-sm-8">
+											<select name="branchName" id="branchName"
+												class="form-control" style="width: 100%;">
+												<option value="" selected="selected">All Branch</option>
+
+											</select>
+										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">From Date :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="fDate" type="date" id="fDate"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
 											</div>
-											<input name="fDate" type="date"
-												 id="fDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<label class="col-sm-4 control-label">To Date :</label>
+										<div class="col-sm-8">
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="tDate" type="date" id="tDate"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="tDate" type="date"
-												 id="tDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
-										</div>
-									</div>
+
+
+								<div class="form-group text-center">
+									<label></label> <a id="btnSearch"
+										class="btn btn-success margin-20"
+										href="javascript:getMemberApproval()"> <span
+										class="fa fa-search"></span> SEARCH
+									</a>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label></label> <a id="btnSearch"
-											class="btn btn-success margin-20"
-											href="javascript:getMemberApproval()"> <span
-											class="fa fa-search"></span> SEARCH
-										</a>
-									</div>
-								</div>
-								<div class="clearfix margin-bottom-10"></div>
 							</div>
 						</div>
-						<div class="box box-success"
+						
+						<div class="form-container"
 							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+							<div class="box-header">
+								<h3 class="box-title">Search Box Table</h3>
+							</div>
+							<div class="box-body form-horizontal">
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" id="gdvData"
@@ -110,7 +123,7 @@
 										<th scope="col">Pan No.</th>
 										<th scope="col">Phone No.</th>
 										<th scope="col">Email Id</th>
-										<th scope="col">Branch Name</th> 
+										<th scope="col">Branch Name</th>
 									</tr>
 									<tbody id="tableBody"></tbody>
 								</table>

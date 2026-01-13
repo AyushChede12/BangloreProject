@@ -37,6 +37,7 @@
 					<div class="step-title">PAYMENT DETAILS</div>
 				</div>
 			</div>
+			
 			<section class="content">
 
 				<div class="row">
