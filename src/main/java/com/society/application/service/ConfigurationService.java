@@ -6,13 +6,19 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.society.application.model.BankMaster;
+import com.society.application.model.BranchMaster;
 import com.society.application.model.CasteMaster;
+import com.society.application.model.CategoryMaster;
 import com.society.application.model.CompanyMaster;
 import com.society.application.model.FYMaster;
 import com.society.application.model.RelativeRelationMaster;
 import com.society.application.model.CompanyMaster;
 import com.society.application.model.UserMaster;
+import com.society.application.repository.BankMasterRepo;
+import com.society.application.repository.BranchMasterRepo;
 import com.society.application.repository.CasteMasterRepo;
+import com.society.application.repository.CategoryMasterRepo;
 import com.society.application.repository.CompanyMasterRepo;
 import com.society.application.repository.FYMasterRepo;
 import com.society.application.repository.RelativeRelationMasterRepo;
@@ -26,15 +32,24 @@ public class ConfigurationService {
 
 	@Autowired
 	UserMasterRepo userMasterRepo;
-	
+
 	@Autowired
 	FYMasterRepo fyMasterRepo;
-	
+
 	@Autowired
 	RelativeRelationMasterRepo relativeRepo;
-	
+
 	@Autowired
 	CasteMasterRepo casteRepo;
+
+	@Autowired
+	CategoryMasterRepo categoryMasterRepo;
+
+	@Autowired
+	BranchMasterRepo branchMasterRepo;
+
+	@Autowired
+	BankMasterRepo bankMasterRepo;
 
 	// Ayush
 	public int updateCompanyMaster(CompanyMaster companyMaster) {
@@ -77,13 +92,13 @@ public class ConfigurationService {
 		}
 	}
 
-	//Ayush
+	// Ayush
 	public List<CompanyMaster> fetchAllCompanyDetails() {
 		// TODO Auto-generated method stub
 		return companyMasterRepo.findAll();
 	}
 
-	//Ayush
+	// Ayush
 	public FYMaster saveFinancialYear(FYMaster financialYear) {
 		// TODO Auto-generated method stub
 		if (financialYear.getId() != null) {
@@ -131,6 +146,95 @@ public class ConfigurationService {
 		} else {
 			return casteRepo.save(casteMaster);
 		}
+	}
+
+	public CategoryMaster saveCategoryModule(CategoryMaster categoryModule) {
+		// TODO Auto-generated method stub
+		if (categoryModule.getId() != null) {
+			CategoryMaster existing = categoryMasterRepo.findById(categoryModule.getId())
+					.orElseThrow(() -> new RuntimeException("Category not found with ID: " + categoryModule.getId()));
+
+			existing.setCategoryName(categoryModule.getCategoryName());
+
+			return categoryMasterRepo.save(existing);
+		} else {
+			return categoryMasterRepo.save(categoryModule);
+		}
+	}
+
+	public Optional<BranchMaster> findBranchDataById(Long id) {
+		// TODO Auto-generated method stub
+		return branchMasterRepo.findById(id);
+	}
+
+	public BranchMaster saveBranchModule(BranchMaster branchModule) {
+		// TODO Auto-generated method stub
+		if (branchModule.getId() != null) {
+			BranchMaster existing = branchMasterRepo.findById(branchModule.getId())
+					.orElseThrow(() -> new RuntimeException("Branch not found with ID: " + branchModule.getId()));
+
+			existing.setBankID(branchModule.getBankID());
+			existing.setName(branchModule.getName());
+			existing.setBranchCode(branchModule.getBranchCode());
+			existing.setOpening_date(branchModule.getOpening_date());
+			existing.setAddress(branchModule.getAddress());
+			existing.setPin(branchModule.getPin());
+			existing.setState(branchModule.getState());
+			existing.setContactPerson(branchModule.getContactPerson());
+			existing.setContactNo(branchModule.getContactNo());
+			existing.setFdate(branchModule.getFdate());
+			existing.setTdate(branchModule.getTdate());
+			existing.setAmount(branchModule.getAmount());
+			existing.setGlHeadNo(branchModule.getGlHeadNo());
+			existing.setBankAccoununtNo(branchModule.getBankAccoununtNo());
+			existing.setBranch(branchModule.getBranch());
+			existing.setStatus(branchModule.getStatus());
+			;
+			existing.setIfscCode(branchModule.getIfscCode());
+			existing.setModule(branchModule.getModule());
+			existing.setSelectTransactionCheckbox(branchModule.getSelectTransactionCheckbox());
+			existing.setFlag(branchModule.getFlag());
+			;
+			existing.setBalance(branchModule.getBalance());
+
+			return branchMasterRepo.save(existing);
+		} else {
+			return branchMasterRepo.save(branchModule);
+		}
+	}
+
+	public BankMaster saveBankModule(BankMaster bankMaster) {
+		// TODO Auto-generated method stub
+		if (bankMaster.getId() != null) {
+			BankMaster existing = bankMasterRepo.findById(bankMaster.getId())
+					.orElseThrow(() -> new RuntimeException("Branch not found with ID: " + bankMaster.getId()));
+
+			existing.setBankName(bankMaster.getBankName());
+			existing.setAccountNo(bankMaster.getAccountNo());
+			existing.setMobileNo(bankMaster.getMobileNo());
+			existing.setAddress(bankMaster.getAddress());
+			existing.setOpeningDate(bankMaster.getOpeningDate());
+			existing.setOpeningBalance(bankMaster.getOpeningBalance());
+			existing.setMappedBranch(bankMaster.getMappedBranch());
+
+			return bankMasterRepo.save(existing);
+		} else {
+			return bankMasterRepo.save(bankMaster);
+		}
+	}
+
+	public Optional<FYMaster> findFinancialYearById(Long id) {
+		// TODO Auto-generated method stub
+		return fyMasterRepo.findById(id);
+	}
+
+	public boolean deleteFinancialYear(Long id) {
+		// TODO Auto-generated method stub
+		if (fyMasterRepo.existsById(id)) {
+			fyMasterRepo.deleteById(id);
+			return true;
+		}
+		return false;
 	}
 
 }

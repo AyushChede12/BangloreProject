@@ -10,8 +10,8 @@ import javax.persistence.Id;
 public class BranchMaster {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	private String bankID;
 
@@ -56,11 +56,11 @@ public class BranchMaster {
 		this.openingDate = opening_date;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
