@@ -1,6 +1,7 @@
 package com.society.application.controler;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -244,6 +245,7 @@ public class ConfigurationController {
 
 	// Ayush
 	@PostMapping("/updateCompanyDetails")
+	@ResponseBody
 	public ResponseEntity<ApiResponse<String>> updateCompanyDetails(@RequestBody CompanyMaster companyMaster) {
 
 		int result = configurationService.updateCompanyMaster(companyMaster);
@@ -310,6 +312,36 @@ public class ConfigurationController {
 	public List<FYMaster> getAllFYDetails(Model model) {
 		return configurationService.fetchFYDetails();
 	}
+	
+	@GetMapping("/getFinancialYearById") // Ayush
+	public ResponseEntity<ApiResponse<FYMaster>> findFinancialYearById(@RequestParam("id") Long id) {
+		Optional<FYMaster> fyear = configurationService.findFinancialYearById(id);
+		if (fyear.isPresent()) {
+			ApiResponse<FYMaster> response = new ApiResponse<>(HttpStatus.FOUND,
+					"Financial Year fetched successfully", fyear.get());
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<FYMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"Financial Year not found for ID: " + id, null);
+			return ResponseEntity.status(404).body(response);
+		}
+	}
+	
+	@PostMapping("/deleteFinancialYearById") // Ayush
+	public ResponseEntity<ApiResponse<String>> deleteFinancialYear(@RequestParam("id") Long id) {
+		boolean isDeleted = configurationService.deleteFinancialYear(id);
+		if (isDeleted) {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.OK, "Financial Year deleted successfully",
+					"success");
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.NOT_FOUND, "Financial Year deletion failed",
+					"failure");
+			return ResponseEntity.badRequest().body(response);
+		}
+	}
+	
+	
 
 //	@PostMapping("/SaveRelation")
 //	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,

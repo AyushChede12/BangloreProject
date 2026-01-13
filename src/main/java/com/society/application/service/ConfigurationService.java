@@ -32,22 +32,22 @@ public class ConfigurationService {
 
 	@Autowired
 	UserMasterRepo userMasterRepo;
-	
+
 	@Autowired
 	FYMasterRepo fyMasterRepo;
-	
+
 	@Autowired
 	RelativeRelationMasterRepo relativeRepo;
-	
+
 	@Autowired
 	CasteMasterRepo casteRepo;
-	
+
 	@Autowired
 	CategoryMasterRepo categoryMasterRepo;
-	
+
 	@Autowired
 	BranchMasterRepo branchMasterRepo;
-	
+
 	@Autowired
 	BankMasterRepo bankMasterRepo;
 
@@ -92,13 +92,13 @@ public class ConfigurationService {
 		}
 	}
 
-	//Ayush
+	// Ayush
 	public List<CompanyMaster> fetchAllCompanyDetails() {
 		// TODO Auto-generated method stub
 		return companyMasterRepo.findAll();
 	}
 
-	//Ayush
+	// Ayush
 	public FYMaster saveFinancialYear(FYMaster financialYear) {
 		// TODO Auto-generated method stub
 		if (financialYear.getId() != null) {
@@ -188,11 +188,13 @@ public class ConfigurationService {
 			existing.setGlHeadNo(branchModule.getGlHeadNo());
 			existing.setBankAccoununtNo(branchModule.getBankAccoununtNo());
 			existing.setBranch(branchModule.getBranch());
-			existing.setStatus(branchModule.getStatus());;
+			existing.setStatus(branchModule.getStatus());
+			;
 			existing.setIfscCode(branchModule.getIfscCode());
 			existing.setModule(branchModule.getModule());
 			existing.setSelectTransactionCheckbox(branchModule.getSelectTransactionCheckbox());
-			existing.setFlag(branchModule.getFlag());;
+			existing.setFlag(branchModule.getFlag());
+			;
 			existing.setBalance(branchModule.getBalance());
 
 			return branchMasterRepo.save(existing);
@@ -219,6 +221,20 @@ public class ConfigurationService {
 		} else {
 			return bankMasterRepo.save(bankMaster);
 		}
+	}
+
+	public Optional<FYMaster> findFinancialYearById(Long id) {
+		// TODO Auto-generated method stub
+		return fyMasterRepo.findById(id);
+	}
+
+	public boolean deleteFinancialYear(Long id) {
+		// TODO Auto-generated method stub
+		if (fyMasterRepo.existsById(id)) {
+			fyMasterRepo.deleteById(id);
+			return true;
+		}
+		return false;
 	}
 
 }
