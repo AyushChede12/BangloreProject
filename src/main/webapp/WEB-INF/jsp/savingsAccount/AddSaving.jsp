@@ -48,12 +48,12 @@
 						<div class="step-title">PAYMENT DETAILS</div>
 					</div>
 
-					
+
 				</div>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="form-container">
+							<div class="form-container" id="savingDetailsSection">
 								<div class="box-header">
 									<h3 class="box-title">Saving Details</h3>
 								</div>
@@ -350,73 +350,83 @@
 
 									</div>
 								</div>
+								<div class="box-footer">
+
+
+									<button type="button" class="btn btn-success pull-right"
+										onclick="goToPaymentDetails()">NEXT</button>
+								</div>
 							</div>
-							<div class="box form-container">
-								<div class="box-header with-border">
+							<div class="box form-container" id="paymentDetailsSection"
+								style="display: none;">
+								<div class="box-header ">
 									<h3 class="box-title">Payment Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
-												By <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<select name="paymode" id="paymode" class="form-control"
-													style="width: 100%;">
-													<option selected="selected" value="Cash">Cash</option>
-													<option value="Cheque">Cheque</option>
-													<option value="Online">Online</option>
-													<option value="NEFT">NEFT</option>
-												</select>
-											</div>
+									<div class="col-md-6" style="margin-top: 15px;">
+
+										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
+											By <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<select name="paymode" id="paymode" class="form-control"
+												style="width: 100%;">
+												<option selected="selected" value="Cash">Cash</option>
+												<option value="Cheque">Cheque</option>
+												<option value="Online">Online</option>
+												<option value="NEFT">NEFT</option>
+											</select>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Remarks</label>
-											<div class="col-sm-8">
-												<textarea name="remarks" rows="2" cols="20" id="remarks"
-													class="form-control" Placeholder="Enter Remarks if any">
+
+
+										<label class="col-sm-4 control-label"
+											style="margin-top: 15px;">Remarks</label>
+										<div class="col-sm-8" style="margin-top: 15px;">
+											<textarea name="remarks" rows="2" cols="20" id="remarks"
+												class="form-control" Placeholder="Enter Remarks if any">
 </textarea>
-											</div>
 										</div>
+
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Account Status
-												<strong style="color: Red">*</strong>
+									<div class="col-md-6" style="margin-top: 15px;">
+
+										<label class="col-sm-4 control-label">Account Status <strong
+											style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<label class="switch"> <input id="chkisactive"
+												type="checkbox" name="chkisactive" checked="checked" /> <span
+												class="slider round"></span>
 											</label>
-											<div class="col-sm-8">
-												<label class="switch"> <input id="chkisactive"
-													type="checkbox" name="chkisactive" checked="checked" /> <span
-													class="slider round"></span>
-												</label>
-											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">SMS Send <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<label class="switch"> <input id="chkisSms"
-													type="checkbox" name="chkisSms" checked="checked" /> <span
-													class="slider round"></span>
-												</label>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Debit Card
-												Issue <strong style="color: Red">*</strong>
+
+
+										<label class="col-sm-4 control-label">SMS Send <strong
+											style="color: Red">*</strong></label>
+										<div class="col-sm-8">
+											<label class="switch"> <input id="chkisSms"
+												type="checkbox" name="chkisSms" checked="checked" /> <span
+												class="slider round"></span>
 											</label>
-											<div class="col-sm-8">
-												<label class="switch"> <input id="chkdebitcard"
-													type="checkbox" name="chkdebitcard" /> <span
-													class="slider round"></span>
-												</label>
-											</div>
 										</div>
+
+
+										<label class="col-sm-4 control-label">Debit Card Issue
+											<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<label class="switch"> <input id="chkdebitcard"
+												type="checkbox" name="chkdebitcard" /> <span
+												class="slider round"></span>
+											</label>
+										</div>
+
 									</div>
 								</div>
 								<div class="box-footer">
 									<div class="row col-md-12">
+										<button type="button" class="btn btn-success"
+											onclick="backToSavingDetails()">PREVIOUS</button>
 										<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
 											value="Save" id="ContentPlaceHolder1_btnSave"
 											class="btn btn-success pull-right margin-r-5" />
@@ -771,6 +781,38 @@
 			}
 			//]]>
 		</script>
+		<script>
+			function goToPaymentDetails() {
+
+				/* // BASIC VALIDATION (optional)
+				if ($("#branchName").val() == "") {
+				    alert("Please select Branch");
+				    return;
+				}
+				if ($("#clientNo").val() == "") {
+				    alert("Please select Client No");
+				    return;
+				}
+				if ($("#noOfShare").val() == "") {
+				    alert("Please enter No Of Share");
+				    return;
+				} */
+
+				$("#savingDetailsSection").hide();
+				$("#paymentDetailsSection").show();
+
+				$("#step1").removeClass("active").addClass("completed");
+				$("#step2").removeClass("inactive").addClass("active");
+			}
+			function backToSavingDetails() {
+				$("#paymentDetailsSection").hide();
+				$("#savingDetailsSection").show();
+
+				$("#step2").removeClass("active").addClass("inactive");
+				$("#step1").removeClass("completed").addClass("active");
+			}
+		</script>
+
 	</form>
 </body>
 </html>

@@ -19,7 +19,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">SB Account Interest</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>SAVING OPENING</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SAVING A/C INTEREST TRANSFER</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -28,68 +31,63 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Interest Master</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-12">
-										<div class="form-group row">
-											<label for="txtRelativeName" class="col-sm-5 control-label">Gen
-												Name <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="ctl00$ContentPlaceHolder1$txtGenName"
-													type="text" id="ContentPlaceHolder1_txtGenName"
-													class="form-control" Placeholder="Enter Gen Name" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator1"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Gen Name</span>
+									<div class="col-md-3">
+
+										<label for="txtRelativeName"">Gen Name <strong
+											style="color: Red">*</strong>
+										</label> <input name="ctl00$ContentPlaceHolder1$txtGenName"
+											type="text" id="ContentPlaceHolder1_txtGenName"
+											class="form-control" Placeholder="Enter Gen Name" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidator1"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Gen Name</span>
+
+									</div>
+									<div class="col-md-3">
+										<label>From Date <strong style="color: Red">*</strong></label>
+
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">From Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="ctl00$ContentPlaceHolder1$txtFDate"
-														type="text" value="01/08/2022"
-														id="ContentPlaceHolder1_txtFDate" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">To Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="ctl00$ContentPlaceHolder1$txtTDate"
-														type="text" value="01/08/2022"
-														id="ContentPlaceHolder1_txtTDate" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Remarks</label>
-											<div class="col-sm-7">
-												<input name="ctl00$ContentPlaceHolder1$txtRemarks"
-													type="text" id="ContentPlaceHolder1_txtRemarks"
-													class="form-control" Placeholder="Enter Remarks" />
-											</div>
+											<input name="ctl00$ContentPlaceHolder1$txtFDate" type="text"
+												value="01/08/2022" id="ContentPlaceHolder1_txtFDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
 									</div>
+
+									<div class="col-md-3">
+										<label>To Date <strong style="color: Red">*</strong></label>
+
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="ctl00$ContentPlaceHolder1$txtTDate" type="text"
+												value="01/08/2022" id="ContentPlaceHolder1_txtTDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<label class="col-sm-5 control-label">Remarks</label> <input
+											name="ctl00$ContentPlaceHolder1$txtRemarks" type="text"
+											id="ContentPlaceHolder1_txtRemarks" class="form-control"
+											Placeholder="Enter Remarks" />
+									</div>
 								</div>
+
+
 								<div class="box-footer">
 									<div class="row col-md-12">
 										<input type="submit"
@@ -101,24 +99,22 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-8">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Interest Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-12">
-										<div class="form-group row">
-											<label for="txtRelativeName" class="col-sm-5 control-label">Search
-												By GenCode <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<select name="ctl00$ContentPlaceHolder1$ddlGenCode"
-													id="ContentPlaceHolder1_ddlGenCode" class="form-control"
-													style="width: 100%;">
-												</select>
-											</div>
-										</div>
+									<div class="col-md-6">
+
+										<label for="txtRelativeName">Search By GenCode <strong
+											style="color: Red">*</strong>
+										</label> <select name="ctl00$ContentPlaceHolder1$ddlGenCode"
+											id="ContentPlaceHolder1_ddlGenCode" class="form-control"
+											style="width: 100%;">
+										</select>
+
+
 									</div>
 								</div>
 								<div class="box-footer">

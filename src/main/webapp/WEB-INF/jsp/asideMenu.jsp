@@ -173,7 +173,7 @@
 					<!-- <li><a href="companySetting"><i class="fa fa-circle-o"></i>
 							SAVING ACCOUNT FUND TRANSFER</a></li> -->
 					<li><a href="sBInterestGenerate"><i class="fa fa-circle-o"></i>
-							SAVING ACCOUNT INTEREST TRANSFER</a></li>
+							SAVING A/C INTEREST TRANSFER</a></li>
 					<li><a href="sBPassbookPrint"><i class="fa fa-circle-o"></i>
 							SAVING RECORD BOOK </a></li>
 					<li><a href="savingsStatement"><i class="fa fa-circle-o"></i>
