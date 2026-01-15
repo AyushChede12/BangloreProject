@@ -17,7 +17,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Flexi Deposit/Withdrawal</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE POLICY</b>
+				</h1>
+				<h5 style="margin-left: 18px;">Flexi Deposit/Withdrawal</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -25,19 +28,23 @@
 				</ol>
 			</section>
 
-			<form id="myForm" name="myForm" modelAttribute="user"
-				enctype="multipart/form-data">
-				<section class="content">
+			<section class="content">
+				<form id="myForm" name="myForm" modelAttribute="user"
+					enctype="multipart/form-data">
+
 					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Policy Details</h3>
 								</div>
-								<div class="box-body">
-									<input type="hidden" name="id123" id="id123">
-									<div class="col-md-6">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+
+									<!-- Row 1 -->
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Txn Date<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -52,7 +59,8 @@
 												</div>
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Branch Name<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -65,8 +73,8 @@
 													Branch Name</span>
 											</div>
 										</div>
-										<input type="hidden" name="id">
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Select Policy
 												No.<strong style="color: Red">*</strong>
 											</label>
@@ -81,7 +89,7 @@
 													Account No.</span>
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Emp. Code<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -93,8 +101,11 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Member Code<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -106,7 +117,9 @@
 													Member Code</span>
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
+
 											<label class="col-sm-4 control-label">Name<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -118,7 +131,8 @@
 													A/C Holder Name</span>
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
+
 											<label class="col-sm-4 control-label">Mobile Number<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -130,7 +144,9 @@
 													Mobile Number</span>
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
+
 											<label class="col-sm-4 control-label">Plan Code<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -143,15 +159,64 @@
 											</div>
 										</div>
 									</div>
+
+									<div class="row four-field-row">
+										<div class=" col-md-3"
+											style="display: flex; margin: 15px 0 30px;">
+											<div class="box-body">
+												<div>
+													<h4>
+														<b>Photo</b>
+													</h4>
+													<p class="help-block">Maximum 10MB</p>
+												</div>
+												<div class="col-md-3">
+
+													<div class="text-center">
+														<img id="preview" class="profile-user-img"
+															src="data:image/png;base64,${data.photo}" alt="Image"
+															style="height: 110px; width: 110px;" /> <input
+															type="file" name="filetag" id="filetag" />
+													</div>
+
+												</div>
+											</div>
+
+
+											<div class="box-body">
+												<div>
+													<h4>
+														<b>Signature</b>
+													</h4>
+													<p class="help-block">Maximum 10MB</p>
+												</div>
+												<div class="col-md-3">
+
+													<div class="text-center">
+														<img id="secondpreview" class="profile-user-img"
+															src="data:image/png;base64,${data.signature}" alt="Image"
+															style="height: 110px; width: 110px;" /> <input
+															type="file" name="secondfiletag" id="secondfiletag" />
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
+
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Payment Details</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Plan Balance <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -160,7 +225,8 @@
 													class="form-control" />
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label for="txtTransactionFor" class="col-sm-4 control-label">Transaction
 												For</label>
 											<div class="col-sm-8">
@@ -168,7 +234,8 @@
 													class="form-control" Placeholder="Enter Transaction For" />
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label for="txtRemarks" class="col-sm-4 control-label">Remarks
 											</label>
 											<div class="col-sm-8">
@@ -176,9 +243,8 @@
 													class="form-control" Placeholder="Enter Remarks" />
 											</div>
 										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label for="ddlTransactionType"
 												class="col-sm-4 control-label">Txn. Type<strong
 												style="color: Red">*</strong></label>
@@ -190,7 +256,11 @@
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
+									</div>
+
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
 											<label for="txtAmount" class="col-sm-4 control-label">Amount
 												<strong style="color: Red">*</strong>
 											</label>
@@ -205,7 +275,8 @@
 													Amount</span>
 											</div>
 										</div>
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 												By <strong style="color: Red">*</strong>
 											</label>
@@ -222,60 +293,16 @@
 										</div>
 									</div>
 								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<input type="submit" name="btnSave" value="Save" id="btnSave"
-											class="btn btn-success pull-right margin-r-5" />
-									</div>
-								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; height: 500px; overflow: auto !important;">
-								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
-									<div></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Photo</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="preview" class="profile-user-img"
-													src="data:image/png;base64,${data.photo}"
-													style="height: 70px; width: 110px;" /> <input type="file"
-													name="filetag" id="filetag" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Signature</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="secondpreview" class="profile-user-img"
-													src="data:image/png;base64,${data.signature}"
-													style="height: 70px; width: 115px;" /> <input type="file"
-													name="secondfiletag" id="secondfiletag" />
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="clearfix margin-bottom-10"></div>
+							<div class="text-center">
+								<a class="btn btn-success"> Save</a>
 							</div>
 						</div>
 					</div>
-				</section>
-			</form>
+
+				</form>
+			</section>
 		</div>
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>

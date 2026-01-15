@@ -6,8 +6,8 @@
 	onload="disable(); getAllAccountNo();" cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<%
-				List<BankMaster> bankList = (List<BankMaster>) request.getAttribute("bankMaster");
-				%>
+		List<BankMaster> bankList = (List<BankMaster>) request.getAttribute("bankMaster");
+		%>
 		<div
 			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
@@ -18,14 +18,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Account Passbook</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>SAVING OPENING</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SAVING RECORD BOOK</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -35,51 +40,50 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+							<div class="box box-warning form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Search Details for Print</h3>
 								</div>
 								<div class="form-horizontal">
-									<div class="box-body">
+									<div class="box-body" style="margin-top: 15px;">
 										<div class="col-md-4">
-											<div class="form-group">
-												<label>Select by Account No.<strong
-													style="color: Red">*</strong></label><select name="accountNo"
-													id="accountNo" class="form-control select2"
-													style="width: 100%;" onchange="showSavingsPassbookData();">
-													<option value="">Select Acc.No</option>
-												</select>
-											</div>
+
+											<label>Select by Account No.<strong
+												style="color: Red">*</strong></label><select name="accountNo"
+												id="accountNo" class="form-control select2"
+												style="width: 100%;" onchange="showSavingsPassbookData();">
+												<option value="">Select Acc.No</option>
+											</select>
+
 										</div>
 										<div class="col-md-8">
-											<div class="form-group">
-												<label></label> <input type="submit"
-													name="ctl00$ContentPlaceHolder1$btnHeadline"
-													value="Heading" id="ContentPlaceHolder1_btnHeadline"
-													class="btn btn-danger pull-right margin-r-5 margin-20" />
-												<input type="submit"
-													name="ctl00$ContentPlaceHolder1$btnBook"
-													value="Transaction" id="ContentPlaceHolder1_btnBook"
-													class="btn btn-info pull-right margin-r-5 margin-20" /> <input
-													type="submit" name="ctl00$ContentPlaceHolder1$btnFrontPage"
-													value="Front Page" id="ContentPlaceHolder1_btnFrontPage"
-													class="btn btn-warning pull-right margin-r-5 margin-20" />
-												<input type="submit"
-													name="ctl00$ContentPlaceHolder1$btnSave" value="Search"
-													id="ContentPlaceHolder1_btnSave"
-													class="btn btn-success pull-right margin-r-5 margin-20" />
-											</div>
+
+											<label></label> <input type="submit"
+												name="ctl00$ContentPlaceHolder1$btnHeadline" value="Heading"
+												id="ContentPlaceHolder1_btnHeadline"
+												class="btn btn-danger pull-right margin-r-5 margin-20" /> <input
+												type="submit" name="ctl00$ContentPlaceHolder1$btnBook"
+												value="Transaction" id="ContentPlaceHolder1_btnBook"
+												class="btn btn-info pull-right margin-r-5 margin-20" /> <input
+												type="submit" name="ctl00$ContentPlaceHolder1$btnFrontPage"
+												value="Front Page" id="ContentPlaceHolder1_btnFrontPage"
+												class="btn btn-warning pull-right margin-r-5 margin-20" />
+											<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
+												value="Search" id="ContentPlaceHolder1_btnSave"
+												class="btn btn-success pull-right margin-r-5 margin-20" />
+
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+							<div class="box box-success form-container"
+								style="overflow: auto !important;">
+								<div class="box-header ">
+									<h3 class="box-title">Search Result</h3>
 									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
+									<!-- <div class="clearfix margin-bottom-10"></div> -->
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
@@ -141,56 +145,80 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 		<script>
-            $(function () {
-                //Initialize Select2 Elements
-                $('.select2').select2();
-                //Datemask dd/mm/yyyy
-                $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-                //Datemask2 mm/dd/yyyy
-                $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-                //Date range picker
-                $('#reservation').daterangepicker()
-                //Date range picker with time picker
-                $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' } })
-                $('#daterange-btn').daterangepicker(
-                 {
-                     ranges: {
-                         'Today': [moment(), moment()],
-                         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                         'This Month': [moment().startOf('month'), moment().endOf('month')],
-                         'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                     },
-                     startDate: moment().subtract(29, 'days'),
-                     endDate: moment()
-                 },
-                 function (start, end) {
-                     $('#daterange-btn span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'))
-                 }
-               )
-                //Date picker
-                $('#datepicker').datepicker({
-                    autoclose: true
-                })
-                //Money Euro
-                $('[data-mask]').inputmask()
+			$(function() {
+				//Initialize Select2 Elements
+				$('.select2').select2();
+				//Datemask dd/mm/yyyy
+				$('#datemask').inputmask('dd/mm/yyyy', {
+					'placeholder' : 'dd/mm/yyyy'
+				})
+				//Datemask2 mm/dd/yyyy
+				$('#datemask2').inputmask('mm/dd/yyyy', {
+					'placeholder' : 'mm/dd/yyyy'
+				})
+				//Date range picker
+				$('#reservation').daterangepicker()
+				//Date range picker with time picker
+				$('#reservationtime').daterangepicker({
+					timePicker : true,
+					timePickerIncrement : 30,
+					locale : {
+						format : 'MM/DD/YYYY hh:mm A'
+					}
+				})
+				$('#daterange-btn')
+						.daterangepicker(
+								{
+									ranges : {
+										'Today' : [ moment(), moment() ],
+										'Yesterday' : [
+												moment().subtract(1, 'days'),
+												moment().subtract(1, 'days') ],
+										'Last 7 Days' : [
+												moment().subtract(6, 'days'),
+												moment() ],
+										'Last 30 Days' : [
+												moment().subtract(29, 'days'),
+												moment() ],
+										'This Month' : [
+												moment().startOf('month'),
+												moment().endOf('month') ],
+										'Last Month' : [
+												moment().subtract(1, 'month')
+														.startOf('month'),
+												moment().subtract(1, 'month')
+														.endOf('month') ]
+									},
+									startDate : moment().subtract(29, 'days'),
+									endDate : moment()
+								},
+								function(start, end) {
+									$('#daterange-btn span').html(
+											start.format('DD/MM/YYYY') + ' - '
+													+ end.format('DD/MM/YYYY'))
+								})
+				//Date picker
+				$('#datepicker').datepicker({
+					autoclose : true
+				})
+				//Money Euro
+				$('[data-mask]').inputmask()
 
-                //iCheck for checkbox and radio inputs
-                $('span[type="checkbox"].minimal').iCheck({
-                    checkboxClass: 'icheckbox_minimal-blue',
-                    radioClass: 'iradio_minimal-blue'
-                })
-            })
-        </script>
+				//iCheck for checkbox and radio inputs
+				$('span[type="checkbox"].minimal').iCheck({
+					checkboxClass : 'icheckbox_minimal-blue',
+					radioClass : 'iradio_minimal-blue'
+				})
+			})
+		</script>
 		<script>
-        function disable(){
-        document.getElementById("ContentPlaceHolder1_btnHeadline").disabled = true;
-        document.getElementById("ContentPlaceHolder1_btnBook").disabled = true;
-        document.getElementById("ContentPlaceHolder1_btnFrontPage").disabled = true;
-        document.getElementById("ContentPlaceHolder1_btnSave").disabled = true;
-        }
-        </script>
+			function disable() {
+				document.getElementById("ContentPlaceHolder1_btnHeadline").disabled = true;
+				document.getElementById("ContentPlaceHolder1_btnBook").disabled = true;
+				document.getElementById("ContentPlaceHolder1_btnFrontPage").disabled = true;
+				document.getElementById("ContentPlaceHolder1_btnSave").disabled = true;
+			}
+		</script>
 	</form>
 </body>
 <!-- Dk/Admin/SBPassbookPrint.aspx EDB D 09:27:06 GMT -->

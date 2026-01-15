@@ -3,7 +3,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
-	cz-shortcut-listen="true" onload="retrieveCodeAfterSoftDelete(); ShareAllotedFromInDropdown(); BranchNameInDropdown(); DepositAccNoInDropdown()">
+	cz-shortcut-listen="true"
+	onload="retrieveCodeAfterSoftDelete(); ShareAllotedFromInDropdown(); BranchNameInDropdown(); DepositAccNoInDropdown()">
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
@@ -27,24 +28,44 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 					<li class="active">Member</li>
 				</ol>
 			</section>
+			<div class="wizard-steps">
+				<div class="wizard-step active" id="step1">
+					<div class="step-circle">1</div>
+					<div class="step-title">MEMBER DETAILS</div>
+					<div class="wizard-line"></div>
+				</div>
+				<div class="wizard-step inactive" id="step2">
+					<div class="step-circle">2</div>
+					<div class="step-title">NOMINEE DETAILS</div>
+				</div>
+				<div class="wizard-step inactive" id="step3">
+					<div class="step-circle">3</div>
+					<div class="step-title">FEES DETAILS</div>
+				</div>
+			</div>
+
 			<form id="myForm" name="myForm" enctype="multipart/form-data">
+
 				<section class="content">
-					<input type="hidden" id="id123" name="id123">
+
 					<div id="" class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
-									<h3 class="box-title">Search Details</h3>
-								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
+
+							<!-- Search Details -->
+							<div id="memberDetails">
+								<div class="form-container">
+									<div class="box-header">
+										<h3 class="box-title">Search Details</h3>
+									</div>
+
+
+									<div class="box-body form-horizontal">
 										<div class="col-md-6">
 											<div class="form-group row">
 												<label class="col-sm-4 control-label">Select by Code<strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
-													<select name="id"
-														onchange="getDataBySearchCode()" id="id"
+													<select name="id" onchange="getDataBySearchCode()" id="id"
 														class="form-control select2" style="width: 100%;">
 														<option value="--Select--" selected="selected">--Select--</option>
 													</select>
@@ -53,19 +74,17 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Member Details</h3>
-								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group">
+								<!-- Member Details -->
+								<div class="form-container">
+									<div class="box-header">
+										<h3 class="box-title">Member Details</h3>
+									</div>
+
+									<div class="box-body form-horizontal">
+
+										<div class="row four-field-row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Registration
 													Date <strong style="color: Red">*</strong>
 												</label>
@@ -84,20 +103,11 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Registration Date</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Member Name <strong
 													style="color: Red">*</strong></label>
-												<div class="col-sm-3">
-													<select name="memberNamePrefix" id="memberNamePrefix"
-														class="form-control" style="width: 100%;">
-														<option selected="selected" value="Mr.">Mr.</option>
-														<option value="Ms.">Ms.</option>
-														<option value="Mrs.">Mrs.</option>
-														<option value="Smt.">Smt.</option>
-														<option value="Md.">Md.</option>
-													</select>
-												</div>
-												<div class="col-sm-5">
+												<div class="col-sm-8">
 													<input name="memberName" type="text" value=""
 														id="memberName" class="form-control"
 														Placeholder="Enter Member Name" /> <span
@@ -106,7 +116,8 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Applicant Name</span>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="txtRelativeName" class="col-sm-4 control-label">Relative
 													Name</label>
 												<div class="col-sm-8">
@@ -114,7 +125,8 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														class="form-control" Placeholder="Enter Relative Name" />
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="drpRelativeRelation"
 													class="col-sm-4 control-label">Relative Relation</label>
 												<div class="col-sm-8">
@@ -138,7 +150,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
+										</div>
+
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label for="drpGender" class="col-sm-4 control-label">Gender</label>
 												<div class="col-sm-8">
 													<select name="gender" id="gender" class="form-control"
@@ -149,11 +164,12 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
+
+											<div class="col-md-3">
 												<label for="txtDOB" class="col-sm-4 control-label">DOB
 													<strong style="color: Red">*</strong>
 												</label>
-												<div class="col-sm-5">
+												<div class="col-sm-8">
 													<div class="input-group date">
 														<div class="input-group-addon">
 															<i class="fa fa-calendar"></i>
@@ -164,8 +180,14 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 															data-mask="" />
 													</div>
 												</div>
-												<div class="col-sm-3">
-													<input name="age" type="text" value="0" maxlength="2"
+											</div>
+
+											<div class="col-md-3">
+												<label for="age" class="col-sm-4 control-label">Age
+													<strong style="color: Red">*</strong>
+												</label>
+												<div class="col-sm-8">
+													<input name="age" type="text" value="" maxlength="2"
 														id="age" class="form-control" Placeholder="Enter Age"
 														onkeypress="return isNumberOnlyKey(this, event);"
 														autocomplete="off" /> <span id="ageMsg"
@@ -173,7 +195,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Age</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Martial Status</label>
 												<div class="col-sm-8">
 													<select name="maritalStatus" id="maritalStatus"
@@ -188,7 +210,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 													</select>
 												</div>
 											</div>
-											<div class="form-group row">
+										</div>
+
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label for="txtAddress" class="col-sm-4 control-label">Address
 													<strong style="color: Red">*</strong>
 												</label>
@@ -200,7 +225,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Address</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtDistrict" class="col-sm-4 control-label">District
 													<strong style="color: Red">*</strong>
 												</label>
@@ -212,7 +237,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														District</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="drpState" class="col-sm-4 control-label">State
 													<strong style="color: Red">*</strong>
 												</label>
@@ -255,7 +280,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														State</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label class="col-sm-4 control-label">Branch Name <strong
 													style="color: Red">*</strong></label>
 												<div class="col-sm-8">
@@ -266,8 +291,9 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
+
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label for="txtPin" class="col-sm-4 control-label">Pin
 													Code <strong style="color: Red">*</strong>
 												</label>
@@ -279,7 +305,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														PIN</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtPin" class="col-sm-4 control-label">Aadhar
 													No. <strong style="color: Red">*</strong>
 												</label>
@@ -293,7 +319,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Aadhar No</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtPin" class="col-sm-4 control-label">PAN
 													No.</label>
 												<div class="col-sm-6">
@@ -307,7 +333,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												</div>
 												<div class="col-sm-2"></div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtPin" class="col-sm-4 control-label">Voter
 													No.</label>
 												<div class="col-sm-6">
@@ -322,7 +348,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												</div>
 												<div class="col-sm-2"></div>
 											</div>
-											<div class="form-group row">
+										</div>
+
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label for="txtPhoneno" class="col-sm-4 control-label">Mobile
 													No <strong style="color: Red">*</strong>
 												</label>
@@ -336,7 +365,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Phone No</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtEmailid" class="col-sm-4 control-label">Email
 													ID </label>
 												<div class="col-sm-8">
@@ -347,21 +376,24 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Email ID</span>
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtOccupation" class="col-sm-4 control-label">Occupation</label>
 												<div class="col-sm-8">
 													<input name="occupation" type="text" id="occupation"
 														class="form-control" Placeholder="Enter Occupation" />
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtEducation" class="col-sm-4 control-label">Education</label>
 												<div class="col-sm-8">
 													<input name="education" type="text" id="education"
 														class="form-control" Placeholder="Enter Education" />
 												</div>
 											</div>
-											<div class="form-group row">
+										</div>
+
+										<div class="row four-field-row">
+											<div class="col-md-3">
 												<label for="txtIntroMCode" class="col-sm-4 control-label">Intro.M
 													Code</label>
 												<div class="col-sm-8">
@@ -370,7 +402,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Placeholder="Enter Intro Member Code" />
 												</div>
 											</div>
-											<div class="form-group row">
+											<div class="col-md-3">
 												<label for="txtIntroMName" class="col-sm-4 control-label">Intro.M
 													Name</label>
 												<div class="col-sm-8">
@@ -379,329 +411,394 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 														Placeholder="Enter Intro Member Name" />
 												</div>
 											</div>
-											<div class="form-group row">
-                                    			<label for="txtIntroMName" class="col-sm-4 control-label">Photo(with 
-                                    			aadhar)</label>
-                                    			<div class="col-sm-8">
-                                       				<img id="preview" name="preview" class="profile-user-img" 
-                                       				src="data:image/png;base64,${aadharPhoto}" style="height:70px;width:115px;" />
-                                       			<input type="file" name="filetag" id="filetag" />
-                                    			</div>
-                                 		</div>
+										</div>
+
+										<div class="row four-field-row">
+											<div class=" col-md-3"
+												style="display: flex; margin: 15px 0 30px;">
+												<div class="box-body">
+													<div>
+														<h4>
+															<b>Photo</b>
+														</h4>
+														<p class="help-block">Maximum 10MB</p>
+													</div>
+													<div class="col-md-3">
+
+														<div class="text-center">
+															<img id="preview" class="profile-user-img"
+																src="upload_Files/${aadharPhoto}" alt="Image"
+																style="height: 110px; width: 110px;"> <input
+																type="file" name="filetag" id="filetag" />
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix">
+											<button type="button" class="btn btn-primary pull-right"
+												onclick="goNominee()">NEXT</button>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-danger">
-								<div class="box-header with-border">
+
+							<!-- Nominee Details -->
+							<div class="form-container" id="nomineeDetails"
+								style="display: none;">
+								<div class="box-header">
 									<h3 class="box-title">Nominee Details</h3>
 								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
-													Name <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="nomineeName" type="text" id="nomineeName"
-														class="form-control" Placeholder="Enter Nominee Name" />
-													<span id="nomineeNameMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Nominee Name</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="drpNomineeRelation"
-													class="col-sm-4 control-label">Nominee Relation</label>
-												<div class="col-sm-8">
-													<select name="nRelation" id="nRelation"
-														class="form-control" style="width: 100%;">
-														<option value="--Select--" selected="selected">--Select--</option>
-														<option value="Brother">Brother</option>
-														<option value="Daughter">Daughter</option>
-														<option value="Father">Father</option>
-														<option value="Friend">Friend</option>
-														<option value="Husband">Husband</option>
-														<option value="Mother">Mother</option>
-														<option value="Sister">Sister</option>
-														<option value="Son">Son</option>
-														<option value="Wife">Wife</option>
-														<option value="Daughter in Law">Daughter in Law</option>
-														<option value="Brother in Law">Brother in Law</option>
-														<option value="Grand Daughter">Grand Daughter</option>
-														<option value="Grand Son">Grand Son</option>
-														<option value="Other">Other</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtNomineeAddress"
-													class="col-sm-4 control-label">Nominee Address</label>
-												<div class="col-sm-8">
-													<input name="nomineeAddress" type="text"
-														id="nomineeAddress" class="form-control" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtNomineeKycNumber"
-													class="col-sm-4 control-label">Nominee KYC No.</label>
-												<div class="col-sm-8">
-													<input name="nomineeKycNumber" type="text"
-														id="nomineeKycNumber" class="form-control" />
-												</div>
+
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
+												Name <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="nomineeName" type="text" id="nomineeName"
+													class="form-control" Placeholder="Enter Nominee Name" /> <span
+													id="nomineeNameMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Nominee Name</span>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label for="txtNomineeMobileNo"
-													class="col-sm-4 control-label">Nominee Mobile No.</label>
-												<div class="col-sm-8">
-													<input name="nomineeMobileNo" type="text" maxlength="10"
-														id="nomineeMobileNo" class="form-control"
-														onkeypress="return isNumberOnlyKey(this, event);" />
-												</div>
+										<div class="col-md-3">
+											<label for="drpNomineeRelation"
+												class="col-sm-4 control-label">Nominee Relation</label>
+											<div class="col-sm-8">
+												<select name="nRelation" id="nRelation" class="form-control"
+													style="width: 100%;">
+													<option value="--Select--" selected="selected">--Select--</option>
+													<option value="Brother">Brother</option>
+													<option value="Daughter">Daughter</option>
+													<option value="Father">Father</option>
+													<option value="Friend">Friend</option>
+													<option value="Husband">Husband</option>
+													<option value="Mother">Mother</option>
+													<option value="Sister">Sister</option>
+													<option value="Son">Son</option>
+													<option value="Wife">Wife</option>
+													<option value="Daughter in Law">Daughter in Law</option>
+													<option value="Brother in Law">Brother in Law</option>
+													<option value="Grand Daughter">Grand Daughter</option>
+													<option value="Grand Son">Grand Son</option>
+													<option value="Other">Other</option>
+												</select>
 											</div>
-											<div class="form-group row">
-												<label for="txtNomineeAge" class="col-sm-4 control-label">Nominee
-													Age.</label>
-												<div class="col-sm-8">
-													<input name="nomineeAge" type="text" value="0"
-														maxlength="2" id="nomineeAge" class="form-control"
-														onkeypress="return isNumberOnlyKey(this, event);" />
-												</div>
+										</div>
+										<div class="col-md-3">
+											<label for="txtNomineeAddress" class="col-sm-4 control-label">Nominee
+												Address</label>
+											<div class="col-sm-8">
+												<input name="nomineeAddress" type="text" id="nomineeAddress"
+													class="form-control" />
 											</div>
-											<div class="form-group row">
-												<label for="TxtNomineePanNo" class="col-sm-4 control-label">Nominee
-													Pan No.</label>
-												<div class="col-sm-8">
-													<input name="nomineePanNo" type="text" maxlength="10"
-														id="nomineePanNo" class="form-control" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="drpNomineeKycType"
-													class="col-sm-4 control-label">Nominee KYC Type</label>
-												<div class="col-sm-8">
-													<select name="nomineeKycType" id="nomineeKycType"
-														class="form-control" style="width: 100%;">
-														<option value="--Select--" selected="selected">--Select--</option>
-														<option value="Aadhar">Aadhar</option>
-														<option value="Voter">Voter</option>
-														<option value="Ration Card">Ration Card</option>
-														<option value="Driving Licence">Driving Licence</option>
-													</select>
-												</div>
+										</div>
+										<div class="col-md-3">
+											<label for="txtNomineeKycNumber"
+												class="col-sm-4 control-label">Nominee KYC No.</label>
+											<div class="col-sm-8">
+												<input name="nomineeKycNumber" type="text"
+													id="nomineeKycNumber" class="form-control" />
 											</div>
 										</div>
 									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="txtNomineeMobileNo"
+												class="col-sm-4 control-label">Nominee Mobile No.</label>
+											<div class="col-sm-8">
+												<input name="nomineeMobileNo" type="text" maxlength="10"
+													id="nomineeMobileNo" class="form-control"
+													onkeypress="return isNumberOnlyKey(this, event);" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label for="txtNomineeAge" class="col-sm-4 control-label">Nominee
+												Age.</label>
+											<div class="col-sm-8">
+												<input name="nomineeAge" type="text" value="0" maxlength="2"
+													id="nomineeAge" class="form-control"
+													onkeypress="return isNumberOnlyKey(this, event);" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label for="TxtNomineePanNo" class="col-sm-4 control-label">Nominee
+												Pan No.</label>
+											<div class="col-sm-8">
+												<input name="nomineePanNo" type="text" maxlength="10"
+													id="nomineePanNo" class="form-control" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label for="drpNomineeKycType" class="col-sm-4 control-label">Nominee
+												KYC Type</label>
+											<div class="col-sm-8">
+												<select name="nomineeKycType" id="nomineeKycType"
+													class="form-control" style="width: 100%;">
+													<option value="--Select--" selected="selected">--Select--</option>
+													<option value="Aadhar">Aadhar</option>
+													<option value="Voter">Voter</option>
+													<option value="Ration Card">Ration Card</option>
+													<option value="Driving Licence">Driving Licence</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix">
+										<button type="button" class="btn btn-default"
+											onclick="backMember()">PREVIOUS</button>
+										<button type="button" class="btn btn-primary pull-right"
+											onclick="goFees()">NEXT</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Fees/Setting Details -->
+							<div class="form-container" id="feesDetails"
+								style="display: none;">
+								<div class="box-header">
+									<h3 class="box-title">Fees/Setting Details</h3>
+								</div>
+
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+
+										<div class="col-md-3">
+											<label for="txtMemberJoiningFess"
+												class="col-sm-4 control-label">Member Fees (if any)
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="memberJoiningFess" type="text" value="0"
+													id="memberJoiningFess" class="form-control"
+													onkeypress="return isNumberOnlyKey(this, event);" /> <span
+													id="memberJoiningFessMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Member Fees (if any)</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label for="txtShareAllotmentFrom"
+												class="col-sm-4 control-label">Share Alloted From <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<select name="shareAllotedfrm" id="shareAllotedfrm"
+													class="form-control select2" style="width: 100%;">
+													<option value="--Select--" selected="selected">--Select--</option>
+												</select> <span id="shareAllotedfrmMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+													Alloted From</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label for="txtNoOfShared" class="col-sm-4 control-label">No.
+												of Share <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<input name="noOfShared" type="text" value=""
+													onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$txtNoOfShared\&#39;,\&#39;\&#39;)&#39;, 0)"
+													onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;return isNumberOnlyKey(this, event);"
+													id="noOfShared" class="form-control" /> <span
+													id="noOfSharedMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													No of Share</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Share Amount <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="enterShareAmount" type="text" value=""
+													readonly="readonly" id="enterShareAmount"
+													class="form-control" /> <span id="enterShareAmountMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Share Amount</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
+												By <strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<select name="paymode"
+													onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlPaymode\&#39;,\&#39;\&#39;)&#39;, 0)"
+													id="paymode" class="form-control" style="width: 100%;">
+													<option value="--Select--" selected="selected">--Select--</option>
+													<option value="Cash">Cash</option>
+													<option value="Cheque">Cheque</option>
+													<option value="Online">Online</option>
+													<option value="NEFT">NEFT</option>
+												</select>
+											</div>
+										</div>
+
+										<div id="ContentPlaceHolder1_pnlcheque" class="col-md-3">
+											<label class="col-sm-4 control-label">Cheque No.</label>
+											<div class="col-sm-8">
+												<input name="chkNo" type="text" maxlength="10" id="chkNo"
+													class="form-control" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Cheque Date</label>
+											<div class="col-sm-8">
+												<div class="input-group date">
+													<div class="input-group-addon">
+														<i class="fa fa-calendar"></i>
+													</div>
+													<input name="chkDate" type="date" value="" id="chkDate"
+														class="form-control"
+														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+														data-mask="" />
+												</div>
+											</div>
+										</div>
+										<div id="ContentPlaceHolder1_idbankAC" class="col-md-3">
+											<label class="col-sm-4 control-label">Deposit A/C</label>
+											<div class="col-sm-8">
+												<select name="depositAcc" onchange="" id="depositAcc"
+													class="form-control" style="width: 100%;">
+													<option value="--Select--" selected="selected">--Select--</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Remarks</label>
+											<div class="col-sm-8">
+												<textarea name="remarks" rows="2" cols="20" id="remarks"
+													class="form-control" Placeholder="Enter Remarks if any"></textarea>
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Member Status <strong
+												style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<label class="switch"> <input
+													id="memberStatusIsActive" type="checkbox"
+													name="memberStatusIsActive" checked="checked" /> <span
+													class="slider round"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Mobile Banking
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="chkmobile"
+													type="checkbox" name="chkmobile" /> <span
+													class="slider round"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Net Banking <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="chknetBanking"
+													type="checkbox" name="chknetBanking" /> <span
+													class="slider round"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">SMS Send <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="chkisSms"
+													type="checkbox" name="chkisSms" checked="checked" /> <span
+													class="slider round"></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Is Minor <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<label class="switch"> <input id="chkMinor"
+													type="checkbox" name="chkMinor" /> <span
+													class="slider round"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix">
+										<button type="button" class="btn btn-default"
+											onclick="backNominee()">PREVIOUS</button>
+										<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
+											value="Update" id="ContentPlaceHolder1_btnSave"
+											class="btn btn-success pull-right margin-r-5" /> <input type="submit"
+											name="btnprint" value="Print" id="btnprint"
+											class="btn btn-info pull-right margin-r-5" onclick="printTable1()" />
+										<input type="button" name="btndelete" value="Delete"
+											onclick="softDeleteIntegrations();" id="btndelete"
+											class="btn btn-danger pull-right" />
+									</div>
+
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
-									<h3 class="box-title">Fees/Setting Details</h3>
-								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label for="txtMemberJoiningFess"
-													class="col-sm-4 control-label">Member Fees (if any)
-													<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="memberJoiningFess" type="text" value="0"
-														id="memberJoiningFess" class="form-control"
-														onkeypress="return isNumberOnlyKey(this, event);" /> <span
-														id="memberJoiningFessMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Member Fees (if any)</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtShareAllotmentFrom"
-													class="col-sm-4 control-label">Share Alloted From <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<select name="shareAllotedfrm" id="shareAllotedfrm"
-														class="form-control select2" style="width: 100%;">
-														<option value="--Select--" selected="selected">--Select--</option>
-													</select> <span id="shareAllotedfrmMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-														Alloted From</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtNoOfShared" class="col-sm-4 control-label">No.
-													of Share <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="noOfShared" type="text" value=""
-														onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$txtNoOfShared\&#39;,\&#39;\&#39;)&#39;, 0)"
-														onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;return isNumberOnlyKey(this, event);"
-														id="noOfShared" class="form-control" /> <span
-														id="noOfSharedMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														No of Share</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Share Amount <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="enterShareAmount" type="text" value=""
-														readonly="readonly" id="enterShareAmount"
-														class="form-control" /> <span id="enterShareAmountMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Share Amount</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
-													By <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<select name="paymode"
-														onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlPaymode\&#39;,\&#39;\&#39;)&#39;, 0)"
-														id="paymode" class="form-control" style="width: 100%;">
-														<option value="--Select--" selected="selected">--Select--</option>
-														<option value="Cash">Cash</option>
-														<option value="Cheque">Cheque</option>
-														<option value="Online">Online</option>
-														<option value="NEFT">NEFT</option>
-													</select>
-												</div>
-											</div>
-											<div id="ContentPlaceHolder1_pnlcheque">
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Cheque No.</label>
-													<div class="col-sm-8">
-														<input name="chkNo" type="text" maxlength="10" id="chkNo"
-															class="form-control" />
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 control-label">Cheque Date</label>
-													<div class="col-sm-8">
-														<div class="input-group date">
-															<div class="input-group-addon">
-																<i class="fa fa-calendar"></i>
-															</div>
-															<input name="chkDate" type="date" value="" id="chkDate"
-																class="form-control"
-																data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-																data-mask="" />
-														</div>
-													</div>
-												</div>
-											</div>
-											<div id="ContentPlaceHolder1_idbankAC" class="form-group row">
-												<label class="col-sm-4 control-label">Deposit A/C</label>
-												<div class="col-sm-8">
-													<select name="depositAcc" onchange="" id="depositAcc"
-														class="form-control" style="width: 100%;">
-														<option value="--Select--" selected="selected">--Select--</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Remarks</label>
-												<div class="col-sm-8">
-													<textarea name="remarks" rows="2" cols="20" id="remarks"
-														class="form-control" Placeholder="Enter Remarks if any"></textarea>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Member Status
-													<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<label class="switch"> <input
-														id="memberStatusIsActive" type="checkbox"
-														name="memberStatusIsActive" checked="checked" /> <span
-														class="slider round"></span>
-													</label>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Mobile Banking
-													<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<label class="switch"> <input id="chkmobile"
-														type="checkbox" name="chkmobile" /> <span
-														class="slider round"></span>
-													</label>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Net Banking <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<label class="switch"> <input id="chknetBanking"
-														type="checkbox" name="chknetBanking" /> <span
-														class="slider round"></span>
-													</label>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">SMS Send <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<label class="switch"> <input id="chkisSms"
-														type="checkbox" name="chkisSms" checked="checked" /> <span
-														class="slider round"></span>
-													</label>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Is Minor <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<label class="switch"> <input id="chkMinor"
-														type="checkbox" name="chkMinor" /> <span
-														class="slider round"></span>
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="box-footer">
-										<div class="row col-md-12">
-											<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
-												value="Update" id="ContentPlaceHolder1_btnSave"
-												class="btn btn-success pull-right margin-r-5" />
-										
+				</section>
 			</form>
-			<input type="button" name="btndelete" value="Delete"
-				onclick="softDeleteIntegrations();" id="btndelete"
-				class="btn btn-danger pull-right" /> 
-			<input type="submit"
-				name="btnprint" value="Print" id="btnprint"
-				class="btn btn-info pull-right margin-r-5" onclick="printTable1()" />
 		</div>
 	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
-	</div>
+
+
 	<div class="control-sidebar-bg"></div>
-	</div>
+
+	<script>
+	function goNominee() {
+		
+		$("#memberDetails").hide();
+		$("#nomineeDetails").show();
+
+		$("#step1").removeClass("active").addClass("completed");
+		$("#step2").removeClass("inactive").addClass("active");
+	}
 	
-<!-- Print Operation -->
-<script>
+	function backMember() {
+		$("#nomineeDetails").hide();
+		$("#memberDetails").show();
+
+		$("#step2").removeClass("active").addClass("inactive");
+		$("#step1").removeClass("completed").addClass("active");
+	}
+	
+	function goFees() {
+		$("#nomineeDetails").hide();
+		$("#feesDetails").show();
+		
+		$("#step2").removeClass("active").addClass("completed");
+		$("#step3").removeClass("inactive").addClass("active");
+	}
+	
+	function backNominee() {
+		$("#feesDetails").hide();
+		$("#nomineeDetails").show();
+		
+		$("#step3").removeClass("active").addClass("inactive");
+		$("#step2").removeClass("completed").addClass("active");
+	}
+	
+	</script>
+
+	<!-- Print Operation -->
+	<script>
       function printTable1() {
           const table = document.querySelector('table');
           const printWindow = window.open('', '', 'height=500,width=800');
@@ -715,8 +812,8 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
         }
  </script>
 
-<!--  Update Operation -->
-<script>
+	<!--  Update Operation -->
+	<script>
 	//alert("hi")
 	$(document).ready(function() {
 	$("#myForm").submit(function(e) {
@@ -750,7 +847,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 });	
 </script>
 
-<script>
+	<script>
       var fileTag = document.getElementById("filetag"),
           preview = document.getElementById("preview")
       
@@ -807,6 +904,6 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 	<script src="dist/js/MemberRectificationJs.js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-</form>
+	</form>
 </body>
 </html>

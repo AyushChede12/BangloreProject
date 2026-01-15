@@ -16,43 +16,7 @@
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport" />
-<!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet"
-	href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-<!-- Font Awesome -->
-<link rel="stylesheet"
-	href="bower_components/font-awesome/css/font-awesome.min.css" />
-<!-- Ionicons -->
-<link rel="stylesheet"
-	href="bower_components/Ionicons/css/ionicons.min.css" />
-<!-- jvectormap -->
-<link rel="stylesheet"
-	href="bower_components/jvectormap/jquery-jvectormap.css" />
-<!-- Theme style -->
-<link rel="stylesheet" href="dist/css/AdminLTE.min.css" />
-<!-- daterange picker -->
-<link rel="stylesheet"
-	href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
-<!-- bootstrap datepicker -->
-<link rel="stylesheet"
-	href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
-<!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="plugins/iCheck/all.css" />
-<!-- Select2 -->
-<link rel="stylesheet"
-	href="bower_components/select2/dist/css/select2.min.css" />
-<!-- Theme style -->
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css" />
-<link rel="stylesheet" href="dist/css/dashboard.css" />
-<link rel="shortcut icon" type="image/x-icon"
-	href="../images/favicon.html" />
-<link rel="stylesheet" href="dist/css/lightbox.min.css" />
-<link rel="stylesheet" href="dist/css/qr.css" />
-<!-- Google Font -->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+
 <style type="text/css">
 th {
 	padding-right: 50px;
@@ -241,6 +205,7 @@ th {
 </script>
 
 </head>
+<jsp:include page="../header.jsp" />
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
@@ -316,7 +281,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Loan Calculator</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>LOAN ADMINISTRATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">EMI CALCULATOR</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -325,91 +293,85 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="box box-success form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Loan Details</h3>
 								</div>
 								<div class="box-body">
 									<div class="col-md-12">
-										<div class="form-group row">
-											<label for="ddlRoiType" class="col-sm-5 control-label">ROI
-												Type <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<select name="ctl00$ContentPlaceHolder1$ddlRoiType"
-													id="ContentPlaceHolder1_ddlRoiType" class="form-control"
-													style="width: 100%;" onchange="calculation()">
-													<option value="EQ">Equal Principal</option>
-													<option value="EMI">EMI</option>
-													<option value="Rule78">Rule 78</option>
-												</select>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="ddlRoiType">ROI Type <strong
+												style="color: Red">*</strong>
+											</label> <select name="ctl00$ContentPlaceHolder1$ddlRoiType"
+												id="ContentPlaceHolder1_ddlRoiType" class="form-control"
+												style="width: 100%;" onchange="calculation()">
+												<option value="EQ">Equal Principal</option>
+												<option value="EMI">EMI</option>
+												<option value="Rule78">Rule 78</option>
+											</select>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Loan Amount <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
-												<input name="ctl00$ContentPlaceHolder1$txtLoanAmount"
-													type="text" id="ContentPlaceHolder1_txtLoanAmount"
-													class="form-control" onpaste="return false"
-													onkeypress="return isNumberOnlyKey(this, event);"
-													placeholder="Loan Amount" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator4"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Loan Amount</span>
-											</div>
+
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Loan Amount <strong style="color: Red">*</strong></label>
+											<input name="ctl00$ContentPlaceHolder1$txtLoanAmount"
+												type="text" id="ContentPlaceHolder1_txtLoanAmount"
+												class="form-control" onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);"
+												placeholder="Loan Amount" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator4"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Loan Amount</span>
+
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Interest in
-												Year <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="ctl00$ContentPlaceHolder1$txtROI" type="text"
-													id="ContentPlaceHolder1_txtROI" class="form-control"
-													onpaste="return false"
-													onkeypress="return isNumberKey(this, event);"
-													autocomplete="off" placeholder="Rate Of Interest" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator5"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													ROI (% p.a.)</span>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Interest in Year <strong style="color: Red">*</strong>
+											</label> <input name="ctl00$ContentPlaceHolder1$txtROI" type="text"
+												id="ContentPlaceHolder1_txtROI" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberKey(this, event);"
+												autocomplete="off" placeholder="Rate Of Interest" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator5"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												ROI (% p.a.)</span>
+
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Tensure in Year
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-7">
-												<input name="ctl00$ContentPlaceHolder1$txtTerm" type="text"
-													id="ContentPlaceHolder1_txtTerm" class="form-control"
-													onpaste="return false"
-													onkeypress="return isNumberOnlyKey(this, event);"
-													placeholder="Term On Month" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator7"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Term</span>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Tensure in Year <strong style="color: Red">*</strong>
+											</label> <input name="ctl00$ContentPlaceHolder1$txtTerm" type="text"
+												id="ContentPlaceHolder1_txtTerm" class="form-control"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);"
+												placeholder="Term On Month" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator7"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Term</span>
+										</div>
+
+
+									</div>
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class=" col-md-7 box-footer ">
+
+											<input type="button" name="ctl00$ContentPlaceHolder1$btnGo"
+												value="View amortization" id="ContentPlaceHolder1_btnGo"
+												class="btn btn-danger pull-right" /> <input type="button"
+												name="ctl00$ContentPlaceHolder1$btnCalculate"
+												value="Calculate" id="ContentPlaceHolder1_btnCalculate"
+												class="btn btn-success pull-right margin-r-5"
+												onclick="calculation()" />
 										</div>
 									</div>
+
 								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<input type="button" name="ctl00$ContentPlaceHolder1$btnGo"
-											value="View amortization" id="ContentPlaceHolder1_btnGo"
-											class="btn btn-danger pull-right" /> <input type="button"
-											name="ctl00$ContentPlaceHolder1$btnCalculate"
-											value="Calculate" id="ContentPlaceHolder1_btnCalculate"
-											class="btn btn-success pull-right margin-r-5"
-											onclick="calculation()" />
-									</div>
-								</div>
+
 							</div>
 						</div>
-						<div class="col-md-8">
+						<div class="col-md-12">
 
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+							<div class="box box-success form-container"
+								style="overflow: auto !important;">
+								<div class="box-header">
 									<h3 class="box-title">Amortization Schedule</h3>
 									<div class="box-tools pull-right"></div>
 								</div>

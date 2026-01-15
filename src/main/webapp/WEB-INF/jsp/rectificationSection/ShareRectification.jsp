@@ -29,15 +29,20 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 				</ol>
 			</section>
 			<section class="content">
+
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Share Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+
+									<div class="col-md-3">
 										<label for="ddlMemberCode" class="col-sm-4 control-label">Search
 											by Code <strong style="color: Red">*</strong>
 										</label>
@@ -51,7 +56,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Member Code</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtPreviousShareAmount"
 											class="col-sm-4 control-label">Member Name <strong
 											style="color: Red">*</strong></label>
@@ -64,7 +69,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Member Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtDateofJoin" class="col-sm-4 control-label">Date
 											Of Join</label>
 										<div class="col-sm-8">
@@ -79,7 +84,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtPreviousShareAmount"
 											class="col-sm-4 control-label">Previous Balance</label>
 										<div class="col-sm-8">
@@ -88,7 +93,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Placeholder="Enter Previous Share Balance" />
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label for="txtPreviousShareNo" class="col-sm-4 control-label">Previous
 											No Of Share</label>
 										<div class="col-sm-8">
@@ -97,7 +105,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Placeholder="Enter Previous No Of Share" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtFaceValue" class="col-sm-4 control-label">Face
 											Value</label>
 										<div class="col-sm-8">
@@ -106,9 +114,8 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Placeholder="Enter Face Value" />
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
+
+									<div class="col-md-3">
 										<label for="txtBranch" class="col-sm-4 control-label">Branch
 											<strong style="color: Red">*</strong>
 										</label>
@@ -119,7 +126,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</select>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtTransferDate" class="col-sm-4 control-label">Transfer
 											Date <strong style="color: Red">*</strong>
 										</label>
@@ -135,7 +142,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label for="ddlAllotedFrom" class="col-sm-4 control-label">Share
 											Alloted From <strong style="color: Red">*</strong>
 										</label>
@@ -151,16 +161,16 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Share Alloted</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtSharebalance" class="col-sm-4 control-label">Share
 											Balance</label>
 										<div class="col-sm-8">
-											<input name="sharebalance" type="text" 
-												readonly="readonly" id="sharebalance" class="form-control"
+											<input name="sharebalance" type="text" readonly="readonly"
+												id="sharebalance" class="form-control"
 												Placeholder="Enter Share balance" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtTransferAmount" class="col-sm-4 control-label">Transfer
 											Amount <strong style="color: Red">*</strong>
 										</label>
@@ -172,7 +182,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Transfer Amount</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtNoOfShare" class="col-sm-4 control-label">No.
 											of Share <strong style="color: Red">*</strong>
 										</label>
@@ -187,17 +197,17 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Payment Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-6">
 										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 											By <strong style="color: Red">*</strong>
 										</label>
@@ -209,7 +219,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</select>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-6">
 										<label class="col-sm-4 control-label">Remarks</label>
 										<div class="col-sm-8">
 											<textarea name="remarks" rows="2" cols="20" id="remarks"
@@ -218,16 +228,13 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6"></div>
-							</div>
-							<div class="box-footer">
-								<div class="row col-md-12">
-									<input type="submit" name="ctl00$ContentPlaceHolder1$btnDelete"
-										value="Delete" onclick="softDeleteIntegration();"
-										id="ContentPlaceHolder1_btnDelete"
-										class="btn btn-danger pull-right" />
-									<input type="button" name="ctl00$ContentPlaceHolder1$btnNew"  onclick="redirectThePageToShareTransfer()"
-									value="New" id="ContentPlaceHolder1_btnNew" class="btn btn-info pull-right margin-r-5" /> 
+								<div class="box-footer text-center">
+									<div class="row col-md-12">
+										 <input type="submit"
+											name="ctl00$ContentPlaceHolder1$btnDelete" value="Delete"
+											onclick="softDeleteIntegration();"
+											id="ContentPlaceHolder1_btnDelete" class="btn btn-danger" />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -280,7 +287,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script src="dist/js/Rectification.js"></script>
 	<script src="dist/js/MemberRectificationJs.js"></script>
-   <script type="text/javascript">
+	<script type="text/javascript">
         function redirectThePageToShareTransfer(){
         	window.location.href = "shareIssue";
 		}

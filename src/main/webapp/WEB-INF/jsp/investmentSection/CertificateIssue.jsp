@@ -16,7 +16,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Certificate Issue</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE POLICY</b>
+				</h1>
+				<h5 style="margin-left: 18px;">POLICY ISSUE CERTIFICATE</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -26,15 +29,19 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-warning">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Search Details for Print</h3>
 							</div>
-							<div class="form-horizontal">
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Select by Policy No.<strong style="color: Red">*</strong></label>
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-5">
+										<label class="col-sm-4 control-label">Select by Policy
+											No.<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
 											<select name="searchbyPolicyNo" id="searchbyPolicyNo"
 												onchange="javascript:getByAddInvesmentCode1()"
 												class="form-control select2" style="width: 100%;">
@@ -42,42 +49,41 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-9">
-										<div class="form-group">
-											<label></label> <input type="button"
-												onclick="getDataByIssue();"
-												name="ctl00$ContentPlaceHolder1$btnSave" value="Search"
-												id="ContentPlaceHolder1_btnSave"
-												class="btn btn-success pull-right margin-r-5 margin-20" />
-										</div>
+								</div>
+								<div class="text-center">
+									<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success">
+										<span class="fa fa-search"></span> SEARCH
+									</a>
+								</div>
+							</div>
+							<div class="box box-success"
+								style="box-shadow: none; overflow: auto !important;">
+								<div class="box-header">
+									<h3 class="box-title">Search Box Table</h3>
+								</div>
+								<div class="box-body">
+									<div>
+										<table cellspacing="0" cellpadding="3" rules="all"
+											class="display nowrap table table-hover table-striped table-bordered"
+											border="1" style="width: 100%; border-collapse: collapse;">
+											<tr style="color: White; background-color: #008385;">
+												<th scope="col">Policy Date</th>
+												<th scope="col">Name</th>
+												<th scope="col">Date Of Birth</th>
+												<th scope="col">Phone Number</th>
+												<th scope="col">Scheme Name</th>
+												<th scope="col">Address</th>
+												<th scope="col">Pin Code</th>
+											</tr>
+											<tbody id="IssueCertTable">
+
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
-								<div>
-									<table cellspacing="0" cellpadding="3" rules="all"
-										class="display nowrap table table-hover table-striped table-bordered"
-										border="1" style="width: 100%; border-collapse: collapse;">
-										<tr style="color: White; background-color: #008385;">
-											<th scope="col">Policy Date</th>
-											<th scope="col">Name</th>
-											<th scope="col">Date Of Birth</th>
-											<th scope="col">Phone Number</th>
-											<th scope="col">Scheme Name</th>
-											<th scope="col">Address</th>
-											<th scope="col">Pin Code</th>
-										</tr>
-										<tbody id="IssueCertTable">
 
-										</tbody> 
-									</table>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</section>
@@ -120,7 +126,7 @@
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script src="dist/js/investmentSection .js"></script>
-	
+
 	<!-- </form> -->
 </body>
 </html>

@@ -149,6 +149,15 @@ public class ApprovalSection {
 	public String recurringApproval(Model model) {
 		return "approvalSection/RecurringApproval";
 	}
+	@GetMapping("/Approvedd")
+	public String Approvedd(Model model) {
+		return "approvalSection/Approvedd";
+	}
+	
+	@GetMapping("/Approvefd")
+	public String Approvefd(Model model) {
+		return "approvalSection/Approvefd";
+	}
 
 	@GetMapping("/SBTxnApproval")
 	public String SBTxnApproval(Model model) {
