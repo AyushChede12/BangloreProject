@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.BankMaster;
 
 @Repository
-public interface BankMasterRepo extends JpaRepository<BankMaster, Integer> {
+public interface BankMasterRepo extends JpaRepository<BankMaster, Long> {
 	@Query(value = "select * from bank_master order by id limit 5", nativeQuery = true)
 	List<BankMaster> getlastFiveRecords();
 

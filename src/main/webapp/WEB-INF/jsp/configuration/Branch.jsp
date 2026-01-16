@@ -1,4 +1,38 @@
 <jsp:include page="../header.jsp" />
+<style>
+.custom-table thead th {
+	background-color: #C48223; /* header color */
+	color: #ffffff;
+	text-align: center;
+	font-size: 18px; /* heading text bigger */
+	font-weight: 700;
+	padding: 18px 12px; /* 🔥 HEIGHT CONTROL */
+	line-height: 1.8; /* 🔥 OPEN LOOK */
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* Body rows more open */
+.custom-table tbody td {
+	padding: 14px 12px;
+	font-size: 15px;
+}
+
+.iconbutton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.iconbutton:focus {
+    outline: none;
+}
+
+.iconbutton i {
+    font-size: 18px;
+}
+</style>
 <script src="jquery-3.6.3.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -40,7 +74,9 @@
 
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader"><b>CUSTOMIZATION</b></h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>CUSTOMIZATION</b>
+				</h1>
 				<h5 style="margin-left: 18px;">ADD BRANCH</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -263,7 +299,7 @@
 												IFSC Code</span>
 										</div>
 
-										<div class="col-md-4"style="margin-top: 15px;">
+										<div class="col-md-4" style="margin-top: 15px;">
 											<label>Balance </label> <input name="balance" type="text"
 												id="balance" readonly="readonly" class="form-control"
 												placeholder="0.00" autocomplete="off" /> <span
@@ -295,7 +331,7 @@
 							</div>
 
 
-							<div class="form-container">
+							<%-- <div class="form-container">
 
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>
@@ -323,6 +359,32 @@
 										</section>
 									</div>
 								</div>
+							</div> --%>
+							<div class="form-container table-responsive">
+								<div class="box-body">
+
+									<table
+										class="table table-bordered table-hover table-striped custom-table datatable">
+										<thead>
+											<tr>
+												<th>SL No</th>
+												<th>BRANCH CODE</th>
+												<th>BRANCH NAME</th>
+												<th>OPENING DATE</th>
+												<th>PIN</th>
+												<th>STATE</th>
+												<th>CONTACT PERSON</th>
+												<th>CONTACT NO.</th>
+												<th>EDIT</th>
+												<th>DELETE</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- dynamic rows -->
+										</tbody>
+									</table>
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -333,54 +395,55 @@
 		<div class="control-sidebar-bg"></div>
 	</div>
 
+	<script src="dist/js/adminlte.min.js"></script>
+	<script src="dist/js/customization/branch.js"></script>
 
-
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
+	<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	Bootstrap 3.3.7
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- InputMask -->
+	InputMask
 	<script src="plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-	<!-- date-range-picker -->
+	date-range-picker
 	<script src="bower_components/moment/min/moment.min.js"></script>
 	<script
 		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap datepicker -->
+	bootstrap datepicker
 	<script
 		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<!-- bootstrap color picker -->
+	bootstrap color picker
 	<script
 		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-	<!-- bootstrap time picker -->
+	bootstrap time picker
 	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-	<!-- SlimScroll -->
+	SlimScroll
 	<script
 		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<!-- iCheck 1.0.1 -->
+	iCheck 1.0.1
 	<script src="plugins/iCheck/icheck.min.js"></script>
-	<!-- FastClick -->
+	FastClick
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
+	AdminLTE App
+	
+	AdminLTE for demo purposes
 	<script src="dist/js/demo.js"></script>
-	<!-- Branch Master Ajax -->
+	Branch Master Ajax
 	<script src="dist/js/config.js"></script>
-	<!-- Select2 -->
-	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+	Select2
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script> -->
 
 
-	<script>
+	<!-- <script>
 		function fetchMaxGLGroupNo() {
 			$.get('/fetchMaxGLHeadNo', function(data) {
 				var gLGroupNo = document.getElementById("glHeadNo");
 				gLGroupNo.value = data + 1;
 			});
 		}
-	</script>
+	</script> -->
 
-	<script>
+	<!-- <script>
 		$(document)
 				.ready(
 						function() {
@@ -481,7 +544,7 @@
 											});
 
 						});
-	</script>
+	</script> -->
 
 </body>
 </html>

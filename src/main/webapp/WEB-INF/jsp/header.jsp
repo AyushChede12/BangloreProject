@@ -31,7 +31,7 @@
 <link rel="stylesheet"
 	href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
 <!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="plugins/iCheck/all.css" />
+<!-- <link rel="stylesheet" href="plugins/iCheck/all.css" /> -->
 <!-- Select2 -->
 <link rel="stylesheet"
 	href="bower_components/select2/dist/css/select2.min.css" />
@@ -156,7 +156,7 @@ input:checked+.slider:before {
 }
 </style>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="dist/js/customJs.js"></script>
+<!-- <script src="dist/js/customJs.js"></script>
 <script src="dist/js/investmentSection.js"></script>
 <script src="dist/js/loanModule.js"></script>
 <script src="dist/js/goldLoanMaster.js"></script>
@@ -164,5 +164,5 @@ input:checked+.slider:before {
 <script src="dist/js/LoanModuleJs.js"></script>
 <script src="dist/js/payroll.js"></script>
 <script src="dist/js/config.js"></script>
-<script src="dist/js/dashboard.js"></script>
+<script src="dist/js/dashboard.js"></script> -->
 </head>
