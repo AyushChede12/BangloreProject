@@ -1,5 +1,8 @@
 package com.society.application.model;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +41,9 @@ public class BranchMaster {
 	private String module;
 	private String selectTransactionCheckbox;
 	private String flag;
-	private double balance;
+	private BigDecimal balance = BigDecimal.ZERO;
+	private LocalDateTime createdAt;
+	private LocalDateTime updatedAt;
 
 	public String getBankID() {
 		return bankID;
@@ -240,12 +245,28 @@ public class BranchMaster {
 		this.flag = flag;
 	}
 
-	public double getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 }
