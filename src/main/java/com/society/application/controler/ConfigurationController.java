@@ -312,13 +312,13 @@ public class ConfigurationController {
 	public List<FYMaster> getAllFYDetails(Model model) {
 		return configurationService.fetchFYDetails();
 	}
-	
+
 	@GetMapping("/getFinancialYearById") // Ayush
 	public ResponseEntity<ApiResponse<FYMaster>> findFinancialYearById(@RequestParam("id") Long id) {
 		Optional<FYMaster> fyear = configurationService.findFinancialYearById(id);
 		if (fyear.isPresent()) {
-			ApiResponse<FYMaster> response = new ApiResponse<>(HttpStatus.FOUND,
-					"Financial Year fetched successfully", fyear.get());
+			ApiResponse<FYMaster> response = new ApiResponse<>(HttpStatus.FOUND, "Financial Year fetched successfully",
+					fyear.get());
 			return ResponseEntity.ok(response);
 		} else {
 			ApiResponse<FYMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
@@ -326,7 +326,7 @@ public class ConfigurationController {
 			return ResponseEntity.status(404).body(response);
 		}
 	}
-	
+
 	@PostMapping("/deleteFinancialYearById") // Ayush
 	public ResponseEntity<ApiResponse<String>> deleteFinancialYear(@RequestParam("id") Long id) {
 		boolean isDeleted = configurationService.deleteFinancialYear(id);
@@ -340,8 +340,6 @@ public class ConfigurationController {
 			return ResponseEntity.badRequest().body(response);
 		}
 	}
-	
-	
 
 //	@PostMapping("/SaveRelation")
 //	public String saveRelativerelation(@ModelAttribute("Relationrelative") RelativeRelationMaster relationMaster,
@@ -444,12 +442,12 @@ public class ConfigurationController {
 			return ResponseEntity.status(404).body(response);
 		}
 	}
-
-	@GetMapping("/getAllBranchMaster")
-	@ResponseBody
-	public List<BranchMaster> getAllBranchMaster(Model model) {
-		return branchMasterRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
-	}
+//
+//	@GetMapping("/getAllBranchMaster")
+//	@ResponseBody
+//	public List<BranchMaster> getAllBranchMaster(Model model) {
+//		return branchMasterRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+//	}
 
 //	@PostMapping("/saveAllBranchMaster")
 //	@ResponseBody
@@ -461,22 +459,44 @@ public class ConfigurationController {
 //		return "configuration/Branch";
 //	}
 
-	@PostMapping("/saveAndUpdateAllBranchModule") // Ayush (without DTO)
-	public ResponseEntity<ApiResponse<BranchMaster>> saveBranch(@RequestBody BranchMaster branchModule) {
-		boolean isCreate = (branchModule.getId() == null); // Check BEFORE saving
+	@PostMapping("/saveAllBranchMaster")
+	public ResponseEntity<ApiResponse<BranchMaster>> saveBranchMaster(@RequestBody BranchMaster branch) {
 
-		BranchMaster savedEntity = configurationService.saveBranchModule(branchModule);
+		BranchMaster savedBranch = configurationService.saveBranch(branch);
 
-		ApiResponse<BranchMaster> response;
+		ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.CREATED, "Branch saved successfully",
+				savedBranch);
 
-		if (isCreate) {
-			response = new ApiResponse<>(HttpStatus.CREATED, "Branch created successfully", savedEntity);
-			return new ResponseEntity<>(response, HttpStatus.CREATED);
-		} else {
-			response = new ApiResponse<>(HttpStatus.OK, "Branch updated successfully", savedEntity);
-			return new ResponseEntity<>(response, HttpStatus.OK);
-		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
+
+	@GetMapping("/getAllBranchMaster")
+	public ResponseEntity<ApiResponse<List<BranchMaster>>> getAllBranches() {
+
+		List<BranchMaster> list = configurationService.getAllBranches();
+
+		ApiResponse<List<BranchMaster>> response = new ApiResponse<>(HttpStatus.OK,
+				"Branch list fetched successfully", list);
+
+		return ResponseEntity.ok(response);
+	}
+
+//	@PostMapping("/saveAndUpdateAllBranchModule") // Ayush (without DTO)
+//	public ResponseEntity<ApiResponse<BranchMaster>> saveBranch(@RequestBody BranchMaster branchModule) {
+//		boolean isCreate = (branchModule.getId() == null); // Check BEFORE saving
+//
+//		BranchMaster savedEntity = configurationService.saveBranchModule(branchModule);
+//
+//		ApiResponse<BranchMaster> response;
+//
+//		if (isCreate) {
+//			response = new ApiResponse<>(HttpStatus.CREATED, "Branch created successfully", savedEntity);
+//			return new ResponseEntity<>(response, HttpStatus.CREATED);
+//		} else {
+//			response = new ApiResponse<>(HttpStatus.OK, "Branch updated successfully", savedEntity);
+//			return new ResponseEntity<>(response, HttpStatus.OK);
+//		}
+//	}
 
 //	@PostMapping("/updateBranchMasterById")
 //	@ResponseBody
