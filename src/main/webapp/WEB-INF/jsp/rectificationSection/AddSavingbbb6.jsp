@@ -6,7 +6,7 @@
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -28,7 +28,10 @@
 
 			<form id="fileUploadForm">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Edit SB Account</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>REVIEW & FIX</b>
+				</h1>
+				<h5 style="margin-left: 18px;">SAVING ACCOUNT CORRECTION</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -38,45 +41,43 @@
 				<section class="content">
 					<div id="ContentPlaceHolder1_idSearch" class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
+
+							<div class="form-container">
 								<div class="box-header with-border">
 									<h3 class="box-title">Search Details</h3>
 								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Select by
-													Account No.<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<select
-														onchange="getthevalueinthegiveninputFieldsfofSavingAcoount()"
-														name="accountNo" id="accountNo"
-														class="form-control select2" style="width: 100%;">
-														<option selected="selected" value="">-- Select
-															Account No. --</option>
-													</select>
-												</div>
-											</div>
+
+								<div class="box-body form-horizontal">
+									<div class="col-md-6">
+
+										<label class="col-sm-4 control-label">Select by
+											Account No.<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<select
+												onchange="getthevalueinthegiveninputFieldsfofSavingAcoount()"
+												name="accountNo" id="accountNo" class="form-control select2"
+												style="width: 100%;">
+												<option selected="selected" value="">-- Select
+													Account No. --</option>
+											</select>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-success">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Saving Details</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Opening Date <strong
+
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Opening Date <strong
 												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
@@ -88,11 +89,11 @@
 												</div>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Select by
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Select by
 												Member <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<select name="searchMemberCode" id="searchMemberCode"
 													class="form-control" style="width: 100%;">
 													<option selected="selected" value="">--Select
@@ -103,21 +104,21 @@
 													Member Code</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtRelativeName" class="col-sm-5 control-label">Member
+										<div class="col-md-3">
+											<label for="txtRelativeName" class="col-sm-4 control-label">Member
 												Name <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="memberName" type="text" readonly="readonly"
 													id="memberName" class="form-control"
 													Placeholder="Enter Member Name" />
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtDOB" class="col-sm-5 control-label">DOB
+										<div class="col-md-3">
+											<label for="txtDOB" class="col-sm-4 control-label">DOB
 												<strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-4">
+											<div class="col-sm-8">
 												<div class="input-group date">
 													<div class="input-group-addon">
 														<i class="fa fa-calendar"></i>
@@ -128,7 +129,15 @@
 														data-mask="" />
 												</div>
 											</div>
-											<div class="col-sm-3">
+										</div>
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="txtage" class="col-sm-4 control-label">Age
+												<strong style="color: Red">*</strong>
+											</label>
+											<div class="col-sm-8">
 												<input name="age" type="text" value="0" maxlength="2"
 													readonly="readonly" id="age" class="form-control"
 													Placeholder="Enter Age"
@@ -139,20 +148,21 @@
 													Age</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Relative
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Relative
 												Details</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="relativeName" type="text" readonly="readonly"
 													id="relativeName" class="form-control"
 													Placeholder="Enter Relative Name &amp; Relation" />
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtPhoneno" class="col-sm-5 control-label">Mobile
+										<div class="col-md-3">
+											<label for="txtPhoneno" class="col-sm-4 control-label">Mobile
 												No <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="phoneno" type="text" maxlength="10"
 													readonly="readonly" id="phoneno" class="form-control"
 													Placeholder="Enter Mobile No" autocomplete="off"
@@ -162,37 +172,40 @@
 													Phone No</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-5 control-label">Nominee
+										<div class="col-md-3">
+											<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
 												Name</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="nomineeName" type="text" id="nomineeName"
 													placeholder="Enter Nominee Name" class="form-control" />
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtNomineeName" class="col-sm-5 control-label">Nominee
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="txtNomineeName" class="col-sm-4 control-label">Nominee
 												Age</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="nage" type="text" maxlength="2" id="nage"
 													placeholder="Enter Nominee Age" class="form-control" />
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label for="drpNomineeRelation"
-												class="col-sm-5 control-label">Nominee Relation</label>
-											<div class="col-sm-7">
+												class="col-sm-4 control-label">Nominee Relation</label>
+											<div class="col-sm-8">
 												<select name="nRelation" id="nRelation" class="form-control"
 													style="width: 100%;">
 													<option>--Select Nominee Relation--</option>
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtAddress" class="col-sm-5 control-label">Address
+										<div class="col-md-3">
+											<label for="txtAddress" class="col-sm-4 control-label">Address
 												<strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<textarea name="address" rows="2" cols="20"
 													readonly="readonly" id="address" class="form-control"
 													Placeholder="Enter Addess">
@@ -202,11 +215,11 @@
 													Address</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtDistrict" class="col-sm-5 control-label">District
+										<div class="col-md-3">
+											<label for="txtDistrict" class="col-sm-4 control-label">District
 												<strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="district" type="text" readonly="readonly"
 													id="district" class="form-control"
 													Placeholder="Enter District" /> <span
@@ -216,12 +229,14 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="ddlBranch" class="col-sm-5 control-label">Branch
+
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label for="ddlBranch" class="col-sm-4 control-label">Branch
 												Name <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<select name="cSPName" id="cSPName" class="form-control"
 													style="width: 100%;">
 													<option>--Select Branch Name--</option>
@@ -229,11 +244,11 @@
 											</div>
 										</div>
 
-										<div class="form-group row">
-											<label for="drpState" class="col-sm-5 control-label">State
+										<div class="col-md-3">
+											<label for="drpState" class="col-sm-4 control-label">State
 												<strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="state" type="text" readonly="readonly"
 													placeholder="Enter State" id="state" class="form-control" />
 												<span id="ContentPlaceHolder1_RequiredFieldValidator11"
@@ -241,11 +256,11 @@
 													State</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtPin" class="col-sm-5 control-label">Pin
+										<div class="col-md-3">
+											<label for="txtPin" class="col-sm-4 control-label">Pin
 												Code <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="pin" type="text" maxlength="6"
 													readonly="readonly" id="pin" class="form-control"
 													Placeholder="Enter Pincode" /> <span
@@ -254,11 +269,11 @@
 													PIN</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="ddlBranch" class="col-sm-5 control-label">Mode
+										<div class="col-md-3">
+											<label for="ddlBranch" class="col-sm-4 control-label">Mode
 												Of Operation <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<select name="modeOfOp" id="modeOfOp" class="form-control"
 													style="width: 100%;">
 													<option selected="selected" value="">--Select--</option>
@@ -268,38 +283,41 @@
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label for="txtJointMemberName"
-												class="col-sm-5 control-label">Joint/Survivor Code</label>
-											<div class="col-sm-7">
+												class="col-sm-4 control-label">Joint/Survivor Code</label>
+											<div class="col-sm-8">
 												<input name="jointCode" type="text" id="jointCode"
 													placeholder="Enter Survivor code" class="form-control" />
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label for="txtJointMemberName"
-												class="col-sm-5 control-label">Joint/Survivor Name</label>
-											<div class="col-sm-7">
+												class="col-sm-4 control-label">Joint/Survivor Name</label>
+											<div class="col-sm-8">
 												<input name="jointName" type="text" readonly="readonly"
 													placeholder="Enter Survivor Nmae" id="jointName"
 													class="form-control" />
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label for="drpJointMembersRelativeRelation"
-												class="col-sm-5 control-label">Relation</label>
-											<div class="col-sm-7">
+												class="col-sm-4 control-label">Relation</label>
+											<div class="col-sm-8">
 												<select name="jointRelation" id="jointRelation"
 													class="form-control" style="width: 100%;">
 													<option value="">--Select--</option>
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtSchemeName" class="col-sm-5 control-label">Select
+										<div class="col-md-3">
+											<label for="txtSchemeName" class="col-sm-4 control-label">Select
 												Plan <strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<select name="sBPlan" id="sBPlan" class="form-control"
 													style="width: 100%;">
 													<option selected="selected" value="">--Select--</option>
@@ -311,11 +329,14 @@
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Opening Amount
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Opening Amount
 												<strong style="color: Red">*</strong>
 											</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="openingAmount" type="text"
 													placeholder="Enter Opening Amount" id="openingAmount"
 													class="form-control" /> <span
@@ -324,10 +345,10 @@
 													Opening Amount</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Advisor/Collector<strong
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Advisor/Collector<strong
 												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="advisorCode" type="text" id="advisorCode"
 													class="form-control"
 													placeholder="Enter Advisor/Collector Code" /> <span
@@ -336,10 +357,10 @@
 													Advisor/Collector Code</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-5 control-label">Name <strong
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Name <strong
 												style="color: Red">*</strong></label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="advisorName" type="text" readonly="readonly"
 													id="advisorName" class="form-control"
 													placeholder="Enter Advisor/Collector Name" /> <span
@@ -348,25 +369,95 @@
 													Advisor/Collector Name</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="txtOpeningFees" class="col-sm-5 control-label">Opening
+										<div class="col-md-3">
+											<label for="txtOpeningFees" class="col-sm-4 control-label">Opening
 												Fees (if any)</label>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<input name="opFees" type="text" id="opFees"
 													placeholder="Enter Opening Fees" class="form-control"
 													onkeypress="return isNumberOnlyKey(this, event);" />
 											</div>
 										</div>
 									</div>
+
+									<div class="row four-field-row">
+										<div class=" col-md-3"
+											style="display: flex; margin: 15px 0 30px;">
+											<div class="box-body">
+												<div>
+													<h4>
+														<b class="box-title">Photo</b>
+													</h4>
+													<p class="help-block">Maximum 10MB</p>
+												</div>
+												<div class="col-md-3">
+
+													<div class="text-center">
+														<img id="preview" class="profile-user-img"
+															src="upload_Files/${aadharPhoto}" alt="Image"
+															style="height: 110px; width: 110px;"> <input
+															type="file" name="filetag" id="filetag" />
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class=" col-md-3"
+											style="display: flex; margin: 15px 0 30px;">
+											<div class="box-body">
+												<div>
+													<h4>
+														<b class="box-title">Signature</b>
+													</h4>
+													<p class="help-block">Maximum 10MB</p>
+												</div>
+												<div class="col-md-3">
+
+													<div class="text-center">
+														<img name="secondpreview" id="secondpreview"
+															class="profile-user-img"
+															src="data:image/png;base64,${aadharPhoto}" alt="image"
+															style="height: 110px; width: 115px;" /> <input
+															type="file" name="secondfiletag" id="secondfiletag" />
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="col-md-3"
+											style="display: flex; margin: 15px 0 30px;">
+											<div class="box-body">
+												<div>
+													<h4>
+														<b class="box-title">Joint Photo</b>
+													</h4>
+													<p class="help-block">Maximum 10MB</p>
+												</div>
+												<div class="col-md-3">
+													<div class="text-center">
+														<img name="secondpreview" id="imgJointPhoto"
+															class="profile-user-img"
+															src="data:image/png;base64,${aadharPhoto}" alt="image"
+															style="height: 110px; width: 115px;" /> <input
+															type="file" name="thirdfiletag" id="thirdfiletag" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
 								</div>
 							</div>
-							<div class="box box-info">
-								<div class="box-header with-border">
+
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Payment Details</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 												By <strong style="color: Red">*</strong>
 											</label>
@@ -377,7 +468,7 @@
 												</select>
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Remarks</label>
 											<div class="col-sm-8">
 												<textarea name="remarks" rows="2" cols="20" id="remarks"
@@ -385,9 +476,8 @@
 </textarea>
 											</div>
 										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
+
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Account Status
 												<strong style="color: Red">*</strong>
 											</label>
@@ -398,7 +488,7 @@
 												</label>
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">SMS Send <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -408,7 +498,10 @@
 												</label>
 											</div>
 										</div>
-										<div class="form-group row">
+									</div>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label class="col-sm-4 control-label">Debit Card
 												Issue <strong style="color: Red">*</strong>
 											</label>
@@ -420,70 +513,15 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<input
-											onclick="softdeleteintegrationforSavingRectificationDelete()"
-											type="button" name="ctl00$ContentPlaceHolder1$btnDelete"
-											value="Delete" id="ContentPlaceHolder1_btnDelete"
-											class="btn btn-danger pull-right" /> <input
-											onclick="redirectThePageToNew()" type="button"
-											name="ctl00$ContentPlaceHolder1$btnNew" value="New"
-											id="ContentPlaceHolder1_btnNew"
-											class="btn btn-info pull-right margin-r-5" /> <input
-											type="button" name="submitBtnUpdate" value="Update"
-											id="submitBtnUpdate"
-											class="btn btn-success pull-right margin-r-5" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Photo</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="imageApplicant" class="profile-user-img"
-													style="height: 70px; width: 115px;" /> <input type="file"
-													name="filetag" id="filetag" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Signature</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="imageSignature" class="profile-user-img"
-													style="height: 70px; width: 115px;" /> <input type="file"
-													name="secondfiletag" id="secondfiletag" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Joint Photo</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="imgJointPhoto" class="profile-user-img"
-													style="height: 70px; width: 115px;" /> <input type="file"
-													name="thirdfiletag" id="thirdfiletag" />
-											</div>
+									<div class="box-footer text-center">
+										<div class="row col-md-12">
+											<input
+												onclick="softdeleteintegrationforSavingRectificationDelete()"
+												type="button" name="ctl00$ContentPlaceHolder1$btnDelete"
+												value="Delete" id="ContentPlaceHolder1_btnDelete"
+												class="btn btn-danger " /> <input type="button"
+												name="submitBtnUpdate" value="Update" id="submitBtnUpdate"
+												class="btn btn-success margin-r-5" />
 										</div>
 									</div>
 								</div>
@@ -953,7 +991,7 @@
 		}
 		//]]>
 	</script>
-	
+
 	</form>
 </body>
 </html>

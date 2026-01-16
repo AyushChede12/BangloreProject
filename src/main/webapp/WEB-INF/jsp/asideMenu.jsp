@@ -15,10 +15,12 @@
 			<li class="active"><a href="dashboard"> <img
 					src="dist/img/icon/ico-1.png" style="margin-right: 5px;" /> <span>DASHBOARD</span>
 			</a></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>CUSTOMIZATION</span>
-					<span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview">
+				<a href="#"> 
+					<i class="fa fa-cogs"></i> 
+					<span>CUSTOMIZATION</span>
+					<span class="pull-right-container"> 
+					<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -45,8 +47,7 @@
 					<li><a href="UserMenuAccess"><i class="fa fa-circle-o"></i>
 							USER MENU ACCESS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>CUSTOMER
+			<li class="treeview"><a href="#"> <i class="fa fa-users sidebar-icon"></i> <span>CUSTOMER
 						MODULE</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -63,8 +64,7 @@
 					<li><a href="searchMember"><i class="fa fa-circle-o"></i>
 							Find Customer</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+			<li class="treeview"><a href="#"> <i class="fa fa-share-alt"></i> <span>MANAGE
 						SHARES</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -80,8 +80,7 @@
 							GENERATE DNO</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>FINANCIAL/CONSULTANT
+			<li class="treeview"><a href="#"> <i class="fa fa-line-chart"></i> <span>FINANCIAL/CONSULTANT
 				</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -99,8 +98,7 @@
 							IDENTITY CARD</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+			<li class="treeview"><a href="#"> <i class="fa fa-sitemap"></i> <span>MANAGE
 						TEAM </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -118,47 +116,45 @@
 							SEARCH TEAM MEMBER</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+			<li class="treeview"><a href="#"> <i class="fa fa-book"></i> <span>MANAGE
 						ACCOUNTS </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="cashier"><i class="fa fa-circle-o"></i>
-							NEW LEDGER </a></li>
+					<li><a href="cashier"><i class="fa fa-circle-o"></i> NEW
+							LEDGER </a></li>
 					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							OUTGOING PAYMENT</a></li>
 					<li><a href="receipt"><i class="fa fa-circle-o"></i>
 							INCOMING RECEIPT</a></li>
 					<li><a href="transfer"><i class="fa fa-circle-o"></i>
 							BANK/CASH TRANSFER</a></li>
-					<li><a href="denominationExchange"><i class="fa fa-circle-o"></i>
-							MANUAL JOURNAL</a></li>
+					<li><a href="denominationExchange"><i
+							class="fa fa-circle-o"></i> MANUAL JOURNAL</a></li>
 					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							INCENTIVE PAYMENT </a></li>
-					<li><a href="payment"><i class="fa fa-circle-o"></i>
-							MIS INTEREST PAYMENT</a></li>
-					<li><a href="contra"><i class="fa fa-circle-o"></i>
-							CHEQUE CLEARING PROCESSING</a></li>
+					<li><a href="payment"><i class="fa fa-circle-o"></i> MIS
+							INTEREST PAYMENT</a></li>
+					<li><a href="contra"><i class="fa fa-circle-o"></i> CHEQUE
+							CLEARING PROCESSING</a></li>
 					<li><a href="transactionList"><i class="fa fa-circle-o"></i>
 							MANDATE DEPOSIT TO BANK</a></li>
-					<li><a href="transfer"><i class="fa fa-circle-o"></i>
-							BANK STATEMENT</a></li>
-					<li><a href="cashier"><i class="fa fa-circle-o"></i>
-							CASH BOOK </a></li>
+					<li><a href="transfer"><i class="fa fa-circle-o"></i> BANK
+							STATEMENT</a></li>
+					<li><a href="cashier"><i class="fa fa-circle-o"></i> CASH
+							BOOK </a></li>
 					<li><a href="transactionList"><i class="fa fa-circle-o"></i>
 							FUNDS TRANSFER REGISTER</a></li>
-					<li><a href="contra"><i class="fa fa-circle-o"></i>
-							DAILY TRANSACTION BOOK</a></li>
-					<li><a href="denominationExchange"><i class="fa fa-circle-o"></i>
-							LEDGER SUMMARY REPORT</a></li>
+					<li><a href="contra"><i class="fa fa-circle-o"></i> DAILY
+							TRANSACTION BOOK</a></li>
+					<li><a href="denominationExchange"><i
+							class="fa fa-circle-o"></i> LEDGER SUMMARY REPORT</a></li>
 					<li><a href="payment"><i class="fa fa-circle-o"></i>
 							JOURNAL ENTRY REPORT</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>SAVING
+			<li class="treeview"><a href="#"> <i class="fa fa-bank"></i> <span>SAVING
 						OPENING </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -185,8 +181,7 @@
 					<li><a href="sMSChargesDeduction"><i
 							class="fa fa-circle-o"></i> SMS SERVICE FEE</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>MANAGE
+			<li class="treeview"><a href="#"> <i class="fa fa-file-text"></i> <span>MANAGE
 						POLICY </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -213,8 +208,7 @@
 					<li><a href="investmentSearch"><i class="fa fa-circle-o"></i>
 							SEARCH POLICY</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>LOAN
+			<li class="treeview"><a href="#"> <i class="fa fa-money"></i><span>LOAN
 						ADMINISTRATION </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -232,8 +226,8 @@
 							LOAN PAYMENT</a></li>
 					<li><a href="irregularEMIPaymentEntryf159"><i
 							class="fa fa-circle-o"></i> REGULAR INSTALLMENT PAYMENT </a></li>
-					<li><a href="#"><i
-							class="fa fa-circle-o"></i> IRREGULAR INSTALLMENT PAYMENT</a></li>
+					<li><a href="#"><i class="fa fa-circle-o"></i> IRREGULAR
+							INSTALLMENT PAYMENT</a></li>
 					<li><a href="regularLoanStatementf159"><i
 							class="fa fa-circle-o"></i> REGULAR LOAN STATEMENT</a></li>
 					<li><a href="irregularLoanStatementf159"><i
@@ -249,8 +243,7 @@
 					<li><a href="loanSearch+"><i class="fa fa-circle-o"></i>
 							SEARCH LOAN ACCOUNTS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GOLD
+			<li class="treeview"><a href="#"> <i class="fa fa-diamond"></i> <span>GOLD
 						OPERATIONS </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -277,8 +270,7 @@
 					<li><a href="goldLoanSearch"><i class="fa fa-circle-o"></i>
 							SEARCH GOLD LOAN</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GROUP
+			<li class="treeview"><a href="#"> <i class="fa fa-object-group"></i> <span>GROUP
 						MANAGEMENT </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -305,8 +297,7 @@
 					<li><a href="GroupLoanSearch"><i class="fa fa-circle-o"></i>
 							FIND GROUP RECORD</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>APPROVALS
+			<li class="treeview"><a href="#"> <i class="fa fa-check-circle"></i> <span>APPROVALS
 				</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -339,8 +330,7 @@
 					<li><a href="CSPCashTransferApproval"><i
 							class="fa fa-circle-o"></i> APPROVE INTER-BRANCH CASH TRANSFER</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>Review
+			<li class="treeview"><a href="#"> <i class="fa fa-edit"></i> <span>Review
 						& Fix </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -371,8 +361,7 @@
 					<li><a href="GroupLoanRectification"><i
 							class="fa fa-circle-o"></i> JOINT LIABILITY UPDATE</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYOFF
+			<li class="treeview"><a href="#"> <i class="fa fa-credit-card"></i> <span>PAYOFF
 						SECTION </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -395,8 +384,7 @@
 					<li><a href="approvedStatus"><i class="fa fa-circle-o"></i>
 							APPROVED STATUS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>BONUS
+			<li class="treeview"><a href="#"> <i class="fa fa-gift"></i> <span>BONUS
 						MANAGEMENT </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -411,8 +399,7 @@
 					<li><a href="incentiveListPrint"><i class="fa fa-circle-o"></i>
 							INCENTIVE SUMMARY REPORT</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>GENERATE
+			<li class="treeview"><a href="#"> <i class="fa fa-bar-chart"></i> <span>GENERATE
 						REPORT </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -447,8 +434,7 @@
 					<li><a href="MaturityStatusReportView"><i
 							class="fa fa-circle-o"></i> MATURITY STATUS REPORT</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <img
-					src="dist/img/icon/ico-3.png" style="margin-right: 5px;" /> <span>PAYROLL
+			<li class="treeview"><a href="#"> <i class="fa fa-id-badge"></i> <span>PAYROLL
 						MANAGEMENT </span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -490,11 +476,12 @@
 							TEAM MEMBER ID CARD</a></li>
 
 				</ul></li>
+		</ul>
 
-			<%
-			List<String> serviceList = (List<String>) session.getAttribute("user");
-			%>
-			<%-- <li class="treeview">
+		<%
+		List<String> serviceList = (List<String>) session.getAttribute("user");
+		%>
+		<%-- <li class="treeview">
 				<%if(serviceList!=null && serviceList.contains("Company Setting")
            ||
            serviceList.contains("Company Setting")
@@ -536,7 +523,7 @@
 				</ul>
 			</li> --%>
 
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Share Transfer") || serviceList.contains("Share Transfer")
           ||serviceList.contains("Un-allotted Shares")||serviceList.contains("Share Certificate")||
           serviceList.contains("Share Report")||
@@ -567,7 +554,7 @@
 					<%} %>
 				</ul>
 			</li> --%>
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Cashier") || serviceList.contains("Denomination Exchange")
           ||serviceList.contains("Payment")||serviceList.contains("Receipt")||serviceList.contains("Transfer")||
           serviceList.contains("Contra")||serviceList.contains("Ledger")||
@@ -608,7 +595,7 @@
 					<%} %>
 				</ul>
 			</li> --%>
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Add Collector/Advisor")||
         		 serviceList.contains("Collector/Advisor Tree")
         		 || serviceList.contains("Collector/Advisor Downline") || serviceList.contains("Collector/Advisor Promotion")
@@ -645,7 +632,7 @@
 					<%} %>
 				</ul>
 			</li> --%>
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Add Designation")||
         		 serviceList.contains("Add Department")||
         		 serviceList.contains("Add Employee")||
@@ -677,7 +664,7 @@
 					<%} %>
 				</ul>
 			</li> --%>
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("New Account")||
 				 serviceList.contains("Plan Master")||
         		 serviceList.contains("New Investment")||
@@ -755,7 +742,7 @@
 					<%} %>
 				</ul>
 			</li> --%>
-			<%-- <li class="treeview">
+		<%-- <li class="treeview">
 				<%if(serviceList!=null &&  serviceList.contains("Savings Plan Master")||
             		serviceList.contains("Savings Opening")||
             		serviceList.contains("Savings Transaction")||
@@ -1593,9 +1580,9 @@
 							ID Card</a></li>
 					<%} %>
 				</ul>
-			</li> --%>
-		</ul>
+			</li> 
+		</ul>--%>
 	</section>
 	<!-- /.sidebar -->
-	
+
 </aside>

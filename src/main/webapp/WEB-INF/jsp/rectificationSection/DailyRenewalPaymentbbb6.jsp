@@ -1,10 +1,85 @@
 <jsp:include page="../header.jsp" />
-<body onload="getAllPolicyNumber1InTheDailyRenewalRectification(); BranchNameForAddInvestmentModule();"
+<style>
+/* ===== MODAL BACKGROUND ===== */
+.custom-modal .modal-dialog,
+.custom-modal-dialog {
+    width: 80%;
+    max-width: 900px;
+    margin: 80px auto;
+}
+
+/* CONTENT */
+.custom-modal-content {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+/* HEADER */
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #f39c12, #f1c40f);
+    color: #fff;
+}
+
+.custom-modal-title {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* CLOSE BUTTON */
+.custom-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* BODY */
+.custom-modal-body {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* TABLE WRAPPER */
+.renewal-table-wrapper {
+    overflow-x: auto;
+}
+
+/* FOOTER */
+.custom-modal-footer {
+    padding: 12px 20px;
+    background: #f7f7f7;
+    text-align: right;
+}
+
+.btn-close-modal {
+    padding: 6px 18px;
+    border-radius: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .custom-modal-dialog {
+        width: 95%;
+        margin-top: 40px;
+    }
+}
+
+</style>
+<body
+	onload="getAllPolicyNumber1InTheDailyRenewalRectification(); BranchNameForAddInvestmentModule();"
 	class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -13,14 +88,21 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['tctl00$ContentPlaceHolder1$UpPopup','ContentPlaceHolder1_UpPopup','tctl00$ContentPlaceHolder1$uppnl','ContentPlaceHolder1_uppnl'], [], [], 90, 'ctl00');
-//]]>
-</script>
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1',
+					'form1', [ 'tctl00$ContentPlaceHolder1$UpPopup',
+							'ContentPlaceHolder1_UpPopup',
+							'tctl00$ContentPlaceHolder1$uppnl',
+							'ContentPlaceHolder1_uppnl' ], [], [], 90, 'ctl00');
+			//]]>
+		</script>
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Delete Daily Renewal</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>REVIEW & FIX</b>
+				</h1>
+				<h5 style="margin-left: 18px;">DAILY RENEWAL UPDATE</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -30,70 +112,42 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 			<section class="content">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Search Box</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-4">
-									<div class="form-group row">
-										<label for="ddlPolicyNoName" class="col-sm-4 control-label">Policy
-											No.<strong style="color: Red">*</strong>
-										</label>
-										<div class="col-sm-8">
-											<select name="searchbyPolicyNo" id="searchbyPolicyNo"
-												onchange="javascript:getByAddInvesmentCodeDailyRenewalRectification()"
-												class="form-control select2" style="width: 100%;">
-												<option selected="selected" value="">--Select Policy No.--</option>
-											</select> <span id="searchbyPolicyNo"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-												Policy No.</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Renewal Date<strong
-											style="color: Red">*</strong></label>
-										<div class="col-sm-7">
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input onchange="javascript:getByDateAddInvesmentCodeRenewalRectification()"
-													name="renewalDate" type="date" id="renewalDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group row">
-										<label for="txtBranchName" class="col-sm-5 control-label">Branch
-											Name<strong style="color: Red">*</strong>
-										</label>
-										<div class="col-sm-7">
-											<select
-												onchange="javascript:getByBranchNameAddInvesmentCodesNow()"
-												name="branchName" id="branchName" class="form-control"
-												style="width: 100%;">
-												<option value="" selected="selected">--Select--</option>
-											</select>
-										</div>
+							<div class="box-body form-horizontal">
+
+								<div class="col-md-6">
+									<label for="ddlPolicyNoName" class="col-sm-4 control-label">Policy
+										No.<strong style="color: Red">*</strong>
+									</label>
+									<div class="col-sm-8">
+										<select name="searchbyPolicyNo"
+											onchange="javascript:getByAddInvesmentCode()"
+											id="searchbyPolicyNo" class="form-control select2"
+											style="width: 100%;">
+											<option selected="selected" value="">--SELECT POLICY
+												NO.--</option>
+										</select> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatorPolicyNoName"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+											Policy No.</span>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-10">
-						<div class="box box-danger">
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+						<div class="form-container">
+							<div class="box-header">
+								<h3 class="box-title">Daily Renewal</h3>
+							</div>
+
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Policy Date <strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -108,7 +162,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Maturity Date <strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -123,29 +177,64 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Member Code<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
-											<input name="memberCode" type="text" readonly="readonly" placeholder="Enter Member Code"
-												id="memberCode" class="form-control" /> <span
+											<input name="memberCode" type="text" readonly="readonly"
+												id="memberCode" class="form-control"
+												placeholder="Enter Member Code" /> <span
 												id="ContentPlaceHolder1_RequiredFieldValidator2"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Member
 												Code</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Applicant Name<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
-											<input name="applicantName" type="text" readonly="readonly" placeholder="Enter Applicant Name"
-												id="applicantName" class="form-control" /> <span
+											<input name="applicantName" type="text" readonly="readonly"
+												id="applicantName" class="form-control"
+												placeholder="Enter Applicat Name" /> <span
 												id="ContentPlaceHolder1_RequiredFieldValidatorMembersRelativeRelationName"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Applicant
 												Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
+										<label class="col-sm-5 control-label">Renewal Date<strong
+											style="color: Red">*</strong></label>
+										<div class="col-sm-7">
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="renewalDate" type="date" id="renewalDate"
+													onchange="javascript:getByDateAddInvesmentCode()"
+													class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<label for="txtBranchName" class="col-sm-5 control-label">Branch
+											Name<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-5">
+											<select
+												onchange="javascript:getByBranchNameAddInvesmentCode()"
+												name="branchName" id="branchName" class="form-control"
+												style="width: 100%;">
+												<option value="" selected="selected">--Select--</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-3">
 										<label for="txtMembersMobileNo" class="col-sm-4 control-label">Mobile
 											No<strong style="color: Red">*</strong>
 										</label>
@@ -158,7 +247,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 												No</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtPolicyAmount" class="col-sm-4 control-label">Policy
 											Amount<strong style="color: Red">*</strong>
 										</label>
@@ -172,7 +261,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 												Amount</span>
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label for="txtSchemeName" class="col-sm-4 control-label">Scheme
 											Name<strong style="color: Red">*</strong>
 										</label>
@@ -182,84 +274,100 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 												Placeholder="Enter Scheme Name" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtSchemeTerm" class="col-sm-4 control-label">Scheme
 											Term<strong style="color: Red">*</strong>
 										</label>
 										<div class="col-sm-4">
 											<input name="schemeType" type="text" readonly="readonly"
 												id="schemeType" class="form-control"
-												Placeholder="Enter Schme Term" />
-										</div>
-										<div class="col-sm-4">
-											<input name="mode" type="text" readonly="readonly" id="mode"
-												class="form-control" Placeholder="Mode" />
+												Placeholder="Enter Scheme Term" />
 										</div>
 									</div>
-									<div class="form-group row">
+
+									<div class="col-md-3">
+										<label for="txttermmode" class="col-sm-4 control-label">Scheme
+											Mode<strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-4">
+											<input name="mode" type="text" readonly="readonly" id="mode"
+												class="form-control" Placeholder="Enter Mode" />
+										</div>
+									</div>
+
+									<div class="col-md-3">
 										<label for="txtMaturityAmount" class="col-sm-4 control-label">Maturity
 											Amt.<strong style="color: Red">*</strong>
 										</label>
 										<div class="col-sm-8">
 											<input name="maturityAmount" type="text" readonly="readonly"
 												id="maturityAmount" class="form-control"
-												Placeholder="Maturity Amount"
+												Placeholder="Enter Maturity Amount"
 												style="color: Red; font-weight: bold;" />
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label for="txtTotalDepositedAmount"
 											class="col-sm-4 control-label">Net Deposited<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
 											<input name="totalDeposit" type="text" readonly="readonly"
-												id="totalDeposit" class="form-control" placeholder="Enter Net Deposite"
-												style="color: Red; font-weight: bold;" />
+												id="totalDeposit" placeholder="Enter Net Deposite"
+												class="form-control" style="color: Red; font-weight: bold;" />
 										</div>
 									</div>
-									<div class="form-group row">
+
+									<div class="col-md-3">
 										<label for="txtMaturityAmountDue"
 											class="col-sm-4 control-label">Amount Due<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
-											<input name="MaturityAmountDue" type="text" placeholder="Enter Amount Due"
-												readonly="readonly" id="MaturityAmountDue"
-												class="form-control" style="color: Red; font-weight: bold;" /> 
+											<input name="MaturityAmountDue" type="text"
+												readonly="readonly" placeholder="Enter Amount Due"
+												id="MaturityAmountDue" class="form-control"
+												style="color: Red; font-weight: bold;" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtSmsStatus" class="col-sm-4 control-label">SMS
 											Status<strong style="color: Red">*</strong>
 										</label>
 										<div class="col-sm-8">
-											<input name="chkisSms" type="text" readonly="readonly" placeholder="Enter SMS Status"
-												id="chkisSms" class="form-control" />
+											<input name="chkisSms" type="text" readonly="readonly"
+												id="chkisSms" class="form-control"
+												placeholder="Enter SMS Status" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtSmsStatus" class="col-sm-4 control-label">Advisor
 											Code<strong style="color: Red">*</strong>
 										</label>
 										<div class="col-sm-8">
-											<input name="advisorCode" type="text" readonly="readonly" placeholder="Enter Advisor Code"
-												id="advisorCode" class="form-control" />
+											<input name="advisorCode" type="text" readonly="readonly"
+												id="advisorCode" placeholder="Enter Advisor Code"
+												class="form-control" />
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Last Inst. Paid
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Last Inst. Paid
 											<strong style="color: Red">*</strong>
 										</label>
-										<div class="col-sm-7">
-											<input name="lastInstPaid" type="text" readonly="readonly" placeholder="Last Inst. Paid"
-												id="lastInstPaid" class="form-control" />
+										<div class="col-sm-8">
+											<input name="lastInstPaid" type="text" readonly="readonly"
+												id="lastInstPaid" class="form-control"
+												placeholder="Enter Last Inst. Paid" />
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Due Date <strong
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Due Date <strong
 											style="color: Red">*</strong></label>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
@@ -271,37 +379,42 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Late Fine <strong
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Late Fine <strong
 											style="color: Red">*</strong></label>
-										<div class="col-sm-7">
-											<input name="latefine" type="text" value="0"
-												readonly="readonly" id="latefine" class="form-control" />
+										<div class="col-sm-8">
+											<input name="latefine" type="text"
+												placeholder="Enter Late Fine" readonly="readonly"
+												id="latefine" class="form-control" />
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">No. Installment
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">No. Installment
 											Paid <strong style="color: Red">*</strong>
 										</label>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<input name="NoOfInstPaid" type="text" id="NoOfInstPaid"
-												class="form-control" placeholder="Enter No Of Inst. Paid"
-												autocomplete="off" onpaste="return false"
-												onkeypress="return isNumberOnlyKey(this, event);"
-												style="color: Red; font-size: Large; font-weight: bold;" />
-											<span id="ContentPlaceHolder1_RequiredFieldValidator1"
+												class="form-control"
+												placeholder="Enter No. Installment Paid" autocomplete="off"
+												onpaste="return false"
+												onkeypress="return isNumberOnlyKey(this, event);" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator1"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 												No. Installment Paid</span>
 										</div>
 									</div>
-									<div class="form-group row">
-										<label for="drpPaymentBy" class="col-sm-5 control-label">Payment
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
+										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 											By <strong style="color: Red">*</strong>
 										</label>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<select name="paymode" id="paymode" class="form-control"
 												style="width: 100%;">
-												<option value="" selected="selected">--Select--</option>
+												<option selected="selected" value="">--Select
+													Paymode--</option>
 												<option value="Cash">Cash</option>
 												<option value="Cheque">Cheque</option>
 												<option value="Online">Online</option>
@@ -310,10 +423,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 											</select>
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Advisor/Collector<strong
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Advisor/Collector<strong
 											style="color: Red">*</strong></label>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<input name="collectorCode" type="text" id="collectorCode"
 												class="form-control"
 												placeholder="Enter Advisor/Collector Code" /> <span
@@ -322,24 +435,69 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 												Advisor/Collector Code</span>
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Name <strong
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Name <strong
 											style="color: Red">*</strong></label>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<input name="advisorName" type="text" readonly="readonly"
 												id="advisorName" class="form-control"
 												placeholder="Advisor/Collector Name" /> <span
 												id="ContentPlaceHolder1_RequiredFieldValidator7"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												style="color: Red; font-size: X-Small; display: none;">Enter
 												Advisor/Collector Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
-										<label class="col-sm-5 control-label">Remarks</label>
-										<div class="col-sm-7">
+									<div class="col-md-3">
+										<label class="col-sm-4 control-label">Remarks</label>
+										<div class="col-sm-8">
 											<textarea name="remarks" rows="2" cols="20" id="remarks"
 												class="form-control" Placeholder="Enter Remarks if any">
 </textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row four-field-row">
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Photo</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img id="preview" class="profile-user-img"
+														src="upload_Files/${aadharPhoto}" alt="Image"
+														style="height: 110px; width: 110px;"> <input
+														type="file" name="filetag" id="filetag" />
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Signature</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img name="secondpreview" id="secondpreview"
+														class="profile-user-img"
+														src="data:image/png;base64,${aadharPhoto}" alt="image"
+														style="height: 110px; width: 115px;" /> <input
+														type="file" name="secondfiletag" id="secondfiletag" />
+												</div>
+
+											</div>
 										</div>
 									</div>
 								</div>
@@ -352,74 +510,44 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 											class="btn btn-warning pull-left margin-r-5"
 											data-target="#modal-warning" data-toggle="modal" />
 									</div>
-									<input type="submit" name="ctl00$ContentPlaceHolder1$btnDelete"
-										value="Delete Last Entry" onclick="softDeleteForThreeThings123()"
+									<input type="button" name="ctl00$ContentPlaceHolder1$btnDelete"
+										value="Delete Last Entry" onclick="softDeleteForThreeThings()"
 										id="ContentPlaceHolder1_btnDelete"
 										class="btn btn-danger pull-right" />
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-2">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Photo</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img name="preview" id="preview" class="profile-user-img"
-												style="height: 70px; width: 115px;" /> <input type="file"
-												name="filetag" id="filetag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Signature</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img name="secondpreview" id="secondpreview"
-												class="profile-user-img" style="height: 70px; width: 115px;" />
-											<input type="file" name="secondfiletag" id="secondfiletag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
-				<div class="modal modal-warning fade" id="modal-warning">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h4 class="modal-title">Renewal Payment List</h4>
+
+				<div class="modal custom-modal fade" id="modal-warning">
+					<div class="custom-modal-dialog">
+						<div class="custom-modal-content">
+
+							<!-- HEADER -->
+							<div class="custom-modal-header">
+								<h4 class="custom-modal-title">Renewal Payment List</h4>
+								<button type="button" class="custom-modal-close"
+									data-dismiss="modal">&times;</button>
 							</div>
-							<div class="modal-body">
-								<div id="ContentPlaceHolder1_uppnl">
-									<div style="box-shadow: none; overflow: auto;">
-										<div></div>
+
+							<!-- BODY -->
+							<div class="custom-modal-body">
+								<div id="renewalContent">
+									<div class="renewal-table-wrapper">
+										<!-- Dynamic content / table here -->
 									</div>
 								</div>
 							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-outline pull-left"
+
+							<!-- FOOTER -->
+							<div class="custom-modal-footer">
+								<button type="button" class="btn btn-secondary btn-close-modal"
 									data-dismiss="modal">Close</button>
 							</div>
+
 						</div>
-						<!-- /.modal-content -->
 					</div>
-					<!-- /.modal-dialog -->
 				</div>
 			</section>
 		</div>
@@ -461,46 +589,46 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['t
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script src="dist/js/Rectification.js"></script>
 	<script>
-        var fileTag = document.getElementById("filetag"),
-          preview = document.getElementById("preview"),
-          secondfiletag = document.getElementById("secondfiletag"),
-          secondpreview = document.getElementById("secondpreview");
-          
-      fileTag.addEventListener("change", function() {
-        changeImage(this);
-      });
-      
-      secondfiletag.addEventListener("change", function() {
-          changeImage2(this);
-        });
-      
-      function changeImage(input) {
-        var reader;
+		var fileTag = document.getElementById("filetag"), preview = document
+				.getElementById("preview"), secondfiletag = document
+				.getElementById("secondfiletag"), secondpreview = document
+				.getElementById("secondpreview");
 
-        if (input.files && input.files[0]) {
-          reader = new FileReader();
+		fileTag.addEventListener("change", function() {
+			changeImage(this);
+		});
 
-          reader.onload = function(e) {
-            preview.setAttribute('src', e.target.result);
-          }
+		secondfiletag.addEventListener("change", function() {
+			changeImage2(this);
+		});
 
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      
-      function changeImage2(input) {
-          var reader;
+		function changeImage(input) {
+			var reader;
 
-          if (input.files && input.files[0]) {
-            reader = new FileReader();
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
 
-            reader.onload = function(e) {
-            	secondpreview.setAttribute('src', e.target.result);
-            }
+				reader.onload = function(e) {
+					preview.setAttribute('src', e.target.result);
+				}
 
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-   </script>
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+		function changeImage2(input) {
+			var reader;
+
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
+
+				reader.onload = function(e) {
+					secondpreview.setAttribute('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	</script>
 </body>
 </html>
