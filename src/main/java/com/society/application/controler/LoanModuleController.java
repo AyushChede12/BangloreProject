@@ -106,10 +106,10 @@ public class LoanModuleController {
 
 	@GetMapping("/loanSearch")
 	public String loanSearch(Model model) {
-		List<BranchMaster> branchData = branchMasterRepo.findAll();
-		model.addAttribute("branchList", branchData);
-		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
-		model.addAttribute("loanPlanMaster", loanPlanMaster);
+//		List<BranchMaster> branchData = branchMasterRepo.findAll();
+//		model.addAttribute("branchList", branchData);
+//		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
+//		model.addAttribute("loanPlanMaster", loanPlanMaster);
 		return "Loan_Section/LoanSearch";
 	}
 
@@ -391,42 +391,42 @@ public class LoanModuleController {
 
 	@GetMapping("/loanPreSettlementf159")
 	public String loanPreSettlementf159(Model model) {
-		List<Loan> loanList = loanRepo.findAll();
-		model.addAttribute("loanList", loanList);
-		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
-		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		// List<Member> memberList = memberRepo.findAll();
-		List<ClientMaster> memberList = clientMasterRepo.findAll();
-		model.addAttribute("memberList", memberList);
-		List<BranchMaster> branchData = branchMasterRepo.findAll();
-		model.addAttribute("branchList", branchData);
+//		List<Loan> loanList = loanRepo.findAll();
+//		model.addAttribute("loanList", loanList);
+//		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
+//		model.addAttribute("loanPlanMaster", loanPlanMaster);
+//		// List<Member> memberList = memberRepo.findAll();
+//		List<ClientMaster> memberList = clientMasterRepo.findAll();
+//		model.addAttribute("memberList", memberList);
+//		List<BranchMaster> branchData = branchMasterRepo.findAll();
+//		model.addAttribute("branchList", branchData);
 		return "Loan_Section/LoanPreSettlementf159";
 	}
 
 	@GetMapping("/closedLoanReportf159")
 	public String closedLoanReportf159(Model model) {
-		List<Loan> loanList = loanRepo.findAll();
-		model.addAttribute("loanList", loanList);
-		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
-		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		List<Member> memberList = memberRepo.findAll();
-		model.addAttribute("memberList", memberList);
-		List<BranchMaster> branchData = branchMasterRepo.findAll();
-		model.addAttribute("branchList", branchData);
+//		List<Loan> loanList = loanRepo.findAll();
+//		model.addAttribute("loanList", loanList);
+//		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
+//		model.addAttribute("loanPlanMaster", loanPlanMaster);
+//		List<Member> memberList = memberRepo.findAll();
+//		model.addAttribute("memberList", memberList);
+//		List<BranchMaster> branchData = branchMasterRepo.findAll();
+//		model.addAttribute("branchList", branchData);
 		return "Loan_Section/ClosedLoanReportf159";
 	}
 
 	@GetMapping("/loanNocf159")
 	public String loanNocf159(Model model) {
-		List<Loan> loanList = loanRepo.findAll();
-		model.addAttribute("loanList", loanList);
-		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
-		model.addAttribute("loanPlanMaster", loanPlanMaster);
-		// List<Member> memberList = memberRepo.findAll();
-		List<ClientMaster> memberList = clientMasterRepo.findAll();
-		model.addAttribute("memberList", memberList);
-		List<BranchMaster> branchData = branchMasterRepo.findAll();
-		model.addAttribute("branchList", branchData);
+//		List<Loan> loanList = loanRepo.findAll();
+//		model.addAttribute("loanList", loanList);
+//		List<LoanMaster> loanPlanMaster = loanMasterRepo.findAll();
+//		model.addAttribute("loanPlanMaster", loanPlanMaster);
+//		// List<Member> memberList = memberRepo.findAll();
+//		List<ClientMaster> memberList = clientMasterRepo.findAll();
+//		model.addAttribute("memberList", memberList);
+//		List<BranchMaster> branchData = branchMasterRepo.findAll();
+//		model.addAttribute("branchList", branchData);
 		return "Loan_Section/LoanNocf159";
 	}
 
