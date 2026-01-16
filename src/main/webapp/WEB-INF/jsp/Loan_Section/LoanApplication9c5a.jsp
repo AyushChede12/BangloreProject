@@ -182,7 +182,10 @@ input:checked+.slider:before {
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Loan Approval</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>LOAN ADMINISTRATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">LOAN APPROVAL</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>

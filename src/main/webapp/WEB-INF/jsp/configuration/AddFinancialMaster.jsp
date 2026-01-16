@@ -1,9 +1,50 @@
 <jsp:include page="../header.jsp" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+/* Increase table header strip height */
+.custom-table thead th {
+	background-color: #C48223; /* header color */
+	color: #ffffff;
+	text-align: center;
+	font-size: 18px; /* heading text bigger */
+	font-weight: 700;
+	padding: 18px 12px; /* 🔥 HEIGHT CONTROL */
+	line-height: 1.8; /* 🔥 OPEN LOOK */
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* Body rows more open */
+.custom-table tbody td {
+	padding: 14px 12px;
+	font-size: 15px;
+}
+
+.iconbutton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.iconbutton:focus {
+    outline: none;
+}
+
+.iconbutton i {
+    font-size: 18px;
+}
+
+</style>
 <body onload="getAllFYDetails()" class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
-	<form method="post" action="updateFYDetails"
-		modelAttribute="updateFYDetails" name="updateFYDetails" id="form1">
+	<form>
 		<div
 			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
@@ -43,9 +84,11 @@
 								<div class="box-body">
 									<div class="col-md-4">
 
-										<label>FY Name : <strong style="color: Red">*</strong></label>
-										<input name="fyName" type="text" id="fyName"
-											class="form-control" /> <span id="fyNameMsg"
+										<label>Financial Year Name : <strong
+											style="color: Red">*</strong></label> <input name="fyName"
+											type="text" id="fyName" style="text-transform: uppercase;"
+											placeholder="Enter FY Name" class="form-control" /> <span
+											id="fyNameMsg"
 											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 											FY Name</span>
 
@@ -79,37 +122,37 @@
 								<div class="col-md-11" style="text-align: center;">
 
 									<label></label>
-									<button type="button" id="ContentPlaceHolder1_btnSearch"
-										onclick="valdiateFyMaster()"
-										class="btn btn-success  margin-20">
-										<span class="fa fa-save"></span> Add
+									<button type="button" id="addBtn"
+										class="btn btn-primary  margin-20">
+										<span class="fa fa-save"></span>&nbsp; Add
 									</button>
 
 								</div>
 								<div class="text-center"></div>
 							</div>
-							<div class="form-container"
-								style=" overflow: auto !important;">
+							<div class="form-container table-responsive">
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
-									<div>
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
 
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">SlNo</th>
-												<th scope="col">FY Name</th>
-												<th scope="col">From Date</th>
-												<th scope="col">To Date</th>
+									<table
+										class="table table-bordered table-hover table-striped custom-table datatable">
+										<thead>
+											<tr>
+												<th>Sl No</th>
+												<th>FY Name</th>
+												<th>From Date</th>
+												<th>To Date</th>
+												<th>Edit</th>
+												<th>Delete</th>
 											</tr>
-											<tbody id="ContentPlaceHolder1_gdvData_fymaster">
+										</thead>
+										<tbody>
+											<!-- dynamic rows -->
+										</tbody>
+									</table>
 
-											</tbody>
-										</table>
-									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</section>
@@ -117,38 +160,41 @@
 			<!-- /.content-wrapper -->
 			<div class="control-sidebar-bg"></div>
 		</div>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap 3.3.7 -->
+
+		<!-- AdminLTE App -->
+		<script src="dist/js/adminlte.min.js"></script>
+		<script src="dist/js/customization/financialYear.js"></script>
+		<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
+		Bootstrap 3.3.7
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- InputMask -->
+		InputMask
 		<script src="plugins/input-mask/jquery.inputmask.js"></script>
 		<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 		<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-		<!-- date-range-picker -->
+		date-range-picker
 		<script src="bower_components/moment/min/moment.min.js"></script>
 		<script
 			src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<!-- bootstrap datepicker -->
+		bootstrap datepicker
 		<script
 			src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<!-- bootstrap color picker -->
+		bootstrap color picker
 		<script
 			src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-		<!-- bootstrap time picker -->
+		bootstrap time picker
 		<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-		<!-- SlimScroll -->
+		SlimScroll
 		<script
 			src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-		<!-- iCheck 1.0.1 -->
+		iCheck 1.0.1
 		<script src="plugins/iCheck/icheck.min.js"></script>
-		<!-- FastClick -->
+		FastClick
 		<script src="bower_components/fastclick/lib/fastclick.js"></script>
-		<!-- AdminLTE App -->
-		<script src="dist/js/adminlte.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
+		
+		AdminLTE for demo purposes
 		<script src="dist/js/demo.js"></script>
-		<!-- Select2 -->
-		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+		Select2
+		<script src="bower_components/select2/dist/js/select2.full.min.js"></script> -->
 
 	</form>
 </body>
