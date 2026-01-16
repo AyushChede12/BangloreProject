@@ -246,7 +246,7 @@
 							class="fa fa-circle-o"></i> SETTLED LOAN RECORDS</a></li>
 					<li><a href="loanNocf159"><i class="fa fa-circle-o"></i>
 							GENERATE NOC CERTIFICATE</a></li>
-					<li><a href="loanSearch+"><i class="fa fa-circle-o"></i>
+					<li><a href="loanSearch"><i class="fa fa-circle-o"></i>
 							SEARCH LOAN ACCOUNTS</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <img

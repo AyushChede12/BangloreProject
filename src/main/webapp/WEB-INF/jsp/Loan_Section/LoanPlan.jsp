@@ -67,7 +67,7 @@ input:checked+.slider:before {
 	<form method="post" action="Loan_Plan" id="form1" name="loanPlan"
 		modelAttribute="loanPlan">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -485,17 +485,18 @@ input:checked+.slider:before {
 						</div>
 
 					</div>
+				</section>
+
 			</div>
-			</section>
+
 
 
 
 		</div>
-		</div>
-		</section>
-		</div>
-		<!-- /.content-wrapper -->
-		<script type="text/javascript">
+
+	</form>
+	<!-- /.content-wrapper -->
+	<script type="text/javascript">
          function isNumberOnlyKey(txt, evt) {
              var charCode = (evt.which) ? evt.which : evt.keyCode;
              if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -504,7 +505,7 @@ input:checked+.slider:before {
              }
          }
       </script>
-		<script type="text/javascript">
+	<script type="text/javascript">
          function isNumberKey(txt, evt) {
              var charCode = (evt.which) ? evt.which : evt.keyCode;
              if (charCode == 46) {
@@ -524,7 +525,7 @@ input:checked+.slider:before {
              return true;
          }
       </script>
-		<script>
+	<script>
       function goToDeductionDetails(){
     	  $("#loanSection").hide();
     	  $("#deductionSection").show();
