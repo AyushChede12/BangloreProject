@@ -5,7 +5,7 @@
 	cz-shortcut-listen="true">
 	<!--     <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/FlexiRenewal.aspx?IsModification=true" onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> -->
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -17,8 +17,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Delete Flexi
-					Deposit/Withdrawal</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>REVIEW & FIX</b>
+				</h1>
+				<h5 style="margin-left: 18px;">FLEXIBLE TRANSACTION REMOVAL</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -26,15 +28,18 @@
 				</ol>
 			</section>
 			<section class="content">
+
 				<div class="row">
-					<div class="col-md-10">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Policy Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+							<div class="box-body form-horizontal">
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Txn Date<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -49,13 +54,13 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Branch Name<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
 											<select name="ctl00$ContentPlaceHolder1$ddlBranchName"
-												id="branchName"
-												class="form-control select2" style="width: 100%;">
+												id="branchName" class="form-control select2"
+												style="width: 100%;">
 												<option value="" selected="selected">--Select--</option>
 											</select> <span
 												id="ContentPlaceHolder1_RequiredFieldValidatorddlBranchName"
@@ -63,7 +68,7 @@
 												Branch Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Select Policy
 											No.<strong style="color: Red">*</strong>
 										</label>
@@ -79,12 +84,13 @@
 												Account No.</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Emp. Code<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
 											<input name="ctl00$ContentPlaceHolder1$txtEmpCode"
-												type="text" readonly="readonly" placeholder="Enter Emp. Code"
+												type="text" readonly="readonly"
+												placeholder="Enter Emp. Code"
 												id="ContentPlaceHolder1_txtEmpCode" class="form-control" />
 											<span id="ContentPlaceHolder1_RequiredFieldValidator3"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
@@ -92,8 +98,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Member Code<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -106,7 +113,7 @@
 												Member Code</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Name<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -119,7 +126,7 @@
 												A/C Holder Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Mobile Number<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -131,7 +138,7 @@
 												Mobile Number</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Plan Code<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -147,22 +154,26 @@
 								</div>
 							</div>
 						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
+
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Payment Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-4">
 										<label class="col-sm-4 control-label">Plan Balance <strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
 											<input name="ctl00$ContentPlaceHolder1$txtBalance"
-												type="text" readonly="readonly" placeholder="Enter Plan Balance"
+												type="text" readonly="readonly"
+												placeholder="Enter Plan Balance"
 												id="ContentPlaceHolder1_txtBalance" class="form-control" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-4">
 										<label for="txtTransactionFor" class="col-sm-4 control-label">Transaction
 											For</label>
 										<div class="col-sm-8">
@@ -171,7 +182,7 @@
 												class="form-control" Placeholder="Enter Transaction For" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-4">
 										<label for="txtRemarks" class="col-sm-4 control-label">Remarks
 										</label>
 										<div class="col-sm-8">
@@ -181,8 +192,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
+
+								<div class="row four-field-row">
+									<div class="col-md-4">
 										<label for="ddlTransactionType" class="col-sm-4 control-label">Txn.
 											Type<strong style="color: Red">*</strong>
 										</label>
@@ -196,7 +208,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-4">
 										<label for="txtAmount" class="col-sm-4 control-label">Amount
 											<strong style="color: Red">*</strong>
 										</label>
@@ -211,7 +223,7 @@
 												Amount</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-4">
 										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 											By <strong style="color: Red">*</strong>
 										</label>
@@ -229,50 +241,63 @@
 										</div>
 									</div>
 								</div>
+								<div class="row four-field-row">
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Photo</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img id="preview" class="profile-user-img"
+														src="upload_Files/${aadharPhoto}" alt="Image"
+														style="height: 110px; width: 110px;"> <input
+														type="file" name="filetag" id="filetag" />
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Signature</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img name="secondpreview" id="secondpreview"
+														class="profile-user-img"
+														src="data:image/png;base64,${aadharPhoto}" alt="image"
+														style="height: 110px; width: 115px;" /> <input
+														type="file" name="secondfiletag" id="secondfiletag" />
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="box-footer">
+							<div class="box-footer text-center">
 								<div class="row col-md-12">
 									<input type="submit" name="ctl00$ContentPlaceHolder1$btnDelete"
 										value="Delete Last Entry"
 										onclick="softdeleteintegrationforFlexiTransactionDelete();"
 										id="ContentPlaceHolder1_btnDelete"
-										class="btn btn-danger pull-right" />
+										class="btn btn-danger" />
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-2">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Photo</h3>
-								</div>
-								<div class="box-body">
-                       	 			<div class="col-md-3">
-                            			<div class="form-group">
-                                			<div class="text-center">
-                                    			<img name="preview" id="preview" class="profile-user-img"  style="height:70px;width:115px;" />
-                                     			<input type="file"  name="filetag" id="filetag" />
-                                			</div>
-                            			</div>
-                        			</div>
-                    			</div>
-							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Signature</h3>
-								</div>
-								<div class="box-body">
-                        			<div class="col-md-3">
-                            			<div class="form-group">
-                                			<div class="text-center">
-                                    			<img name="secondpreview" id="secondpreview" class="profile-user-img"  style="height:70px;width:115px;" />
-                                     			<input type="file"  name="secondfiletag" id="secondfiletag" />
-                                			</div>
-                            			</div>
-                        			</div>
-                    			</div>
-							</div>
-						</div>
 				</div>
 			</section>
 		</div>
@@ -314,50 +339,47 @@
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script>
+		var fileTag = document.getElementById("filetag"), preview = document
+				.getElementById("preview"), secondfiletag = document
+				.getElementById("secondfiletag"), secondpreview = document
+				.getElementById("secondpreview");
 
-      var fileTag = document.getElementById("filetag"),
-          preview = document.getElementById("preview"),
-          secondfiletag = document.getElementById("secondfiletag"),
-          secondpreview = document.getElementById("secondpreview");
-          
-      fileTag.addEventListener("change", function() {
-        changeImage(this);
-      });
-      
-      secondfiletag.addEventListener("change", function() {
-          changeImage2(this);
-        });
-      
-      
-      function changeImage(input) {
-        var reader;
+		fileTag.addEventListener("change", function() {
+			changeImage(this);
+		});
 
-        if (input.files && input.files[0]) {
-          reader = new FileReader();
+		secondfiletag.addEventListener("change", function() {
+			changeImage2(this);
+		});
 
-          reader.onload = function(e) {
-            preview.setAttribute('src', e.target.result);
-          }
+		function changeImage(input) {
+			var reader;
 
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      
-      function changeImage2(input) {
-          var reader;
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
 
-          if (input.files && input.files[0]) {
-            reader = new FileReader();
+				reader.onload = function(e) {
+					preview.setAttribute('src', e.target.result);
+				}
 
-            reader.onload = function(e) {
-            	secondpreview.setAttribute('src', e.target.result);
-            }
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 
-            reader.readAsDataURL(input.files[0]);
-          }
-        }
-      
-    </script>
+		function changeImage2(input) {
+			var reader;
+
+			if (input.files && input.files[0]) {
+				reader = new FileReader();
+
+				reader.onload = function(e) {
+					secondpreview.setAttribute('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	</script>
 	<!-- </form> -->
 </body>
 <!-- Dk/Admin/FlexiRenewal.aspx?IsModification=true EDB D 09:27:15 GMT -->

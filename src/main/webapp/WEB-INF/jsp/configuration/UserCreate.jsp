@@ -7,7 +7,7 @@
 	<form method="post" action="userCreation" modelAttribute="userCreation"
 		name="userCreation" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%;  margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->

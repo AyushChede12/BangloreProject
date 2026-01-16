@@ -5,7 +5,7 @@
 	onload="ShareRectification(); SharePayment(); BranchNameInDropdown(); ShareAllotedFromInDropdown()">
 	<!-- <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/ShareIssue.aspx?ismodify=true" onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> -->
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -21,7 +21,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Share Delete</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>REVIEW & FIX</b>
+				</h1>
+				<h5 style="margin-left: 18px;">SHARE HOLDING ADJUSTMENT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
