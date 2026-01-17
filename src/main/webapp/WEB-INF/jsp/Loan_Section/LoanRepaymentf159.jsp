@@ -114,7 +114,7 @@
 		<input name="id" type="hidden" id="id" class="form-control"
 			data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" />
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -151,7 +151,7 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-warning form-container" >
+							<div class="box box-warning form-container">
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="box-header ">
@@ -200,7 +200,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success form-container"id="loanSection" >
+							<div class="box box-success form-container" id="loanSection">
 								<div class="box-header ">
 									<h3 class="box-title">Loan Details</h3>
 								</div>
@@ -379,7 +379,8 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-danger form-container" id="paymentSection" style="display: none;">
+							<div class="box box-danger form-container" id="paymentSection"
+								style="display: none;">
 								<div class="box-header ">
 									<h3 class="box-title">Payment Details</h3>
 								</div>

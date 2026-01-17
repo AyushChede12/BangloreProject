@@ -2,23 +2,23 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <jsp:include page="../header.jsp" />
- <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
 
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-  </style>
+th, td {
+	border: 1px solid black;
+	padding: 8px;
+	text-align: left;
+}
+</style>
 <body onload="getListOfLoanId()" class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -30,7 +30,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Loan Search</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>LOAN ADMINISTRATION</b>
+				</h1>
+				<h5 style="margin-left: 18px;">LOAN SEARCH</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -38,122 +41,126 @@
 				</ol>
 			</section>
 			<%
-					List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
+			%>
 			<%
-				List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-				%>
+			List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
+			%>
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+						<div class="box box-success form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Branch :</label> <select name="branchname" id="branchname"
-											class="form-control select2" style="width: 100%;">
-											<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-													}
-													}%>
-										</select>
-									</div>
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Branch :</label> <select name="branchname"
+										id="branchname" class="form-control select2"
+										style="width: 100%;">
+										<%
+										if (branchList != null && !branchList.isEmpty()) {
+											for (BranchMaster branch : branchList) {
+										%>
+										<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
+										<%
+										}
+										}
+										%>
+									</select>
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="fDate" type="date" value="01/08/2022" id="fDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>From Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="fDate" type="date" value="01/08/2022" id="fDate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="tDate" type="date" value="01/08/2022" id="tDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>To Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="tDate" type="date" value="01/08/2022" id="tDate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Applicant Name :</label> <input name="memberRelativesName"
-											type="text" id="memberRelativesName" class="form-control"
-											Placeholder="Enter Applicant Name" autocomplete="off" />
-									</div>
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Applicant Name :</label> <input
+										name="memberRelativesName" type="text"
+										id="memberRelativesName" class="form-control"
+										Placeholder="Enter Applicant Name" autocomplete="off" />
+
 								</div>
-								<div class="clearfix"></div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Loan ID :</label> <input name="id" type="text"
-											id="id" class="form-control" Placeholder="Enter Loan ID"
-											autocomplete="off" />
-									</div>
+
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Loan ID :</label> <input name="id" type="text" id="id"
+										class="form-control" Placeholder="Enter Loan ID"
+										autocomplete="off" />
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Member Code :</label> <input name="searchMemberCode"
-											type="text" id="searchMemberCode" class="form-control"
-											Placeholder="Enter Member Code" autocomplete="off" />
-									</div>
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Member Code :</label> <input name="searchMemberCode"
+										type="text" id="searchMemberCode" class="form-control"
+										Placeholder="Enter Member Code" autocomplete="off" />
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Plan Name :</label> <select name="loanPurpose"
-											id="loanPurpose" class="form-control" style="width: 100%;">
-											<%
-														if (loanMasterList != null && !loanMasterList.isEmpty()) {
-															for (LoanMaster loanPlan : loanMasterList) {
-														%>
-											<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
-											<%
-														}
-														}
-														%>
-										</select>
-									</div>
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Plan Name :</label> <select name="loanPurpose"
+										id="loanPurpose" class="form-control" style="width: 100%;">
+										<%
+										if (loanMasterList != null && !loanMasterList.isEmpty()) {
+											for (LoanMaster loanPlan : loanMasterList) {
+										%>
+										<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
+										<%
+										}
+										}
+										%>
+									</select>
+
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Advisor Code :</label> <input name="advisorCode"
-											type="text" id="advisorCode" class="form-control"
-											Placeholder="Enter Advisor Code" autocomplete="off" />
-									</div>
+								<div class="col-md-3"style="margin-top: 15px;">
+
+									<label>Advisor Code :</label> <input name="advisorCode"
+										type="text" id="advisorCode" class="form-control"
+										Placeholder="Enter Advisor Code" autocomplete="off" />
+
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
-									<div class="text-center">
-										<a id="btnSearch" class="btn btn-success" href="javascript:searchLoanDataInTable();"><span
-											class="fa fa-search"></span> SEARCH</a> <a id="btnPrint"
-											class="btn btn-warning"><span class="fa fa-print"></span>
-											PRINT</a>
-									</div>
+								<div class="col-md-12 text-center" style="margin-top: 15px;">
+
+									<a id="btnSearch" class="btn btn-success"
+										href="javascript:searchLoanDataInTable();"><span
+										class="fa fa-search"></span> SEARCH</a> 
+
+								</div>
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="box box-success form-container"
+							style="overflow: auto !important;">
+							<div class="box-header">
 								<h3 class="box-title">Search Result</h3>
-								<div class="box-tools pull-right"></div>
-								<table cellspacing="0" cellpadding="3" rules="all"
+							</div>
+							<div class="box-tools pull-right"></div>
+							<table cellspacing="0" cellpadding="3" rules="all"
 								class="display nowrap table table-hover table-striped table-bordered"
 								border="1" style="width: 100%; border-collapse: collapse;">
 								<caption></caption>
@@ -172,17 +179,18 @@
 								<tbody id="tableBody">
 								</tbody>
 							</table>
-							</div>
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
-							</div>
+						</div>
+						<div class="box-body">
+							<div class="clearfix margin-bottom-10"></div>
 						</div>
 					</div>
 				</div>
 			</section>
 		</div>
-		<!-- /.content-wrapper -->
-		<div class="control-sidebar-bg"></div>
+
+	</div>
+	<!-- /.content-wrapper -->
+	<div class="control-sidebar-bg"></div>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
