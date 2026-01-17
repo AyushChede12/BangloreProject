@@ -1,4 +1,38 @@
 <jsp:include page="../header.jsp" />
+<style>
+.custom-table thead th {
+	background-color: #C48223; /* header color */
+	color: #ffffff;
+	text-align: center;
+	font-size: 18px; /* heading text bigger */
+	font-weight: 700;
+	padding: 18px 12px; /* 🔥 HEIGHT CONTROL */
+	line-height: 1.8; /* 🔥 OPEN LOOK */
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* Body rows more open */
+.custom-table tbody td {
+	padding: 14px 12px;
+	font-size: 15px;
+}
+
+.iconbutton {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.iconbutton:focus {
+	outline: none;
+}
+
+.iconbutton i {
+	font-size: 18px;
+}
+</style>
 <script src="jquery-3.6.3.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -34,27 +68,23 @@
 					<h1 id="ContentPlaceHolder1_IdHeader">
 						<b>CUSTOMIZATION</b>
 					</h1>
-					<h5 style="margin-left: 18px;">	MANAGE BANK</h5>
-					<ol class="breadcrumb">
-						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-						<li><a href="#">Dashboard</a></li>
-						<li class="active">Add Bank</li>
-					</ol>
+					<h5 style="margin-left: 18px;">MANAGE BANK</h5>
+
 				</section>
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-container">
 								<div class="box-header ">
-									<h3 class="box-title">Bank Details</h3>
+									<h3 class="box-title">BANK DETAILS</h3>
 								</div>
 								<div class="box-body">
 									<div class="col-md-12" style="margin-top: 15px;">
 										<div class="col-md-4">
-											<label>Bank Name :</label> <select name="bankName"
+											<label>BANK NAME :</label> <select name="bankName"
 												id="bankName" class="form-control select2"
 												style="width: 100%;">
-												<option value="" selected>Select Bank Name</option>
+												<option value="" selected>SELECT BANK NAME</option>
 												<option value="Au Small Finance Bank">Au Small
 													Finance Bank</option>
 												<option value="Axis Bank">Axis Bank</option>
@@ -150,28 +180,28 @@
 										</div>
 
 										<div class="col-md-4">
-											<label>Account No :</label> <input name="accountNo"
+											<label>ACCOUNT NO :</label> <input name="accountNo"
 												type="text" id="accountNo" class="form-control"
-												Placeholder="Enter Account No" autocomplete="off" /> <span
+												Placeholder="ENTER ACCOUNT NO" autocomplete="off" /> <span
 												id="accountNoMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Account No.</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												ACCOUNT NO.</span>
 										</div>
 
 										<div class="col-md-4">
-											<label>Mobile No. :</label> <input name="mobileNo"
+											<label>MOBILE NO. :</label> <input name="mobileNo"
 												type="text" id="mobileNo" class="form-control"
-												Placeholder="Enter Mobile No." autocomplete="off" />
-										</div>
-
-										<div class="col-md-4"  style="margin-top: 15px;">
-											<label>Address :</label> <input name="address" type="text"
-												id="address" class="form-control"
-												Placeholder="Enter Address" autocomplete="off" />
+												Placeholder="ENTER MOBILE NO." autocomplete="off" />
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Opening Date :</label>
+											<label>ADDRESS :</label> <input name="address" type="text"
+												id="address" class="form-control"
+												Placeholder="ENTER ADDRESS" autocomplete="off" />
+										</div>
+
+										<div class="col-md-4" style="margin-top: 15px;">
+											<label>OPENING DATE :</label>
 
 											<div class="input-group date">
 												<div class="input-group-addon">
@@ -182,34 +212,51 @@
 													data-mask="" />
 											</div>
 											<span id="ContentPlaceHolder1_RequiredFieldValidator1"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Op. Date</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												OP. DATE</span>
 										</div>
 
-										    <div class="col-md-4" style="margin-top: 15px;">
-											<label >Op. Balance :</label>
-											
-												<input name="openingBalance" type="text" id="openingBalance"
-													class="form-control" autocomplete="off" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator2"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Op. Balance</span>
-											</div>
-										
+										<div class="col-md-4" style="margin-top: 15px;">
+											<label>OP. BALANCE :</label> <input name="openingBalance"
+												type="text" id="openingBalance" class="form-control" placeholder="ENTER OP. BALANCE"
+												autocomplete="off" /> <span
+												id="ContentPlaceHolder1_RequiredFieldValidator2"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												OP. BALANCE</span>
+										</div>
+
 									</div>
 									<div class="col-md-12">
 										<div style="margin-top: 20px;">
 
-											<table cellspacing="0" cellpadding="3" rules="all"
+											<!-- <table cellspacing="0" cellpadding="3" rules="all"
 												class="display nowrap table table-hover table-striped table-bordered"
 												border="1" style="width: 100%; border-collapse: collapse;">
-												<caption>Branch Access List</caption>
+												<caption>BRANCH ACCESS LIST</caption>
 												<tr style="color: White; background-color: #008385;">
 													<th scope="col">B.CODE</th>
 													<th scope="col">B.NAME</th>
 													<th scope="col">Check</th>
 												</tr>
 												<tbody id="ContentPlaceHolder1_gdvBranchAddBank">
+												</tbody>
+											</table> -->
+
+											<table
+												class="table table-bordered table-hover table-striped custom-table datatable">
+												<thead>
+													<tr>
+														<th>SL No</th>
+														<th>B.CODE</th>
+														<th>B.NAME</th>
+														<th>CHECK</th>
+														<th>EDIT</th>
+														<th>DELETE</th>
+
+													</tr>
+												</thead>
+												<tbody id="branchTableBody">
+													<!-- dynamic rows -->
 												</tbody>
 											</table>
 
@@ -234,26 +281,27 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-container"
-								style=" overflow: auto !important;">
+							<div class="form-container" style="overflow: auto !important;" id="hideshowtable">
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>
 									<div>
-										<section id="hideshowtable">
-											<table cellspacing="0" cellpadding="3" rules="all"
-												class="display nowrap table table-hover table-striped table-bordered"
-												border="1" style="width: 100%; border-collapse: collapse;">
-												<caption>Member Data List</caption>
-												<tr style="color: White; background-color: #008385;">
-													<th scope="col">SlNo</th>
-													<th scope="col">Account No</th>
-													<th scope="col">Bank Name</th>
-													<th scope="col">Mobile No.</th>
-													<th scope="col">Op. Date</th>
-													<th scope="col">Op. Balance</th>
-												</tr>
-												<tbody id="ContentPlaceHolder1_gdvDataAddBank">
+										<section>
+											
+											<table
+												class="table table-bordered table-hover table-striped custom-table datatable">
+												<thead>
+													<tr>
+														<th>SL NO</th>
+														<th>ACCOUNT NO</th>
+														<th>BANK NAME</th>
+														<th>MOBILE NO.</th>
+														<th>OP. DATE</th>
+														<th>OP. BALANCE</th>
 
+													</tr>
+												</thead>
+												<tbody id="branchTableBody">
+													<!-- dynamic rows -->
 												</tbody>
 											</table>
 										</section>
@@ -268,38 +316,8 @@
 			<div class="control-sidebar-bg"></div>
 		</div>
 
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap 3.3.7 -->
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- InputMask -->
-		<script src="plugins/input-mask/jquery.inputmask.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-		<!-- date-range-picker -->
-		<script src="bower_components/moment/min/moment.min.js"></script>
-		<script
-			src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<!-- bootstrap datepicker -->
-		<script
-			src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<!-- bootstrap color picker -->
-		<script
-			src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-		<!-- bootstrap time picker -->
-		<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-		<!-- SlimScroll -->
-		<script
-			src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-		<!-- iCheck 1.0.1 -->
-		<script src="plugins/iCheck/icheck.min.js"></script>
-		<!-- FastClick -->
-		<script src="bower_components/fastclick/lib/fastclick.js"></script>
-		<!-- AdminLTE App -->
 		<script src="dist/js/adminlte.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
-		<script src="dist/js/demo.js"></script>
-		<!-- Select2 -->
-		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+		<script src="dist/js/customization/bank.js"></script>
 
 	</form>
 </body>
