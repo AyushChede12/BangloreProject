@@ -6,14 +6,74 @@ $(document).ready(function() {
 
 	$("#addBtn").click(function() {
 
+		// Clear all previous messages
+		$('#chkfyname').text('');
+		$('#chkdatefrom').text('');
+		$('#chkdateto').text('');
+
+		// Fetch input values
 		var fyName = $('#fyName').val().trim();
-		var fDate = $('#fDate').val().trim();
-		var tDate = $('#tDate').val().trim();
+		var dateFrom = $('#fDate').val().trim();
+		var dateTo = $('#tDate').val().trim();
+
+		let isValid = true;
+
+		// Validation: Financial Year Name
+		// Validation: Financial Year Name
+		if (fyName === '') {
+			$('#chkfyname').text('* This field is required');
+			$('#fyName').focus();
+			isValid = false;
+		} else {
+			const fyPattern = /^[0-9]{4}-[0-9]{4}$/;
+			if (!fyPattern.test(fyName)) {
+				$('#chkfyname').text('* Please enter proper financial year (e.g., 2021-2022)');
+				$('#fyName').focus();
+				isValid = false;
+			} else {
+				const parts = fyName.split('-');
+				const startYear = parseInt(parts[0]);
+				const endYear = parseInt(parts[1]);
+				if (endYear - startYear !== 1) {
+					$('#chkfyname').text('* Financial year should be consecutive years (e.g., 2021-2022)');
+					$('#fyName').focus();
+					isValid = false;
+				}
+			}
+		}
+
+
+		// Validation: Date From
+		if (dateFrom === '') {
+			$('#chkdatefrom').text('* This field is required');
+			if (isValid) $('#fDate').focus();
+			isValid = false;
+		}
+
+		// Validation: Date To
+		if (dateTo === '') {
+			$('#chkdateto').text('* This field is required');
+			if (isValid) $('#tDate').focus();
+			isValid = false;
+		}
+
+		// Optional: Additional Date Range Validation
+		if (dateFrom !== '' && dateTo !== '') {
+			if (new Date(dateFrom) > new Date(dateTo)) {
+				$('#chkdateto').text('* Date To must be after Date From');
+				if (isValid) $('#tDate').focus();
+				isValid = false;
+			}
+		}
+
+		if (!isValid) {
+			return false; // Stop AJAX call
+		}
 
 		const financialData = {
 			fyName: fyName,
-			fDate: fDate,
-			tDate: tDate
+			fDate: dateFrom,
+			tDate: dateTo
 		};
 
 		$.ajax({
