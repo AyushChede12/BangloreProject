@@ -1,5 +1,7 @@
 package com.society.application.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -235,6 +237,23 @@ public class ConfigurationService {
 			return true;
 		}
 		return false;
+	}
+
+	public BranchMaster saveBranch(BranchMaster branch) {
+
+		if (branchMasterRepo.existsByBranchCode(branch.getBranchCode())) {
+			throw new RuntimeException("Branch Code already exists");
+		}
+
+		branch.setCreatedAt(LocalDateTime.now());
+		branch.setBalance(BigDecimal.ZERO);
+
+		return branchMasterRepo.save(branch);
+	}
+
+	public List<BranchMaster> getAllBranches() {
+		// TODO Auto-generated method stub
+		return branchMasterRepo.findAll();
 	}
 
 }

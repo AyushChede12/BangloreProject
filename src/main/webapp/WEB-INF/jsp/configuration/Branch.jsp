@@ -19,18 +19,18 @@
 }
 
 .iconbutton {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 }
 
 .iconbutton:focus {
-    outline: none;
+	outline: none;
 }
 
 .iconbutton i {
-    font-size: 18px;
+	font-size: 18px;
 }
 </style>
 <script src="jquery-3.6.3.min.js"></script>
@@ -55,12 +55,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<body onload="getAllBranchMaster();fetchMaxGLGroupNo(); "
-	class="skin-blue sidebar-mini"
+<body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 
-
+	<!-- getAllBranchMaster() , fetchMaxGLGroupNo() -->
 	<div
 		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
@@ -78,11 +77,7 @@
 					<b>CUSTOMIZATION</b>
 				</h1>
 				<h5 style="margin-left: 18px;">ADD BRANCH</h5>
-				<ol class="breadcrumb">
-					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li class="active">Branch</li>
-				</ol>
+				
 			</section>
 
 			<form id="form">
@@ -107,13 +102,13 @@
 										</div>
 
 										<div class="col-md-4">
-											<label>Branch Name <strong style="color: Red">*</strong></label>
+											<label>Bank Name <strong style="color: Red">*</strong></label>
 
 											<input name="name" type="text" id="name" class="form-control"
 												placeholder="Enter Bank Name" autocomplete="off" /> <span
 												id="branchNameMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Branch Name</span>
+												Bank Name</span>
 										</div>
 
 										<div class="col-md-4">
@@ -195,15 +190,10 @@
 
 										<div class="col-md-4">
 											<label>Account Open Date <strong style="color: Red">*</strong>
-											</label>
-
-											<div class="input-group date">
-												<input name="openingDate" type="date" id="openingDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
-											</div>
-											<span id="openingDateMsg"
+											</label> <input name="openingDate" type="date" id="openingDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" /> <span id="openingDateMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 												Opening Date</span>
 										</div>
@@ -213,8 +203,8 @@
 											</label> <select name="status" id="status"
 												class="form-control select2" style="width: 100%;">
 												<option selected="selected" value="Select">--Select--</option>
-												<option value="Open">Open</option>
-												<option value="Close">Close</option>
+												<option value="Active">Active</option>
+												<option value="Inactive">Inactive</option>
 
 											</select> <span id="statusMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -225,7 +215,7 @@
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label for="txtPin">PIN <strong style="color: Red">*</strong>
 											</label> <input name="pin" type="text" maxlength="7" id="pin"
-												class="form-control"
+												class="form-control" placeholder="Enter Pin"
 												onkeypress="return isNumberOnlyKey(this, event);" /> <span
 												id="pinMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
@@ -274,8 +264,8 @@
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>Contact Person</label> <input name="contactPerson"
 												type="text" id="contactPerson" class="form-control"
-												placeholder="Contact Person Name" autocomplete="off" /> <span
-												id="contactPersonMsg"
+												placeholder="Enter Contact Person Name" autocomplete="off" />
+											<span id="contactPersonMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 												Person Name</span>
 										</div>
@@ -283,7 +273,7 @@
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>Contact No.</label> <input name="contactNo"
 												type="text" maxlength="10" id="contactNo"
-												class="form-control"
+												class="form-control" placeholder="Enter Contact No"
 												onkeypress="return isNumberOnlyKey(this, event);"
 												autocomplete="off" /> <span id="contactNoMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
@@ -313,14 +303,14 @@
 
 									<div class=" col-md-7 " style="margin-top: 20px;">
 
-										<input type="button" name="savebtn" value="Save" id="savebtn"
-											class="btn btn-success pull-right margin-r-5" />
+										<button type="button" id="saveBtn"
+											class="btn btn-success pull-right margin-r-5">SAVE</button>
 
-										<button type="button" name="hide" value="hide" id="hide"
-											class="btn btn-success pull-right margin-r-5">Hide</button>
+										<button type="button" id="hideBtn" onclick="hideBtnFunc()"
+											class="btn btn-success pull-right margin-r-5">HIDE</button>
 
-										<button type="button" name="show" value="show" id="show"
-											class="btn btn-success pull-right margin-r-5">Show</button>
+										<button type="button" id="showBtn" onclick="showBtnFunc()"
+											class="btn btn-success pull-right margin-r-5">SHOW</button>
 
 									</div>
 
@@ -360,7 +350,7 @@
 									</div>
 								</div>
 							</div> --%>
-							<div class="form-container table-responsive">
+							<div class="form-container table-responsive" id="branchTable">
 								<div class="box-body">
 
 									<table
@@ -379,7 +369,7 @@
 												<th>DELETE</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody id="branchTableBody">
 											<!-- dynamic rows -->
 										</tbody>
 									</table>

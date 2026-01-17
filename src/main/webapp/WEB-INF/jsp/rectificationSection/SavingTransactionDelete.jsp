@@ -6,7 +6,7 @@
 	<!--   <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/SavingsTransactionEntry.aspx?IsModification=true" onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> -->
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -17,31 +17,38 @@
 		<!-- Aside Menu end -->
 
 		<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1',
+					'form1', [], [], [], 90, 'ctl00');
+			//]]>
+		</script>
 
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Delete Deposit/Withdrawal</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>REVIEW & FIX</b>
+				</h1>
+				<h5 style="margin-left: 18px;">SAVING TRANSACTION REMOVAL</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
 					<li class="active">Deposit/Withdrawal</li>
 				</ol>
 			</section>
+
 			<section class="content">
 				<div class="row">
-					<div class="col-md-10">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Account Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+							<div class="box-body form-horizontal">
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Txn Date<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -56,7 +63,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</div>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Branch Name<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -70,7 +77,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Branch Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Select Acc.No. <strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -84,7 +91,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Account No.</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Member Code<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -97,8 +104,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
+
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Name<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -110,7 +119,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												A/C Holder Name</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Mobile Number<strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -122,7 +131,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Mobile Number</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Joint Holder</label>
 										<div class="col-sm-8">
 											<input name="jointHolder" type="text" readonly="readonly"
@@ -130,7 +139,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Placeholder="Joint Holder Name" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">SB Plan Name</label>
 										<div class="col-sm-8">
 											<input name="sbPlanName" type="text" readonly="readonly"
@@ -139,15 +148,83 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 										</div>
 									</div>
 								</div>
+								<div class="row four-field-row">
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Photo</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img id="preview" class="profile-user-img"
+														src="upload_Files/${aadharPhoto}" alt="Image"
+														style="height: 110px; width: 110px;"> <input
+														type="file" name="filetag" id="filetag" />
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class=" col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Signature</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+
+												<div class="text-center">
+													<img name="secondpreview" id="secondpreview"
+														class="profile-user-img"
+														src="data:image/png;base64,${aadharPhoto}" alt="image"
+														style="height: 110px; width: 115px;" /> <input
+														type="file" name="secondfiletag" id="secondfiletag" />
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3"
+										style="display: flex; margin: 15px 0 30px;">
+										<div class="box-body">
+											<div>
+												<h4>
+													<b class="box-title">Joint Photo</b>
+												</h4>
+												<p class="help-block">Maximum 10MB</p>
+											</div>
+											<div class="col-md-3">
+												<div class="text-center">
+													<img name="secondpreview" id="imgJointPhoto"
+														class="profile-user-img"
+														src="data:image/png;base64,${aadharPhoto}" alt="image"
+														style="height: 110px; width: 115px;" /> <input
+														type="file" name="thirdfiletag" id="thirdfiletag" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
+
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Payment Details</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-6">
-									<div class="form-group row">
+
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label class="col-sm-4 control-label">Ava.Balance <strong
 											style="color: Red">*</strong></label>
 										<div class="col-sm-8">
@@ -156,7 +233,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												class="form-control" />
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="txtTransactionFor" class="col-sm-4 control-label">Transaction
 											For</label>
 										<div class="col-sm-8">
@@ -164,7 +241,8 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												class="form-control" Placeholder="Enter Transaction For" />
 										</div>
 									</div>
-									<div class="form-group row">
+
+									<div class="col-md-3">
 										<label for="txtRemarks" class="col-sm-4 control-label">Remarks
 										</label>
 										<div class="col-sm-8">
@@ -172,9 +250,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												class="form-control" Placeholder="Enter Remarks" />
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="ddlTransactionType" class="col-sm-4 control-label">Txn.
 											Type<strong style="color: Red">*</strong>
 										</label>
@@ -187,7 +263,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											</select>
 										</div>
 									</div>
-									<div class="form-group row">
+								</div>
+
+								<div class="row four-field-row">
+									<div class="col-md-3">
 										<label for="txtAmount" class="col-sm-4 control-label">Amount
 											<strong style="color: Red">*</strong>
 										</label>
@@ -200,7 +279,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												Amount</span>
 										</div>
 									</div>
-									<div class="form-group row">
+									<div class="col-md-3">
 										<label for="drpPaymentBy" class="col-sm-4 control-label">Payment
 											By <strong style="color: Red">*</strong>
 										</label>
@@ -218,63 +297,12 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 									</div>
 								</div>
 							</div>
-							<div class="box-footer">
+							<div class="box-footer text-center">
 								<div class="row col-md-12">
 									<input type="submit" name="ctl00$ContentPlaceHolder1$btnDelete"
 										value="Delete" onclick="softDeleteSavingsTransaction();"
 										id="ContentPlaceHolder1_btnDelete"
-										class="btn btn-danger pull-right" />
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-2">
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Photo</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img id="imageApplicant" class="profile-user-img"
-												style="height: 70px; width: 115px;" /> <input type="file"
-												name="filetag" id="filetag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Signature</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img id="imageSignature" class="profile-user-img"
-												style="height: 70px; width: 115px;" /> <input type="file"
-												name="secondfiletag" id="secondfiletag" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="box box-success">
-							<div class="box-header with-border">
-								<h3 class="box-title">Joint Photo</h3>
-							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<div class="text-center">
-											<img id="imgJointPhoto" class="profile-user-img"
-												style="height: 70px; width: 115px;" /> <input type="file"
-												name="thirdfiletag" id="thirdfiletag" />
-										</div>
-									</div>
+										class="btn btn-danger" />
 								</div>
 							</div>
 						</div>
