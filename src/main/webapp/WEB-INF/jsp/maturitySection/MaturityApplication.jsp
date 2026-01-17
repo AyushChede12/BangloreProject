@@ -24,7 +24,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Maturity Application</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>PAYOFF SECTION</b>
+				</h1>
+				<h5 style="margin-left: 18px;">APPLY FOR MATURITY</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -34,86 +37,86 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+						<div class="box box-success form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<form id="myForm" name="myForm">
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Policy No. :</label> <select name="id" id="id"
-												onchange="SearchThroughPolicyNumber();"
-												class="form-control select2" style="width: 100%;">
-												<option value="">Select</option>
-											</select> <span id="policyNoMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-												Policy Number</span>
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Policy No. :</label> <select name="id" id="id"
+											onchange="SearchThroughPolicyNumber();"
+											class="form-control select2" style="width: 100%;">
+											<option value="">Select</option>
+										</select> <span id="policyNoMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+											Policy Number</span>
+
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label>Member Name :</label> <input name="memberName"
-												type="text" readonly="readonly" id="memberName"
-												class="form-control" Placeholder="Enter Member Name"
-												autocomplete="off" /> <span id="memberNameMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Member Name</span>
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Member Name :</label> <input name="memberName"
+											type="text" readonly="readonly" id="memberName"
+											class="form-control" Placeholder="Enter Member Name"
+											autocomplete="off" /> <span id="memberNameMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Member Name</span>
+
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label>Policy Date:</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="policyDate" type="text" readonly="readonly"
-													id="policyDate" class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Policy Date:</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
+											<input name="policyDate" type="text" readonly="readonly"
+												id="policyDate" class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label>Application Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="applicationDate" type="date" value="01/08/2022"
-													id="applicationDate" class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Application Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
-											<span id="applicationDateMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Application Date</span>
+											<input name="applicationDate" type="date" value="01/08/2022"
+												id="applicationDate" class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+										<span id="applicationDateMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Application Date</span>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Remarks :</label> <input name="remarks" type="text"
-												id="remarks" class="form-control"
-												Placeholder="Enter Remarks" autocomplete="off" /> <span
-												id="remarksMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Remarks</span>
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Remarks :</label> <input name="remarks" type="text"
+											id="remarks" class="form-control" Placeholder="Enter Remarks"
+											autocomplete="off" /> <span id="remarksMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Remarks</span>
+
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="text-center">
-										<input type="submit" name="ctl00$ContentPlaceHolder1$btnAdd"
-											value="Add" id="ContentPlaceHolder1_btnAdd"
-											class="btn btn-success pull-right margin-r-5" />
 							</form>
-							<input onclick="SearchMaturityAppplicationFindAll();"
-								type="button"
+
+
+						</div>
+						<div class=" box-footer text-center">
+							<input type="submit" name="ctl00$ContentPlaceHolder1$btnAdd"
+								value="Add" id="ContentPlaceHolder1_btnAdd"
+								class="btn btn-success  margin-20" /> <input
+								onclick="SearchMaturityAppplicationFindAll();" type="button"
 								name="ctl00$ContentPlaceHolder1$btnViewPolicyDetail"
 								value=" View Policy Detail"
 								id="ContentPlaceHolder1_btnViewPolicyDetail"
-								class="btn btn-warning pull-right" />
+								class="btn btn-warning margin-20" />
 						</div>
 					</div>
 				</div>

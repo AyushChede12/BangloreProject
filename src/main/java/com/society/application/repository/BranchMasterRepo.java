@@ -39,4 +39,6 @@ public interface BranchMasterRepo extends JpaRepository<BranchMaster, Long> {
 	void deleteBybankID(String bankID);
 
 	List<BranchMaster> findBybankID(String bankId);
+	
+	boolean existsByBranchCode(String branchCode);
 }

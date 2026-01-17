@@ -18,7 +18,7 @@
 		id="form1">
 
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
@@ -40,7 +40,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Loan Close Report</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>LOAN ADMINISTRATION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">EARLY LOAN CLOSER</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -50,16 +53,16 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+							<div class="box box-info form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Search Box</h3>
 								</div>
 								<%
 								List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
 								%>
 								<div class="box-body">
-									<div class="col-md-2">
-										<div class="form-group">
+									<div class="col-md-2" style="margin-top: 15px;">
+										
 											<label>Loan Id</label> <select name="searchLoanId1"
 												onchange="getByGoldLoanIdRegularEmiRepayment()"
 												id="searchLoanId1" class="form-control select2"
@@ -78,7 +81,7 @@
 												}
 												%>
 											</select>
-										</div>
+										
 									</div>
 									<!-- 									<div class="col-md-2"> -->
 									<!-- 										<div class="form-group"> -->
@@ -110,29 +113,29 @@
 									<!-- 											</div> -->
 									<!-- 										</div> -->
 									<!-- 									</div> -->
-									<div class="col-md-2">
-										<div class="form-group">
+									<div class="col-md-2" style="margin-top: 25px;">
+										
 											<label></label> <a id="ContentPlaceHolder1_btnSearch"
 												class="btn btn-success margin-20" href=""><span
 												class="fa fa-search"></span> SEARCH</a>
-										</div>
+										
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
+									
 								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+							<div class="box box-success form-container"
+								style=" overflow: auto !important;">
+								<div class="box-header ">
 									<h3 class="box-title">Search Result</h3>
 									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
+									
 									<table id="loanTable" cellspacing="0" cellpadding="3"
 										rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<tr>
+										<tr style="color: White; background-color: #008385;">
 											<th>Field</th>
 											<th>Value</th>
 										</tr>
