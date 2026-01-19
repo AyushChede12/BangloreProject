@@ -2,15 +2,7 @@
 <aside class="main-sidebar">
 	<!-- sidebar: style can be found in sidebar.less -->
 	<section class="sidebar" style="height: auto;">
-		<!-- Sidebar user panel -->
-		<div class="user-panel">
-			<div class="txt">
-				<%
-				String userCompanyName = (String) session.getAttribute("userCompanyName");
-				%>
-				<%=userCompanyName%>
-			</div>
-		</div>
+		
 		<ul class="sidebar-menu tree" data-widget="tree">
 			<li class="active"><a href="dashboard"> <img
 					src="dist/img/icon/ico-1.png" style="margin-right: 5px;" /> <span>DASHBOARD</span>
