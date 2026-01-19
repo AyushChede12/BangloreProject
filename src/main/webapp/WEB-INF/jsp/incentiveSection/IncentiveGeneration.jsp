@@ -7,8 +7,8 @@
 	if (status != null && "success".equals(status)) {
 	%>
 	<script>
-         alert("Saved Successfully");
-      </script>
+		alert("Saved Successfully");
+	</script>
 	<%
 	} else {
 
@@ -18,7 +18,7 @@
 		modelAttribute="SaveIncentive" name="SaveIncentive" id="SaveIncentive">
 
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%;  margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -30,7 +30,10 @@
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Incentive Generate</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>BONUS MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">GENERATE INCENTIVE PAYMENTS</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -40,12 +43,12 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+							<div class="box box-info form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Incentive Details</h3>
 								</div>
 								<table
-									style="width: 100%; font-size: small; box-shadow: none; overflow: auto !important;">
+									style="width: 100%; font-size: small;  overflow: auto !important;">
 									<tr>
 										<td width="20px">&nbsp;</td>
 										<td width="500px">&nbsp;&nbsp;</td>
@@ -116,6 +119,13 @@
 									</div>
 									<div class="control-sidebar-bg"></div>
 								</div>
+								</div>
+								</div>
+								</div>
+								</section>
+								</div>
+								</div>
+								
 	</form>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
