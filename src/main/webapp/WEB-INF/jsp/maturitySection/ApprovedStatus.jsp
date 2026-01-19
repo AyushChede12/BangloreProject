@@ -1,4 +1,4 @@
-<jsp:include page="../header.jsp" />
+ <jsp:include page="../header.jsp" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -21,7 +21,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Maturity Approval</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYOFF SECTION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">APPROVED STATUS</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -31,21 +34,21 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="box box-info form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-4">
-									<div class="form-group">
+							<div class="box-body"style="margin-top: 15px;">
+								<div class="col-md-4" >
+									
 										<label>Branch</label> <select name="paybranch" id="paybranch"
 											class="form-control" style="width: 100%;">
 											<option value="All">All Branch</option>
 										</select>
-									</div>
+									
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
+								<div class="col-md-4">
+									
 										<label>From Date :</label>
 										<div class="input-group date">
 											<div class="input-group-addon">
@@ -56,10 +59,10 @@
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 												data-mask="" />
 										</div>
-									</div>
+									
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
+								<div class="col-md-4">
+									
 										<label>To Date :</label>
 										<div class="input-group date">
 											<div class="input-group-addon">
@@ -70,27 +73,27 @@
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 												data-mask="" />
 										</div>
-									</div>
+									
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
+								<div class="col-md-12 text-center">
+									
 										<label></label>
 										<button type="submit" onclick="ApprovedStatus();"
-											class="btn btn-success pull-right margin-20">Search</button>
-									</div>
+											class="btn btn-success  margin-20">Search</button>
+									
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+								
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
+						<div class="box box-success form-container"
+							style=" overflow: auto !important;">
 							<div class="box-header with-border">
 								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 								<div>
-									<h4 style="text-align: center;">
+									<h3 style="text-align: center;">
 										<b>Maturity Approval Report</b>
-									</h4>
+									</h3>
 									<hr>
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"

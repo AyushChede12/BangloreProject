@@ -91,6 +91,7 @@
 											id="fyNameMsg"
 											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 											FY Name</span>
+											<small id="chkfyname" style="color: red;"></small>
 
 									</div>
 									<div class="col-md-4">
@@ -102,7 +103,9 @@
 											</div>
 											<input name="fDate" type="date" value="01/08/2022" id="fDate"
 												class="form-control" data-inputmask="" data-mask="" />
+												
 										</div>
+										<small id="chkdatefrom" style="color: red;"></small>
 
 									</div>
 									<div class="col-md-4">
@@ -115,6 +118,7 @@
 											<input name="tDate" type="date" value="01/08/2022" id="tDate"
 												class="form-control" data-inputmask="" data-mask="" />
 										</div>
+										<small id="chkdateto" style="color: red;"></small>
 
 									</div>
 

@@ -92,77 +92,77 @@
 									<div class="col-md-12" style="margin-top: 15px;">
 
 										<div class="col-md-4">
-											<label>G.L.Head No. <strong style="color: Red">*</strong></label>
+											<label>G.L.HEAD NO. <strong style="color: Red">*</strong></label>
 
-											<input name="glHeadNo" type="text" id="glHeadNo"
-												class="form-control" placeholder="Enter GL Head No."
+											<input name="glHeadNo" type="text" id="glHeadNo" style="text-transform: uppercase;"
+												class="form-control" placeholder="ENTER GL HEAD NO"
 												autocomplete="off" /> <span id="branchCodeMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												GL Head No.</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												GL HEAD NO.</span>
 										</div>
 
 										<div class="col-md-4">
-											<label>Bank Name <strong style="color: Red">*</strong></label>
+											<label>BANK NAME <strong style="color: Red">*</strong></label>
 
-											<input name="name" type="text" id="name" class="form-control"
-												placeholder="Enter Bank Name" autocomplete="off" /> <span
+											<input name="name" type="text" id="name" class="form-control" style="text-transform: uppercase;"
+												placeholder="ENTER BANK NAME" autocomplete="off" /> <span
 												id="branchNameMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Bank Name</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BANK NAME</span>
 										</div>
 
 										<div class="col-md-4">
-											<label>Bank Account No<strong style="color: Red">*</strong></label>
+											<label>BANK ACCOUNT NO<strong style="color: Red">*</strong></label>
 
-											<input name="bankAccoununtNo" type="text"
+											<input name="bankAccoununtNo" type="text" style="text-transform: uppercase;"
 												id="bankAccoununtNo" class="form-control"
-												placeholder="Enter Bank Account No." autocomplete="off" />
+												placeholder="ENTER BANK ACCOUNT NO" autocomplete="off" />
 											<span id="bankAccoununtNoMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Bank Account No.</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BANK ACCOUNT NO.</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Branch<strong style="color: Red">*</strong></label> <input
-												name="branch" type="text" id="branch" class="form-control"
-												placeholder="Enter Branch" autocomplete="off" /> <span
+											<label>BRANCH<strong style="color: Red">*</strong></label> <input
+												name="branch" type="text" id="branch" class="form-control" style="text-transform: uppercase;"
+												placeholder="ENTER BRANCH" autocomplete="off" /> <span
 												id="branchMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Branch</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BRANCH</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Branch Code <strong style="color: Red">*</strong></label>
-											<input name="code" type="text" maxlength="10" id="code"
-												class="form-control" placeholder="Enter Branch Code"
+											<label>BRANCH CODE <strong style="color: Red">*</strong></label>
+											<input name="code" type="text" maxlength="10" id="code" style="text-transform: uppercase;"
+												class="form-control" placeholder="ENTER BRANCH CODE"
 												autocomplete="off" /> <span id="branchCodeMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Code</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												CODE</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label for="txtAddress">Address <strong
+											<label for="txtAddress">ADDRESS <strong
 												style="color: Red">*</strong>
 											</label>
 
-											<textarea name="address" rows="2" cols="20" id="address"
+											<textarea name="address" rows="2" cols="20" id="address" style="text-transform: uppercase;"
 												class="form-control" placeholder="Enter Branch Address"
 												autocomplete="off">
                                     </textarea>
 											<span id="addressMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Address</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												ADDRESS</span>
 										</div>
 										<!-- row 2  -->
 										<div class="col-md-12" style="margin-top: 15px;">
 											<div class="checkbox-container col-md-4 ">
-												<label for="checkbox1">Allow Inter Branch
-													Transaction</label> <input value="Allow Inter Branch Transaction"
+												<label for="checkbox1">ALLOW INTER BRANCH
+													TRANSACTION</label> <input value="Allow Inter Branch Transaction"
 													type="checkbox" id="selectTransactionCheckbox"
 													name="selectTransactionCheckbox" style="margin-left: 5px;">
 											</div>
 											<div class="checkbox-container col-md-4">
-												<label for="checkbox2">Is For Fund Transfer</label> <input
+												<label for="checkbox2">IS FOR FUND TRANSFER</label> <input
 													value="Is For Fund Transfer" type="checkbox"
 													id="selectTransactionCheckbox"
 													name="selectTransactionCheckbox" style="margin-left: 5px;">
@@ -173,61 +173,61 @@
 									</div>
 									<div class="col-md-12" style="margin-top: 15px">
 										<div class="col-md-4">
-											<label for="accountType">Account Type <strong
+											<label for="accountType">ACCOUNT TYPE <strong
 												style="color: Red">*</strong>
 											</label> <select name="accountType" id="accountType"
 												class="form-control select2" style="width: 100%;">
-												<option selected="selected" value="Select">--Select--</option>
-												<option value="Savings">Savings</option>
-												<option value="Current">Current</option>
-												<option value="Cash Credit/O.D.">Cash Credit/O.D.</option>
-												<option value="Society">Society</option>
+												<option selected="selected" value="Select">--SELECT--</option>
+												<option value="Savings">SAVING</option>
+												<option value="Current">CURRENT</option>
+												<option value="Cash Credit/O.D.">CASH CREDIT/O.D.</option>
+												<option value="Society">SOCIETY</option>
 
 											</select> <span id="accountTypeMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-												Account Type</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
+												ACCOUNT TYPE</span>
 										</div>
 
 										<div class="col-md-4">
-											<label>Account Open Date <strong style="color: Red">*</strong>
+											<label>ACCOUNT OPEN DATE <strong style="color: Red">*</strong>
 											</label> <input name="openingDate" type="date" id="openingDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 												data-mask="" /> <span id="openingDateMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Opening Date</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												OPENING DATE</span>
 										</div>
 
 										<div class="col-md-4">
-											<label for="status">Status <strong style="color: Red">*</strong>
+											<label for="status">STATUS <strong style="color: Red">*</strong>
 											</label> <select name="status" id="status"
 												class="form-control select2" style="width: 100%;">
-												<option selected="selected" value="Select">--Select--</option>
-												<option value="Active">Active</option>
-												<option value="Inactive">Inactive</option>
+												<option selected="selected" value="Select">--SELECT--</option>
+												<option value="Active">ACTIVE</option>
+												<option value="Inactive">INACTIVE</option>
 
 											</select> <span id="statusMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-												Status</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
+												STATUS</span>
 										</div>
 
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label for="txtPin">PIN <strong style="color: Red">*</strong>
 											</label> <input name="pin" type="text" maxlength="7" id="pin"
-												class="form-control" placeholder="Enter Pin"
+												class="form-control" placeholder="ENTER PIN" style="text-transform: uppercase;"
 												onkeypress="return isNumberOnlyKey(this, event);" /> <span
 												id="pinMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Pin</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												PIN</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label for="ddlState">State <strong
+											<label for="ddlState">STATE <strong
 												style="color: Red">*</strong>
 											</label> <select name="state" id="state" class="form-control select2"
 												style="width: 100%;">
-												<option selected="selected" value="">--Select--</option>
+												<option selected="selected" value="">--SELECT--</option>
 												<option value="ANDRA PRADESH">ANDRA PRADESH</option>
 												<option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
 												<option value="ASSAM">ASSAM</option>
@@ -257,45 +257,45 @@
 												<option value="UTTARAKHAND">UTTARAKHAND</option>
 												<option value="WEST BENGAL">WEST BENGAL</option>
 											</select> <span id="stateMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-												State</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
+												STATE</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Contact Person</label> <input name="contactPerson"
+											<label>CONTACT PERSON</label> <input name="contactPerson"
 												type="text" id="contactPerson" class="form-control"
-												placeholder="Enter Contact Person Name" autocomplete="off" />
-											<span id="contactPersonMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Person Name</span>
+												placeholder="ENTER CONTACT PERSON NAME" autocomplete="off" />
+											<span id="contactPersonMsg" style="text-transform: uppercase;"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												PERSON NAME</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Contact No.</label> <input name="contactNo"
+											<label>CONTACT NO.</label> <input name="contactNo"
 												type="text" maxlength="10" id="contactNo"
-												class="form-control" placeholder="Enter Contact No"
+												class="form-control" placeholder="ENTER CONTACT NO"
 												onkeypress="return isNumberOnlyKey(this, event);"
 												autocomplete="off" /> <span id="contactNoMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Contact No</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												CONTACT NO</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>IFSC Code </label> <input name="ifscCode" type="text"
+											<label>IFSC CODE </label> <input name="ifscCode" type="text"
 												id="ifscCode" class="form-control"
-												placeholder="Enter IFSC Code" autocomplete="off" /> <span
+												placeholder="ENTER IFSC CODE" autocomplete="off" /> <span
 												id="ifscCodeMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												IFSC Code</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												IFSC CODE</span>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>Balance </label> <input name="balance" type="text"
-												id="balance" readonly="readonly" class="form-control"
+											<label>BALANCE </label> <input name="balance" type="text"
+												id="balance" class="form-control"
 												placeholder="0.00" autocomplete="off" /> <span
 												id="ifscCodeMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Balance</span>
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BALANCE</span>
 										</div>
 
 
@@ -305,6 +305,9 @@
 
 										<button type="button" id="saveBtn"
 											class="btn btn-success pull-right margin-r-5">SAVE</button>
+											
+											<button type="button" id="updateBtn" style="margin-right: 50px;"
+											class="btn btn-warning pull-right margin-r-4">UPDATE</button>
 
 										<button type="button" id="hideBtn" onclick="hideBtnFunc()"
 											class="btn btn-success pull-right margin-r-5">HIDE</button>

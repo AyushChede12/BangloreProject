@@ -428,20 +428,6 @@ public class ConfigurationController {
 //		model.addAttribute("list", list);
 //		return "configuration/BranchFieldsShown";
 //	}
-
-	@GetMapping("/getDataByidBranchMaster") // Ayush
-	public ResponseEntity<ApiResponse<BranchMaster>> findBranchModuleById(@RequestParam("id") Long id) {
-		Optional<BranchMaster> branch = configurationService.findBranchDataById(id);
-		if (branch.isPresent()) {
-			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.FOUND,
-					"BranchModule fetched successfully", branch.get());
-			return ResponseEntity.ok(response);
-		} else {
-			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
-					"BranchModule not found for ID: " + id, null);
-			return ResponseEntity.status(404).body(response);
-		}
-	}
 //
 //	@GetMapping("/getAllBranchMaster")
 //	@ResponseBody
@@ -479,6 +465,34 @@ public class ConfigurationController {
 				"Branch list fetched successfully", list);
 
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/getBranchModuleById") // Ayush
+	public ResponseEntity<ApiResponse<BranchMaster>> findBranchModuleById(@RequestParam("id") Long id) {
+		Optional<BranchMaster> branch = configurationService.findBranchDataById(id);
+		if (branch.isPresent()) {
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.FOUND,
+					"BranchModule fetched successfully", branch.get());
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"BranchModule not found for ID: " + id, null);
+			return ResponseEntity.status(404).body(response);
+		}
+	}
+	
+	@PostMapping("/deleteBranchModuleById") // Ayush
+	public ResponseEntity<ApiResponse<String>> deleteBranchModule(@RequestParam("id") Long id) {
+		boolean isDeleted = configurationService.deleteBranchModule(id);
+		if (isDeleted) {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.OK, "Branch module deleted successfully",
+					"success");
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.BAD_REQUEST, "Branch module deletion failed",
+					"failure");
+			return ResponseEntity.badRequest().body(response);
+		}
 	}
 
 //	@PostMapping("/saveAndUpdateAllBranchModule") // Ayush (without DTO)
@@ -1129,5 +1143,7 @@ public class ConfigurationController {
 	public List<BranchMaster> getAllDataOfBranchMaster() {
 		return branchMasterRepo.findAll();
 	}
+	
+	
 
 }

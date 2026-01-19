@@ -256,4 +256,13 @@ public class ConfigurationService {
 		return branchMasterRepo.findAll();
 	}
 
+	public boolean deleteBranchModule(Long id) {
+		// TODO Auto-generated method stub
+		if (branchMasterRepo.existsById(id)) {
+			branchMasterRepo.deleteById(id);
+			return true;
+		}
+		return false;
+	}
+
 }

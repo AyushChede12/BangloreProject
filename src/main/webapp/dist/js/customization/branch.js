@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 	$("#branchTable").hide();
+	$("#updateBtn").hide();
 
 	$("#saveBtn").click(function() {
 
@@ -51,7 +52,7 @@ $(document).ready(function() {
 		url: "getAllBranchMaster",
 		type: "GET",
 		success: function(response) {
-			
+
 			console.log("Branch API Response 👉", response);
 
 			let tbody = $("#branchTableBody");
@@ -64,21 +65,21 @@ $(document).ready(function() {
 					let row = `
 	                       <tr>
 	                           <td>${index + 1}</td>
-	                           <td>${branch.branchCode || ''}</td>
-	                           <td>${branch.branch || ''}</td>
+	                           <td>${(branch.branchCode || '').toUpperCase()}</td>
+	                           <td>${(branch.branch || '').toUpperCase()}</td>
 	                           <td>${branch.openingDate || ''}</td>
-	                           <td>${branch.pin || ''}</td>
-	                           <td>${branch.state || ''}</td>
-	                           <td>${branch.contactPerson || ''}</td>
+	                           <td>${(branch.pin || '').toUpperCase()}</td>
+	                           <td>${(branch.state || '').toUpperCase()}</td>
+	                           <td>${(branch.contactPerson || '').toUpperCase()}</td>
 	                           <td>${branch.contactNo || ''}</td>
 	                           <td>
-	                               <button class="btn btn-sm btn-primary"
-	                                   onclick="editBranch(${branch.id})">
+	                               <button type="button" class="btn btn-sm btn-primary"
+	                                   onclick="viewData(${branch.id})">
 	                                   <i class="fa fa-edit"></i>
 	                               </button>
 	                           </td>
 	                           <td>
-	                               <button class="btn btn-sm btn-danger"
+	                               <button type="button" class="btn btn-sm btn-danger"
 	                                   onclick="deleteBranch(${branch.id})">
 	                                   <i class="fa fa-trash"></i>
 	                               </button>
@@ -105,10 +106,66 @@ $(document).ready(function() {
 	});
 });
 
-function showBtnFunc(){
+function showBtnFunc() {
 	$("#branchTable").show();
 }
 
-function hideBtnFunc(){
+function hideBtnFunc() {
 	$("#branchTable").hide();
+}
+
+function deleteBranch(id) {
+	if (confirm("Are you sure you want to delete this branch?")) {
+		$.ajax({
+			url: "deleteBranchModuleById",
+			type: "POST",
+			data: { id: id },
+			success: function(response) {
+				if (response.status == "OK") {
+					alert(response.message);
+					location.reload();
+				} else {
+					alert("Delete failed: " + response.message);
+				}
+			},
+			error: function(xhr, status, error) {
+				alert("Failed to delete branch.");
+				console.error("Error:", error);
+			}
+		});
+	}
+
+}
+
+function viewData(id) {
+	$("#updateBtn").show();
+	$("#saveBtn").hide();
+	$("#hideBtn").hide();
+	$("#showBtn").hide();
+	$.ajax({
+		url: "getBranchModuleById",
+		type: "GET",
+		data: { id: id },
+		success: function(response) {
+			if (response.status == "FOUND") {
+				const branch = response.data;
+				$("#id").val(branch.id);
+				$("#glHeadNo").val(branch.branchCode);
+				$("#name").val(branch.branchName);
+				$("#openingDate").val(branch.openingDate);
+				$("#address").val(branch.address);
+				$("#pin").val(branch.pin);
+				$("#state").val(branch.state);
+				$("#branchManagerContactNo").val(branch.branchManagerContactNo);
+				$("#accountDepartmentContactNo").val(branch.accountDepartmentContactNo);
+			} else {
+				alert("Branch not found: " + response.message);
+			}
+		},
+		error: function(xhr) {
+			alert("Request failed: " + xhr.responseText);
+		}
+	});
+
+
 }
