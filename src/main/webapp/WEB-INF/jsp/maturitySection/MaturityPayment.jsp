@@ -25,7 +25,10 @@
 
 			<form id="myForm" name="myForm">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Maturity Payment</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYOFF SECTION</b>
+					</h1>
+					<h5 style="margin-left: 18px;">MATURITY APPLICATION STATUS</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -35,162 +38,161 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="box box-success form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Search Box</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-4">
-										<div class="form-group">
-											<label>Policy No. :</label> <select name="id" id="id"
-												onchange="SearchTHePolicyNumber();"
-												class="form-control select2" style="width: 100%;">
-												<option value="">Select</option>
-											</select> <span id="policyNoMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Policy No</span>
-										</div>
+									<div class="col-md-4" style="margin-top: 15px;">
+
+										<label>Policy No. :</label> <select name="id" id="id"
+											onchange="SearchTHePolicyNumber();"
+											class="form-control select2" style="width: 100%;">
+											<option value="">Select</option>
+										</select> <span id="policyNoMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Policy No</span>
+
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
+
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="box box-success form-container">
+								<div class="box-header" >
 									<h3 class="box-title">Policy Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Policy No. :</label> <input name="policyNo1"
-												type="text" readonly="readonly" id="policyNo1"
-												class="form-control" /> <span
-												id="ContentPlaceHolder1_RequiredFieldValidatorEnterPolicyNo"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-												Policy No</span>
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Policy No. :</label> <input name="policyNo1"
+											type="text" readonly="readonly" id="policyNo1"
+											class="form-control" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatorEnterPolicyNo"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Policy No</span>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Applicant Name :</label> <input name="ApplicantName"
-												type="text" readonly="readonly" id="ApplicantName"
-												class="form-control" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Applicant Name :</label> <input name="ApplicantName"
+											type="text" readonly="readonly" id="ApplicantName"
+											class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Plan Name :</label> <input name="planName" type="text"
-												readonly="readonly" id="planName" class="form-control" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Plan Name :</label> <input name="planName" type="text"
+											readonly="readonly" id="planName" class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Plan Code :</label> <input name="planCode" type="text"
-												readonly="readonly" id="planCode" class="form-control" />
-										</div>
-									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Term :</label> <input name="term" type="text"
-												readonly="readonly" id="term" class="form-control" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Policy Amount :</label> <input name="policyAmount"
-												type="text" readonly="readonly" id="policyAmount"
-												class="form-control" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Actual Maturity :</label> <input name="actualMaturity"
-												type="text" readonly="readonly" id="actualMaturity"
-												class="form-control" />
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Maturity Date :</label> <input name="MaturityDate"
-												type="text" readonly="readonly" id="MaturityDate"
-												class="form-control" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Plan Code :</label> <input name="planCode" type="text"
+											readonly="readonly" id="planCode" class="form-control" />
+
 									</div>
 
-									<div class="clearfix margin-bottom-10"></div>
+									<div class="col-md-3" style="margin-top: 15px;">
 
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Sys. Payable :</label> <input name="sysPayable"
-												type="text" readonly="readonly" id="sysPayable"
-												class="form-control" style="color: Red; font-weight: bold;" />
-										</div>
+										<label>Term :</label> <input name="term" type="text"
+											readonly="readonly" id="term" class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Deduction (-) :</label> <input name="deduction"
-												type="text" readonly="readonly" id="deduction"
-												class="form-control" onpaste="return false"
-												onkeypress="return isNumberKey(this, event);"
-												autocomplete="off" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Policy Amount :</label> <input name="policyAmount"
+											type="text" readonly="readonly" id="policyAmount"
+											class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Adjustment (+) :</label> <input name="adjusment"
-												type="text" readonly="readonly" id="adjusment"
-												class="form-control" onpaste="return false"
-												onkeypress="return isNumberKey(this, event);"
-												autocomplete="off" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Actual Maturity :</label> <input name="actualMaturity"
+											type="text" readonly="readonly" id="actualMaturity"
+											class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Net Payable :</label> <input name="netPayable"
-												type="text" readonly="readonly" id="netPayable"
-												class="form-control"
-												style="color: Green; font-weight: bold;" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Maturity Date :</label> <input name="MaturityDate"
+											type="text" readonly="readonly" id="MaturityDate"
+											class="form-control" />
+
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Approval Branch :</label> <input name="approvalBranch"
-												type="text" readonly="readonly" id="approvalBranch"
-												class="form-control" />
-										</div>
+
+
+
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Sys. Payable :</label> <input name="sysPayable"
+											type="text" readonly="readonly" id="sysPayable"
+											class="form-control" style="color: Red; font-weight: bold;" />
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Approval Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="approvalDate" type="text" readonly="readonly"
-													id="approvalDate" class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Deduction (-) :</label> <input name="deduction"
+											type="text" readonly="readonly" id="deduction"
+											class="form-control" onpaste="return false"
+											onkeypress="return isNumberKey(this, event);"
+											autocomplete="off" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Adjustment (+) :</label> <input name="adjusment"
+											type="text" readonly="readonly" id="adjusment"
+											class="form-control" onpaste="return false"
+											onkeypress="return isNumberKey(this, event);"
+											autocomplete="off" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Net Payable :</label> <input name="netPayable"
+											type="text" readonly="readonly" id="netPayable"
+											class="form-control" style="color: Green; font-weight: bold;" />
+
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Approval Branch :</label> <input name="approvalBranch"
+											type="text" readonly="readonly" id="approvalBranch"
+											class="form-control" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Approval Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
+											<input name="approvalDate" type="text" readonly="readonly"
+												id="approvalDate" class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Approve Remarks :</label> <input name="approveRemarks"
-												type="text" readonly="readonly" id="approveRemarks"
-												class="form-control" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Approve Remarks :</label> <input name="approveRemarks"
+											type="text" readonly="readonly" id="approveRemarks"
+											class="form-control" />
+
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Approve User :</label> <input name="approveUser"
-												type="text" readonly="readonly" id="approveUser"
-												class="form-control" />
-										</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+
+										<label>Approve User :</label> <input name="approveUser"
+											type="text" readonly="readonly" id="approveUser"
+											class="form-control" />
+
 									</div>
 								</div>
 							</div>
@@ -198,71 +200,77 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="box box-success form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Payment Details</h3>
 								</div>
-								<div class="box-body">
+								<div class="box-body" style="margin-top: 15px;">
 									<div class="col-md-3">
-										<div class="form-group">
-											<label>Payment Date :</label>
-											<div class="input-group date">
-												<div class="input-group-addon">
-													<i class="fa fa-calendar"></i>
-												</div>
-												<input name="paymentDate" type="date" id="paymentDate"
-													class="form-control"
-													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-													data-mask="" />
+
+										<label>Payment Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
 											</div>
+											<input name="paymentDate" type="date" id="paymentDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
 										</div>
+
 									</div>
 									<div class="col-md-3">
-										<div class="form-group">
-											<label>Pay Branch :</label> <select name=branchName
-												id="branchName" class="form-control" style="width: 100%;">
-												<option value="">Select</option>
-											</select>
-										</div>
+
+										<label>Pay Branch :</label> <select name=branchName
+											id="branchName" class="form-control" style="width: 100%;">
+											<option value="">Select</option>
+										</select>
+
 									</div>
 									<div class="col-md-3">
-										<div class="form-group">
-											<label>Payment By <strong style="color: Red">*</strong></label>
-											<select name="paymode" id="paymode" class="form-control"
-												style="width: 100%;">
-												<option value="">Select</option>
-												<option value="Cash">Cash</option>
-												<option value="Cheque">Cheque</option>
-												<option value="Online">Online</option>
-												<option value="NEFT">NEFT</option>
-												<option value="SBAccount">SBAccount</option>
-											</select>
-										</div>
+
+										<label>Payment By <strong style="color: Red">*</strong></label>
+										<select name="paymode" id="paymode" class="form-control"
+											style="width: 100%;">
+											<option value="">Select</option>
+											<option value="Cash">Cash</option>
+											<option value="Cheque">Cheque</option>
+											<option value="Online">Online</option>
+											<option value="NEFT">NEFT</option>
+											<option value="SBAccount">SBAccount</option>
+										</select>
+
 									</div>
 									<div class="col-md-3">
-										<div class="form-group">
-											<label>Pay Remarks :</label> <input name="remarks"
-												type="text" id="remarks" class="form-control" />
-										</div>
+
+										<label>Pay Remarks :</label> <input name="remarks" type="text"
+											id="remarks" class="form-control" />
+
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="col-md-3"></div>
-									<div class="clearfix margin-bottom-10"></div>
-									<div class="text-center">
-										<input type="submit" name="ctl00$ContentPlaceHolder1$btnAdd"
-											value="Update" id="ContentPlaceHolder1_btnAdd"
-											class="btn btn-success pull-right margin-r-5" />
+
+									
+										<div class=" box-footer text-center">
+											<input type="submit" name="ctl00$ContentPlaceHolder1$btnAdd"
+												value="Update" id="ContentPlaceHolder1_btnAdd"
+												class="btn btn-success  margin-20" />
+										</div>
+									
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</form>
+
 		</div>
+
 	</div>
-	</div>
-	</div>
-	</div>
-	</section>
-	</div>
+
 	<!-- /.content-wrapper -->
 	<div class="control-sidebar-bg"></div>
-	</div>
+
 
 	<script>
 		$(document).ready(function() {
