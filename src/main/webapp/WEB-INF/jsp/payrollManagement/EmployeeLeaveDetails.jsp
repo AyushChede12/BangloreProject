@@ -6,7 +6,7 @@
 		name="saveEmployeeLeaveMaster"
 		th:object="${saveEmployeeLeaveMaster123}" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -24,7 +24,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Employee Leave Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">TEAM MEMBER LEAVE</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -34,15 +37,16 @@
 				<section class="content">
 					<div class="row" id="idSearch">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Details</h3>
 								</div>
 								<!-- <input type="hidden" id="id" name="id" /> -->
 								<input type="hidden" th:field="*{id}" id="id" name="id" />
-								<div class="box-body">
-									<div class="col-md-5">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-6">
 											<label class="col-sm-4 control-label">Select by Code<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -54,9 +58,7 @@
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 											</div>
 										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group row">
+										<div class="col-md-6">
 											<label class="col-sm-4 control-label">Financial Year<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -70,29 +72,21 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label"></label>
-											<div class="col-sm-8">
-												<button type="button" name="search" value="Search"
-													id="search" class="btn btn-success pull-right"
-													onclick="return validateEmployeeLeaveDetails()">Search</button>
-											</div>
-										</div>
+									<div class="text-center">
+										<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success">
+											<span class="fa fa-search"></span> SEARCH
+										</a>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Employee Leave Details</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-5">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-4">
 											<label class="col-sm-4 control-label">CL <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -103,7 +97,7 @@
 													CL</span>
 											</div>
 										</div>
-										<div class="form-group row">
+										<div class="col-md-4">
 											<label class="col-sm-4 control-label">SL <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -114,9 +108,8 @@
 													SL</span>
 											</div>
 										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group row">
+
+										<div class="col-md-4">
 											<label class="col-sm-4 control-label">EL <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -128,42 +121,32 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label"></label>
-											<div class="col-sm-8">
-												<button type="button" name="save" value="Save"
-													onclick="return validateEmployeeLeaveDetails2()" id="save"
-													class="btn btn-success pull-right">Save</button>
-												<!-- <button type="submit" name="save" value="Save" 
-												class="btn btn-success pull-right">Save</button> -->
-											</div>
-										</div>
+
+									<div class="col-sm-8 text-center">
+										<button type="button" name="save" value="Save"
+											onclick="return validateEmployeeLeaveDetails2()" id="save"
+											class="btn btn-success">Save</button>
+										<!-- <button type="submit" name="save" value="Save" 
+												class="btn btn-success">Save</button> -->
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Leave Details</h3>
 								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="margin">
-											<div>
-												<table style="width: 100%;">
+								<div class="box-body form-horizontal">
+									<div class="margin">
+										<div>
+											<table style="width: 100%;">
 
-												</table>
-												<table id="ContentPlaceHolder1_gvSalary"
-													style="width: 100%;">
-													<tr>
-														<td>No Receord Found</td>
-													</tr>
-												</table>
-											</div>
+											</table>
+											<table id="ContentPlaceHolder1_gvSalary" style="width: 100%;">
+												<tr>
+													<td>No Receord Found</td>
+												</tr>
+											</table>
 										</div>
 									</div>
 								</div>

@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<!-- 	<form method="post" action="" id="form1"> -->
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -14,14 +14,18 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1',
+					'form1', [], [], [], 90, 'ctl00');
+			//]]>
+		</script>
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Attendance Report</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>PAYROLL MANAGEMENT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">ATTENDANCE REPORT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -30,79 +34,73 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 			</section>
 			<section class="content">
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-success">
-							<div class="box-header with-border">
+					<div class="col-md-12">
+						<div class="form-container">
+							<div class="box-header">
 								<h3 class="box-title">Select Month Year</h3>
 							</div>
-							<div class="box-body">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label> </label> <input name="fDate" type="date" id="fDate"
-											class="form-control"
-											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-											data-mask="" />
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-											<label> </label> <input name="tDate" type="date" id="tDate"
+							<div class="box-body form-horizontal">
+
+								<div class="row four-field-row">
+									<div class="col-md-6">
+										<label>From Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="fDate" type="date" id="fDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 												data-mask="" />
-									</div>
-								</div>
-								<div class="col-md-3">
-										<div class="form-group">
-											<!-- 											<label></label> <a id="ContentPlaceHolder1_btnSearch" -->
-											<!-- 												class="btn btn-success margin-20"> -->
-											<!-- 												<span class="fa fa-search" ></span> SEARCH -->
-											<!-- 											</a> -->
-											<button class="btn btn-success margin-20"
-												onclick=" getDPayrollData();">SEARCH</button>
 										</div>
 									</div>
-									
-								    <!-- 									<div class="col-md-4"> -->
-									<!-- 										<label> </label> -->
-									<!-- 										<button type="button" name="ctl00$ContentPlaceHolder1$btnPrev" -->
-									<!-- 											value="Previous Month" id="ContentPlaceHolder1_btnPrev" -->
-									<!-- 											class="btn btn-warning margin-20 margin-r-5">Previous -->
-									<!-- 											Month</button> -->
-									<!-- 										<button type="button" name="ctl00$ContentPlaceHolder1$btnNext" -->
-									<!-- 											value="Next Month" id="ContentPlaceHolder1_btnNext" -->
-									<!-- 											class="btn btn-warning margin-20">Next Month</button> -->
-									<!-- 									</div> -->
-									
+									<div class="col-md-6">
+										<label>To Date :</label>
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="tDate" type="date" id="tDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
-									<h3 class="box-title">Search Result</h3>
-									<div class="box-tools pull-right"></div>
-								</div>
-								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
-									<table cellspacing="0" cellpadding="3" rules="all"
-										class="display nowrap table table-hover table-striped table-bordered"
-										border="1" id="ContentPlaceHolder1_gdvData"
-										style="width: 100%; border-collapse: collapse;"
-										id="shareCertificate">
-										<caption>Share Data List</caption>
-										<tr style="color: White; background-color: #008385;">
-											<th scope="col">Employee ID</th>
-											<th scope="col">Leave Date</th>
-											<th scope="col">Leave Type</th>
-										</tr>
-										<tbody id="tableBody">
-
-										</tbody>
-									</table>
+								<div class="text-center">
+									<a id="ContentPlaceHolder1_btnSearch"
+										class="btn btn-success margin-20" onclick="getDPayrollData();"><span
+										class="fa fa-search"></span> SEARCH</a>
 								</div>
 							</div>
 						</div>
+
+
+						<div class="form-container"
+							style="box-shadow: none; overflow: auto !important;">
+							<div class="box-header">
+								<h3 class="box-title">Search Result</h3>
+							</div>
+							<div class="box-body">
+								<table cellspacing="0" cellpadding="3" rules="all"
+									class="display nowrap table table-hover table-striped table-bordered"
+									border="1" id="ContentPlaceHolder1_gdvData"
+									style="width: 100%; border-collapse: collapse;"
+									id="shareCertificate">
+									<caption>Share Data List</caption>
+									<tr style="color: White; background-color: #008385;">
+										<th scope="col">Employee ID</th>
+										<th scope="col">Leave Date</th>
+										<th scope="col">Leave Type</th>
+									</tr>
+									<tbody id="tableBody">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
+				</div>
 			</section>
 		</div>
 		<!-- /.content-wrapper -->

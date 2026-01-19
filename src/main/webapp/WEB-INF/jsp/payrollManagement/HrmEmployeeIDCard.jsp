@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -22,8 +22,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Employee ID Card</h1>
-					<ol class="breadcrumb">
+<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">TEAM MEMBER ID CARD</h5>					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 								Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -32,62 +34,62 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Box</h3>
 								</div>
-								<div class="box-body">
-									<div class="clearfix"></div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Employee Code :</label> 
-											    <!-- <input name="searchbyCode"
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-6">
+											<label>Employee Code :</label>
+											<!-- <input name="searchbyCode"
 												type="text" id="searchbyCode" class="form-control"
 												Placeholder="Enter Employee Code" autocomplete="off" />  -->
-												<select name="searchEmpCode" id="searchEmpCode" onchange="searchEmployeeIDCard();"
+											<select name="searchEmpCode" id="searchEmpCode"
+												onchange="searchEmployeeIDCard();"
 												class="form-control select2" style="width: 100%;">
 												<option value=""></option>
-											   </select>
+											</select>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label></label>
-											<button type="button"
-												name="ctl00$ContentPlaceHolder1$btnSave" value="Search"
-												id="ContentPlaceHolder1_btnSave"
-												class="btn btn-success margin-20">Search</button>
-										</div>
+									<div class="text-center">
+										<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
+											onclick="showTableDataOfEmployeeSearch();"><span
+											class="fa fa-search"></span> SEARCH</a>
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
 								</div>
 							</div>
-							<div class="box box-success"
+
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header">
 									<h3 class="box-title">Search Result</h3>
-									<div class="box-tools pull-right"></div>
-									<table id="loanTable" cellspacing="0" cellpadding="3"
-										rules="all"
+								</div>
+								<div class="box-body">
+									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">
-										<tr>
+										<caption>Search</caption>
+										<tr style="color: White; background-color: #008385;">
 											<th>Field</th>
 											<th>Value</th>
 										</tr>
+										<tbody id="table">
+
+										</tbody>
 									</table>
-								</div>
-								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
+
+									<div></div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
 			</div>
-			<!-- /.content-wrapper -->
-			<div class="control-sidebar-bg"></div>
+			</section>
+		</div>
+		<!-- /.content-wrapper -->
+		<div class="control-sidebar-bg"></div>
 		</div>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->

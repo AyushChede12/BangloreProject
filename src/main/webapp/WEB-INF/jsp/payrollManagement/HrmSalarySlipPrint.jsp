@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -22,7 +22,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Salary Slip Print</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SALARY SLIP PRINT</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -31,21 +34,22 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Select Month Year</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
+
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+										<div class="col-md-6">
 											<label></label> <input name="dtDate" type="text"
 												value="AUG - 2022" readonly="readonly" id="dtDate"
 												class="form-control" />
 										</div>
 									</div>
-									<div class="col-md-4">
-										<label></label>
+									<div class="text-center">
 										<button type="button" name="ctl00$ContentPlaceHolder1$btnPrev"
 											value="Previous Month" id="ContentPlaceHolder1_btnPrev"
 											class="btn btn-warning margin-20 margin-r-5">Previous
@@ -54,9 +58,11 @@
 											value="Next Month" id="ContentPlaceHolder1_btnNext"
 											class="btn btn-warning margin-20">Next Month</button>
 									</div>
+
 									<div class="clearfix margin-bottom-10"></div>
-									<div class="col-md-3">
-										<div class="form-group">
+
+									<div class="row four-field-row">
+										<div class="col-md-6">
 											<label>Select Employee </label> <select name="searchEmpCode"
 												id="searchEmpCode" class="form-control select2"
 												style="width: 100%;">
@@ -66,44 +72,40 @@
 												Code</span>
 										</div>
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label></label>
-												<a id="ContentPlaceHolder1_btnSearch"
-												class="btn btn-success margin-20"
-												href="javascript:showSalarySlipPrint85();"><span
-												class="fa fa-search"></span> SEARCH</a>
-										</div>
+									<div class="text-center">
+										<label></label> <a id="ContentPlaceHolder1_btnSearch"
+											class="btn btn-success margin-20"
+											href="javascript:showSalarySlipPrint85();"><span
+											class="fa fa-search"></span> SEARCH</a>
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
 								</div>
 							</div>
-							<div class="box box-success"
+
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header">
 									<h3 class="box-title">Search Result</h3>
-									<div class="box-tools pull-right"></div>
-									<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<caption></caption>
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">Employee Code</th>
-												<th scope="col">Employee Name</th>
-												<th scope="col">Designation</th>
-												<th scope="col">Department</th>
-												<th scope="col">DOJ</th>
-												<th scope="col">Bank A/C No.</th>
-												<th scope="col">IFSC</th>
-												<th scope="col">Branch</th>
-											</tr>
-											<tbody id="tableBody">
-											</tbody>
-										</table>
 								</div>
-								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
-								</div>
+								<table cellspacing="0" cellpadding="3" rules="all"
+									class="display nowrap table table-hover table-striped table-bordered"
+									border="1" style="width: 100%; border-collapse: collapse;">
+									<caption></caption>
+									<tr style="color: White; background-color: #008385;">
+										<th scope="col">Employee Code</th>
+										<th scope="col">Employee Name</th>
+										<th scope="col">Designation</th>
+										<th scope="col">Department</th>
+										<th scope="col">DOJ</th>
+										<th scope="col">Bank A/C No.</th>
+										<th scope="col">IFSC</th>
+										<th scope="col">Branch</th>
+									</tr>
+									<tbody id="tableBody">
+									</tbody>
+								</table>
+							</div>
+							<div class="box-body">
+								<div class="clearfix margin-bottom-10"></div>
 							</div>
 						</div>
 					</div>
