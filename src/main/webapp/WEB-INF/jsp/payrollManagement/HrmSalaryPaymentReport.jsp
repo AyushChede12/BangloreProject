@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -13,14 +13,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Salary Payment Report</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SALARY PAYMENT REPORT</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -29,81 +34,74 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Box</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-4">
-										<div class="form-group">
+
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-4">
 											<label>Employee Code</label> <input name="ECode" type="text"
 												id="ECode" class="form-control" />
 										</div>
-									</div>
-									<div class="col-md-2">
-										<div class="form-group">
+										<div class="col-md-4">
 											<label>From Date :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input name="FDate" type="date" 
-													id="FDate" class="form-control"
+												<input name="FDate" type="date" id="FDate"
+													class="form-control"
 													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 													data-mask="" />
 											</div>
 										</div>
-									</div>
-									<div class="col-md-2">
-										<div class="form-group">
+										<div class="col-md-4">
 											<label>To Date :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
 													<i class="fa fa-calendar"></i>
 												</div>
-												<input name="TDate" type="date" 
-													id="TDate" class="form-control"
+												<input name="TDate" type="date" id="TDate"
+													class="form-control"
 													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
 													data-mask="" />
 											</div>
 										</div>
 									</div>
-									<div class="col-md-2">
-										<div class="form-group">
-											<label></label> <a id="ContentPlaceHolder1_btnSearch" onclick="getTableInSalaryPaymentReport()"
-												class="btn btn-success margin-20"><span
-												class="fa fa-search"></span> SEARCH</a>
-										</div>
+									<div class="text-center">
+										<a id="ContentPlaceHolder1_btnSearch"
+											class="btn btn-success margin-20"
+											onclick="getTableInSalaryPaymentReport();"><span
+											class="fa fa-search"></span> SEARCH</a>
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
 								</div>
 							</div>
-							<div class="box box-success"
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header">
 									<h3 class="box-title">Search Result</h3>
 									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10">
-									
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<caption></caption>
-											<tr style="color: White; background-color: #008385;">
+
+									<table cellspacing="0" cellpadding="3" rules="all"
+										class="display nowrap table table-hover table-striped table-bordered"
+										border="1" style="width: 100%; border-collapse: collapse;">
+										<caption></caption>
+										<tr style="color: White; background-color: #008385;">
 											<th scope="col">Sr.No</th>
-												<th scope="col">Id</th>
-												<th scope="col">BOB</th>
-												<th scope="col">Address</th>
-												<th scope="col">Bank Account</th>
-											</tr>
-											<tbody id="table">
-											</tbody>
-										</table>
-									
-									</div>
+											<th scope="col">Id</th>
+											<th scope="col">BOB</th>
+											<th scope="col">Address</th>
+											<th scope="col">Bank Account</th>
+										</tr>
+										<tbody id="table">
+										</tbody>
+									</table>
+
 								</div>
 							</div>
 						</div>
@@ -146,48 +144,72 @@
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 		<script>
-         $(function () {
-             //Initialize Select2 Elements
-             $('.select2').select2();
-             //Datemask dd/mm/yyyy
-             $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-             //Datemask2 mm/dd/yyyy
-             $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-             //Date range picker
-             $('#reservation').daterangepicker()
-             //Date range picker with time picker
-             $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' } })
-             $('#daterange-btn').daterangepicker(
-              {
-                  ranges: {
-                      'Today': [moment(), moment()],
-                      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                      'This Month': [moment().startOf('month'), moment().endOf('month')],
-                      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                  },
-                  startDate: moment().subtract(29, 'days'),
-                  endDate: moment()
-              },
-              function (start, end) {
-                  $('#daterange-btn span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'))
-              }
-            )
-             //Date picker
-             $('#datepicker').datepicker({
-                 autoclose: true
-             })
-             //Money Euro
-             $('[data-mask]').inputmask()
-         
-             //iCheck for checkbox and radio inputs
-             $('span[type="checkbox"].minimal').iCheck({
-                 checkboxClass: 'icheckbox_minimal-blue',
-                 radioClass: 'iradio_minimal-blue'
-             })
-         })
-      </script>
+			$(function() {
+				//Initialize Select2 Elements
+				$('.select2').select2();
+				//Datemask dd/mm/yyyy
+				$('#datemask').inputmask('dd/mm/yyyy', {
+					'placeholder' : 'dd/mm/yyyy'
+				})
+				//Datemask2 mm/dd/yyyy
+				$('#datemask2').inputmask('mm/dd/yyyy', {
+					'placeholder' : 'mm/dd/yyyy'
+				})
+				//Date range picker
+				$('#reservation').daterangepicker()
+				//Date range picker with time picker
+				$('#reservationtime').daterangepicker({
+					timePicker : true,
+					timePickerIncrement : 30,
+					locale : {
+						format : 'MM/DD/YYYY hh:mm A'
+					}
+				})
+				$('#daterange-btn')
+						.daterangepicker(
+								{
+									ranges : {
+										'Today' : [ moment(), moment() ],
+										'Yesterday' : [
+												moment().subtract(1, 'days'),
+												moment().subtract(1, 'days') ],
+										'Last 7 Days' : [
+												moment().subtract(6, 'days'),
+												moment() ],
+										'Last 30 Days' : [
+												moment().subtract(29, 'days'),
+												moment() ],
+										'This Month' : [
+												moment().startOf('month'),
+												moment().endOf('month') ],
+										'Last Month' : [
+												moment().subtract(1, 'month')
+														.startOf('month'),
+												moment().subtract(1, 'month')
+														.endOf('month') ]
+									},
+									startDate : moment().subtract(29, 'days'),
+									endDate : moment()
+								},
+								function(start, end) {
+									$('#daterange-btn span').html(
+											start.format('DD/MM/YYYY') + ' - '
+													+ end.format('DD/MM/YYYY'))
+								})
+				//Date picker
+				$('#datepicker').datepicker({
+					autoclose : true
+				})
+				//Money Euro
+				$('[data-mask]').inputmask()
+
+				//iCheck for checkbox and radio inputs
+				$('span[type="checkbox"].minimal').iCheck({
+					checkboxClass : 'icheckbox_minimal-blue',
+					radioClass : 'iradio_minimal-blue'
+				})
+			})
+		</script>
 	</form>
 </body>
 <!-- Dk/Admin/HrmSalaryPaymentReport.aspx EDB D 09:27:23 GMT -->
