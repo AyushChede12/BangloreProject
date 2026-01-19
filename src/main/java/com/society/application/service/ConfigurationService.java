@@ -265,4 +265,9 @@ public class ConfigurationService {
 		return false;
 	}
 
+	public List<BankMaster> fetchAllBankModule() {
+		// TODO Auto-generated method stub
+		return bankMasterRepo.findAll();
+	}
+
 }

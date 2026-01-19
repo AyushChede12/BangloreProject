@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.microfinance.model.BankModule;
 import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;
@@ -559,6 +560,22 @@ public class ConfigurationController {
 			return new ResponseEntity<>(response, HttpStatus.OK);
 		}
 	}
+	
+//	@GetMapping("/callTheDepossiAccountNumber")
+//	@ResponseBody
+//	public List<BankMaster> callTheDepossitNumber(Model model) {
+//		List<BankMaster> data = bankMasterRepo.findAll();
+//		return data;
+//	}
+	
+	@GetMapping("/getAllBankModule") // Ayush (without DTO)
+	@ResponseBody
+	public ResponseEntity<ApiResponse<List<BankMaster>>> fetchAllBankModule() {
+		List<BankMaster> list = configurationService.fetchAllBankModule();
+		ApiResponse<List<BankMaster>> response = new ApiResponse<>(HttpStatus.FOUND,
+				"Bank modules fetched successfully", list);
+		return ResponseEntity.ok(response);
+	}
 
 	@GetMapping("/CodeSetting")
 	public String CodeSetting(Model model) {
@@ -758,13 +775,6 @@ public class ConfigurationController {
 	@GetMapping("/UserActivityReport")
 	public String UserActivityReport(Model model) {
 		return "configuration/UserActivityReport";
-	}
-
-	@GetMapping("/callTheDepossiAccountNumber")
-	@ResponseBody
-	public List<BankMaster> callTheDepossitNumber(Model model) {
-		List<BankMaster> data = bankMasterRepo.findAll();
-		return data;
 	}
 
 	// Relative Master
