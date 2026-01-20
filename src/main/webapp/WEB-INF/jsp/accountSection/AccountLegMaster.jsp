@@ -7,7 +7,7 @@
 		name="myForm" modelAttribute="accountlegmodelattribute">
 
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
@@ -61,7 +61,8 @@
 														<option value="Capital">Capital</option>
 														<option value="Cash In Hand">Cash In Hand</option>
 														<option value="Current Assets">Current Assets</option>
-														<option value="Current Liabilities">Current Liabilities</option>
+														<option value="Current Liabilities">Current
+															Liabilities</option>
 														<option value="Direct Expense">Direct Expense</option>
 														<option value="Direct Income">Direct Income</option>
 														<option value="Indirect Expense">Indirect Expense</option>
@@ -82,60 +83,85 @@
 												name="savebtn" value="Save" id="savebtn"
 												class="btn btn-success pull-right margin-r-5">Save</button>
 										</div>
+
 									</div>
+
 								</div>
+
 							</div>
+
 						</div>
+
+
 						<div class="col-md-7">
 							<div class="box box-success">
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div id="ContentPlaceHolder1_pnllist"
 											style="height: 400px; overflow-y: scroll;">
-											<div>
+											
+												<form action="accountLegMaster2" method="get">
+
+													<table cellspacing="0" rules="all"
+														class="display nowrap table table-hover table-striped table-bordered"
+														border="1" id="ContentPlaceHolder1_gvLedgers"
+														style="width: 100%; border-collapse: collapse;">
+														<caption>Ledger List</caption>
+														<tr style="color: White; background-color: #008385;">
+															<th scope="col">Ledger Name</th>
+															<th scope="col">Group Name</th>
+															<th scope="col">View</th>
+														</tr>
+
+														<c:forEach items="${list}" var="row">
+															<tr>
+																<!-- <td>${row.id }</td>  -->
+																<td>${row.ledgername }</td>
+																<td>${row.selectgroup }</td>
+																<td><img
+																	src="https://cdn.pixabay.com/photo/2017/06/09/18/06/eye-2387853_640.png"
+																	height="30" width="30"></td>
+															</tr>
+														</c:forEach>
+													</table>
+												</form>
+
+												<button type="submit">Search All</button>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		
 	</form>
+	
 
-	<form action="accountLegMaster2" method="get">
+	<!-- </div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section> -->
 
-		<table cellspacing="0" rules="all"
-			class="display nowrap table table-hover table-striped table-bordered"
-			border="1" id="ContentPlaceHolder1_gvLedgers"
-			style="width: 100%; border-collapse: collapse;">
-			<caption>Ledger List</caption>
-			<tr style="color: White; background-color: #008385;">
-				<th scope="col">Ledger Name</th>
-				<th scope="col">Group Name</th>
-				<th scope="col">View</th>
-			</tr>
 
-			<c:forEach items="${list}" var="row">
-				<tr>
-					<!-- <td>${row.id }</td>  -->
-					<td>${row.ledgername }</td>
-					<td>${row.selectgroup }</td>
-					<td><img src="https://cdn.pixabay.com/photo/2017/06/09/18/06/eye-2387853_640.png" height="30" width="30"></td>
-				</tr>
-			</c:forEach>
-		</table>
 
-		<button type="submit">Search All</button>
-
-	</form>
-
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</section>
 
 	</div>
 	<!-- /.content-wrapper -->
 
 	<div class="control-sidebar-bg"></div>
 	</div>
+	</form>
+
+
+
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
@@ -171,7 +197,6 @@
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script src="dist/js/AccountLegMaster.js"></script>
-
 </body>
 
-</html>
+

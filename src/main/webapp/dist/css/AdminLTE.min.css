@@ -8,7 +8,6 @@
  */
 html, body {
 	height: 100%;
-	
 }
 
 .layout-boxed html, .layout-boxed body {
@@ -94,9 +93,7 @@ body {
 	z-index: 800;
 	overflow-y: auto;
 	right: 0;
-	
-} 
-
+}
 
 @media ( max-width :767px) {
 	.content-wrapper {
@@ -548,6 +545,9 @@ a:hover, a:active, a:focus {
 .sidebar {
 	padding-bottom: 0px;
 	box-shadow: 8px 0px 8px -10px #C7C7C7;
+	overflow-y: scroll; /* ya auto */
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE & Edge */
 }
 
 .sidebar-form input:focus {
@@ -1393,9 +1393,17 @@ keyframes flipInX { 0%{
 
 
 
+
+
+
+
 %
 {
 transform
+
+
+
+
 
 
 
@@ -1441,6 +1449,10 @@ transform
 
 
 
+
+
+
+
 perspective
 
 
@@ -1462,7 +1474,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1508,7 +1528,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1552,7 +1580,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1604,7 +1640,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1627,6 +1671,10 @@ rotate3d
 
 ;
 transition-timing-function
+
+
+
+
 
 
 
@@ -1672,7 +1720,15 @@ transition-timing-function
 
 
 
+
+
+
+
 ease-in
+
+
+
+
 
 
 
@@ -1697,6 +1753,10 @@ ease-in
 
 }
 60
+
+
+
+
 
 
 
@@ -1744,7 +1804,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -1788,7 +1856,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1834,7 +1910,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1878,7 +1962,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -1930,7 +2022,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -1953,6 +2053,10 @@ rotate3d
 
 ;
 opacity
+
+
+
+
 
 
 
@@ -1998,7 +2102,15 @@ opacity
 
 
 
+
+
+
+
 1
+
+
+
+
 
 
 
@@ -2023,6 +2135,10 @@ opacity
 
 }
 80
+
+
+
+
 
 
 
@@ -2070,7 +2186,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2114,7 +2238,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2160,7 +2292,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2204,7 +2344,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2256,7 +2404,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2281,6 +2437,10 @@ rotate3d
 
 }
 100
+
+
+
+
 
 
 
@@ -2328,7 +2488,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2372,7 +2540,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2418,7 +2594,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2473,9 +2657,17 @@ perspective
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -2521,6 +2713,10 @@ perspective
 
 
 
+
+
+
+
 perspective
 
 
@@ -2542,7 +2738,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2588,7 +2792,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2632,7 +2844,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2684,7 +2904,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2707,6 +2935,10 @@ rotate3d
 
 ;
 -webkit-transition-timing-function
+
+
+
+
 
 
 
@@ -2752,7 +2984,15 @@ rotate3d
 
 
 
+
+
+
+
 ease-in
+
+
+
+
 
 
 
@@ -2777,6 +3017,10 @@ ease-in
 
 }
 60
+
+
+
+
 
 
 
@@ -2824,7 +3068,15 @@ ease-in
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2868,7 +3120,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -2914,7 +3174,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -2958,7 +3226,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -3010,7 +3286,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -3033,6 +3317,10 @@ rotate3d
 
 ;
 opacity
+
+
+
+
 
 
 
@@ -3078,7 +3366,15 @@ opacity
 
 
 
+
+
+
+
 1
+
+
+
+
 
 
 
@@ -3103,6 +3399,10 @@ opacity
 
 }
 80
+
+
+
+
 
 
 
@@ -3150,7 +3450,15 @@ opacity
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -3194,7 +3502,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -3240,7 +3556,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -3284,7 +3608,15 @@ rotate3d
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -3336,7 +3668,15 @@ rotate3d
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -3361,6 +3701,10 @@ rotate3d
 
 }
 100
+
+
+
+
 
 
 
@@ -3408,7 +3752,15 @@ rotate3d
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -3452,7 +3804,15 @@ perspective
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -3498,7 +3858,15 @@ perspective
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -4649,6 +5017,10 @@ keyframes hvr-icon-pulse-grow {to { -webkit-transform:scale(1.3);
 
 
 
+
+
+
+
 .3
 
 
@@ -4660,7 +5032,11 @@ keyframes hvr-icon-pulse-grow {to { -webkit-transform:scale(1.3);
 
 
 
+
+
  
+
+
 
 
 
@@ -4694,7 +5070,13 @@ keyframes hvr-icon-pulse-grow {to { -webkit-transform:scale(1.3);
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -4716,7 +5098,13 @@ keyframes hvr-icon-pulse-grow {to { -webkit-transform:scale(1.3);
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -4758,6 +5146,10 @@ translateY
 
 
 
+
+
+
+
 -6px
 
 
@@ -4779,7 +5171,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -4822,7 +5222,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -4844,7 +5250,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -4886,6 +5298,10 @@ translateY
 
 
 
+
+
+
+
 -6px
 
 
@@ -4907,7 +5323,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -4953,6 +5377,10 @@ translateY
 
 
 
+
+
+
+
 .95
 
 
@@ -4964,7 +5392,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -4998,7 +5430,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5020,7 +5458,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5062,6 +5506,10 @@ translateY
 
 
 
+
+
+
+
 4px
 
 
@@ -5083,7 +5531,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5126,7 +5582,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5148,7 +5610,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5190,6 +5658,10 @@ translateY
 
 
 
+
+
+
+
 4px
 
 
@@ -5211,7 +5683,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5257,6 +5737,10 @@ translateY
 
 
 
+
+
+
+
 .6
 
 
@@ -5268,7 +5752,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -5302,7 +5790,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5324,7 +5818,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5366,6 +5866,10 @@ translateY
 
 
 
+
+
+
+
 -2px
 
 
@@ -5387,7 +5891,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5430,7 +5942,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5452,7 +5970,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5494,6 +6018,10 @@ translateY
 
 
 
+
+
+
+
 -2px
 
 
@@ -5515,7 +6043,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5561,6 +6097,10 @@ translateY
 
 
 
+
+
+
+
 .25
 
 
@@ -5572,7 +6112,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -5606,7 +6150,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5628,7 +6178,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5670,6 +6226,10 @@ translateY
 
 
 
+
+
+
+
 1px
 
 
@@ -5691,7 +6251,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5734,7 +6302,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -5756,7 +6330,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -5798,6 +6378,10 @@ translateY
 
 
 
+
+
+
+
 1px
 
 
@@ -5819,7 +6403,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -5865,9 +6457,17 @@ translateY
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -5913,6 +6513,10 @@ translateY
 
 
 
+
+
+
+
 translateY
 
 
@@ -5934,7 +6538,15 @@ translateY
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -5980,7 +6592,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6025,7 +6645,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -6069,7 +6697,15 @@ translateY
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -6115,7 +6751,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6168,6 +6812,10 @@ keyframes hvr-wobble-vertical { 16.65% {
 
 
 
+
+
+
+
 .3
 
 
@@ -6179,7 +6827,11 @@ keyframes hvr-wobble-vertical { 16.65% {
 
 
 
+
+
  
+
+
 
 
 
@@ -6213,7 +6865,13 @@ keyframes hvr-wobble-vertical { 16.65% {
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6235,7 +6893,13 @@ keyframes hvr-wobble-vertical { 16.65% {
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -6277,6 +6941,10 @@ translateY
 
 
 
+
+
+
+
 -6px
 
 
@@ -6298,7 +6966,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6341,7 +7017,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6363,7 +7045,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -6405,6 +7093,10 @@ translateY
 
 
 
+
+
+
+
 -6px
 
 
@@ -6426,7 +7118,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6472,6 +7172,10 @@ translateY
 
 
 
+
+
+
+
 .95
 
 
@@ -6483,7 +7187,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -6517,7 +7225,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6539,7 +7253,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -6581,6 +7301,10 @@ translateY
 
 
 
+
+
+
+
 4px
 
 
@@ -6602,7 +7326,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6645,7 +7377,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6667,7 +7405,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -6709,6 +7453,10 @@ translateY
 
 
 
+
+
+
+
 4px
 
 
@@ -6730,7 +7478,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6776,6 +7532,10 @@ translateY
 
 
 
+
+
+
+
 .6
 
 
@@ -6787,7 +7547,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -6821,7 +7585,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6843,7 +7613,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -6885,6 +7661,10 @@ translateY
 
 
 
+
+
+
+
 -2px
 
 
@@ -6906,7 +7686,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -6949,7 +7737,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -6971,7 +7765,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -7013,6 +7813,10 @@ translateY
 
 
 
+
+
+
+
 -2px
 
 
@@ -7034,7 +7838,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -7080,6 +7892,10 @@ translateY
 
 
 
+
+
+
+
 .25
 
 
@@ -7091,7 +7907,11 @@ translateY
 
 
 
+
+
  
+
+
 
 
 
@@ -7125,7 +7945,13 @@ translateY
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -7147,7 +7973,13 @@ translateY
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -7189,6 +8021,10 @@ translateY
 
 
 
+
+
+
+
 1px
 
 
@@ -7210,7 +8046,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -7253,7 +8097,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -7275,7 +8125,13 @@ transform
 
 
 
+
+
 translateY
+
+
+
+
 
 
 
@@ -7317,6 +8173,10 @@ translateY
 
 
 
+
+
+
+
 1px
 
 
@@ -7338,7 +8198,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -7384,9 +8252,17 @@ translateY
 
 
 
+
+
+
+
 %
 {
 -webkit-transform
+
+
+
+
 
 
 
@@ -7432,6 +8308,10 @@ translateY
 
 
 
+
+
+
+
 translateY
 
 
@@ -7453,7 +8333,15 @@ translateY
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -7499,7 +8387,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 
@@ -7544,7 +8440,15 @@ transform
 
 
 
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -7588,7 +8492,15 @@ translateY
 
 
 
+
+
+
+
 (
+
+
+
+
 
 
 
@@ -7634,7 +8546,15 @@ translateY
 
 
 
+
+
+
+
 )
+
+
+
+
 
 
 

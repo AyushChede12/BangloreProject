@@ -75,7 +75,7 @@
 	<!--   <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/DesignationMaster.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1"> -->
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -168,8 +168,12 @@
 						</div>
 					</div>
 				</div>
+			</section>
+
 		</div>
-		</section>
+
+	</div>
+
 </body>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

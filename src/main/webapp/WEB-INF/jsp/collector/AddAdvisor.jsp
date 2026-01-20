@@ -66,7 +66,7 @@
 	</div>
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 
@@ -142,8 +142,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 											<label class="col-sm-4 control-label">Select Member <strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
-												<%List<Member> allMember = (List<Member>)request.getAttribute("allMember"); 
-                                    	if(allMember!=null && !allMember.isEmpty()){ %>
+												<%
+												List<Member> allMember = (List<Member>) request.getAttribute("allMember");
+												if (allMember != null && !allMember.isEmpty()) {
+												%>
 												<select name="SearchMemberCode"
 													onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddlSearchMemberCode\&#39;,\&#39;\&#39;)&#39;, 0)"
 													id="ContentPlaceHolder1_ddlSearchMemberCode"
@@ -151,12 +153,16 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 
 													<!--                                         <select name="ctl00$ContentPlaceHolder1$ddlSearchMemberCode" onchange="callback(this.value)"  -->
 													<!--                                         	id="ContentPlaceHolder1_ddlSearchMemberCode" class="form-control select2" style="width: 100%;"> -->
-													<%for(Member member: allMember){ %>
-													<option selected="selected" value="<%=member.getId()%>"><%=member.getMemberName() %>
+													<%
+													for (Member member : allMember) {
+													%>
+													<option selected="selected" value="<%=member.getId()%>"><%=member.getMemberName()%>
 														-
-														<%=member.getBranchName() %></option>
-													<%} 
-										}%>
+														<%=member.getBranchName()%></option>
+													<%
+													}
+													}
+													%>
 												</select> <span
 													id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -616,7 +622,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 
 
 
-
 		</div>
-		<!-- /.content-wrapper -->
-		<jsp:include page="../footer.jsp" />
+	</div>
+	<!-- /.content-wrapper -->
+	<jsp:include page="../footer.jsp" />

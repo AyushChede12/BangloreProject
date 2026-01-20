@@ -6,7 +6,7 @@
 	cz-shortcut-listen="true">
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -17,7 +17,9 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader"><b>MANAGE TEAM</b></h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>MANAGE TEAM</b>
+				</h1>
 				<h5 style="margin-left: 18px;">IDENTITY CARD</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>
@@ -45,8 +47,7 @@
 
 									<div class="col-md-3">
 
-										<label class="col-sm-4 control-label">Team Code :
-										</label>
+										<label class="col-sm-4 control-label">Team Code : </label>
 										<div class="col-sm-8">
 											<input type="text" class="form-control" name="EmployeeById"
 												id="EmployeeById" Placeholder="Enter Team Code"
@@ -63,7 +64,7 @@
 							</div>
 						</div>
 
-					<!-- Table -->
+						<!-- Table -->
 						<div class="form-container"
 							style="box-shadow: none; overflow: auto !important;">
 							<div class="box-header">
@@ -71,7 +72,7 @@
 							</div>
 
 							<div class="box-body form-horizontal">
-							
+
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" style="width: 100%; border-collapse: collapse;">
@@ -95,11 +96,13 @@
 				</div>
 			</section>
 		</div>
-		<script src="dist/js/EmpolyeeSection.js"></script>
-		<!-- /.content-wrapper -->
-		<script type="text/javascript">
-			
-		</script>
-		<%-- <jsp:include page="../footer.jsp" /> --%>
+	</div>
+
+	<script src="dist/js/EmpolyeeSection.js"></script>
+	<!-- /.content-wrapper -->
+	<script type="text/javascript">
+		
+	</script>
+	<%-- <jsp:include page="../footer.jsp" /> --%>
 </body>
 </html>
