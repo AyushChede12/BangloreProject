@@ -8,7 +8,7 @@
 		name="saveSalarySetupMaster" modelAttribute="saveSalarySetupMaster"
 		id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -19,7 +19,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Salary Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">SALARY DETAILS</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -30,173 +33,166 @@
 				<section class="content">
 					<div class="row" id="idSearch">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Details</h3>
 								</div>
-								<div class="form-horizontal">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Select by Code<strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<select name="searchEmpCode"
-														onchange="getEmpByIdForEmpLeave(this.value)"
-														id="searchEmpCode" class="form-control select2"
-														style="width: 100%;">
-														<option selected="selected" value=""></option>
-													</select> <span id="searchEmpCodeMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-														Code</span>
-												</div>
-											</div>
+								<div class="box-body form-horizontal">
+									<div class="col-md-6">
+										<label class="col-sm-4 control-label">Select by Code<strong
+											style="color: Red">*</strong></label>
+										<div class="col-sm-8">
+											<select name="searchEmpCode"
+												onchange="getEmpByIdForEmpLeave(this.value)"
+												id="searchEmpCode" class="form-control select2"
+												style="width: 100%;">
+												<option selected="selected" value=""></option>
+											</select> <span id="searchEmpCodeMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+												Code</span>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-info">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Employee Salary Details</h3>
 								</div>
-								<div id="ContentPlaceHolder1_uppnlSalary">
-									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Basic <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="basic" type="text" id="basic"
-														class="form-control" Placeholder="Enter Basic"
-														autocomplete="off" /> <span id="basicMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Basic</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">HRA <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="hra" type="text" id="hra" class="form-control"
-														Placeholder="Enter HRA" autocomplete="off" /> <span
-														id="HRAMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														HRA</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">DA <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="da" type="text" id="da" class="form-control"
-														Placeholder="Enter DA" autocomplete="off" /> <span
-														id="DAMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														DA</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">TA <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="ta" type="text" id="ta" class="form-control"
-														Placeholder="Enter TA" autocomplete="off" /> <span
-														id="TAMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														TA</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Allowance <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="allowance" type="text" id="allowance"
-														class="form-control" Placeholder="Enter Allowance"
-														autocomplete="off" /> <span id="allowanceMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Allowance</span>
-												</div>
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Basic <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="basic" type="text" id="basic"
+													class="form-control" Placeholder="Enter Basic"
+													autocomplete="off" /> <span id="basicMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Basic</span>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Others <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="others" type="text" id="others"
-														class="form-control" Placeholder="Enter Other Allowance"
-														autocomplete="off" /> <span id="othersMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Other Allowance</span>
-												</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">HRA <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="hra" type="text" id="hra" class="form-control"
+													Placeholder="Enter HRA" autocomplete="off" /> <span
+													id="HRAMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													HRA</span>
 											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Gross Pay <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="grossPay" type="text" readonly="readonly"
-														id="grossPay" class="form-control"
-														Placeholder="Enter Gross Pay" autocomplete="off" /> <span
-														id="grossPayMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Gross Pay</span>
-												</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">DA <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="da" type="text" id="da" class="form-control"
+													Placeholder="Enter DA" autocomplete="off" /> <span
+													id="DAMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													DA</span>
 											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">PF <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="PF" type="text" id="PF" class="form-control"
-														Placeholder="Enter PF" autocomplete="off" /> <span
-														id="PFMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														PF</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">ESI <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="ESI" type="text" id="ESI" class="form-control"
-														Placeholder="Enter ESI" autocomplete="off" /> <span
-														id="ESIMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														ESI</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Net Pay <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="netPay" type="text" readonly="readonly"
-														id="netPay" class="form-control"
-														Placeholder="Enter Net Pay" autocomplete="off" /> <span
-														id="netPayMsg"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Net Pay</span>
-												</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">TA <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="ta" type="text" id="ta" class="form-control"
+													Placeholder="Enter TA" autocomplete="off" /> <span
+													id="TAMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													TA</span>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="box-footer">
-									<div class="row col-md-12">
-										<button type="submit" name="save" value="Save"
-											onclick="return validateEmployeeSalaryDetails()" id="save"
-											class="btn btn-success pull-right margin-r-5">Save</button>
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Allowance <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="allowance" type="text" id="allowance"
+													class="form-control" Placeholder="Enter Allowance"
+													autocomplete="off" /> <span id="allowanceMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Allowance</span>
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Others <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="others" type="text" id="others"
+													class="form-control" Placeholder="Enter Other Allowance"
+													autocomplete="off" /> <span id="othersMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Other Allowance</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Gross Pay <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="grossPay" type="text" readonly="readonly"
+													id="grossPay" class="form-control"
+													Placeholder="Enter Gross Pay" autocomplete="off" /> <span
+													id="grossPayMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Gross Pay</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">PF <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="PF" type="text" id="PF" class="form-control"
+													Placeholder="Enter PF" autocomplete="off" /> <span
+													id="PFMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													PF</span>
+											</div>
+										</div>
+									</div>
+									<div class="row four-field-row">
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">ESI <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="ESI" type="text" id="ESI" class="form-control"
+													Placeholder="Enter ESI" autocomplete="off" /> <span
+													id="ESIMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													ESI</span>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<label class="col-sm-4 control-label">Net Pay <strong
+												style="color: Red">*</strong></label>
+											<div class="col-sm-8">
+												<input name="netPay" type="text" readonly="readonly"
+													id="netPay" class="form-control"
+													Placeholder="Enter Net Pay" autocomplete="off" /> <span
+													id="netPayMsg"
+													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+													Net Pay</span>
+											</div>
+										</div>
+									</div>
+									<div class="box-footer text-center">
+										<div class="row col-md-12">
+											<button type="submit" name="save" value="Save"
+												onclick="return validateEmployeeSalaryDetails()" id="save"
+												class="btn btn-success margin-r-5">Save</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Salary Details</h3>
 								</div>
 								<div class="form-horizontal">

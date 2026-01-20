@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -13,14 +13,19 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<script type="text/javascript">
-            //<![CDATA[
-            Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-            //]]>
-         </script>
+				//<![CDATA[
+				Sys.WebForms.PageRequestManager._initialize(
+						'ctl00$ScriptManager1', 'form1', [], [], [], 90,
+						'ctl00');
+				//]]>
+			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Holiday Master</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">HOLIDAY MASTER</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -29,22 +34,14 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Select Month Year</h3>
 								</div>
-								<div class="box-body">
-									<!-- <div class="col-md-3">
-										<div class="form-group">
-											<label> </label> <input name="date" type="text"
-												value="AUG - 2022" readonly="readonly" id="date"
-												class="form-control" />
-										</div>
-									</div> -->
-
-									<div class="col-md-3">
-										<div class="form-group">
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-4">
 											<label> Date :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
@@ -78,23 +75,21 @@
 										</div>
 									</div> -->
 
-									<div class="col-md-3">
-										<div class="form-group">
-											<label></label> <a id="ContentPlaceHolder1_btnSearch"
-												class="btn btn-success margin-20"
-												onclick="getHolidayMasterData();"><span
-												class="fa fa-search"></span> SEARCH</a>
-										</div>
+									<div class="text-center">
+										<a id="ContentPlaceHolder1_btnSearch"
+											class="btn btn-success margin-20"
+											onclick="getHolidayMasterData();"><span
+											class="fa fa-search"></span> SEARCH</a>
 									</div>
-
-									<div class="clearfix margin-bottom-10"></div>
-
 								</div>
 							</div>
-							<div class="box box-success"
+
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
+								<div class="box-header">
+									<h3 class="box-title">Search Monthly Data</h3>
+								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">

@@ -5,7 +5,7 @@
 	onload="getAllBranchEmployeeSearch(); getAllDepartments(); getAllDesignation();">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -23,7 +23,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Search Employee</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">TEAM MEMBER SEARCH</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>
 								Home</a></li>
@@ -33,23 +36,22 @@
 				</section>
 				<section class="content">
 					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Box</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
+								<div class="box-body form-horizontal">
+
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label>Branch :</label> <select name="branch" id="branch"
 												class="form-control select2" style="width: 100%;">
 												<option value="All">All Branch</option>
 
 											</select>
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>From Date :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
@@ -61,9 +63,7 @@
 													data-mask="" />
 											</div>
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>To Date :</label>
 											<div class="input-group date">
 												<div class="input-group-addon">
@@ -75,47 +75,36 @@
 													data-mask="" />
 											</div>
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>Employee Name :</label> <input name="empName"
 												type="text" id="empName" class="form-control"
 												Placeholder="Enter Employee Name" autocomplete="off" />
 										</div>
 									</div>
-									<div class="clearfix"></div>
-									<div class="col-md-3">
-										<div class="form-group">
+									<div class="row four-field-row">
+										<div class="col-md-3">
 											<label>Employee Code :</label> <input name="empCode"
 												type="text" id="empCode" class="form-control"
 												Placeholder="Enter Employee Code" autocomplete="off" />
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>Mobile No. :</label> <input name="phoneNo" type="text"
 												id="phoneNo" class="form-control"
 												Placeholder="Enter Mobile No." autocomplete="off" />
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>Designation :</label> <select name="designation"
 												id="designation" class="form-control" style="width: 100%;">
 												<option>Select</option>
 											</select>
 										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+										<div class="col-md-3">
 											<label>Department :</label> <select name="department"
 												id="department" class="form-control" style="width: 100%;">
 												<option>Select</option>
 											</select>
-
 										</div>
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
 									<div class="text-center">
 										<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success"
 											onclick="showTableDataOfEmployeeSearch();"><span
@@ -125,14 +114,12 @@
 									</div>
 								</div>
 							</div>
-							<div class="box box-success"
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header">
 									<h3 class="box-title">Search Result</h3>
-									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">

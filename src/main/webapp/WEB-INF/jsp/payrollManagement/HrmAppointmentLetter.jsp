@@ -4,7 +4,7 @@
 	cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -22,7 +22,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Print Appointment Letter</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">APPOINTMENT LETTER</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -32,13 +35,14 @@
 				<section class="content">
 					<div class="row" id="idSearch">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Employee</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-7">
-										<div class="form-group row">
+								<div class="box-body form-horizontal">
+									<div class="row four-field-row">
+										<div class="col-md-6">
 											<label class="col-sm-4 control-label">Select by Code<strong
 												style="color: Red">*</strong></label>
 											<div class="col-sm-8">
@@ -49,26 +53,20 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label"></label>
-											<div class="col-sm-8">
-												<button type="button" name="search" value="Print"
-													onclick="showEmployeeDetailsPayroll();" id="search"
-													class="btn btn-success pull-right">Search</button>
-											</div>
-										</div>
+									<div class="text-center">
+										<a id="ContentPlaceHolder1_btnSearch" class="btn btn-success">
+											<span class="fa fa-search"></span> SEARCH
+										</a>
 									</div>
 								</div>
 							</div>
-							<div class="box box-success"
+
+							<div class="form-container"
 								style="box-shadow: none; overflow: auto !important;">
-								<div class="box-header with-border">
+								<div class="box-header">
 									<h3 class="box-title">Search Result</h3>
-									<div class="box-tools pull-right"></div>
 								</div>
 								<div class="box-body">
-									<div class="clearfix margin-bottom-10"></div>
 									<table cellspacing="0" cellpadding="3" rules="all"
 										class="display nowrap table table-hover table-striped table-bordered"
 										border="1" style="width: 100%; border-collapse: collapse;">

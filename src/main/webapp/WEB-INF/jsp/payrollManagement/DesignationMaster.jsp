@@ -16,7 +16,7 @@
 		}
 		%>
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -34,67 +34,71 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Add Designation</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>PAYROLL MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">ADD DESIGNATION</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
 						<li class="active">Add Designation</li>
 					</ol>
 				</section>
+
 				<section class="content">
 					<div class="row">
-						<div class="col-md-5">
-							<div class="box box-success">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+
+							<div class="form-container">
+								<div class="box-header">
 									<h3 class="box-title">Add Designation Master</h3>
 								</div>
-								<div class="box-body">
-									<div class="col-md-12">
-										<div class="form-group row">
-											<label for="txtDesignationName"
-												class="col-sm-4 control-label">Designation Name <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<input name="designation" type="text" id="designation"
-													class="form-control" /> <span id="designationNameMsg"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Designation Name</span>
-											</div>
+								<div class="box-body form-horizontal">
+
+									<div class="col-md-6">
+										<label for="txtDesignationName" class="col-sm-4 control-label">Designation
+											Name <strong style="color: Red">*</strong>
+										</label>
+										<div class="col-sm-8">
+											<input name="designation" type="text" id="designation"
+												class="form-control" /> <span id="designationNameMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Designation Name</span>
 										</div>
 									</div>
 								</div>
-								<div class="box-footer">
+								<div class="box-footer text-center">
 									<div class="row col-md-12">
-									<!-- onclick="clearFields()" -->
+										<!-- onclick="clearFields()" -->
 										<button type="reset" name="clear" value="Clear" id="clear"
-											class="btn btn-info pull-right">Clear</button>
+											class="btn btn-info">Clear</button>
 										<button type="button" name="save" value="Save"
 											onclick="return validateGoldLoanMaster()" id="save"
-											class="btn btn-success pull-right margin-r-5">Save</button>
+											class="btn btn-success margin-r-5">Save</button>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-7">
-							<div class="box box-success">
+
+							<div class="form-container">
+								<div class="box-header">
+									<h3 class="box-title">Designation Table</h3>
+								</div>
 								<div class="box-body">
-									<div>
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" style="width: 100%; border-collapse: collapse;">
-											<caption>Designation List</caption>
-											<tr style="color: White; background-color: #008385;">
-												<th scope="col">SlNo</th>
-												<th scope="col">Designation Code</th>
-												<th scope="col">Designation Name</th>
-											</tr>
-										</table>
-										<table cellspacing="0" cellpadding="3" rules="all"
-											class="display nowrap table table-hover table-striped table-bordered"
-											border="1" id="ContentPlaceHolder1_gvDesignation"
-											style="width: 100%; border-collapse: collapse;">
-										</table>
-									</div>
+									<table cellspacing="0" cellpadding="3" rules="all"
+										class="display nowrap table table-hover table-striped table-bordered"
+										border="1" style="width: 100%; border-collapse: collapse;">
+										<caption>Designation List</caption>
+										<tr style="color: White; background-color: #008385;">
+											<th scope="col">SlNo</th>
+											<th scope="col">Designation Code</th>
+											<th scope="col">Designation Name</th>
+										</tr>
+									</table>
+									<table cellspacing="0" cellpadding="3" rules="all"
+										class="display nowrap table table-hover table-striped table-bordered"
+										border="1" id="ContentPlaceHolder1_gvDesignation"
+										style="width: 100%; border-collapse: collapse;">
+									</table>
 								</div>
 							</div>
 						</div>
