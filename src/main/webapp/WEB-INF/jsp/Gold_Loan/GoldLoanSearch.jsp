@@ -18,7 +18,7 @@ th, td {
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -37,11 +37,11 @@ th, td {
 				</ol>
 			</section>
 			<%
-					List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
+			%>
 			<%
-				List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-				%>
+			List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
+			%>
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
@@ -52,16 +52,18 @@ th, td {
 							<div class="box-body">
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>Branch :</label> <select name="branchname" id="branchname"
-											class="form-control select2" style="width: 100%;">
+										<label>Branch :</label> <select name="branchname"
+											id="branchname" class="form-control select2"
+											style="width: 100%;">
 											<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
+											if (branchList != null && !branchList.isEmpty()) {
+												for (BranchMaster branch : branchList) {
+											%>
 											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
 											<%
-													}
-													}%>
+											}
+											}
+											%>
 										</select>
 									</div>
 								</div>
@@ -95,16 +97,17 @@ th, td {
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>Applicant Name :</label> <input name="memberRelativesName"
-											type="text" id="memberRelativesName" class="form-control"
+										<label>Applicant Name :</label> <input
+											name="memberRelativesName" type="text"
+											id="memberRelativesName" class="form-control"
 											Placeholder="Enter Applicant Name" autocomplete="off" />
 									</div>
 								</div>
 								<div class="clearfix"></div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>Loan ID :</label> <input name="id" type="text"
-											id="id" class="form-control" Placeholder="Enter Loan ID"
+										<label>Loan ID :</label> <input name="id" type="text" id="id"
+											class="form-control" Placeholder="Enter Loan ID"
 											autocomplete="off" />
 									</div>
 								</div>
@@ -120,28 +123,30 @@ th, td {
 										<label>Plan Name :</label> <select name="loanPurpose"
 											id="loanPurpose" class="form-control" style="width: 100%;">
 											<%
-														if (loanMasterList != null && !loanMasterList.isEmpty()) {
-															for (LoanMaster loanPlan : loanMasterList) {
-														%>
+											if (loanMasterList != null && !loanMasterList.isEmpty()) {
+												for (LoanMaster loanPlan : loanMasterList) {
+											%>
 											<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
 											<%
-														}
-														}
-														%>
+											}
+											}
+											%>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>Advisor Code :</label> <input nadvisorCodeame="advisorCode"
-											type="text" id="advisorCode" class="form-control"
-											Placeholder="Enter Advisor Code" autocomplete="off" />
+										<label>Advisor Code :</label> <input
+											nadvisorCodeame="advisorCode" type="text" id="advisorCode"
+											class="form-control" Placeholder="Enter Advisor Code"
+											autocomplete="off" />
 									</div>
 								</div>
 								<div class="clearfix margin-bottom-10"></div>
 								<div class="text-center">
-									<a id="btnSearch" class="btn btn-success" href="javascript:searchLoanDataInTable();"><span
-											class="fa fa-search"></span> SEARCH</a> <a id="btnPrint"
+									<a id="btnSearch" class="btn btn-success"
+										href="javascript:searchLoanDataInTable();"><span
+										class="fa fa-search"></span> SEARCH</a> <a id="btnPrint"
 										class="btn btn-warning"><span class="fa fa-print"></span>
 										PRINT</a>
 								</div>
@@ -153,24 +158,24 @@ th, td {
 								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 								<table cellspacing="0" cellpadding="3" rules="all"
-								class="display nowrap table table-hover table-striped table-bordered"
-								border="1" style="width: 100%; border-collapse: collapse;">
-								<caption></caption>
-								<tr style="color: White; background-color: #008385;">
-									<!-- <th scope="col">Sr. No.</th> -->
-									<th scope="col">Member Name</th>
-									<th scope="col">DOB</th>
-									<th scope="col">Age</th>
-									<th scope="col">Phone No.</th>
-									<th scope="col">Address</th>
-									<th scope="col">Loan Plan Name</th>
-									<th scope="col">Loan Date</th>
-									<th scope="col">Loan Amount</th>
-									<th scope="col">Loan Purpose</th>
-								</tr>
-								<tbody id="tableBody">
-								</tbody>
-							</table>
+									class="display nowrap table table-hover table-striped table-bordered"
+									border="1" style="width: 100%; border-collapse: collapse;">
+									<caption></caption>
+									<tr style="color: White; background-color: #008385;">
+										<!-- <th scope="col">Sr. No.</th> -->
+										<th scope="col">Member Name</th>
+										<th scope="col">DOB</th>
+										<th scope="col">Age</th>
+										<th scope="col">Phone No.</th>
+										<th scope="col">Address</th>
+										<th scope="col">Loan Plan Name</th>
+										<th scope="col">Loan Date</th>
+										<th scope="col">Loan Amount</th>
+										<th scope="col">Loan Purpose</th>
+									</tr>
+									<tbody id="tableBody">
+									</tbody>
+								</table>
 							</div>
 							<div class="box-body">
 								<div class="clearfix margin-bottom-10"></div>
