@@ -1,37 +1,82 @@
 <style>
 .profile-footer {
-    list-style: none;
+	list-style: none;
 }
 
 .btn-profile-logout {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 15px;
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 15px;
+	background: transparent;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap;
 }
 
 /* Icon */
 .btn-profile-logout i {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 /* Hover effect */
 .btn-profile-logout:hover {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border-radius: 4px;
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	border-radius: 4px;
 }
 
+.navbar {
+	display: flex;
+	align-items: center;
+	
+
+}
+
+.nav-left {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+/* .nav-center {
+	flex: 1;
+	justify-content: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.nav-right {
+	margin-right: 15px;
+}
+ */
+.sidebar-toggle {
+	padding: 15px;
+	color: #fff;
+	margin-right: 1160px;
+}
+
+.txt {
+	margin-left: 70px;
+}
 </style>
-<header class="main-header  ">
+<header class="main-header   ">
+
 	<!-- Header Navbar: style can be found in header.less -->
 	<nav class="navbar navbar-static-top">
+		<!-- Sidebar user panel -->
+		<div class="user-panel nav-left">
+			<div class="txt">
+				<%
+				String userCompanyName = (String) session.getAttribute("userCompanyName");
+				%>
+				<%=userCompanyName%>
+			</div>
+		</div>
 		<!-- Sidebar toggle button-->
-		<a href="#" class="sidebar-toggle" data-toggle="push-menu"
+		<a href="#" class="sidebar-toggle " data-toggle="push-menu"
 			role="button"> <span class="sr-only">Toggle navigation</span>
 		</a>
 		<!-- Navbar Right Menu -->
