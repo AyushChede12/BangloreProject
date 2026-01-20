@@ -8,7 +8,7 @@
 	<!--     <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/RecurringDueReport.aspx" id="form1"> -->
 
 	<div
-		style="height: auto; min-height: 100%; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
