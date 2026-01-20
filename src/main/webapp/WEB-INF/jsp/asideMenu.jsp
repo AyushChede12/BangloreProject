@@ -7,12 +7,9 @@
 			<li class="active"><a href="dashboard"> <img
 					src="dist/img/icon/ico-1.png" style="margin-right: 5px;" /> <span>DASHBOARD</span>
 			</a></li>
-			<li class="treeview">
-				<a href="#"> 
-					<i class="fa fa-cogs"></i> 
-					<span>CUSTOMIZATION</span>
-					<span class="pull-right-container"> 
-					<i class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+					<span>CUSTOMIZATION</span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -20,10 +17,10 @@
 							COMPANY MANAGE</a></li>
 					<li><a href="FYMater"><i class="fa fa-circle-o"></i>
 							FINANCIAL YEAR</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
-							ADD BRANCH</a></li>
 					<li><a href="AddBankAccount"><i class="fa fa-circle-o"></i>
 							MANAGE BANK</a></li>
+					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+							ADD BRANCH</a></li>
 					<li><a href="talukaMaster"><i class="fa fa-circle-o"></i>
 							ADD TALUKA</a></li>
 					<li><a href="relativeMaster"><i class="fa fa-circle-o"></i>
@@ -39,8 +36,9 @@
 					<li><a href="UserMenuAccess"><i class="fa fa-circle-o"></i>
 							USER MENU ACCESS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-users sidebar-icon"></i> <span>CUSTOMER
-						MODULE</span> <span class="pull-right-container"> <i
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-users sidebar-icon"></i> <span>CUSTOMER MODULE</span>
+					<span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
@@ -56,9 +54,9 @@
 					<li><a href="searchMember"><i class="fa fa-circle-o"></i>
 							Find Customer</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-share-alt"></i> <span>MANAGE
-						SHARES</span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-share-alt"></i>
+					<span>MANAGE SHARES</span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -72,8 +70,9 @@
 							GENERATE DNO</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-line-chart"></i> <span>FINANCIAL/CONSULTANT
-				</span> <span class="pull-right-container"> <i
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-line-chart"></i> <span>FINANCIAL/CONSULTANT </span> <span
+					class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
@@ -90,9 +89,9 @@
 							IDENTITY CARD</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-sitemap"></i> <span>MANAGE
-						TEAM </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-sitemap"></i>
+					<span>MANAGE TEAM </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -108,9 +107,9 @@
 							SEARCH TEAM MEMBER</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-book"></i> <span>MANAGE
-						ACCOUNTS </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-book"></i>
+					<span>MANAGE ACCOUNTS </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -146,9 +145,9 @@
 							JOURNAL ENTRY REPORT</a></li>
 
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-bank"></i> <span>SAVING
-						OPENING </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-bank"></i>
+					<span>SAVING OPENING </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -173,9 +172,9 @@
 					<li><a href="sMSChargesDeduction"><i
 							class="fa fa-circle-o"></i> SMS SERVICE FEE</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-file-text"></i> <span>MANAGE
-						POLICY </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-file-text"></i>
+					<span>MANAGE POLICY </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -235,9 +234,9 @@
 					<li><a href="loanSearch"><i class="fa fa-circle-o"></i>
 							SEARCH LOAN ACCOUNTS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-diamond"></i> <span>GOLD
-						OPERATIONS </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-diamond"></i>
+					<span>GOLD OPERATIONS </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -262,8 +261,9 @@
 					<li><a href="goldLoanSearch"><i class="fa fa-circle-o"></i>
 							SEARCH GOLD LOAN</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-object-group"></i> <span>GROUP
-						MANAGEMENT </span> <span class="pull-right-container"> <i
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-object-group"></i> <span>GROUP MANAGEMENT </span> <span
+					class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
@@ -289,8 +289,9 @@
 					<li><a href="GroupLoanSearch"><i class="fa fa-circle-o"></i>
 							FIND GROUP RECORD</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-check-circle"></i> <span>APPROVALS
-				</span> <span class="pull-right-container"> <i
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-check-circle"></i> <span>APPROVALS </span> <span
+					class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
@@ -322,9 +323,9 @@
 					<li><a href="CSPCashTransferApproval"><i
 							class="fa fa-circle-o"></i> APPROVE INTER-BRANCH CASH TRANSFER</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-edit"></i> <span>Review
-						& Fix </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-edit"></i>
+					<span>Review & Fix </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -353,8 +354,9 @@
 					<li><a href="GroupLoanRectification"><i
 							class="fa fa-circle-o"></i> JOINT LIABILITY UPDATE</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-credit-card"></i> <span>PAYOFF
-						SECTION </span> <span class="pull-right-container"> <i
+			<li class="treeview"><a href="#"> <i
+					class="fa fa-credit-card"></i> <span>PAYOFF SECTION </span> <span
+					class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
@@ -376,9 +378,9 @@
 					<li><a href="approvedStatus"><i class="fa fa-circle-o"></i>
 							APPROVED STATUS</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-gift"></i> <span>BONUS
-						MANAGEMENT </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-gift"></i>
+					<span>BONUS MANAGEMENT </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -391,9 +393,9 @@
 					<li><a href="incentiveListPrint"><i class="fa fa-circle-o"></i>
 							INCENTIVE SUMMARY REPORT</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-bar-chart"></i> <span>GENERATE
-						REPORT </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-bar-chart"></i>
+					<span>GENERATE REPORT </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
@@ -426,45 +428,45 @@
 					<li><a href="MaturityStatusReportView"><i
 							class="fa fa-circle-o"></i> MATURITY STATUS REPORT</a></li>
 				</ul></li>
-			<li class="treeview"><a href="#"> <i class="fa fa-id-badge"></i> <span>PAYROLL
-						MANAGEMENT </span> <span class="pull-right-container"> <i
-						class="fa fa-angle-left pull-right"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-id-badge"></i>
+					<span>PAYROLL MANAGEMENT </span> <span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
-							ADD DESIGNATION</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
-							ADD DEPARTMENT</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
-							ADD TEAM MEMBER</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
-							TEAM MEMBER LEAVE</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="DesignationMasterPayroll"><i
+							class="fa fa-circle-o"></i> ADD DESIGNATION</a></li>
+					<li><a href="DepartmentMasterPayroll"><i
+							class="fa fa-circle-o"></i> ADD DEPARTMENT</a></li>
+					<li><a href="EmployeeMasterPayroll"><i
+							class="fa fa-circle-o"></i> ADD TEAM MEMBER</a></li>
+					<li><a href="EmployeeLeaveDetails"><i
+							class="fa fa-circle-o"></i> TEAM MEMBER LEAVE</a></li>
+					<li><a href="SalarySetupMaster"><i class="fa fa-circle-o"></i>
 							SALARY DETAILS</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
-							APPOINTMENT LETTER</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmAppointmentLetter"><i
+							class="fa fa-circle-o"></i> APPOINTMENT LETTER</a></li>
+					<li><a href="HrmOfferLetter"><i class="fa fa-circle-o"></i>
 							OFFER LETTER ISSUE</a></li>
-					<li><a href="categoryMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="OffDaySetting"><i class="fa fa-circle-o"></i>
 							HOLIDAY MASTER</a></li>
-					<li><a href="companySetting"><i class="fa fa-circle-o"></i>
+					<li><a href="LeaveAdjustment"><i class="fa fa-circle-o"></i>
 							LEAVE ADJUSTMENT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmAttendance"><i class="fa fa-circle-o"></i>
 							ATTENDANCE</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmSalaryGenerate"><i class="fa fa-circle-o"></i>
 							SALARY GENERATE</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmSalaryPayment"><i class="fa fa-circle-o"></i>
 							SALARY PAYMENT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmSalarySlipPrint"><i class="fa fa-circle-o"></i>
 							SALARY SLIP PRINT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="AttendanceReport"><i class="fa fa-circle-o"></i>
 							ATTENDANCE REPORT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
-							SALARY PAYMENT REPORT</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmSalaryPaymentReport"><i
+							class="fa fa-circle-o"></i> SALARY PAYMENT REPORT</a></li>
+					<li><a href="HRMEmployeeSearch"><i class="fa fa-circle-o"></i>
 							TEAM MEMBER SEARCH</a></li>
-					<li><a href="branchMaster"><i class="fa fa-circle-o"></i>
+					<li><a href="HrmEmployeeIDCard"><i class="fa fa-circle-o"></i>
 							TEAM MEMBER ID CARD</a></li>
 
 				</ul></li>
