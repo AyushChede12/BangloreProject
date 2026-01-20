@@ -151,6 +151,7 @@ input:checked+.slider:before {
 <script src="dist/js/groupMasterUtilsJs.js"></script>
 <script src="dist/js/LoanModuleJs.js"></script>
 </head>
+<jsp:include page="../header.jsp" />
 <body
 	onload="getListOfLoanId();callGetAllMasterData();getAllItemMasterName();getAllILockerName();getAllPurityMasterName();"
 	class="skin-blue sidebar-mini"
@@ -192,6 +193,29 @@ input:checked+.slider:before {
 						<li class="active">Loan Details</li>
 					</ol>
 				</section>
+				<div class="wizard-steps">
+					<div class="wizard-step active" id="step1">
+						<div class="step-circle">1</div>
+						<div class="step-title">LOAN DETAILS</div>
+						<div class="wizard-line"></div>
+					</div>
+					<div class="wizard-step inactive" id="step2">
+						<div class="step-circle">2</div>
+						<div class="step-title">GUARANTOR DETAILS</div>
+					</div>
+					<div class="wizard-step inactive" id="step3">
+						<div class="step-circle">3</div>
+						<div class="step-title">COA DETAILS</div>
+					</div>
+					<div class="wizard-step inactive" id="step4">
+						<div class="step-circle">4</div>
+						<div class="step-title">DEDUCTION DETAILS</div>
+					</div>
+					<div class="wizard-step inactive" id="step5">
+						<div class="step-circle">5</div>
+						<div class="step-title">APPROVAL DETAILS</div>
+					</div>
+				</div>
 				<%
 				//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
 				List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
@@ -202,44 +226,42 @@ input:checked+.slider:before {
 				<%
 				List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
 				%>
-<!-- 				<input name="id" type="hidden" id="id" class="form-control" -->
-<!-- 					data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" /> -->
+				<!-- 				<input name="id" type="hidden" id="id" class="form-control" -->
+				<!-- 					data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" /> -->
 
 				<section class="content">
 					<div id="ContentPlaceHolder1_idSearch" class="row">
 						<div class="col-md-12">
-							<div class="box box-warning">
-								<div class="box-header with-border">
+							<div class="box box-warning form-container">
+								<div class="box-header">
 									<h3 class="box-title">Search Details</h3>
 								</div>
 								<div class="form-horizontal">
 									<div class="box-body">
-										<div class="col-md-6">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Select by
-													LoanID <strong style="color: Red">*</strong>
-												</label>
+										<div class="col-md-6" style="margin-top: 15px;">
+
+											<label>Select by LoanID <strong style="color: Red">*</strong>
+											</label>
+											<%
+											List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
+											%>
+
+											<select name="id" onchange="getByLoanId('approve')"
+												id="searchLoanId1" class="form-control select2"
+												style="width: 100%;">
+												<option selected="selected" value="">Select Loan ID</option>
 												<%
-												List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
+												if (loanList != null && !loanList.isEmpty()) {
+													for (Loan loan : loanList) {
 												%>
-												<div class="col-sm-8">
-													<select name="id"
-														onchange="getByLoanId('approve')" id="searchLoanId1"
-														class="form-control select2" style="width: 100%;">
-														<option selected="selected" value="">Select Loan
-															ID</option>
-														<%
-														if (loanList != null && !loanList.isEmpty()) {
-															for (Loan loan : loanList) {
-														%>
-														<option value="<%=loan.getId()%>"><%=loan.getId()%></option>
-														<%
-														}
-														}
-														%>
-													</select>
-												</div>
-											</div>
+												<option value="<%=loan.getId()%>"><%=loan.getId()%></option>
+												<%
+												}
+												}
+												%>
+											</select>
+
+
 										</div>
 									</div>
 								</div>
@@ -247,594 +269,573 @@ input:checked+.slider:before {
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-info">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="box box-info form-container" id="loanSection">
+								<div class="box-header ">
 									<h3 class="box-title">Loan Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Loan Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Loan Date <strong style="color: Red">*</strong></label>
+
+										<div class="input-group date">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="loanDate" type="date" id="loanDate"
+												class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
+										</div>
+										<span id="ContentPlaceHolder1_RequiredFieldValidator5"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Loan Date</span>
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Search Member <strong style="color: Red">*</strong></label>
+										<select name="searchMemberCode" id="searchMemberCode"
+											onchange="displayMemberDetails()"
+											class="form-control select2" style="width: 100%;">
+											<%
+											if (memberList != null && !memberList.isEmpty()) {
+												for (/* Member member : memberList */
+												ClientMaster member : memberList) {
+											%>
+											<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
+											<%
+											}
+											}
+											%>
+										</select> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
+											Member Code</span>
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Relative Details <strong style="color: Red">*</strong>
+										</label> <input name="relativeDetails" type="text" readonly="readonly"
+											id="relativeDetails" class="form-control"
+											PlaceHolder="Enter Relative Name &amp; Relation" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatorBranchCode"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Relative Name & Relation</span>
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtDOB">DOB <strong style="color: Red">*</strong>
+										</label>
+
+										<div class="input-group date" style="width: 100%;">
+											<div class="input-group-addon">
+												<i class="fa fa-calendar"></i>
+											</div>
+											<input name="dob" type="text" value="01/08/2022"
+												readonly="readonly" id="dob" class="form-control"
+												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+												data-mask="" />
+										</div>
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>AGE <strong style="color: Red">*</strong>
+										</label> <input name="age" type="text" value="0" maxlength="2"
+											readonly="readonly" id="age" class="form-control"
+											Placeholder="Enter Age"
+											onkeypress="return isNumberOnlyKey(this, event);"
+											autocomplete="off" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidator12"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Age</span>
+
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtPhoneno">Mobile No <strong
+											style="color: Red">*</strong>
+										</label> <input name="phoneno" type="text" maxlength="10"
+											readonly="readonly" id="phoneno" class="form-control"
+											Placeholder="Enter Mobile No" autocomplete="off"
+											onkeypress="return isNumberOnlyKey(this, event);" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidator8"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Phone No</span>
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtSMSStatus">SMS Status </label> <input
+											name="smsStatus" type="text" readonly="readonly"
+											id="smsStatus" class="form-control"
+											PlaceHolder="Enter SMS Status" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtAddress">Address <strong
+											style="color: Red">*</strong>
+										</label>
+
+										<textarea name="address" rows="2" cols="20"
+											readonly="readonly" id="address" class="form-control"
+											Placeholder="Enter Addess">
+                                 </textarea>
+										<span id="ContentPlaceHolder1_RequiredFieldValidator3"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Address</span>
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtPin">Pin Code <strong
+											style="color: Red">*</strong>
+										</label> <input name="pin" type="text" maxlength="6"
+											readonly="readonly" id="pin" class="form-control"
+											Placeholder="Enter Pincode" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidator4"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											PIN</span>
+
+									</div>
+
+
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Branch Name <strong style="color: Red">*</strong></label>
+
+										<select name="cspName" id="cspName" class="form-control"
+											style="width: 100%;">
+											<option value="">Select Branch</option>
+
+											<%
+											if (branchList != null && !branchList.isEmpty()) {
+												for (BranchMaster branch : branchList) {
+											%>
+											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
+											<%
+											}
+											}
+											%>
+										</select>
+
+									</div>
+									<div id="ContentPlaceHolder1_updtpnl" style="margin-top: 15px;">
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Loan Plan Name <strong style="color: Red">*</strong>
+											</label> <select name="loanPlanName" id="loanPlanName"
+												class="form-control" style="width: 100%;"
+												onchange="displayLoanMasterDetails()">
+												<option value="">Select loan Plan Master</option>
+
+												<%
+												if (loanMasterList != null && !loanMasterList.isEmpty()) {
+													for (LoanMaster loanPlan : loanMasterList) {
+												%>
+												<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
+												<%
+												}
+												}
+												%>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;"
+										style="margin-top: 15px;">
+										<label for="txtLoanROI">Loan Type <strong
+											style="color: Red">*</strong>
+										</label> <input name="loanType" type="text" readonly="readonly"
+											id="loanType" class="form-control" PlaceHolder="Loan Type" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="ddlPlanTerm">Plan Term <strong
+											style="color: Red">*</strong>
+										</label> <input name="planTerm" type="text" readonly="readonly"
+											id="planTerm" class="form-control" PlaceHolder="Plan Term" />
+
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="ddlLoanMode">Loan Mode <strong
+											style="color: Red">*</strong>
+										</label> <input name="mode" type="text" readonly="readonly" id="mode"
+											class="form-control" PlaceHolder="Enter Mode" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidator1"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Mode</span>
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>ROI(%)</label> <input name="loanROI" type="text"
+											readonly="readonly" id="loanROI" class="form-control"
+											PlaceHolder="Enter Loan ROI" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatorLoanROI"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Loan ROI</span>
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Loan Amount <strong style="color: Red">*</strong></label>
+
+										<input name="loanAmount" type="text"
+											onkeypress="inputLoanAmount()" id="loanAmount"
+											class="form-control" PlaceHolder="Enter Loan Amount"
+											onpaste="return false" autocomplete="off" /> <span
+											id="loanAmountMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Loan Amount</span>
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtROIType">ROI Type <strong
+											style="color: Red">*</strong>
+										</label> <input name="ROIType" type="text" readonly="readonly"
+											id="ROIType" class="form-control"
+											PlaceHolder="Enter ROI Type" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatortxtROIType"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											ROI Type</span>
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtEMIAmount">EMI Amount <strong
+											style="color: Red">*</strong>
+										</label> <input name="emiAmount" type="text" readonly="readonly"
+											id="emiAmount" class="form-control"
+											PlaceHolder="Enter EMI Amount" /> <span
+											id="ContentPlaceHolder1_RequiredFieldValidatortxtEMIAmount"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											EMI Amount</span>
+
+									</div>
+
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtLoanPurpose">Loan Purpose <strong
+											style="color: Red">*</strong>
+										</label> <input name="loanPurpose" type="text" id="loanPurpose"
+											class="form-control" PlaceHolder="Enter Loan Purpose" /> <span
+											id="loanPurposeMsg"
+											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+											Loan Purpose</span>
+
+									</div>
+
+								</div>
+								<div class="col-md-12" style="margin-top: 15px;">
+									<div class="col-md-3 box box-success">
+										<div class="box-header with-border">
+											<h3 class="box-title">Photo</h3>
+										</div>
+										<div class="box-body">
+											<div class="col-md-3">
+												<div class="form-group">
+													<div class="text-center">
+														<img id="ContentPlaceHolder1_ImageApplicant"
+															class="profile-user-img" src="dist/img/photo.jpg"
+															style="width: 110px;" />
 													</div>
-													<input name="loanDate" type="text" value="01/08/2022"
-														id="loanDate" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
 												</div>
-												<span id="loanDate"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Loan Date</span>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Search Member <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<select name="searchMemberCode" id="searchMemberCode"
-													onchange="displayMemberDetails()"
-													class="form-control select2" style="width: 100%;">
-													<%
-													if (memberList != null && !memberList.isEmpty()) {
-														for (/* Member member : memberList */
-																ClientMaster member : memberList) {
-													%>
-													<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
-													<%
-													}
-													}
-													%>
-												</select> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
-													Member Code</span>
-											</div>
+									</div>
+									<div class="col-md-3 box box-success">
+										<div class="box-header with-border">
+											<h3 class="box-title">Signature</h3>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Relative
-												Details <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="relativeDetails" type="text"
-													readonly="readonly" id="relativeDetails"
-													class="form-control"
-													PlaceHolder="Enter Relative Name &amp; Relation" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorBranchCode"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Relative Name & Relation</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtDOB" class="col-sm-4 control-label">DOB
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-5">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
+										<div class="box-body">
+											<div class="col-md-3">
+												<div class="form-group">
+													<div class="text-center">
+														<img id="ContentPlaceHolder1_ImageSignature"
+															class="profile-user-img" src="dist/img/sign.jpg"
+															style="height: 70px; width: 115px;" />
 													</div>
-													<input name="DOB" type="text" value="01/08/2022"
-														readonly="readonly" id="dob" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
 												</div>
-											</div>
-											<div class="col-sm-3">
-												<input name="age" type="text" value="0" maxlength="2"
-													readonly="readonly" id="age" class="form-control"
-													Placeholder="Enter Age"
-													onkeypress="return isNumberOnlyKey(this, event);"
-													autocomplete="off" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator12"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Age</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPhoneno" class="col-sm-4 control-label">Mobile
-												No <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="phoneno" type="text" maxlength="10"
-													readonly="readonly" id="phoneno" class="form-control"
-													Placeholder="Enter Mobile No" autocomplete="off"
-													onkeypress="return isNumberOnlyKey(this, event);" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator8"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Phone No</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtSMSStatus" class="col-sm-4 control-label">SMS
-												Status </label>
-											<div class="col-sm-8">
-												<input name="smsStatus" type="text" readonly="readonly"
-													id="smsStatus" class="form-control"
-													PlaceHolder="Enter SMS Status" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtAddress" class="col-sm-4 control-label">Address
-												<strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<textarea name="address" rows="2" cols="20"
-													readonly="readonly" id="address" class="form-control"
-													Placeholder="Enter Addess">
-                                       </textarea>
-												<span id="ContentPlaceHolder1_RequiredFieldValidator3"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Address</span>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtPin" class="col-sm-4 control-label">Pin
-												Code <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="pin" type="text" maxlength="6"
-													readonly="readonly" id="pin" class="form-control"
-													Placeholder="Enter Pincode" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidator4"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													PIN</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Branch Name <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<select name="cspName" id="cspName" class="form-control"
-													style="width: 100%;">
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
-												</select>
-											</div>
-										</div>
-										<div id="ContentPlaceHolder1_updtpnl">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Loan Plan Name
-													<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<select name="loanPlanName" id="loanPlanName"
-														class="form-control" style="width: 100%;"
-														onchange="displayLoanMasterDetails()">
-														<%
-														if (loanMasterList != null && !loanMasterList.isEmpty()) {
-															for (LoanMaster loanPlan : loanMasterList) {
-														%>
-														<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
-														<%
-														}
-														}
-														%>
-													</select>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtLoanROI" class="col-sm-4 control-label">Loan
-													Type <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="loanType" type="text" readonly="readonly"
-														id="loanType" class="form-control" PlaceHolder="Loan Type" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="ddlPlanTerm" class="col-sm-4 control-label">Plan
-													Term <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="planTerm" type="text" readonly="readonly"
-														id="planTerm" class="form-control" PlaceHolder="Plan Term" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="ddlLoanMode" class="col-sm-4 control-label">Loan
-													Mode <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-3">
-													<input name="mode" type="text" readonly="readonly"
-														id="mode" class="form-control" PlaceHolder="Enter Mode" />
-													<span id="ContentPlaceHolder1_RequiredFieldValidator1"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Mode</span>
-												</div>
-												<label class="col-sm-2 control-label">ROI(%)</label>
-												<div class="col-sm-3">
-													<input name="loanROI" type="text" readonly="readonly"
-														id="loanROI" class="form-control"
-														PlaceHolder="Enter Loan ROI" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorLoanROI"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Loan ROI</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Loan Amount <strong
-													style="color: Red">*</strong></label>
-												<div class="col-sm-8">
-													<input name="loanAmount" type="text" id="loanAmount"
-														class="form-control" PlaceHolder="Enter Loan Amount"
-														onpaste="return false" autocomplete="off" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatorLoanAmount"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Loan Amount</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtROIType" class="col-sm-4 control-label">ROI
-													Type <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="roiType" type="text" readonly="readonly"
-														id="roiType" class="form-control"
-														PlaceHolder="Enter ROI Type" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtROIType"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														ROI Type</span>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtEMIAmount" class="col-sm-4 control-label">EMI
-													Amount <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="emiAmount" type="text" readonly="readonly"
-														id="emiAmount" class="form-control"
-														PlaceHolder="Enter EMI Amount" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidatortxtEMIAmount"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														EMI Amount</span>
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="txtLoanPurpose" class="col-sm-4 control-label">Loan
-												Purpose <strong style="color: Red">*</strong>
-											</label>
-											<div class="col-sm-8">
-												<input name="loanPurpose" type="text" id="loanPurpose"
-													class="form-control" PlaceHolder="Enter Loan Purpose" /> <span
-													id="ContentPlaceHolder1_RequiredFieldValidatorLoanPurpose"
-													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-													Loan Purpose</span>
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="box-footer">
+									<button type="button" class="btn btn-success pull-right"
+										onclick="goToGurantorDetails()">Next</button>
+								</div>
 							</div>
+
 						</div>
-						<div class="col-md-2">
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Photo</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="ContentPlaceHolder1_ImageApplicant"
-													class="profile-user-img" src="dist/img/photo.jpg"
-													style="width: 110px;" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="box box-success">
-								<div class="box-header with-border">
-									<h3 class="box-title">Signature</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<div class="text-center">
-												<img id="ContentPlaceHolder1_ImageSignature"
-													class="profile-user-img" src="dist/img/sign.jpg"
-													style="height: 70px; width: 115px;" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
 					</div>
+
 					<div id="ContentPlaceHolder1_upnlLAD"></div>
 					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-success">
+						<div class="col-md-12">
+							<div class="box box-success form-container" id="gurantorSection"
+								style="display: none;">
 								<div class="box-body">
 									<div id="ContentPlaceHolder1_upguardian">
-										<div class="col-md-6">
-											<div class="form-group row text-center">
-												<div class="box-header with-border">
-													<h3 class="box-title">Guarantor Details</h3>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtGuarantorMember2"
-													class="col-sm-4 control-label">Member Code </label>
-												<div class="col-sm-8">
-													<input name="guarantorCode" type="text" id="guarantorCode"
-														class="form-control"
-														Placeholder="Enter Guarantor Member 2" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtMembersRelativesNameRelationGu"
-													class="col-sm-4 control-label">Guarantor Name </label>
-												<div class="col-sm-8">
-													<input name="guarantorName" type="text" readonly="readonly"
-														id="guarantorName" class="form-control" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtAddressGuarantor"
-													class="col-sm-4 control-label">Address </label>
-												<div class="col-sm-8">
-													<input name="addressGuarantor" type="text"
-														readonly="readonly" id="addressGuarantor"
-														class="form-control" Placeholder="Enter Address" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtPincodeGuarantor"
-													class="col-sm-4 control-label">Pin Code </label>
-												<div class="col-sm-8">
-													<input name="pincodeGuarantor" type="text"
-														readonly="readonly" id="pincodeGuarantor"
-														class="form-control" PlaceHolder="Enter Pin Code" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtphone" class="col-sm-4 control-label">Phone
-												</label>
-												<div class="col-sm-8">
-													<input name="guarantorphone" type="text"
-														readonly="readonly" id="guarantorphone"
-														class="form-control" Placeholder="Enter Phone" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Security Type
-												</label>
-												<div class="col-sm-8">
-													<select name="securityType" id="securityType"
-														class="form-control" style="width: 100%;">
-														<option value="Select">Select</option>
-														<option value="Loan Against Cheque">Loan Against
-															Cheque</option>
-														<option value="Loan Against Gold">Loan Against
-															Gold</option>
-														<option value="Loan Against Silver">Loan Against
-															Silver</option>
-														<option value="Loan Against Deposit">Loan Against
-															Deposit</option>
-														<option value="Any Others">Any Others</option>
-													</select>
-												</div>
-											</div>
+
+
+										<div class="box-header ">
+											<h3 class="box-title">Guarantor Details</h3>
+										</div>
+
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtGuarantorMember2">Member Code </label> <input
+												name="guarantorCode" type="text" id="guarantorCode"
+												class="form-control" Placeholder="Enter Guarantor Member 2" />
+											<span id="guarantorCodeMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 										</div>
 									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtMembersRelativesNameRelationGu">Guarantor
+											Name </label> <input name="guarantorName" type="text"
+											id="guarantorName" class="form-control" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtAddressGuarantor">Address </label> <input
+											name="addressGuarantor" type="text" id="addressGuarantor"
+											class="form-control" Placeholder="Enter Address" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtPincodeGuarantor">Pin Code </label> <input
+											name="pincodeGuarantor" type="text" id="pincodeGuarantor"
+											class="form-control" PlaceHolder="Enter Pin Code" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label for="txtphone">Phone </label> <input
+											name="guarantorphone" type="text" id="guarantorphone"
+											class="form-control" Placeholder="Enter Phone" />
+
+									</div>
+									<div class="col-md-3" style="margin-top: 15px;">
+										<label>Security Type </label> <select name="securityType"
+											id="securityType" class="form-control" style="width: 100%;">
+											<option value="Select">Select</option>
+											<option value="Loan Against Cheque">Loan Against
+												Cheque</option>
+											<option value="Loan Against Gold">Loan Against Gold</option>
+											<option value="Loan Against Silver">Loan Against
+												Silver</option>
+											<option value="Loan Against Deposit">Loan Against
+												Deposit</option>
+											<option value="Any Others">Any Others</option>
+										</select>
+
+									</div>
+								</div>
+								<div class="box-footer">
+									<button type="button" class="btn btn-success"
+										onclick="backToLoanDetails()">PREVIOUS</button>
+									<button type="button" class="btn btn-success pull-right"
+										onclick="goToAppDetails()">Next</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="box box-success form-container" id="appSection"
+								style="display: none;">
+
+								<div class="box-body">
 									<div id="ContentPlaceHolder1_upcoap">
-										<div class="col-md-6">
-											<div class="form-group row text-center">
-												<div class="box-header with-border">
-													<h3 class="box-title">Co-Applicant Details</h3>
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtCoApplicantName"
-													class="col-sm-4 control-label">Member Code </label>
-												<div class="col-sm-8">
-													<input name="coApplicantCode" type="text"
-														id="coApplicantCode" class="form-control"
-														Placeholder="Enter Co-Applicant Member Code" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtMemberRelativesName"
-													class="col-sm-4 control-label">Name</label>
-												<div class="col-sm-8">
-													<input name="memberRelativesName" type="text"
-														readonly="readonly" id="memberRelativesName"
-														class="form-control" Placeholder="Enter Co-Applicant Name" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtAddressco" class="col-sm-4 control-label">Address
-												</label>
-												<div class="col-sm-8">
-													<input name="addressco" type="text" readonly="readonly"
-														id="addressco" class="form-control"
-														Placeholder="Enter Address" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtPincodeco" class="col-sm-4 control-label">Pincode
-												</label>
-												<div class="col-sm-8">
-													<input name="pincodeco" type="text" readonly="readonly"
-														id="pincodeco" class="form-control"
-														Placeholder="Enter Pincode" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtPhoneco" class="col-sm-4 control-label">Phone</label>
-												<div class="col-sm-8">
-													<input name="phoneco" type="text" readonly="readonly"
-														id="phoneco" class="form-control"
-														Placeholder="Enter Phone" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtSecurityDetails"
-													class="col-sm-4 control-label">Security Details</label>
-												<div class="col-sm-8">
-													<input name="securityDetails" type="text"
-														id="securityDetails" class="form-control"
-														Placeholder="Enter Security Details" />
-												</div>
-											</div>
+										<div class="box-header ">
+											<h3 class="box-title">Co-Applicant Details</h3>
 										</div>
+
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtCoApplicantName">Member Code </label> <input
+												name="coApplicantCode" type="text" id="coApplicantCode"
+												class="form-control"
+												Placeholder="Enter Co-Applicant Member Code" /> <span
+												id="coApplicantCodeMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtMemberRelativesName">Name</label> <input
+												name="memberRelativesName" type="text"
+												id="memberRelativesName" class="form-control"
+												Placeholder="Enter Co-Applicant Name" />
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtAddressco">Address </label> <input
+												name="addressco" type="text" readonly="readonly"
+												id="addressco" class="form-control"
+												Placeholder="Enter Address" />
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtPincodeco">Pincode </label> <input
+												name="pincodeco" type="text" id="pincodeco"
+												class="form-control" Placeholder="Enter Pincode" />
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtPhoneco">Phone</label> <input name="phoneco"
+												type="text" id="phoneco" class="form-control"
+												Placeholder="Enter Phone" />
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtSecurityDetails">Security Details</label> <input
+												name="securityDetails" type="text" id="securityDetails"
+												class="form-control" Placeholder="Enter Security Details" />
+
+										</div>
+
 									</div>
+
+								</div>
+								<div class="box-footer">
+									<button type="button" class="btn btn-success"
+										onclick="backToGurantorDetails()">PREVIOUS</button>
+									<button type="button" class="btn btn-success pull-right"
+										onclick="goToDeductionDetails()">Next</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-10">
-							<div class="box box-danger">
-								<div class="box-header with-border">
+						<div class="col-md-12">
+							<div class="box box-danger form-container" id="deductionSection"
+								style="display: none;">
+								<div class="box-header ">
 									<h3 class="box-title">Deduction Details</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-6">
-										<div id="ContentPlaceHolder1_uppnlde">
-											<div class="form-group row">
-												<label for="txtProcessingFee" class="col-sm-4 control-label">Processing
-													Fee<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="processingFee" type="text" readonly="readonly"
-														id="processingFee" class="form-control" />
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="txtLegalAmt" class="col-sm-4 control-label">Legal
-													Amt<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="legalAmt" type="text" readonly="readonly"
-														id="legalAmt" class="form-control" />
-												</div>
-											</div>
+
+									<div id="ContentPlaceHolder1_uppnlde">
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtProcessingFee">Processing Fee<strong
+												style="color: Red">*</strong>
+											</label> <input name="processingFee" type="text" id="processingFee"
+												class="form-control" />
+
 										</div>
-										<div id="ContentPlaceHolder1_uppnkad">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Advisor/Collector
-													Code <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="advisorCode" type="text" id="advisorCode"
-														class="form-control"
-														placeholder="Enter Advisor/Collector Code" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator6"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Advisor/Collector Code</span>
-												</div>
-											</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtLegalAmt">Legal Amt<strong
+												style="color: Red">*</strong>
+											</label> <input name="legalAmt" type="text" id="legalAmt"
+												class="form-control" />
+
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div id="ContentPlaceHolder1_upduc">
-											<!-- <div class="form-group row">
-                                       <label for="txtGST" class="col-sm-4 control-label">GST<strong style="color: Red">*</strong></label>
-                                       <div class="col-sm-8">
-                                          <input name="GST" type="text" readonly="readonly" id="GST" class="form-control" />
-                                       </div>
-                                    </div> -->
-											<div class="form-group row">
-												<label for="txtInsuranceAmt" class="col-sm-4 control-label">Insurance
-													Amt<strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="insuranceAmt" type="text" readonly="readonly"
-														id="insuranceAmt" class="form-control" />
-												</div>
-											</div>
-										</div>
-										<div id="ContentPlaceHolder1_uppnladname">
-											<div class="form-group row">
-												<label class="col-sm-4 control-label">Advisor/Collector
-													Name <strong style="color: Red">*</strong>
-												</label>
-												<div class="col-sm-8">
-													<input name="advisorName" type="text" readonly="readonly"
-														id="advisorName" class="form-control"
-														placeholder="Enter Advisor/Collector Name" /> <span
-														id="ContentPlaceHolder1_RequiredFieldValidator7"
-														style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
-														Advisor/Collector Name</span>
-												</div>
-											</div>
+									<div id="ContentPlaceHolder1_uppnkad">
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Advisor/Collector Code <strong
+												style="color: Red">*</strong>
+											</label> <input name="advisorCode" type="text" id="advisorCode"
+												class="form-control"
+												placeholder="Enter Advisor/Collector Code" /> <span
+												id="advisorCodeMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
+
 										</div>
 									</div>
-								</div>
-								<div class="box-footer">
-									<div class="row col-md-12"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="ContentPlaceHolder1_idApproval" class="row">
-						<div class="col-md-10">
-							<div class="box box-danger">
-								<div class="box-header with-border">
-									<h3 class="box-title">Approval Details</h3>
-								</div>
-								<div class="box-body">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-4 control-label">Approval Date <strong
-												style="color: Red">*</strong></label>
-											<div class="col-sm-8">
-												<div class="input-group date">
-													<div class="input-group-addon">
-														<i class="fa fa-calendar"></i>
-													</div>
-													<input name="approvalDate" type="text" value="01/08/2022"
-														id="approvalDate" class="form-control"
-														data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-														data-mask="" />
-												</div>
-											</div>
+
+
+									<div id="ContentPlaceHolder1_upduc">
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtGST">GST<strong style="color: Red">*</strong></label>
+
+											<input name="GST" type="text" id="GST" class="form-control" />
+
+										</div>
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label for="txtInsuranceAmt">Insurance Amt<strong
+												style="color: Red">*</strong>
+											</label> <input name="insuranceAmt" type="text" id="insuranceAmt"
+												class="form-control" />
+
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label for="txtProcessingFee" class="col-sm-4 control-label">Approval
-												Status</label>
-											<div class="col-sm-8">
-												<select name="approvalStatus" id="approvalStatus"
-													class="form-control select2" style="width: 100%;">
-													<option selected="selected" value="reject">Reject</option>
-													<option selected="selected" value="approved">Approved</option>
-												</select>
-											</div>
+									<div id="ContentPlaceHolder1_uppnladname">
+										<div class="col-md-3" style="margin-top: 15px;">
+											<label>Advisor/Collector Name <strong
+												style="color: Red">*</strong>
+											</label> <input name="advisorName" type="text" id="advisorName"
+												class="form-control"
+												placeholder="Enter Advisor/Collector Name" /> <span
+												id="advisorName"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Advisor/Collector Name</span>
+
 										</div>
 									</div>
+
 								</div>
 								<div class="box-footer">
 									<div class="row col-md-12">
-										<input type="submit" name="ctl00$ContentPlaceHolder1$btnSave"
-											value="Approve" id="ContentPlaceHolder1_btnSave"
-											class="btn btn-success pull-right margin-r-5" />
+										<button type="button" class="btn btn-success"
+											onclick="backToAppDetails()">PREVIOUS</button>
+										<button type="button" class="btn btn-success pull-right"
+											onclick="goToApprovalDetails()">Next</button>
 									</div>
 								</div>
 							</div>
+
 						</div>
-					</div>
+						<div id="ContentPlaceHolder1_idApproval" class="row"
+							style="display: none;">
+							<div class="col-md-12">
+
+								<div class="box box-danger form-container">
+									<div class="box-header with-border">
+										<h3 class="box-title">Approval Details</h3>
+									</div>
+									<div class="box-body">
+										<div class="col-md-6">
+
+											<label>Approval Date <strong style="color: Red">*</strong></label>
+
+											<div class="input-group date">
+												<div class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</div>
+												<input name="approvalDate" type="text" value="01/08/2022"
+													id="approvalDate" class="form-control"
+													data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+													data-mask="" />
+											</div>
+										</div>
+
+
+										<div class="col-md-6">
+
+											<label for="txtProcessingFee">Approval Status</label> <select
+												name="approvalStatus" id="approvalStatus"
+												class="form-control select2" style="width: 100%;">
+												<option selected="selected" value="reject">Reject</option>
+												<option selected="selected" value="approved">Approved</option>
+											</select>
+										</div>
+										<div class="box-footer">
+											<div class="row col-md-12" style="margin-top: 15px;">
+												<button type="button" class="btn btn-success"
+													onclick="backToDeductionDetails()">PREVIOUS</button>
+												<input type="submit"
+													name="ctl00$ContentPlaceHolder1$btnSave" value="Approve"
+													id="ContentPlaceHolder1_btnSave"
+													class="btn btn-success pull-right margin-r-5" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
 				</section>
+
 			</div>
-			<!-- /.content-wrapper -->
-			<div class="control-sidebar-bg"></div>
+
+		</div>
+
+		</section>
+		</div>
+		<!-- /.content-wrapper -->
+		<div class="control-sidebar-bg"></div>
 		</div>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->
@@ -868,8 +869,66 @@ input:checked+.slider:before {
 		<script src="dist/js/demo.js"></script>
 		<!-- Select2 -->
 		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		
+
 	</form>
+	<script>
+      function goToGurantorDetails(){
+    	  $("#loanSection").hide();
+    	  $("#gurantorSection").show();
+    	  
+    	  $("#step1").removeClass("active").addClass("completed");
+    	  $("#step2").removeClass("inactive").addClass("inactive");
+      }
+      function backToLoanDetails() {
+			$("#gurantorSection").hide();
+			$("#loanSection").show();
+
+			$("#step2").removeClass("active").addClass("inactive");
+			$("#step1").removeClass("completed").addClass("active");
+		}
+      function goToAppDetails(){
+    	  $("#gurantorSection").hide();
+    	  $("#appSection").show();
+    	  
+    	  $("#step2").removeClass("active").addClass("completed");
+    	  $("#step3").removeClass("inactive").addClass("inactive");
+      }
+      function backToGurantorDetails() {
+			$("#appSection").hide();
+			$("#gurantorSection").show();
+
+			$("#step3").removeClass("active").addClass("inactive");
+			$("#step2").removeClass("completed").addClass("active");
+		}
+      function goToDeductionDetails(){
+    	  $("#appSection").hide();
+    	  $("#deductionSection").show();
+    	  
+    	  $("#step3").removeClass("active").addClass("completed");
+    	  $("#step4").removeClass("inactive").addClass("inactive");
+      }
+      function backToAppDetails() {
+			$("#deductionSection").hide();
+			$("#appSection").show();
+
+			$("#step4").removeClass("active").addClass("inactive");
+			$("#step3").removeClass("completed").addClass("active");
+		}
+      function goToApprovalDetails(){
+    	  $("#deductionSection").hide();
+    	  $("#ContentPlaceHolder1_idApproval").show();
+    	  
+    	  $("#step4").removeClass("active").addClass("completed");
+    	  $("#step5").removeClass("inactive").addClass("inactive");
+      }
+      function backToDeductionDetails(){
+			$("#ContentPlaceHolder1_idApproval").hide();
+			$("#deductionSection").show();
+
+			$("#step5").removeClass("active").addClass("inactive");
+			$("#step4").removeClass("completed").addClass("active");
+		}
+      </script>
 </body>
 <!-- Dk/Admin/LoanApplication.aspx?Type=Approval EDB D 09:27:09 GMT -->
 </html>
