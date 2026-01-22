@@ -35,7 +35,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.microfinance.model.BankModule;
 import com.society.application.dto.ApiResponse;
 import com.society.application.model.*;
 import com.society.application.repository.*;

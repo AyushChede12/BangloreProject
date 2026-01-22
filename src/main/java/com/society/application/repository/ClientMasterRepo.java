@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
 import com.society.application.model.ClientMaster;
 
 @Repository
-public interface ClientMasterRepo extends JpaRepository<ClientMaster, Integer> {
+public interface ClientMasterRepo extends JpaRepository<ClientMaster, Long> {
 
-	List<ClientMaster> findByid(int id);
+	List<ClientMaster> findByid(Long id);
 
 	@Modifying
 	@Transactional

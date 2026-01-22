@@ -15,12 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.microfinance.model.addCustomer;
+import com.society.application.dto.ApiResponse;
 import com.society.application.model.AdvisorCollectorDetails;
 import com.society.application.model.ClientMaster;
 import com.society.application.model.DesignationMaster;
 import com.society.application.repository.AdvisorCollectorDetailsRepo;
 import com.society.application.repository.ClientMasterRepo;
 import com.society.application.repository.DesignationMasterRepo;
+import com.society.application.service.FinancialService;
 
 @Controller
 public class CollectorAdvisorController {
@@ -32,12 +35,24 @@ public class CollectorAdvisorController {
 
 	@Autowired
 	DesignationMasterRepo designationMasterRepo;
+	
+	@Autowired
+	private FinancialService financialService;
 
 	/* COLLECTOR/ADVISOR TREE */
 
 	@GetMapping("/advisorTree")
 	public String advisorTree() {
 		return "advisor/advisorTree";
+	}
+	
+	//Ayush
+	@GetMapping("/fetchAllCustomerData")
+	@ResponseBody
+	public ResponseEntity<ApiResponse<List<ClientMaster>>> appendSelectMember() {
+		List<ClientMaster> list = financialService.getAllCustomers();
+		ApiResponse<List<ClientMaster>> response= ApiResponse.success(HttpStatus.OK, "Customer Fetched Successfully", list);
+		return new ResponseEntity<>(response,HttpStatus.OK);
 	}
 
 	@GetMapping("/Fetchadvdetail")
@@ -57,13 +72,6 @@ public class CollectorAdvisorController {
 		int i = Integer.parseInt(ids);
 		List<AdvisorCollectorDetails> data2 = advisorCollectorDetailsRepo.findByid(i);
 		return data2;
-	}
-
-	@GetMapping("/appendSelectMember")
-	@ResponseBody
-	public List<ClientMaster> appendSelectMember() {
-		List<ClientMaster> list = clientMasterRepo.findAll();
-		return list;
 	}
 
 	@PostMapping("/fetchBySelectedMember")

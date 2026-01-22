@@ -1,4 +1,25 @@
 <jsp:include page="../header.jsp" />
+<style>
+.box-body {
+	padding: 30px 35px;
+}
+
+.four-col-row {
+	margin-bottom: 30px;
+}
+
+.four-col-row label {
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+
+@media ( max-width : 991px) {
+	.col-md-3 {
+		margin-bottom: 20px;
+	}
+}
+</style>
+
 <%
 String status = (String) request.getAttribute("status");
 if (status != null && status.equals("success")) {
@@ -34,11 +55,6 @@ if (status != null && status.equals("success")) {
 				</h1>
 				<h5 style="margin-left: 18px;">ADD CONSULTANT</h5>
 
-				<ol class="breadcrumb">
-					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li class="active">Consultant</li>
-				</ol>
 			</section>
 			<div class="wizard-steps">
 				<div class="wizard-step active" id="step1">
@@ -56,26 +72,7 @@ if (status != null && status.equals("success")) {
 					<div class="step-title">PAYMENT DETAILS</div>
 				</div>
 			</div>
-			<style>
-.box-body {
-	padding: 30px 35px;
-}
-
-.four-col-row {
-	margin-bottom: 30px;
-}
-
-.four-col-row label {
-	font-weight: 500;
-	margin-bottom: 6px;
-}
-
-@media ( max-width : 991px) {
-	.col-md-3 {
-		margin-bottom: 20px;
-	}
-}
-</style>
+			
 
 			<section class="content ">
 
@@ -370,41 +367,44 @@ if (status != null && status.equals("success")) {
 		<!-- /.content-wrapper -->
 		<div class="control-sidebar-bg"></div>
 	</div>
-
+	
+	<script src="dist/js/adminlte.min.js"></script>
+	<script src="dist/js/financialConsultant/addFinancial.js"></script>
+<!-- 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
+	Bootstrap 3.3.7
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<!-- InputMask -->
+	InputMask
 	<script src="plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-	<!-- date-range-picker -->
+	date-range-picker
 	<script src="bower_components/moment/min/moment.min.js"></script>
 	<script
 		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap datepicker -->
+	bootstrap datepicker
 	<script
 		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-	<!-- bootstrap color picker -->
+	bootstrap color picker
 	<script
 		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-	<!-- bootstrap time picker -->
+	bootstrap time picker
 	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-	<!-- SlimScroll -->
+	SlimScroll
 	<script
 		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<!-- iCheck 1.0.1 -->
+	iCheck 1.0.1
 	<script src="plugins/iCheck/icheck.min.js"></script>
-	<!-- FastClick -->
+	FastClick
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
+	AdminLTE App
+	
+	AdminLTE for demo purposes
 	<script src="dist/js/demo.js"></script>
 	<script src="dist/js/AdvisorTeamCollection.js"></script>
 	<script src="dist/js/RelativeRelation.js"></script>
-	<!-- Select2 -->
+	Select2
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 	<script>
 		var fileTag = document.getElementById("filetag"), preview = document
@@ -566,7 +566,7 @@ if (status != null && status.equals("success")) {
 			$("#step2").removeClass("active").addClass("inactive");
 			$("#step1").removeClass("completed").addClass("active");
 		}
-	</script>
+	</script> -->
 
 	<!-- </form> -->
 </body>
