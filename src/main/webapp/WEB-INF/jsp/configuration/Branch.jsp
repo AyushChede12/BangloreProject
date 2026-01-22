@@ -61,7 +61,7 @@
 
 	<!-- getAllBranchMaster() , fetchMaxGLGroupNo() -->
 	<div
-		style="height: auto; min-height: 100%;  background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -77,7 +77,7 @@
 					<b>CUSTOMIZATION</b>
 				</h1>
 				<h5 style="margin-left: 18px;">ADD BRANCH</h5>
-				
+
 			</section>
 
 			<form id="form">
@@ -90,59 +90,62 @@
 								</div>
 								<div class="box-body">
 									<div class="col-md-12" style="margin-top: 15px;">
-
+									
+									
+									<input type="hidden" id="branchId">
+									
 										<div class="col-md-4">
+
 											<label>G.L.HEAD NO. <strong style="color: Red">*</strong></label>
 
-											<input name="glHeadNo" type="text" id="glHeadNo" style="text-transform: uppercase;"
-												class="form-control" placeholder="ENTER GL HEAD NO"
-												autocomplete="off" /> <span id="branchCodeMsg"
+											<input name="glHeadNo" type="text" id="glHeadNo"
+												style="text-transform: uppercase;" class="form-control"
+												placeholder="ENTER GL HEAD NO" autocomplete="off" /> <span
+												id="branchCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												GL HEAD NO.</span>
-												<small id="vglheadno" style="color: red;"></small>
+												GL HEAD NO.</span> <small id="vglheadno" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4">
 											<label>BANK NAME <strong style="color: Red">*</strong></label>
 
-											<input name="name" type="text" id="name" class="form-control" style="text-transform: uppercase;"
+											<input name="name" type="text" id="name" class="form-control"
+												style="text-transform: uppercase;"
 												placeholder="ENTER BANK NAME" autocomplete="off" /> <span
 												id="branchNameMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												BANK NAME</span>
-												<small id="vbankname" style="color: red;"></small>
+												BANK NAME</span> <small id="vbankname" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4">
 											<label>BANK ACCOUNT NO<strong style="color: Red">*</strong></label>
 
-											<input name="bankAccoununtNo" type="text" style="text-transform: uppercase;"
-												id="bankAccoununtNo" class="form-control"
-												placeholder="ENTER BANK ACCOUNT NO" autocomplete="off" />
-											<span id="bankAccoununtNoMsg"
+											<input name="bankAccoununtNo" type="text"
+												style="text-transform: uppercase;" id="bankAccoununtNo"
+												class="form-control" placeholder="ENTER BANK ACCOUNT NO"
+												autocomplete="off" /> <span id="bankAccoununtNoMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												BANK ACCOUNT NO.</span>
-												<small id="vbankacno" style="color: red;"></small>
+												BANK ACCOUNT NO.</span> <small id="vbankacno" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
-											<label>BRANCH<strong style="color: Red">*</strong></label> <input
-												name="branch" type="text" id="branch" class="form-control" style="text-transform: uppercase;"
+											<label>BRANCH NAME<strong style="color: Red">*</strong></label> <input
+												name="branch" type="text" id="branch" class="form-control"
+												style="text-transform: uppercase;"
 												placeholder="ENTER BRANCH" autocomplete="off" /> <span
 												id="branchMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												BRANCH</span>
-												<small id="vbranch" style="color: red;"></small>
+												BRANCH</span> <small id="vbranch" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>BRANCH CODE <strong style="color: Red">*</strong></label>
-											<input name="code" type="text" id="code" style="text-transform: uppercase;"
-												class="form-control" placeholder="ENTER BRANCH CODE"
-												autocomplete="off" /> <span id="branchCodeMsg"
+											<input name="code" type="text" id="code"
+												style="text-transform: uppercase;" class="form-control"
+												placeholder="ENTER BRANCH CODE" autocomplete="off" /> <span
+												id="branchCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												CODE</span>
-												<small id="vbranchcode" style="color: red;"></small>
+												CODE</span> <small id="vbranchcode" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
@@ -150,14 +153,13 @@
 												style="color: Red">*</strong>
 											</label>
 
-											<textarea name="address" rows="2" cols="20" id="address" style="text-transform: uppercase;"
-												class="form-control" placeholder="Enter Branch Address"
-												autocomplete="off">
+											<textarea name="address" rows="2" cols="20" id="address"
+												style="text-transform: uppercase;" class="form-control"
+												placeholder="Enter Branch Address" autocomplete="off">
                                     </textarea>
 											<span id="addressMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												ADDRESS</span>
-												<small id="vaddress" style="color: red;"></small>
+												ADDRESS</span> <small id="vaddress" style="color: red;"></small>
 										</div>
 										<!-- row 2  -->
 										<div class="col-md-12" style="margin-top: 15px;">
@@ -191,8 +193,7 @@
 
 											</select> <span id="accountTypeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
-												ACCOUNT TYPE</span>
-												<small id="vactype" style="color: red;"></small>
+												ACCOUNT TYPE</span> <small id="vactype" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4">
@@ -200,10 +201,10 @@
 											</label> <input name="openingDate" type="date" id="openingDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" style="text-transform: uppercase;"/> <span id="openingDateMsg"
+												data-mask="" style="text-transform: uppercase;" /> <span
+												id="openingDateMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												OPENING DATE</span>
-												<small id="vacopendate" style="color: red;"></small>
+												OPENING DATE</span> <small id="vacopendate" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4">
@@ -216,20 +217,19 @@
 
 											</select> <span id="statusMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
-												STATUS</span>
-												<small id="vstatus" style="color: red;"></small>
+												STATUS</span> <small id="vstatus" style="color: red;"></small>
 										</div>
 
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label for="txtPin">PIN <strong style="color: Red">*</strong>
 											</label> <input name="pin" type="text" maxlength="7" id="pin"
-												class="form-control" placeholder="ENTER PIN" style="text-transform: uppercase;"
+												class="form-control" placeholder="ENTER PIN"
+												style="text-transform: uppercase;"
 												onkeypress="return isNumberOnlyKey(this, event);" /> <span
 												id="pinMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												PIN</span>
-												<small id="vpin" style="color: red;"></small>
+												PIN</span> <small id="vpin" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
@@ -268,15 +268,15 @@
 												<option value="WEST BENGAL">WEST BENGAL</option>
 											</select> <span id="stateMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
-												STATE</span>
-												<small id="vstate" style="color: red;"></small>
+												STATE</span> <small id="vstate" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>CONTACT PERSON</label> <input name="contactPerson"
 												type="text" id="contactPerson" class="form-control"
-												placeholder="ENTER CONTACT PERSON NAME" autocomplete="off" style="text-transform: uppercase;"/>
-												<small id="vcontactperson" style="color: red;"></small>
+												placeholder="ENTER CONTACT PERSON NAME" autocomplete="off"
+												style="text-transform: uppercase;" /> <small
+												id="vcontactperson" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
@@ -286,28 +286,25 @@
 												onkeypress="return isNumberOnlyKey(this, event);"
 												autocomplete="off" /> <span id="contactNoMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												CONTACT NO</span>
-												<small id="vcontactno" style="color: red;"></small>
+												CONTACT NO</span> <small id="vcontactno" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>IFSC CODE </label> <input name="ifscCode" type="text"
 												id="ifscCode" class="form-control"
-												placeholder="ENTER IFSC CODE" autocomplete="off" style="text-transform: uppercase;"/> <span
+												placeholder="ENTER IFSC CODE" autocomplete="off"
+												style="text-transform: uppercase;" /> <span
 												id="ifscCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												IFSC CODE</span>
-												<small id="vifsccode" style="color: red;"></small>
+												IFSC CODE</span> <small id="vifsccode" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>BALANCE </label> <input name="balance" type="text"
-												id="balance" class="form-control"
-												placeholder="0.00" autocomplete="off" /> <span
-												id="ifscCodeMsg"
+												id="balance" class="form-control" placeholder="0.00"
+												autocomplete="off" /> <span id="ifscCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												BALANCE</span>
-												<small id="vbalance" style="color: red;"></small>
+												BALANCE</span> <small id="vbalance" style="color: red;"></small>
 										</div>
 
 
@@ -317,12 +314,15 @@
 
 										<button type="button" id="saveBtn"
 											class="btn btn-success pull-right margin-r-5">SAVE</button>
-											
-											<button type="button" id="updateBtn" style="margin-right: 50px;"
-											class="btn btn-warning pull-right margin-r-4">UPDATE</button>
+
+										<button type="button" id="updateBtn"
+											style="margin-right: 50px;"
+											class="btn btn-warning pull-right margin-r-4"
+											onclick="updateBranch()">UPDATE</button>
 
 										<button type="button" id="hideBtn" onclick="hideBtnFunc()"
-											class="btn btn-success pull-right margin-r-5" style="display: none;">HIDE</button>
+											class="btn btn-success pull-right margin-r-5"
+											style="display: none;">HIDE</button>
 
 										<button type="button" id="showBtn" onclick="showBtnFunc()"
 											class="btn btn-success pull-right margin-r-5">SHOW</button>
