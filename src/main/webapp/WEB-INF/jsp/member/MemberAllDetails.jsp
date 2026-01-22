@@ -46,7 +46,7 @@
 			//]]>
 		</script>
 		<div
-			style="height: auto; min-height: 100%;  margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%;   background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
