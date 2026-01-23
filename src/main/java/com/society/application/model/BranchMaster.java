@@ -17,33 +17,20 @@ public class BranchMaster {
 	private Long id;
 
 	private String bankID;
-
-	private String name;
+	private String bankName;
 	private String branchCode;
-	private String openingDate;
+	private String branchOpeningDate;
 	private String address;
 	private String pin;
 	private String state;
 	private String contactPerson;
 	private String contactNo;
-	private String fdate;
-	private String tdate;
-	private String amount;
-	private String createdBy;
-	private String createdDt;
-
-	private Long glHeadNo;
 	private String bankAccoununtNo;
-	private String branch;
-	private String accountType;
+	private String branchName;
+	private String branchAccountType;
 	private String status;
 	private String ifscCode;
-	private String module;
-	private String selectTransactionCheckbox;
-	private String flag;
 	private BigDecimal balance = BigDecimal.ZERO;
-	private LocalDateTime createdAt;
-	private LocalDateTime updatedAt;
 
 	public String getBankID() {
 		return bankID;
@@ -54,11 +41,11 @@ public class BranchMaster {
 	}
 
 	public String getOpening_date() {
-		return openingDate;
+		return branchOpeningDate;
 	}
 
 	public void setOpening_date(String opening_date) {
-		this.openingDate = opening_date;
+		this.branchOpeningDate = opening_date;
 	}
 
 	public Long getId() {
@@ -70,11 +57,11 @@ public class BranchMaster {
 	}
 
 	public String getName() {
-		return name;
+		return bankName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.bankName = name;
 	}
 
 	public String getBranchCode() {
@@ -83,14 +70,6 @@ public class BranchMaster {
 
 	public void setBranchCode(String branchCode) {
 		this.branchCode = branchCode;
-	}
-
-	public String getOpeningDate() {
-		return openingDate;
-	}
-
-	public void setOpeningDate(String openingDate) {
-		this.openingDate = openingDate;
 	}
 
 	public String getAddress() {
@@ -133,53 +112,6 @@ public class BranchMaster {
 		this.contactNo = contactNo;
 	}
 
-	public String getFdate() {
-		return fdate;
-	}
-
-	public void setFdate(String fdate) {
-		this.fdate = fdate;
-	}
-
-	public String getTdate() {
-		return tdate;
-	}
-
-	public void setTdate(String tdate) {
-		this.tdate = tdate;
-	}
-
-	public String getAmount() {
-		return amount;
-	}
-
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getCreatedDt() {
-		return createdDt;
-	}
-
-	public void setCreatedDt(String createdDt) {
-		this.createdDt = createdDt;
-	}
-
-	public Long getGlHeadNo() {
-		return glHeadNo;
-	}
-
-	public void setGlHeadNo(Long glHeadNo) {
-		this.glHeadNo = glHeadNo;
-	}
 
 	public String getBankAccoununtNo() {
 		return bankAccoununtNo;
@@ -190,19 +122,19 @@ public class BranchMaster {
 	}
 
 	public String getBranch() {
-		return branch;
+		return branchName;
 	}
 
 	public void setBranch(String branch) {
-		this.branch = branch;
+		this.branchName = branch;
 	}
 
 	public String getAccountType() {
-		return accountType;
+		return branchAccountType;
 	}
 
 	public void setAccountType(String accountType) {
-		this.accountType = accountType;
+		this.branchAccountType = accountType;
 	}
 
 	public String getStatus() {
@@ -221,29 +153,6 @@ public class BranchMaster {
 		this.ifscCode = ifscCode;
 	}
 
-	public String getModule() {
-		return module;
-	}
-
-	public void setModule(String module) {
-		this.module = module;
-	}
-
-	public String getSelectTransactionCheckbox() {
-		return selectTransactionCheckbox;
-	}
-
-	public void setSelectTransactionCheckbox(String selectTransactionCheckbox) {
-		this.selectTransactionCheckbox = selectTransactionCheckbox;
-	}
-
-	public String getFlag() {
-		return flag;
-	}
-
-	public void setFlag(String flag) {
-		this.flag = flag;
-	}
 
 	public BigDecimal getBalance() {
 		return balance;
@@ -253,20 +162,5 @@ public class BranchMaster {
 		this.balance = balance;
 	}
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 
 }

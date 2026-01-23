@@ -103,7 +103,6 @@
 											</div>
 											<input name="fDate" type="date" value="01/08/2022" id="fDate"
 												class="form-control" data-inputmask="" data-mask="" />
-												
 										</div>
 										<small id="chkdatefrom" style="color: red;"></small>
 
