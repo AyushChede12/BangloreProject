@@ -11,6 +11,9 @@ public class BankMaster {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	private String bankId;
+
 
 	private String bankName;
 
@@ -38,6 +41,13 @@ public class BankMaster {
 		this.id = id;
 	}
 
+	public String getBankId() {
+		return bankId;
+	}
+
+	public void setBankId(String bankId) {
+		this.bankId = bankId;
+	}
 	public String getBankName() {
 		return bankName;
 	}

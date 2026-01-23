@@ -461,12 +461,12 @@ public class ConfigurationController {
 
 		List<BranchMaster> list = configurationService.getAllBranches();
 
-		ApiResponse<List<BranchMaster>> response = new ApiResponse<>(HttpStatus.OK,
-				"Branch list fetched successfully", list);
+		ApiResponse<List<BranchMaster>> response = new ApiResponse<>(HttpStatus.OK, "Branch list fetched successfully",
+				list);
 
 		return ResponseEntity.ok(response);
 	}
-	
+
 	@GetMapping("/getBranchModuleById") // Ayush
 	public ResponseEntity<ApiResponse<BranchMaster>> findBranchModuleById(@RequestParam("id") Long id) {
 		Optional<BranchMaster> branch = configurationService.findBranchDataById(id);
@@ -480,7 +480,30 @@ public class ConfigurationController {
 			return ResponseEntity.status(404).body(response);
 		}
 	}
-	
+
+	@PostMapping("/updateBranchMaster")
+	public ResponseEntity<ApiResponse<BranchMaster>> updateBranchMaster(@RequestBody BranchMaster branch) {
+
+		Optional<BranchMaster> existingBranch = configurationService.findBranchDataById(branch.getId());
+
+		if (existingBranch.isPresent()) {
+
+			BranchMaster updatedBranch = configurationService.updateBranch(branch);
+
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.OK, "Branch updated successfully",
+					updatedBranch);
+
+			return ResponseEntity.ok(response);
+
+		} else {
+
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"Branch not found for ID: " + branch.getId(), null);
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+	}
+
 	@PostMapping("/deleteBranchModuleById") // Ayush
 	public ResponseEntity<ApiResponse<String>> deleteBranchModule(@RequestParam("id") Long id) {
 		boolean isDeleted = configurationService.deleteBranchModule(id);
@@ -522,28 +545,18 @@ public class ConfigurationController {
 //		return "configuration/BranchFieldsShown";
 //	}
 
+//
 	@GetMapping("/AddBankAccount")
 	public String AddBankAccount(Model model) {
+		long maxId = bankMasterRepo.getMaxId();
+		String bankId = "BK" + "000" + (maxId + 1);
+		model.addAttribute("bankId", bankId);
 		return "configuration/AddBankAccount";
 	}
 
-	@GetMapping("/getAllBankAccount")
+// Bank API SAVE AND UPDATE
+	@PostMapping("/saveAndUpdateAllBankModule")
 	@ResponseBody
-	public List<BankMaster> getAllBankAccount(Model model) {
-		return bankMasterRepo.findAll();
-	}
-
-//	@PostMapping("/saveBankAccount")
-//	public String saveBankAccount(@ModelAttribute("saveBankAccount") BankMaster bankMaster, Model model,
-//			HttpSession session) {
-//		String createdBy = session.getAttribute("ID").toString();
-//		bankMaster.setCreatedBy(createdBy);
-//		bankMasterRepo.save(bankMaster);
-//		session.setAttribute("createdBy", createdBy);
-//		return "configuration/AddBankAccount";
-//	}
-
-	@PostMapping("/saveAndUpdateAllBankModule") // Ayush (without DTO)
 	public ResponseEntity<ApiResponse<BankMaster>> saveBank(@RequestBody BankMaster bankMaster) {
 		boolean isCreate = (bankMaster.getId() == null); // Check BEFORE saving
 
@@ -559,6 +572,57 @@ public class ConfigurationController {
 			return new ResponseEntity<>(response, HttpStatus.OK);
 		}
 	}
+
+// Arjun GET ALL DATA
+	@GetMapping("/getAllBankAccount")
+	@ResponseBody
+	public ResponseEntity<ApiResponse<List<BankMaster>>> getAllBankAccount() {
+		List<BankMaster> list = configurationService.getAllBankAccount();
+		ApiResponse<List<BankMaster>> response = new ApiResponse<>(HttpStatus.FOUND,
+				"Bank Account Fetched Successfully", list);
+		return ResponseEntity.ok(response);
+	}
+
+// Arjun Get By Id
+	@GetMapping("/getBankAccountById")
+	public ResponseEntity<ApiResponse<BankMaster>> findBankAccountById(@RequestParam("id") Long id) {
+		Optional<BankMaster> bank = configurationService.findBankAccountById(id);
+		if (bank.isPresent()) {
+			ApiResponse<BankMaster> response = new ApiResponse<>(HttpStatus.FOUND, "BankAccount fetched successfully",
+					bank.get());
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<BankMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"BankAccount not found for ID: " + id, null);
+			return ResponseEntity.status(404).body(response);
+		}
+	}
+
+// Arjun Delete Bank Account
+	@PostMapping("deleteBankAccountById")
+	@ResponseBody
+	public ResponseEntity<ApiResponse<String>> deleteBankAccount(@RequestParam("id") Long id) {
+		boolean isDeleted = configurationService.deleteBankAccountById(id);
+		if (isDeleted) {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.OK, "Bank Account deleted successfully",
+					"success");
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<String> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"Bank Account Not found for ID: " + id, "failure");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+	}
+
+//	@PostMapping("/saveBankAccount")
+//	public String saveBankAccount(@ModelAttribute("saveBankAccount") BankMaster bankMaster, Model model,
+//			HttpSession session) {
+//		String createdBy = session.getAttribute("ID").toString();
+//		bankMaster.setCreatedBy(createdBy);
+//		bankMasterRepo.save(bankMaster);
+//		session.setAttribute("createdBy", createdBy);
+//		return "configuration/AddBankAccount";
+//	}
 
 	@GetMapping("/CodeSetting")
 	public String CodeSetting(Model model) {
@@ -1143,7 +1207,5 @@ public class ConfigurationController {
 	public List<BranchMaster> getAllDataOfBranchMaster() {
 		return branchMasterRepo.findAll();
 	}
-	
-	
 
 }

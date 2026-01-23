@@ -19,7 +19,7 @@ th, td {
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -30,7 +30,10 @@ th, td {
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Policy Statement</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>GENERATE REPORT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">GOLD LOAN DOCUMENT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -41,41 +44,41 @@ th, td {
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="box box-warning">
-							<div class="box-header with-border">
+						<div class="box box-warning form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<div class="form-horizontal">
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Select by Policy No.<strong style="color: Red">*</strong></label>
-											<select name="policyno" id="policyno"
-												 class="form-control select2"
-												style="width: 100%;">
-												<option value=""></option>
-											</select>
-										</div>
+									<div class="col-md-6" style="margin-top: 15px;">
+
+										<label>Select by Policy No.<strong style="color: Red">*</strong></label>
+										<select name="policyno" id="policyno"
+											class="form-control select2" style="width: 100%;">
+											<option value=""></option>
+										</select>
+
 									</div>
-									<div class="col-md-9">
-										<div class="form-group">
-											<label></label>
-											<button type="submit" name="btnsearch"
-												onclick="policyStatement52();" id="btnsearch"
-												class="btn btn-success pull-right margin-r-5 margin-20">SEARCH
-											</button>
-										</div>
+									<div class="col-md-2" style="margin-top: 25px;">
+
+										<label></label>
+										<button type="submit" name="btnsearch"
+											onclick="policyStatement52();" id="btnsearch"
+											class="btn btn-success  margin-20">SEARCH
+										</button>
+
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="box box-success form-container"
+							style=" overflow: auto !important;">
+							<div class="box-header ">
+								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 							</div>
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+
 								<table id="tablepolicy" cellspacing="0" cellpadding="3"
 									rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
@@ -119,7 +122,7 @@ th, td {
 										</tr>
 									</thead>
 									<tbody id="tableBody"></tbody>
-									<caption style="font-weight: bold; text-align: center;">Policy
+									<caption style="font-weight: bold; ">Policy
 										Statement Report</caption>
 								</table>
 							</div>

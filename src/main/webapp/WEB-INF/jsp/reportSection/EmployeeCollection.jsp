@@ -14,7 +14,7 @@ table, th, td {
 	<!--     <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/EmployeeCollection.aspx" id="form1"> -->
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -28,7 +28,10 @@ table, th, td {
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Advisor Collection Report</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>GENERATE REPORT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">FINANCIAL CONSULTANT REPORT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -38,75 +41,75 @@ table, th, td {
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="box box-info form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search information</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Business Type:</label> <select name="businessType"
-											id="businessType" class="form-control" style="width: 100%;">
-											<option value="" selected="selected">-Select--</option>
-											<option value="NEW ADD RENEW">NEW ADD RENEW</option>
-											<option value="ONLY NEW">ONLY NEW</option>
-											<option value="ONLY RENEW">ONLY RENEW</option>
-										</select>
-									</div>
+								<div class="col-md-3" style="margin-top: 15px;">
+
+									<label>Business Type:</label> <select name="businessType"
+										id="businessType" class="form-control" style="width: 100%;">
+										<option value="" selected="selected">-Select--</option>
+										<option value="NEW ADD RENEW">NEW ADD RENEW</option>
+										<option value="ONLY NEW">ONLY NEW</option>
+										<option value="ONLY RENEW">ONLY RENEW</option>
+									</select>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Advisor Code :</label> <input name="advisorCode"
-											type="text" id="advisorCode" class="form-control"
-											Placeholder="Enter Advisor Code" autocomplete="off" />
-									</div>
+								<div class="col-md-3" style="margin-top: 15px;">
+
+									<label>Advisor Code :</label> <input name="advisorCode"
+										type="text" id="advisorCode" class="form-control"
+										Placeholder="Enter Advisor Code" autocomplete="off" />
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="fDate" type="date" id="fDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-3" style="margin-top: 15px;">
+
+									<label>From Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="fDate" type="date" id="fDate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="tDate" type="date" id="tDate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-3" style="margin-top: 15px;">
+
+									<label>To Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="tDate" type="date" id="tDate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label></label>
-										<button type="submit" onclick="getBusinessType(); "
-											class="btn btn-success pull-right margin-20">Search</button>
-									</div>
+								<div class="col-md-12 text-center" style="margin-top: 15px;">
+
+									<label></label>
+									<button type="submit" onclick="getBusinessType(); "
+										class="btn btn-success  margin-20">Search</button>
+
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="box box-success form-container"
+							style="overflow: auto !important;">
+							<div class="box-header ">
 								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 							</div>
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+								
 								<table cellspacing="0" cellpadding="3" rules="all"
 									class="display nowrap table table-hover table-striped table-bordered"
 									border="1" style="width: 100%; border-collapse: collapse;">

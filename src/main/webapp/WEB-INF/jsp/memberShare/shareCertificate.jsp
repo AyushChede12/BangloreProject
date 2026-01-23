@@ -5,7 +5,7 @@
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
 		<!-- Header End -->
@@ -159,7 +159,9 @@
 										border="1" id="ContentPlaceHolder1_gdvData"
 										style="width: 100%; border-collapse: collapse;"
 										id="shareCertificate">
-										<caption style="text-decoration: underline;"><h4>SHARE TRANSFER DATA LIST</h4></caption>
+										<caption style="text-decoration: underline;">
+											<h4>SHARE TRANSFER DATA LIST</h4>
+										</caption>
 										<tr style="color: White; background-color: #008385;">
 											<th scope="col">SR NO.</th>
 											<th scope="col">MEMBER NO. (FROM)</th>
@@ -191,154 +193,153 @@
 				</section>
 			</form>
 		</div>
+	</div>
 
-		<script type="text/javascript">
-			function calculate() {
-				var ShareTransfer = document.getElementById('shareTransfer').value;
-				var TransferAmount = document.getElementById('transferAmount');
-				var result = (10 * ShareTransfer);
-				transferAmount.value = result;
-			}
+	<script type="text/javascript">
+		function calculate() {
+			var ShareTransfer = document.getElementById('shareTransfer').value;
+			var TransferAmount = document.getElementById('transferAmount');
+			var result = (10 * ShareTransfer);
+			transferAmount.value = result;
+		}
 
-			function calculate2() {
-				let transferAmountInput = document
-						.getElementById('shareTransfer').value * 10;
-				var previousNoOfShare = document
-						.getElementById('previousNoOfShare').value * 10;
-				var result1 = transferAmountInput + previousNoOfShare;
-				totalAmount.value = result1;
-			}
+		function calculate2() {
+			let transferAmountInput = document.getElementById('shareTransfer').value * 10;
+			var previousNoOfShare = document
+					.getElementById('previousNoOfShare').value * 10;
+			var result1 = transferAmountInput + previousNoOfShare;
+			totalAmount.value = result1;
+		}
 
-			function calculate3() {
-				var reamingNoOfShareInput = document
-						.getElementById('reamingNoOfShare').value * 10;
-				reamingShareAmount.value = reamingNoOfShareInput;
-			}
-		</script>
+		function calculate3() {
+			var reamingNoOfShareInput = document
+					.getElementById('reamingNoOfShare').value * 10;
+			reamingShareAmount.value = reamingNoOfShareInput;
+		}
+	</script>
 
-		<script type="text/javascript">
-			document
-					.getElementById("shareTransfer")
-					.addEventListener(
-							"input",
-							function() {
+	<script type="text/javascript">
+		document
+				.getElementById("shareTransfer")
+				.addEventListener(
+						"input",
+						function() {
 
-								var noOfShare = parseFloat(document
-										.getElementById("noOfShare").value) || 0;
-								var shareTransfer = parseFloat(document
-										.getElementById("shareTransfer").value) || 0;
+							var noOfShare = parseFloat(document
+									.getElementById("noOfShare").value) || 0;
+							var shareTransfer = parseFloat(document
+									.getElementById("shareTransfer").value) || 0;
 
-								var remainingNoOfShare = noOfShare
-										- shareTransfer;
+							var remainingNoOfShare = noOfShare - shareTransfer;
 
-								document.getElementById("reamingNoOfShare").value = remainingNoOfShare;
-							});
-		</script>
+							document.getElementById("reamingNoOfShare").value = remainingNoOfShare;
+						});
+	</script>
 
-		<script type="text/javascript">
-			var previousNoOfShareInput = document
-					.getElementById("previousNoOfShare");
-			var shareTransferInput = document.getElementById("shareTransfer");
-			var totalShareInput = document.getElementById("totalShare");
+	<script type="text/javascript">
+		var previousNoOfShareInput = document
+				.getElementById("previousNoOfShare");
+		var shareTransferInput = document.getElementById("shareTransfer");
+		var totalShareInput = document.getElementById("totalShare");
 
-			function updateTotalShare() {
-				var previousNoOfShareValue = previousNoOfShareInput.value;
-				var shareTransferValue = shareTransferInput.value;
+		function updateTotalShare() {
+			var previousNoOfShareValue = previousNoOfShareInput.value;
+			var shareTransferValue = shareTransferInput.value;
 
-				// Ensure that the values are valid numbers; if not, default them to 0
-				var previousNoOfShare = parseFloat(previousNoOfShareValue) || 0;
-				var shareTransfer = parseFloat(shareTransferValue) || 0;
+			// Ensure that the values are valid numbers; if not, default them to 0
+			var previousNoOfShare = parseFloat(previousNoOfShareValue) || 0;
+			var shareTransfer = parseFloat(shareTransferValue) || 0;
 
-				var totalShare = previousNoOfShare + shareTransfer;
-				totalShareInput.value = totalShare;
-			}
+			var totalShare = previousNoOfShare + shareTransfer;
+			totalShareInput.value = totalShare;
+		}
 
-			// Add event listeners to the input fields to trigger the update function
-			previousNoOfShareInput.addEventListener("input", updateTotalShare);
-			shareTransferInput.addEventListener("input", updateTotalShare);
-			window.addEventListener("load", updateTotalShare);
-		</script>
+		// Add event listeners to the input fields to trigger the update function
+		previousNoOfShareInput.addEventListener("input", updateTotalShare);
+		shareTransferInput.addEventListener("input", updateTotalShare);
+		window.addEventListener("load", updateTotalShare);
+	</script>
 
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap 3.3.7 -->
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- InputMask -->
-		<script src="plugins/input-mask/jquery.inputmask.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-		<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
-		<!-- date-range-picker -->
-		<script src="bower_components/moment/min/moment.min.js"></script>
-		<script
-			src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<!-- bootstrap datepicker -->
-		<script
-			src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-		<!-- bootstrap color picker -->
-		<script
-			src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-		<!-- bootstrap time picker -->
-		<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-		<!-- SlimScroll -->
-		<script
-			src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-		<!-- iCheck 1.0.1 -->
-		<script src="plugins/iCheck/icheck.min.js"></script>
-		<!-- FastClick -->
-		<script src="bower_components/fastclick/lib/fastclick.js"></script>
-		<!-- AdminLTE App -->
-		<script src="dist/js/adminlte.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
-		<script src="dist/js/demo.js"></script>
-		<script src="dist/js/memberShare.js"></script>
-		<!-- Select2 -->
-		<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$('#btnTransfer').click(function() {
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- InputMask -->
+	<script src="plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<!-- date-range-picker -->
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script
+		src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap datepicker -->
+	<script
+		src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<!-- bootstrap color picker -->
+	<script
+		src="bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<!-- bootstrap time picker -->
+	<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- SlimScroll -->
+	<script
+		src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="plugins/iCheck/icheck.min.js"></script>
+	<!-- FastClick -->
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="dist/js/demo.js"></script>
+	<script src="dist/js/memberShare.js"></script>
+	<!-- Select2 -->
+	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btnTransfer').click(function() {
 
-					if ($("#memberNameTo").val() == "") {
-						alert("Select Whom You Want To Transfer Share");
-						return;
+				if ($("#memberNameTo").val() == "") {
+					alert("Select Whom You Want To Transfer Share");
+					return;
+				}
+				if ($("#shareTransfer").val() == "") {
+					alert("Write How Many Share You Want To Transfer");
+					return;
+				}
+				if ($("#transferAmount").val() == "") {
+					alert("Enter Amount You Want To Transfer");
+					return;
+				}
+				if ($("#transferDate").val() == "") {
+					alert("Write Transfer Date.");
+					return;
+				}
+				if ($("#memberNameTo").val() == "") {
+					alert("Select Whom You Want To Transfer Share");
+					return;
+				}
+
+				var form = $('#fileUploadForm')[0];
+				var data = new FormData(form);
+				$.ajax({
+					url : 'shareTransferCode',
+					type : 'POST',
+					enctype : 'multipart/form-data',
+					data : data,
+					processData : false,
+					contentType : false,
+					cache : false,
+					success : function(response) {
+						alert(response)
+						window.location.href = "shareCertificate";
+						//console.log(response);
+					},
+					error : function(xhr, status, error) {
+						console.log(xhr.responseText);
 					}
-					if ($("#shareTransfer").val() == "") {
-						alert("Write How Many Share You Want To Transfer");
-						return;
-					}
-					if ($("#transferAmount").val() == "") {
-						alert("Enter Amount You Want To Transfer");
-						return;
-					}
-					if ($("#transferDate").val() == "") {
-						alert("Write Transfer Date.");
-						return;
-					}
-					if ($("#memberNameTo").val() == "") {
-						alert("Select Whom You Want To Transfer Share");
-						return;
-					}
-
-					var form = $('#fileUploadForm')[0];
-					var data = new FormData(form);
-					$.ajax({
-						url : 'shareTransferCode',
-						type : 'POST',
-						enctype : 'multipart/form-data',
-						data : data,
-						processData : false,
-						contentType : false,
-						cache : false,
-						success : function(response) {
-							alert(response)
-							window.location.href = "shareCertificate";
-							//console.log(response);
-						},
-						error : function(xhr, status, error) {
-							console.log(xhr.responseText);
-						}
-					});
 				});
 			});
-		</script>
+		});
+	</script>
 </body>
 <!-- Dk/Admin/ShareCertificate.aspx EDB D 09:26:57 GMT -->
 </html>

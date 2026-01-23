@@ -38,11 +38,11 @@
 	$(document).ready(function() {
 		$("#hideshowtable").hide();
 
-		$("#hide").click(function() {
+		$("#hideB").click(function() {
 			$("#hideshowtable").hide();
 		});
 
-		$("#show").click(function() {
+		$("#showB").click(function() {
 			$("#hideshowtable").show();
 		});
 	});
@@ -54,7 +54,7 @@
 	<form method="post" action="saveBankAccount"
 		modelAttribute="saveBankAccount" id="form1" name="addBank">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -80,7 +80,7 @@
 								</div>
 								<div class="box-body">
 									<div class="col-md-12" style="margin-top: 15px;">
-										<div class="col-md-4">
+										<!-- <div class="col-md-4">
 											<label>BANK NAME :</label> <select name="bankName"
 												id="bankName" class="form-control select2"
 												style="width: 100%;">
@@ -177,6 +177,17 @@
 												<option value="YES Bank">YES Bank</option>
 											</select> <span id="bankNameMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
+										</div> -->
+										<input type="hidden" id="id" name="id">
+										<input type="hidden" id="bankId" name="bankId" value="${bankId}">
+
+										<div class="col-md-4">
+											<label>BANK NAME :</label> <input name="bankName" type="text"
+												id="bankName" class="form-control"
+												Placeholder="ENTER BANK NAME" autocomplete="off" /> <span
+												id="accountNoMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BANK NAME</span>
 										</div>
 
 										<div class="col-md-4">
@@ -218,89 +229,62 @@
 
 										<div class="col-md-4" style="margin-top: 15px;">
 											<label>OP. BALANCE :</label> <input name="openingBalance"
-												type="text" id="openingBalance" class="form-control" placeholder="ENTER OP. BALANCE"
-												autocomplete="off" /> <span
+												type="text" id="openingBalance" class="form-control"
+												placeholder="ENTER OP. BALANCE" autocomplete="off" /> <span
 												id="ContentPlaceHolder1_RequiredFieldValidator2"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												OP. BALANCE</span>
 										</div>
 
 									</div>
-									<div class="col-md-12">
-										<div style="margin-top: 20px;">
-
-											<!-- <table cellspacing="0" cellpadding="3" rules="all"
-												class="display nowrap table table-hover table-striped table-bordered"
-												border="1" style="width: 100%; border-collapse: collapse;">
-												<caption>BRANCH ACCESS LIST</caption>
-												<tr style="color: White; background-color: #008385;">
-													<th scope="col">B.CODE</th>
-													<th scope="col">B.NAME</th>
-													<th scope="col">Check</th>
-												</tr>
-												<tbody id="ContentPlaceHolder1_gdvBranchAddBank">
-												</tbody>
-											</table> -->
-
-											<table
-												class="table table-bordered table-hover table-striped custom-table datatable">
-												<thead>
-													<tr>
-														<th>SL No</th>
-														<th>B.CODE</th>
-														<th>B.NAME</th>
-														<th>CHECK</th>
-														<th>EDIT</th>
-														<th>DELETE</th>
-
-													</tr>
-												</thead>
-												<tbody id="branchTableBody">
-													<!-- dynamic rows -->
-												</tbody>
-											</table>
-
-											<span id="mappedBranchMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
-										</div>
-									</div>
 								</div>
 								<div class="box-footer" style="margin-top: 20px;">
 									<div class="row col-md-7">
 
-										<button type="button" name="save" value="Save" id="save"
+										<button type="button" name="save" value="Save" id="saveBank"
 											class="btn btn-success pull-right margin-r-5"
 											onclick="validateAddBank()">Save</button>
 
-										<button type="button" name="hide" value="hide" id="hide"
-											class="btn btn-success pull-right margin-r-5">Hide</button>
+										<button type="button" name="hide" value="hide" id="hideB"
+											class="btn btn-success pull-right margin-r-5"
+											onclick="hideBank()" style="display: none;">Hide</button>
+											
+										<button type="button" name="update" value="update" id="updateB"
+											class="btn btn-success pull-right margin-r-5"
+											onclick="updateBank()" style="display: none;">Update</button>
 
-										<button type="button" name="show" value="show" id="show"
-											class="btn btn-success pull-right margin-r-5">Show</button>
+										<button type="button" name="show" value="show" id="showB"
+											class="btn btn-success pull-right margin-r-5"
+											onclick="showBank()" >Show</button>
 
 									</div>
 								</div>
 							</div>
-							<div class="form-container" style="overflow: auto !important;" id="hideshowtable">
+							<div class="form-container" style="overflow: auto !important;"
+								id="hideshowtable">
 								<div class="box-body">
 									<div class="clearfix margin-bottom-10"></div>
 									<div>
 										<section>
-											
+
 											<table
 												class="table table-bordered table-hover table-striped custom-table datatable">
 												<thead>
 													<tr>
 														<th>SL NO</th>
-														<th>ACCOUNT NO</th>
+														<th>BANK ID</th>
 														<th>BANK NAME</th>
+														<th>ACCOUNT NO</th>
 														<th>MOBILE NO.</th>
+														<th>ADDRESS</th>
 														<th>OP. DATE</th>
 														<th>OP. BALANCE</th>
+														<th>EDIT</th>
+														<th>DELETE</th>
 
 													</tr>
 												</thead>
-												<tbody id="branchTableBody">
+												<tbody id="bankTableBody">
 													<!-- dynamic rows -->
 												</tbody>
 											</table>

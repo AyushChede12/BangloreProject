@@ -7,7 +7,7 @@
 		id="form1"> -->
 
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -25,7 +25,10 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
-					<h1 id="ContentPlaceHolder1_IdHeader">Incentive List Print</h1>
+					<h1 id="ContentPlaceHolder1_IdHeader">
+						<b>BONUS MANAGEMENT</b>
+					</h1>
+					<h5 style="margin-left: 18px;">INCENTIVE SUMMARY REPORT</h5>
 					<ol class="breadcrumb">
 						<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 						<li><a href="#">Dashboard</a></li>
@@ -35,13 +38,13 @@
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box box-success">
-								<div class="box-header with-border">
+							<div class="box box-success form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Search Box</h3>
 								</div>
 								<div class="box-body">
-									<div class="col-md-3">
-										<div class="form-group">
+									<div class="col-md-4"style="margin-top: 15px;">
+										
 											<label>Month Name :</label> <select name="invmonth" id="invmonth"
 												class="form-control" style="width: 100%;">
 												<option selected="selected" value="">--SELECT MONTH NAME--</option>
@@ -58,39 +61,39 @@
 												<option value="November">November</option>
 												<option value="December">December</option>
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+									<div class="col-md-4"style="margin-top: 15px;">
+										
 											<label>Branch :</label> <select
 												name="branchName"
 												id="branchName" class="form-control"
 												style="width: 100%;">
 												<option value="" selected="selected">--SELECT BRANCH--</option>
 											</select>
-										</div>
+										
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+									<div class="col-md-4"style="margin-top: 15px;">
+										
 											<label>Code :</label> <input
 												name="code" type="text"
 												id="code" class="form-control" />
-										</div>
+										
 									</div>
-									<div class="col-md-3">
-										<div class="form-group">
+									<div class="col-md-12 text-center" style="margin-top: 20px;">
+										
 											<label></label> <input type="submit"
 											name="ctl00$ContentPlaceHolder1$btnSave" value="Search"
 											onclick="searchIncentiveListPrints();"
 											id="ContentPlaceHolder1_btnSave"
-											class="btn btn-success pull-right margin-r-5" />
-										</div>
+											class="btn btn-success  margin-r-5" />
+										
 									</div>
-									<div class="clearfix margin-bottom-10"></div>
+									
 								</div>
 							</div>
-							<div class="box box-success"
-								style="box-shadow: none; overflow: auto !important;">
+							<div class="box box-success form-container"
+								style=" overflow: auto !important;">
 								<div class="box-header with-border">
 									<div class="box-tools pull-right"></div>
 									<table cellspacing="0" cellpadding="3" rules="all"

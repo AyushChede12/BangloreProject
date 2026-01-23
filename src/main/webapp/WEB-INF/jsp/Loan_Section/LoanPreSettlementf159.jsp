@@ -114,7 +114,7 @@
 		<input name="id" type="hidden" id="id" class="form-control"
 			data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;" data-mask="" />
 		<div
-			style="height: auto; min-height: 100%;  margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%;  background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->

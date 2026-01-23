@@ -8,7 +8,7 @@
 	<!-- <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/LoanCollectionsheetPrint.aspx" id="form1"> -->
 
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -21,7 +21,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Loan Sheet Print</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>GENERATE REPORT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">LOAN CONFIRMATION DOCUMENT	</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -31,67 +34,68 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="box box-info form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Plan</label> <select name="plan" id="plan"
-											class="form-control" style="width: 100%;">
-											<option>All</option>
-											<option value="DRD ADVANTAGE">DRD ADVANTAGE</option>
-											<option value="GROW">GROW</option>
-											<option value="GROW+">GROW+</option>
-											<option value="MIS-12">MIS-12</option>
-											<option value="ROYAL+">ROYAL+</option>
-											<option value="ROYAL FI">ROYAL FI</option>
-											<option value="ROYAL FIX">ROYAL FIX</option>
-											<option value="WEALTH 1">WEALTH 1</option>
-											<option value="WEALTH 3">WEALTH 3</option>
-											<option value="WEALTH 5">WEALTH 5</option>
-										</select>
-									</div>
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>Plan</label> <select name="plan" id="plan"
+										class="form-control" style="width: 100%;">
+										<option>All</option>
+										<option value="DRD ADVANTAGE">DRD ADVANTAGE</option>
+										<option value="GROW">GROW</option>
+										<option value="GROW+">GROW+</option>
+										<option value="MIS-12">MIS-12</option>
+										<option value="ROYAL+">ROYAL+</option>
+										<option value="ROYAL FI">ROYAL FI</option>
+										<option value="ROYAL FIX">ROYAL FIX</option>
+										<option value="WEALTH 1">WEALTH 1</option>
+										<option value="WEALTH 3">WEALTH 3</option>
+										<option value="WEALTH 5">WEALTH 5</option>
+									</select>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Advisor Code</label> <input name="advisorCode" placeholder="Enter Advisor Code"
-											type="text" id="advisorCode" class="form-control" />
-									</div>
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>Advisor Code</label> <input name="advisorCode"
+										placeholder="Enter Advisor Code" type="text" id="advisorCode"
+										class="form-control" />
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Till Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="tillDate" type="date" value="01/08/2022"
-												id="tillDate" class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>Till Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="tillDate" type="date" value="01/08/2022"
+											id="tillDate" class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label></label>
-										 <button type="submit" onclick="LoanSheetPrint();"
-											class="btn btn-success pull-right margin-20">Search</button>
-									</div>
+								<div class="col-md-12 text-center" style="margin-top: 15px;">
+
+									<label></label>
+									<button type="submit" onclick="LoanSheetPrint();"
+										class="btn btn-success margin-20">Search</button>
+
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="box box-success form-container"
+							style="overflow: auto !important;">
+							<div class="box-header ">
 								<h3 class="box-title">Search Result</h3>
 								<div class="box-tools pull-right"></div>
 							</div>
 							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+
 								<div>
 									<h4
 										style="text-align: center; font-weight: bold; text-decoration: underline;">
@@ -175,7 +179,7 @@
 	<script src="dist/js/LoanSheetPrint.js"></script>
 	<!-- Select2 -->
 	<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
-	
+
 	<!-- </form> -->
 </body>
 

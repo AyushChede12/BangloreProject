@@ -2,12 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<body class="skin-blue sidebar-mini" onload="GetBranchNameInTheDropDown();"
+<body class="skin-blue sidebar-mini"
+	onload="GetBranchNameInTheDropDown();"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<!--  <form method="post" action="http://admin:eqfi%23123@eqfinidhi.eadmin.in/Admin/LoanPaymentReport.aspx" id="form1"> -->
 	<div
-		style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+		style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 
 		<!-- Header Start-->
 		<jsp:include page="../menu.jsp" />
@@ -20,7 +21,10 @@
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 
 			<section class="content-header">
-				<h1 id="ContentPlaceHolder1_IdHeader">Loan Payment Report</h1>
+				<h1 id="ContentPlaceHolder1_IdHeader">
+					<b>GENERATE REPORT</b>
+				</h1>
+				<h5 style="margin-left: 18px;">LOAN PAYMENT REPORT</h5>
 				<ol class="breadcrumb">
 					<li><a href="Home.html"><i class="fa fa-dashboard"></i>Home</a></li>
 					<li><a href="#">Dashboard</a></li>
@@ -30,110 +34,111 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box box-info">
-							<div class="box-header with-border">
+						<div class="box box-info form-container">
+							<div class="box-header ">
 								<h3 class="box-title">Search Box</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>Branch</label> <select name="selectbranch"
-											id="selectbranch" class="form-control" style="width: 100%;">
-											<option>All Branch</option>
-										</select>
-									</div>
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>Branch</label> <select name="selectbranch"
+										id="selectbranch" class="form-control" style="width: 100%;">
+										<option>All Branch</option>
+									</select>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>From Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="fromdate" type="date" id="fromdate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>From Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="fromdate" type="date" id="fromdate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label>To Date :</label>
-										<div class="input-group date">
-											<div class="input-group-addon">
-												<i class="fa fa-calendar"></i>
-											</div>
-											<input name="todate" type="date" id="todate"
-												class="form-control"
-												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
-												data-mask="" />
+								<div class="col-md-4" style="margin-top: 15px;">
+
+									<label>To Date :</label>
+									<div class="input-group date">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
 										</div>
+										<input name="todate" type="date" id="todate"
+											class="form-control"
+											data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
+											data-mask="" />
 									</div>
+
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<label></label>
-										<button type="submit" id="btnSearch"
-											class="btn btn-success margin-20"
-											onclick="LoanPaymentReportAjax();">
-											<span class="fa fa-search"></span> SEARCH
-										</button>
-									</div>
+								<div class="col-md-12 text-center" style="margin-top: 15px;">
+
+									<label></label>
+									<button type="submit" id="btnSearch"
+										class="btn btn-success margin-20"
+										onclick="LoanPaymentReportAjax();">
+										<span class="fa fa-search"></span> SEARCH
+									</button>
+
 								</div>
-								<div class="clearfix margin-bottom-10"></div>
+
 							</div>
 						</div>
-						<div class="box box-success"
-							style="box-shadow: none; overflow: auto !important;">
-							<div class="box-header with-border">
+						<div class="box box-success form-container"
+							style="overflow: auto !important;">
+							<div class="box-header ">
 								<h3 class="box-title">Search Result</h3>
-								<div class="box-tools pull-right"></div>
-								<!--Table Starts Here  -->
-								<div>
-									<h5
-										style="text-align: center; font-weight: bold; text-decoration: underline;">LOAN
-										PAYMENT REPORT</h5>
-
-									<table cellspacing="1" cellpadding="1" rules="all"
-										class="display nowrap table table-hover table-striped table-bordered"
-										border="5" style="width: 100%; border-collapse: collapse;">
-
-										<tr style="color: White; background-color: #008385;">
-											<th scope="col">SlNo</th>
-											<th scope="col">Loan ID</th>
-											<th scope="col">Member Code</th>
-											<th scope="col">Member Name</th>
-											<th scope="col">Loan Date</th>
-											<th scope="col">Branch</th>
-											<th scope="col">Loan Name</th>
-											<th scope="col">Loan Amount</th>
-											<th scope="col">Term</th>
-											<th scope="col">Mode</th>
-											<th scope="col">ROI</th>
-											<th scope="col">App Date</th>
-											<th scope="col">Pay Date</th>
-											<th scope="col">Pay Mode</th>
-											<th scope="col">Pay Details</th>
-										</tr>
-
-										<tbody id="table">
-
-										</tbody>
-									</table>
-
-								</div>
 							</div>
-							<div class="box-body">
-								<div class="clearfix margin-bottom-10"></div>
+							<div class="box-tools pull-right"></div>
+							<!--Table Starts Here  -->
+							<div>
+								<h4
+									style="text-align: center; font-weight: bold; text-decoration: underline; margin-top: 15px;">LOAN
+									PAYMENT REPORT</h4>
+
+								<table cellspacing="1" cellpadding="1" rules="all"
+									class="display nowrap table table-hover table-striped table-bordered"
+									border="5" style="width: 100%; border-collapse: collapse;">
+
+									<tr style="color: White; background-color: #008385;">
+										<th scope="col">SlNo</th>
+										<th scope="col">Loan ID</th>
+										<th scope="col">Member Code</th>
+										<th scope="col">Member Name</th>
+										<th scope="col">Loan Date</th>
+										<th scope="col">Branch</th>
+										<th scope="col">Loan Name</th>
+										<th scope="col">Loan Amount</th>
+										<th scope="col">Term</th>
+										<th scope="col">Mode</th>
+										<th scope="col">ROI</th>
+										<th scope="col">App Date</th>
+										<th scope="col">Pay Date</th>
+										<th scope="col">Pay Mode</th>
+										<th scope="col">Pay Details</th>
+									</tr>
+
+									<tbody id="table">
+
+									</tbody>
+								</table>
+
 							</div>
+						</div>
+						<div class="box-body">
+							<div class="clearfix margin-bottom-10"></div>
 						</div>
 					</div>
 				</div>
-			</section>
 		</div>
-		<!-- /.content-wrapper -->
-		<div class="control-sidebar-bg"></div>
+		</section>
+	</div>
+	<!-- /.content-wrapper -->
+	<div class="control-sidebar-bg"></div>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>

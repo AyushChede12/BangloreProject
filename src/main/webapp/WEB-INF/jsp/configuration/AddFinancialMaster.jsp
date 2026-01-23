@@ -46,7 +46,7 @@
 	cz-shortcut-listen="true">
 	<form>
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%;  background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -103,7 +103,6 @@
 											</div>
 											<input name="fDate" type="date" value="01/08/2022" id="fDate"
 												class="form-control" data-inputmask="" data-mask="" />
-												
 										</div>
 										<small id="chkdatefrom" style="color: red;"></small>
 

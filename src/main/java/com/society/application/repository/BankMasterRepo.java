@@ -14,4 +14,7 @@ public interface BankMasterRepo extends JpaRepository<BankMaster, Long> {
 	List<BankMaster> getlastFiveRecords();
 
 	List<BankMaster> findByaccountNo(String accountNo);
+
+	@Query("Select coalesce(max(id),0) from BankMaster")
+	long getMaxId();
 }
