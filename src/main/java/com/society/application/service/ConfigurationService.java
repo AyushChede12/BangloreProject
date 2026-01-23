@@ -264,6 +264,31 @@ public class ConfigurationService {
 		}
 		return false;
 	}
+	
+	public BranchMaster updateBranch(BranchMaster branch) {
+
+	    BranchMaster existing =
+	            branchMasterRepo.findById(branch.getId())
+	                    .orElseThrow(() -> new RuntimeException("Branch not found"));
+
+	    existing.setGlHeadNo(branch.getGlHeadNo());
+	    existing.setName(branch.getName());
+	    existing.setBankAccoununtNo(branch.getBankAccoununtNo());
+	    existing.setBranch(branch.getBranch());
+	    existing.setBranchCode(branch.getBranchCode());
+	    existing.setAddress(branch.getAddress());
+	    existing.setAccountType(branch.getAccountType());
+	    existing.setOpeningDate(branch.getOpeningDate());
+	    existing.setStatus(branch.getStatus());
+	    existing.setPin(branch.getPin());
+	    existing.setState(branch.getState());
+	    existing.setContactPerson(branch.getContactPerson());
+	    existing.setContactNo(branch.getContactNo());
+	    existing.setIfscCode(branch.getIfscCode());
+	    existing.setBalance(branch.getBalance());
+
+	    return branchMasterRepo.save(existing);
+	}
 
 	public List<BankMaster> fetchAllBankModule() {
 		// TODO Auto-generated method stub
@@ -271,3 +296,4 @@ public class ConfigurationService {
 	}
 
 }
+

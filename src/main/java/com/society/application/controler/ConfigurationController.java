@@ -461,12 +461,12 @@ public class ConfigurationController {
 
 		List<BranchMaster> list = configurationService.getAllBranches();
 
-		ApiResponse<List<BranchMaster>> response = new ApiResponse<>(HttpStatus.OK,
-				"Branch list fetched successfully", list);
+		ApiResponse<List<BranchMaster>> response = new ApiResponse<>(HttpStatus.OK, "Branch list fetched successfully",
+				list);
 
 		return ResponseEntity.ok(response);
 	}
-	
+
 	@GetMapping("/getBranchModuleById") // Ayush
 	public ResponseEntity<ApiResponse<BranchMaster>> findBranchModuleById(@RequestParam("id") Long id) {
 		Optional<BranchMaster> branch = configurationService.findBranchDataById(id);
@@ -481,6 +481,30 @@ public class ConfigurationController {
 		}
 	}
 	
+
+	@PostMapping("/updateBranchMaster")
+	public ResponseEntity<ApiResponse<BranchMaster>> updateBranchMaster(@RequestBody BranchMaster branch) {
+
+		Optional<BranchMaster> existingBranch = configurationService.findBranchDataById(branch.getId());
+
+		if (existingBranch.isPresent()) {
+
+			BranchMaster updatedBranch = configurationService.updateBranch(branch);
+
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.OK, "Branch updated successfully",
+					updatedBranch);
+
+			return ResponseEntity.ok(response);
+
+		} else {
+
+			ApiResponse<BranchMaster> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"Branch not found for ID: " + branch.getId(), null);
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+		}
+	}
+
 	@PostMapping("/deleteBranchModuleById") // Ayush
 	public ResponseEntity<ApiResponse<String>> deleteBranchModule(@RequestParam("id") Long id) {
 		boolean isDeleted = configurationService.deleteBranchModule(id);
@@ -1152,7 +1176,5 @@ public class ConfigurationController {
 	public List<BranchMaster> getAllDataOfBranchMaster() {
 		return branchMasterRepo.findAll();
 	}
-	
-	
 
 }
