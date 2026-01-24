@@ -86,15 +86,50 @@
 						<div class="col-md-12">
 							<div class="form-container">
 								<div class="box-header ">
+									<h3 class="box-title">BANK DETAILS</h3>
+								</div>
+								<div class="box-body">
+									<div class="col-md-12" style="margin-top: 15px;">
+										<div class="col-md-4">
+											<label>BANK ID :</label> <select name="bankId" id="bankId"
+												class="form-control">
+												<option value="">-- Select Bank ID --</option>
+												
+											</select>
+										</div>
+
+										<div class="col-md-4">
+											<label>BANK NAME :</label> <input name="bankName" type="text"
+												readonly="readonly" id="bankName" class="form-control"
+												Placeholder="BANK NAME " autocomplete="off" /> <span
+												id="bankName"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
+												Bank Name</span>
+										</div>
+
+										<div class="col-md-4">
+											<label>BANK ACCOUNT NO :</label> <input name="accountNo"
+												type="text" id="accountNo" class="form-control"
+												readonly="readonly" Placeholder="ENTER ACCOUNT NO"
+												autocomplete="off" /> <span id="accountNoMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												ACCOUNT NO.</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="form-container">
+								<div class="box-header ">
 									<h3 class="box-title">Branch Details</h3>
 								</div>
 								<div class="box-body">
 									<div class="col-md-12" style="margin-top: 15px;">
-									
-									
-									<input type="hidden" id="branchId">
-									
-										<div class="col-md-4">
+
+
+										<input type="hidden" id="branchId">
+
+										<!-- <div class="col-md-4">
 
 											<label>G.L.HEAD NO. <strong style="color: Red">*</strong></label>
 
@@ -104,9 +139,9 @@
 												id="branchCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												GL HEAD NO.</span> <small id="vglheadno" style="color: red;"></small>
-										</div>
+										</div> -->
 
-										<div class="col-md-4">
+										<!-- <div class="col-md-4">
 											<label>BANK NAME <strong style="color: Red">*</strong></label>
 
 											<input name="name" type="text" id="name" class="form-control"
@@ -115,9 +150,9 @@
 												id="branchNameMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												BANK NAME</span> <small id="vbankname" style="color: red;"></small>
-										</div>
+										</div> -->
 
-										<div class="col-md-4">
+										<!-- <div class="col-md-4">
 											<label>BANK ACCOUNT NO<strong style="color: Red">*</strong></label>
 
 											<input name="bankAccoununtNo" type="text"
@@ -126,19 +161,9 @@
 												autocomplete="off" /> <span id="bankAccoununtNoMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												BANK ACCOUNT NO.</span> <small id="vbankacno" style="color: red;"></small>
-										</div>
+										</div> -->
 
-										<div class="col-md-4" style="margin-top: 15px;">
-											<label>BRANCH NAME<strong style="color: Red">*</strong></label> <input
-												name="branch" type="text" id="branch" class="form-control"
-												style="text-transform: uppercase;"
-												placeholder="ENTER BRANCH" autocomplete="off" /> <span
-												id="branchMsg"
-												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
-												BRANCH</span> <small id="vbranch" style="color: red;"></small>
-										</div>
-
-										<div class="col-md-4" style="margin-top: 15px;">
+										<div class="col-md-4">
 											<label>BRANCH CODE <strong style="color: Red">*</strong></label>
 											<input name="code" type="text" id="code"
 												style="text-transform: uppercase;" class="form-control"
@@ -148,7 +173,17 @@
 												CODE</span> <small id="vbranchcode" style="color: red;"></small>
 										</div>
 
-										<div class="col-md-4" style="margin-top: 15px;">
+										<div class="col-md-4">
+											<label>BRANCH NAME<strong style="color: Red">*</strong></label>
+											<input name="branch" type="text" id="branch"
+												class="form-control" style="text-transform: uppercase;"
+												placeholder="ENTER BRANCH" autocomplete="off" /> <span
+												id="branchMsg"
+												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
+												BRANCH</span> <small id="vbranch" style="color: red;"></small>
+										</div>
+
+										<div class="col-md-4">
 											<label for="txtAddress">ADDRESS <strong
 												style="color: Red">*</strong>
 											</label>
@@ -161,27 +196,13 @@
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												ADDRESS</span> <small id="vaddress" style="color: red;"></small>
 										</div>
-										<!-- row 2  -->
-										<div class="col-md-12" style="margin-top: 15px;">
-											<div class="checkbox-container col-md-4 ">
-												<label for="checkbox1">ALLOW INTER BRANCH
-													TRANSACTION</label> <input value="Allow Inter Branch Transaction"
-													type="checkbox" id="selectTransactionCheckbox"
-													name="selectTransactionCheckbox" style="margin-left: 5px;">
-											</div>
-											<div class="checkbox-container col-md-4">
-												<label for="checkbox2">IS FOR FUND TRANSFER</label> <input
-													value="Is For Fund Transfer" type="checkbox"
-													id="selectTransactionCheckbox"
-													name="selectTransactionCheckbox" style="margin-left: 5px;">
-											</div>
-										</div>
+
 
 
 									</div>
 									<div class="col-md-12" style="margin-top: 15px">
 										<div class="col-md-4">
-											<label for="accountType">ACCOUNT TYPE <strong
+											<label for="accountType">BRANCH ACCOUNT TYPE <strong
 												style="color: Red">*</strong>
 											</label> <select name="accountType" id="accountType"
 												class="form-control select2" style="width: 100%;">
@@ -193,11 +214,11 @@
 
 											</select> <span id="accountTypeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">SELECT
-												ACCOUNT TYPE</span> <small id="vactype" style="color: red;"></small>
+												BRANCH ACCOUNT TYPE</span> <small id="vactype" style="color: red;"></small>
 										</div>
 
 										<div class="col-md-4">
-											<label>ACCOUNT OPEN DATE <strong style="color: Red">*</strong>
+											<label>BRANCH OPEN DATE <strong style="color: Red">*</strong>
 											</label> <input name="openingDate" type="date" id="openingDate"
 												class="form-control"
 												data-inputmask="&#39;alias&#39;: &#39;dd/mm/yyyy&#39;"
@@ -305,6 +326,21 @@
 												autocomplete="off" /> <span id="ifscCodeMsg"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">ENTER
 												BALANCE</span> <small id="vbalance" style="color: red;"></small>
+										</div>
+										<!-- row 2  -->
+										<div class="col-md-12" style="margin-top: 15px;">
+											<div class="checkbox-container col-md-4 ">
+												<label for="checkbox1">ALLOW INTER BRANCH
+													TRANSACTION</label> <input value="Allow Inter Branch Transaction"
+													type="checkbox" id="selectTransactionCheckbox"
+													name="selectTransactionCheckbox" style="margin-left: 5px;">
+											</div>
+											<div class="checkbox-container col-md-4">
+												<label for="checkbox2">IS FOR FUND TRANSFER</label> <input
+													value="Is For Fund Transfer" type="checkbox"
+													id="selectTransactionCheckbox"
+													name="selectTransactionCheckbox" style="margin-left: 5px;">
+											</div>
 										</div>
 
 

@@ -184,18 +184,11 @@ public class ConfigurationService {
 			existing.setState(branchModule.getState());
 			existing.setContactPerson(branchModule.getContactPerson());
 			existing.setContactNo(branchModule.getContactNo());
-			existing.setFdate(branchModule.getFdate());
-			existing.setTdate(branchModule.getTdate());
-			existing.setAmount(branchModule.getAmount());
-			existing.setGlHeadNo(branchModule.getGlHeadNo());
 			existing.setBankAccoununtNo(branchModule.getBankAccoununtNo());
 			existing.setBranch(branchModule.getBranch());
 			existing.setStatus(branchModule.getStatus());
 			;
 			existing.setIfscCode(branchModule.getIfscCode());
-			existing.setModule(branchModule.getModule());
-			existing.setSelectTransactionCheckbox(branchModule.getSelectTransactionCheckbox());
-			existing.setFlag(branchModule.getFlag());
 			;
 			existing.setBalance(branchModule.getBalance());
 
@@ -211,6 +204,7 @@ public class ConfigurationService {
 			BankMaster existing = bankMasterRepo.findById(bankMaster.getId())
 					.orElseThrow(() -> new RuntimeException("Branch not found with ID: " + bankMaster.getId()));
 
+			existing.setBankId(bankMaster.getBankId());
 			existing.setBankName(bankMaster.getBankName());
 			existing.setAccountNo(bankMaster.getAccountNo());
 			existing.setMobileNo(bankMaster.getMobileNo());
@@ -245,8 +239,6 @@ public class ConfigurationService {
 			throw new RuntimeException("Branch Code already exists");
 		}
 
-		branch.setCreatedAt(LocalDateTime.now());
-		branch.setBalance(BigDecimal.ZERO);
 
 		return branchMasterRepo.save(branch);
 	}
@@ -271,14 +263,12 @@ public class ConfigurationService {
 	            branchMasterRepo.findById(branch.getId())
 	                    .orElseThrow(() -> new RuntimeException("Branch not found"));
 
-	    existing.setGlHeadNo(branch.getGlHeadNo());
 	    existing.setName(branch.getName());
 	    existing.setBankAccoununtNo(branch.getBankAccoununtNo());
 	    existing.setBranch(branch.getBranch());
 	    existing.setBranchCode(branch.getBranchCode());
 	    existing.setAddress(branch.getAddress());
 	    existing.setAccountType(branch.getAccountType());
-	    existing.setOpeningDate(branch.getOpeningDate());
 	    existing.setStatus(branch.getStatus());
 	    existing.setPin(branch.getPin());
 	    existing.setState(branch.getState());
@@ -289,6 +279,24 @@ public class ConfigurationService {
 
 	    return branchMasterRepo.save(existing);
 	}
+
+	public List<BankMaster> getAllBankAccount() {
+		return bankMasterRepo.findAll();
+	}
+
+	public Optional<BankMaster> findBankAccountById(Long id) {
+		// TODO Auto-generated method stub
+		return bankMasterRepo.findById(id);
+	}
+
+	public boolean deleteBankAccountById(Long id) {
+	    if (bankMasterRepo.existsById(id)) {
+	        bankMasterRepo.deleteById(id);
+	        return true;
+	    }
+	    return false;
+	}
+
 
 }
 
