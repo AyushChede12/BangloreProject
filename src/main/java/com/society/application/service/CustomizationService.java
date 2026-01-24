@@ -57,6 +57,15 @@ FinancialYearRepo financialYearRepo;
 	public Optional<FinancialYear> findFinancialYearById(Long id) {
 		return financialYearRepo.findById(id);
 	}
+
+
+	public boolean deleteFinancialYear(Long id) {
+		if (financialYearRepo.existsById(id)) {
+			financialYearRepo.deleteById(id);
+			return true;
+		}
+		return false;
+	}
 	
 	
 	
