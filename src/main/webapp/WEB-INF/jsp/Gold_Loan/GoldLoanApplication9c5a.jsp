@@ -2,7 +2,6 @@
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.Loan"%>
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
@@ -28,16 +27,7 @@
 			<!-- Aside Menu Start-->
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
-			<%
-			//List<Member> memberList = (List<Member>) request.getAttribute("memberList"); 
-			List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-			%>
-			<%
-			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-			%>
-			<%
-			List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-			%>
+			
 
 			<%
 			String status = (String) request.getAttribute("status");
@@ -137,16 +127,7 @@
 												<select name="searchMemberCode" id="searchMemberCode"
 													onchange="displayMemberDetails()"
 													class="form-control select2" style="width: 100%;">
-													<%
-													if (memberList != null && !memberList.isEmpty()) {
-														for (/* Member member : memberList */
-														ClientMaster member : memberList) {
-													%>
-													<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select> <span
 													id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -251,15 +232,7 @@
 											<div class="col-sm-8">
 												<select name="cspName" id="cspName" class="form-control"
 													style="width: 100%;">
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select>
 											</div>
 										</div>
@@ -272,15 +245,7 @@
 													<select name="loanPlanName" id="loanPlanName"
 														class="form-control" style="width: 100%;"
 														onchange="displayLoanMasterDetails()">
-														<%
-														if (loanMasterList != null && !loanMasterList.isEmpty()) {
-															for (LoanMaster loanPlan : loanMasterList) {
-														%>
-														<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
-														<%
-														}
-														}
-														%>
+														
 													</select>
 												</div>
 											</div>

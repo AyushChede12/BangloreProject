@@ -1,4 +1,3 @@
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="java.util.List"%>
 <jsp:include page="../header.jsp" />
 <body
@@ -10,7 +9,7 @@
 		 id="form1"
 		>
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -29,9 +28,7 @@
 						<li class="active">Loan Details</li>
 					</ol>
 				</section>
-				<%
-				List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+				
 				<section class="content">
 					<div id="ContentPlaceHolder1_idSearch" class="row">
 						<div class="col-md-12">
@@ -199,15 +196,7 @@
 											<div class="col-sm-8">
 												<select name="cspName" id="cspName" class="form-control"
 													style="width: 100%;">
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select> <span id="cspNameMsg"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 													PIN</span>

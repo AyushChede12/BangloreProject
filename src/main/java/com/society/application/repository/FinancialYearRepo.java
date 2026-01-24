@@ -4,9 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.society.application.model.AddInvestment;
-import com.society.application.model.FYMaster;
+import com.society.application.model.FinancialYear;
 
 @Repository
-public interface FYMasterRepo extends JpaRepository<FYMaster, Long> {
+public interface FinancialYearRepo extends JpaRepository<FinancialYear, Long> {
 
 }

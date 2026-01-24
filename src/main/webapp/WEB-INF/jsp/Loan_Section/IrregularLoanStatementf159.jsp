@@ -1,8 +1,4 @@
-<%@page import="com.society.application.model.LoanMaster"%>
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
-<%@page import="com.society.application.model.Loan"%>
+
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
 <script src="dist/js/investmentSection.js"></script>
@@ -25,9 +21,7 @@
 			<!-- Aside Menu Start-->
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
-			<%
-			List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
-			%>
+			
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
 				<section class="content-header">
@@ -58,15 +52,7 @@
 												id="searchLoanId1" class="form-control select2"
 												style="width: 100%;">
 												<option selected="selected" value="">Select Loan ID</option>
-												<%
-												if (loanList != null && !loanList.isEmpty()) {
-													for (Loan loan : loanList) {
-												%>
-												<option value="<%=loan.getId()%>"><%=loan.getId()%></option>
-												<%
-												}
-												}
-												%>
+												
 											</select>
 
 										</div>

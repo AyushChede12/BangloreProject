@@ -268,7 +268,7 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="LoanPlan"><i class="fa fa-circle-o"></i>
+					<li><a href="LoanPlan5c22"><i class="fa fa-circle-o"></i>
 							CREATE LENDING GROUP </a></li>
 					<li><a href="LoanGroupMaster"><i class="fa fa-circle-o"></i>
 							GROUP DIRECTORY</a></li>

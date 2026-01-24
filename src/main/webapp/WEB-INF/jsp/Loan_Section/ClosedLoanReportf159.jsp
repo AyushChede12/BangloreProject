@@ -1,8 +1,4 @@
-<%@page import="com.society.application.model.ClientMaster"%>
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.Loan"%>
-<%@page import="com.society.application.model.BranchMaster"%>
-<%@page import="com.society.application.model.LoanMaster"%>
+
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
 <script src="dist/js/investmentSection.js"></script>
@@ -27,15 +23,7 @@
 			<!-- Aside Menu Start-->
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
-			<%
-			List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-			%>
-			<%
-			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-			%>
-			<%
-			List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-			%>
+			
 			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
@@ -57,9 +45,7 @@
 								<div class="box-header ">
 									<h3 class="box-title">Search Box</h3>
 								</div>
-								<%
-								List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
-								%>
+								
 								<div class="box-body">
 									<div class="col-md-2" style="margin-top: 15px;">
 										
@@ -70,16 +56,7 @@
 												<!-- onchange="getByLoanIdIrRegularEmiRepayment()" -->
 												<option selected="selected" value="">Select Loan Id
 												</option>
-												<%
-												if (loanList != null && !loanList.isEmpty()) {
-													for (Loan loan : loanList) {
-												%>
-												<option value="<%=loan.getId()%>"><%=loan.getId()%>
-												</option>
-												<%
-												}
-												}
-												%>
+												
 											</select>
 										
 									</div>

@@ -1,13 +1,10 @@
 <jsp:include page="../header.jsp" />
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.BankMaster"%>
+
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	onload="disable(); getAllAccountNo();" cz-shortcut-listen="true">
 	<form method="post" action="" id="form1">
-		<%
-		List<BankMaster> bankList = (List<BankMaster>) request.getAttribute("bankMaster");
-		%>
+		
 		<div
 			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->

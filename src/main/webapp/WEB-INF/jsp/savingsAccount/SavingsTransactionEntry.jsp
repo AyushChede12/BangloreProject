@@ -1,8 +1,5 @@
 <jsp:include page="../header.jsp" />
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.BankMaster"%>
-<%@page import="com.society.application.model.BranchMaster"%>
-<%@page import="com.society.application.model.SavingsAccountApplication"%>
+
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true" onload="getfetchsavingid();">
@@ -44,12 +41,7 @@
 
 				</div>
 
-				<%
-				List<BankMaster> bankList = (List<BankMaster>) request.getAttribute("bankMaster");
-				%>
-				<%
-				List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+				
 
 				<section class="content">
 					<div class="row">
@@ -89,15 +81,9 @@
 										<select name="cspName" id="cspName"
 											class="form-control select2" style="width: 100%;">
 											<option value="">Select Branch</option>
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
+											
+										
 										</select> <span
 											id="ContentPlaceHolder1_RequiredFieldValidatorddlBranchName"
 											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -109,15 +95,7 @@
 										</label> <select name="accountNo" id="accountNo"
 											class="form-control select2" style="width: 100%;">
 											<option value="">Select Acc.No</option>
-											<%
-											if (bankList != null && !bankList.isEmpty()) {
-												for (BankMaster bank : bankList) {
-											%>
-											<option value="<%=bank.getId()%>"><%=bank.getAccountNo()%></option>
-											<%
-											}
-											}
-											%>
+											
 
 										</select> <span
 											id="ContentPlaceHolder1_RequiredFieldValidatorAccountNo"

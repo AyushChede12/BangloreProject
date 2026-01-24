@@ -1,6 +1,5 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.LoanMaster"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.ClientMaster"%>
 
 <jsp:include page="../header.jsp" />
@@ -38,7 +37,6 @@
          }
          %>
 			<% List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList"); %>
-			<% List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList"); %>
 			<% List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster"); %>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
@@ -199,12 +197,8 @@
 												<select name="cspName" id="cspName" class="form-control"
 													style="width: 100%;">
 													<option selected="selected" value="">Select Branch</option>
-													<%if(branchList!=null && !branchList.isEmpty()){ 
-														for(BranchMaster branch: branchList){
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%} 
-													}%>
+													
+													
 												</select> <span id="cspNameMsg"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 													PIN</span>

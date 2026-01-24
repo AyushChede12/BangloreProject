@@ -1,9 +1,4 @@
-<%@page import="com.society.application.model.ClientMaster"%>
-<%@page import="com.society.application.model.LoanPlanMaster"%>
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
-<%@page import="com.society.application.model.LoanMaster"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -278,32 +273,14 @@ canvas {
 									<div class="col-md-3" style="margin-top: 15px;">
 										<label>Search Member <strong style="color: Red">*</strong></label>
 
-										<%
-										//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-										List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-										%>
-										<%
-										List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-										%>
-										<%
-										List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-										%>
+										
 
 										<select name="searchMemberCode" id="searchMemberCode"
 											onchange="displayMemberDetails()"
 											class="form-control select2" style="width: 100%;">
 											<option value="">Select Member</option>
 
-											<%
-											if (memberList != null && !memberList.isEmpty()) {
-												for (/* Member member: memberList */
-												ClientMaster member : memberList) {
-											%>
-											<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
-											<%
-											}
-											}
-											%>
+											
 										</select> <span
 											id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
 											style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -399,15 +376,7 @@ canvas {
 											style="width: 100%;">
 											<option value="">Select Branch</option>
 
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
 										</select>
 
 									</div>
@@ -419,15 +388,7 @@ canvas {
 												onchange="displayLoanMasterDetails()">
 												<option value="">Select loan Plan Master</option>
 
-												<%
-												if (loanMasterList != null && !loanMasterList.isEmpty()) {
-													for (LoanMaster loanPlan : loanMasterList) {
-												%>
-												<option value="<%=loanPlan.getId()%>"><%=loanPlan.getLoanName()%></option>
-												<%
-												}
-												}
-												%>
+												
 											</select>
 										</div>
 									</div>

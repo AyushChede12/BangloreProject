@@ -1,6 +1,5 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.Employee"%>
 <jsp:include page="../header.jsp" />
 <body onload="getAllGroupMaster();" class="skin-blue sidebar-mini"
@@ -10,7 +9,7 @@
 		name="myFormGroupMaster" modelAttribute="saveGroupMaster"
 		enctype="multipart/form-data">
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -32,9 +31,7 @@
 				<%
 				List<Member> memberList = (List<Member>) request.getAttribute("memberList");
 				%>
-				<%
-				List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+				
 				<%
 				List<Employee> employeeList = (List<Employee>) request.getAttribute("employeeList");
 				%>
@@ -85,15 +82,7 @@
 												<select name="csp" id="csp" class="form-control"
 													style="width: 100%;">
 													<option value="">Select Branch</option>
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select> <span id="cspMsg"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 													Group Name</span>

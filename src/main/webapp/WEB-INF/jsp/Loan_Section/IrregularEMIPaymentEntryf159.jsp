@@ -1,9 +1,4 @@
-<%@page import="com.society.application.model.ClientMaster"%>
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.Loan"%>
-<%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
-<%@page import="com.society.application.model.LoanMaster"%>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- Dk/Admin/LoanRepayment.aspx?Type=Normal EDB D 09:27:09 GMT -->
@@ -159,38 +154,18 @@
 											<h3 class="box-title">Search Details</h3>
 										</div>
 										<div class="col-md-6">
-											<%
-											//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-											List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-											%>
-											<%
-											List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-											%>
-											<%
-											List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-											%>
+											
 
 											<label>Select Loan ID<strong style="color: Red">*</strong>
 											</label>
 
-											<%
-											List<Loan> loanList = (List<Loan>) request.getAttribute("loanList");
-											%>
+											
 											<!-- onchange="getRegularLoanData()" -->
 											<select name="searchLoanId" onchange="getRegularLoanData();"
 												id="searchLoanId1" class="form-control select2"
 												style="width: 100%;">
 												<option selected="selected" value="">Select Loan Id</option>
-												<%
-												if (loanList != null && !loanList.isEmpty()) {
-													for (Loan loan : loanList) {
-												%>
-												<option value="<%=loan.getId()%>"><%=loan.getId()%>
-												</option>
-												<%
-												}
-												}
-												%>
+												
 											</select>
 
 
@@ -447,15 +422,7 @@
 										</label> <select name="cspName" id="cspName" class="form-control"
 											style="width: 100%;">
 											<option value="">Select Branch</option>
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
 										</select>
 
 									</div>

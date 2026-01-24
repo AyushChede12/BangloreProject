@@ -1,4 +1,3 @@
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <jsp:include page="../header.jsp" />
@@ -36,9 +35,7 @@ th, td {
 					<li class="active">Search</li>
 				</ol>
 			</section>
-			<%
-			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-			%>
+			
 			<%
 			List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
 			%>
@@ -55,15 +52,7 @@ th, td {
 										<label>Branch :</label> <select name="branchname"
 											id="branchname" class="form-control select2"
 											style="width: 100%;">
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
 										</select>
 									</div>
 								</div>

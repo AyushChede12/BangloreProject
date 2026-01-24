@@ -15,8 +15,16 @@ $(document).ready(function() {
 
 		let isValid = true;
 
+<<<<<<< HEAD
 		$('#vbranchcode').text('');
 		$('#vbranch').text('');
+=======
+		$('#vglheadno').text('');
+		$('#vbankname').text('');
+		$('#vbankacno').text('');
+		$('#vbranch').text('');
+		$('#vbranchcode').text('');
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		$('#vaddress').text('');
 		$('#vactype').text('');
 		$('#vacopendate').text('');
@@ -29,9 +37,17 @@ $(document).ready(function() {
 
 
 		// Fetch input values
+<<<<<<< HEAD
 
 		var code = $('#code').val().trim();
 		var branch = $('#branch').val().trim();
+=======
+		var glHeadNo = $('#glHeadNo').val().trim();
+		var name = $('#name').val().trim();
+		var bankAccoununtNo = $('#bankAccoununtNo').val().trim();
+		var branch = $('#branch').val().trim();
+		var code = $('#code').val().trim();
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		var address = $('#address').val().trim();
 		var accountType = $('#accountType').val();
 		var openingDate = $('#openingDate').val().trim();
@@ -44,10 +60,41 @@ $(document).ready(function() {
 
 
 		// GL Head No Validation
+<<<<<<< HEAD
 		// Bank Name Validation
 
 		// Bank AccoununtNo Validation
 
+=======
+		if (glHeadNo === "" || isNaN(glHeadNo)) {
+			$('#vglheadno').text('* GL Head No must be Numeric');
+			$('#glHeadNo').focus();
+			isValid = false;
+		}
+
+		// Bank Name Validation
+		if (name === "") {
+			$('#vbankname').text('* Bank name is required');
+			$('#name').focus();
+			isValid = false;
+		}
+		// Bank AccoununtNo Validation
+		if (bankAccoununtNo === "") {
+			$('#vbankacno').text('* Bank account no is required');
+			$('#bankAccoununtNo').focus();
+			isValid = false;
+		} else if (!/^[0-9]{9,18}$/.test(bankAccoununtNo)) {
+			$('#vbankacno').text('* Enter valid account number');
+			$('#bankAccoununtNo').focus();
+			isValid = false;
+		}
+
+		if (branch === "") {
+			$('#vbranch').text('* Branch name is required');
+			$('#branch').focus();
+			isValid = false;
+		}
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		if (code === "") {
 			$('#vbranchcode').text('* Branch code is required');
 			$('#code').focus();
@@ -57,12 +104,15 @@ $(document).ready(function() {
 			$('#code').focus();
 			isValid = false;
 		}
+<<<<<<< HEAD
 		if (branch === "") {
 			$('#vbranch').text('* Branch name is required');
 			$('#branch').focus();
 			isValid = false;
 		}
 
+=======
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		if (address === "") {
 			$('#vaddress').text('* Address is required');
 			$('#address').focus();
@@ -112,7 +162,11 @@ $(document).ready(function() {
 			$('#contactNo').focus();
 			isValid = false;
 		}
+<<<<<<< HEAD
 		/*if (ifscCode === "") {
+=======
+		if (ifscCode === "") {
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 			$('#vifsccode').text('* please enter IFSC code');
 			$('#ifscCode').focus();
 			isValid = false;
@@ -120,7 +174,11 @@ $(document).ready(function() {
 			$('#vifsccode').text('* Invalid IFSC code');
 			$('#ifscCode').focus();
 			isValid = false;
+<<<<<<< HEAD
 		}*/
+=======
+		}
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 
 		// ❗ Stop if validation fails
 		if (!isValid) {
@@ -129,7 +187,14 @@ $(document).ready(function() {
 
 		// 🔹 Create JSON object manually (NO FORM SUBMIT)
 		let branchData = {
+<<<<<<< HEAD
 
+=======
+			glHeadNo: Number(glHeadNo),
+			name: $("#name").val().trim(),
+			bankAccoununtNo: $("#bankAccoununtNo").val().trim(),
+			branch: $("#branch").val().trim(),
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 			branchCode: $("#code").val().trim(),
 			branch: $("#branch").val().trim(),
 			address: $("#address").val().trim(),
@@ -233,8 +298,16 @@ function updateBranch() {
 
 	let isValid = true;
 
+<<<<<<< HEAD
 	$('#vbranchcode').text('');
 	$('#vbranch').text('');
+=======
+	$('#vglheadno').text('');
+	$('#vbankname').text('');
+	$('#vbankacno').text('');
+	$('#vbranch').text('');
+	$('#vbranchcode').text('');
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 	$('#vaddress').text('');
 	$('#vactype').text('');
 	$('#vacopendate').text('');
@@ -247,8 +320,16 @@ function updateBranch() {
 
 
 	// Fetch input values
+<<<<<<< HEAD
 	var code = $('#code').val().trim();
 	var branch = $('#branch').val().trim();
+=======
+	var glHeadNo = $('#glHeadNo').val().trim();
+	var name = $('#name').val().trim();
+	var bankAccoununtNo = $('#bankAccoununtNo').val().trim();
+	var branch = $('#branch').val().trim();
+	var code = $('#code').val().trim();
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 	var address = $('#address').val().trim();
 	var accountType = $('#accountType').val();
 	var openingDate = $('#openingDate').val().trim();
@@ -261,7 +342,38 @@ function updateBranch() {
 
 
 	// GL Head No Validation
+<<<<<<< HEAD
 
+=======
+	if (glHeadNo === "" || isNaN(glHeadNo)) {
+		$('#vglheadno').text('* GL Head No must be Numeric');
+		$('#glHeadNo').focus();
+		isValid = false;
+	}
+
+	// Bank Name Validation
+	if (name === "") {
+		$('#vbankname').text('* Bank name is required');
+		$('#name').focus();
+		isValid = false;
+	}
+	// Bank AccoununtNo Validation
+	if (bankAccoununtNo === "") {
+		$('#vbankacno').text('* Bank account no is required');
+		$('#bankAccoununtNo').focus();
+		isValid = false;
+	} else if (!/^[0-9]{9,18}$/.test(bankAccoununtNo)) {
+		$('#vbankacno').text('* Enter valid account number');
+		$('#bankAccoununtNo').focus();
+		isValid = false;
+	}
+
+	if (branch === "") {
+		$('#vbranch').text('* Branch name is required');
+		$('#branch').focus();
+		isValid = false;
+	}
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 	if (code === "") {
 		$('#vbranchcode').text('* Branch code is required');
 		$('#code').focus();
@@ -271,6 +383,7 @@ function updateBranch() {
 		$('#code').focus();
 		isValid = false;
 	}
+<<<<<<< HEAD
 
 	if (branch === "") {
 		$('#vbranch').text('* Branch name is required');
@@ -278,6 +391,8 @@ function updateBranch() {
 		isValid = false;
 	}
 
+=======
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 	if (address === "") {
 		$('#vaddress').text('* Address is required');
 		$('#address').focus();
@@ -327,7 +442,11 @@ function updateBranch() {
 		$('#contactNo').focus();
 		isValid = false;
 	}
+<<<<<<< HEAD
 	/*if (ifscCode === "") {
+=======
+	if (ifscCode === "") {
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		$('#vifsccode').text('* please enter IFSC code');
 		$('#ifscCode').focus();
 		isValid = false;
@@ -335,7 +454,11 @@ function updateBranch() {
 		$('#vifsccode').text('* Invalid IFSC code');
 		$('#ifscCode').focus();
 		isValid = false;
+<<<<<<< HEAD
 	}*/
+=======
+	}
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 
 	// ❗ Stop if validation fails
 	if (!isValid) {
@@ -345,8 +468,16 @@ function updateBranch() {
 	// 🔹 Fetch values from form
 	let branchData = {
 		id: $("#branchId").val(), // must have the hidden field for ID
+<<<<<<< HEAD
 		branchCode: $("#code").val().trim(),
 		branch: $("#branch").val().trim(),
+=======
+		glHeadNo: Number($("#glHeadNo").val().trim()),
+		name: $("#name").val().trim(),
+		bankAccoununtNo: $("#bankAccoununtNo").val().trim(),
+		branch: $("#branch").val().trim(),
+		branchCode: $("#code").val().trim(),
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 		address: $("#address").val().trim(),
 		accountType: $("#accountType").val(),
 		openingDate: $("#openingDate").val(),
@@ -423,8 +554,16 @@ function editData(id) {
 			if (response.status == "FOUND") {
 				const branch = response.data;
 				$("#branchId").val(branch.id);        // 🔹 Set ID for update
+<<<<<<< HEAD
 				$("#code").val(branch.branchCode);
 				$("#branch").val(branch.branch);
+=======
+				$("#glHeadNo").val(branch.glHeadNo);
+				$("#name").val(branch.name);
+				$("#bankAccoununtNo").val(branch.bankAccoununtNo);
+				$("#branch").val(branch.branch);
+				$("#code").val(branch.branchCode);
+>>>>>>> 26347d6f23d208c4ed075d7a5b10d7140f846d21
 				$("#address").val(branch.address);
 				$("#accountType").val(branch.accountType);
 				$("#openingDate").val(branch.openingDate);

@@ -2,7 +2,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Loan"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <jsp:include page="../header.jsp" />
 <body onload="getListOfLoanId()" class="skin-blue sidebar-mini"
@@ -39,16 +38,7 @@
 						<li class="active">NOC Print</li>
 					</ol>
 				</section>
-				<%
-				//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-				List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-				%>
-				<%
-				List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
-				<%
-				List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-				%>
+				
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">

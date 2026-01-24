@@ -1,4 +1,3 @@
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="java.util.List"%>
 <jsp:include page="../header.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,9 +18,7 @@
 		<jsp:include page="../asideMenu.jsp" />
 		<!-- Aside Menu end -->
 		<!-- Content Wrapper. Contains page content -->
-		<%
-		List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-		%>
+		
 		<div class="content-wrapper" style="min-height: 1105.75px;">
 			<section class="content-header">
 				<h1 id="ContentPlaceHolder1_IdHeader">

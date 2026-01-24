@@ -2,7 +2,6 @@
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.Loan"%>
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
@@ -41,7 +40,6 @@
 			<% //List<Member> memberList = (List<Member>) request.getAttribute("memberList"); 
 			     List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList"); 
 			%>
-			<% List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList"); %>
 			<% List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster"); %>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
@@ -382,14 +380,8 @@
 												<select name="cspName" id="branchname" class="form-control"
 													style="width: 100%;">
 													<option value="">Select Branch</option>
-													<% if(branchList!=null && !branchList.isEmpty()){
-														for(BranchMaster branch :branchList ){
-															%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-														}
-													}
-													%>
+													
+													
 												</select>
 											</div>
 										</div>

@@ -1,20 +1,10 @@
 <jsp:include page="../header.jsp" />
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.ClientMaster"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
 	<form method="post" action="saveSavingsAccountApplciation"
 		model="saveSavingsAccountApplciation" id="form1">
-		<%
-		//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-		List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-		%>
-		<%
-		List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-		%>
+		
 		<div
 			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
@@ -79,15 +69,7 @@
 											</label> <select name="searchMemberCode" id="searchMemberCode"
 												onchange="displayMemberDetailsSaving()"
 												class="form-control select2" style="width: 100%;">
-												<%
-												if (memberList != null && !memberList.isEmpty()) {
-													for (ClientMaster member : memberList) {
-												%>
-												<option value="<%=member.getId()%>"><%=member.getMemberName()%></option>
-												<%
-												}
-												}
-												%>
+												
 											</select><span
 												id="ContentPlaceHolder1_RequiredFieldValidatorddlMemberCode"
 												style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Select
@@ -214,15 +196,7 @@
 												style="color: Red">*</strong>
 											</label> <select name="cspName" id="cspName" class="form-control"
 												style="width: 100%;">
-												<%
-												if (branchList != null && !branchList.isEmpty()) {
-													for (BranchMaster branch : branchList) {
-												%>
-												<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-												<%
-												}
-												}
-												%>
+												
 											</select>
 
 										</div>

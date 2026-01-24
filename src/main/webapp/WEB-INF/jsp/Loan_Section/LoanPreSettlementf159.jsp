@@ -1,7 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Loan"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="com.society.application.model.ClientMaster"%>
 <!DOCTYPE html>
@@ -146,16 +145,7 @@
 								<div class="form-horizontal">
 									<div class="box-body">
 										<div class="col-md-4" style="margin-top: 15px;">
-											<%
-											//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-											List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-											%>
-											<%
-											List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-											%>
-											<%
-											List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-											%>
+											
 
 											<label>Select Loan ID<strong style="color: Red">*</strong>
 											</label>
@@ -435,15 +425,7 @@
 										</label> <select name="cspName" id="cspName" class="form-control"
 											style="width: 100%;">
 											<option value="">Select Branch</option>
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
 										</select>
 
 									</div>

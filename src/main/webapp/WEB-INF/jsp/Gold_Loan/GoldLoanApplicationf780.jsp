@@ -2,7 +2,6 @@
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.Loan"%>
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
@@ -44,7 +43,6 @@
 			<!-- Aside Menu end -->
 			<% //List<Member> memberList = (List<Member>) request.getAttribute("memberList"); 
 			     List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");  %>
-			<% List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList"); %>
 			<% List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster"); %>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">
@@ -249,15 +247,7 @@
 											<div class="col-sm-8">
 												<select name="cspName" id="cspName" class="form-control"
 													style="width: 100%;">
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select><span id="cspNameMsg"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;">Enter
 													PIN</span>

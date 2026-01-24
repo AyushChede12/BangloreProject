@@ -1,7 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Loan"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="com.society.application.model.ClientMaster"%>
 <!DOCTYPE html>
@@ -158,13 +157,7 @@
 											<h3 class="box-title">Search Details</h3>
 										</div>
 										<div class="col-md-6">
-											<%
-											//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-											List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-											%>
-											<%
-											List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-											%>
+											
 											<%
 											List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
 											%>
@@ -446,15 +439,8 @@
 										</label> <select name="cspName" id="cspName" class="form-control"
 											style="width: 100%;">
 											<option value="">Select Branch</option>
-											<%
-											if (branchList != null && !branchList.isEmpty()) {
-												for (BranchMaster branch : branchList) {
-											%>
-											<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-											<%
-											}
-											}
-											%>
+											
+											
 										</select>
 
 									</div>

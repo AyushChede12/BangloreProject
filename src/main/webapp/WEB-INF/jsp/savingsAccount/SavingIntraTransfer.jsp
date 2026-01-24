@@ -1,7 +1,5 @@
 <jsp:include page="../header.jsp" />
-<%@page import="java.util.List"%>
-<%@page import="com.society.application.model.BankMaster"%>
-<%@page import="com.society.application.model.BranchMaster"%>
+
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
 	cz-shortcut-listen="true">
@@ -28,12 +26,7 @@
 						<li class="active">Account Transfer</li>
 					</ol>
 				</section>
-				<%
-				List<BankMaster> bankList = (List<BankMaster>) request.getAttribute("bankMaster");
-				%>
-				<%
-				List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+				
 				<section class="content">
 					<div class="row">
 						<div class="col-md-12">
@@ -54,15 +47,7 @@
 													id="accountNo"
 													class="form-control select2" style="width: 100%;">
 													<option value="">Select Acc.No</option>
-													<%
-													if (bankList != null && !bankList.isEmpty()) {
-														for (BankMaster bank : bankList) {
-													%>
-													<option value="<%=bank.getId()%>"><%=bank.getAccountNo()%></option>
-													<%
-													}
-													}
-													%>
+													
 
 												</select> <span
 													id="ContentPlaceHolder1_RequiredFieldValidatorDebitSelectAccountNo"
@@ -140,15 +125,7 @@
 													id="accountNo"
 													class="form-control select2" style="width: 100%;">
 													<option value="">Select Acc.No</option>
-													<%
-													if (bankList != null && !bankList.isEmpty()) {
-														for (BankMaster bank : bankList) {
-													%>
-													<option value="<%=bank.getId()%>"><%=bank.getAccountNo()%></option>
-													<%
-													}
-													}
-													%>
+													
 
 												</select> <span
 													id="ContentPlaceHolder1_RequiredFieldValidatorCreditSelectAccountNo"

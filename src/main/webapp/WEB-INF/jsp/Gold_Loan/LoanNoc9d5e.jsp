@@ -2,7 +2,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Loan"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <jsp:include page="../header.jsp" />
 <body class="skin-blue sidebar-mini"
@@ -25,7 +24,6 @@
 											  List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
 											%>
 			<%
-											List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
 											%>
 			<%
 											List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");

@@ -2,7 +2,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Loan"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.LoanMaster"%>
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>
@@ -26,16 +25,7 @@
 			<!-- Aside Menu Start-->
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
-			<%
-											//List<Member> memberList = (List<Member>) request.getAttribute("memberList");
-											List<ClientMaster> memberList = (List<ClientMaster>) request.getAttribute("memberList");
-											%>
-			<%
-											List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-											%>
-			<%
-											List<LoanMaster> loanMasterList = (List<LoanMaster>) request.getAttribute("loanPlanMaster");
-											%>
+		
 			</script>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper" style="min-height: 1105.75px;">

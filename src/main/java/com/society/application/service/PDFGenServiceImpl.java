@@ -21,8 +21,8 @@ import java.util.List;
 @Service
 public class PDFGenServiceImpl implements PDFGenService {
 
-	@Autowired
-	private EntryService entryService;
+//	@Autowired
+//	private EntryService entryService;
 
 	@Override
 	public ByteArrayOutputStream generateCustomPdf(List<Object> obj) throws IOException {
@@ -143,18 +143,18 @@ public class PDFGenServiceImpl implements PDFGenService {
 				}
 
 				// Add Total
-				contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
-				contentStream.beginText();
-				contentStream.newLineAtOffset(50, 540); // Adjust the Y position as needed
-				// "Amount in words:" in bold
-				contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
-				contentStream.showText(
-						"Total : " + jsonObject.getString("amount") + "                            Amount in words : "
-								+ entryService.convertAmountToWords(jsonObject.getString("amount")) + " Rupees Only");
-				// Convert the Amount to words in regular
-				contentStream.setFont(PDType1Font.HELVETICA, 12);
-				// contentStream.showText((jsonObject.getString("amount")));
-				contentStream.endText();
+//				contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
+//				contentStream.beginText();
+//				contentStream.newLineAtOffset(50, 540); // Adjust the Y position as needed
+//				// "Amount in words:" in bold
+//				contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
+//				contentStream.showText(
+//						"Total : " + jsonObject.getString("amount") + "                            Amount in words : "
+//								+ entryService.convertAmountToWords(jsonObject.getString("amount")) + " Rupees Only");
+//				// Convert the Amount to words in regular
+//				contentStream.setFont(PDType1Font.HELVETICA, 12);
+//				// contentStream.showText((jsonObject.getString("amount")));
+//				contentStream.endText();
 
 				// Add Amount in words
 //				contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
@@ -350,13 +350,13 @@ public class PDFGenServiceImpl implements PDFGenService {
 			drawTotal(contentStream, 150, 590, "Total", jsonObject.getString("amount"));
 
 			// Add the Other Text
-			String amountInWords = "Amount in Words : "
-					+ entryService.convertAmountToWords(jsonObject.getString("amount"));
-			contentStream.setFont(PDType1Font.HELVETICA_BOLD, 10);
-			contentStream.beginText();
-			contentStream.newLineAtOffset(150, 530);
-			contentStream.showText(amountInWords);
-			contentStream.endText();
+//			String amountInWords = "Amount in Words : "
+//					+ entryService.convertAmountToWords(jsonObject.getString("amount"));
+//			contentStream.setFont(PDType1Font.HELVETICA_BOLD, 10);
+//			contentStream.beginText();
+//			contentStream.newLineAtOffset(150, 530);
+//			contentStream.showText(amountInWords);
+//			contentStream.endText();
 
 			// Add the Other Text
 			String text123 = "Cheque NO  :                             Issue Date :"

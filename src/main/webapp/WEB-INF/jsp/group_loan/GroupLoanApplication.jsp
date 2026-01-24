@@ -1,4 +1,3 @@
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.GroupMaster"%>
 <jsp:include page="../header.jsp" />
@@ -21,7 +20,7 @@
          }
          %>
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -30,9 +29,7 @@
 			<jsp:include page="../asideMenu.jsp" />
 			<!-- Aside Menu end -->
 			<!-- Content Wrapper. Contains page content -->
-			<%
-			List<BranchMaster> branchList = (List<BranchMaster>) request.getAttribute("branchList");
-			%>
+			
 			<%
 			List<GroupMaster> allGroupMaster = (List<GroupMaster>) request.getAttribute("allGroupMaster");
 			%>
@@ -128,15 +125,7 @@
 													style="width: 100%;">
 													<option value="">Select Branch</option>
 
-													<%
-													if (branchList != null && !branchList.isEmpty()) {
-														for (BranchMaster branch : branchList) {
-													%>
-													<option value="<%=branch.getId()%>"><%=branch.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 												</select> <span id="cspMsg"
 													style="color: Red; font-size: X-Small; font-weight: bold; display: none;"></span>
 											</div>

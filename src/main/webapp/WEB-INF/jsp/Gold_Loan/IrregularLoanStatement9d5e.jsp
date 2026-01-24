@@ -1,7 +1,6 @@
 <%@page import="com.society.application.model.LoanMaster"%>
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.Member"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <%@page import="com.society.application.model.Loan"%>
 <jsp:include page="../header.jsp" />
 <script src="dist/js/customJs.js"></script>

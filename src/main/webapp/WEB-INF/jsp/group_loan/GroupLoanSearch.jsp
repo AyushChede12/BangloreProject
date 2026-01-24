@@ -1,7 +1,6 @@
 <jsp:include page="../header.jsp" />
 <%@page import="java.util.List"%>
 <%@page import="com.society.application.model.GroupMaster"%>
-<%@page import="com.society.application.model.BranchMaster"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <body class="skin-blue sidebar-mini"
 	style="height: auto; min-height: 100%; background-color: rgba(36, 105, 92, 0.15);"
@@ -12,11 +11,9 @@
 <%
 				List<GroupMaster> allGroupMaster = (List<GroupMaster>) request.getAttribute("allGroupMaster");
 				%>
-				<%
-				List<BranchMaster> branchListList = (List<BranchMaster>) request.getAttribute("branchList");
-				%>
+				
 		<div
-			style="height: auto; min-height: 100%; border-radius: 30px; margin: 15px; background: url(dist/img/back.jpg);">
+			style="height: auto; min-height: 100%; background: url(dist/img/back.jpg);">
 			<!-- Header Start-->
 			<jsp:include page="../menu.jsp" />
 			<!-- Header End -->
@@ -54,15 +51,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [],
 												id="ContentPlaceHolder1_ddlBranch"
 												class="form-control select2" style="width: 100%;">
 												<option selected="selected" value=""></option>
-														<%
-													if (branchListList != null && !branchListList.isEmpty()) {
-														for (BranchMaster group : branchListList) {
-													%>
-													<option value="<%=group.getName()%>"><%=group.getName()%></option>
-													<%
-													}
-													}
-													%>
+													
 											</select>
 										</div>
 									</div>
