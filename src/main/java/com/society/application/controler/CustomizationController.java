@@ -1,6 +1,7 @@
 package com.society.application.controler;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,6 +51,21 @@ public class CustomizationController {
 		
 		ApiResponse<List<FinancialYear>> response = new ApiResponse<>(HttpStatus.OK, "FinancialYear Fetched Successfully",list);
 		return ResponseEntity.ok(response);
+	}
+	
+	
+	@GetMapping("/getFinancialYearById") // Ayush
+	public ResponseEntity<ApiResponse<FinancialYear>> findFinancialYearById(@RequestParam("id") Long id) {
+		Optional<FinancialYear> fyear = customizationService.findFinancialYearById(id);
+		if (fyear.isPresent()) {
+			ApiResponse<FinancialYear> response = new ApiResponse<>(HttpStatus.FOUND, "Financial Year fetched successfully",
+					fyear.get());
+			return ResponseEntity.ok(response);
+		} else {
+			ApiResponse<FinancialYear> response = new ApiResponse<>(HttpStatus.NOT_FOUND,
+					"Financial Year not found for ID: " + id, null);
+			return ResponseEntity.status(404).body(response);
+		}
 	}
 	
 

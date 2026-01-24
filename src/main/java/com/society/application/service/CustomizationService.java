@@ -2,6 +2,7 @@ package com.society.application.service;
 
 import java.math.BigDecimal;
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +10,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.society.application.model.BankMaster;
 import com.society.application.model.CasteMaster;
 import com.society.application.model.CategoryMaster;
 import com.society.application.model.CompanyMaster;
@@ -17,8 +17,6 @@ import com.society.application.model.FinancialYear;
 import com.society.application.model.RelativeRelationMaster;
 import com.society.application.model.CompanyMaster;
 import com.society.application.model.UserMaster;
-import com.society.application.repository.BankMasterRepo;
-import com.society.application.repository.BranchMasterRepo;
 import com.society.application.repository.CasteMasterRepo;
 import com.society.application.repository.CategoryMasterRepo;
 import com.society.application.repository.CompanyMasterRepo;
@@ -49,9 +47,15 @@ FinancialYearRepo financialYearRepo;
 			return financialYearRepo.save(financialYear);
 		}
 	}
+	
 
 	public List<FinancialYear> getAllFinancialYearDetails() {
 		return financialYearRepo.findAll();
+	}
+
+
+	public Optional<FinancialYear> findFinancialYearById(Long id) {
+		return financialYearRepo.findById(id);
 	}
 	
 	
