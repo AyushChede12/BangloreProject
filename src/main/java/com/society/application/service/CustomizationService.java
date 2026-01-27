@@ -3,6 +3,7 @@ package com.society.application.service;
 import java.math.BigDecimal;
 
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -12,16 +13,15 @@ import org.springframework.stereotype.Service;
 
 import com.society.application.model.CasteMaster;
 import com.society.application.model.CategoryMaster;
-import com.society.application.model.CompanyMaster;
+import com.society.application.model.CompanyAdministration;
 import com.society.application.model.FinancialYear;
 import com.society.application.model.RelativeRelationMaster;
-import com.society.application.model.CompanyMaster;
+import com.society.application.model.CompanyAdministration;
 import com.society.application.model.UserMaster;
 import com.society.application.repository.CasteMasterRepo;
 import com.society.application.repository.CategoryMasterRepo;
-import com.society.application.repository.CompanyMasterRepo;
+import com.society.application.repository.CompanyAdministrationRepo;
 import com.society.application.repository.FinancialYearRepo;
-import com.society.application.repository.RelativeRelationMasterRepo;
 import com.society.application.repository.UserMasterRepo;
 
 @Service
@@ -29,6 +29,9 @@ public class CustomizationService {
 
 @Autowired
 FinancialYearRepo financialYearRepo;
+
+@Autowired
+CompanyAdministrationRepo CompanyAdministrationRepo;
 
 
 //   FinancialYear 
@@ -66,6 +69,9 @@ FinancialYearRepo financialYearRepo;
 		}
 		return false;
 	}
+
+
+	
 	
 	
 	

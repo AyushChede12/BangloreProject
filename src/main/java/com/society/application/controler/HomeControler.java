@@ -51,7 +51,7 @@ import com.society.application.model.Advisor;
 import com.society.application.model.AdvisorCollectorDetails;
 import com.society.application.model.ClientMaster;
 import com.society.application.model.CollectorPromotionDto;
-import com.society.application.model.CompanyMaster;
+import com.society.application.model.CompanyAdministration;
 import com.society.application.model.DailyDeposite;
 import com.society.application.model.DepartmentMaster;
 import com.society.application.model.DesignationMaster;

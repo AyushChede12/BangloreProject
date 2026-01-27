@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-public class CompanyMaster {
+public class CompanyAdministration {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

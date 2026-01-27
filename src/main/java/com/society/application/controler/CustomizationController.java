@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.society.application.dto.ApiResponse;
+import com.society.application.model.CompanyAdministration;
 import com.society.application.model.FinancialYear;
 import com.society.application.service.CustomizationService;
 
@@ -24,8 +25,20 @@ import com.society.application.service.CustomizationService;
 @RequestMapping("/api/customization")
 public class CustomizationController {
 	
+	
 	@Autowired
 	CustomizationService customizationService;
+	
+//	Company Administration
+	
+	@GetMapping("/getConmapnyDetails") // Ayush (without DTO)
+	@ResponseBody
+	public ResponseEntity<ApiResponse<List<CompanyAdministration>>> fetchAllCompanyDetails() {
+		List<CompanyAdministration> list = customizationService.fetchAllCompanyDetails();
+		ApiResponse<List<CompanyAdministration>> response = new ApiResponse<>(HttpStatus.FOUND,
+				"Company Administration fetched successfully", list);
+		return ResponseEntity.ok(response);
+	}
 	
 	
 //	Financial Year
